@@ -9,6 +9,7 @@ import requests
 from bfcl_eval.constants.enums import ModelStyle
 from bfcl_eval.constants.eval_config import LOCAL_SERVER_PORT
 from bfcl_eval.model_handler.base_handler import BaseHandler
+from bfcl_eval.model_handler.memory_se_gate import prompt_cache_key
 from bfcl_eval.model_handler.utils import (
     default_decode_ast_prompting,
     default_decode_execute_prompting,
@@ -322,6 +323,59 @@ class OSSHandler(BaseHandler, EnforceOverrides):
         end_time = time.time()
 
         return api_response, end_time - start_time
+
+    @override
+    def sample_k(self, inference_data: dict, k: int, temperature: float) -> list:
+        """Sample K alternative completions in a single request via the OpenAI `n` param.
+
+        Mirrors `_query_prompting`'s prompt construction but requests `n=k` at
+        `temperature>0` with a fixed seed for reproducibility, then returns all
+        `choices[*].text`. Results are cached in-memory by (prompt, temp, k, seed)
+        so re-runs reuse samples. Only invoked by the semantic-entropy gate.
+        """
+        function: list[dict] = inference_data.get("function", [])
+        message: list[dict] = inference_data.get("message", [])
+        formatted_prompt: str = self._format_prompt(message, function)
+
+        seed = getattr(self, "se_seed", 1234)
+        cache = getattr(self, "_sample_cache", None)
+        if cache is None:
+            cache = self._sample_cache = {}
+        key = prompt_cache_key(formatted_prompt, temperature, k, seed)
+        if key in cache:
+            return cache[key]
+
+        input_token_count = len(self.tokenizer.tokenize(formatted_prompt))
+        if self.max_context_length < input_token_count + 2:
+            leftover_tokens_count = 1000
+        else:
+            leftover_tokens_count = min(
+                4096,
+                self.max_context_length - input_token_count - 2,
+            )
+
+        extra_body = {}
+        if hasattr(self, "stop_token_ids"):
+            extra_body["stop_token_ids"] = self.stop_token_ids
+        if hasattr(self, "skip_special_tokens"):
+            extra_body["skip_special_tokens"] = self.skip_special_tokens
+
+        create_kwargs = dict(
+            model=self.model_path_or_id,
+            prompt=formatted_prompt,
+            temperature=temperature,
+            max_tokens=leftover_tokens_count,
+            n=k,
+            seed=seed,
+            timeout=72000,
+        )
+        if len(extra_body) > 0:
+            create_kwargs["extra_body"] = extra_body
+
+        api_response = self.client.completions.create(**create_kwargs)
+        samples = [choice.text for choice in api_response.choices]
+        cache[key] = samples
+        return samples
 
     @override
     def _pre_query_processing_prompting(self, test_entry: dict) -> dict:

@@ -55,18 +55,45 @@ def get_args():
         default=None,
         help="Specify the path to a local directory containing the model's config/tokenizer/weights for fully offline inference. Use this only if the model weights are stored in a location other than the default HF_HOME directory.",
     )
+    # Semantic-entropy gating (measurement spike). Off by default => baseline pipeline
+    # is byte-for-byte unchanged. "logonly" samples K alternative final answers for
+    # scored memory questions, logs the semantic entropy, and never alters the
+    # recorded answer. Only supported on handlers that implement sample_k (OSS/vLLM).
+    parser.add_argument(
+        "--se-gate",
+        type=str,
+        default="off",
+        choices=["off", "logonly"],
+        help="Semantic-entropy gating mode. 'off' (default) leaves the pipeline unchanged; 'logonly' logs entropy without changing the recorded answer.",
+    )
+    parser.add_argument(
+        "--se-k", type=int, default=5, help="Number of samples K for the SE gate."
+    )
+    parser.add_argument(
+        "--se-temp",
+        type=float,
+        default=0.7,
+        help="Sampling temperature used inside the SE gate (does not affect the recorded deterministic answer).",
+    )
+    parser.add_argument(
+        "--se-seed",
+        type=int,
+        default=1234,
+        help="Seed for the SE gate's sampling request, for reproducibility.",
+    )
     args = parser.parse_args()
 
     return args
 
 
-def build_handler(model_name, temperature):
+def build_handler(model_name, temperature, extra_handler_kwargs=None):
     config = MODEL_CONFIG_MAPPING[model_name]
     handler = config.model_handler(
         model_name=config.model_name,
         temperature=temperature,
         registry_name=model_name,
         is_fc_model=config.is_fc_model,
+        **(extra_handler_kwargs or {}),
     )
     return handler
 
@@ -200,7 +227,15 @@ def multi_threaded_inference(handler, test_case, include_input_log, exclude_stat
 
 
 def generate_results(args, model_name, test_cases_total):
-    handler = build_handler(model_name, args.temperature)
+    # Pass the semantic-entropy gate config onto the handler (becomes instance
+    # attributes via BaseHandler.__init__). Defaults keep the baseline untouched.
+    extra_handler_kwargs = {
+        "se_gate": getattr(args, "se_gate", "off"),
+        "se_k": getattr(args, "se_k", 5),
+        "se_temp": getattr(args, "se_temp", 0.7),
+        "se_seed": getattr(args, "se_seed", 1234),
+    }
+    handler = build_handler(model_name, args.temperature, extra_handler_kwargs)
 
     if isinstance(handler, OSSHandler):
         handler: OSSHandler

@@ -18,6 +18,7 @@ from bfcl_eval.eval_checker.multi_turn_eval.multi_turn_utils import (
     execute_multi_turn_func_call,
     is_empty_execute_response,
 )
+from bfcl_eval.model_handler.memory_se_gate import semantic_entropy, write_se_sidecar
 from bfcl_eval.model_handler.utils import add_memory_instruction_system_prompt
 from bfcl_eval.utils import *
 from overrides import final
@@ -61,6 +62,10 @@ class BaseHandler:
         self.registry_dir_name = registry_name.replace("/", "_")
         self.temperature = temperature
 
+        # In-memory cache of semantic-entropy gate samples, keyed by prompt hash.
+        # Only used when the (off-by-default) se_gate flag is enabled.
+        self._sample_cache = {}
+
         # Set any additional attributes passed via kwargs
         for _key, _value in kwargs.items():
             setattr(self, _key, _value)
@@ -90,6 +95,86 @@ class BaseHandler:
                 )
             else:
                 return self.inference_single_turn_prompting(test_entry, include_input_log)
+
+    #### Semantic-entropy gating (measurement spike; log-only, off by default) ####
+
+    def sample_k(self, inference_data: dict, k: int, temperature: float) -> list:
+        """Return K sampled text completions for the given context.
+
+        Used only by the semantic-entropy gate. Handlers that support sampling
+        override this; the default raises so a misconfigured run fails loudly
+        instead of silently logging nothing.
+        """
+        raise NotImplementedError(
+            f"{type(self).__name__} does not implement sample_k; semantic-entropy "
+            "gating is only supported on handlers that override it (e.g. OSSHandler)."
+        )
+
+    def _se_log_answer(
+        self,
+        *,
+        inference_data: dict,
+        deterministic_answer,
+        test_entry_id: str,
+        test_category: str,
+        turn_idx: int,
+        step: int,
+        initial_config: dict,
+        current_step_inference_log: list,
+    ) -> None:
+        """Log-only semantic-entropy probe for a scored memory final answer.
+
+        Samples K alternative answers holding the question context fixed, computes
+        semantic entropy over their meaning-clusters, and records it to the step
+        inference log plus a per-id sidecar. Never changes control flow: the
+        recorded answer remains the deterministic generation.
+        """
+        if getattr(self, "se_gate", "off") != "logonly":
+            return
+        if not is_memory(test_category) or is_memory_prereq(test_entry_id):
+            return
+        try:
+            k = int(getattr(self, "se_k", 5))
+            temp = float(getattr(self, "se_temp", 0.7))
+            messages = inference_data.get("message", [])
+            # The deterministic final answer was already appended to the history;
+            # sample the context that produced it (everything before that message).
+            sampling_data = {
+                "message": messages[:-1] if messages else [],
+                "function": inference_data.get("function", []),
+            }
+            samples = self.sample_k(sampling_data, k, temp)
+            entropy, n_clusters, _ = semantic_entropy(samples)
+            current_step_inference_log.append(
+                {
+                    "role": "se_gate",
+                    "entropy": entropy,
+                    "n_clusters": n_clusters,
+                    "k": len(samples),
+                    "accepted": True,  # log-only: deterministic answer always kept
+                }
+            )
+            model_result_dir = (
+                initial_config.get("model_result_dir")
+                if isinstance(initial_config, dict)
+                else None
+            )
+            write_se_sidecar(
+                model_result_dir,
+                {
+                    "id": test_entry_id,
+                    "test_category": test_category,
+                    "turn_idx": turn_idx,
+                    "step": step,
+                    "entropy": entropy,
+                    "n_clusters": n_clusters,
+                    "k": len(samples),
+                    "deterministic_answer": deterministic_answer,
+                    "samples": samples,
+                },
+            )
+        except Exception as e:
+            current_step_inference_log.append({"role": "se_gate", "error": str(e)})
 
     @final
     def inference_multi_turn_FC(
@@ -330,6 +415,21 @@ class BaseHandler:
                     )
 
                     break
+
+            # Semantic-entropy gate (log-only): probe the final answer of a scored
+            # memory question. No-op unless --se-gate logonly. Skipped on force_quit
+            # (no clean final natural-language answer was produced).
+            if not force_quit and current_turn_response:
+                self._se_log_answer(
+                    inference_data=inference_data,
+                    deterministic_answer=current_turn_response[-1],
+                    test_entry_id=test_entry_id,
+                    test_category=test_category,
+                    turn_idx=turn_idx,
+                    step=len(current_turn_response) - 1,
+                    initial_config=initial_config,
+                    current_step_inference_log=current_step_inference_log,
+                )
 
             # Add to the total list
             all_model_response.append(current_turn_response)
@@ -621,6 +721,21 @@ class BaseHandler:
                         }
                     )
                     break
+
+            # Semantic-entropy gate (log-only): probe the final answer of a scored
+            # memory question. No-op unless --se-gate logonly. Skipped on force_quit
+            # (no clean final natural-language answer was produced).
+            if not force_quit and current_turn_response:
+                self._se_log_answer(
+                    inference_data=inference_data,
+                    deterministic_answer=current_turn_response[-1],
+                    test_entry_id=test_entry_id,
+                    test_category=test_category,
+                    turn_idx=turn_idx,
+                    step=len(current_turn_response) - 1,
+                    initial_config=initial_config,
+                    current_step_inference_log=current_step_inference_log,
+                )
 
             # Add to the total list
             all_model_response.append(current_turn_response)
