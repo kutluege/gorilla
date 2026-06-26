@@ -22,6 +22,7 @@ Usage:
 from __future__ import annotations
 
 import argparse
+import ast
 import json
 import re
 from pathlib import Path
@@ -29,6 +30,7 @@ from pathlib import Path
 import bfcl_eval
 from bfcl_eval.constants.eval_config import RESULT_PATH
 from bfcl_eval.eval_checker.agentic_eval.agentic_checker import agentic_checker
+from bfcl_eval.model_handler.memory_se_gate import semantic_entropy
 
 _GOLD_FILE = (
     Path(bfcl_eval.__file__).parent / "data" / "possible_answer" / "BFCL_v4_memory.json"
@@ -41,6 +43,29 @@ _BACKEND_PREFIX_RE = re.compile(r"^memory_(kv|vector|rec_sum)_")
 
 def run_id_to_gold_id(run_id: str) -> str:
     return _BACKEND_PREFIX_RE.sub("memory_", run_id)
+
+
+# The agentic memory format asks the model to answer as {"answer": ..., "context": ...}.
+# Cluster on the "answer" field (the meaningful content) rather than the full blob,
+# whose verbose "context" reasoning dilutes the semantic-entropy signal.
+_ANSWER_RE = re.compile(r"""['"]answer['"]\s*:\s*['"](.*?)['"]""", re.DOTALL)
+
+
+def extract_answer(text: str) -> str:
+    """Best-effort pull of the 'answer' field; fall back to the raw text."""
+    if not isinstance(text, str):
+        text = str(text)
+    m = _ANSWER_RE.search(text)
+    if m:
+        return m.group(1)
+    for parser in (json.loads, ast.literal_eval):
+        try:
+            obj = parser(text)
+            if isinstance(obj, dict) and "answer" in obj:
+                return str(obj["answer"])
+        except Exception:
+            pass
+    return text
 
 
 def load_gold() -> dict:
@@ -107,11 +132,21 @@ def analyze(records: list[dict], gold: dict, backend: str | None):
             missing_gold += 1
             continue
         correct = agentic_checker(r.get("deterministic_answer", ""), gold[gid])["valid"]
+        # entropy clustered on the extracted "answer" field, recomputed offline
+        # from the stored raw samples (sharper than the full-blob entropy logged
+        # at generation time).
+        samples = r.get("samples") or []
+        if samples:
+            ent_ans, ncl_ans, _ = semantic_entropy([extract_answer(s) for s in samples])
+        else:
+            ent_ans, ncl_ans = float("inf"), 0
         rows.append(
             {
                 "id": r["id"],
-                "entropy": r.get("entropy"),
-                "n_clusters": r.get("n_clusters"),
+                "entropy_full": r.get("entropy"),  # logged at gen time (full blob)
+                "entropy_answer": ent_ans,  # recomputed on the answer field
+                "n_clusters_full": r.get("n_clusters"),
+                "n_clusters_answer": ncl_ans,
                 "k": r.get("k"),
                 "correct": bool(correct),
             }
@@ -119,17 +154,43 @@ def analyze(records: list[dict], gold: dict, backend: str | None):
     return rows, missing_gold
 
 
-def selective_prediction_table(rows: list[dict], taus: list[float]) -> list[dict]:
+def selective_prediction_table(rows: list[dict], key: str, taus: list[float]) -> list[dict]:
     """For each tau: coverage and accuracy when answering only if entropy <= tau."""
-    valid = [r for r in rows if r["entropy"] is not None and r["entropy"] != float("inf")]
+    valid = [r for r in rows if r[key] is not None and r[key] != float("inf")]
     n = len(valid)
     table = []
     for tau in taus:
-        covered = [r for r in valid if r["entropy"] <= tau]
+        covered = [r for r in valid if r[key] <= tau]
         cov = len(covered) / n if n else 0.0
         acc = (sum(r["correct"] for r in covered) / len(covered)) if covered else 0.0
         table.append({"tau": tau, "coverage": cov, "accuracy_on_covered": acc})
     return table
+
+
+def _report_one(rows: list[dict], key: str, label: str):
+    """Print AUROC + mean-by-correctness + selective table for one entropy variant."""
+    valid = [r for r in rows if r[key] is not None and r[key] != float("inf")]
+    n = len(valid)
+    if not n:
+        print(f"\n[{label}] no valid entropy values.")
+        return
+    scores = [r[key] for r in valid]
+    labels = [0 if r["correct"] else 1 for r in valid]  # positive = incorrect
+    ent_correct = [r[key] for r in valid if r["correct"]]
+    ent_wrong = [r[key] for r in valid if not r["correct"]]
+    mean = lambda xs: (sum(xs) / len(xs)) if xs else float("nan")
+    au = auroc(scores, labels)
+    n_nonzero = sum(1 for s in scores if s not in (0.0, -0.0))
+    print(f"\n--- {label} ---")
+    print(f"  AUROC entropy->incorrect : " + (f"{au:.4f}" if au is not None else "n/a"))
+    print(f"  entropy>0 count          : {n_nonzero}/{n}")
+    print(f"  mean entropy | correct   : {mean(ent_correct):.4f}  (n={len(ent_correct)})")
+    print(f"  mean entropy | incorrect : {mean(ent_wrong):.4f}  (n={len(ent_wrong)})")
+    taus = [0.0, 0.2, 0.4, 0.6, 0.8, 1.0, 1.2, 1.4, 1.6]
+    print(f"  selective prediction (answer iff entropy <= tau):")
+    print(f"    {'tau':>6} {'coverage':>10} {'acc@covered':>12}")
+    for row in selective_prediction_table(valid, key, taus):
+        print(f"    {row['tau']:>6.2f} {row['coverage']:>10.3f} {row['accuracy_on_covered']:>12.3f}")
 
 
 def main():
@@ -168,17 +229,8 @@ def main():
         print(f"Found {len(records)} records but none matched gold. missing_gold={missing_gold}")
         return
 
-    valid = [r for r in rows if r["entropy"] is not None and r["entropy"] != float("inf")]
-    n = len(valid)
-    n_correct = sum(r["correct"] for r in valid)
-    scores = [r["entropy"] for r in valid]
-    labels = [0 if r["correct"] else 1 for r in valid]  # positive = incorrect
-
-    ent_correct = [r["entropy"] for r in valid if r["correct"]]
-    ent_wrong = [r["entropy"] for r in valid if not r["correct"]]
-    mean = lambda xs: (sum(xs) / len(xs)) if xs else float("nan")
-
-    au = auroc(scores, labels)
+    n = len(rows)
+    n_correct = sum(r["correct"] for r in rows)
 
     print("=" * 64)
     print(f"Semantic-entropy measurement report  (backend={args.backend or 'all'})")
@@ -186,21 +238,13 @@ def main():
     print(f"sidecar files            : {len(files)}")
     print(f"records (after filter)   : {n}  (skipped no-gold: {missing_gold})")
     print(f"baseline accuracy        : {n_correct}/{n} = {n_correct / n:.3f}")
-    print(f"mean entropy | correct   : {mean(ent_correct):.4f}  (n={len(ent_correct)})")
-    print(f"mean entropy | incorrect : {mean(ent_wrong):.4f}  (n={len(ent_wrong)})")
-    print(
-        f"AUROC entropy->incorrect : "
-        + (f"{au:.4f}" if au is not None else "n/a (one class empty)")
-    )
-    print(
-        "  (>0.5 => higher entropy predicts wrong answers; the spike's go/no-go signal)"
-    )
-    print("-" * 64)
-    print("Selective prediction (answer iff entropy <= tau):")
-    print(f"{'tau':>6} {'coverage':>10} {'acc@covered':>12}")
-    taus = [0.0, 0.2, 0.4, 0.6, 0.8, 1.0, 1.2, 1.4, 1.6]
-    for row in selective_prediction_table(valid, taus):
-        print(f"{row['tau']:>6.2f} {row['coverage']:>10.3f} {row['accuracy_on_covered']:>12.3f}")
+    print("AUROC > 0.5 => higher entropy predicts wrong answers (the go/no-go signal)")
+
+    # Two clustering variants from the same samples:
+    #  - full   : entropy logged at gen time on the whole {answer, context} blob
+    #  - answer : recomputed here on just the extracted "answer" field (sharper)
+    _report_one(rows, "entropy_full", "cluster on FULL response (logged at gen time)")
+    _report_one(rows, "entropy_answer", "cluster on ANSWER field (recomputed offline)")
     print("=" * 64)
 
 

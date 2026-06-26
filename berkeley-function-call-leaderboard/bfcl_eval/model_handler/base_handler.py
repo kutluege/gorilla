@@ -110,6 +110,23 @@ class BaseHandler:
             "gating is only supported on handlers that override it (e.g. OSSHandler)."
         )
 
+    @staticmethod
+    def _se_model_result_dir(initial_config):
+        """Pull model_result_dir out of the (possibly class-nested) initial_config.
+
+        For memory tests initial_config is keyed by class name, e.g.
+        {"MemoryAPI_kv": {"model_result_dir": ..., ...}}, so a top-level lookup
+        misses it. Check the top level first, then one level down.
+        """
+        if not isinstance(initial_config, dict):
+            return None
+        if "model_result_dir" in initial_config:
+            return initial_config["model_result_dir"]
+        for value in initial_config.values():
+            if isinstance(value, dict) and "model_result_dir" in value:
+                return value["model_result_dir"]
+        return None
+
     def _se_log_answer(
         self,
         *,
@@ -152,13 +169,10 @@ class BaseHandler:
                     "n_clusters": n_clusters,
                     "k": len(samples),
                     "accepted": True,  # log-only: deterministic answer always kept
+                    "sample_preview": [str(s)[:60] for s in samples],
                 }
             )
-            model_result_dir = (
-                initial_config.get("model_result_dir")
-                if isinstance(initial_config, dict)
-                else None
-            )
+            model_result_dir = self._se_model_result_dir(initial_config)
             write_se_sidecar(
                 model_result_dir,
                 {
