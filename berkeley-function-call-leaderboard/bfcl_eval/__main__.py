@@ -148,6 +148,20 @@ def generate(
         "--run-ids",
         help="If true, also run the test entry mentioned in the test_case_ids_to_generate.json file, in addition to the --test_category argument.",
     ),
+    se_gate: str = typer.Option(
+        "off",
+        "--se-gate",
+        help="Semantic-entropy gating mode: 'off' (default, baseline unchanged) or 'logonly' (sample K alternative final answers for scored memory questions and log the entropy without changing the recorded answer). Only supported on OSS/vLLM handlers.",
+    ),
+    se_k: int = typer.Option(5, "--se-k", help="Number of samples K for the SE gate."),
+    se_temp: float = typer.Option(
+        0.7,
+        "--se-temp",
+        help="Sampling temperature used inside the SE gate (does not affect the recorded deterministic answer).",
+    ),
+    se_seed: int = typer.Option(
+        1234, "--se-seed", help="Seed for the SE gate's sampling request, for reproducibility."
+    ),
 ):
     """
     Generate the LLM response for one or more models on a test-category (same as openfunctions_evaluation.py).
@@ -168,6 +182,10 @@ def generate(
         result_dir=result_dir,
         allow_overwrite=allow_overwrite,
         run_ids=run_ids,
+        se_gate=se_gate,
+        se_k=se_k,
+        se_temp=se_temp,
+        se_seed=se_seed,
     )
     load_dotenv(dotenv_path=DOTENV_PATH, verbose=True, override=True)  # Load the .env file
     generation_main(args)
