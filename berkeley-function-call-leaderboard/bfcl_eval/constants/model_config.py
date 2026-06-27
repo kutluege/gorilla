@@ -59,6 +59,7 @@ from bfcl_eval.model_handler.local_inference.quick_testing_oss import (
 )
 from bfcl_eval.model_handler.local_inference.qwen import QwenHandler
 from bfcl_eval.model_handler.local_inference.qwen_fc import QwenFCHandler
+from bfcl_eval.model_handler.local_inference.qwen_mig import QwenMIGHandler
 from bfcl_eval.model_handler.local_inference.nanbeige_fc import NanbeigeFCHandler
 from bfcl_eval.model_handler.local_inference.salesforce_llama import (
     SalesforceLlamaHandler,
@@ -1654,6 +1655,23 @@ local_inference_model_map = {
         input_price=None,
         output_price=None,
         is_fc_model=False,
+        underscore_to_dot=False,
+    ),
+    # Memory Information Gain (MIG) reranker variant of Qwen3-4B-Instruct-2507-FC.
+    # Identical to the -FC handler except it reranks memory retrieval results at the
+    # tool-result boundary. Behavior is configured via MIG_* env vars (see
+    # bfcl_eval/model_handler/middleware/mig_reranker.py). Uses its own registry id so the
+    # -FC baseline stays byte-identical for A/B comparison.
+    "Qwen/Qwen3-4B-Instruct-2507-FC-MIG": ModelConfig(
+        model_name="Qwen/Qwen3-4B-Instruct-2507",
+        display_name="Qwen3-4B-Instruct-2507 (FC + MIG Reranker)",
+        url="https://huggingface.co/Qwen/Qwen3-4B-Instruct-2507",
+        org="Qwen",
+        license="apache-2.0",
+        model_handler=QwenMIGHandler,
+        input_price=None,
+        output_price=None,
+        is_fc_model=True,
         underscore_to_dot=False,
     ),
     "Qwen/Qwen3-8B-FC": ModelConfig(
