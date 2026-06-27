@@ -104,6 +104,13 @@ class MIGConfig:
     min_gain: float = float("-inf")
     # Condition scoring on a model-generated draft answer (the MIG "a_hat").
     use_draft: bool = True
+    # Draft the answer conditioned on the retrieved candidate pool (not empty context).
+    # This is critical: an empty-context draft is the model's *prior* guess, which is wrong
+    # exactly when memory is needed -- and a wrong draft inverts logprob-MIG (the gold memory
+    # contradicts the wrong guess and scores lowest). Conditioning the draft on the pool makes
+    # a_hat the model's best answer given the retrieved evidence, which is what MIG should
+    # measure support for. See BFCL_MIG_RERANKER_GUIDE.md ("Experiment findings").
+    draft_from_pool: bool = True
     max_draft_tokens: int = 96
     draft_temperature: float = 0.0
     judge_temperature: float = 0.0
@@ -124,6 +131,7 @@ class MIGConfig:
             halt_tau=_env_float("MIG_HALT_TAU", 0.0),
             min_gain=_env_float("MIG_MIN_GAIN", float("-inf")),
             use_draft=_env_bool("MIG_DRAFT", True),
+            draft_from_pool=_env_bool("MIG_DRAFT_FROM_POOL", True),
             max_draft_tokens=_env_int("MIG_MAX_DRAFT_TOKENS", 96),
             draft_temperature=_env_float("MIG_DRAFT_TEMPERATURE", 0.0),
             judge_temperature=_env_float("MIG_JUDGE_TEMPERATURE", 0.0),
@@ -311,7 +319,14 @@ class MIGReranker:
         return self._select_flat(question, candidates, prior_selected_texts, budget)
 
     def _select_flat(self, question, candidates, prior_selected_texts, budget):
-        a_hat = self._draft(question, prior_selected_texts) if self.config.use_draft else ""
+        a_hat = ""
+        if self.config.use_draft:
+            draft_ctx = list(prior_selected_texts)
+            if self.config.draft_from_pool:
+                # Seed the draft with the retrieved evidence so a_hat is the best answer given
+                # the pool, not the model's (often wrong) zero-context prior.
+                draft_ctx = draft_ctx + [c.text for c in candidates]
+            a_hat = self._draft(question, draft_ctx)
         scored = []
         for cand in candidates:
             s = self.score(question, a_hat, prior_selected_texts, cand)
@@ -340,7 +355,14 @@ class MIGReranker:
         selected_texts = list(prior_selected_texts)
         steps = []
         while pool and len(selected) < budget:
-            a_hat = self._draft(question, selected_texts) if self.config.use_draft else ""
+            a_hat = ""
+            if self.config.use_draft:
+                draft_ctx = list(selected_texts)
+                # On the first step nothing is selected yet; seed the draft with the remaining
+                # pool so a_hat isn't the model's wrong zero-context prior (see _select_flat).
+                if self.config.draft_from_pool and not selected:
+                    draft_ctx = draft_ctx + [c.text for c in pool]
+                a_hat = self._draft(question, draft_ctx)
             best_cand, best_score = None, float("-inf")
             round_scores = []
             for cand in pool:
@@ -376,10 +398,15 @@ class MIGReranker:
         if scorer == "judge":
             return self._judge(question, a_hat, cand.text)
         if scorer == "logprob":
+            if self._logprob_supported is False:
+                # Endpoint doesn't support echo logprobs -> degrade the whole scorer to similarity.
+                return cand.prior_score
             val = self._mig_logprob(question, a_hat, selected_texts, cand.text)
             if val is None:
-                # Endpoint doesn't support echo logprobs -> degrade to prior similarity.
-                return cand.prior_score
+                # This candidate's span was unmeasurable (but the endpoint works). MIG values
+                # are in logp units (often negative), so falling back to the similarity scale
+                # would wrongly outrank them -> rank this one last instead.
+                return float("-inf")
             return val
         # similarity / unknown -> use the backend's own score
         return cand.prior_score
@@ -458,10 +485,11 @@ class MIGReranker:
         without_prefix, _ = self._logprob_context(question, selected_texts, a_hat)
         lp_with = self._answer_logprob(with_prefix, answer)
         lp_without = self._answer_logprob(without_prefix, answer)
+        # ``_answer_logprob`` sets ``self._logprob_supported`` when it can tell the endpoint
+        # structurally lacks prompt logprobs. A ``None`` here without that flag set just means
+        # this particular span had no countable tokens (transient) -> degrade this one candidate.
         if lp_with is None or lp_without is None:
-            self._logprob_supported = False
             return None
-        self._logprob_supported = True
         return lp_with - lp_without
 
     def _logprob_context(self, question: str, texts: list[str], a_hat: str) -> tuple[str, str]:
@@ -495,9 +523,15 @@ class MIGReranker:
             token_logprobs = lp.token_logprobs
             text_offset = lp.text_offset
         except (AttributeError, IndexError, TypeError):
+            # The endpoint returned no logprobs structure at all -> it doesn't support echo
+            # logprobs. Disable the scorer once so callers degrade to similarity.
+            self._logprob_supported = False
             return None
         if not token_logprobs or not text_offset:
+            self._logprob_supported = False
             return None
+        # We did get a logprobs structure, so the endpoint supports it.
+        self._logprob_supported = True
         boundary = len(prefix)
         total = 0.0
         counted = 0

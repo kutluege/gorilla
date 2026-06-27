@@ -172,6 +172,23 @@ selected texts. Because the full widened pool is preserved in the standard infer
 
 ---
 
+## 6b. Experiment findings (live Qwen3-4B, 2026-06-27)
+
+A controlled live experiment (`bfcl_eval/scripts/mig_live_experiment.py`, full results in
+`BFCL_MIG_EXPERIMENT_RESULTS.md`) on real memory data confirms the method works:
+
+- **`scorer=judge` is the best arm in every cell** — gold-selection recall@k = **1.000**
+  across scenarios/budgets vs 0.80–0.97 for the similarity baseline; answer accuracy at or
+  above the noisy full pool, and well above similarity-trim under hard negatives / tight budgets.
+- The experiment caught and fixed a **real bug**: flat `scorer=logprob` scored 0.000 because it
+  drafted `a_hat` from empty context (wrong prior guess → gold contradicts it → ranked last).
+  The fix — **`draft_from_pool=True`** (now default, env `MIG_DRAFT_FROM_POOL`) — restores
+  recall to 0.88–1.00. A `None`-logprob poisoning bug was fixed alongside.
+- **Recommendation:** use `scorer=judge` as the default. The reranker needs **no fine-tuning**
+  (judge selection is already ~perfect); if you fine-tune, spend a LoRA on *answer
+  generation + format compliance*, which is where the residual ~10–15% error lives. See
+  `BFCL_MIG_EXPERIMENT_RESULTS.md` §5.
+
 ## 7. Validation status
 
 - **Offline unit tests** (no GPU / server) — pool widening, multi-backend candidate parsing,
