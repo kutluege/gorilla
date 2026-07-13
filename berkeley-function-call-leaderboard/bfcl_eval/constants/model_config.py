@@ -59,6 +59,7 @@ from bfcl_eval.model_handler.local_inference.quick_testing_oss import (
 )
 from bfcl_eval.model_handler.local_inference.qwen import QwenHandler
 from bfcl_eval.model_handler.local_inference.qwen_fc import QwenFCHandler
+from bfcl_eval.model_handler.local_inference.qwen_gov import QwenGovHandler
 from bfcl_eval.model_handler.local_inference.qwen_mig import QwenMIGHandler
 from bfcl_eval.model_handler.local_inference.nanbeige_fc import NanbeigeFCHandler
 from bfcl_eval.model_handler.local_inference.salesforce_llama import (
@@ -1669,6 +1670,25 @@ local_inference_model_map = {
         org="Qwen",
         license="apache-2.0",
         model_handler=QwenMIGHandler,
+        input_price=None,
+        output_price=None,
+        is_fc_model=True,
+        underscore_to_dot=False,
+    ),
+    # Stage 0 geometric-governance variant of Qwen3-4B-Instruct-2507-FC. Intercepts
+    # memory write calls (KV/Vector backends only) and suppresses geometrically
+    # redundant writes (ABTT-whitened sim_max + QR residual + verbatim-value gate);
+    # ambiguous cases fall through to the normal write until Stage 1 (NLI) / Stage 2
+    # (Retrieval Entropy) land. Configured via GOV_* env vars (see
+    # bfcl_eval/model_handler/middleware/governance_filter.py). Uses its own registry
+    # id so the -FC baseline stays byte-identical for A/B comparison.
+    "Qwen/Qwen3-4B-Instruct-2507-FC-GOV": ModelConfig(
+        model_name="Qwen/Qwen3-4B-Instruct-2507",
+        display_name="Qwen3-4B-Instruct-2507 (FC + Stage-0 Memory Governor)",
+        url="https://huggingface.co/Qwen/Qwen3-4B-Instruct-2507",
+        org="Qwen",
+        license="apache-2.0",
+        model_handler=QwenGovHandler,
         input_price=None,
         output_price=None,
         is_fc_model=True,
