@@ -1,0 +1,14 @@
+{
+    "core_memory": {
+        "next_id": 1,
+        "store": {
+            "0": "Type 2 Diabetes: Currently on metformin 1000 mg twice daily. A1C around 6.9%. Added semaglutide(Ozempic) at low dose as per doctor's suggestion. Noted improvement in appetite control. Fasting blood sugar typically between 125-130 mg/dL."
+        }
+    },
+    "archival_memory": {
+        "next_id": 1,
+        "store": {
+            "0": "Osteoarthritis: Takes acetaminophen as needed for mild pain. Uses meloxicam 7.5 mg when joints(knees, hands) are particularly stiff or inflamed. Does not take it daily to avoid overuse of NSAIDs. Doctor suggested glucosamine supplements; effect not yet confirmed.\n\nVitamin D & Bone Health: Vitamin D3 2,000 IU daily due to low levels(22 ng/mL; normal >30 ng/mL). Also takes calcium supplements due to early osteopenia on bone density scan. Doctor recommends combining with vitamin K2 to improve absorption.\n\nCholesterol Management: On atorvastatin 10 mg daily. Initial LDL: 130 mg/dL, triglycerides: 140 mg/dL. Doctor prescribed low-dose statin to improve lipid profile. Cholesterol levels have improved, and no side effects reported(e.g., muscle aches).\n\nGeneral Health: Daily multivitamin, omega-3 supplements for heart health, and probiotics for digestion. Takes digestive enzymes when eating heavier meals due to gallbladder removal. Digestive system now more mindful of fatty foods.\n\nMedication Interactions & Safety Notes: Avoid frequent use of meloxicam(NSAID) due to potential kidney impact when combined with losartan(an ACE inhibitor). Takes levothyroxine separately from calcium and iron supplements to prevent absorption interference."
+        }
+    }
+}

@@ -264,6 +264,22 @@ class OSSHandler(BaseHandler, EnforceOverrides):
                     # If the connection is not ready, wait and try again
                     time.sleep(1)
 
+            # The serving endpoint may enforce a smaller context window than the model
+            # config reports (e.g. vLLM --max-model-len); the server's limit is
+            # authoritative, otherwise long prompts 400 with "maximum context length".
+            try:
+                served_models = requests.get(f"{self.base_url}/models").json().get("data", [])
+                served_limits = [
+                    m["max_model_len"] for m in served_models if m.get("max_model_len")
+                ]
+                if served_limits and min(served_limits) < self.max_context_length:
+                    self.max_context_length = min(served_limits)
+                    print(
+                        f"Capped max_context_length to served max_model_len: {self.max_context_length}"
+                    )
+            except Exception as e:
+                print(f"Could not query served max_model_len ({e}); keeping config value")
+
             # Signal threads to stop reading output
             self._stop_event.set()
 

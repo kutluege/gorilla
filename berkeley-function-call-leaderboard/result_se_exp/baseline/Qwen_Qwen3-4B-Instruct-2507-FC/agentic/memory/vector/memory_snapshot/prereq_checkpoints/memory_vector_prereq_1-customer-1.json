@@ -1,0 +1,17 @@
+{
+    "core_memory": {
+        "next_id": 2,
+        "store": {
+            "0": "User Michael, 35, lives in Seattle, freelance graphic designer, values design aesthetics, seeks espresso machine with user-friendly features for non-professionals, sleek modern stainless-steel finish, caf\u00e9-like home experience.",
+            "1": "User Michael, 35, Seattle, freelance graphic designer, wants stainless-steel espresso machine with steam wand, user-friendly, compact for 38 sq ft kitchen, first-time buyer, eligible for 17% off."
+        }
+    },
+    "archival_memory": {
+        "next_id": 3,
+        "store": {
+            "0": "User Michael, 35, lives in Seattle, freelance graphic designer, seeks espresso machine with user-friendly features, sleek stainless-steel finish, caf\u00e9-like experience. Inquired about pricing, new customer discount(SEATTLE15), morning routine bundle, shipping(local warehouse in Portland, 1-5 business days), detailed product specs(dimensions, cleaning, footprint), warranty policy, and temperature performance. Specifically concerned about reliable hot coffee\u2014no microwaving\u2014and wants to know if machines have adjustable temperature settings or consistently produce hot brews.",
+            "1": "User Michael, 35, Seattle, freelance graphic designer, seeks stainless-steel espresso machine with steam wand, user-friendly, compact for 38 sq ft kitchen, first-time buyer, eligible for 17% off with code FIRST17, inquires about payment options including credit card, PayPal, Apple Pay, and financing(no-interest for 6 months).",
+            "2": "User Michael, 35, Seattle, freelance graphic designer, seeks stainless-steel espresso machine with steam wand, user-friendly, compact for 38 sq ft kitchen, first-time buyer, eligible for 17% off with code FIRST17, inquires about payment options including credit card, PayPal, Apple Pay, and financing(0% interest for 6 months), concerned about shipping times for event at end of month, wants estimated arrival date and options for expedited shipping, asks about free shipping thresholds and whether adding accessories(extra filters, stainless-steel frothing pitcher) could qualify for free standard shipping, inquires about real-time order tracking and weather-related package safety in Seattle, asks about return/exchange policy with no shipping fees for defects or size issues, and now inquires about coffee bean and grinder recommendations\u2014specifically a small, aesthetically pleasing grinder that pairs well with a stainless-steel espresso machine and supports fresh grinding for optimal flavor."
+        }
+    }
+}

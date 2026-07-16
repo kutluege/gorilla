@@ -1,0 +1,15 @@
+{
+    "core_memory": {
+        "next_id": 1,
+        "store": {
+            "0": "Fasting blood glucose: 135 mg/dL(above ideal target of <100 mg/dL). A1C: 6.9% (slightly above target of 6.5%). Home morning readings: 125\u2013130 mg/dL. Doctor's recommendations: Increase dietary fiber, add light exercise after meals."
+        }
+    },
+    "archival_memory": {
+        "next_id": 2,
+        "store": {
+            "0": "Blood pressure: Last check-up reading 138/85 mmHg(on the high side). Target: <130/80 mmHg. Home readings fluctuate between 135-140 systolic and 80-90 diastolic, influenced by stress and salt intake. Actions: Reducing sodium intake, increasing water consumption\u2014showing improvement.",
+            "1": "Vitamin D levels: 22 ng/mL(deficient; normal range: 30-50 ng/mL). Doctor\u2019s action: Started 2,000 IU daily supplement. Follow-up: Retest in 3\u20134 months to monitor improvement. Thyroid: TSH 2.1 mIU/L(normal range: 0.5\u20134.5 mIU/L), T4 1.2 ng/dL(within target). Stable, indicating current levothyroxine dosage is effective. Regular monitoring continues due to past hypothyroidism history. Bone density: Spine T-score -1.8 (osteopenia), Hip T-score -1.5 (borderline). Doctor's advice: Continue strength training and increase calcium intake. Actions: Added dairy and leafy greens to diet; now taking calcium supplement with vitamin K2 for better absorption. Liver & kidney function: ALT 42 U/L(slightly elevated; normal <35 U/L), possibly linked to recent medication changes. Creatinine 0.9 mg/dL(within normal range 0.6\u20131.2 mg/dL)\u2014no kidney concerns. Doctor\u2019s plan: Monitor ALT closely, reassess medication if needed. Inflammatory markers: CRP 3.2 mg/L(slightly elevated; ideal <3.0 mg/L), likely related to osteoarthritis. ESR 18 mm/hr(within normal range 0-20 mm/hr)\u2014no major inflammation detected."
+        }
+    }
+}

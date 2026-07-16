@@ -1,0 +1,33 @@
+login: ssh boga771710@alogin1.bsc.es 
+şifre: Jj5w6Dvm
+
+SERVE ETTİĞİN YER:
+/gpfs/scratch/ehpc540/users/ege/tez
+
+Modellerin durduğu yer:
+MODEL_PATH="/gpfs/scratch/ehpc540/models/Qwen3-4B-Instruct-2507"
+
+ls
+virtual env on bfcl benchmark:
+.\venv\Scripts\Activate.ps1
+
+
+
+TUNNELLING
+mkdir -p ~/socketdir
+chmod 700 ~/socketdir
+cd ~/socketdir
+If you already create this directory run rm -f vllm.sock
+
+ssh -L ./vllm.sock:localhost:8000 as02r5b13
+
+ssh -L 8000:/home/boga/boga771710/socketdir/vllm.sock boga771710@alogin1.bsc.es
+LEAVE THOSE TWO TERMINAL OPEN AND YOU CAN REACH THEM WITH CURL:
+curl -X POST http://localhost:8000/v1/chat/completions \
+  -H "Content-Type: application/json" \
+  -d '{
+    "model": "/apps/ai-hub/models/multimodal-models/Llama-4-Scout-17B-16E-Instruct",
+    "messages": [
+      {"role": "user", "content": "What is the capital of Turkey?"}
+    ]
+  }'

@@ -1,0 +1,16 @@
+{
+    "core_memory": {
+        "next_id": 1,
+        "store": {
+            "0": "User Michael, inquires about temperature control in coffee machines, concerns about cold brews and microwaving coffee. Seeks reliably hot coffee with adjustable temperature settings in espresso or drip models. Values design, ease of use, and temperature precision."
+        }
+    },
+    "archival_memory": {
+        "next_id": 3,
+        "store": {
+            "0": "User Michael, first-time buyer, inquires about shipping from local warehouse, delivery time frame, and availability before family gathering in Seattle. Interested in stainless-steel espresso machine with modern design, seeking fast and reliable delivery during rainy season.",
+            "1": "User Michael, concerned about kitchen counter space and appliance layout, specifically asks for precise dimensions of the Aurora ES-300 espresso machine to assess impact on existing setup. Wants to avoid 'kitchen Tetris' and ensure smooth integration with current appliances.",
+            "2": "User Michael, inquires about warranty policy for coffee machines, specifically looking for long-term, customer-friendly coverage. Expresses concern about past negative experiences with short warranties and poor service. Seeks reassurance on quality guarantee for higher-end models like Aurora ES-300."
+        }
+    }
+}

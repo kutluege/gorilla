@@ -1,0 +1,12 @@
+{
+    "core_memory": {
+        "next_id": 1,
+        "store": {
+            "0": "Fasting glucose: 135 mg/dL(above <100). A1C: 6.9% (above 6.5). Recommendations: Increase fiber, light exercise after meals. Morning readings: 125\u2013130 mg/dL. \nBP: Clinic 138/85 mmHg(target <130/80). Home: 135\u2013140/80\u201390. Stress and salt key factors. Reducing sodium and drinking more water is helping."
+        }
+    },
+    "archival_memory": {
+        "next_id": 0,
+        "store": {}
+    }
+}

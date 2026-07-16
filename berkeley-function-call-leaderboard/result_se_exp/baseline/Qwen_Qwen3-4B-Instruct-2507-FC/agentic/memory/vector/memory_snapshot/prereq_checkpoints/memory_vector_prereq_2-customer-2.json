@@ -1,0 +1,17 @@
+{
+    "core_memory": {
+        "next_id": 2,
+        "store": {
+            "0": "User Michael, 35, lives in Seattle, freelance graphic designer, values design aesthetics, seeks espresso machine with user-friendly features for non-professionals, sleek modern stainless-steel finish, caf\u00e9-like home experience.",
+            "1": "User Michael, 35, Seattle, wants stainless-steel espresso machine with steam wand, compact, user-friendly, for 38 sq ft kitchen, first-time buyer, 17% off, ordered with frothing pitcher and filters, 11-day delivery estimate, shipping delay, tracking stuck, latte art showdown for family gathering."
+        }
+    },
+    "archival_memory": {
+        "next_id": 3,
+        "store": {
+            "0": "User Michael, 35, lives in Seattle, freelance graphic designer, seeks espresso machine with user-friendly features, sleek stainless-steel finish, caf\u00e9-like experience. Inquired about pricing, new customer discount(SEATTLE15), morning routine bundle, shipping(local warehouse in Portland, 1-5 business days), detailed product specs(dimensions, cleaning, footprint), warranty policy, and temperature performance. Specifically concerned about reliable hot coffee\u2014no microwaving\u2014and wants to know if machines have adjustable temperature settings or consistently produce hot brews.",
+            "1": "User Michael, 35, Seattle, freelance graphic designer, seeks stainless-steel espresso machine with steam wand, user-friendly, compact for 38 sq ft kitchen, first-time buyer, eligible for 17% off with code FIRST17, inquires about payment options including credit card, PayPal, Apple Pay, and financing(no-interest for 6 months).",
+            "2": "User Michael, 35, Seattle, freelance graphic designer, seeks stainless-steel espresso machine with steam wand, user-friendly, compact for 38 sq ft kitchen, first-time buyer, eligible for 17% off with code FIRST17, inquires about payment options, financing(0% interest for 6 months), free shipping thresholds, real-time tracking, weather-related package safety, return/exchange policy(no shipping fees for lost/damaged), and now specifically requests to be available for signature upon delivery, especially during rainy weather, to prevent soggy or damaged packages."
+        }
+    }
+}

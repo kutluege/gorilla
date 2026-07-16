@@ -1,0 +1,16 @@
+{
+    "core_memory": {
+        "next_id": 1,
+        "store": {
+            "0": "Michael from Seattle wants a stainless-steel espresso machine with reliable hot coffee, adjustable temperature, and compact size. Concerned about under-heated coffee. Wants to avoid microwaving. Interested in 3-year warranty, free extension, and first-time discount(SEATTLEDESIGN)."
+        }
+    },
+    "archival_memory": {
+        "next_id": 3,
+        "store": {
+            "0": "Michael from Seattle wants a stainless-steel espresso machine with reliable hot coffee, adjustable temperature, and compact size. Concerned about under-heated coffee. Wants to avoid microwaving. Interested in 3-year warranty, free extension, and first-time discount(SEATTLEDESIGN). Has expressed concern about rainy weather damaging packages. Requests to be available to receive delivery in person, especially if signature is required. Will adjust work schedule to accommodate delivery. Wants to be notified immediately if delivery is expected within the next 24\u201348 hours.",
+            "1": "Michael from Seattle is concerned about kitchen space and appliance placement. He wants precise dimensions of the espresso machine to avoid 'kitchen Tetris' and ensure it fits well with existing appliances on his countertop. Specifically interested in width, depth, and height measurements.",
+            "2": "Michael from Seattle is inquiring about warranty policy for espresso machine. Concerned about short warranty periods from other brands and wants assurance of a robust, customer-friendly quality guarantee, especially for higher-end models."
+        }
+    }
+}

@@ -1,0 +1,14 @@
+{
+    "core_memory": {
+        "next_id": 1,
+        "store": {
+            "0": "User Michael, 35, lives in Seattle, freelance graphic designer, values design aesthetics, seeks sleek stainless-steel espresso machine with easy-to-use features for caf\u00e9-like experience at home, prioritizes style and simplicity over professional barista skills."
+        }
+    },
+    "archival_memory": {
+        "next_id": 1,
+        "store": {
+            "0": "User Michael, 35, lives in Seattle, freelance graphic designer, seeks sleek stainless-steel espresso machine with easy-to-use features for caf\u00e9-like experience at home, prefers first-time buyer discounts and promotional offers, inquires about shipping from local warehouse, delivery time frame, and availability before a family gathering later this month, values detailed product information on brewing frequency, cleaning complexity, footprint size, and kitchen space compatibility, specifically concerned about counter space and potential need for rearranging appliances, inquires about warranty policy and quality guarantees for higher-end models, and now specifically asks about temperature control\u2014especially whether machines produce reliably hot coffee to avoid microwaving."
+        }
+    }
+}

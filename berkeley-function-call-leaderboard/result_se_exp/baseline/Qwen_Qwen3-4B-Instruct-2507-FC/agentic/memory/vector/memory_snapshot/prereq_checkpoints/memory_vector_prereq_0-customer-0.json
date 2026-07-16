@@ -1,0 +1,14 @@
+{
+    "core_memory": {
+        "next_id": 1,
+        "store": {
+            "0": "User Michael, 35, lives in Seattle, freelance graphic designer, values design aesthetics, seeks espresso machine with user-friendly features for non-professionals, sleek modern stainless-steel finish, caf\u00e9-like home experience."
+        }
+    },
+    "archival_memory": {
+        "next_id": 1,
+        "store": {
+            "0": "User Michael, 35, lives in Seattle, freelance graphic designer, seeks espresso machine with user-friendly features, sleek stainless-steel finish, caf\u00e9-like experience. Inquired about pricing, new customer discount(SEATTLE15), morning routine bundle, shipping(local warehouse in Portland, 1-5 business days), detailed product specs(dimensions, cleaning, footprint), warranty policy, and temperature performance. Specifically concerned about reliable hot coffee\u2014no microwaving\u2014and wants to know if machines have adjustable temperature settings or consistently produce hot brews."
+        }
+    }
+}

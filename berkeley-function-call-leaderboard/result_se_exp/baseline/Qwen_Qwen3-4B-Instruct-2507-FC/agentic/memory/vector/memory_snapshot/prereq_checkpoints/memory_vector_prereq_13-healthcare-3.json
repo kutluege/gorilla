@@ -1,0 +1,14 @@
+{
+    "core_memory": {
+        "next_id": 1,
+        "store": {
+            "0": "Recent bloodwork: Fasting glucose 135 mg/dL, HbA1C 6.9%. Morning readings 125-130 mg/dL. Doctor advised increasing fiber intake and adding light exercise after meals. Action plan: Focus on high-fiber foods, spread carbs, walk after meals, monitor daily, follow up in 3-4 weeks."
+        }
+    },
+    "archival_memory": {
+        "next_id": 1,
+        "store": {
+            "0": "Vitamin D test: Level 22 ng/mL(deficient). Normal range: 30-50 ng/mL. Doctor prescribed 2,000 IU daily supplement. Next test in 3-4 months to monitor improvement.\n\nThyroid results: TSH 2.1 mIU/L(normal range 0.5-4.5 mIU/L), T4 1.2 ng/dL(good). Stable\u2014current levothyroxine dosage is effective. Regular monitoring continues due to past hypothyroidism history.\n\nBone density: Spine T-score -1.8 (osteopenia), hip T-score -1.5 (borderline). Doctor advised strength training and increased calcium intake. Actions: Added dairy and leafy greens; now taking calcium supplement with vitamin K2 for better absorption.\n\nLiver/kidney function: ALT 42 U/L(elevated, normal <35 U/L). Doctor suspects link to recent medication changes. Creatinine 0.9 mg/dL(normal range 0.6-1.2 mg/dL)\u2014kidney function is normal. Monitoring advised.\n\nInflammatory markers: CRP 3.2 mg/L(slightly elevated; ideal <3.0 mg/L), ESR 18 mm/hr(normal range 0-20 mm/hr). Mild inflammation likely related to osteoarthritis. No major systemic inflammation detected."
+        }
+    }
+}

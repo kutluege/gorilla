@@ -1,0 +1,16 @@
+{
+    "core_memory": {
+        "next_id": 2,
+        "store": {
+            "0": "User Michael, 35, lives in Seattle, freelance graphic designer, values design aesthetics, seeks sleek, modern stainless-steel espresso machines with user-friendly features for non-professional users, aiming for a caf\u00e9-like home coffee experience.",
+            "1": "User Michael, 35, Seattle-based freelance designer, prefers stainless-steel espresso machines with steam wands for milk frothing. Aims for caf\u00e9-style drinks like lattes and cappuccinos. Kitchen is 38 sq ft; may need to relocate toaster oven to fit machine."
+        }
+    },
+    "archival_memory": {
+        "next_id": 2,
+        "store": {
+            "0": "User Michael, 35, lives in Seattle, freelance graphic designer, seeks sleek, modern stainless-steel espresso machine with user-friendly features. Interested in pricing, first-time buyer discounts, shipping, detailed product specs, kitchen space, warranty, and temperature control. Specifically asks about adjustable temperature settings or reliable hot coffee output, noting past issues with drip machines that don\u2019t heat sufficiently and a preference to avoid microwaving coffee.",
+            "1": "User Michael, 35, Seattle-based freelance designer, seeks a stainless-steel espresso machine with steam wand for milk-based drinks. Currently in the checkout process and looking for guidance on applying a new-customer 17% off discount(code: SEATTLE17). Also inquiring about payment options: prefers credit card, open to PayPal and Apple Pay, and is curious about no-interest financing(e.g., 6-month 0% interest) for pricier items. Will use financing only if available and clearly advertised. Additional concern about shipping times \u2014 specifically, wants to know estimated arrival date for a machine ordered for an event at the end of the month. Aware of regional shipping delays in Seattle due to weather and logistics. Seeks clarity on processing time(typically 1\u20132 days) and shipping time(3\u20137 days for in-state, 7\u201314 days for out-of-state). Interested in expedited shipping as a contingency option if needed. Now also asking about shipping thresholds: whether there's a free standard shipping threshold(e.g., $300+), and if adding accessories(like extra filters or a stainless-steel frothing pitcher) could help qualify. Confirms that even a small expedited fee is acceptable if it ensures timely delivery for an upcoming event. Now adds a specific concern about real-time order tracking \u2014 especially in Seattle's rainy weather. Wants to know if he can track the package in real time to monitor its progress, including arrival at local distribution centers. Emphasizes the importance of avoiding soggy packages due to prolonged exposure to rain on the doorstep. Seeks confirmation that tracking is available and how to access it. Now inquires about return/exchange policy: specifically, whether shipping costs are covered if returning due to defect or size mismatch. Expresses caution based on past negative experiences with brands that made returns difficult. Seeks clear, transparent policy with no hidden fees."
+        }
+    }
+}
