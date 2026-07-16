@@ -1,0 +1,14 @@
+{
+    "core_memory": {
+        "next_id": 1,
+        "store": {
+            "0": "Recent blood glucose and A1C results: Fasting glucose 135 mg/dL(target <100 mg/dL), A1C 6.9% (target 6.5%). Doctor recommended increasing dietary fiber and light post-meal exercise. Morning home readings consistently 125\u2013130 mg/dL."
+        }
+    },
+    "archival_memory": {
+        "next_id": 1,
+        "store": {
+            "0": "Vitamin D levels: 22 ng/mL(deficient; normal range 30-50 ng/mL). Doctor prescribed 2,000 IU daily supplement. Scheduled retest in 3-4 months to monitor improvement.\n\nThyroid results: TSH 2.1 mIU/L(normal range 0.5-4.5 mIU/L), T4 1.2 ng/dL(within target). Stable and consistent with previous readings. Levothyroxine dosage is effective and well-tolerated.\n\nBone density scan: Spine T-score -1.8 (osteopenia), Hip T-score -1.5 (borderline). Doctor advised strength training and increased calcium intake to prevent further bone loss. Started adding dairy and leafy greens to diet, and now taking calcium supplement with vitamin K2 for better absorption.\n\nLiver and kidney function: ALT 42 U/L(elevated; normal <35 U/L), possibly linked to recent medication changes. Creatinine 0.9 mg/dL(within normal range 0.6-1.2 mg/dL) \u2014 no kidney concerns. Doctor recommends monitoring ALT closely and reviewing medication regimen.\n\nInflammatory markers: CRP 3.2 mg/L(slightly elevated; ideal <3.0 mg/L), likely related to osteoarthritis. ESR 18 mm/hr(within normal range 0-20 mm/hr) \u2014 no major inflammation detected."
+        }
+    }
+}

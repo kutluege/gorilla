@@ -1,0 +1,14 @@
+{
+    "core_memory": {
+        "next_id": 1,
+        "store": {
+            "0": "Metformin 1000 mg twice daily for Type 2 Diabetes. Recently added semaglutide(Ozempic) at a low dose as a GLP-1 receptor agonist. A1C: 6.9% (slightly above target of 6.5%). Fasting blood glucose: consistently between 125\u2013130 mg/dL. Benefit: improved appetite control with semaglutide."
+        }
+    },
+    "archival_memory": {
+        "next_id": 1,
+        "store": {
+            "0": "Levothyroxine 75 mcg every morning on an empty stomach, with at least 30 minutes before eating. Last TSH: 2.1 mIU/L(within normal range). No dosage changes needed. Notice: feeling sluggish if a dose is missed; uses a pill organizer to stay on track. Acetaminophen as needed for mild pain. Meloxicam 7.5 mg prescribed for flare-ups(knees and hands); taken only when joints are stiff, not daily to avoid overuse of NSAIDs. Doctor\u2019s suggestion: try glucosamine supplements; effect not yet confirmed. Vitamin D3: 2,000 IU daily(corrected from 22 ng/mL to >30 ng/mL). Calcium supplements due to early osteopenia on bone density scan. Doctor\u2019s recommendation: combine with vitamin K2 to improve absorption. Atorvastatin 10 mg daily for cholesterol management. Initial LDL: 130 mg/dL, triglycerides: 140 mg/dL. Cholesterol levels improving; no side effects reported(e.g., muscle aches), which is reassuring."
+        }
+    }
+}

@@ -1,0 +1,16 @@
+{
+    "core_memory": {
+        "next_id": 2,
+        "store": {
+            "0": "Recent blood glucose and A1C results: Fasting glucose 135 mg/dL(target <100 mg/dL), A1C 6.9% (target 6.5%). Doctor recommended increasing dietary fiber and light post-meal exercise. Morning home readings consistently 125\u2013130 mg/dL.",
+            "1": "Type 2 Diabetes: Currently on metformin 1000 mg twice daily. A1C remains around 6.9% (target 6.5%). Doctor has recommended adding semaglutide(Ozempic) at a low dose. Noted improvement in appetite control. Fasting blood glucose at home consistently between 125\u2013130 mg/dL."
+        }
+    },
+    "archival_memory": {
+        "next_id": 2,
+        "store": {
+            "0": "Vitamin D levels: 22 ng/mL(deficient; normal range 30-50 ng/mL). Doctor prescribed 2,000 IU daily supplement. Scheduled retest in 3-4 months to monitor improvement.\n\nThyroid results: TSH 2.1 mIU/L(normal range 0.5-4.5 mIU/L), T4 1.2 ng/dL(within target). Stable and consistent with previous readings. Levothyroxine dosage is effective and well-tolerated.\n\nBone density scan: Spine T-score -1.8 (osteopenia), Hip T-score -1.5 (borderline). Doctor advised strength training and increased calcium intake to prevent further bone loss. Started adding dairy and leafy greens to diet, and now taking calcium supplement with vitamin K2 for better absorption.\n\nLiver and kidney function: ALT 42 U/L(elevated; normal <35 U/L), possibly linked to recent medication changes. Creatinine 0.9 mg/dL(within normal range 0.6-1.2 mg/dL) \u2014 no kidney concerns. Doctor recommends monitoring ALT closely and reviewing medication regimen.\n\nInflammatory markers: CRP 3.2 mg/L(slightly elevated; ideal <3.0 mg/L), likely related to osteoarthritis. ESR 18 mm/hr(within normal range 0-20 mm/hr) \u2014 no major inflammation detected.",
+            "1": "Osteoarthritis: Takes acetaminophen as needed for mild pain. Uses meloxicam 7.5 mg when joints are particularly stiff(knees and hands), but does not take it daily to avoid overuse of NSAIDs. Doctor suggested glucosamine supplements, but effect not yet confirmed. \n\nVitamin D and Bone Health: Vitamin D3 2,000 IU daily due to low levels(22 ng/mL; normal >30 ng/mL). Also taking calcium supplements due to early osteopenia on bone density scan. Doctor recommends combining with vitamin K2 to improve absorption and bone health. \n\nCholesterol Management: On atorvastatin 10 mg daily. Initial LDL: 130 mg/dL, triglycerides: 140 mg/dL. Doctor prescribed low-dose statin to improve lipid profile. Cholesterol levels have improved, and no side effects reported(e.g., muscle aches), which is reassuring. \n\nGeneral Health: Takes a daily multivitamin, omega-3 supplements for heart health, and probiotics for digestion. Since gallbladder was removed years ago, occasionally takes digestive enzymes when consuming heavier meals. Digestive system now requires more care with fatty foods due to altered bile flow. \n\nMedication Interactions: Aware of potential risks with NSAIDs and kidney function. Avoids frequent use of meloxicam due to concern with losartan(an ACE inhibitor). Also takes thyroid medication(levothyroxine) separately from calcium and iron supplements to prevent interference with absorption."
+        }
+    }
+}

@@ -1,0 +1,12 @@
+{
+    "core_memory": {
+        "next_id": 1,
+        "store": {
+            "0": "User Michael, 35, lives in Seattle, freelance graphic designer, concerned about temperature reliability in coffee machines. Wants consistently hot coffee without microwaving. Looking for adjustable temperature settings or guaranteed hot brews."
+        }
+    },
+    "archival_memory": {
+        "next_id": 0,
+        "store": {}
+    }
+}

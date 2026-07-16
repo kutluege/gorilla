@@ -1,0 +1,19 @@
+{
+    "core_memory": {
+        "next_id": 5,
+        "store": {
+            "0": "User Michael, 35, lives in Seattle, freelance graphic designer, seeks stainless-steel espresso machine with reliable hot coffee and adjustable temperature settings to avoid microwaving.",
+            "1": "User Michael, 35, seeks stainless-steel espresso machine with steam wand. Shipping status stuck: tracking shows package in transit outside Washington, no updates in over a week. Requesting escalation to customer support for resolution and expedited delivery.",
+            "2": "Michael's order status is stuck with no updates in over a week. No weather-related carrier delays observed. Likely internal fulfillment or tracking error. Escalated to customer support for root cause and timeline.",
+            "3": "Lost/damaged shipment process: we file carrier claims on behalf of customers. No action needed. High-value items(like espresso machines) get expedited replacement with complimentary return shipping. Full refund or replacement issued. Policy is fully covered under our return and exchange program.",
+            "4": "Michael requests to be home for delivery of espresso machine due to past soggy package issues in rain. He wants notification if delivery is scheduled for tomorrow or soon. Requires signature presence to avoid package being left on truck or damaged. Will adjust work schedule to accommodate delivery."
+        }
+    },
+    "archival_memory": {
+        "next_id": 2,
+        "store": {
+            "0": "Michael's original order included a stainless-steel espresso machine with steam wand, a stainless-steel frothing pitcher, and extra filters. Estimated delivery was 11 business days via regular shipping. All items were in stock at checkout. No back-order or supply shortage was anticipated. Current issue: shipping status is stuck, with no updates in over a week, despite the original delivery timeline being reasonable.",
+            "1": "Michael is seeking a realistic delivery timeline for his espresso machine order. Internal system notes confirm the tracking is stuck with no updates in over a week. No weather-related delays observed. Root cause is likely an internal fulfillment or tracking error. Customer support has been escalated to investigate and provide a clear timeline. Proactive notification will be sent if delivery is scheduled for tomorrow or soon. Michael requires signature presence to avoid damage or delay."
+        }
+    }
+}

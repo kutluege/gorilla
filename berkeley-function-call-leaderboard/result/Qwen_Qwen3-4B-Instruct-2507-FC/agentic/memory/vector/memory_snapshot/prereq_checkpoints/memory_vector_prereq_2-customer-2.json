@@ -1,0 +1,15 @@
+{
+    "core_memory": {
+        "next_id": 2,
+        "store": {
+            "0": "User Michael, 35, lives in Seattle, freelance graphic designer, concerned about temperature reliability in coffee machines. Wants consistently hot coffee without microwaving. Looking for adjustable temperature settings or guaranteed hot brews.",
+            "1": "User Michael, 35, Seattle-based. Wants stainless-steel espresso machine with steam wand. 17% off discount. 38 sq ft counter. Shipping: delayed, tracking stuck. Support contacted. Rainy weather may have impacted delivery. Requesting updated timeline or escalation."
+        }
+    },
+    "archival_memory": {
+        "next_id": 1,
+        "store": {
+            "0": "Michael's order: Stainless-steel espresso machine with steam wand, frothing pitcher, and extra filters. Estimated delivery: 11 business days. Free shipping applied due to accessory bundle. All items were in stock at time of order. Current issue: Delivery delayed; tracking status stuck. Customer has contacted support. Inquiry: Confirm if accessories are shipped separately or included in the same package."
+        }
+    }
+}

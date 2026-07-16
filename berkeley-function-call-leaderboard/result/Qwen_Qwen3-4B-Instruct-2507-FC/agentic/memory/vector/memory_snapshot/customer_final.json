@@ -1,0 +1,23 @@
+{
+    "core_memory": {
+        "next_id": 5,
+        "store": {
+            "0": "User Michael, 35, lives in Seattle, freelance graphic designer, concerned about temperature reliability in coffee machines. Wants consistently hot coffee without microwaving. Looking for adjustable temperature settings or guaranteed hot brews.",
+            "1": "User Michael, 35, Seattle-based. Wants stainless-steel espresso machine with steam wand. 17% off discount. 38 sq ft counter. Shipping: delayed, tracking stuck. Support contacted. Rainy weather may have impacted delivery. Requesting updated timeline or escalation.",
+            "2": "User Michael, 35, Seattle. Same address/credit card for both orders. Concerned about past Apple Pay security hold. Requests verification of billing/shipping for second order. Wants assurance no red flags or holds. Prefers proactive communication.",
+            "3": "User Michael, 35, Seattle. Premium Membership: streamlined purchasing, one-click ordering, bonus freebies(sample-size coffee flavors), occasional discount codes on future machines. Seeks frictionless experience for continuous upgrades and experimentation.",
+            "4": "User Michael, 35, Seattle. Loves espresso machine\u2019s consistent crema and steam wand for latte art. Coffee grinder and vacuum-sealed canisters keep beans fresh in humid weather. Digital scale improves brewing consistency. Freshly ground beans enhance flavor and aroma. Progressing in latte art skills."
+        }
+    },
+    "archival_memory": {
+        "next_id": 6,
+        "store": {
+            "0": "Michael's order: Stainless-steel espresso machine with steam wand, frothing pitcher, and extra filters. Estimated delivery: 11 business days. Free shipping applied due to accessory bundle. All items were in stock at time of order. Current issue: Delivery delayed; tracking status stuck. Customer has contacted support. Inquiry: Confirm if accessories are shipped separately or included in the same package.",
+            "1": "User Michael, 35, Seattle. Concerned about shipping discrepancies: Oregon grinder order(shipped from regional warehouse) tracking stuck at 'Label Created\u2014Awaiting Item'; East Coast order(canisters, Garmin scale) now shows 'In Transit' with earlier estimated delivery despite longer distance. Suspects potential mix-up: warehouse delay, backorder, or labeling error. Weather-related delays(heavy rain, flooding) in region may have impacted local shipping. Requesting full carrier confirmation and internal review for both orders.",
+            "2": "User Michael, 35, Seattle. Concerned about potential shipment splitting: Grinder bundle(Oregon) might be split(e.g., pitcher shipped separately). Wants assurance that all items in each order arrive together. Requests confirmation that the grinder, tablets, and frothing pitcher are shipped as a complete bundle. Avoids confusion from partial deliveries or separate shipments.",
+            "3": "User Michael, 35, Seattle. Heading out of town to Portland next weekend for 5 days. Concerned about package delivery during absence: fears boxes left on porch in rain or picked up by neighbor. Specifically worries about delicate grinder being damaged. Requests approximate arrival date to plan for house-sitting or neighbor watch. Prefers to inspect grinder indoors immediately upon return to avoid damage. Recalls past experience with damaged espresso machine.",
+            "4": "User Michael, 35, Seattle. Coffee enthusiast. Currently owns espresso machine with steam wand. Interested in membership program with rewards: 10% off, free shipping, early access to new products(e.g., stainless-steel grinder, vacuum-sealed canisters, digital scale), and potential monthly coffee bean subscription or 19-month warranty. Expresses strong interest in loyalty-based upgrades and future product access. Prefers proactive communication and transparency in offers.",
+            "5": "User Michael, 35, Seattle. Interested in Premium Membership with: 10% off, free shipping, early access, monthly bean subscription, 19-month warranty, limited-edition access, full account control, and prioritized customer service. Specifically asks about: dedicated phone line, priority chat support, or faster response times for urgent issues(e.g., machine malfunction before coffee tasting). Values responsiveness and transparency \u2014 already received detailed support. Seeks assurance that loyal customers get faster, more personalized help when needed."
+        }
+    }
+}

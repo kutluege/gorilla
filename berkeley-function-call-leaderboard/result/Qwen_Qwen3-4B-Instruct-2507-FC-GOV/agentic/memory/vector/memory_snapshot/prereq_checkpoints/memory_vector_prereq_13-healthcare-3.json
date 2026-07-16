@@ -1,0 +1,12 @@
+{
+    "core_memory": {
+        "next_id": 1,
+        "store": {
+            "0": "Fasting blood glucose: 135 mg/dL(above ideal target of <100 mg/dL). A1C: 6.9% (slightly above target of 6.5%). Doctor's recommendations: Increase dietary fiber, engage in light exercise after meals. Home monitoring: Morning readings consistently between 125\u2013130 mg/dL."
+        }
+    },
+    "archival_memory": {
+        "next_id": 0,
+        "store": {}
+    }
+}

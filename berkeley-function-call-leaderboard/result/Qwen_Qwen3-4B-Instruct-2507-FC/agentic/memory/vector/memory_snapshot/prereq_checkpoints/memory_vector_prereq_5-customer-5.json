@@ -1,0 +1,19 @@
+{
+    "core_memory": {
+        "next_id": 3,
+        "store": {
+            "0": "User Michael, 35, lives in Seattle, freelance graphic designer, concerned about temperature reliability in coffee machines. Wants consistently hot coffee without microwaving. Looking for adjustable temperature settings or guaranteed hot brews.",
+            "1": "User Michael, 35, Seattle-based. Wants stainless-steel espresso machine with steam wand. 17% off discount. 38 sq ft counter. Shipping: delayed, tracking stuck. Support contacted. Rainy weather may have impacted delivery. Requesting updated timeline or escalation.",
+            "2": "User Michael, 35, Seattle. Same address/credit card for both orders. Concerned about past Apple Pay security hold. Requests verification of billing/shipping for second order. Wants assurance no red flags or holds. Prefers proactive communication."
+        }
+    },
+    "archival_memory": {
+        "next_id": 4,
+        "store": {
+            "0": "Michael's order: Stainless-steel espresso machine with steam wand, frothing pitcher, and extra filters. Estimated delivery: 11 business days. Free shipping applied due to accessory bundle. All items were in stock at time of order. Current issue: Delivery delayed; tracking status stuck. Customer has contacted support. Inquiry: Confirm if accessories are shipped separately or included in the same package.",
+            "1": "User Michael, 35, Seattle. Concerned about shipping discrepancies: Oregon grinder order(shipped from regional warehouse) tracking stuck at 'Label Created\u2014Awaiting Item'; East Coast order(canisters, Garmin scale) now shows 'In Transit' with earlier estimated delivery despite longer distance. Suspects potential mix-up: warehouse delay, backorder, or labeling error. Weather-related delays(heavy rain, flooding) in region may have impacted local shipping. Requesting full carrier confirmation and internal review for both orders.",
+            "2": "User Michael, 35, Seattle. Concerned about potential shipment splitting: Grinder bundle(Oregon) might be split(e.g., pitcher shipped separately). Wants assurance that all items in each order arrive together. Requests confirmation that the grinder, tablets, and frothing pitcher are shipped as a complete bundle. Avoids confusion from partial deliveries or separate shipments.",
+            "3": "User Michael, 35, Seattle. Heading out of town to Portland next weekend for 5 days. Concerned about package delivery during absence: fears boxes left on porch in rain or picked up by neighbor. Specifically worries about delicate grinder being damaged. Requests approximate arrival date to plan for house-sitting or neighbor watch. Prefers to inspect grinder indoors immediately upon return to avoid damage. Recalls past experience with damaged espresso machine."
+        }
+    }
+}

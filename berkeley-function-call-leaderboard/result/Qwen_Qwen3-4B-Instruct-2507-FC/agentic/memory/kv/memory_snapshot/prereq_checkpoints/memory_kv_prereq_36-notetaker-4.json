@@ -1,0 +1,12 @@
+{
+    "core_memory": {
+        "gym_frequency": "Gym at least 3x this week.",
+        "strength_training_focus": "Focus on strength training\u2014legs and back need work.",
+        "diet_sugar_reduction": "Cut back on sugar\u2014too much soda lately.",
+        "sunday_meal_prep": "Meal prep on Sunday\u2014grilled chicken, quinoa, and veggies.",
+        "sleep_goal": "Try to get 7+ hours of sleep.",
+        "screen_time_before_bed": "Limit screen time before bed.",
+        "vitamin_d3": "Vitamin D3\u20141000 IU daily."
+    },
+    "archival_memory": {}
+}
