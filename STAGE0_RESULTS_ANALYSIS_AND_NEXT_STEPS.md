@@ -1047,3 +1047,76 @@ reconciliation gaps found after cross-checking.
 
 **Git:** `git log`/`git diff` between `just_geo_filtering` and the working branch (identical
 trees); commit provenance for result dirs (`84d831d`, `b14b043`, `94afae4`).
+
+---
+
+## §8.4 offline replay (re-derived)
+
+*Appended by Plan 1 Step 7 (2026-07-17). Every number below comes from an actual run of
+`bfcl_eval/scripts/replay_geometry_deltaH.py` (built in Plan 1 Steps 3–4) over the three
+committed `gov_logs/` arms; run artifacts are committed under `gov_logs/replay_<arm>/`
+(`replay_decisions.jsonl` + `replay_summary.json`). Estimator: `ΔH_neighbor` = change in the
+candidate's tier neighbors' own-template-probe top-5 softmax retrieval entropy (nats) when
+the candidate is provisionally added, per §4.4/§8.3; per-tier, backend-faithful simulation
+(BM25Plus over KV key names / raw-MiniLM cosine for Vector); the whitened space never enters.*
+
+### Accounting (honest computable fraction)
+
+| Arm | decisions | usable for ρ | usable frac | dropped (desync) | empty-tier | maybe-truncated rows |
+|---|---|---|---|---|---|---|
+| shadow | 262 | 190 | 0.725 | 34 | 37 | 150 |
+| governed_calibrated | 447 | 306 | 0.685 | 103 | 35 | 226 |
+| governed_sage | 342 | 217 | 0.635 | 103 | 20 | 175 |
+| **total** | **1,051** | **713** | **0.678** | **240** | **92** | — |
+
+**The v2 doc's quoted 938/1,051 ≈ 94.5% computable fraction is NOT reproduced: we get
+67.8%.** The gap is dominated by chain-desync invalidation: the committed logs predate the
+Step 2a fix, so removes/clears were never logged, and every rehydrate checkpoint whose
+`items_loaded` contradicts the carried state retroactively invalidates the segment (240
+decisions) rather than replaying against a silently wrong memory state. A further 92
+decisions are computable but have an empty tier (no neighbors, ΔH undefined). Rows touching
+a 300-char-boundary text (pre-Step-2b truncation) are flagged, not dropped. Result-file
+repair of the desync segments is possible follow-up work; the drop is reported, never
+smoothed over.
+
+### Correlations and separations (per backend, per arm)
+
+| Arm | Backend | n | ρ(sim_max, ΔH) | ρ(r, ΔH) | dup / non-dup median sim_max | dup / non-dup median ΔH | NOOP region (size, purity) | suppressed NOOPs w/ ΔH≥0 |
+|---|---|---|---|---|---|---|---|---|
+| shadow | kv | 67 | **+0.613** | −0.591 | — / 0.202 | — / −0.001 | 0, — | 0/0 |
+| shadow | vector | 123 | **+0.413** | −0.381 | 1.000 / 0.583 | 0.693 / 0.400 | 1, 1.00 | 0/0 |
+| governed_calibrated | kv | 99 | **+0.483** | −0.441 | — / 0.228 | — / −0.028 | 0, — | 0/0 |
+| governed_calibrated | vector | 207 | **−0.156** | +0.202 | 0.992 / 0.610 | 0.294 / 0.512 | 29, 0.17 | 4/5 |
+| governed_sage | kv | 66 | **+0.662** | −0.567 | — / 0.205 | — / −0.018 | 0, — | 0/0 |
+| governed_sage | vector | 151 | **+0.585** | −0.547 | 1.000 / 0.542 | 0.408 / 0.399 | 4, 0.75 | 3/3 |
+
+Under this estimator a **duplicate raises its neighbors' entropy** (two near-identical
+retrieval targets split probe mass), so geometry-tracks-ΔH shows up as *positive*
+ρ(sim_max, ΔH) and negative ρ(r, ΔH).
+
+### Verdict vs. the v2 narrative
+
+1. **v2's quoted ρ ≈ −0.386 (Vector) / +0.343 (KV) are not reproduced.** Our KV ρ is
+   consistently positive and stronger (+0.48…+0.66 across arms); our Vector ρ is
+   arm-dependent (+0.41 shadow, +0.59 sage, **−0.16 calibrated**). The v2 numbers came from
+   an instrument that did not exist in the tree; treat them as unverifiable.
+2. **The "Vector geometry-first / KV canonical-key-first" split is only half-supported, and
+   not by the correlation it was hung on.** What the data actually shows: (a) *KV NOOPs
+   never fire* — every usable KV arm has zero decided NOOPs (duplicate re-adds are caught by
+   the dup-key preflight and pass through to a genuine backend error), which is itself the
+   strongest argument for Stage 1's canonical-key pre-check carrying KV's redundancy load;
+   (b) *Vector separation is excellent where it matters*: duplicate vs non-duplicate median
+   sim_max is 0.99–1.00 vs 0.54–0.61 in every arm, so the geometric front filter's NOOP band
+   is real for Vector even in the arm whose global rank correlation is weak.
+3. **The calibrated-arm Vector anomaly (ρ = −0.16, NOOP-region purity 0.17) is a
+   range-restriction artifact worth respecting:** in the live governed arm the suppressed
+   duplicates never enter the corpus, and 24 of the 29 NOOP-region rows were
+   preflight-blocked (full store), leaving a truncated sim distribution. This is exactly the
+   regime Plan 2's live calibration must re-measure rather than assume.
+4. **Go/no-go reading (ρ ≳ 0.4 gate):** passes for KV in all arms and for Vector in 2 of 3
+   arms under the sign convention above; fails for Vector in the calibrated arm. Geometry
+   stays as the front filter (its duplicate band is clean), but the gate's original
+   framing — geometry as a *proxy for ΔH* — is only weakly supported for Vector under
+   suppression. Stage 1 (NLI, shadow-first) and the Stage 2 margin calibration in Plan 2
+   proceed as planned; the (0.95, 0.30) threshold pair remains geometrically degenerate per
+   §2.3 (now guarded at startup by `GovConfig.validate()` / `GOV_STRICT_THRESHOLDS`).

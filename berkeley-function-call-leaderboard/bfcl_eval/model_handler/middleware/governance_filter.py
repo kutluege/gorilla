@@ -94,19 +94,30 @@ class GovConfig:
       GOV_NLI_ENABLED  -- load the NLI scorer and run the escalation handler.
       GOV_NLI_SHADOW   -- compute + log the full Stage 1 decision but never intervene.
       GOV_NLI_K        -- number of top-sim neighbors to check (default 3).
-      GOV_TAU_ENTAIL, GOV_TAU_CONTRA, GOV_DELTA_SPEC -- decision-table thresholds.
+      GOV_NLI_TAU_ENTAIL / GOV_TAU_ENTAIL, GOV_NLI_TAU_CONTRA / GOV_TAU_CONTRA,
+      GOV_NLI_DELTA_SPEC / GOV_DELTA_SPEC -- decision-table thresholds (both
+                          spellings accepted; the NLI-prefixed form wins).
+      GOV_NLI_MODEL, GOV_NLI_DEVICE -- scorer weights/device (read by
+                          semantic_entropy._get_nli_model; defaults
+                          microsoft/deberta-large-mnli on cpu).
 
     Stage 2 (retrieval-entropy escalation; default OFF):
-      GOV_S2_ENABLED   -- run the probe-based retrieval simulation on Stage 1's
-                          all-neutral escalations.
-      GOV_S2_MARGIN    -- min top1-vs-top2 margin (all probes agreeing on the same
-                          stored item) required to call the candidate a duplicate.
-                          Placeholder default; Plan 2 calibrates from the replay
-                          margin distribution.
-      GOV_S2_CANON_LLM -- allow one LLM canonicalization attempt for rewrites
-                          (default off: deterministic canonicalization only).
+      GOV_S2_ENABLED   -- run the probe-based verification loop on Stage 1's
+                          all-neutral escalations (+ write-time probe cache and
+                          the <scenario>_gov_state.json sidecar).
+      GOV_S2_SHADOW    -- compute + log the full Stage 2 result but never intervene.
+      GOV_S2_MARGIN    -- min top1-vs-top2 margin (with every probe retrieving the
+                          provisional candidate as top-1) required to accept
+                          without canonicalization. Placeholder default; Plan 2
+                          calibrates from the replay margin distribution.
+      GOV_S2_CANON_LLM -- allow one LLM canonicalization attempt when the
+                          deterministic one fails (default off; callback wired
+                          by the handler in Plan 2).
+      GOV_S2_T_KV, GOV_S2_T_VEC -- per-backend softmax temperature for the
+                          *logged* entropy H only; never a decision input.
+      GOV_S2_PROBES_N  -- cap on decision probes (read by probe_gen.ProbeConfig).
       GOV_PROBE_PARAPHRASE -- enable the paraphrase probe channel (default off:
-                          template probes only; see probe_gen.py).
+                          template probes only; Plan-1 stub, see probe_gen.py).
     """
 
     enabled: bool = True

@@ -1,0 +1,51 @@
+{
+  "accounting": {
+    "checkpoints_reset": 134,
+    "decisions_total": 342,
+    "decisions_computable": 260,
+    "computable_empty_tier": 20,
+    "maybe_truncated_rows": 175,
+    "maybe_truncated_observe": 87,
+    "checkpoints_verified": 131,
+    "dropped_n_items_mismatch": 4,
+    "dropped_desync": 103,
+    "checkpoints_desync": 119,
+    "decisions_usable_for_correlation": 217,
+    "usable_fraction": 0.6345
+  },
+  "backends": {
+    "kv": {
+      "n_usable": 66,
+      "spearman_sim_max_vs_dH_mean": 0.6619,
+      "spearman_r_vs_dH_mean": -0.5666,
+      "duplicate_median_sim_max": null,
+      "nonduplicate_median_sim_max": 0.2048,
+      "duplicate_median_dH": null,
+      "nonduplicate_median_dH": -0.0178,
+      "noop_region_size": 0,
+      "noop_region_purity_decided_noop": null,
+      "suppressed_noops": 0,
+      "suppressed_noops_dH_ge_0": 0
+    },
+    "vector": {
+      "n_usable": 151,
+      "spearman_sim_max_vs_dH_mean": 0.5852,
+      "spearman_r_vs_dH_mean": -0.5468,
+      "duplicate_median_sim_max": 1.0,
+      "nonduplicate_median_sim_max": 0.5417,
+      "duplicate_median_dH": 0.4078,
+      "nonduplicate_median_dH": 0.399,
+      "noop_region_size": 4,
+      "noop_region_purity_decided_noop": 0.75,
+      "suppressed_noops": 3,
+      "suppressed_noops_dH_ge_0": 3
+    }
+  },
+  "arm": "governed_sage",
+  "log": "gov_logs\\governed_sage\\governance_log.jsonl",
+  "params": {
+    "neighbors": 5,
+    "top_k": 5,
+    "temperature": 1.0
+  }
+}
