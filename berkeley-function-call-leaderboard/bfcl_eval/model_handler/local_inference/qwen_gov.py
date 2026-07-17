@@ -72,7 +72,20 @@ class QwenGovHandler(QwenFCHandler):
         print(
             f"[GOV] QwenGovHandler active | enabled={self.gov_config.enabled} "
             f"dry_run={self.gov_config.dry_run} sim_high={self.gov_config.sim_high} "
-            f"delta={self.gov_config.delta} artifact={self.gov_config.artifact_path}"
+            f"delta={self.gov_config.delta} "
+            f"strict_thresholds={self.gov_config.strict_thresholds} "
+            f"artifact={self.gov_config.artifact_path}"
+        )
+        print(
+            f"[GOV] Stage1(NLI) enabled={self.gov_config.nli_enabled} "
+            f"shadow={self.gov_config.nli_shadow} k={self.gov_config.nli_k} "
+            f"tau_entail={self.gov_config.tau_entail} "
+            f"tau_contra={self.gov_config.tau_contra} "
+            f"delta_spec={self.gov_config.delta_spec} | "
+            f"Stage2 enabled={self.gov_config.s2_enabled} "
+            f"shadow={self.gov_config.s2_shadow} margin={self.gov_config.s2_margin} "
+            f"canon_llm={self.gov_config.s2_canon_llm} "
+            f"t_kv={self.gov_config.s2_t_kv} t_vec={self.gov_config.s2_t_vec}"
         )
 
     @override
@@ -147,6 +160,40 @@ class QwenGovHandler(QwenFCHandler):
             return None, str(snapshot_file), True
         with open(snapshot_file, "r", encoding="utf-8") as f:
             return json.load(f), str(snapshot_file), False
+
+    # -- Stage 2 probe source: capture the current user turn text BEFORE the
+    # model ever produces a call (the SS4.1 anti-circularity guarantee). Both
+    # hooks are non-@final in the base loop.
+
+    def _stash_user_text(self, messages: list[dict]) -> None:
+        session = getattr(self._gov_tls, "session", None)
+        if session is None:
+            return
+        user_texts = [
+            str(m.get("content", ""))
+            for m in messages
+            if isinstance(m, dict) and m.get("role") == "user"
+        ]
+        if user_texts:
+            session.user_text = user_texts[-1]
+
+    @override
+    def add_first_turn_message_prompting(
+        self, inference_data: dict, first_turn_message: list[dict]
+    ) -> dict:
+        self._stash_user_text(first_turn_message)
+        return super().add_first_turn_message_prompting(
+            inference_data, first_turn_message
+        )
+
+    @override
+    def _add_next_turn_user_message_prompting(
+        self, inference_data: dict, user_message: list[dict]
+    ) -> dict:
+        self._stash_user_text(user_message)
+        return super()._add_next_turn_user_message_prompting(
+            inference_data, user_message
+        )
 
     @override
     def decode_execute(self, result, has_tool_call_tag):
