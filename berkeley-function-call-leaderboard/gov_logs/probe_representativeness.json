@@ -1,0 +1,58 @@
+{
+  "instrument": "validate_probe_representativeness",
+  "model": "Qwen_Qwen3-4B-Instruct-2507-FC",
+  "report": {
+    "kv": {
+      "per_scenario": {
+        "customer": {
+          "n_questions": 30,
+          "mean_probe_agreement": 1.0,
+          "majority_agree_fraction": 1.0
+        },
+        "finance": {
+          "n_questions": 25,
+          "mean_probe_agreement": 1.0,
+          "majority_agree_fraction": 1.0
+        },
+        "healthcare": {
+          "skipped": "dead_chain"
+        },
+        "notetaker": {
+          "n_questions": 25,
+          "mean_probe_agreement": 1.0,
+          "majority_agree_fraction": 1.0
+        },
+        "student": {
+          "skipped": "dead_chain"
+        }
+      },
+      "mean_probe_agreement": 1.0
+    },
+    "vector": {
+      "per_scenario": {
+        "customer": {
+          "n_questions": 30,
+          "mean_probe_agreement": 0.8,
+          "majority_agree_fraction": 1.0
+        },
+        "finance": {
+          "n_questions": 25,
+          "mean_probe_agreement": 1.0,
+          "majority_agree_fraction": 1.0
+        },
+        "healthcare": {
+          "skipped": "dead_chain"
+        },
+        "notetaker": {
+          "n_questions": 25,
+          "mean_probe_agreement": 1.0,
+          "majority_agree_fraction": 1.0
+        },
+        "student": {
+          "skipped": "dead_chain"
+        }
+      },
+      "mean_probe_agreement": 0.925
+    }
+  }
+}

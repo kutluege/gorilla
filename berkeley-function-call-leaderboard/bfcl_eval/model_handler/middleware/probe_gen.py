@@ -16,16 +16,27 @@ Two probe channels (STAGE0 analysis SS8.1/SS8.3):
   args never enter decision-probe text -- this function does not even accept
   them. Decision probes drive Stage 2's live min-margin rule.
 
-The paraphrase channel (``GOV_PROBE_PARAPHRASE=1``, a separate small non-Qwen
-CPU paraphraser) is deliberately a stub in Plan 1 (risk R5); with the default
-``GOV_PROBE_PARAPHRASE=0`` generation is template-only and fully deterministic:
-same input -> same probes, byte for byte.
+The paraphrase channel (``GOV_PROBE_PARAPHRASE=1``, Plan 3 Step 3 / SS4.1b):
+2-3 natural paraphrases of the *user's own sentence* from a small CPU seq2seq
+model of a **different family than Qwen** (``GOV_PROBE_MODEL``, default
+``google/flan-t5-small``) -- the structural loop-break: probes are never
+derived from the model-generated key/value, and the paraphraser input is
+``user_text`` only. Decoding is beam search (no sampling), so the channel is
+deterministic for a fixed model. With the default ``GOV_PROBE_PARAPHRASE=0``,
+or when the paraphraser cannot load, generation degrades to template-only,
+byte-identical to Plan-2 behavior (warns once, never silently).
 
-Pure logic, no BFCL imports, no model calls.
+NOTE the ``GOV_S2_PROBES_N`` cap (default 4) is applied AFTER templates, so
+templates always survive; enable the paraphrase channel together with
+``GOV_S2_PROBES_N=5`` to get the brief's 3-5 probe budget.
+
+Pure logic, no BFCL imports; the only model call is the lazily-loaded CPU
+paraphraser behind the env flag.
 """
 
 import os
 import re
+import threading
 from dataclasses import dataclass, field
 from typing import List, Optional
 
@@ -71,30 +82,109 @@ class Probe:
 class ProbeConfig:
     paraphrase: bool = False  # GOV_PROBE_PARAPHRASE; template-only when False
     probes_n: int = 4  # GOV_S2_PROBES_N: cap on decision probes
+    paraphrase_model: str = "google/flan-t5-small"  # GOV_PROBE_MODEL (non-Qwen)
+    paraphrase_n: int = 2  # GOV_PROBE_PARAPHRASE_N: 2-3 per the brief
 
     @classmethod
     def from_env(cls) -> "ProbeConfig":
         return cls(
             paraphrase=_env_flag("GOV_PROBE_PARAPHRASE", False),
             probes_n=int(os.getenv("GOV_S2_PROBES_N", "4")),
+            paraphrase_model=os.getenv("GOV_PROBE_MODEL", "google/flan-t5-small"),
+            paraphrase_n=max(1, min(3, int(os.getenv("GOV_PROBE_PARAPHRASE_N", "2")))),
         )
 
 
+# ---------------------------------------------------------------------------
+# Paraphrase channel (SS4.1b): lazy CPU seq2seq singleton, beam decoding.
+# ---------------------------------------------------------------------------
+
+_PARA_LOCK = threading.Lock()
+_PARA_MODEL = None  # (tokenizer, model, name) once loaded; False after failure
 _PARAPHRASE_WARNED = False
 
 
-def _paraphrase_stub(text: str, cfg: ProbeConfig) -> List[Probe]:
-    """Plan-1 stub: the paraphrase channel needs a separate small CPU model of a
-    non-Qwen family (SS8.1 channel b); wiring it is Plan-2-era work (risk R5).
-    Returns no probes; warns once so an enabled flag is never silently a no-op."""
+def _warn_once(msg: str) -> None:
     global _PARAPHRASE_WARNED
-    if cfg.paraphrase and not _PARAPHRASE_WARNED:
+    if not _PARAPHRASE_WARNED:
         _PARAPHRASE_WARNED = True
-        print(
-            "[probe_gen] WARNING: GOV_PROBE_PARAPHRASE=1 but the paraphrase "
-            "channel is a Plan-1 stub; falling back to template-only probes."
+        print(f"[probe_gen] WARNING: {msg}")
+
+
+def _get_paraphraser(model_name: str):
+    """Thread-locked lazy singleton, mirroring semantic_entropy._get_nli_model.
+    Returns (tokenizer, model, name) or None when unavailable (warned once)."""
+    global _PARA_MODEL
+    if _PARA_MODEL is not None:
+        return _PARA_MODEL or None
+    with _PARA_LOCK:
+        if _PARA_MODEL is not None:
+            return _PARA_MODEL or None
+        try:
+            from transformers import AutoModelForSeq2SeqLM, AutoTokenizer
+
+            tokenizer = AutoTokenizer.from_pretrained(model_name)
+            model = AutoModelForSeq2SeqLM.from_pretrained(model_name)
+            model.to("cpu").eval()
+            _PARA_MODEL = (tokenizer, model, model_name)
+        except Exception as exc:  # missing package, no cache + offline, etc.
+            _PARA_MODEL = False
+            _warn_once(
+                f"GOV_PROBE_PARAPHRASE=1 but paraphraser '{model_name}' failed "
+                f"to load ({exc}); falling back to template-only probes."
+            )
+            return None
+    return _PARA_MODEL
+
+
+def _hf_paraphrase(text: str, n: int, model_name: str) -> List[str]:
+    """Deterministic beam-search paraphrases (no sampling). [] on any failure."""
+    loaded = _get_paraphraser(model_name)
+    if loaded is None:
+        return []
+    tokenizer, model, _ = loaded
+    try:
+        import torch
+
+        inputs = tokenizer(
+            f"Paraphrase the sentence: {text}",
+            return_tensors="pt", truncation=True, max_length=128,
         )
-    return []
+        with torch.no_grad():
+            out = model.generate(
+                **inputs,
+                num_beams=max(4, n + 2),
+                num_return_sequences=n,
+                do_sample=False,
+                max_new_tokens=48,
+            )
+        return [tokenizer.decode(seq, skip_special_tokens=True) for seq in out]
+    except Exception as exc:
+        _warn_once(f"paraphrase generation failed ({exc}); template-only probes.")
+        return []
+
+
+def _paraphrase_probes(
+    text: str, cfg: ProbeConfig, generate_fn=None
+) -> List[Probe]:
+    """Channel (b) probes from the USER sentence only (anti-circularity holds:
+    callers pass user_text, never candidate text). Filters out empty/echo
+    outputs; degrades to [] whenever the model is unavailable."""
+    if not cfg.paraphrase or not text:
+        return []
+    generate_fn = generate_fn or _hf_paraphrase
+    raw = generate_fn(text, cfg.paraphrase_n, cfg.paraphrase_model)
+    short_name = cfg.paraphrase_model.rsplit("/", 1)[-1]
+    norm_src = text.strip().lower()
+    probes = []
+    for cand in raw:
+        cand = (cand or "").strip()
+        if not cand or len(cand) > 300 or cand.lower() == norm_src:
+            continue
+        probes.append(Probe(cand, f"paraphrase:{short_name}", "user_text"))
+        if len(probes) >= cfg.paraphrase_n:
+            break
+    return probes
 
 
 def generate_item_probes(
@@ -137,7 +227,9 @@ def generate_item_probes(
         keywords = content_tokens_ordered(text, limit=8)
         if keywords:
             probes.append(Probe(" ".join(keywords), "template:keywords", source))
-    probes.extend(_paraphrase_stub(text, cfg))
+    # Item probes stay template-only: SS4.1b's paraphrase channel is defined on
+    # the USER sentence (decision probes); paraphrasing stored text would relax
+    # the provenance story for no diagnostic gain.
     return _dedupe(probes)
 
 
@@ -159,7 +251,9 @@ def generate_decision_probes(
     keywords = content_tokens_ordered(user_text, limit=8)
     if keywords:
         probes.append(Probe(" ".join(keywords), "template:user_keywords", "user_text"))
-    probes.extend(_paraphrase_stub(user_text, cfg))
+    # Paraphrases append AFTER templates so the deterministic channel always
+    # survives the probes_n cap (fallback safety, R12).
+    probes.extend(_paraphrase_probes(user_text, cfg))
     return _dedupe(probes)[: cfg.probes_n]
 
 
