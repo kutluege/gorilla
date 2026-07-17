@@ -136,8 +136,11 @@ class GovConfig:
     delta_spec: float = 0.10
     # -- Stage 2 (retrieval entropy) ----------------------------------------
     s2_enabled: bool = False
+    s2_shadow: bool = True  # shadow-first deploy, mirroring nli_shadow
     s2_margin: float = 0.05  # placeholder; calibrate from replay margins (Plan 2)
     s2_canon_llm: bool = False
+    s2_t_kv: float = 1.0  # softmax T for logged H only -- NEVER a decision input
+    s2_t_vec: float = 1.0
 
     @classmethod
     def from_env(cls) -> "GovConfig":
@@ -159,12 +162,23 @@ class GovConfig:
             nli_enabled=_env_flag("GOV_NLI_ENABLED", False),
             nli_shadow=_env_flag("GOV_NLI_SHADOW", True),
             nli_k=int(os.getenv("GOV_NLI_K", "3")),
-            tau_entail=float(os.getenv("GOV_TAU_ENTAIL", "0.75")),
-            tau_contra=float(os.getenv("GOV_TAU_CONTRA", "0.75")),
-            delta_spec=float(os.getenv("GOV_DELTA_SPEC", "0.10")),
+            # Both spellings accepted: Plan 1 uses GOV_TAU_*, the STAGE0 doc
+            # SS7.5 uses GOV_NLI_TAU_* -- the NLI-prefixed form wins if both set.
+            tau_entail=float(
+                os.getenv("GOV_NLI_TAU_ENTAIL", os.getenv("GOV_TAU_ENTAIL", "0.75"))
+            ),
+            tau_contra=float(
+                os.getenv("GOV_NLI_TAU_CONTRA", os.getenv("GOV_TAU_CONTRA", "0.75"))
+            ),
+            delta_spec=float(
+                os.getenv("GOV_NLI_DELTA_SPEC", os.getenv("GOV_DELTA_SPEC", "0.10"))
+            ),
             s2_enabled=_env_flag("GOV_S2_ENABLED", False),
+            s2_shadow=_env_flag("GOV_S2_SHADOW", True),
             s2_margin=float(os.getenv("GOV_S2_MARGIN", "0.05")),
             s2_canon_llm=_env_flag("GOV_S2_CANON_LLM", False),
+            s2_t_kv=float(os.getenv("GOV_S2_T_KV", "1.0")),
+            s2_t_vec=float(os.getenv("GOV_S2_T_VEC", "1.0")),
         )
         cfg.validate()
         return cfg
@@ -526,6 +540,7 @@ class GovDecision(str, Enum):
     NOOP = "NOOP"
     ADD = "ADD"
     ESCALATE = "ESCALATE"
+    REWRITE = "REWRITE"  # Stage 1/2 outcome: call rewritten to a different backend op
 
 
 @dataclass
@@ -597,30 +612,6 @@ def compute_signals(
     return sig
 
 
-def handle_escalation(
-    candidate: WriteCandidate,
-    signals: Stage0Signals,
-    cache: GovernanceCache,
-    cfg: GovConfig,
-) -> tuple:
-    """Ambiguous-region handler.
-
-    # ------------------------------------------------------------------
-    # TODO(Stage 1 -- NLI; see plan Section 3): entailment check between the
-    #   candidate and its top-sim_max neighbors. Stored item entails candidate
-    #   -> NOOP; candidate contradicts a stored item -> route to update.
-    # TODO(Stage 2 -- Retrieval Entropy; see plan Section 4): entropy of the
-    #   retrieval distribution under candidate perturbations; high entropy
-    #   -> genuinely novel -> ADD.
-    # ------------------------------------------------------------------
-
-    Current phase fallback: base behavior (perform the write). This means Stage 0
-    alone can only suppress clearly-redundant writes and never blocks novel
-    information, so any measured A/B delta is attributable purely to NOOPs.
-    """
-    return GovDecision.ADD, "stage0_escalate_fallback"
-
-
 def decide(
     candidate: WriteCandidate,
     signals: Stage0Signals,
@@ -628,7 +619,16 @@ def decide(
     cfg: GovConfig,
     preflight_ok: bool,
 ) -> tuple:
-    """Returns (decision, reason)."""
+    """Pure Stage 0 signal -> decision logic. Returns (decision, reason).
+
+    ESCALATE is now a real outcome (STAGE0 doc SS7.1): the *session* orchestrates
+    Stage 1 (NLI) / Stage 2 (retrieval entropy) resolution, because escalation
+    needs the whitened embedding, the NLI scorer, and the rewrite machinery --
+    none of which belong in this dependency-free function. When both stages are
+    disabled the session's fallback is ADD with reason
+    ``escalate:stage0_escalate_fallback``, preserving the pre-Stage-1 behavior
+    bit for bit.
+    """
     if signals.n_items == 0:
         return GovDecision.ADD, "empty_memory"
 
@@ -649,8 +649,476 @@ def decide(
     if signals.r > signals.tau_t and has_new_verbatim:
         return GovDecision.ADD, "novel"
 
-    decision, reason = handle_escalation(candidate, signals, cache, cfg)
-    return decision, f"escalate:{reason}"
+    return GovDecision.ESCALATE, "ambiguous"
+
+
+# ---------------------------------------------------------------------------
+# Stage 1 (NLI) escalation resolver -- STAGE0 doc SS7, Plan 1 Step 5.
+# Pure logic with an injected scorer; the DeBERTa singleton lives in
+# semantic_entropy._get_nli_model() and is only touched when GOV_NLI_ENABLED.
+# ---------------------------------------------------------------------------
+
+
+@dataclass
+class Stage1Result:
+    outcome: GovDecision  # NOOP | ADD | REWRITE | ESCALATE (to Stage 2)
+    reason: str
+    precheck: Optional[str] = None
+    candidates: list = field(default_factory=list)  # [{ref, tier, sim}]
+    pairs: list = field(default_factory=list)  # [{ref, fwd:[c,n,e], bwd:[c,n,e], verdict}]
+    target_ref: Optional[str] = None
+    target_tier: Optional[str] = None
+    rewritten_call: Optional[str] = None
+    superseded_text: Optional[str] = None  # full text -- supersede is in-place
+    # replace until SS5 placement machinery exists (risk R3); this log line is
+    # the only thing preventing data loss.
+    latency_ms: float = 0.0
+    # The evaluated MemoryItems in desc-sim order -- Stage 2's neighbor list
+    # (SS7.7: "the neighbor list Stage 2 re-scores is exactly the candidate list
+    # Stage 1 evaluated"). Not serialized into the log.
+    neighbor_items: list = field(default_factory=list)
+
+    def to_log(self) -> dict:
+        d = {
+            "outcome": self.outcome.value,
+            "reason": self.reason,
+            "precheck": self.precheck,
+            "candidates": self.candidates,
+            "pairs": self.pairs,
+            "target_ref": self.target_ref,
+            "target_tier": self.target_tier,
+            "rewritten_call": self.rewritten_call,
+            "superseded_text": self.superseded_text,
+            "latency_ms": self.latency_ms,
+        }
+        return d
+
+
+def select_stage1_candidates(
+    candidate: WriteCandidate,
+    signals: Stage0Signals,
+    cache: GovernanceCache,
+    k: int,
+) -> list:
+    """Top-k neighbors by the ALREADY-computed whitened sims (argsort, no
+    re-embedding) + the canonical-key/target channel (STAGE0 doc SS7.3):
+    KV -- force-include the item stored under candidate.ref in either tier;
+    Vector -- on update ops, force-include the update's target item."""
+    _, items = cache.matrix()
+    order = np.argsort(-np.asarray(signals.sims)) if signals.sims else []
+    selected = []
+    seen = set()
+    for idx in list(order)[:k]:
+        it = items[int(idx)]
+        selected.append((it, float(signals.sims[int(idx)])))
+        seen.add((it.tier, it.ref))
+    forced = []
+    if candidate.backend == "kv" and candidate.ref is not None:
+        for tier in ("core", "archival"):
+            it = cache.items[tier].get(str(candidate.ref))
+            if it is not None and (tier, it.ref) not in seen:
+                forced.append(it)
+    elif candidate.backend == "vector" and candidate.kind == "update":
+        it = cache.items[candidate.tier].get(str(candidate.ref))
+        if it is not None and (candidate.tier, it.ref) not in seen:
+            forced.append(it)
+    for it in forced:
+        sim = None
+        if signals.sims:
+            for j, other in enumerate(items):
+                if other is it:
+                    sim = float(signals.sims[j])
+                    break
+        selected.insert(0, (it, sim if sim is not None else 0.0))
+    return selected
+
+
+def build_rewrite_call(candidate: WriteCandidate, target: MemoryItem) -> str:
+    """Rewrite the model's write into a supersede of ``target`` (SS7.5)."""
+    if candidate.backend == "kv":
+        value = str(candidate.args["value"])
+        return f"{target.tier}_memory_replace(key={target.ref!r}, value={value!r})"
+    return (
+        f"{target.tier}_memory_update(vec_id={int(target.ref)}, "
+        f"new_text={candidate.text!r})"
+    )
+
+
+def stage1_resolve(
+    candidate: WriteCandidate,
+    signals: Stage0Signals,
+    cache: GovernanceCache,
+    cfg: GovConfig,
+    preflight_ok: bool,
+    nli_scorer,
+) -> Stage1Result:
+    """SS7.5 decision table over the top-k neighbors, first decisive verdict wins.
+
+    The KV canonical-key pre-check runs FIRST and resolves at dict-lookup cost
+    with no NLI call -- per SS5.4 / SS8.4 it, not geometry, carries most of KV's
+    redundancy load.
+    """
+    start = time.perf_counter()
+    res = Stage1Result(outcome=GovDecision.ADD, reason="stage1_no_neighbors")
+
+    # -- canonical-key pre-check (KV), idempotent-update pre-check (Vector) ----
+    tier_items = cache.items[candidate.tier]
+    if candidate.backend == "kv" and candidate.ref is not None:
+        stored = tier_items.get(str(candidate.ref))
+        if stored is not None:
+            same_value = _normalize_for_match(stored.text) == _normalize_for_match(
+                candidate.text
+            )
+            if candidate.kind == "replace" and same_value:
+                # Idempotent replace: backend would succeed and change nothing.
+                res.outcome = GovDecision.NOOP
+                res.reason = "stage1_precheck_idempotent_replace"
+                res.precheck = "kv_idempotent_replace"
+            elif candidate.kind == "add":
+                # add on an existing key would error "Key name must be unique."
+                # -> rewrite to the corresponding replace (idempotent when the
+                # value matches; a legitimate update when it differs).
+                res.outcome = GovDecision.REWRITE
+                res.reason = (
+                    "stage1_precheck_idempotent_key"
+                    if same_value
+                    else "stage1_precheck_add_existing_key"
+                )
+                res.precheck = "kv_add_existing_key"
+                res.target_ref = stored.ref
+                res.target_tier = stored.tier
+                res.superseded_text = stored.text
+                res.rewritten_call = build_rewrite_call(candidate, stored)
+            if res.precheck is not None:
+                res.latency_ms = round((time.perf_counter() - start) * 1000, 3)
+                return res
+    elif candidate.backend == "vector" and candidate.kind == "update":
+        stored = tier_items.get(str(candidate.ref))
+        if stored is not None and _normalize_for_match(stored.text) == _normalize_for_match(candidate.text):
+            res.outcome = GovDecision.NOOP
+            res.reason = "stage1_precheck_idempotent_update"
+            res.precheck = "vector_idempotent_update"
+            res.latency_ms = round((time.perf_counter() - start) * 1000, 3)
+            return res
+
+    # -- NLI over top-k neighbors ------------------------------------------
+    selected = select_stage1_candidates(candidate, signals, cache, cfg.nli_k)
+    res.candidates = [
+        {"ref": it.ref, "tier": it.tier, "sim": round(sim, 4)} for it, sim in selected
+    ]
+    res.neighbor_items = [it for it, _ in selected]
+    if not selected:
+        res.latency_ms = round((time.perf_counter() - start) * 1000, 3)
+        return res
+    if nli_scorer is None:
+        res.outcome = GovDecision.ADD
+        res.reason = "stage1_nli_unavailable"
+        res.latency_ms = round((time.perf_counter() - start) * 1000, 3)
+        return res
+
+    # One batched forward pass for all 2k directed pairs (SS7.4).
+    pairs = []
+    for it, _ in selected:
+        pairs.append((it.text, candidate.text))  # fwd: stored entails candidate
+        pairs.append((candidate.text, it.text))  # bwd: candidate entails stored
+    probs = nli_scorer.probs_batch(pairs)
+
+    decisive = None
+    for i, (it, sim) in enumerate(selected):
+        fwd_c, fwd_n, fwd_e = probs[2 * i]
+        bwd_c, bwd_n, bwd_e = probs[2 * i + 1]
+        verdict = "neutral"
+        if fwd_e >= cfg.tau_entail and bwd_e >= cfg.tau_entail:
+            verdict = "equivalent"
+        elif fwd_e >= cfg.tau_entail:
+            verdict = "derivable"
+        elif bwd_e >= cfg.tau_entail and (bwd_e - fwd_e) > cfg.delta_spec:
+            verdict = "more_specific"
+        elif bwd_e >= cfg.tau_entail:
+            verdict = "specificity_inconclusive"
+        elif max(fwd_c, bwd_c) >= cfg.tau_contra:
+            verdict = "contradiction"
+        res.pairs.append(
+            {
+                "ref": it.ref,
+                "tier": it.tier,
+                "premise_fwd": it.text,
+                "fwd": [round(fwd_c, 4), round(fwd_n, 4), round(fwd_e, 4)],
+                "bwd": [round(bwd_c, 4), round(bwd_n, 4), round(bwd_e, 4)],
+                "verdict": verdict,
+            }
+        )
+        if decisive is None and verdict != "neutral":
+            decisive = (it, verdict)
+
+    if decisive is None:
+        res.outcome = GovDecision.ESCALATE
+        res.reason = "stage1_all_neutral"
+    else:
+        target, verdict = decisive
+        if verdict in ("equivalent", "derivable"):
+            res.outcome = GovDecision.NOOP
+            res.reason = f"stage1_{verdict}"
+        elif verdict == "specificity_inconclusive":
+            res.outcome = GovDecision.ADD
+            res.reason = "stage1_keep_both"
+        else:  # more_specific | contradiction -> supersede target
+            res.outcome = GovDecision.REWRITE
+            res.reason = f"stage1_{verdict}"
+            res.target_ref = target.ref
+            res.target_tier = target.tier
+            res.superseded_text = target.text
+            res.rewritten_call = build_rewrite_call(candidate, target)
+    res.latency_ms = round((time.perf_counter() - start) * 1000, 3)
+    return res
+
+
+# ---------------------------------------------------------------------------
+# Stage 2 (retrieval entropy) escalation resolver -- STAGE0 doc SS8, Plan 1 Step 6.
+# Consumes retrieval_sim + probe_gen (lazy imports: Stage 0 never pays for them).
+# ---------------------------------------------------------------------------
+
+
+@dataclass
+class Stage2Result:
+    outcome: GovDecision  # ADD (accept / accept-low-confidence) | REWRITE
+    reason: str  # stage2_accept | stage2_accept_rewritten | stage2_accept_low_confidence
+    probes: list = field(default_factory=list)
+    per_probe: list = field(default_factory=list)
+    min_margin: Optional[float] = None
+    worst_probe: Optional[str] = None
+    canonicalization: dict = field(default_factory=dict)
+    low_confidence: bool = False
+    rewritten_call: Optional[str] = None
+    dH_neighbor: list = field(default_factory=list)  # decision-inert diagnostics
+    dH_mean: Optional[float] = None
+    latency_ms: float = 0.0
+
+    def to_log(self) -> dict:
+        return {
+            "outcome": self.outcome.value,
+            "reason": self.reason,
+            "probes": self.probes,
+            "per_probe": self.per_probe,
+            "min_margin": self.min_margin,
+            "worst_probe": self.worst_probe,
+            "canonicalization": self.canonicalization,
+            "low_confidence": self.low_confidence,
+            "rewritten_call": self.rewritten_call,
+            "dH_neighbor": self.dH_neighbor,
+            "dH_mean": self.dH_mean,
+            "latency_ms": self.latency_ms,
+        }
+
+
+def _sanitize_kv_key(key: str) -> str:
+    key = re.sub(r"[^a-z0-9_]+", "_", key.lower()).strip("_")
+    key = re.sub(r"_+", "_", key)
+    return key
+
+
+def canonicalize_candidate(
+    candidate: WriteCandidate,
+    rival_entries: list,
+    verbatim_values: list,
+    user_text: str,
+    max_len: int,
+) -> Optional[tuple]:
+    """One-shot deterministic canonicalization (SS8.2): pick the highest-value
+    discriminative token (verbatim values first, then content tokens of the
+    user text / candidate value) absent from every rival entry; KV appends it
+    to the key (validated against _KV_KEY_PATTERN), Vector prepends a clause
+    (re-checked against the tier's max_entry_length -- the customer-6 lesson).
+
+    Returns (rewritten_call, token) or None when no valid rewrite exists.
+    """
+    from bfcl_eval.model_handler.middleware.probe_gen import content_tokens_ordered
+
+    rival_blob = _normalize_for_match(" ||| ".join(rival_entries))
+    pool = list(verbatim_values)
+    pool += content_tokens_ordered(user_text or "")
+    if candidate.backend == "kv":
+        pool += content_tokens_ordered(str(candidate.args.get("value", "")))
+    else:
+        pool += content_tokens_ordered(candidate.text)
+    token = None
+    for cand_tok in pool:
+        norm = _normalize_for_match(str(cand_tok))
+        if norm and norm not in rival_blob:
+            token = str(cand_tok)
+            break
+    if token is None:
+        return None
+
+    if candidate.backend == "kv":
+        old_key = str(candidate.args["key"])
+        new_key = _sanitize_kv_key(f"{old_key}_{token}")
+        if not _KV_KEY_PATTERN.match(new_key) or new_key == old_key:
+            return None
+        value = str(candidate.args["value"])
+        if len(value) > max_len:
+            return None
+        return f"{candidate.tier}_memory_add(key={new_key!r}, value={value!r})", token
+    new_text = f"Regarding {token}: {candidate.text}"
+    if len(new_text) > max_len:
+        return None
+    return f"{candidate.tier}_memory_add(text={new_text!r})", token
+
+
+def stage2_resolve(
+    candidate: WriteCandidate,
+    signals: Stage0Signals,
+    cache: GovernanceCache,
+    cfg: GovConfig,
+    user_text: str,
+    neighbors: list,
+    canonicalize_llm_fn=None,
+) -> Stage2Result:
+    """SS8.1 verification loop: decision probes (from user text ONLY) must
+    retrieve the provisional candidate as top-1 on every probe with
+    min-margin > GOV_S2_MARGIN. One deterministic canonicalization attempt on
+    failure, re-tested on the same probes; final fallback writes as-is with a
+    low_confidence flag. Stage 2 never suppresses.
+
+    Simulation is per-tier and backend-faithful (retrieval_sim); the whitened
+    space never enters. ``dH_neighbor`` / ``N_eff`` are logged, decision-inert.
+    """
+    from bfcl_eval.model_handler.middleware.probe_gen import (
+        ProbeConfig,
+        generate_decision_probes,
+        generate_item_probes,
+    )
+    from bfcl_eval.model_handler.middleware.retrieval_sim import (
+        delta_h_for_probes,
+        margin as sim_margin,
+        entropy as sim_entropy,
+        n_eff as sim_n_eff,
+        simulate_kv,
+        simulate_vector,
+    )
+
+    start = time.perf_counter()
+    res = Stage2Result(outcome=GovDecision.ADD, reason="stage2_accept_low_confidence")
+    probe_cfg = ProbeConfig.from_env()
+    probes = generate_decision_probes(user_text, signals.verbatim_values, probe_cfg)
+    res.probes = [p.to_dict() for p in probes]
+    temperature = cfg.s2_t_kv if candidate.backend == "kv" else cfg.s2_t_vec
+
+    tier_items = cache.items[candidate.tier]
+    rival_refs = list(tier_items.keys())
+    rival_texts = [tier_items[r].text for r in rival_refs]
+
+    def candidate_entry(cand: WriteCandidate) -> str:
+        return str(cand.args["key"]) if cand.backend == "kv" else cand.text
+
+    def test_probes(entry: str) -> tuple:
+        """Returns (all_top1_is_candidate, min_margin, per_probe_rows)."""
+        corpus = (rival_refs if candidate.backend == "kv" else rival_texts) + [entry]
+        cand_idx = len(corpus) - 1
+        rows, min_m, all_top1 = [], None, True
+        for p in probes:
+            if candidate.backend == "kv":
+                ranked = simulate_kv(corpus, p.text, k=5)
+                top1_is_cand = bool(ranked) and ranked[0][1] == entry
+            else:
+                ranked = simulate_vector(corpus, p.text, k=5)
+                top1_is_cand = bool(ranked) and ranked[0][1] == cand_idx
+            scores = [s for s, _ in ranked]
+            m = sim_margin(scores)
+            h = sim_entropy(scores, temperature, k=5)
+            rows.append(
+                {
+                    "probe": p.text,
+                    "channel": p.channel,
+                    "top1_is_candidate": top1_is_cand,
+                    "margin": round(m, 6),
+                    "H": round(h, 6),
+                    "n_eff": round(sim_n_eff(h), 6),
+                }
+            )
+            all_top1 = all_top1 and top1_is_cand
+            min_m = m if min_m is None else min(min_m, m)
+        return all_top1, min_m, rows
+
+    if probes:
+        ok, min_m, rows = test_probes(candidate_entry(candidate))
+        res.per_probe = rows
+        res.min_margin = round(min_m, 6) if min_m is not None else None
+        if rows:
+            worst = min(rows, key=lambda r: r["margin"])
+            res.worst_probe = worst["probe"]
+        if ok and min_m is not None and min_m > cfg.s2_margin:
+            res.outcome = GovDecision.ADD
+            res.reason = "stage2_accept"
+        else:
+            # One-shot canonicalization, deterministic first (SS8.2).
+            rewritten = canonicalize_candidate(
+                candidate,
+                rival_refs if candidate.backend == "kv" else rival_texts,
+                signals.verbatim_values,
+                user_text,
+                cache.max_entry_length(candidate.tier),
+            )
+            if rewritten is None and cfg.s2_canon_llm and canonicalize_llm_fn is not None:
+                llm_call = canonicalize_llm_fn(candidate, rival_texts)
+                rewritten = (llm_call, "<llm>") if llm_call else None
+            if rewritten is not None:
+                new_call, token = rewritten
+                new_cand = build_candidate(candidate.backend, new_call)
+                if new_cand is not None and preflight_would_succeed(new_cand, cache):
+                    ok2, min_m2, rows2 = test_probes(candidate_entry(new_cand))
+                    res.canonicalization = {
+                        "applied": True,
+                        "token": token,
+                        "rewritten_call": new_call,
+                        "retry_min_margin": round(min_m2, 6) if min_m2 is not None else None,
+                    }
+                    if ok2 and min_m2 is not None and min_m2 > cfg.s2_margin:
+                        res.outcome = GovDecision.REWRITE
+                        res.reason = "stage2_accept_rewritten"
+                        res.rewritten_call = new_call
+                else:
+                    res.canonicalization = {
+                        "applied": False,
+                        "token": token,
+                        "rewritten_call": new_call,
+                        "blocked_by": "parse_or_preflight",
+                    }
+            else:
+                res.canonicalization = {"applied": False, "token": None}
+            if res.outcome != GovDecision.REWRITE:
+                res.outcome = GovDecision.ADD
+                res.reason = "stage2_accept_low_confidence"
+                res.low_confidence = True
+    else:
+        # No user text captured -> no anti-circular probe source; never decide
+        # from candidate text (SS4.1 invariant). Accept with the flag.
+        res.reason = "stage2_no_probe_source"
+        res.low_confidence = True
+
+    # -- decision-inert diagnostics: dH on the neighbors' own cached probes ----
+    corpus = rival_refs if candidate.backend == "kv" else rival_texts
+    entry = candidate_entry(candidate)
+    dhs = []
+    for it in neighbors:
+        item_probes = list(it.probes) or [
+            p.text
+            for p in generate_item_probes(
+                candidate.backend, it.text, ref=it.ref, source="stored_text"
+            )
+        ]
+        if not item_probes or not corpus:
+            continue
+        d = delta_h_for_probes(
+            candidate.backend, corpus, entry, item_probes, k=5, temperature=temperature
+        )
+        res.dH_neighbor.append({"ref": it.ref, "dH": d["dH_mean"], "n_eff": d["n_eff_after_mean"]})
+        dhs.append(d["dH_mean"])
+    if dhs:
+        res.dH_mean = round(sum(dhs) / len(dhs), 6)
+
+    res.latency_ms = round((time.perf_counter() - start) * 1000, 3)
+    return res
 
 
 # ---------------------------------------------------------------------------
@@ -824,6 +1292,8 @@ class GovernanceSession:
         snapshot: Optional[dict],
         snapshot_path: str = "",
         snapshot_missing: bool = False,
+        nli_scorer=None,
+        sidecar_path: Optional[str] = None,
     ):
         self.cfg = cfg
         self.backend = backend
@@ -842,8 +1312,24 @@ class GovernanceSession:
         self.step = 0
         self._shadow_next = SHADOW_ID_START
         self._issued_shadow_ids: set = set()
-        # idx -> {"original_call", "synthetic", "candidate"} for the current step
+        # idx -> {"mode": "noop"|"rewrite", ...} for the current step
         self._pending: dict = {}
+        # Stage 1/2 state. The scorer is injectable for tests; when None and
+        # GOV_NLI_ENABLED, the DeBERTa singleton is loaded lazily on first use.
+        self._nli_scorer = nli_scorer
+        self._nli_loaded = nli_scorer is not None
+        self.user_text: str = ""  # latest user turn (Stage 2 probe source)
+        self._low_conf_texts: set = set()  # (tier, text) to flag at observe time
+        # Probe-cache sidecar (Stage 2): <scenario>_gov_state.json next to the
+        # backend snapshot. Only touched when GOV_S2_ENABLED.
+        if sidecar_path is not None:
+            self.sidecar_path = sidecar_path
+        elif snapshot_path and snapshot_path.endswith("_final.json"):
+            self.sidecar_path = snapshot_path[: -len("_final.json")] + "_gov_state.json"
+        else:
+            self.sidecar_path = ""
+        if cfg.s2_enabled:
+            self._load_probe_sidecar()
 
         log_gov_record(
             {
@@ -888,25 +1374,62 @@ class GovernanceSession:
             self._govern_one(idx, candidate, governed)
         return governed
 
+    def _get_nli_scorer(self):
+        if not self._nli_loaded:
+            self._nli_loaded = True
+            from bfcl_eval.model_handler.middleware.semantic_entropy import (
+                _get_nli_model,
+            )
+
+            self._nli_scorer = _get_nli_model()
+        return self._nli_scorer
+
     def _govern_one(self, idx: int, candidate: WriteCandidate, governed: list):
         v_w = self._whiten_one(candidate.text)
         preflight_ok = preflight_would_succeed(candidate, self.cache)
         signals = compute_signals(v_w, candidate, self.cache, self.thresholds, self.cfg)
         decision, reason = decide(candidate, signals, self.cache, self.cfg, preflight_ok)
 
+        # -- escalation cascade (Stage 1 NLI -> Stage 2 retrieval entropy) ----
+        stage1_log = stage2_log = None
+        rewritten_call = None
+        low_confidence = False
+        if decision == GovDecision.ESCALATE:
+            decision, reason, stage1_log, stage2_log, rewritten_call, low_confidence = (
+                self._resolve_escalation(candidate, signals, preflight_ok)
+            )
+
         shadow_id = None
         synthetic = None
-        if decision == GovDecision.NOOP and not self.cfg.dry_run:
-            if candidate.backend == "vector" and candidate.kind == "add":
-                shadow_id = self._shadow_next
-                self._shadow_next += 1
-                self._issued_shadow_ids.add(shadow_id)
-            synthetic = synthetic_success(candidate, shadow_id)
-            governed[idx] = DECOY_CALL
-            self._pending[idx] = {
-                "original_call": candidate.raw_call,
-                "synthetic": synthetic,
-            }
+        applied = "none"
+        if not self.cfg.dry_run:
+            if decision == GovDecision.NOOP:
+                if candidate.backend == "vector" and candidate.kind == "add":
+                    shadow_id = self._shadow_next
+                    self._shadow_next += 1
+                    self._issued_shadow_ids.add(shadow_id)
+                synthetic = synthetic_success(candidate, shadow_id)
+                governed[idx] = DECOY_CALL
+                self._pending[idx] = {
+                    "mode": "noop",
+                    "original_call": candidate.raw_call,
+                    "synthetic": synthetic,
+                }
+                applied = "noop"
+            elif decision == GovDecision.REWRITE:
+                governed[idx] = rewritten_call
+                self._pending[idx] = {
+                    "mode": "rewrite",
+                    "original_call": candidate.raw_call,
+                    "rewritten_call": rewritten_call,
+                }
+                applied = "rewrite"
+                if low_confidence:
+                    rc = build_candidate(self.backend, rewritten_call)
+                    if rc is not None:
+                        self._low_conf_texts.add((rc.tier, rc.text))
+            elif low_confidence:
+                self._low_conf_texts.add((candidate.tier, candidate.text))
 
         if self.cfg.verbose:
             print(
@@ -946,27 +1469,132 @@ class GovernanceSession:
                 "dry_run": self.cfg.dry_run,
                 "synthetic_result": synthetic,
                 "shadow_id": shadow_id,
+                "applied": applied,
+                "original_call": candidate.raw_call if applied == "rewrite" else None,
+                "rewritten_call": rewritten_call,
+                "low_confidence": low_confidence,
+                "stage1": stage1_log,
+                "stage2": stage2_log,
                 "latency_ms": signals.latency_ms,
             },
             self.cfg,
         )
 
+    def _resolve_escalation(
+        self, candidate: WriteCandidate, signals: Stage0Signals, preflight_ok: bool
+    ) -> tuple:
+        """Run Stage 1 (and Stage 2 on all-neutral) and map their outcome to the
+        final applied decision, honoring shadow modes and preflight guards.
+
+        Returns (decision, reason, stage1_log, stage2_log, rewritten_call,
+        low_confidence). With both stages disabled this is bit-identical to the
+        pre-Stage-1 fallback: (ADD, "escalate:stage0_escalate_fallback").
+        """
+        cfg = self.cfg
+        if not cfg.nli_enabled:
+            return GovDecision.ADD, "escalate:stage0_escalate_fallback", None, None, None, False
+
+        s1 = stage1_resolve(
+            candidate, signals, self.cache, cfg, preflight_ok, self._get_nli_scorer()
+        )
+        stage1_log = s1.to_log()
+        stage2_log = None
+        outcome, reason = s1.outcome, s1.reason
+        rewritten_call = s1.rewritten_call
+        low_confidence = False
+        shadowed_by = "stage1_shadow" if cfg.nli_shadow else None
+
+        if outcome == GovDecision.ESCALATE:
+            if cfg.s2_enabled:
+                s2 = stage2_resolve(
+                    candidate,
+                    signals,
+                    self.cache,
+                    cfg,
+                    self.user_text,
+                    neighbors=s1.neighbor_items,
+                    canonicalize_llm_fn=None,  # injected by the handler in Plan 2
+                )
+                stage2_log = s2.to_log()
+                outcome, reason = s2.outcome, s2.reason
+                rewritten_call = s2.rewritten_call
+                low_confidence = s2.low_confidence
+                if shadowed_by is None and cfg.s2_shadow:
+                    shadowed_by = "stage2_shadow"
+            else:
+                outcome, reason = GovDecision.ADD, "stage1_all_neutral_no_stage2"
+
+        # -- shadow discipline: compute + log everything, change nothing -------
+        if shadowed_by is not None:
+            stage1_log["shadowed"] = True
+            if stage2_log is not None:
+                stage2_log["shadowed"] = True
+            return (
+                GovDecision.ADD,
+                f"escalate:{shadowed_by}:{reason}",
+                stage1_log,
+                stage2_log,
+                None,
+                False,
+            )
+
+        # -- live application guards ------------------------------------------
+        if outcome == GovDecision.NOOP and not preflight_ok:
+            # Same absolute protection as Stage 0 NOOPs (SS7.5): a synthetic
+            # success must never mask a real backend error.
+            return (
+                GovDecision.ADD,
+                f"escalate:{reason}_preflight_blocked",
+                stage1_log,
+                stage2_log,
+                None,
+                low_confidence,
+            )
+        if outcome == GovDecision.REWRITE:
+            rc = build_candidate(self.backend, rewritten_call) if rewritten_call else None
+            if rc is None or not preflight_would_succeed(rc, self.cache):
+                # Never rewrite into a guaranteed error -- fall back to ADD.
+                return (
+                    GovDecision.ADD,
+                    f"escalate:{reason}_rewrite_preflight_blocked",
+                    stage1_log,
+                    stage2_log,
+                    None,
+                    low_confidence,
+                )
+        return (
+            outcome,
+            f"escalate:{reason}",
+            stage1_log,
+            stage2_log,
+            rewritten_call if outcome == GovDecision.REWRITE else None,
+            low_confidence,
+        )
+
     # -- HOOK 2: post-execution -----------------------------------------------
 
     def patch_results(self, execution_results: list, decoded_calls: list) -> list:
-        """Substitute synthetic successes at suppressed indices, restore the original
-        call strings in ``decoded_calls`` (in place -- it is the same list the parent
-        zips against for the tool-message ``name``), and observe genuine successes to
-        keep the cache mirror in sync. Returns the patched results list."""
+        """Substitute synthetic successes at suppressed (NOOP) indices, restore
+        their original call strings in ``decoded_calls`` (in place -- it is the
+        same list the parent zips against for the tool-message ``name``), and
+        observe genuine successes to keep the cache mirror in sync.
+
+        Rewrite-mode entries (Stage 1/2) are the opposite (SS7.5): the REAL
+        backend result flows through untouched and the executed (rewritten) call
+        is NOT restored -- ``_observe`` must see the executed call so the mirror
+        stays truthful; the original call is preserved in the decision log
+        record. Returns the patched results list."""
         new_results = list(execution_results)
         for idx, info in self._pending.items():
+            if info.get("mode", "noop") != "noop":
+                continue
             if idx < len(new_results):
                 new_results[idx] = info["synthetic"]
             if idx < len(decoded_calls):
                 decoded_calls[idx] = info["original_call"]
 
         for idx, call in enumerate(decoded_calls):
-            if idx in self._pending:
+            if idx in self._pending and self._pending[idx].get("mode", "noop") == "noop":
                 continue  # suppressed: backend state unchanged
             if idx < len(new_results):
                 self._observe(call, execution_results[idx])
@@ -1046,15 +1674,30 @@ class GovernanceSession:
         log_gov_record(record, self.cfg)
 
     def _put_item(self, tier: str, ref: str, text: str):
-        self.cache.put(
-            MemoryItem(
-                ref=ref,
-                text=text,
-                emb_whitened=self._whiten_one(text),
-                turn_written=self.step,
-                tier=tier,
-            )
+        item = MemoryItem(
+            ref=ref,
+            text=text,
+            emb_whitened=self._whiten_one(text),
+            turn_written=self.step,
+            tier=tier,
         )
+        if (tier, text) in self._low_conf_texts:
+            item.low_confidence = True
+            self._low_conf_texts.discard((tier, text))
+        if self.cfg.s2_enabled:
+            # Write-time probe cache (SS8.3): cheap, deterministic templates.
+            from bfcl_eval.model_handler.middleware.probe_gen import (
+                generate_item_probes,
+            )
+
+            item.probes = [
+                p.text
+                for p in generate_item_probes(self.backend, text, ref=ref)
+            ]
+            item.probe_provenance = "write_time"
+        self.cache.put(item)
+        if self.cfg.s2_enabled:
+            self._persist_probe_sidecar()
         log_gov_record(
             {
                 "ts": time.time(),
@@ -1066,6 +1709,60 @@ class GovernanceSession:
                 "ref": ref,
                 "text": text,  # full text -- replay needs the verbatim value
                 "n_items": self.cache.total_size(),
+                "low_confidence": item.low_confidence,
             },
             self.cfg,
         )
+
+    # -- Stage 2 probe-cache sidecar (SS8.3) ----------------------------------
+
+    def _load_probe_sidecar(self):
+        """Attach persisted probes to rehydrated items; regenerate (flagged
+        ``stored_text`` -- diagnostics only, never accept/reject) on cache miss."""
+        from bfcl_eval.model_handler.middleware.probe_gen import generate_item_probes
+
+        stored: dict = {}
+        if self.sidecar_path and os.path.exists(self.sidecar_path):
+            try:
+                with open(self.sidecar_path, "r", encoding="utf-8") as f:
+                    stored = json.load(f).get("tiers", {})
+            except (json.JSONDecodeError, OSError) as e:
+                print(f"[GOV] probe sidecar unreadable ({e}); regenerating probes")
+        for tier in ("core", "archival"):
+            for ref, item in self.cache.items[tier].items():
+                entry = stored.get(tier, {}).get(ref)
+                if entry is not None and entry.get("text") == item.text:
+                    item.probes = list(entry.get("probes", []))
+                    item.probe_provenance = "sidecar"
+                else:
+                    item.probes = [
+                        p.text
+                        for p in generate_item_probes(
+                            self.backend, item.text, ref=ref, source="stored_text"
+                        )
+                    ]
+                    item.probe_provenance = "stored_text"
+
+    def _persist_probe_sidecar(self):
+        if not self.sidecar_path:
+            return
+        payload = {
+            "backend": self.backend,
+            "tiers": {
+                tier: {
+                    ref: {
+                        "text": it.text,
+                        "probes": it.probes,
+                        "probe_provenance": it.probe_provenance,
+                    }
+                    for ref, it in self.cache.items[tier].items()
+                }
+                for tier in ("core", "archival")
+            },
+        }
+        try:
+            os.makedirs(os.path.dirname(self.sidecar_path) or ".", exist_ok=True)
+            with open(self.sidecar_path, "w", encoding="utf-8") as f:
+                json.dump(payload, f, ensure_ascii=False, indent=2)
+        except OSError as e:  # persistence must never break inference
+            print(f"[GOV] failed to persist probe sidecar: {e}")

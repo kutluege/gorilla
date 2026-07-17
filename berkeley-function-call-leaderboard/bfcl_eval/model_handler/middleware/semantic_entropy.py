@@ -171,6 +171,85 @@ def _get_encoder():
     return _ENCODER
 
 
+# ---------------------------------------------------------------------------
+# NLI scorer: lazy DeBERTa-MNLI singleton (CPU), mirroring _get_encoder().
+# Used by the Stage 1 governance escalation handler (governance_filter.py).
+# ---------------------------------------------------------------------------
+
+_NLI = None
+_NLI_FAILED = False
+_NLI_LOCK = threading.Lock()
+
+DEFAULT_NLI_MODEL = "microsoft/deberta-large-mnli"
+
+
+class NliScorer:
+    """Thin wrapper: probs(premise, hypothesis) -> (p_contra, p_neutral, p_entail).
+
+    Label order is resolved from the model config's id2label, never assumed.
+    """
+
+    def __init__(self, model, tokenizer, device: str = "cpu"):
+        self._model = model
+        self._tokenizer = tokenizer
+        self._device = device
+        id2label = {int(k): v.lower() for k, v in model.config.id2label.items()}
+        self._idx = {name: i for i, name in id2label.items()}
+        for needed in ("contradiction", "neutral", "entailment"):
+            if needed not in self._idx:
+                raise RuntimeError(
+                    f"[NLI] model labels {id2label} missing '{needed}'; "
+                    f"not an MNLI-style classifier."
+                )
+
+    def probs(self, premise: str, hypothesis: str) -> tuple:
+        return self.probs_batch([(premise, hypothesis)])[0]
+
+    def probs_batch(self, pairs: list) -> list:
+        """Batch all pairs of one escalation in a single forward pass (CPU
+        efficiency: k=3 bidirectional -> one batch of 6)."""
+        import torch
+
+        premises = [p for p, _ in pairs]
+        hypotheses = [h for _, h in pairs]
+        enc = self._tokenizer(
+            premises, hypotheses, return_tensors="pt",
+            padding=True, truncation=True, max_length=512,
+        ).to(self._device)
+        with torch.no_grad():
+            logits = self._model(**enc).logits
+        probs = torch.softmax(logits, dim=-1).cpu().numpy()
+        c, n, e = (self._idx["contradiction"], self._idx["neutral"], self._idx["entailment"])
+        return [(float(row[c]), float(row[n]), float(row[e])) for row in probs]
+
+
+def _get_nli_model(model_name: str = None, device: str = None):
+    """Lazy, thread-locked NLI singleton. Returns None if transformers/weights
+    are unavailable (callers must degrade gracefully -- e.g. Stage 1 falls back
+    to the Stage 0 ADD behavior and logs the outage)."""
+    global _NLI, _NLI_FAILED
+    if _NLI is not None or _NLI_FAILED:
+        return _NLI
+    with _NLI_LOCK:
+        if _NLI is None and not _NLI_FAILED:
+            try:
+                from transformers import (
+                    AutoModelForSequenceClassification,
+                    AutoTokenizer,
+                )
+
+                name = model_name or os.getenv("GOV_NLI_MODEL", DEFAULT_NLI_MODEL)
+                dev = device or os.getenv("GOV_NLI_DEVICE", "cpu")
+                tokenizer = AutoTokenizer.from_pretrained(name)
+                model = AutoModelForSequenceClassification.from_pretrained(name)
+                model.to(dev).eval()
+                _NLI = NliScorer(model, tokenizer, dev)
+            except Exception as e:  # pragma: no cover - environment-dependent
+                print(f"[NLI] model unavailable ({e}); Stage 1 will fall back to ADD")
+                _NLI_FAILED = True
+    return _NLI
+
+
 def _similarity_matrix(texts: list) -> list:
     """NxN similarity in [0, 1]-ish (cosine for embeddings, ratio for difflib)."""
     n = len(texts)
