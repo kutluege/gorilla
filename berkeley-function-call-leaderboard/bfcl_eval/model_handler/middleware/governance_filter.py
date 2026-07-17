@@ -82,6 +82,33 @@ def _env_flag(name: str, default: bool) -> bool:
 
 @dataclass
 class GovConfig:
+    """All knobs are environment-driven (one registry entry covers every arm).
+
+    Stage 0 (geometric filter):
+      GOV_ENABLED, GOV_DRY_RUN, GOV_D, GOV_TAU0, GOV_TAU_MIN, GOV_LAMBDA, GOV_ALPHA,
+      GOV_DELTA, GOV_SIM_HIGH, GOV_ARTIFACT_PATH, GOV_LOG_DIR, GOV_LOG_FILE,
+      GOV_VERBOSE, GOV_STRICT_THRESHOLDS (degenerate (sim_high, delta) pair raises
+      instead of warning; see :meth:`validate`).
+
+    Stage 1 (NLI escalation; default OFF, shadow-first):
+      GOV_NLI_ENABLED  -- load the NLI scorer and run the escalation handler.
+      GOV_NLI_SHADOW   -- compute + log the full Stage 1 decision but never intervene.
+      GOV_NLI_K        -- number of top-sim neighbors to check (default 3).
+      GOV_TAU_ENTAIL, GOV_TAU_CONTRA, GOV_DELTA_SPEC -- decision-table thresholds.
+
+    Stage 2 (retrieval-entropy escalation; default OFF):
+      GOV_S2_ENABLED   -- run the probe-based retrieval simulation on Stage 1's
+                          all-neutral escalations.
+      GOV_S2_MARGIN    -- min top1-vs-top2 margin (all probes agreeing on the same
+                          stored item) required to call the candidate a duplicate.
+                          Placeholder default; Plan 2 calibrates from the replay
+                          margin distribution.
+      GOV_S2_CANON_LLM -- allow one LLM canonicalization attempt for rewrites
+                          (default off: deterministic canonicalization only).
+      GOV_PROBE_PARAPHRASE -- enable the paraphrase probe channel (default off:
+                          template probes only; see probe_gen.py).
+    """
+
     enabled: bool = True
     dry_run: bool = False  # shadow mode: full pipeline + logging, but never suppress
     d: int = 16  # ABTT top-directions removed (must match the artifact)
@@ -95,14 +122,26 @@ class GovConfig:
     # pairwise cosines substantially, so this needs calibration from a GOV_DRY_RUN=1
     # shadow run before trusting it.
     sim_high: float = 0.80
+    strict_thresholds: bool = False  # degenerate (sim_high, delta) raises, not warns
     artifact_path: str = DEFAULT_ARTIFACT_PATH
     log_dir: str = ""  # "" -> current working directory
     log_file: str = "governance_log.jsonl"
     verbose: bool = False
+    # -- Stage 1 (NLI) ------------------------------------------------------
+    nli_enabled: bool = False
+    nli_shadow: bool = True  # shadow-first deploy: log everything, change nothing
+    nli_k: int = 3
+    tau_entail: float = 0.75
+    tau_contra: float = 0.75
+    delta_spec: float = 0.10
+    # -- Stage 2 (retrieval entropy) ----------------------------------------
+    s2_enabled: bool = False
+    s2_margin: float = 0.05  # placeholder; calibrate from replay margins (Plan 2)
+    s2_canon_llm: bool = False
 
     @classmethod
     def from_env(cls) -> "GovConfig":
-        return cls(
+        cfg = cls(
             enabled=_env_flag("GOV_ENABLED", True),
             dry_run=_env_flag("GOV_DRY_RUN", False),
             d=int(os.getenv("GOV_D", "16")),
@@ -112,11 +151,69 @@ class GovConfig:
             alpha=float(os.getenv("GOV_ALPHA", "0.9")),
             delta=float(os.getenv("GOV_DELTA", "0.025")),
             sim_high=float(os.getenv("GOV_SIM_HIGH", "0.80")),
+            strict_thresholds=_env_flag("GOV_STRICT_THRESHOLDS", False),
             artifact_path=os.getenv("GOV_ARTIFACT_PATH", DEFAULT_ARTIFACT_PATH),
             log_dir=os.getenv("GOV_LOG_DIR", ""),
             log_file=os.getenv("GOV_LOG_FILE", "governance_log.jsonl"),
             verbose=_env_flag("GOV_VERBOSE", False),
+            nli_enabled=_env_flag("GOV_NLI_ENABLED", False),
+            nli_shadow=_env_flag("GOV_NLI_SHADOW", True),
+            nli_k=int(os.getenv("GOV_NLI_K", "3")),
+            tau_entail=float(os.getenv("GOV_TAU_ENTAIL", "0.75")),
+            tau_contra=float(os.getenv("GOV_TAU_CONTRA", "0.75")),
+            delta_spec=float(os.getenv("GOV_DELTA_SPEC", "0.10")),
+            s2_enabled=_env_flag("GOV_S2_ENABLED", False),
+            s2_margin=float(os.getenv("GOV_S2_MARGIN", "0.05")),
+            s2_canon_llm=_env_flag("GOV_S2_CANON_LLM", False),
         )
+        cfg.validate()
+        return cfg
+
+    def noop_residual_bound(self) -> float:
+        """Max residual a single-neighbor candidate can have while still clearing
+        the ``sim_max > sim_high`` gate: ``sqrt(1 - sim_high**2)`` (unit vectors)."""
+        return math.sqrt(max(0.0, 1.0 - self.sim_high**2))
+
+    def validate(self) -> bool:
+        """Startup guard against a geometrically degenerate (sim_high, delta) pair.
+
+        Geometry (single stored neighbor, all vectors unit-norm): the residual of
+        the candidate against that neighbor is ``r = sqrt(1 - sim**2)``, so
+        ``sim_max > sim_high`` already forces ``r < bound = sqrt(1 - sim_high**2)``.
+
+          * ``delta >= bound``: the residual gate never binds -- the NOOP branch
+            fires at the advertised ``sim_high``. OK.
+          * ``delta <  bound``: the residual gate binds FIRST and silently raises
+            the effective single-neighbor similarity bar to ``sqrt(1 - delta**2)``
+            -- a config that *looks* active but cannot fire at its advertised
+            threshold (v2 SS2.3: (0.95, 0.30) is degenerate because
+            0.30 < bound = 0.312; the proposed fix (0.95, 0.32) clears it).
+
+        NOTE(inequality direction): Plan 1 Step 1 flags that the v2 doc's prose is
+        internally ambiguous about the sign. The direction encoded here (warn when
+        ``delta < bound``) is the only one consistent with ALL of v2's worked
+        numbers -- (0.95, 0.30) degenerate, (0.95, 0.32) fine, (0.80, 0.40) warns.
+        Plan 2's calibration step must re-check this against live margins.
+
+        Returns True when the pair is healthy; warns (or raises under
+        ``strict_thresholds``) and returns False otherwise.
+        """
+        bound = self.noop_residual_bound()
+        if self.delta < bound:
+            effective_sim = math.sqrt(max(0.0, 1.0 - self.delta**2))
+            msg = (
+                f"[GOV] WARNING: degenerate thresholds sim_high={self.sim_high} "
+                f"delta={self.delta}: delta < single-neighbor bound "
+                f"sqrt(1-sim_high^2)={bound:.4f}, so the residual gate binds first "
+                f"and the effective one-neighbor NOOP threshold is "
+                f"sim>{effective_sim:.4f}, not the advertised {self.sim_high}. "
+                f"Raise GOV_DELTA to >= {bound:.4f} (or lower GOV_SIM_HIGH)."
+            )
+            if self.strict_thresholds:
+                raise ValueError(msg)
+            print(msg)
+            return False
+        return True
 
 
 # ---------------------------------------------------------------------------
@@ -193,6 +290,10 @@ class MemoryItem:
     tier: str  # "core" | "archival"
     category: str = ""
     low_confidence: bool = False
+    # Stage 2 probe cache: generated at write time, persisted to the
+    # <scenario>_gov_state.json sidecar. Empty until GOV_S2_ENABLED runs.
+    probes: list = field(default_factory=list)
+    probe_provenance: str = ""  # "write_time" | "sidecar" | "stored_text"
 
 
 def kv_composite_text(key: str, value: str) -> str:
@@ -451,6 +552,9 @@ class Stage0Signals:
     n_items: int = 0
     rho: float = 0.0
     latency_ms: float = 0.0
+    # Full similarity vector M @ v_w (same order as cache.matrix() items). Stage 1
+    # ranks escalation neighbors by argsort over this -- no re-embedding.
+    sims: list = field(default_factory=list)
 
 
 def compute_signals(
@@ -466,7 +570,9 @@ def compute_signals(
 
     M, _ = cache.matrix()
     if M.shape[0] > 0:
-        sig.sim_max = float(np.max(M @ v_w))
+        sims = M @ v_w
+        sig.sims = [float(s) for s in sims]
+        sig.sim_max = float(np.max(sims))
         Q = cache.basis_q()
         resid = v_w - Q @ (Q.T @ v_w)
         sig.r = float(np.linalg.norm(resid))
@@ -749,6 +855,11 @@ class GovernanceSession:
                 "snapshot_missing": snapshot_missing,
                 "items_loaded": self.cache.total_size(),
                 "dry_run": cfg.dry_run,
+                # ABTT provenance (Plan 1 Step 2c): lets a replay assert it
+                # reconstructed the same whitening this session used.
+                "abtt_d": int(self.abtt.u_top.shape[1]),
+                "abtt_artifact_path": cfg.artifact_path,
+                "abtt_meta": self.abtt.meta,
             },
             cfg,
         )
@@ -815,7 +926,9 @@ class GovernanceSession:
                 "op": candidate.op,
                 "tier": candidate.tier,
                 "candidate_ref": candidate.ref,
-                "candidate_text": candidate.text[:300],
+                # Full text, never truncated: the offline replay reconstructs memory
+                # state from this field verbatim (Plan 1 Step 2b).
+                "candidate_text": candidate.text,
                 "sim_max": round(signals.sim_max, 4),
                 "r": round(signals.r, 4),
                 "tau_t": round(signals.tau_t, 4),
@@ -898,8 +1011,10 @@ class GovernanceSession:
             self._put_item(tier, str(args["key"]), kv_composite_text(args["key"], args["value"]))
         elif kind == "remove" and status == KV_REMOVE_SUCCESS:
             self.cache.drop(tier, str(args["key"]))
+            self._log_observe_removal("observe_remove", tier, ref=str(args["key"]))
         elif kind == "clear" and status == KV_CLEAR_SUCCESS[tier]:
             self.cache.clear_tier(tier)
+            self._log_observe_removal("observe_clear", tier)
 
     def _observe_vector(self, kind: str, tier: str, args: dict, result: dict):
         status = result.get("status", "")
@@ -909,8 +1024,26 @@ class GovernanceSession:
             self._put_item(tier, str(args["vec_id"]), str(args["new_text"]))
         elif kind == "remove" and status == f"ID {args['vec_id']} removed from store.":
             self.cache.drop(tier, str(args["vec_id"]))
+            self._log_observe_removal("observe_remove", tier, ref=str(args["vec_id"]))
         elif kind == "clear" and status == VECTOR_CLEAR_SUCCESS:
             self.cache.clear_tier(tier)
+            self._log_observe_removal("observe_clear", tier)
+
+    def _log_observe_removal(self, event: str, tier: str, ref: Optional[str] = None):
+        """Destructive mutations must appear in the live log stream (Plan 1 Step 2a);
+        without them, an offline replay can only infer removals from result files."""
+        record = {
+            "ts": time.time(),
+            "event": event,
+            "test_id": self.test_id,
+            "step_idx": self.step,
+            "backend": self.backend,
+            "tier": tier,
+            "n_items": self.cache.total_size(),
+        }
+        if ref is not None:
+            record["ref"] = ref
+        log_gov_record(record, self.cfg)
 
     def _put_item(self, tier: str, ref: str, text: str):
         self.cache.put(
@@ -931,7 +1064,7 @@ class GovernanceSession:
                 "backend": self.backend,
                 "tier": tier,
                 "ref": ref,
-                "text": text[:300],
+                "text": text,  # full text -- replay needs the verbatim value
                 "n_items": self.cache.total_size(),
             },
             self.cfg,
