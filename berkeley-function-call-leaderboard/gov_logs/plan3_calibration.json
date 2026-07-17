@@ -1,0 +1,75 @@
+{
+  "instrument": "calibrate_placement",
+  "model": "Qwen_Qwen3-4B-Instruct-2507-FC",
+  "surviving_chains": [
+    "kv/customer",
+    "kv/finance",
+    "kv/notetaker",
+    "vector/customer",
+    "vector/finance",
+    "vector/notetaker"
+  ],
+  "wgrid": {
+    "0.4": {
+      "evicted_answer_bearing": 18,
+      "answer_bearing_total": 51,
+      "answer_loss": 0.3529
+    },
+    "0.5": {
+      "evicted_answer_bearing": 18,
+      "answer_bearing_total": 51,
+      "answer_loss": 0.3529
+    },
+    "0.6": {
+      "evicted_answer_bearing": 18,
+      "answer_bearing_total": 51,
+      "answer_loss": 0.3529
+    },
+    "0.7": {
+      "evicted_answer_bearing": 18,
+      "answer_bearing_total": 51,
+      "answer_loss": 0.3529
+    }
+  },
+  "ksens": {
+    "3": {
+      "mean_coverage": 0.9566,
+      "n_cases": 34
+    },
+    "5": {
+      "mean_coverage": 0.984,
+      "n_cases": 34
+    },
+    "7": {
+      "mean_coverage": 0.9893,
+      "n_cases": 34
+    },
+    "10": {
+      "mean_coverage": 0.9973,
+      "n_cases": 34
+    }
+  },
+  "readmargin": {
+    "kv": {
+      "n_answer_bearing_top1": 10,
+      "n_other_top1": 70,
+      "answer_bearing_margin_p25": 0.0,
+      "answer_bearing_margin_p50": 0.0,
+      "other_margin_p50": 0.0,
+      "suggested_read_margin": 0.0
+    },
+    "vector": {
+      "n_answer_bearing_top1": 27,
+      "n_other_top1": 53,
+      "answer_bearing_margin_p25": 0.0537,
+      "answer_bearing_margin_p50": 0.1153,
+      "other_margin_p50": 0.0569,
+      "suggested_read_margin": 0.0537
+    }
+  },
+  "notes": [
+    "pooled calibration over surviving scenarios; report per-scenario in 3B",
+    "wgrid isolates uniqueness (snapshot turn_written=-1 flattens recency)",
+    "readmargin suggestion is provisional until the live shadow harvest"
+  ]
+}
