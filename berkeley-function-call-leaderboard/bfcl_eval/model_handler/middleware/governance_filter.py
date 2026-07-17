@@ -903,6 +903,11 @@ class Stage2Result:
     rewritten_call: Optional[str] = None
     dH_neighbor: list = field(default_factory=list)  # decision-inert diagnostics
     dH_mean: Optional[float] = None
+    # SS4.4: H comparisons are only meaningful within one backend at one softmax
+    # temperature, so the T actually used (GOV_S2_T_KV / GOV_S2_T_VEC) is pinned
+    # in every record. Diagnostic metadata only -- never read by any decision.
+    temperature: Optional[float] = None
+    probes_n: Optional[int] = None
     latency_ms: float = 0.0
 
     def to_log(self) -> dict:
@@ -918,6 +923,8 @@ class Stage2Result:
             "rewritten_call": self.rewritten_call,
             "dH_neighbor": self.dH_neighbor,
             "dH_mean": self.dH_mean,
+            "temperature": self.temperature,
+            "probes_n": self.probes_n,
             "latency_ms": self.latency_ms,
         }
 
@@ -1014,6 +1021,8 @@ def stage2_resolve(
     probes = generate_decision_probes(user_text, signals.verbatim_values, probe_cfg)
     res.probes = [p.to_dict() for p in probes]
     temperature = cfg.s2_t_kv if candidate.backend == "kv" else cfg.s2_t_vec
+    res.temperature = temperature
+    res.probes_n = len(probes)
 
     tier_items = cache.items[candidate.tier]
     rival_refs = list(tier_items.keys())
