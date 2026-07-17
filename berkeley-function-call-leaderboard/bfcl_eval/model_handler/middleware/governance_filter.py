@@ -160,6 +160,11 @@ class GovConfig:
     p_w1: float = 0.6  # value-formula uniqueness weight (no access-frequency term)
     p_w2: float = 0.4  # value-formula recency weight
     p_tau_lastcopy: float = 0.75  # NLI entailment floor for "safely derivable"
+    # -- SS6 read-time gate (Plan 3 Step 5): GOV_READ_* -----------------------
+    read_enabled: bool = False
+    read_shadow: bool = True
+    read_margin: float = 0.05  # single threshold to start; split per-backend if needed
+    read_set_max: int = 4  # ambiguous-set bound (clamped 2..4 by the gate)
 
     @classmethod
     def from_env(cls) -> "GovConfig":
@@ -203,6 +208,10 @@ class GovConfig:
             p_w1=float(os.getenv("GOV_P_W1", "0.6")),
             p_w2=float(os.getenv("GOV_P_W2", "0.4")),
             p_tau_lastcopy=float(os.getenv("GOV_P_TAU_LASTCOPY", "0.75")),
+            read_enabled=_env_flag("GOV_READ_ENABLED", False),
+            read_shadow=_env_flag("GOV_READ_SHADOW", True),
+            read_margin=float(os.getenv("GOV_READ_MARGIN", "0.05")),
+            read_set_max=int(os.getenv("GOV_READ_SET_MAX", "4")),
         )
         cfg.validate()
         return cfg
@@ -1843,8 +1852,60 @@ class GovernanceSession:
             if idx < len(new_results):
                 self._observe(call, execution_results[idx])
 
+        if self.cfg.read_enabled:
+            new_results = self._gate_reads(new_results, decoded_calls)
+
         self._pending = {}
         return new_results
+
+    def _gate_reads(self, results: list, decoded_calls: list) -> list:
+        """SS6 read-time gate (Plan 3 Step 5): margin-triggered one-shot
+        disambiguation of ranked retrieve RESULTS. Read-only by construction --
+        the only mutable thing is the payload string, and only when LIVE
+        (GOV_READ_ENABLED=1, GOV_READ_SHADOW=0, not dry_run)."""
+        from bfcl_eval.model_handler.middleware.read_gate import (
+            READ_GATED_OPS,
+            gate_read,
+        )
+
+        live = not self.cfg.read_shadow and not self.cfg.dry_run
+        gated = READ_GATED_OPS[self.backend]
+        out = list(results)
+        for idx, call in enumerate(decoded_calls):
+            if idx >= len(out) or idx in self._pending:
+                continue
+            parsed = parse_call(call)
+            if parsed is None or parsed[0] not in gated:
+                continue
+            _, positional, kwargs = parsed
+            query = str(kwargs.get("query", positional[0] if positional else ""))
+            if not query:
+                continue
+            try:
+                payload = json.loads(out[idx])
+            except (json.JSONDecodeError, TypeError):
+                continue
+            outcome = gate_read(
+                self.backend, query, payload,
+                self.cfg.read_margin, self.cfg.read_set_max,
+            )
+            log_gov_record(
+                {
+                    "ts": time.time(),
+                    "event": "read_gate",
+                    "test_id": self.test_id,
+                    "step_idx": self.step,
+                    "backend": self.backend,
+                    "op": parsed[0],
+                    "query": query,
+                    "shadow": not live,
+                    **outcome.to_log(),
+                },
+                self.cfg,
+            )
+            if live and outcome.new_payload is not None:
+                out[idx] = outcome.new_payload
+        return out
 
     def _observe(self, call: str, raw_result: str):
         """Update the mirror from a genuinely-executed op, ONLY on an exact success
