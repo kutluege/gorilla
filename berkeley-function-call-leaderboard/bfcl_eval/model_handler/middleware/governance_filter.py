@@ -152,6 +152,14 @@ class GovConfig:
     s2_canon_llm: bool = False
     s2_t_kv: float = 1.0  # softmax T for logged H only -- NEVER a decision input
     s2_t_vec: float = 1.0
+    # -- SS5 placement / eviction / destructive guard (Plan 3 Step 4) --------
+    # GOV_P_ENABLED / GOV_P_SHADOW / GOV_P_W1 / GOV_P_W2 / GOV_P_TAU_LASTCOPY.
+    # Shadow-first like every stage: p_enabled alone only LOGS planned actions.
+    p_enabled: bool = False
+    p_shadow: bool = True
+    p_w1: float = 0.6  # value-formula uniqueness weight (no access-frequency term)
+    p_w2: float = 0.4  # value-formula recency weight
+    p_tau_lastcopy: float = 0.75  # NLI entailment floor for "safely derivable"
 
     @classmethod
     def from_env(cls) -> "GovConfig":
@@ -190,6 +198,11 @@ class GovConfig:
             s2_canon_llm=_env_flag("GOV_S2_CANON_LLM", False),
             s2_t_kv=float(os.getenv("GOV_S2_T_KV", "1.0")),
             s2_t_vec=float(os.getenv("GOV_S2_T_VEC", "1.0")),
+            p_enabled=_env_flag("GOV_P_ENABLED", False),
+            p_shadow=_env_flag("GOV_P_SHADOW", True),
+            p_w1=float(os.getenv("GOV_P_W1", "0.6")),
+            p_w2=float(os.getenv("GOV_P_W2", "0.4")),
+            p_tau_lastcopy=float(os.getenv("GOV_P_TAU_LASTCOPY", "0.75")),
         )
         cfg.validate()
         return cfg
@@ -1334,6 +1347,8 @@ class GovernanceSession:
         self._issued_shadow_ids: set = set()
         # idx -> {"mode": "noop"|"rewrite", ...} for the current step
         self._pending: dict = {}
+        # SS5 atomic-move inserts for the current step: idx -> [call, ...]
+        self._expansions: dict = {}
         # Stage 1/2 state. The scorer is injectable for tests; when None and
         # GOV_NLI_ENABLED, the DeBERTa singleton is loaded lazily on first use.
         self._nli_scorer = nli_scorer
@@ -1370,6 +1385,27 @@ class GovernanceSession:
             cfg,
         )
 
+        # Stage -1 write-compliance watchdog, option (a) log-and-report ONLY
+        # (Plan 3 SS0.1 decision): a non-first prereq entry rehydrating onto an
+        # EMPTY store means the chain has written nothing so far -- the exact
+        # precursor of a dead chain. Detection only, never an intervention.
+        if (
+            cfg.p_enabled
+            and "_prereq_" in test_id
+            and not test_id.endswith("-0")
+            and self.cache.total_size() == 0
+        ):
+            log_gov_record(
+                {
+                    "ts": time.time(),
+                    "event": "write_compliance",
+                    "test_id": test_id,
+                    "backend": backend,
+                    "warning": "chain_has_zero_items",
+                },
+                cfg,
+            )
+
     # -- embedding (raw space; whitening happens explicitly via abtt) --------
 
     def _encode_batch(self, texts: list) -> np.ndarray:
@@ -1382,16 +1418,24 @@ class GovernanceSession:
 
     def govern_calls(self, calls: list) -> list:
         """Inspect decoded call strings; rewrite NOOP'd writes to a read-only decoy.
-        Never removes a call and never changes list length (an empty decoded list
-        would short-circuit the harness step loop before results are injected)."""
+        Never removes a call and never SHRINKS the list (an empty decoded list
+        would short-circuit the harness step loop before results are injected).
+        With the SS5 placement layer LIVE (GOV_P_ENABLED=1, GOV_P_SHADOW=0) the
+        list may GROW: an atomic move / archive-then-remove expands one call
+        into archive-add + original, with ``_pending`` indices remapped."""
         self.step += 1
         self._pending = {}
+        self._expansions = {}  # final-list inserts: idx -> [call, ...] BEFORE idx
         governed = list(calls)
         for idx, call in enumerate(calls):
             candidate = build_candidate(self.backend, call)
             if candidate is None:
                 continue
             self._govern_one(idx, candidate, governed)
+        if self.cfg.p_enabled:
+            self._destructive_pass(governed)
+            self._placement_pass(governed)
+            governed = self._apply_expansions(governed)
         return governed
 
     def _get_nli_scorer(self):
@@ -1592,6 +1636,186 @@ class GovernanceSession:
         )
 
     # -- HOOK 2: post-execution -----------------------------------------------
+
+    # -- SS5 placement / eviction / destructive guard (Plan 3 Step 4) --------
+
+    def _p_live(self) -> bool:
+        """The SS5 layer intervenes only when enabled AND out of shadow AND the
+        whole session is not in dry-run."""
+        return self.cfg.p_enabled and not self.cfg.p_shadow and not self.cfg.dry_run
+
+    def _p_synthetic(self, kind: str, tier: str, ref) -> str:
+        """Backend-exact success string for a BLOCKED destructive op."""
+        if self.backend == "kv":
+            if kind == "clear":
+                return json.dumps({"status": KV_CLEAR_SUCCESS[tier]})
+            return json.dumps({"status": KV_REMOVE_SUCCESS})
+        if kind == "clear":
+            return json.dumps({"status": VECTOR_CLEAR_SUCCESS})
+        return json.dumps({"status": f"ID {ref} removed from store."})
+
+    def _log_placement(self, record: dict) -> None:
+        record.update({
+            "ts": time.time(),
+            "event": "placement",
+            "test_id": self.test_id,
+            "step_idx": self.step,
+            "backend": self.backend,
+            "shadow": not self._p_live(),
+        })
+        log_gov_record(record, self.cfg)
+
+    def _destructive_pass(self, governed: list) -> None:
+        """G7: clear never passes; bare core remove becomes archive-then-remove;
+        archival remove is last-copy-protected. Shadow logs the plan only."""
+        from bfcl_eval.model_handler.middleware.placement import plan_destructive
+
+        observe_table = KV_OBSERVED_OPS if self.backend == "kv" else VECTOR_OBSERVED_OPS
+        for idx, call in enumerate(governed):
+            if idx in self._pending:
+                continue
+            parsed = parse_call(call)
+            if parsed is None:
+                continue
+            name, positional, kwargs = parsed
+            if name not in observe_table:
+                continue
+            kind, tier, params = observe_table[name]
+            args = _bind_args(positional, kwargs, params)
+            ref = str(args[params[0]]) if (args and params) else None
+            nli = None
+            if kind == "remove" and tier == "archival":
+                # Last-copy check needs the scorer; injected in tests, DeBERTa
+                # singleton in a live GOV_NLI_ENABLED run, else None -> protect.
+                nli = self._nli_scorer if self._nli_loaded else (
+                    self._get_nli_scorer() if self.cfg.nli_enabled else None
+                )
+            plan = plan_destructive(
+                self.backend, kind, tier, ref, self.cache, nli,
+                self.cfg.p_tau_lastcopy, self._p_synthetic,
+            )
+            self._log_placement({
+                "mechanism": "destructive_guard",
+                "op": name, "tier": tier, "ref": ref,
+                "action": plan.action, "risk": plan.risk,
+                "planned_expansion": plan.expansion,
+            })
+            if not self._p_live() or plan.action == "pass" \
+                    or plan.action == "allow_remove_derivable":
+                continue
+            if plan.expansion:
+                # archive-add strictly precedes the remove (R5 atomic order).
+                self._expansions[idx] = plan.expansion
+            else:
+                self._pending[idx] = {
+                    "mode": "noop",
+                    "original_call": call,
+                    "synthetic": plan.synthetic,
+                }
+                governed[idx] = DECOY_CALL
+
+    def _placement_pass(self, governed: list) -> None:
+        """G6a/G6b/G6c: category routing, core-full atomic move, verbatim final
+        check -- applied to writes that will actually proceed."""
+        from bfcl_eval.model_handler.middleware.placement import (
+            archive_preflight_ok,
+            classify_category,
+            pick_eviction_victim,
+            to_archival_call,
+            verbatim_final_rewrite,
+        )
+
+        for idx, call in enumerate(governed):
+            if self._pending.get(idx, {}).get("mode") == "noop":
+                continue  # suppressed write: nothing will be placed
+            candidate = build_candidate(self.backend, governed[idx])
+            if candidate is None:
+                continue
+
+            # G6b routing: event_detail core adds go straight to archival.
+            category = classify_category(candidate.text)
+            if candidate.kind == "add" and candidate.tier == "core":
+                if category == "event_detail":
+                    new_call = to_archival_call(candidate)
+                    self._log_placement({
+                        "mechanism": "routing", "category": category,
+                        "op": candidate.op, "ref": candidate.ref,
+                        "planned_call": new_call,
+                    })
+                    if self._p_live() and new_call:
+                        governed[idx] = new_call
+                        self._pending[idx] = {
+                            "mode": "rewrite",
+                            "original_call": call,
+                            "rewritten_call": new_call,
+                        }
+                        candidate = build_candidate(self.backend, new_call) or candidate
+                elif self.cache.size("core") >= self.cache.capacity("core"):
+                    # G6c/G6b: identity add on a full core -> atomic move of the
+                    # lowest-value core item (archive-add BEFORE core-remove).
+                    victim = pick_eviction_victim(
+                        list(self.cache.items["core"].values()),
+                        self.step, self.cfg.p_w1, self.cfg.p_w2,
+                    )
+                    movable = victim is not None and archive_preflight_ok(
+                        self.backend, victim, self.cache
+                    )
+                    self._log_placement({
+                        "mechanism": "eviction_move", "category": category,
+                        "victim_ref": victim.ref if victim else None,
+                        "movable": movable,
+                        "risk": None if movable else "archival_unavailable",
+                    })
+                    if self._p_live() and movable:
+                        from bfcl_eval.model_handler.middleware.placement import (
+                            archive_call_for,
+                            remove_call_for,
+                        )
+                        self._expansions[idx] = [
+                            archive_call_for(self.backend, victim),
+                            remove_call_for(self.backend, "core", victim),
+                        ]
+
+            # G6a verbatim final check (runs LAST, on the outgoing call).
+            try:
+                verbatim = extract_verbatim_values(self.user_text or "")
+            except Exception:
+                verbatim = []
+            rewrite = verbatim_final_rewrite(
+                candidate, verbatim, _normalize_for_match,
+                self.cache.max_entry_length(candidate.tier),
+            )
+            if rewrite is not None:
+                new_call, missing = rewrite
+                self._log_placement({
+                    "mechanism": "verbatim_final", "op": candidate.op,
+                    "ref": candidate.ref, "missing_values": missing,
+                    "planned_call": new_call,
+                })
+                if self._p_live():
+                    governed[idx] = new_call
+                    self._pending[idx] = {
+                        "mode": "rewrite",
+                        "original_call": call,
+                        "rewritten_call": new_call,
+                    }
+
+    def _apply_expansions(self, governed: list) -> list:
+        """Rebuild the call list with atomic-move inserts, remapping _pending
+        indices to the FINAL list (the harness executes exactly this list, so
+        results and observations align by construction)."""
+        if not self._expansions:
+            return governed
+        rebuilt, remapped = [], {}
+        for idx, call in enumerate(governed):
+            for pre in self._expansions.get(idx, []):
+                rebuilt.append(pre)  # injected calls execute genuinely; no pending
+            if idx in self._pending:
+                remapped[len(rebuilt)] = self._pending[idx]
+            rebuilt.append(call)
+        self._pending = remapped
+        self._expansions = {}
+        return rebuilt
 
     def patch_results(self, execution_results: list, decoded_calls: list) -> list:
         """Substitute synthetic successes at suppressed (NOOP) indices, restore
