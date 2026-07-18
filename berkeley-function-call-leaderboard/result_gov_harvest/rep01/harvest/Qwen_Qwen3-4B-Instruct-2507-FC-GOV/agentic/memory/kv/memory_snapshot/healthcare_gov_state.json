@@ -1,0 +1,80 @@
+{
+  "backend": "kv",
+  "tiers": {
+    "core": {},
+    "archival": {
+      "diabetes_treatment_plan": {
+        "text": "diabetes treatment plan: Metformin 1000 mg twice daily for several years. Recently added semaglutide (Ozempic) at low dose for appetite control and blood sugar management. Fasting blood sugar typically between 125-130 mg/dL. A1C around 6.9%.",
+        "probes": [
+          "diabetes treatment plan",
+          "what is diabetes treatment plan",
+          "diabetes treatment plan metformin 1000 twice"
+        ],
+        "probe_provenance": "write_time"
+      },
+      "hypertension_treatment_plan": {
+        "text": "hypertension treatment plan: Losartan 50 mg once daily. Blood pressure typically ranges from 135-140/80-90 mmHg. Doctor recommends stress management and reduced sodium intake instead of increasing dosage. Taking a daily magnesium supplement for potential blood pressure support.",
+        "probes": [
+          "hypertension treatment plan",
+          "what is hypertension treatment plan",
+          "hypertension treatment plan losartan once daily"
+        ],
+        "probe_provenance": "write_time"
+      },
+      "hypothyroidism_treatment_plan": {
+        "text": "hypothyroidism treatment plan: Levothyroxine 75 mcg once daily, taken on an empty stomach, 30 minutes before eating. Last TSH result: 2.1 mIU/L (within normal range). Doctor has not adjusted dosage in years. Noticeable sluggishness if a dose is missed; uses a pill organizer to stay on track.",
+        "probes": [
+          "hypothyroidism treatment plan",
+          "what is hypothyroidism treatment plan",
+          "hypothyroidism treatment plan levothyroxine mcg once"
+        ],
+        "probe_provenance": "write_time"
+      },
+      "osteoarthritis_treatment_plan": {
+        "text": "osteoarthritis treatment plan: Acetaminophen as needed for mild pain. Meloxicam 7.5 mg prescribed for flare-ups (knees and hands), taken only when joints are stiff or painful. Avoids daily use to minimize NSAID exposure. Doctor suggested glucosamine supplements; effect not yet confirmed.",
+        "probes": [
+          "osteoarthritis treatment plan",
+          "what is osteoarthritis treatment plan",
+          "osteoarthritis treatment plan acetaminophen needed mild"
+        ],
+        "probe_provenance": "write_time"
+      },
+      "vitamin_d_and_bone_health_plan": {
+        "text": "vitamin d and bone health plan: Vitamin D3 2,000 IU daily due to low levels (22 ng/mL; normal >30 ng/mL). Taking calcium supplements due to early osteopenia on bone density scan. Doctor recommends combining with vitamin K2 to improve calcium absorption and bone health.",
+        "probes": [
+          "vitamin d and bone health plan",
+          "what is vitamin d and bone health plan",
+          "vitamin d and bone health plan vitamin 000 daily"
+        ],
+        "probe_provenance": "write_time"
+      },
+      "cholesterol_management_plan": {
+        "text": "cholesterol management plan: Atorvastatin 10 mg daily to manage cholesterol. Initial LDL: 130 mg/dL, triglycerides: 140 mg/dL. Doctor prescribed low-dose statin to improve lipid profile. Cholesterol levels have improved since starting; no side effects reported (e.g., muscle aches).",
+        "probes": [
+          "cholesterol management plan",
+          "what is cholesterol management plan",
+          "cholesterol management plan atorvastatin daily manage"
+        ],
+        "probe_provenance": "write_time"
+      },
+      "general_health_supplements": {
+        "text": "general health supplements: Daily multivitamin, omega-3 supplements for heart health, and probiotics for digestion. Takes digestive enzymes after meals with heavier or fatty foods due to gallbladder removal. Aware that gallbladder removal affects fat digestion and now mindful of dietary fat intake.",
+        "probes": [
+          "general health supplements",
+          "what is general health supplements",
+          "general health supplements daily multivitamin omega"
+        ],
+        "probe_provenance": "write_time"
+      },
+      "medication_interactions_precautions": {
+        "text": "medication interactions precautions: Aware of potential interactions between losartan and meloxicam (NSAIDs may affect kidney function), so limits meloxicam use to flare-ups only. Takes levothyroxine separately from calcium and iron supplements to prevent interference with absorption. Ensures proper timing to maintain medication effectiveness.",
+        "probes": [
+          "medication interactions precautions",
+          "what is medication interactions precautions",
+          "medication interactions precautions aware potential interactions"
+        ],
+        "probe_provenance": "write_time"
+      }
+    }
+  }
+}

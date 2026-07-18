@@ -1,0 +1,99 @@
+{
+  "backend": "kv",
+  "tiers": {
+    "core": {
+      "monday_updates": {
+        "text": "monday updates: Team meeting ran over by 30 minutes. Need to finalize Q1 budget report before Friday. IT updated security protocols—change passwords ASAP. Client call with Jacob—delayed till Wednesday.",
+        "probes": [
+          "monday updates",
+          "what is monday updates",
+          "monday updates team meeting ran"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "tuesday_updates": {
+        "text": "tuesday updates: System downtime from 10 AM - 12 PM, slowed down workflow. HR sent updated benefits package—review before next month’s deadline. Sent follow-up emails to vendors, waiting on response.",
+        "probes": [
+          "tuesday updates",
+          "what is tuesday updates",
+          "tuesday updates system downtime slowed"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "wednesday_updates": {
+        "text": "wednesday updates: Presentation to leadership went well, but need to tweak a few slides for next week’s review. Client proposal draft ready—send it for legal approval. Need to onboard new hire—schedule one-on-one.",
+        "probes": [
+          "wednesday updates",
+          "what is wednesday updates",
+          "wednesday updates presentation leadership went"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "thursday_updates": {
+        "text": "thursday updates: Finance wants cost-cutting recommendations—brainstorm ideas. Project deadline approaching—check in with Dev team. Caught a mistake in last month’s sales data.",
+        "probes": [
+          "thursday updates",
+          "what is thursday updates",
+          "thursday updates finance wants cost"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "friday_updates": {
+        "text": "friday updates: Wrapped up pending reports, but still waiting for final approval. Followed up with vendors—two responded, one still pending. Training session next Monday—prep materials this weekend.",
+        "probes": [
+          "friday updates",
+          "what is friday updates",
+          "friday updates wrapped pending reports"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "urgent_tax_submission": {
+        "text": "urgent tax submission: Submit tax documents before Friday.",
+        "probes": [
+          "urgent tax submission",
+          "what is urgent tax submission",
+          "urgent tax submission submit tax documents"
+        ],
+        "probe_provenance": "write_time"
+      },
+      "credit_card_statement_review": {
+        "text": "credit card statement review: Review credit card statement for errors.",
+        "probes": [
+          "credit card statement review",
+          "what is credit card statement review",
+          "credit card statement review review credit card"
+        ],
+        "probe_provenance": "write_time"
+      }
+    },
+    "archival": {
+      "schedule_dentist_appointment": {
+        "text": "schedule dentist appointment: Schedule dentist appointment.",
+        "probes": [
+          "schedule dentist appointment",
+          "what is schedule dentist appointment",
+          "schedule dentist appointment schedule dentist appointment"
+        ],
+        "probe_provenance": "write_time"
+      },
+      "stick_to_gym_3x_this_week": {
+        "text": "stick to gym 3x this week: Stick to gym 3x this week.",
+        "probes": [
+          "stick to gym 3x this week",
+          "what is stick to gym 3x this week",
+          "stick to gym 3x this week stick gym week"
+        ],
+        "probe_provenance": "write_time"
+      },
+      "call_mom": {
+        "text": "call mom: Call mom—it’s been a while.",
+        "probes": [
+          "call mom",
+          "what is call mom",
+          "call mom call mom while"
+        ],
+        "probe_provenance": "write_time"
+      }
+    }
+  }
+}

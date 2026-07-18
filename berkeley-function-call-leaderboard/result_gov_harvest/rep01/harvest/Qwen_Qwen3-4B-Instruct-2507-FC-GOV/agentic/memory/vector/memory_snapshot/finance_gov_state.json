@@ -1,0 +1,72 @@
+{
+  "backend": "vector",
+  "tiers": {
+    "core": {
+      "0": {
+        "text": "Sarah Chen(CEO, Pacific Dynamics): Met at Goldman 2008; deepened on a delayed flight from Hong Kong 2009. Five hours on market trends and jazz built a 15-year bond. Now a trusted advisor for Asian markets, reachable anytime—proof that authentic relationships drive real business success.",
+        "probes": [
+          "Sarah Chen(CEO, Pacific Dynamics): Met at Goldman 2008; deepened on a delayed flight from Hong Kong 2009. Five hours on market trends and jazz built a 15-year bond. Now a trusted advisor for Asian markets, reachable anytime—proof that authentic relationships drive real business success.",
+          "what do you know about sarah chen ceo pacific",
+          "sarah chen ceo pacific dynamics met goldman 2008"
+        ],
+        "probe_provenance": "stored_text"
+      },
+      "1": {
+        "text": "Bloomberg Terminal serves as my 'Mission Control' hub with real-time data and custom anomaly algorithms. A 3 AM alert in 2022 detected unusual regional trading volumes, allowing proactive risk mitigation. The LIVE function enables seamless coordination with Asian offices during their trading hours.",
+        "probes": [
+          "Bloomberg Terminal serves as my 'Mission Control' hub with real-time data and custom anomaly algorithms. A 3 AM alert in 2022 detected unusual regional trading volumes, allowing proactive risk mitigation. The LIVE function enables seamless coordination with Asian offices during their trading hours.",
+          "what do you know about bloomberg terminal serves mission",
+          "bloomberg terminal serves mission control hub real time"
+        ],
+        "probe_provenance": "write_time"
+      },
+      "2": {
+        "text": "Aladdin platform boosted risk-adjusted returns by 15%. Custom 'Risk Radar' dashboard combines Aladdin analytics with proprietary models for emerging market volatility. Developed after early career exposure to currency crises. Licensed to three firms.",
+        "probes": [
+          "Aladdin platform boosted risk-adjusted returns by 15%. Custom 'Risk Radar' dashboard combines Aladdin analytics with proprietary models for emerging market volatility. Developed after early career exposure to currency crises. Licensed to three firms.",
+          "what do you know about aladdin platform boosted risk",
+          "aladdin platform boosted risk adjusted returns custom radar"
+        ],
+        "probe_provenance": "write_time"
+      },
+      "3": {
+        "text": "Tableau expert who turns complex financial data into compelling stories. Created ESG dashboard for Vertex, Nexus, and Summit Equity with real-time environmental impact insights. Piloting HoloLens AR for 3D market data visualization. Believes this is the future of financial presentations.",
+        "probes": [
+          "Tableau expert who turns complex financial data into compelling stories. Created ESG dashboard for Vertex, Nexus, and Summit Equity with real-time environmental impact insights. Piloting HoloLens AR for 3D market data visualization. Believes this is the future of financial presentations.",
+          "what do you know about tableau expert who turns",
+          "tableau expert who turns complex financial data into"
+        ],
+        "probe_provenance": "write_time"
+      },
+      "4": {
+        "text": "Dealogic tracks deals with soft signals: management dynamics, cultural fit. Custom scoring predicts deal success. Self-taught in Python/R during pandemic. Automated analytics. ML model analyzes earnings calls to predict market reactions – now essential for equity trading desk.",
+        "probes": [
+          "Dealogic tracks deals with soft signals: management dynamics, cultural fit. Custom scoring predicts deal success. Self-taught in Python/R during pandemic. Automated analytics. ML model analyzes earnings calls to predict market reactions – now essential for equity trading desk.",
+          "what do you know about dealogic tracks deals soft",
+          "dealogic tracks deals soft signals management dynamics cultural"
+        ],
+        "probe_provenance": "write_time"
+      },
+      "5": {
+        "text": "Salesforce 'Client Journey Map' tracks client preferences and milestones. Notion for deal notes. Superhuman saves email time. AI meeting assistants in testing. Blockchain for settlements, quantum computing for portfolio optimization via IBM. Sunday tech learning – 'tech meditation' time.",
+        "probes": [
+          "Salesforce 'Client Journey Map' tracks client preferences and milestones. Notion for deal notes. Superhuman saves email time. AI meeting assistants in testing. Blockchain for settlements, quantum computing for portfolio optimization via IBM. Sunday tech learning – 'tech meditation' time.",
+          "what do you know about salesforce client journey map",
+          "salesforce client journey map tracks preferences milestones notion"
+        ],
+        "probe_provenance": "write_time"
+      }
+    },
+    "archival": {
+      "0": {
+        "text": "Landmark deals:\n- 2019: Poison pill defense of Surreal Inc. (Harvard case study)\n- $8.6B Nexa/Taihua semiconductor merger(global coordination, IP/regulatory success)\n- $14.2B BioCrest/OncoPharm healthcare merger(overcame IP & regulatory issues; WSJ called it 'the deal that reshaped modern cancer treatment')\nPersonal memento: Lucite from first $500M deal(funded Stratos Aerospace) on desk.\n\nActive transactions:\n- $8.5B semiconductor merger: QuantumChip Technologies & Silicon Core – navigating U.S.-China regulatory approvals(masterclass in patience and strategy)\n- $3.2B leveraged buyout: VertexSoft(SaaS provider) – structuring debt financing is a key challenge\n- Confidential $5B+ cross-border renewable energy acquisition: Solaris Energy Group acquiring Nordic Renewables – aligning government incentives across jurisdictions is a major hurdle\n\nWeekly deal call: Every Monday at 7 AM to accommodate Asian market participants – keeps the MD sharp\n\nPotential $20B take-private: Omnix AI(AI powerhouse) – if successful, would be a game-changer for the firm.\n\nCareer journey:\n- 2001: Analyst at Goldman Sachs – cut teeth on M&A modeling, survived dot-com crash\n- 2004: Associate at Morgan Stanley – exposure to early social media tech deals\n- 31: Vice President – led defining transactions of that era\n- 2015: Joined Legend Investments as Managing Director – first major transaction: NeuralNet Systems IPO(largest tech IPO to date)\n\nCore insight: In global finance, network and track record are currency. Trust is earned one successful deal at a time.\n\nEducation & impact:\n- B.A. in Economics, University of Pennsylvania\n- MBA from Harvard Business School(Baker Scholar)\n- Guest lecturer, mentor, and talent recruiter at both institutions\n- Endowed a scholarship at Penn for first-generation college students in finance\n\nBelief: Talent is the greatest investment. Finance should be a pathway to opportunity—not just for the privileged, but for those with hunger and discipline.",
+        "probes": [
+          "Landmark deals:\n- 2019: Poison pill defense of Surreal Inc. (Harvard case study)\n- $8.6B Nexa/Taihua semiconductor merger(global coordination, IP/regulatory success)\n- $14.2B BioCrest/OncoPharm healthcare merger(overcame IP & regulatory issues; WSJ called it 'the deal that reshaped modern cancer treatment')\nPersonal memento: Lucite from first $500M deal(funded Stratos Aerospace) on desk.\n\nActive transactions:\n- $8.5B semiconductor merger: QuantumChip Technologies & Silicon Core – navigating U.S.-China regulatory approvals(masterclass in patience and strategy)\n- $3.2B leveraged buyout: VertexSoft(SaaS provider) – structuring debt financing is a key challenge\n- Confidential $5B+ cross-border renewable energy acquisition: Solaris Energy Group acquiring Nordic Renewables – aligning government incentives across jurisdictions is a major hurdle\n\nWeekly deal call: Every Monday at 7 AM to accommodate Asian market participants – keeps the MD sharp\n\nPotential $20B take-private: Omnix AI(AI powerhouse) – if successful, would be a game-changer for the firm.\n\nCareer journey:\n- 2001: Analyst at Goldman Sachs – cut teeth on M&A modeling, survived dot-com crash\n- 2004: Associate at Morgan Stanley – exposure to early social media tech deals\n- 31: Vice President – led defining transactions of that era\n- 2015: Joined Legend Investments as Managing Director – first major transaction: NeuralNet Systems IPO(largest tech IPO to date)\n\nCore insight: In global finance, network and track record are currency. Trust is earned one successful deal at a time.\n\nEducation & impact:\n- B.A. in Economics, University of Pennsylvania\n- MBA from Harvard Business School(Baker Scholar)\n- Guest lecturer, mentor, and talent recruiter at both institutions\n- Endowed a scholarship at Penn for first-generation college students in finance\n\nBelief: Talent is the greatest investment. Finance should be a pathway to opportunity—not just for the privileged, but for those with hunger and discipline.",
+          "what do you know about landmark deals 2019 poison",
+          "landmark deals 2019 poison pill defense surreal inc"
+        ],
+        "probe_provenance": "sidecar"
+      }
+    }
+  }
+}

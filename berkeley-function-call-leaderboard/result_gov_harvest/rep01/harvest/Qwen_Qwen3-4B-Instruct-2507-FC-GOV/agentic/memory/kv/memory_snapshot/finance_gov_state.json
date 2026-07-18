@@ -1,0 +1,216 @@
+{
+  "backend": "kv",
+  "tiers": {
+    "core": {
+      "cross_border_semiconductor_merge": {
+        "text": "cross border semiconductor merge: Led the $8.6B cross-border merger between Nexa Semiconductors and Taihua Microelectronics, coordinating teams across three continents and resolving complex IP and regulatory hurdles. Highlighted the diplomatic and strategic aspects of global finance.",
+        "probes": [
+          "cross border semiconductor merge",
+          "what is cross border semiconductor merge",
+          "cross border semiconductor merge led cross border"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "healthcare_merge_14_2b": {
+        "text": "healthcare merge 14 2b: Closed the $14.2B healthcare merger between BioCrest Labs and OncoPharm Therapeutics, overcoming two major setbacks: IP valuation disputes and regulatory approval challenges. Spent three sleepless nights resolving the issues. Recognized by WSJ as 'the deal that reshaped modern cancer treatment.'",
+        "probes": [
+          "healthcare merge 14 2b",
+          "what is healthcare merge 14 2b",
+          "healthcare merge 14 2b closed healthcare merger"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "personal_milestone_item": {
+        "text": "personal milestone item: The small lucite from the first $500M transaction, which funded Stratos Aerospace expansion, remains on my desk as a reminder to bring the same energy and determination to every deal, regardless of size.",
+        "probes": [
+          "personal milestone item",
+          "what is personal milestone item",
+          "personal milestone item small lucite first"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "quantumchip_silicon_core_merge": {
+        "text": "quantumchip silicon core merge: An $8.5B semiconductor merger between QuantumChip Technologies and Silicon Core, currently navigating U.S.-China regulatory approvals. A masterclass in patience, strategic alignment, and geopolitical risk management.",
+        "probes": [
+          "quantumchip silicon core merge",
+          "what is quantumchip silicon core merge",
+          "quantumchip silicon core merge semiconductor merger between"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "solaris_nordic_renewables_acquisition": {
+        "text": "solaris nordic renewables acquisition: A confidential $5B+ cross-border acquisition where Solaris Energy Group is acquiring Nordic Renewables. Major challenge: aligning government incentives and regulatory frameworks across jurisdictions. Highlights the strategic importance of renewable energy and cross-border policy navigation.",
+        "probes": [
+          "solaris nordic renewables acquisition",
+          "what is solaris nordic renewables acquisition",
+          "solaris nordic renewables acquisition confidential cross border"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "aladdin_risk_radar_integration": {
+        "text": "aladdin risk radar integration: Implemented BlackRock's Aladdin platform, overcoming board resistance. Achieved 15% higher risk-adjusted returns. Customized with emerging market volatility models. Built 'Risk Radar' dashboard. Licensed to 3 firms.",
+        "probes": [
+          "aladdin risk radar integration",
+          "what is aladdin risk radar integration",
+          "aladdin risk radar integration implemented blackrock aladdin"
+        ],
+        "probe_provenance": "write_time"
+      },
+      "dealogic_soft_signals_model": {
+        "text": "dealogic soft signals model: Custom Dealogic tracks soft signals: management dynamics, cultural fit. Python/R model predicts market reactions from earnings calls with high accuracy. Now essential for equity trading. Automated routine tasks, freeing team for strategy.",
+        "probes": [
+          "dealogic soft signals model",
+          "what is dealogic soft signals model",
+          "dealogic soft signals model custom dealogic tracks"
+        ],
+        "probe_provenance": "write_time"
+      }
+    },
+    "archival": {
+      "career_path_goldman_sachs_2001": {
+        "text": "career path goldman sachs 2001: Started as an analyst at Goldman Sachs in 2001, gaining experience in M&A modeling and surviving the dot-com crash.",
+        "probes": [
+          "career path goldman sachs 2001",
+          "what is career path goldman sachs 2001",
+          "career path goldman sachs 2001 started analyst goldman"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "morgan_stanley_2004": {
+        "text": "morgan stanley 2004: Moved to Morgan Stanley in 2004 as an associate, gaining exposure to early social media tech deals.",
+        "probes": [
+          "morgan stanley 2004",
+          "what is morgan stanley 2004",
+          "morgan stanley 2004 moved morgan stanley"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "vp_promotion_2011": {
+        "text": "vp promotion 2011: Promoted to Vice President in 2011, leading some of the defining transactions of that era.",
+        "probes": [
+          "vp promotion 2011",
+          "what is vp promotion 2011",
+          "vp promotion 2011 promoted vice president"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "join_legend_investments_2015": {
+        "text": "join legend investments 2015: Joined Legend Investments as Managing Director in 2015. First major transaction: led NeuralNet Systems' IPO, the firm's largest tech IPO to date. Built a reputation for handling complex, cross-border deals.",
+        "probes": [
+          "join legend investments 2015",
+          "what is join legend investments 2015",
+          "join legend investments 2015 joined legend investments"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "career_motto": {
+        "text": "career motto: Learned that in global finance, your network and track record are your currency. You earn trust one successful deal at a time.",
+        "probes": [
+          "career motto",
+          "what is career motto",
+          "career motto learned global finance"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "education_penn_bachelor_economics": {
+        "text": "education penn bachelor economics: Earned a Bachelor's in Economics from the University of Pennsylvania, which laid the foundation for a career in finance.",
+        "probes": [
+          "education penn bachelor economics",
+          "what is education penn bachelor economics",
+          "education penn bachelor economics earned bachelor economics"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "mba_harvard_baker_scholar": {
+        "text": "mba harvard baker scholar: Pursued an MBA at Harvard Business School, where I was a Baker Scholar. The experience shaped my strategic thinking and leadership philosophy.",
+        "probes": [
+          "mba harvard baker scholar",
+          "what is mba harvard baker scholar",
+          "mba harvard baker scholar pursued mba harvard"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "ongoing_connections_penn_harvard": {
+        "text": "ongoing connections penn harvard: Maintain ongoing connections with both the University of Pennsylvania and Harvard Business School—guest lecturing, mentoring students, and recruiting top talent.",
+        "probes": [
+          "ongoing connections penn harvard",
+          "what is ongoing connections penn harvard",
+          "ongoing connections penn harvard maintain ongoing connections"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "penn_scholarship_endowment": {
+        "text": "penn scholarship endowment: Recently endowed a scholarship at the University of Pennsylvania for first-generation college students interested in finance. Believes finance should be a pathway to opportunity, not just for privileged individuals, but for those with hunger and discipline.",
+        "probes": [
+          "penn scholarship endowment",
+          "what is penn scholarship endowment",
+          "penn scholarship endowment recently endowed scholarship"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "leadership_philosophy_legend_investments": {
+        "text": "leadership philosophy legend investments: Leadership in finance is about creating a culture of excellence while maintaining humanity. At Legend Investments, I oversee a team of 180 professionals across investment, research, and operations. My leadership philosophy centers on three pillars: empowerment, accountability, and continuous growth. I maintain an open-door policy and encourage even junior analysts to challenge conventional thinking. Every Monday, I host a 'strategic roundtable' where team members from all levels can present investment theses or operational improvements. Last month, a second-year analyst proposed a novel approach to ESG scoring that we're now implementing across our portfolio. Leadership isn't about having all the answers—it's about fostering an environment where great ideas can flourish.",
+        "probes": [
+          "leadership philosophy legend investments",
+          "what is leadership philosophy legend investments",
+          "leadership philosophy legend investments leadership finance creating"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "talent_retention_and_mentorship_program": {
+        "text": "talent retention and mentorship program: Building and retaining top talent is my highest priority. We've developed a unique mentorship program where senior managers are paired with emerging leaders for year-long partnerships. I personally mentor three high-potential directors, meeting with them biweekly to discuss everything from deal structuring to client management. Our retention rate for top performers is 94%, well above the industry average, largely because we invest heavily in their development. Last year, we sent 15 team members to advanced programs at Harvard, Stanford, and INSEAD. We also created an accelerated path to partnership that has helped us attract exceptional talent from Goldman Sachs and Morgan Stanley. But perhaps what I'm most proud of is our diversity initiative—40% of our senior leadership roles are now held by women and minorities, up from 15% when I took over. We've partnered with organizations like SEO and Girls Who Invest to build a more inclusive pipeline of future leaders.",
+        "probes": [
+          "talent retention and mentorship program",
+          "what is talent retention and mentorship program",
+          "talent retention and mentorship program building retaining top"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "crisis_management_leadership": {
+        "text": "crisis management leadership: Crisis management has taught me the most about leadership. During the 2020 market crash, we had to make tough decisions while maintaining team morale. I remember gathering our entire investment team on a Saturday morning as markets were in freefall. Instead of panicking, we methodically analyzed our positions, identified opportunities, and emerged stronger. I made a point of being on the trading floor every day during that period, sharing both the stress and the strategic decisions with our team. We actually made several key hires during the downturn, which proved transformative for our long-term performance. More recently, when one of our largest funds faced significant redemptions, I took personal responsibility for communicating with investors while empowering our portfolio managers to adjust their strategies. Transparency and presence during difficult times have been crucial to maintaining trust, both with our team and our clients. The greatest test of leadership isn't how you perform during bull markets—it's how you guide your team through the storms.",
+        "probes": [
+          "crisis management leadership",
+          "what is crisis management leadership",
+          "crisis management leadership crisis management taught"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "innovation_and_adaptation_culture": {
+        "text": "innovation and adaptation culture: Innovation and adaptation are central to our leadership culture. We've established cross-functional 'innovation pods' where portfolio managers work directly with our technology team to develop new investment strategies. I chair our Innovation Committee, which meets monthly to evaluate new technologies and market opportunities. We recently launched an AI-driven market analysis platform, namely SOAR, developed entirely in-house by a team I assembled from diverse backgrounds—quants, traditional analysts, and machine learning experts. But innovation isn't just about technology. We've reimagined our organizational structure to be more fluid, allowing talent to move between teams based on market opportunities. This flexibility has given us a significant edge in rapidly evolving markets. I also initiated our 'Future of Finance' symposium, an annual event where we bring together thought leaders from finance, technology, and academia to explore emerging trends. Last year's event led to three strategic partnerships that have fundamentally enhanced our investment capabilities.",
+        "probes": [
+          "innovation and adaptation culture",
+          "what is innovation and adaptation culture",
+          "innovation and adaptation culture innovation adaptation central"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "leadership_social_impact_and_ethics": {
+        "text": "leadership social impact and ethics: Leadership extends beyond our office walls. I serve on the boards of three non-profit organizations focused on financial literacy and economic empowerment. Through our firm's foundation, we've established a $50 million initiative to provide scholarships and internships to underprivileged students interested in finance. I regularly speak at universities and industry conferences, such as the Financial Institute National Conference, about the importance of ethical leadership in finance. We've also created a pioneering program where our senior executives spend two weeks annually teaching financial skills in underserved communities. This commitment to social impact has not only strengthened our corporate culture but has also attracted mission-driven talent to our firm. My role as a leader is to demonstrate that financial success and social responsibility aren't mutually exclusive—they're mutually reinforcing. Looking ahead, I'm focused on developing the next generation of leaders who understand that sustainable success in finance requires both exceptional performance and unwavering integrity.",
+        "probes": [
+          "leadership social impact and ethics",
+          "what is leadership social impact and ethics",
+          "leadership social impact and ethics leadership extends beyond"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "first_major_deal_2019": {
+        "text": "first major deal 2019: Structured a defense against a hostile takeover of Surreal Incorporated using an innovative poison pill strategy. The strategy became a case study at Harvard Business School.",
+        "probes": [
+          "first major deal 2019",
+          "what is first major deal 2019",
+          "first major deal 2019 structured defense against"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "vertexsoft_lbo": {
+        "text": "vertexsoft lbo: A $3.2B leveraged buyout of VertexSoft, a fast-growing SaaS provider. Key challenge: structuring the debt financing to balance cost, risk, and growth potential.",
+        "probes": [
+          "vertexsoft lbo",
+          "what is vertexsoft lbo",
+          "vertexsoft lbo leveraged buyout vertexsoft"
+        ],
+        "probe_provenance": "sidecar"
+      }
+    }
+  }
+}

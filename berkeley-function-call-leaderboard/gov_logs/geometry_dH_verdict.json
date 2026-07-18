@@ -1,0 +1,61 @@
+{
+  "instrument": "correlate_geometry_deltaH",
+  "binding": true,
+  "log": "C:\\Users\\USER\\Desktop\\Tezim\\BFCL\\gorilla\\berkeley-function-call-leaderboard\\gov_logs\\harvest\\rep01_harvest\\governance_log.jsonl",
+  "wrra": "C:\\Users\\USER\\Desktop\\Tezim\\BFCL\\gorilla\\berkeley-function-call-leaderboard\\gov_logs\\harvest\\wrra_harvest.jsonl",
+  "surviving_chains": [
+    "kv/customer",
+    "kv/finance",
+    "kv/healthcare",
+    "kv/notetaker",
+    "vector/customer",
+    "vector/finance",
+    "vector/healthcare",
+    "vector/notetaker"
+  ],
+  "counters": {
+    "decisions_total": 305,
+    "no_stage2": 273,
+    "no_dH": 0,
+    "dead_chain": 0,
+    "used": 32
+  },
+  "per_backend": {
+    "kv": {
+      "n": 4,
+      "rho_sim_max_vs_dH": 0.8,
+      "rho_sim_max_ci95": [
+        -1.0,
+        1.0
+      ],
+      "rho_r_vs_dH": -0.8,
+      "rho_r_ci95": [
+        -1.0,
+        1.0
+      ],
+      "gate": 0.4,
+      "gate_pass": true,
+      "branch": "geometry-first",
+      "note": "KV keeps canonical-key-first regardless of this gate (Plan 1 Step 7: zero decided NOOPs, preflight catches dup keys)."
+    },
+    "vector": {
+      "n": 28,
+      "rho_sim_max_vs_dH": 0.7569121270188885,
+      "rho_sim_max_ci95": [
+        0.48172574883209673,
+        0.8985946541747037
+      ],
+      "rho_r_vs_dH": -0.6550780180673419,
+      "rho_r_ci95": [
+        -0.8671444321940464,
+        -0.3120879120879121
+      ],
+      "gate": 0.4,
+      "gate_pass": true,
+      "branch": "geometry-first",
+      "note": "Vector branch decision is binding for the cascade ordering."
+    }
+  },
+  "seed": 12345,
+  "n_boot": 2000
+}

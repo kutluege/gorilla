@@ -1,0 +1,71 @@
+{
+  "backend": "kv",
+  "tiers": {
+    "core": {
+      "user_support_feedback": {
+        "text": "user support feedback: Michael’s friend praised your customer support for being excellent and detailed, which helped Michael feel confident in asking in-depth questions. Michael is now seeking detailed specs on brewing frequency, cleaning ease, and footprint size to ensure the machine fits his kitchen and routine.",
+        "probes": [
+          "user support feedback",
+          "what is user support feedback",
+          "user support feedback michael friend praised"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "user_order_details_bundle": {
+        "text": "user order details bundle: Michael ordered: stainless-steel grinder, cleaning tablets, frothing pitcher; and vacuum-sealed canisters, Garmin digital scale. Excited to build a precision coffee lab in his Seattle kitchen.",
+        "probes": [
+          "user order details bundle",
+          "what is user order details bundle",
+          "user order details bundle michael ordered stainless"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "user_bundle_integrity_concern": {
+        "text": "user bundle integrity concern: Michael is concerned that his orders might be split(e.g., grinder bundle split with pitcher shipping separately). He wants assurance that all items in each order are shipped together to avoid confusion or missing items.",
+        "probes": [
+          "user bundle integrity concern",
+          "what is user bundle integrity concern",
+          "user bundle integrity concern michael concerned orders"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "user_billing_security_concern": {
+        "text": "user billing security concern: Michael is using the same address and card as before. He recalls a past Apple Pay security hold and wants to avoid similar issues. He’s asking for proactive notification if any red flags appear on billing or shipping.",
+        "probes": [
+          "user billing security concern",
+          "what is user billing security concern",
+          "user billing security concern michael using same"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "user_interest_in_subscription_program": {
+        "text": "user interest in subscription program: Michael from Seattle is interested in a subscription or membership program for loyal customers, seeking benefits like free shipping, early access to new products, or monthly discounts to organize and cost-effectively manage his frequent purchases.",
+        "probes": [
+          "user interest in subscription program",
+          "what is user interest in subscription program",
+          "user interest in subscription program michael seattle interested"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "user_request_for_streamlined_purchasing": {
+        "text": "user request for streamlined purchasing: Michael wants streamlined purchasing: consolidated orders, free shipping on all purchases, and bonus freebies like sample-size coffee or discount codes on future machines.",
+        "probes": [
+          "user request for streamlined purchasing",
+          "what is user request for streamlined purchasing",
+          "user request for streamlined purchasing michael wants streamlined"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "user_charge_inquiry_details": {
+        "text": "user charge inquiry details: Michael (Seattle) reports $49.99 charge 3 days ago. No descriptor. No matching order, subscription, or tax. Suspects system error (timeout/phantom). Previous orders all correct. No membership enrollment. Requesting investigation and reversal if erroneous.",
+        "probes": [
+          "user charge inquiry details",
+          "what is user charge inquiry details",
+          "user charge inquiry details michael seattle reports"
+        ],
+        "probe_provenance": "write_time"
+      }
+    },
+    "archival": {}
+  }
+}

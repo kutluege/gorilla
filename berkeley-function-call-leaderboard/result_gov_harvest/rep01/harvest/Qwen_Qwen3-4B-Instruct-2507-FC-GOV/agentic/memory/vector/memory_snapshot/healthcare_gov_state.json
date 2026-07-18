@@ -1,0 +1,27 @@
+{
+  "backend": "vector",
+  "tiers": {
+    "core": {
+      "0": {
+        "text": "Patient with Type 2 Diabetes on metformin 1000 mg twice daily. A1C around 6.9%. Recently added semaglutide (Ozempic) at low dose for better blood sugar control and appetite management. Fasting blood sugar typically between 125-130 mg/dL.",
+        "probes": [
+          "Patient with Type 2 Diabetes on metformin 1000 mg twice daily. A1C around 6.9%. Recently added semaglutide (Ozempic) at low dose for better blood sugar control and appetite management. Fasting blood sugar typically between 125-130 mg/dL.",
+          "what do you know about patient type diabetes metformin",
+          "patient type diabetes metformin 1000 twice daily a1c"
+        ],
+        "probe_provenance": "write_time"
+      }
+    },
+    "archival": {
+      "0": {
+        "text": "Osteoarthritis: Uses acetaminophen as needed for mild pain. Takes meloxicam 7.5 mg when joints are particularly stiff (knees, hands), not daily to avoid overuse of NSAIDs. Doctor suggested glucosamine supplements; effect not yet confirmed. Vitamin D: D3 2,000 IU daily due to low levels (22 ng/mL; normal >30 ng/mL). Calcium supplements taken due to early osteopenia on bone density scan. Doctor recommends combining with vitamin K2 to improve absorption. Cholesterol management: Atorvastatin 10 mg daily. Initial LDL 130 mg/dL, triglycerides 140 mg/dL. Cholesterol levels improving; no side effects reported (e.g., muscle aches), which is reassuring. General health: Daily multivitamin, omega-3 supplements for heart health, probiotics for digestion. Takes digestive enzymes when eating heavier meals due to gallbladder removal. Digestive changes: Fatty foods now require more caution; digestion is slower without gallbladder. Medication interactions: Avoid frequent use of meloxicam (NSAID) due to potential kidney impact when combined with losartan (an ACE inhibitor). Takes levothyroxine separately from calcium and iron supplements to prevent interference with absorption.",
+        "probes": [
+          "Osteoarthritis: Uses acetaminophen as needed for mild pain. Takes meloxicam 7.5 mg when joints are particularly stiff (knees, hands), not daily to avoid overuse of NSAIDs. Doctor suggested glucosamine supplements; effect not yet confirmed. Vitamin D: D3 2,000 IU daily due to low levels (22 ng/mL; normal >30 ng/mL). Calcium supplements taken due to early osteopenia on bone density scan. Doctor recommends combining with vitamin K2 to improve absorption. Cholesterol management: Atorvastatin 10 mg daily. Initial LDL 130 mg/dL, triglycerides 140 mg/dL. Cholesterol levels improving; no side effects reported (e.g., muscle aches), which is reassuring. General health: Daily multivitamin, omega-3 supplements for heart health, probiotics for digestion. Takes digestive enzymes when eating heavier meals due to gallbladder removal. Digestive changes: Fatty foods now require more caution; digestion is slower without gallbladder. Medication interactions: Avoid frequent use of meloxicam (NSAID) due to potential kidney impact when combined with losartan (an ACE inhibitor). Takes levothyroxine separately from calcium and iron supplements to prevent interference with absorption.",
+          "what do you know about osteoarthritis uses acetaminophen needed",
+          "osteoarthritis uses acetaminophen needed mild pain takes meloxicam"
+        ],
+        "probe_provenance": "write_time"
+      }
+    }
+  }
+}
