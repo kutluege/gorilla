@@ -63,20 +63,38 @@ def utc_now():
 # Pure helpers (unit-tested in test_gov_replicates.py)
 # ---------------------------------------------------------------------------
 
-def arm_sequence(n_replicates, start=1):
-    """[(1, baseline), (1, governed), (2, baseline), ...] -- the binding order."""
+def arm_specs(cfg):
+    """Ordered arm list. Multi-arm ablations (Plan 3 Step 7 / G13) supply
+    cfg["arms"] = [{"label", "model", "gov_env"|None}] -- gov_env None means an
+    ungoverned arm (GOV_ENABLED=0). Default: the classic two-arm A/B."""
+    if cfg.get("arms"):
+        return cfg["arms"]
     return [
-        (rep, arm)
-        for rep in range(start, n_replicates + 1)
-        for arm in (BASELINE_ARM, GOVERNED_ARM)
+        {"label": BASELINE_ARM, "model": cfg["baseline_model"], "gov_env": None},
+        {"label": GOVERNED_ARM, "model": cfg["governed_model"],
+         "gov_env": cfg.get("gov_env", {})},
     ]
 
 
-def rep_dir(root, rep):
-    return f"{root}/rep{rep:02d}"
+def arm_sequence(n_replicates, start=1, arms=None):
+    """[(1, arm_a), (1, arm_b), ..., (2, arm_a), ...] -- the binding order:
+    strictly sequential, every arm alternated WITHIN a replicate."""
+    labels = [a["label"] for a in arms] if arms else [BASELINE_ARM, GOVERNED_ARM]
+    return [
+        (rep, label)
+        for rep in range(start, n_replicates + 1)
+        for label in labels
+    ]
 
 
-def build_generate_cmd(cfg, model, rep):
+def rep_dir(root, rep, arm):
+    """Per-(replicate, arm) tree: ablation arms may share ONE registry model id
+    (differing only in GOV_* env), so the model-slug subdir alone cannot keep
+    them apart -- the arm label must be in the path."""
+    return f"{root}/rep{rep:02d}/{arm}"
+
+
+def build_generate_cmd(cfg, model, rep, arm):
     return [
         cfg["python"], "-m", "bfcl_eval", "generate",
         "--model", model,
@@ -84,42 +102,61 @@ def build_generate_cmd(cfg, model, rep):
         "--skip-server-setup",
         "--num-threads", "1",
         "--temperature", str(cfg["temperature"]),
-        "--result-dir", rep_dir(cfg["result_root"], rep),
+        "--result-dir", rep_dir(cfg["result_root"], rep, arm),
         "--allow-overwrite",
     ]
 
 
-def build_evaluate_cmd(cfg, model, rep):
+def build_evaluate_cmd(cfg, model, rep, arm):
     return [
         cfg["python"], "-m", "bfcl_eval", "evaluate",
         "--model", model,
         "--test-category", cfg["test_category"],
-        "--result-dir", rep_dir(cfg["result_root"], rep),
-        "--score-dir", rep_dir(cfg["score_root"], rep),
+        "--result-dir", rep_dir(cfg["result_root"], rep, arm),
+        "--score-dir", rep_dir(cfg["score_root"], rep, arm),
         "--partial-eval",
     ]
+
+
+def expected_score_files(cfg, model, rep, arm):
+    """Repo-root-relative score paths bfcl evaluate should have produced for
+    the memory categories of this arm x replicate."""
+    slug = model.replace("/", "_")
+    out = []
+    for cat in (c.strip() for c in cfg["test_category"].split(",")):
+        if not cat.startswith("memory_"):
+            continue
+        backend = cat[len("memory_"):]
+        out.append(
+            f"{rep_dir(cfg['score_root'], rep, arm)}/{slug}/agentic/memory/"
+            f"{backend}/BFCL_v4_{cat}_score.json"
+        )
+    return out
 
 
 def build_arm_env(cfg, arm, rep, base_env=None):
     """Child env: tunnel wiring passes through; GOV_* is set explicitly.
 
-    The baseline arm runs the plain -FC handler, but GOV_ENABLED=0 is still
-    exported so a mis-registered handler cannot silently govern the baseline.
-    The governed arm gets the calibrated cfg["gov_env"] plus a per-replicate
-    GOV_LOG_DIR (the middleware log is append-mode; mixing replicates in one
-    file would corrupt the analysis).
-    """
+    An ungoverned arm (gov_env None) still exports GOV_ENABLED=0 so a
+    mis-registered handler cannot silently govern it. A governed arm gets its
+    spec's calibrated env plus a per-(replicate, arm) GOV_LOG_DIR (the
+    middleware log is append-mode; shared files would silently mix replicates
+    AND arms -- risk R7)."""
     env = dict(base_env if base_env is not None else os.environ)
     stale = [k for k in env if k.startswith("GOV_")]
     for k in stale:
         del env[k]
-    if arm == BASELINE_ARM:
+    spec = next((a for a in arm_specs(cfg) if a["label"] == arm), None)
+    gov_env = spec["gov_env"] if spec else (
+        None if arm == BASELINE_ARM else cfg.get("gov_env", {})
+    )
+    if gov_env is None:
         env["GOV_ENABLED"] = "0"
     else:
         env["GOV_ENABLED"] = "1"
-        env.update(cfg["gov_env"])
+        env.update(gov_env)
         env["GOV_LOG_DIR"] = str(
-            Path(cfg["gov_log_root"]) / f"rep{rep:02d}"
+            Path(cfg["gov_log_root"]) / f"rep{rep:02d}_{arm}"
         )
     return env
 
@@ -188,8 +225,8 @@ def run_replicates(cfg, run_cmd=default_run_cmd, probe=probe_server,
     run_id = cfg.get("run_id") or datetime.now(timezone.utc).strftime(
         "govrep_%Y%m%dT%H%M%SZ")
     base_record = {"run_id": run_id}
-    models = {BASELINE_ARM: cfg["baseline_model"],
-              GOVERNED_ARM: cfg["governed_model"]}
+    arms = arm_specs(cfg)
+    models = {a["label"]: a["model"] for a in arms}
 
     try:
         server = probe(cfg["base_url"])
@@ -214,22 +251,28 @@ def run_replicates(cfg, run_cmd=default_run_cmd, probe=probe_server,
         "test_category": cfg["test_category"],
         "replicates": cfg["replicates"],
         "start_replicate": cfg.get("start_replicate", 1),
-        "arm_order_per_replicate": [BASELINE_ARM, GOVERNED_ARM],
+        "arm_order_per_replicate": [a["label"] for a in arms],
         "num_threads": 1,
         "skip_server_setup": True,
         "models": models,
-        "gov_env_governed": dict(sorted(cfg["gov_env"].items())),
+        "arms": [
+            {"label": a["label"], "model": a["model"],
+             "gov_env": dict(sorted((a["gov_env"] or {}).items()))
+             if a["gov_env"] is not None else None}
+            for a in arms
+        ],
+        "gov_env_governed": dict(sorted(cfg.get("gov_env", {}).items())),
         "result_root": cfg["result_root"],
         "score_root": cfg["score_root"],
         "gov_log_root": cfg["gov_log_root"],
     })
 
     for rep, arm in arm_sequence(cfg["replicates"],
-                                 cfg.get("start_replicate", 1)):
+                                 cfg.get("start_replicate", 1), arms=arms):
         env = build_arm_env(cfg, arm, rep)
         for phase, cmd in (
-            ("generate", build_generate_cmd(cfg, models[arm], rep)),
-            ("evaluate", build_evaluate_cmd(cfg, models[arm], rep)),
+            ("generate", build_generate_cmd(cfg, models[arm], rep, arm)),
+            ("evaluate", build_evaluate_cmd(cfg, models[arm], rep, arm)),
         ):
             # Generation needs the tunnel; re-probe so a dropped SSH session
             # stops the run at a clean boundary instead of mid-scenario.
@@ -252,11 +295,21 @@ def run_replicates(cfg, run_cmd=default_run_cmd, probe=probe_server,
             })
             t0 = clock()
             exit_code = run_cmd(cmd, env)
-            manifest_writer(manifest, {
+            end_record = {
                 **base_record, "ts": utc_now(), "event": "cmd_end",
                 "replicate": rep, "arm": arm, "phase": phase,
                 "exit_code": exit_code, "duration_s": round(clock() - t0, 3),
-            })
+            }
+            if phase == "evaluate":
+                # G15: the score artifact is part of the completion contract --
+                # a replicate without a score is NOT complete. Record path +
+                # existence so the analyzer (and an auditor) never has to
+                # reconstruct where the score should have been.
+                end_record["score_files"] = [
+                    {"path": str(p), "exists": (BFCL_ROOT / p).exists()}
+                    for p in expected_score_files(cfg, models[arm], rep, arm)
+                ]
+            manifest_writer(manifest, end_record)
             if exit_code != 0:
                 manifest_writer(manifest, {
                     **base_record, "ts": utc_now(), "event": "error",
@@ -313,6 +366,10 @@ def main():
     ap.add_argument("--gov-env", action="append", default=[],
                     metavar="GOV_KEY=VALUE",
                     help="Calibrated governed-arm setting (repeatable)")
+    ap.add_argument("--arms-json", default=None,
+                    help="Multi-arm ablation spec: JSON list of "
+                         '{"label", "model", "gov_env"|null} objects '
+                         "(overrides --baseline-model/--governed-model)")
     ap.add_argument("--dry-run", action="store_true",
                     help="Print the command plan; execute nothing")
     args = ap.parse_args()
@@ -339,20 +396,27 @@ def main():
         "gov_env": parse_gov_env(args.gov_env),
         "base_url": os.environ["REMOTE_OPENAI_BASE_URL"],
     }
+    if args.arms_json:
+        arms = json.loads(args.arms_json)
+        for a in arms:
+            if not {"label", "model"} <= set(a):
+                raise SystemExit(f"--arms-json arm needs label+model: {a}")
+        cfg["arms"] = arms
     # Manifest path is BFCL-root-relative like the result/score roots.
     if not Path(cfg["manifest"]).is_absolute():
         cfg["manifest"] = str(BFCL_ROOT / cfg["manifest"])
 
     if args.dry_run:
         print(f"[gov-rep] DRY RUN -- {args.replicates} replicates, order:")
-        models = {BASELINE_ARM: cfg["baseline_model"],
-                  GOVERNED_ARM: cfg["governed_model"]}
-        for rep, arm in arm_sequence(args.replicates, args.start_replicate):
+        arms = arm_specs(cfg)
+        models = {a["label"]: a["model"] for a in arms}
+        for rep, arm in arm_sequence(args.replicates, args.start_replicate,
+                                     arms=arms):
             print(f"  rep{rep:02d}/{arm}:")
-            print("    " + " ".join(build_generate_cmd(cfg, models[arm], rep)))
-            print("    " + " ".join(build_evaluate_cmd(cfg, models[arm], rep)))
-            if arm == GOVERNED_ARM:
-                env = build_arm_env(cfg, arm, rep)
+            print("    " + " ".join(build_generate_cmd(cfg, models[arm], rep, arm)))
+            print("    " + " ".join(build_evaluate_cmd(cfg, models[arm], rep, arm)))
+            env = build_arm_env(cfg, arm, rep)
+            if env.get("GOV_ENABLED") == "1":
                 print(f"    gov_env: {gov_env_of(env)}")
         return
 

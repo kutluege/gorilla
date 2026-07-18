@@ -17,9 +17,11 @@ from bfcl_eval.scripts.run_gov_replicates import (  # noqa: E402
     BASELINE_ARM,
     GOVERNED_ARM,
     arm_sequence,
+    arm_specs,
     build_arm_env,
     build_evaluate_cmd,
     build_generate_cmd,
+    expected_score_files,
     gov_env_of,
     parse_gov_env,
     run_replicates,
@@ -31,6 +33,7 @@ from bfcl_eval.scripts.analyze_gov_replicates import (  # noqa: E402
     holm,
     mcnemar_exact,
     pair_replicate,
+    unscored_replicates,
 )
 
 PASS, FAIL = 0, 0
@@ -136,16 +139,42 @@ def run():
           arm_sequence(3, start=3) == [(3, BASELINE_ARM), (3, GOVERNED_ARM)])
 
     cfg = make_cfg()
-    gen = build_generate_cmd(cfg, "M-FC", 2)
+    gen = build_generate_cmd(cfg, "M-FC", 2, BASELINE_ARM)
     check("generate: --num-threads 1 hard-coded",
           gen[gen.index("--num-threads") + 1] == "1")
     check("generate: --skip-server-setup present", "--skip-server-setup" in gen)
-    check("generate: per-replicate result dir",
-          gen[gen.index("--result-dir") + 1] == "res_root/rep02")
-    ev = build_evaluate_cmd(cfg, "M-FC", 2)
-    check("evaluate: partial-eval + per-replicate score dir",
+    check("generate: per-(replicate, arm) result dir",
+          gen[gen.index("--result-dir") + 1] == "res_root/rep02/baseline")
+    ev = build_evaluate_cmd(cfg, "M-FC", 2, BASELINE_ARM)
+    check("evaluate: partial-eval + per-(replicate, arm) score dir",
           "--partial-eval" in ev
-          and ev[ev.index("--score-dir") + 1] == "sco_root/rep02")
+          and ev[ev.index("--score-dir") + 1] == "sco_root/rep02/baseline")
+
+    print("[runner: multi-arm generalization (G13)]")
+    specs = arm_specs(make_cfg())
+    check("default arm specs = classic two-arm A/B",
+          [a["label"] for a in specs] == [BASELINE_ARM, GOVERNED_ARM]
+          and specs[0]["gov_env"] is None)
+    three = [{"label": "baseline", "model": "M-FC", "gov_env": None},
+             {"label": "stage0", "model": "M-FC-GOV", "gov_env": {"GOV_NLI_ENABLED": "0"}},
+             {"label": "full", "model": "M-FC-GOV", "gov_env": {"GOV_NLI_ENABLED": "1"}}]
+    seq3 = arm_sequence(2, arms=three)
+    check("N-arm alternation B1,A1,C1,B2,A2,C2",
+          seq3 == [(1, "baseline"), (1, "stage0"), (1, "full"),
+                   (2, "baseline"), (2, "stage0"), (2, "full")], str(seq3))
+    cfg3 = make_cfg()
+    cfg3["arms"] = three
+    g_s0 = build_generate_cmd(cfg3, "M-FC-GOV", 1, "stage0")
+    g_fl = build_generate_cmd(cfg3, "M-FC-GOV", 1, "full")
+    check("same-model ablation arms get DISTINCT result dirs",
+          g_s0[g_s0.index("--result-dir") + 1] != g_fl[g_fl.index("--result-dir") + 1])
+    e_s0 = build_arm_env(cfg3, "stage0", 1, {"PATH": "p"})
+    e_fl = build_arm_env(cfg3, "full", 1, {"PATH": "p"})
+    check("per-arm gov_env applied from the spec",
+          e_s0["GOV_NLI_ENABLED"] == "0" and e_fl["GOV_NLI_ENABLED"] == "1")
+    check("per-(replicate, arm) GOV_LOG_DIR isolation across arms",
+          e_s0["GOV_LOG_DIR"] != e_fl["GOV_LOG_DIR"]
+          and e_s0["GOV_LOG_DIR"].endswith("rep01_stage0"))
 
     print("[runner: env construction]")
     base_env = {"PATH": "p", "GOV_SIM_HIGH": "0.11", "GOV_STALE": "x"}
@@ -162,7 +191,7 @@ def run():
           and env_g1["GOV_DELTA"] == "0.32")
     check("governed: distinct per-replicate GOV_LOG_DIR",
           env_g1["GOV_LOG_DIR"] != env_g2["GOV_LOG_DIR"]
-          and env_g1["GOV_LOG_DIR"].endswith("rep01"))
+          and env_g1["GOV_LOG_DIR"].endswith("rep01_governed"))
     check("gov_env_of filters non-GOV keys",
           set(gov_env_of(env_g1)) == {"GOV_ENABLED", "GOV_SIM_HIGH",
                                       "GOV_DELTA", "GOV_LOG_DIR"})
@@ -199,6 +228,17 @@ def run():
                   if r["event"] == "cmd_start" and r["arm"] == GOVERNED_ARM]
     check("manifest records per-arm GOV_* env",
           all(r["gov_env"].get("GOV_ENABLED") == "1" for r in gov_starts))
+    ev_ends = [r for r in h.manifest
+               if r["event"] == "cmd_end" and r["phase"] == "evaluate"]
+    check("G15: evaluate cmd_end records score paths + existence",
+          ev_ends and all(
+              len(r.get("score_files", [])) == 2
+              and all({"path", "exists"} <= set(s) for s in r["score_files"])
+              for r in ev_ends), str(ev_ends[:1]))
+    check("G15: expected score paths carry arm + model slug",
+          expected_score_files(make_cfg(), "M/X-FC", 3, "baseline")[0]
+          == "sco_root/rep03/baseline/M_X-FC/agentic/memory/kv/"
+             "BFCL_v4_memory_kv_score.json")
 
     print("[runner: fail-stop, never retried]")
     h = Harness(fail_on_call=3)  # G1 generate fails
@@ -340,7 +380,61 @@ def run():
     check("output stamped as primary (student excluded)",
           summary["primary_result"] and not summary["include_student"])
 
+    print("[analyzer: multi-arm joint survival + Holm dimension (G13)]")
+    ref3 = arm_records("kv", {
+        "customer": (False, {"q1": True, "q2": False}),
+        "finance": (False, {"f1": True}),
+    })
+    armA = arm_records("kv", {
+        "customer": (False, {"q1": True, "q2": True}),
+        "finance": (True, {"f1": False}),      # dead ONLY in armA
+    })
+    armB = arm_records("kv", {
+        "customer": (False, {"q1": False, "q2": False}),
+        "finance": (False, {"f1": True}),
+    })
+    s3 = analyze({1: {"baseline": ref3, "armA": armA, "armB": armB}}, n_boot=100)
+    check("joint survival: unit dead in ANY arm drops from ALL pairs",
+          all(c["n_pairs"] == 2 for c in s3["comparisons"].values())
+          and not any(p_key.startswith("finance")
+                      for c in s3["comparisons"].values()
+                      for p_key in [q["scenario"] for q in c["dropped_units"]]
+                      if False))
+    check("joint drop counted ONCE, not per pair",
+          s3["total_units_dropped"] == 1
+          and s3["comparisons"]["kv|armA_vs_baseline"]["dropped_units"][0]["dead_in"]
+          == ["armA"])
+    check("Holm m = backends x arm-pairs (1 x 2 = 2)", s3["holm_m"] == 2)
+    check("comparison keys carry backend|arm_vs_ref",
+          set(s3["comparisons"]) == {"kv|armA_vs_baseline", "kv|armB_vs_baseline"})
+    check("Holm never lowers a raw p",
+          all(c["mcnemar_p_holm"] >= c["mcnemar_p"] - 1e-12
+              for c in s3["comparisons"].values()))
+    check("N-arm output has no two-arm per_backend alias",
+          "per_backend" not in s3)
+
+    print("[analyzer: G15 unscored detection]")
+    unscored_recs = {1: {
+        "baseline": arm_records("kv", {"customer": (False, {"q1": None, "q2": None})}),
+        "governed": arm_records("kv", {"customer": (False, {"q1": True, "q2": False})}),
+    }}
+    check("all-None arm/backend flagged as unscored",
+          unscored_replicates(unscored_recs) == [(1, "baseline", "kv")])
+    check("scored replicates produce no flags",
+          unscored_replicates({1: {"baseline": arm_records(
+              "kv", {"customer": (False, {"q1": True})})}}) == [])
+
     print("[analyzer: manifest completion filter]")
+    man3 = [
+        {"event": "run_start"},
+        {"event": "cmd_end", "phase": "evaluate", "exit_code": 0,
+         "replicate": 1, "arm": "baseline"},
+        {"event": "cmd_end", "phase": "evaluate", "exit_code": 0,
+         "replicate": 1, "arm": "stage0"},
+    ]
+    check("N-arm completion requires EVERY arm",
+          completed_replicates(man3, arms=["baseline", "stage0", "full"]) == []
+          and completed_replicates(man3, arms=["baseline", "stage0"]) == [1])
     man = [
         {"event": "run_start"},
         {"event": "cmd_end", "phase": "evaluate", "exit_code": 0,
