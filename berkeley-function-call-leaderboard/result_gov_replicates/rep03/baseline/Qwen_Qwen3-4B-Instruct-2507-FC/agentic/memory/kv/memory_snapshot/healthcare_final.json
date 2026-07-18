@@ -1,0 +1,21 @@
+{
+    "core_memory": {
+        "diabetes_medication_metformin": "Metformin 1000 mg twice daily(taken for several years). Helps control blood sugar, but A1C remains around 6.9%.",
+        "hypothyroidism_medication_levothyroxine": "Levothyroxine 75 mcg once daily, taken on an empty stomach, with at least 30 minutes before eating. Last TSH test: 2.1 mIU/L(within normal range). No dosage changes needed.",
+        "hypothyroidism_dose_mismanagement": "Feel sluggish the next day if a dose is missed. Using a pill organizer to stay on track.",
+        "vitamin_d_intake": "Vitamin D3 2,000 IU daily, started after blood test showed low levels(22 ng/mL; normal >30 ng/mL).",
+        "cholesterol_statin_atorvastatin": "Atorvastatin 10 mg daily. Started due to LDL of 130 mg/dL and triglycerides of 140 mg/dL. Cholesterol levels have improved, and no side effects reported(e.g., muscle aches).",
+        "medication_interactions_kidney_risk": "NSAIDs(like meloxicam) can affect kidney function, especially when combined with losartan(an ACE inhibitor). Doctor advised limiting meloxicam use to avoid potential kidney strain. I take it only as needed during flare-ups.",
+        "medication_interactions_thyroid_absorption": "Take levothyroxine separately from calcium and iron supplements to prevent interference with absorption. Levothyroxine should be taken on an empty stomach, at least 30\u201360 minutes before meals, and ideally 4\u20136 hours apart from other medications."
+    },
+    "archival_memory": {
+        "diabetes_blood_glucose_2024_q3": "Fasting blood glucose: 135 mg/dL; A1C: 6.9%; Morning readings: 125-130 mg/dL; Recommendations: Increase dietary fiber, add light exercise after meals.",
+        "cholesterol_2024_q3": "Total cholesterol: 195 mg/dL; LDL: 130 mg/dL(target: under 100 mg/dL); HDL: 58 mg/dL(good range); Triglycerides: 140 mg/dL(slightly elevated); Recommendations: Increase healthy fats(avocados, nuts); Reduce saturated fats.",
+        "blood_pressure_2024_q3": "Reading: 138/85 mmHg; Target: below 130/80 mmHg; Range: 135\u2013140 systolic, 80\u201390 diastolic; Factors: stress, salt intake; Actions: reduce sodium, increase water intake.",
+        "vitamin_d_2024_q3": "Level: 22 ng/mL(deficient); Normal range: 30-50 ng/mL; Treatment: 2,000 IU daily supplement; Next test: in a few months.",
+        "thyroid_2024_q3": "TSH: 2.1 mIU/L(normal range: 0.5-4.5 mIU/L); T4: 1.2 ng/dL(within target); Status: Stable; Past history: Hypothyroidism; Current treatment: Levothyroxine(working well).",
+        "bone_density_2024_q3": "Spine T-score: -1.8 (osteopenia); Hip T-score: -1.5 (borderline); Recommendations: Strength training, increased calcium and vitamin D intake, calcium supplement with vitamin K2.",
+        "liver_kidney_function_2024_q3": "ALT: 42 U/L(elevated; normal <35 U/L); Possible cause: recent medication adjustments; Creatinine: 0.9 mg/dL(normal range: 0.6-1.2 mg/dL); Kidney function: normal; Next step: monitor ALT levels closely.",
+        "inflammatory_markers_2024_q3": "C-reactive protein(CRP): 3.2 mg/L(slightly elevated; ideal <3.0 mg/L); Likely related to osteoarthritis; ESR: 18 mm/hr(normal range: 0-20 mm/hr); Interpretation: Mild inflammation, primarily due to joint condition."
+    }
+}

@@ -1,0 +1,22 @@
+{
+    "core_memory": {
+        "next_id": 2,
+        "store": {
+            "0": "User Michael, 35, Seattle. Grinder is MVP. Tracking stuck. Needs confirmation it left warehouse. Delivery: specific date, pickup, or in-person retrieval. Willing to drive. Billing/shipping: same address/card. Had prior Apple Pay security hold. Proactive alert for billing/shipping issues.",
+            "1": "User Michael, 35, Seattle. Coffee lab enthusiast. Enrolled in membership. Seeks prioritized support: dedicated chat or phone line for urgent issues(e.g., machine before coffee tasting). Values responsiveness and reliability."
+        }
+    },
+    "archival_memory": {
+        "next_id": 8,
+        "store": {
+            "0": "User Michael, 35, lives in Seattle, freelance graphic designer, seeking a sleek stainless-steel espresso machine. Key concerns: brewing frequency, cleaning ease, size, kitchen space, and potential need to reorganize existing appliances. Specifically asking for precise dimensions to avoid 'kitchen Tetris' issues.",
+            "1": "User Michael, 35, lives in Seattle, freelance graphic designer, seeking a sleek stainless-steel espresso machine. Concerned about warranty length and service quality, especially for higher-end models. Wants assurance of a robust, customer-friendly support policy.",
+            "2": "User Michael, 35, lives in Seattle, freelance graphic designer, seeking a sleek stainless-steel espresso machine with reliable hot coffee output. Specifically concerned about temperature consistency\u2014no microwaving needed\u2014and wants to know if machines have adjustable temperature settings or ensure reliably hot brews.",
+            "3": "Michael(Seattle) reported confusion over shipping timelines: Grinder bundle shipped from Oregon warehouse(expected local delivery), tracking shows 'Label Created\u2014Awaiting Item' with no carrier update. Second order(canisters & Garmin scale) from East Coast(Ohio/Pennsylvania), in transit, but suddenly shows earlier arrival than expected. Concerned about potential mix-up: Oregon warehouse may be short-staffed, item on backorder, or processing delay. Noted recent weather disruptions(heavy rains, flooding) impacting local shipping. Worrying about inconsistency despite proximity.",
+            "4": "Michael(Seattle) added concern about package safety during weekend trip to Portland. Will be away 4 days(next weekend). Worried about outdoor delivery in rain or neighbor pickup. Specifically concerned about delicate grinder. Requests: 1) Approximate arrival date to plan house-sitting. 2) Delivery instructions(e.g., indoor delivery, contact for pickup). 3) Confirmation that delivery will not occur during absence.",
+            "5": "User Michael, 35, Seattle. Coffee lab enthusiast. Interested in stainless-steel grinder, vacuum-sealed canisters, Garmin digital scale. Exploring membership with monthly coffee kit subscription, early access to new products, loyalty rewards, and potential 19-month warranty. Currently active in multiple purchases; shows strong loyalty and intent to continue upgrading coffee gear. Questions about current subscription model: is it strictly for beans, or does it include discounts on accessories, machines, or cleaning kits? Interested in loyalty points, free shipping, and exclusive pricing.",
+            "6": "User Michael, 35, Seattle. Coffee lab enthusiast. Currently enrolled in membership with 19-month warranty, monthly small-batch beans from PNW roasters. Actively inquiring about early access to limited-edition items or prototypes. Expresses strong interest in testing new gadgets or exclusive products before public release. Believes there is a sizable community of passionate coffee lovers who would value such access.",
+            "7": "User Michael, 35, Seattle. Coffee lab enthusiast. Enrolled in membership. Seeks prioritized support: dedicated chat or phone line for urgent issues(e.g., machine before coffee tasting). Values responsiveness and reliability. Deeply satisfied with products, shipping, and service. Enjoys first-time discounts and would like annual membership with free shipping, extended warranties, coffee bean deliveries, and early access to new products. Shares coffee creations on Instagram @coffee_creations_1237, which drives interest in the gear. Highly recommends the brand due to trust in product quality and design, which has enhanced his productivity and professional image as a freelancer."
+        }
+    }
+}

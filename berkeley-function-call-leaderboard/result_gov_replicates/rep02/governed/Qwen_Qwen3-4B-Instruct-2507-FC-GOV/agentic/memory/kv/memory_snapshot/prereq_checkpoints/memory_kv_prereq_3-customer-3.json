@@ -1,0 +1,14 @@
+{
+    "core_memory": {
+        "user_preference_espresso": "Michael prefers a sleek, modern espresso machine with a stainless-steel finish, aiming for a caf\u00e9-like experience without being overly complex. He values design aesthetics and is open to models with smart features or programmable functions but wants simplicity for a non-professional user.",
+        "user_inquiry_pricing": "Michael is interested in pricing for espresso machines and is specifically looking for first-time buyer discounts, new customer offers, or bundle deals. He saw a 'New Customer Discount' on the homepage but didn\u2019t click it in time.",
+        "user_shipping_inquiry": "Michael in Seattle wants local shipping for faster delivery. He needs the coffee machine before a family gathering later this month. Concerned about rainy weather and delivery times.",
+        "user_warranty_inquiry": "Michael is concerned about warranty length and service support, especially for higher-end models. He has had negative experiences with short warranties from other brands and wants assurance of reliable, long-term support.",
+        "user_temperature_concern": "Michael has had issues with drip coffee makers that don't heat enough, leading him to microwave his coffee. He wants to know if your espresso machines have adjustable temperature settings or reliably produce hot coffee to avoid this issue.",
+        "user_delivery_preparation": "Michael will be home to receive package in person. Requires signature. Will avoid rain exposure by being ready to greet driver or bring item indoors immediately.",
+        "michael_espresso_claim_status": "Claim active: Michael(Seattle). Damaged machine(dent, bent wand, misaligned reservoir). No return needed. Replacement shipped in 48h. Photos/video required. Upgrade optional."
+    },
+    "archival_memory": {
+        "user_replacement_claim_michael": "Michael from Seattle has reported damage to his espresso machine during shipping. The machine has a significant dent, a bent steam wand, misaligned reservoir, and crushed packaging. He is requesting a replacement with fast delivery(within 48 hours), no return required, and full coverage under shipping damage warranty. He is open to keeping the original model(free) or upgrading to a higher-end model(optional, small fee). He has provided photos and video of the damage and is ready to proceed."
+    }
+}

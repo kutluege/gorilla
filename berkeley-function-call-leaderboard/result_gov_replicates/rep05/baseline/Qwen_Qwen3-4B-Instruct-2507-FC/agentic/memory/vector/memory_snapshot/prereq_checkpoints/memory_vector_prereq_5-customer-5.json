@@ -1,0 +1,18 @@
+{
+    "core_memory": {
+        "next_id": 1,
+        "store": {
+            "0": "User Michael, 35, Seattle. Prioritizes grinder delivery. Label generated but no carrier pickup. Fears item missing or on backorder. Can wait on canisters/scale. Grinder essential for espresso game. Urgent follow-up with Oregon warehouse to confirm dispatch."
+        }
+    },
+    "archival_memory": {
+        "next_id": 5,
+        "store": {
+            "0": "User Michael, first-time buyer in Seattle, freelance graphic designer, specifically inquires about temperature control in coffee machines, concerned about drip makers that don\u2019t heat sufficiently and past experience of microwaving coffee. Wants to know if your machines offer adjustable temperature settings or reliably hot coffee to avoid post-brew heating.",
+            "1": "User Michael, from Seattle, freelance graphic designer, has expressed concern about rainy weather causing package damage due to soggy deliveries. He emphasizes the need to be home to receive deliveries, especially with signature required. He wants to be notified of any updated shipping schedule or imminent delivery(e.g., tomorrow) so he can prepare to greet the courier and ensure safe, timely receipt of his espresso machine order.",
+            "2": "Michael(Seattle) reports: Grinder bundle(Oregon warehouse) still shows 'Label Created \u2014 Awaiting Item' despite no carrier pickup. Eastern order(canisters & Garmin scale) now shows 'in transit' with potential earlier arrival due to weather-related delays in the region. Suspects warehouse error, backorder, or staffing issue. Concerned about mix-up or mislabeling. Weather(heavy rains, flooding) has impacted regional shipping. Requesting clarification and possible expedited option for grinder.",
+            "3": "Michael(Seattle) adds: Heading out of town to Portland next weekend(3-day trip). Concerned about package delivery during absence\u2014fear of rain damage or neighbor pickup. Specifically worries about delicate grinder. Wants approximate arrival date to plan for friend to house-sit or monitor delivery. Has prior experience with damaged espresso machine\u2014avoids repeat. Requests proactive delivery coordination.",
+            "4": "Michael(Seattle) requests verification of billing and shipping details for second order. Using same address and card as before. Expresses concern about past Apple Pay security hold and wants to avoid similar issues. Requests proactive flagging of any red flags on billing or shipping side. Wants to ensure smooth, secure transaction with no unexpected holds or errors."
+        }
+    }
+}

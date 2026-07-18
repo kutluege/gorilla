@@ -1,0 +1,207 @@
+{
+  "backend": "vector",
+  "tiers": {
+    "core": {
+      "0": {
+        "text": "User Michael, 35, lives in Seattle, freelance graphic designer, values design aesthetics. Positive feedback on sleek, modern stainless-steel products: espresso machine, frothing pitchers, milk thermometers, cleaning tablets, digital scale. Durable, well-constructed, enhance kitchen's visual appeal.",
+        "probes": [
+          "User Michael, 35, lives in Seattle, freelance graphic designer, values design aesthetics. Positive feedback on sleek, modern stainless-steel products: espresso machine, frothing pitchers, milk thermometers, cleaning tablets, digital scale. Durable, well-constructed, enhance kitchen's visual appeal.",
+          "what do you know about michael lives seattle freelance",
+          "michael lives seattle freelance graphic designer values design"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "1": {
+        "text": "User Michael, 35, freelance graphic designer in Seattle. Interested in coffee grinder and matching accessories: storage canister($39) and cleaning kit. Kitchen reorganized into a cohesive 'coffee corner.' Ready to complete setup.",
+        "probes": [
+          "User Michael, 35, freelance graphic designer in Seattle. Interested in coffee grinder and matching accessories: storage canister($39) and cleaning kit. Kitchen reorganized into a cohesive 'coffee corner.' Ready to complete setup.",
+          "what do you know about michael freelance graphic designer",
+          "michael freelance graphic designer seattle interested coffee grinder"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "2": {
+        "text": "User Michael, 35, freelance graphic designer in Seattle. Ordered espresso machine with steam wand. 17% off. Shipping delayed, tracking stopped. Package in transit outside Washington. Damaged arrival. Support team responded quickly and provided replacement. Initial unboxing experience affected.",
+        "probes": [
+          "User Michael, 35, freelance graphic designer in Seattle. Ordered espresso machine with steam wand. 17% off. Shipping delayed, tracking stopped. Package in transit outside Washington. Damaged arrival. Support team responded quickly and provided replacement. Initial unboxing experience affected.",
+          "what do you know about michael freelance graphic designer",
+          "michael freelance graphic designer seattle ordered espresso machine"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "3": {
+        "text": "User Michael, 35, freelance graphic designer in Seattle. Interested in a subscription or membership program for coffee accessories and gadgets. No subscription activated. No charge linked to this inquiry.",
+        "probes": [
+          "User Michael, 35, freelance graphic designer in Seattle. Interested in a subscription or membership program for coffee accessories and gadgets. No subscription activated. No charge linked to this inquiry.",
+          "what do you know about michael freelance graphic designer",
+          "michael freelance graphic designer seattle interested subscription membership"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "4": {
+        "text": "User Michael, 35, freelance graphic designer in Seattle. Seeking a high-capacity, commercial-style espresso machine to support 5–6 people during events. Needs consistent performance, reliable operation under load, and sleek, modern design to match his coffee corner's aesthetic.",
+        "probes": [
+          "User Michael, 35, freelance graphic designer in Seattle. Seeking a high-capacity, commercial-style espresso machine to support 5–6 people during events. Needs consistent performance, reliable operation under load, and sleek, modern design to match his coffee corner's aesthetic.",
+          "what do you know about michael freelance graphic designer",
+          "michael freelance graphic designer seattle seeking high capacity"
+        ],
+        "probe_provenance": "write_time"
+      }
+    },
+    "archival": {
+      "0": {
+        "text": "Michael, 35, freelance graphic designer in Seattle, is hosting a small family gathering with siblings and close friends. He planned a 'latte art showdown' featuring his new espresso machine. Due to a delayed delivery, he is now considering alternatives such as a standard drip coffee maker or visiting a local coffee shop for morning brews. He values the experience and aesthetics of coffee preparation and is seeking a solution that maintains the excitement and authenticity of the event.",
+        "probes": [
+          "Michael, 35, freelance graphic designer in Seattle, is hosting a small family gathering with siblings and close friends. He planned a 'latte art showdown' featuring his new espresso machine. Due to a delayed delivery, he is now considering alternatives such as a standard drip coffee maker or visiting a local coffee shop for morning brews. He values the experience and aesthetics of coffee preparation and is seeking a solution that maintains the excitement and authenticity of the event.",
+          "what do you know about michael freelance graphic designer",
+          "michael freelance graphic designer seattle hosting small family"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "1": {
+        "text": "User Michael, 35, freelance graphic designer in Seattle. Espresso machine order(17% off, 11-day estimate) shipping status stuck. Grinder(Oregon warehouse) tracking stuck at 'Label Created—Awaiting Item'; suspect label generated but package not physically dispatched. High priority: grinder is key to elevating espresso game. Canisters & scale are secondary; can wait weeks. Concerned about potential oversight or missing item.",
+        "probes": [
+          "User Michael, 35, freelance graphic designer in Seattle. Espresso machine order(17% off, 11-day estimate) shipping status stuck. Grinder(Oregon warehouse) tracking stuck at 'Label Created—Awaiting Item'; suspect label generated but package not physically dispatched. High priority: grinder is key to elevating espresso game. Canisters & scale are secondary; can wait weeks. Concerned about potential oversight or missing item.",
+          "what do you know about michael freelance graphic designer",
+          "michael freelance graphic designer seattle espresso machine order"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "2": {
+        "text": "Michael, 35, freelance graphic designer in Seattle, is preparing for a potential replacement of his lost or delayed espresso machine. He is concerned about the process for claiming a lost package, including whether the carrier is involved, if he needs to initiate the claim himself, and the timeline for resolution. He values transparency, customer service, and the fact that the machine is a significant personal investment—both financially and emotionally. He wants to be fully prepared for the worst-case scenario, including understanding the return/exchange policy for delayed or lost shipments.",
+        "probes": [
+          "Michael, 35, freelance graphic designer in Seattle, is preparing for a potential replacement of his lost or delayed espresso machine. He is concerned about the process for claiming a lost package, including whether the carrier is involved, if he needs to initiate the claim himself, and the timeline for resolution. He values transparency, customer service, and the fact that the machine is a significant personal investment—both financially and emotionally. He wants to be fully prepared for the worst-case scenario, including understanding the return/exchange policy for delayed or lost shipments.",
+          "what do you know about michael freelance graphic designer",
+          "michael freelance graphic designer seattle preparing potential replacement"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "3": {
+        "text": "Michael, 35, freelance graphic designer in Seattle, is preparing for a potential delivery of his espresso machine. He is aware of past issues with soggy packages arriving during rainy weather and emphasizes the importance of being home to receive the shipment. He requests real-time updates on delivery schedules, especially if the courier is scheduled to deliver tomorrow. He stresses the need for a signature upon delivery to prevent packages from being left unattended or exposed to rain. He wants to ensure the package arrives safely and is immediately secured indoors.",
+        "probes": [
+          "Michael, 35, freelance graphic designer in Seattle, is preparing for a potential delivery of his espresso machine. He is aware of past issues with soggy packages arriving during rainy weather and emphasizes the importance of being home to receive the shipment. He requests real-time updates on delivery schedules, especially if the courier is scheduled to deliver tomorrow. He stresses the need for a signature upon delivery to prevent packages from being left unattended or exposed to rain. He wants to ensure the package arrives safely and is immediately secured indoors.",
+          "what do you know about michael freelance graphic designer",
+          "michael freelance graphic designer seattle preparing potential delivery"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "4": {
+        "text": "User Michael, 35, freelance graphic designer in Seattle. Concerned about shipping discrepancies: Oregon grinder(shipped from regional warehouse) tracking stuck at 'Label Created—Awaiting Item' despite local proximity; East Coast order(canisters & Garmin scale) now showing earlier delivery estimate despite longer distance. Suspects potential warehouse delay, backorder, or system mix-up due to recent weather-related disruptions(heavy rains, flooding, local shipping delays). Requesting clarification from customer support.",
+        "probes": [
+          "User Michael, 35, freelance graphic designer in Seattle. Concerned about shipping discrepancies: Oregon grinder(shipped from regional warehouse) tracking stuck at 'Label Created—Awaiting Item' despite local proximity; East Coast order(canisters & Garmin scale) now showing earlier delivery estimate despite longer distance. Suspects potential warehouse delay, backorder, or system mix-up due to recent weather-related disruptions(heavy rains, flooding, local shipping delays). Requesting clarification from customer support.",
+          "what do you know about michael freelance graphic designer",
+          "michael freelance graphic designer seattle concerned shipping discrepancies"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "5": {
+        "text": "User Michael, 35, freelance graphic designer in Seattle. Concerned about potential shipment splitting: specifically, whether the coffee grinder bundle(including frothing pitcher) might be split into separate shipments. Wants to avoid confusion where the main item(grinder) is delayed while a smaller component(e.g., pitcher) arrives separately. Requests confirmation from customer support on bundling integrity and whether all items in the order are shipped together.",
+        "probes": [
+          "User Michael, 35, freelance graphic designer in Seattle. Concerned about potential shipment splitting: specifically, whether the coffee grinder bundle(including frothing pitcher) might be split into separate shipments. Wants to avoid confusion where the main item(grinder) is delayed while a smaller component(e.g., pitcher) arrives separately. Requests confirmation from customer support on bundling integrity and whether all items in the order are shipped together.",
+          "what do you know about michael freelance graphic designer",
+          "michael freelance graphic designer seattle concerned potential shipment"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "6": {
+        "text": "User Michael, 35, freelance graphic designer in Seattle. Heading out of town to Portland next weekend for a few days. Concerned about package delivery during absence: risk of boxes left on porch in rain or being picked up by neighbor. Specifically worried about delicate coffee grinder being damaged. Prefers to have a confirmed arrival date to plan for house-sitting or someone to monitor delivery. Has prior experience with damaged espresso machine and wants to avoid repeat scenario.",
+        "probes": [
+          "User Michael, 35, freelance graphic designer in Seattle. Heading out of town to Portland next weekend for a few days. Concerned about package delivery during absence: risk of boxes left on porch in rain or being picked up by neighbor. Specifically worried about delicate coffee grinder being damaged. Prefers to have a confirmed arrival date to plan for house-sitting or someone to monitor delivery. Has prior experience with damaged espresso machine and wants to avoid repeat scenario.",
+          "what do you know about michael freelance graphic designer",
+          "michael freelance graphic designer seattle heading out town"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "7": {
+        "text": "User Michael, 35, freelance graphic designer in Seattle. Seeking clarity on delivery timing: whether the espresso machine order and grinder bundle will arrive simultaneously or if the grinder has a known delay. Requests options to coordinate deliveries — such as requesting a specific drop-off date, holding at pickup location, or adjusting for stock/lead time issues. Open to personally retrieving packages to avoid porch exposure. Wants to be informed immediately if any item is out of stock or has a longer lead time to avoid repeated tracking checks.",
+        "probes": [
+          "User Michael, 35, freelance graphic designer in Seattle. Seeking clarity on delivery timing: whether the espresso machine order and grinder bundle will arrive simultaneously or if the grinder has a known delay. Requests options to coordinate deliveries — such as requesting a specific drop-off date, holding at pickup location, or adjusting for stock/lead time issues. Open to personally retrieving packages to avoid porch exposure. Wants to be informed immediately if any item is out of stock or has a longer lead time to avoid repeated tracking checks.",
+          "what do you know about michael freelance graphic designer",
+          "michael freelance graphic designer seattle seeking clarity delivery"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "8": {
+        "text": "User Michael, 35, freelance graphic designer in Seattle. Confirming billing and shipping address for second order(same as previous orders). Using same address and credit card. Expresses concern about past security hold from a Apple Pay mix-up on another site. Requests proactive verification of billing/shipping details to avoid any potential issues or unauthorized holds. Wants to be informed immediately if any red flags are detected.",
+        "probes": [
+          "User Michael, 35, freelance graphic designer in Seattle. Confirming billing and shipping address for second order(same as previous orders). Using same address and credit card. Expresses concern about past security hold from a Apple Pay mix-up on another site. Requests proactive verification of billing/shipping details to avoid any potential issues or unauthorized holds. Wants to be informed immediately if any red flags are detected.",
+          "what do you know about michael freelance graphic designer",
+          "michael freelance graphic designer seattle confirming billing shipping"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "9": {
+        "text": "User Michael, 35, freelance graphic designer in Seattle. Interested in a subscription or membership program with perks including early access to new products(e.g., stainless-steel grinder, vacuum-sealed canisters, digital scale), a monthly coffee bean subscription, and an extended 19-month warranty. Seeks a loyalty model with points-based rewards, free shipping, or exclusive member pricing on accessories, machines, and cleaning kits. Currently building a comprehensive coffee station and wants ongoing support for future purchases.",
+        "probes": [
+          "User Michael, 35, freelance graphic designer in Seattle. Interested in a subscription or membership program with perks including early access to new products(e.g., stainless-steel grinder, vacuum-sealed canisters, digital scale), a monthly coffee bean subscription, and an extended 19-month warranty. Seeks a loyalty model with points-based rewards, free shipping, or exclusive member pricing on accessories, machines, and cleaning kits. Currently building a comprehensive coffee station and wants ongoing support for future purchases.",
+          "what do you know about michael freelance graphic designer",
+          "michael freelance graphic designer seattle interested subscription membership"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "10": {
+        "text": "User Michael, 35, freelance graphic designer in Seattle. Signed up for a coffee bean subscription with preferences for 513 mL small-batch roasts from local PNW roasters. Seeks extended warranty(19-month) on espresso machines and future purchases. Interested in early access to limited-edition products and a loyalty program with flexible, customizable roasts(espresso-focused + optional pour-over roast). Wants streamlined purchasing: no repeated logins, no shipping fees on each order, and seamless access to all products. Asks for bonus freebies(e.g., sample-size coffee flavors) or discount codes on future machines. Values a cohesive, creative coffee experience that evolves with his schedule.",
+        "probes": [
+          "User Michael, 35, freelance graphic designer in Seattle. Signed up for a coffee bean subscription with preferences for 513 mL small-batch roasts from local PNW roasters. Seeks extended warranty(19-month) on espresso machines and future purchases. Interested in early access to limited-edition products and a loyalty program with flexible, customizable roasts(espresso-focused + optional pour-over roast). Wants streamlined purchasing: no repeated logins, no shipping fees on each order, and seamless access to all products. Asks for bonus freebies(e.g., sample-size coffee flavors) or discount codes on future machines. Values a cohesive, creative coffee experience that evolves with his schedule.",
+          "what do you know about michael freelance graphic designer",
+          "michael freelance graphic designer seattle signed coffee bean"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "11": {
+        "text": "User Michael, 35, freelance graphic designer in Seattle. Inquired about warranty coverage and service support for a high-capacity commercial-style espresso machine (e.g., Aurora Pro Series). Specifically interested in: - Length of warranty (longer term for high-volume use) - Maintenance-related clauses - Access to dedicated service centers or authorized repair shops - Ease of repair and reliability during events. Concerned about being unable to fix a broken machine, especially for event-based use.",
+        "probes": [
+          "User Michael, 35, freelance graphic designer in Seattle. Inquired about warranty coverage and service support for a high-capacity commercial-style espresso machine (e.g., Aurora Pro Series). Specifically interested in: - Length of warranty (longer term for high-volume use) - Maintenance-related clauses - Access to dedicated service centers or authorized repair shops - Ease of repair and reliability during events. Concerned about being unable to fix a broken machine, especially for event-based use.",
+          "what do you know about michael freelance graphic designer",
+          "michael freelance graphic designer seattle inquired warranty coverage"
+        ],
+        "probe_provenance": "write_time"
+      },
+      "12": {
+        "text": "User Michael, 35, freelance graphic designer in Seattle. Inquired about shipping and delivery for a high-capacity commercial-style espresso machine (e.g., Aurora Pro Series). Specific concerns: - Freight shipping vs. standard delivery - Special handling for heavy, complex equipment - In-home delivery or installation assistance - Risk of damage during transit (e.g., corner dents) - Water line setup (plumbed-in vs. countertop) - Need to plan for potential delivery logistics and unboxing. Values safety, ease of setup, and minimizing disruption to kitchen layout.",
+        "probes": [
+          "User Michael, 35, freelance graphic designer in Seattle. Inquired about shipping and delivery for a high-capacity commercial-style espresso machine (e.g., Aurora Pro Series). Specific concerns: - Freight shipping vs. standard delivery - Special handling for heavy, complex equipment - In-home delivery or installation assistance - Risk of damage during transit (e.g., corner dents) - Water line setup (plumbed-in vs. countertop) - Need to plan for potential delivery logistics and unboxing. Values safety, ease of setup, and minimizing disruption to kitchen layout.",
+          "what do you know about michael freelance graphic designer",
+          "michael freelance graphic designer seattle inquired shipping delivery"
+        ],
+        "probe_provenance": "write_time"
+      },
+      "13": {
+        "text": "User Michael, 35, freelance graphic designer in Seattle. Inquired about payment options and loyalty benefits for a high-capacity espresso machine (e.g., Aurora Pro Series). Specifically interested in: - Loyalty program or membership tier with discounts (e.g., free shipping, store credit) - Financing options (zero-interest plans) - Spreading cost over months without depleting bank account. Values long-term value, affordability, and seamless integration with past purchases (espresso machines, grinders, canisters). Prefers quality without financial strain.",
+        "probes": [
+          "User Michael, 35, freelance graphic designer in Seattle. Inquired about payment options and loyalty benefits for a high-capacity espresso machine (e.g., Aurora Pro Series). Specifically interested in: - Loyalty program or membership tier with discounts (e.g., free shipping, store credit) - Financing options (zero-interest plans) - Spreading cost over months without depleting bank account. Values long-term value, affordability, and seamless integration with past purchases (espresso machines, grinders, canisters). Prefers quality without financial strain.",
+          "what do you know about michael freelance graphic designer",
+          "michael freelance graphic designer seattle inquired payment options"
+        ],
+        "probe_provenance": "write_time"
+      },
+      "14": {
+        "text": "User Michael, 35, freelance graphic designer in Seattle. Seeking detailed daily and routine cleaning/maintenance advice for the Aurora Pro Series (high-capacity commercial-style espresso machine). Current routine: backflush with tablets, steam wand rinsing, periodic descaling. Inquires about additional steps for commercial-style use: - Draining boilers - Cleaning multiple group heads - Calibrating water pressure - Preventing mineral buildup - Maintaining consistent extraction quality. Willing to invest effort for performance and longevity, especially for event-based use.",
+        "probes": [
+          "User Michael, 35, freelance graphic designer in Seattle. Seeking detailed daily and routine cleaning/maintenance advice for the Aurora Pro Series (high-capacity commercial-style espresso machine). Current routine: backflush with tablets, steam wand rinsing, periodic descaling. Inquires about additional steps for commercial-style use: - Draining boilers - Cleaning multiple group heads - Calibrating water pressure - Preventing mineral buildup - Maintaining consistent extraction quality. Willing to invest effort for performance and longevity, especially for event-based use.",
+          "what do you know about michael freelance graphic designer",
+          "michael freelance graphic designer seattle seeking detailed daily"
+        ],
+        "probe_provenance": "write_time"
+      },
+      "15": {
+        "text": "User Michael, 35, freelance graphic designer in Seattle. Inquired about compatibility between the Aurora Pro Series espresso machine and his recently purchased grinder (model: [grinder model not specified]). Specifically concerned about: - Dosing consistency and grind size compatibility - Match between grinder output and machine group head requirements - Water filtration system recommendations for Seattle’s water quality - Impact of water hardness on taste and machine longevity. Seeks seamless integration between devices for event-based and daily use.",
+        "probes": [
+          "User Michael, 35, freelance graphic designer in Seattle. Inquired about compatibility between the Aurora Pro Series espresso machine and his recently purchased grinder (model: [grinder model not specified]). Specifically concerned about: - Dosing consistency and grind size compatibility - Match between grinder output and machine group head requirements - Water filtration system recommendations for Seattle’s water quality - Impact of water hardness on taste and machine longevity. Seeks seamless integration between devices for event-based and daily use.",
+          "what do you know about michael freelance graphic designer",
+          "michael freelance graphic designer seattle inquired compatibility between"
+        ],
+        "probe_provenance": "write_time"
+      },
+      "16": {
+        "text": "User Michael, 35, freelance graphic designer in Seattle. Inquired about intangible resources and educational content for users upgrading to a high-capacity espresso machine. Specifically interested in: - How-to videos on advanced milk steaming, extraction, and maintenance - Masterclasses or live workshops on professional barista techniques - Resources to refine skills for high-volume, event-based brewing - Desire to improve technique beyond basic use, especially for pop-up events and client gatherings. Values learning, community, and hands-on development.",
+        "probes": [
+          "User Michael, 35, freelance graphic designer in Seattle. Inquired about intangible resources and educational content for users upgrading to a high-capacity espresso machine. Specifically interested in: - How-to videos on advanced milk steaming, extraction, and maintenance - Masterclasses or live workshops on professional barista techniques - Resources to refine skills for high-volume, event-based brewing - Desire to improve technique beyond basic use, especially for pop-up events and client gatherings. Values learning, community, and hands-on development.",
+          "what do you know about michael freelance graphic designer",
+          "michael freelance graphic designer seattle inquired intangible resources"
+        ],
+        "probe_provenance": "write_time"
+      }
+    }
+  }
+}

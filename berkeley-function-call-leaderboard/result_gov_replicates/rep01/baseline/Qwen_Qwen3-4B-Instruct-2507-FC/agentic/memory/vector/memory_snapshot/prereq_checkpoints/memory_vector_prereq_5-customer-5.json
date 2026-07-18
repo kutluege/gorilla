@@ -1,0 +1,18 @@
+{
+    "core_memory": {
+        "next_id": 2,
+        "store": {
+            "0": "User Michael, 35, from Seattle. Values precision and design. Prioritizes timely delivery of stainless-steel grinder\u2014essential for espresso game. Concerned it may not have left Oregon warehouse. Can delay canisters and scale. Grinder is the MVP upgrade. Fears oversight or dispatch delay.",
+            "1": "User Michael, 35, seeks stainless-steel espresso machine with steam wand. Carrier claim filed. Damaged box and machine: significant dent, bent steam wand. Immediate replacement via cross-ship. Pre-use damage covered. No return needed. No prepaid label or special packaging required."
+        }
+    },
+    "archival_memory": {
+        "next_id": 4,
+        "store": {
+            "0": "User Michael, first-time buyer, interested in espresso machine with stainless-steel design, seeking pricing info and first-time buyer discounts. Noted interest in 'New Customer Discount' and bundle deals or limited-time promotions. Also inquired about shipping from local warehouse, delivery time, and availability before a family gathering later this month. Additional concerns: cleaning complexity, machine size, brewing frequency, and overall fit in kitchen space. Inspired by a friend's positive experience with your customer support and appliance quality. Now specifically concerned about kitchen counter space and 'kitchen Tetris'\u2014wants precise dimensions to avoid reorganizing existing appliances. Also asked about warranty and quality guarantee\u2014specifically looking for a longer, more customer-friendly policy, especially for higher-end models. Finally, raised concern about temperature consistency in drip coffee makers\u2014specifically wanting reliable, hot coffee without needing to microwave. Looking for adjustable temperature settings or at least consistent heat performance.",
+            "1": "User Michael, 35, from Seattle, has expressed concern about rainy weather causing soggy deliveries. He specifically requested that he be available to receive the espresso machine package in person if it arrives soon, especially if delivery is scheduled for a rainy day. He emphasized the importance of a signature requirement and wants to be present to prevent packages from being left unattended or damaged on the doorstep. He also noted that he will adjust his work schedule to accommodate the delivery time.",
+            "2": "User Michael, 35, from Seattle, inquired about shipping discrepancies. First order(stainless-steel grinder, cleaning tablets, frothing pitcher) shipped from Oregon regional warehouse. Tracking shows 'Label Created \u2014 Awaiting Item' for 3+ days. Second order(vacuum-sealed canisters, Garmin digital scale) shipped from East Coast(Ohio/Pennsylvania), now showing updated tracking with earlier estimated arrival. Concerned about potential mix-up: Oregon warehouse may be understaffed or item on backorder. Weather delays(heavy rains, flooding) impacting regional shipping. Worrying about inconsistency in dispatch timelines despite proximity.",
+            "3": "User Michael, 35, from Seattle, traveling to Portland next weekend for a freelance gig. Will be away for 4 days. Concerned about package delivery during absence\u2014especially for delicate coffee equipment(grinder). Wants to avoid porch leftovers in rain or neighbor pickup. Requests delivery scheduling with a confirmed arrival date to plan for house-sitting or a friend to receive package. Prioritizes safe, damage-free delivery to prevent repeat of past espresso machine damage."
+        }
+    }
+}

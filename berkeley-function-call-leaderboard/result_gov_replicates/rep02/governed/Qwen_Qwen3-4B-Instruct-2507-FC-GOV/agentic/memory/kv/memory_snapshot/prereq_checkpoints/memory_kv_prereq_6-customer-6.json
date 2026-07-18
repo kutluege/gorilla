@@ -1,0 +1,14 @@
+{
+    "core_memory": {
+        "user_warranty_inquiry": "Michael is concerned about warranty length and service support, especially for higher-end models. He has had negative experiences with short warranties from other brands and wants assurance of reliable, long-term support.",
+        "user_delivery_preparation": "Michael will be home to receive package in person. Requires signature. Will avoid rain exposure by being ready to greet driver or bring item indoors immediately.",
+        "user_delivery_synchronization_query": "Michael asks if grinder and canisters/scale orders arrive together. He wants to know about delays, delivery options(drop-off, pickup), and stock status. He\u2019s open to driving to retrieve packages and wants real-time updates to avoid tracking fatigue.",
+        "michael_subscription_inquiry": "Michael is interested in a subscription or membership program for loyal customers. He's looking for perks like free shipping, early access to new products, or monthly discounts to help organize and cost-effectively manage his frequent purchases of coffee accessories and gadgets.",
+        "michael_membership_model_inquiry": "Michael is asking about the current subscription or membership program structure. He wants to know if it's bean-only or includes discounts on accessories, machines, or cleaning kits. He's interested in a loyalty model with points, free shipping, or exclusive pricing on new releases.",
+        "michael_membership_pricing_inquiry": "Michael is asking about membership pricing\u2014specifically, if there\u2019s a fee(monthly/yearly), a trial period, or a reduced rate for loyal customers with multiple purchases. He\u2019s interested in a promotional sign-up bonus and wants to test benefits before committing to a recurring charge.",
+        "michael_streamlined_purchasing_inquiry": "Michael wants streamlined purchasing: one-click ordering, bundled access, and free sample-size coffee flavors or discount codes on future machines."
+    },
+    "archival_memory": {
+        "user_replacement_claim_michael": "Michael from Seattle has reported damage to his espresso machine during shipping. The machine has a significant dent, a bent steam wand, misaligned reservoir, and crushed packaging. He is requesting a replacement with fast delivery(within 48 hours), no return required, and full coverage under shipping damage warranty. He is open to keeping the original model(free) or upgrading to a higher-end model(optional, small fee). He has provided photos and video of the damage and is ready to proceed."
+    }
+}

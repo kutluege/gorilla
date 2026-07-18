@@ -1,0 +1,90 @@
+{
+  "backend": "vector",
+  "tiers": {
+    "core": {
+      "0": {
+        "text": "Education:\n- B.A. Economics, UPenn\n- MBA, Harvard(Baker Scholar)\n\nEngagement:\n- Guest lecturing, mentoring, recruiting\n- Endowed scholarship at Penn for first-gen finance students\n\nBelief: Talent is the greatest investment. Finance should be accessible to all with hunger and discipline.",
+        "probes": [
+          "Education:\n- B.A. Economics, UPenn\n- MBA, Harvard(Baker Scholar)\n\nEngagement:\n- Guest lecturing, mentoring, recruiting\n- Endowed scholarship at Penn for first-gen finance students\n\nBelief: Talent is the greatest investment. Finance should be accessible to all with hunger and discipline.",
+          "what do you know about education economics upenn mba",
+          "education economics upenn mba harvard baker scholar engagement"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "1": {
+        "text": "Leadership pillars: empowerment, accountability, growth. Mentorship: senior-junior pairs; 3 high-potential directors mentored personally; 94% retention; 15 to top global programs; accelerated path attracts GS/Morgan talent; 40% senior diversity(up from 15%); SEO, Girls Who Invest partnerships.",
+        "probes": [
+          "Leadership pillars: empowerment, accountability, growth. Mentorship: senior-junior pairs; 3 high-potential directors mentored personally; 94% retention; 15 to top global programs; accelerated path attracts GS/Morgan talent; 40% senior diversity(up from 15%); SEO, Girls Who Invest partnerships.",
+          "what do you know about leadership pillars empowerment accountability",
+          "leadership pillars empowerment accountability growth mentorship senior junior"
+        ],
+        "probe_provenance": "stored_text"
+      },
+      "2": {
+        "text": "Bloomberg Terminal: 'Mission Control' layout for real-time data, anomaly detection, and Asian office coordination. 2022 crisis alert at 3 AM on regional bank volumes enabled early position adjustments. LIVE function critical during Asian trading hours for high-stakes deals.",
+        "probes": [
+          "Bloomberg Terminal: 'Mission Control' layout for real-time data, anomaly detection, and Asian office coordination. 2022 crisis alert at 3 AM on regional bank volumes enabled early position adjustments. LIVE function critical during Asian trading hours for high-stakes deals.",
+          "what do you know about bloomberg terminal mission control",
+          "bloomberg terminal mission control layout real time data"
+        ],
+        "probe_provenance": "write_time"
+      },
+      "3": {
+        "text": "Implemented Aladdin platform despite board cost concerns. 15% higher risk-adjusted returns. Custom risk models for emerging markets developed with quant team. 'Risk Radar' dashboard combines Aladdin analytics with proprietary algorithms. Licensed to three firms; now a key competitive advantage.",
+        "probes": [
+          "Implemented Aladdin platform despite board cost concerns. 15% higher risk-adjusted returns. Custom risk models for emerging markets developed with quant team. 'Risk Radar' dashboard combines Aladdin analytics with proprietary algorithms. Licensed to three firms; now a key competitive advantage.",
+          "what do you know about implemented aladdin platform despite",
+          "implemented aladdin platform despite board cost concerns higher"
+        ],
+        "probe_provenance": "write_time"
+      },
+      "4": {
+        "text": "Tableau advocate; refined templates for compelling client stories. ESG dashboard for Vertex, Nexus, Summit – multi-source data integration. Clients engaged by instant environmental impact visibility. HoloLens AR experiments for 3D market data; early stage, future of financial presentation.",
+        "probes": [
+          "Tableau advocate; refined templates for compelling client stories. ESG dashboard for Vertex, Nexus, Summit – multi-source data integration. Clients engaged by instant environmental impact visibility. HoloLens AR experiments for 3D market data; early stage, future of financial presentation.",
+          "what do you know about tableau advocate refined templates",
+          "tableau advocate refined templates compelling client stories esg"
+        ],
+        "probe_provenance": "write_time"
+      },
+      "5": {
+        "text": "Dealogic: tracks soft signals (management dynamics, cultural fit). Custom scoring system predicts deal success. Self-taught Python/R during pandemic; automated analytics, freed team for strategy. ML model analyzes earnings calls to predict market reactions – now essential for equity trading desk.",
+        "probes": [
+          "Dealogic: tracks soft signals (management dynamics, cultural fit). Custom scoring system predicts deal success. Self-taught Python/R during pandemic; automated analytics, freed team for strategy. ML model analyzes earnings calls to predict market reactions – now essential for equity trading desk.",
+          "what do you know about dealogic tracks soft signals",
+          "dealogic tracks soft signals management dynamics cultural fit"
+        ],
+        "probe_provenance": "write_time"
+      }
+    },
+    "archival": {
+      "0": {
+        "text": "Landmark deals:\n- 2019: Poison pill defense of Surreal Inc. (Harvard case study)\n- $8.6B Nexa/Taihua semiconductor merger: global diplomacy, IP/regulatory hurdles\n- $14.2B BioCrest/OncoPharm merger: overcame IP and regulatory issues; WSJ called it 'the deal that reshaped modern cancer treatment'\nMemento: Lucite from first $500M deal(funded Stratos Aerospace) on desk – a reminder of energy and drive.\n\nActive transactions:\n- $8.5B QuantumChip/Silicon Core: U.S.-China regulatory approvals(patience, strategy)\n- $3.2B VertexSoft LBO: debt financing structuring\n- $5B+ Solaris/Nordic Renewables: cross-jurisdictional incentives(renewables challenge)\n\nWeekly call: Monday 7 AM(Asian markets)\n\nPotential $20B Omnix AI take-private: game-changer if executed.\n\nCareer journey:\n- 2001: Goldman Sachs analyst(M&A modeling, dot-com crash)\n- 2004: Morgan Stanley associate(social media tech)\n- 31: VP, led defining transactions\n- 2015: MD at Legend Investments\n- First major deal: NeuralNet Systems IPO(largest tech IPO to date)\n\nKey insight: Network and track record = currency. Trust earned one deal at a time.",
+        "probes": [
+          "Landmark deals:\n- 2019: Poison pill defense of Surreal Inc. (Harvard case study)\n- $8.6B Nexa/Taihua semiconductor merger: global diplomacy, IP/regulatory hurdles\n- $14.2B BioCrest/OncoPharm merger: overcame IP and regulatory issues; WSJ called it 'the deal that reshaped modern cancer treatment'\nMemento: Lucite from first $500M deal(funded Stratos Aerospace) on desk – a reminder of energy and drive.\n\nActive transactions:\n- $8.5B QuantumChip/Silicon Core: U.S.-China regulatory approvals(patience, strategy)\n- $3.2B VertexSoft LBO: debt financing structuring\n- $5B+ Solaris/Nordic Renewables: cross-jurisdictional incentives(renewables challenge)\n\nWeekly call: Monday 7 AM(Asian markets)\n\nPotential $20B Omnix AI take-private: game-changer if executed.\n\nCareer journey:\n- 2001: Goldman Sachs analyst(M&A modeling, dot-com crash)\n- 2004: Morgan Stanley associate(social media tech)\n- 31: VP, led defining transactions\n- 2015: MD at Legend Investments\n- First major deal: NeuralNet Systems IPO(largest tech IPO to date)\n\nKey insight: Network and track record = currency. Trust earned one deal at a time.",
+          "what do you know about landmark deals 2019 poison",
+          "landmark deals 2019 poison pill defense surreal inc"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "1": {
+        "text": "Innovation and adaptation are central to our leadership culture. Innovation pods: portfolio managers collaborate with tech team on new strategies. Chair Innovation Committee(monthly reviews of tech and market opportunities). Launched SOAR—an AI-driven market analysis platform developed in-house by a diverse team(quants, analysts, ML experts). Organizational structure reimagined for fluidity, enabling talent mobility in evolving markets. Initiated 'Future of Finance' symposium: annual event with finance, tech, and academia leaders. Last year's event led to three strategic partnerships that enhanced investment capabilities.",
+        "probes": [
+          "Innovation and adaptation are central to our leadership culture. Innovation pods: portfolio managers collaborate with tech team on new strategies. Chair Innovation Committee(monthly reviews of tech and market opportunities). Launched SOAR—an AI-driven market analysis platform developed in-house by a diverse team(quants, analysts, ML experts). Organizational structure reimagined for fluidity, enabling talent mobility in evolving markets. Initiated 'Future of Finance' symposium: annual event with finance, tech, and academia leaders. Last year's event led to three strategic partnerships that enhanced investment capabilities.",
+          "what do you know about innovation adaptation central leadership",
+          "innovation adaptation central leadership culture pods portfolio managers"
+        ],
+        "probe_provenance": "stored_text"
+      },
+      "2": {
+        "text": "Leadership extends beyond office walls. Board member: 3 non-profits(financial literacy, economic empowerment). Firm foundation: $50M initiative for scholarships and internships for underprivileged finance students. Regular speaker at universities and conferences(e.g., Financial Institute National Conference) on ethical leadership. Pioneering program: senior executives teach financial skills in underserved communities for two weeks annually. Social impact strengthens culture and attracts mission-driven talent. Financial success and social responsibility are mutually reinforcing. Focus: developing next-gen leaders who balance exceptional performance with unwavering integrity.",
+        "probes": [
+          "Leadership extends beyond office walls. Board member: 3 non-profits(financial literacy, economic empowerment). Firm foundation: $50M initiative for scholarships and internships for underprivileged finance students. Regular speaker at universities and conferences(e.g., Financial Institute National Conference) on ethical leadership. Pioneering program: senior executives teach financial skills in underserved communities for two weeks annually. Social impact strengthens culture and attracts mission-driven talent. Financial success and social responsibility are mutually reinforcing. Focus: developing next-gen leaders who balance exceptional performance with unwavering integrity.",
+          "what do you know about leadership extends beyond office",
+          "leadership extends beyond office walls board member non"
+        ],
+        "probe_provenance": "stored_text"
+      }
+    }
+  }
+}

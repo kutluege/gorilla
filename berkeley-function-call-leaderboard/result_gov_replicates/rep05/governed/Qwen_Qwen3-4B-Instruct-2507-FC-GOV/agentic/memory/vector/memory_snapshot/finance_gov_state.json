@@ -1,0 +1,72 @@
+{
+  "backend": "vector",
+  "tiers": {
+    "core": {
+      "0": {
+        "text": "Sarah Chen(CEO, Pacific Dynamics): Met at Goldman 2008. Deepened on a delayed HK flight in 2009 via 5-hour conversation on markets and jazz. Built a 15-year trust—now a go-to for Asian market insights, even at 3 AM.",
+        "probes": [
+          "Sarah Chen(CEO, Pacific Dynamics): Met at Goldman 2008. Deepened on a delayed HK flight in 2009 via 5-hour conversation on markets and jazz. Built a 15-year trust—now a go-to for Asian market insights, even at 3 AM.",
+          "what do you know about sarah chen ceo pacific",
+          "sarah chen ceo pacific dynamics met goldman 2008"
+        ],
+        "probe_provenance": "stored_text"
+      },
+      "1": {
+        "text": "Golf as relationship builder: 7-handicap; key deal with Jim(MineCore) on 7th-8th hole. 'Quarterly Links' at Pebble Beach led to 3 acquisitions & sovereign wealth fund partnership. Caddie Tom(30 years with CEOs/politicians) offers deep corporate insights—acts as a Bloomberg terminal.",
+        "probes": [
+          "Golf as relationship builder: 7-handicap; key deal with Jim(MineCore) on 7th-8th hole. 'Quarterly Links' at Pebble Beach led to 3 acquisitions & sovereign wealth fund partnership. Caddie Tom(30 years with CEOs/politicians) offers deep corporate insights—acts as a Bloomberg terminal.",
+          "what do you know about golf relationship builder handicap",
+          "golf relationship builder handicap key deal jim minecore"
+        ],
+        "probe_provenance": "stored_text"
+      },
+      "2": {
+        "text": "Travel as network catalyst: 3x/week between NY, London, HK, Dubai. Closed deal in Singapore with Chipset Core after 3 days, including 4 AM dim sum. '48-hour protocol': on-site within 48 hours for key clients. Tailored suits for long-haul flights. In-person trust beats Zoom in key cultures.",
+        "probes": [
+          "Travel as network catalyst: 3x/week between NY, London, HK, Dubai. Closed deal in Singapore with Chipset Core after 3 days, including 4 AM dim sum. '48-hour protocol': on-site within 48 hours for key clients. Tailored suits for long-haul flights. In-person trust beats Zoom in key cultures.",
+          "what do you know about travel network catalyst week",
+          "travel network catalyst week between london dubai closed"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "3": {
+        "text": "AI/ML integration transformed our workflow. Championed Aladdin platform (overcame board resistance); 15% higher risk-adjusted returns. Custom risk models for emerging markets (from early currency crises). 'Risk Radar' dashboard combines Aladdin with proprietary algorithms. Licensed to three firms.",
+        "probes": [
+          "AI/ML integration transformed our workflow. Championed Aladdin platform (overcame board resistance); 15% higher risk-adjusted returns. Custom risk models for emerging markets (from early currency crises). 'Risk Radar' dashboard combines Aladdin with proprietary algorithms. Licensed to three firms.",
+          "what do you know about integration transformed workflow championed",
+          "integration transformed workflow championed aladdin platform overcame board"
+        ],
+        "probe_provenance": "write_time"
+      },
+      "4": {
+        "text": "Tableau expert who crafts compelling data stories. ESG dashboard for Vertex, Nexus, Summit shows real-time environmental impact; client engagement soars. Early HoloLens AR experiments for 3D market data—believes this is the future of financial presentations.",
+        "probes": [
+          "Tableau expert who crafts compelling data stories. ESG dashboard for Vertex, Nexus, Summit shows real-time environmental impact; client engagement soars. Early HoloLens AR experiments for 3D market data—believes this is the future of financial presentations.",
+          "what do you know about tableau expert who crafts",
+          "tableau expert who crafts compelling data stories esg"
+        ],
+        "probe_provenance": "write_time"
+      },
+      "5": {
+        "text": "Dealogic tracks soft signals: management dynamics, cultural fit. Custom scoring predicts deal success. Self-taught in Python/R during pandemic. Automated analytics, freed team for strategy. ML model from earnings calls predicts market reactions—now essential for equity trading desk.",
+        "probes": [
+          "Dealogic tracks soft signals: management dynamics, cultural fit. Custom scoring predicts deal success. Self-taught in Python/R during pandemic. Automated analytics, freed team for strategy. ML model from earnings calls predicts market reactions—now essential for equity trading desk.",
+          "what do you know about dealogic tracks soft signals",
+          "dealogic tracks soft signals management dynamics cultural fit"
+        ],
+        "probe_provenance": "write_time"
+      }
+    },
+    "archival": {
+      "0": {
+        "text": "Personal client approach: 50 HNWIs, 30 institutional clients. Deep involvement: family dinners with Robert’s children during succession planning. Attended weddings, celebrations, personal losses. Concierge-level care—responds to midnight texts. Trust built through genuine, consistent human connection.",
+        "probes": [
+          "Personal client approach: 50 HNWIs, 30 institutional clients. Deep involvement: family dinners with Robert’s children during succession planning. Attended weddings, celebrations, personal losses. Concierge-level care—responds to midnight texts. Trust built through genuine, consistent human connection.",
+          "what do you know about personal client approach hnwis",
+          "personal client approach hnwis institutional clients deep involvement"
+        ],
+        "probe_provenance": "sidecar"
+      }
+    }
+  }
+}

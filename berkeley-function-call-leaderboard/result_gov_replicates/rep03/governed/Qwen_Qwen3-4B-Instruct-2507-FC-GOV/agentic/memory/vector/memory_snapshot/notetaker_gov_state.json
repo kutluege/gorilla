@@ -1,0 +1,99 @@
+{
+  "backend": "vector",
+  "tiers": {
+    "core": {
+      "2": {
+        "text": "Thursday: Finance wants cost-cutting recommendations—brainstorm ideas. Project deadline approaching—check in with Dev team. Caught a mistake in last month’s sales data.",
+        "probes": [
+          "Thursday: Finance wants cost-cutting recommendations—brainstorm ideas. Project deadline approaching—check in with Dev team. Caught a mistake in last month’s sales data.",
+          "what do you know about thursday finance wants cost",
+          "thursday finance wants cost cutting recommendations brainstorm ideas"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "4": {
+        "text": "Urgent: Submit tax documents before Friday. Review credit card statement for errors. Call auto repair shop about weird noise in the engine.",
+        "probes": [
+          "Urgent: Submit tax documents before Friday. Review credit card statement for errors. Call auto repair shop about weird noise in the engine.",
+          "what do you know about urgent submit tax documents",
+          "urgent submit tax documents before friday review credit"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "5": {
+        "text": "Work-related: Finalize quarterly budget. Review vendor contract before signing. Finish security compliance training module.",
+        "probes": [
+          "Work-related: Finalize quarterly budget. Review vendor contract before signing. Finish security compliance training module.",
+          "what do you know about work related finalize quarterly",
+          "work related finalize quarterly budget review vendor contract"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "7": {
+        "text": "Sunday: Wash and vacuum the car. Check tire pressure. Refill windshield wiper fluid.",
+        "probes": [
+          "Sunday: Wash and vacuum the car. Check tire pressure. Refill windshield wiper fluid.",
+          "what do you know about sunday wash vacuum car",
+          "sunday wash vacuum car check tire pressure refill"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "8": {
+        "text": "DIY Fixes: Tighten loose cabinet handle. Replace bathroom lightbulb. Patch up minor wall scuffs.",
+        "probes": [
+          "DIY Fixes: Tighten loose cabinet handle. Replace bathroom lightbulb. Patch up minor wall scuffs.",
+          "what do you know about diy fixes tighten loose",
+          "diy fixes tighten loose cabinet handle replace bathroom"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "9": {
+        "text": "Doctor: Kid’s cold isn’t getting better—schedule pediatrician visit. Check vaccine schedule—next shots due in two months. Monitor food allergies—keep a log if symptoms flare up.",
+        "probes": [
+          "Doctor: Kid’s cold isn’t getting better—schedule pediatrician visit. Check vaccine schedule—next shots due in two months. Monitor food allergies—keep a log if symptoms flare up.",
+          "what do you know about doctor kid cold isn",
+          "doctor kid cold isn getting better schedule pediatrician"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "10": {
+        "text": "Checkups: Annual physical next month—schedule bloodwork. Dentist appointment overdue—call for an opening. Look into getting an eye exam—been straining a lot at screens lately.",
+        "probes": [
+          "Checkups: Annual physical next month—schedule bloodwork. Dentist appointment overdue—call for an opening. Look into getting an eye exam—been straining a lot at screens lately.",
+          "what do you know about checkups annual physical next",
+          "checkups annual physical next month schedule bloodwork dentist"
+        ],
+        "probe_provenance": "write_time"
+      }
+    },
+    "archival": {
+      "0": {
+        "text": "Diet: Cut back on sugar—too much soda lately. Meal prep on Sunday—grilled chicken, quinoa, and veggies. Hydration—aim for at least 3L of water per day. Protein shake after workouts.",
+        "probes": [
+          "Diet: Cut back on sugar—too much soda lately. Meal prep on Sunday—grilled chicken, quinoa, and veggies. Hydration—aim for at least 3L of water per day. Protein shake after workouts.",
+          "what do you know about diet cut back sugar",
+          "diet cut back sugar too much soda lately"
+        ],
+        "probe_provenance": "write_time"
+      },
+      "1": {
+        "text": "Mental Health: Try to get 7+ hours of sleep. Limit screen time before bed. Schedule a day off next month—too much back-to-back work lately. Find time for hobbies—maybe pick up guitar again.",
+        "probes": [
+          "Mental Health: Try to get 7+ hours of sleep. Limit screen time before bed. Schedule a day off next month—too much back-to-back work lately. Find time for hobbies—maybe pick up guitar again.",
+          "what do you know about mental health try get",
+          "mental health try get hours sleep limit screen"
+        ],
+        "probe_provenance": "write_time"
+      },
+      "2": {
+        "text": "Supplements & Meds: Vitamin D3—1000 IU daily. Omega-3s—good for joints. Iron levels were low last check-up—remember to take supplements. Probiotics—help with digestion, take in the morning.",
+        "probes": [
+          "Supplements & Meds: Vitamin D3—1000 IU daily. Omega-3s—good for joints. Iron levels were low last check-up—remember to take supplements. Probiotics—help with digestion, take in the morning.",
+          "what do you know about supplements meds vitamin 1000",
+          "supplements meds vitamin 1000 daily omega good joints"
+        ],
+        "probe_provenance": "write_time"
+      }
+    }
+  }
+}

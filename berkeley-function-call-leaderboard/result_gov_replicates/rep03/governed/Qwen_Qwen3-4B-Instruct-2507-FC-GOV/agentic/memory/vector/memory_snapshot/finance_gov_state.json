@@ -1,0 +1,81 @@
+{
+  "backend": "vector",
+  "tiers": {
+    "core": {
+      "0": {
+        "text": "Sarah Chen(CEO, Pacific Dynamics): Met at Goldman 2008. Deepened on delayed flight from Hong Kong(2009) via conversation on markets and jazz. Now a trusted advisor—can be consulted anytime, even at 3 AM, for Asian market insights. A cornerstone of authentic, long-term professional relationships.",
+        "probes": [
+          "Sarah Chen(CEO, Pacific Dynamics): Met at Goldman 2008. Deepened on delayed flight from Hong Kong(2009) via conversation on markets and jazz. Now a trusted advisor—can be consulted anytime, even at 3 AM, for Asian market insights. A cornerstone of authentic, long-term professional relationships.",
+          "what do you know about sarah chen ceo pacific",
+          "sarah chen ceo pacific dynamics met goldman 2008"
+        ],
+        "probe_provenance": "stored_text"
+      },
+      "1": {
+        "text": "Golf as relationship builder: 7-handicap, connection-focused. Key outcomes: $2.3B merger with Jim(MineCore) during round; 'Quarterly Links' at Pebble Beach led to 3 acquisitions and sovereign wealth fund partnership. Caddie Tom(30 years) provides deep corporate insights—a walking Bloomberg terminal.",
+        "probes": [
+          "Golf as relationship builder: 7-handicap, connection-focused. Key outcomes: $2.3B merger with Jim(MineCore) during round; 'Quarterly Links' at Pebble Beach led to 3 acquisitions and sovereign wealth fund partnership. Caddie Tom(30 years) provides deep corporate insights—a walking Bloomberg terminal.",
+          "what do you know about golf relationship builder handicap",
+          "golf relationship builder handicap connection focused key outcomes"
+        ],
+        "probe_provenance": "stored_text"
+      },
+      "2": {
+        "text": "Bloomberg Terminal: custom 'Mission Control' layout for real-time data and anomaly detection. 2022 crisis alert at 3 AM caught unusual trading volumes, enabling early position shifts. LIVE function critical for Asian office coordination.",
+        "probes": [
+          "Bloomberg Terminal: custom 'Mission Control' layout for real-time data and anomaly detection. 2022 crisis alert at 3 AM caught unusual trading volumes, enabling early position shifts. LIVE function critical for Asian office coordination.",
+          "what do you know about bloomberg terminal custom mission",
+          "bloomberg terminal custom mission control layout real time"
+        ],
+        "probe_provenance": "write_time"
+      },
+      "3": {
+        "text": "Championed Aladdin platform: 15% higher risk-adjusted returns. Custom risk models for emerging markets, inspired by currency crises. 'Risk Radar' dashboard combines Aladdin with proprietary algorithms. Licensed to three firms.",
+        "probes": [
+          "Championed Aladdin platform: 15% higher risk-adjusted returns. Custom risk models for emerging markets, inspired by currency crises. 'Risk Radar' dashboard combines Aladdin with proprietary algorithms. Licensed to three firms.",
+          "what do you know about championed aladdin platform higher",
+          "championed aladdin platform higher risk adjusted returns custom"
+        ],
+        "probe_provenance": "write_time"
+      },
+      "4": {
+        "text": "Tableau expert: crafts compelling data stories with precision in color and font. Built ESG dashboard for Vertex, Nexus, Summit. Multi-source data integration; clients engage with environmental impact insights. Exploring HoloLens AR for 3D market data – early stage, future-focused.",
+        "probes": [
+          "Tableau expert: crafts compelling data stories with precision in color and font. Built ESG dashboard for Vertex, Nexus, Summit. Multi-source data integration; clients engage with environmental impact insights. Exploring HoloLens AR for 3D market data – early stage, future-focused.",
+          "what do you know about tableau expert crafts compelling",
+          "tableau expert crafts compelling data stories precision color"
+        ],
+        "probe_provenance": "write_time"
+      },
+      "5": {
+        "text": "Dealogic: tracks soft signals (management, culture) and predicts deal success. Custom scoring system. Self-taught Python/R. Automated analytics. ML model from earnings calls predicts market reactions—now essential for equity trading desk.",
+        "probes": [
+          "Dealogic: tracks soft signals (management, culture) and predicts deal success. Custom scoring system. Self-taught Python/R. Automated analytics. ML model from earnings calls predicts market reactions—now essential for equity trading desk.",
+          "what do you know about dealogic tracks soft signals",
+          "dealogic tracks soft signals management culture predicts deal"
+        ],
+        "probe_provenance": "write_time"
+      },
+      "6": {
+        "text": "Salesforce 'Client Journey Map' tracks client preferences and milestones. Notion for deal notes. Superhuman saves email time. AI meeting assistants auto-summarize calls. Exploring blockchain and quantum computing. IBM quantum simulations. Sunday 'tech meditation' on tools and blogs.",
+        "probes": [
+          "Salesforce 'Client Journey Map' tracks client preferences and milestones. Notion for deal notes. Superhuman saves email time. AI meeting assistants auto-summarize calls. Exploring blockchain and quantum computing. IBM quantum simulations. Sunday 'tech meditation' on tools and blogs.",
+          "what do you know about salesforce client journey map",
+          "salesforce client journey map tracks preferences milestones notion"
+        ],
+        "probe_provenance": "write_time"
+      }
+    },
+    "archival": {
+      "0": {
+        "text": "MD's key deal legacy:\n- 2019: Poison pill defense of Surreal Inc. (Harvard case study)\n- $8.6B Nexa/Taihua semiconductor merger: global coordination, IP/regulatory mastery\n- $14.2B BioCrest/OncoPharm healthcare merger: resolved IP and regulatory issues; WSJ called it 'the deal that reshaped modern cancer treatment'\n- Personal memento: $500M lucite piece(Stratos Aerospace expansion) on desk as daily reminder of energy and drive.\n\nCurrent major transactions:\n- $8.5B QuantumChip/Silicon Core merger: U.S.-China regulatory navigation\n- $3.2B VertexSoft LBO: debt financing structuring\n- $5B+ Solaris/Nordic Renewables renewable acquisition: cross-border incentive alignment\n\nWeekly deal call: Mon at 7 AM(Asian markets)\n\nPotential $20B Omnix AI take-private: game-changer if executed.\n\nCareer journey:\n- Goldman Sachs(2001): analyst, M&A modeling, dot-com crash survival\n- Morgan Stanley(2004): associate, early social media tech exposure\n- VP by 31: led defining transactions\n- 2015: MD at Legend Investments\n- First major deal: NeuralNet Systems IPO(largest tech IPO to date)\n- Reputation built on cross-border deal execution\n\nKey principle: Network and track record are currency. Trust earned one successful deal at a time.",
+        "probes": [
+          "MD's key deal legacy:\n- 2019: Poison pill defense of Surreal Inc. (Harvard case study)\n- $8.6B Nexa/Taihua semiconductor merger: global coordination, IP/regulatory mastery\n- $14.2B BioCrest/OncoPharm healthcare merger: resolved IP and regulatory issues; WSJ called it 'the deal that reshaped modern cancer treatment'\n- Personal memento: $500M lucite piece(Stratos Aerospace expansion) on desk as daily reminder of energy and drive.\n\nCurrent major transactions:\n- $8.5B QuantumChip/Silicon Core merger: U.S.-China regulatory navigation\n- $3.2B VertexSoft LBO: debt financing structuring\n- $5B+ Solaris/Nordic Renewables renewable acquisition: cross-border incentive alignment\n\nWeekly deal call: Mon at 7 AM(Asian markets)\n\nPotential $20B Omnix AI take-private: game-changer if executed.\n\nCareer journey:\n- Goldman Sachs(2001): analyst, M&A modeling, dot-com crash survival\n- Morgan Stanley(2004): associate, early social media tech exposure\n- VP by 31: led defining transactions\n- 2015: MD at Legend Investments\n- First major deal: NeuralNet Systems IPO(largest tech IPO to date)\n- Reputation built on cross-border deal execution\n\nKey principle: Network and track record are currency. Trust earned one successful deal at a time.",
+          "what do you know about key deal legacy 2019",
+          "key deal legacy 2019 poison pill defense surreal"
+        ],
+        "probe_provenance": "sidecar"
+      }
+    }
+  }
+}

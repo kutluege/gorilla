@@ -1,0 +1,81 @@
+{
+  "backend": "kv",
+  "tiers": {
+    "core": {
+      "user_warranty_inquiry": {
+        "text": "user warranty inquiry: Michael is concerned about warranty length and service support, especially for higher-end models. He has had negative experiences with short warranties from other brands and wants assurance of reliable, long-term support.",
+        "probes": [
+          "user warranty inquiry",
+          "what is user warranty inquiry",
+          "user warranty inquiry michael concerned warranty"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "user_delivery_preparation": {
+        "text": "user delivery preparation: Michael will be home to receive package in person. Requires signature. Will avoid rain exposure by being ready to greet driver or bring item indoors immediately.",
+        "probes": [
+          "user delivery preparation",
+          "what is user delivery preparation",
+          "user delivery preparation michael will home"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "user_delivery_synchronization_query": {
+        "text": "user delivery synchronization query: Michael asks if grinder and canisters/scale orders arrive together. He wants to know about delays, delivery options(drop-off, pickup), and stock status. He’s open to driving to retrieve packages and wants real-time updates to avoid tracking fatigue.",
+        "probes": [
+          "user delivery synchronization query",
+          "what is user delivery synchronization query",
+          "user delivery synchronization query michael asks grinder"
+        ],
+        "probe_provenance": "stored_text"
+      },
+      "michael_subscription_inquiry": {
+        "text": "michael subscription inquiry: Michael is interested in a subscription or membership program for loyal customers. He's looking for perks like free shipping, early access to new products, or monthly discounts to help organize and cost-effectively manage his frequent purchases of coffee accessories and gadgets.",
+        "probes": [
+          "michael subscription inquiry",
+          "what is michael subscription inquiry",
+          "michael subscription inquiry michael interested subscription"
+        ],
+        "probe_provenance": "write_time"
+      },
+      "michael_membership_model_inquiry": {
+        "text": "michael membership model inquiry: Michael is asking about the current subscription or membership program structure. He wants to know if it's bean-only or includes discounts on accessories, machines, or cleaning kits. He's interested in a loyalty model with points, free shipping, or exclusive pricing on new releases.",
+        "probes": [
+          "michael membership model inquiry",
+          "what is michael membership model inquiry",
+          "michael membership model inquiry michael asking current"
+        ],
+        "probe_provenance": "write_time"
+      },
+      "michael_membership_pricing_inquiry": {
+        "text": "michael membership pricing inquiry: Michael is asking about membership pricing—specifically, if there’s a fee (monthly/yearly), a trial period, or a reduced rate for loyal customers with multiple purchases. He’s interested in a promotional sign-up bonus and wants to test benefits before committing to a recurring charge.",
+        "probes": [
+          "michael membership pricing inquiry",
+          "what is michael membership pricing inquiry",
+          "michael membership pricing inquiry michael asking membership"
+        ],
+        "probe_provenance": "write_time"
+      },
+      "michael_streamlined_purchasing_inquiry": {
+        "text": "michael streamlined purchasing inquiry: Michael wants streamlined purchasing: one-click ordering, bundled access, and free sample-size coffee flavors or discount codes on future machines.",
+        "probes": [
+          "michael streamlined purchasing inquiry",
+          "what is michael streamlined purchasing inquiry",
+          "michael streamlined purchasing inquiry michael wants streamlined"
+        ],
+        "probe_provenance": "write_time"
+      }
+    },
+    "archival": {
+      "user_replacement_claim_michael": {
+        "text": "user replacement claim michael: Michael from Seattle has reported damage to his espresso machine during shipping. The machine has a significant dent, a bent steam wand, misaligned reservoir, and crushed packaging. He is requesting a replacement with fast delivery(within 48 hours), no return required, and full coverage under shipping damage warranty. He is open to keeping the original model(free) or upgrading to a higher-end model(optional, small fee). He has provided photos and video of the damage and is ready to proceed.",
+        "probes": [
+          "user replacement claim michael",
+          "what is user replacement claim michael",
+          "user replacement claim michael michael seattle reported"
+        ],
+        "probe_provenance": "sidecar"
+      }
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+    "core_memory": {
+        "next_id": 7,
+        "store": {
+            "0": "Type 2 Diabetes: Metformin 1000 mg BID. A1C ~6.9%. Adding semaglutide(Ozempic) low dose for appetite control and glycemic improvement. Fasting glucose 125\u2013130 mg/dL.",
+            "1": "Hypertension: Losartan 50 mg once daily. BP range: 135-140/80-90 mmHg. Doctor recommends stress management and reduced sodium intake instead of increasing dosage. Taking daily magnesium supplement, possibly aiding blood pressure regulation.",
+            "2": "Hypothyroidism: Levothyroxine 75 mcg daily, taken on empty stomach, 30 minutes before eating. Last TSH: 2.1 mIU/L(normal), so no dosage changes. Notice sluggishness if a dose is missed; uses pill organizer to stay on track.",
+            "3": "Osteoarthritis: Takes acetaminophen as needed for mild pain. Uses meloxicam 7.5 mg when joints are stiff(knees, hands), but only on an as-needed basis due to NSAID concerns. Doctor suggested glucosamine supplements; effect unclear and not yet confirmed.",
+            "4": "Vitamin D and Bone Health: Vitamin D3 2,000 IU daily due to low levels(22 ng/mL; normal >30 ng/mL). Also taking calcium supplements due to early osteopenia on bone density scan. Doctor recommends combining with vitamin K2 to improve absorption and bone health.",
+            "5": "Cholesterol Management: Taking atorvastatin 10 mg daily. Initial LDL: 130 mg/dL, triglycerides: 140 mg/dL. Doctor prescribed low-dose statin to improve lipid profile. Cholesterol levels have improved since starting; no side effects reported(e.g., no muscle aches).",
+            "6": "General Health Supplements: Takes a daily multivitamin, omega-3 supplements(for heart health), and probiotics(for digestion). Post-gallbladder removal: Takes digestive enzymes when eating heavier meals. Digestive changes: More mindful of fatty foods due to altered fat digestion post-removal."
+        }
+    },
+    "archival_memory": {
+        "next_id": 0,
+        "store": {}
+    }
+}

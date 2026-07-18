@@ -1,0 +1,261 @@
+{
+  "backend": "kv",
+  "tiers": {
+    "core": {
+      "team_structure": {
+        "text": "team structure: Legend Investments has 180 professionals across three divisions: investment, research, and operations.",
+        "probes": [
+          "team structure",
+          "what is team structure",
+          "team structure legend investments 180"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "strategic_roundtable": {
+        "text": "strategic roundtable: A weekly event hosted every Monday where team members from all levels present investment theses or operational improvements. This promotes inclusivity and innovation.",
+        "probes": [
+          "strategic roundtable",
+          "what is strategic roundtable",
+          "strategic roundtable weekly event hosted"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "leadership_philosophy": {
+        "text": "leadership philosophy: Leadership is about excellence with humanity. At Legend Investments, I lead 180 professionals. My philosophy: empowerment, accountability, growth. Weekly roundtables encourage all to share ideas. A second-year analyst's ESG proposal is now implemented.",
+        "probes": [
+          "leadership philosophy",
+          "what is leadership philosophy",
+          "leadership philosophy leadership excellence humanity"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "diversity_initiative": {
+        "text": "diversity initiative: 40% of senior leadership roles now held by women and minorities(up from 15% when I took over). Partnered with SEO and Girls Who Invest to build an inclusive pipeline of future leaders.",
+        "probes": [
+          "diversity initiative",
+          "what is diversity initiative",
+          "diversity initiative senior leadership roles"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "talent_acquisition": {
+        "text": "talent acquisition: Created an accelerated path to partnership that has helped attract exceptional talent from Goldman Sachs and Morgan Stanley. Sent 15 team members to advanced programs at Harvard, Stanford, and INSEAD.",
+        "probes": [
+          "talent acquisition",
+          "what is talent acquisition",
+          "talent acquisition created accelerated path"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "bet_on_yourself": {
+        "text": "bet on yourself: Don't wait for permission. Bet on yourself. Take ownership before you have the title. Act like a leader, think like an investor, operate like a CEO. Opportunities follow those who lead first.",
+        "probes": [
+          "bet on yourself",
+          "what is bet on yourself",
+          "bet on yourself wait permission bet"
+        ],
+        "probe_provenance": "write_time"
+      },
+      "sustain_success": {
+        "text": "sustain success: Success isn't about peaks—it's about consistency. Long-term success comes from good decisions, risk management, and humility. Short-term wins breed complacency. The real indicator is growth—staying hungry, curious, and committed to learning.",
+        "probes": [
+          "sustain success",
+          "what is sustain success",
+          "sustain success success isn peaks"
+        ],
+        "probe_provenance": "write_time"
+      }
+    },
+    "archival": {
+      "deal_poison_pill_surreal_2019": {
+        "text": "deal poison pill surreal 2019: 2019: Poison pill defense for Surreal Incorporated. Case study at Harvard Business School. Demonstrated innovative defensive strategy in mid-cap tech.",
+        "probes": [
+          "deal poison pill surreal 2019",
+          "what is deal poison pill surreal 2019",
+          "deal poison pill surreal 2019 2019 poison pill"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "deal_semiconductor_nexa_taihua_2023": {
+        "text": "deal semiconductor nexa taihua 2023: $8.6B Nexa/Taihua semiconductor merger. Cross-continental coordination. Overcame IP and regulatory hurdles. Highlighted diplomacy in global finance.",
+        "probes": [
+          "deal semiconductor nexa taihua 2023",
+          "what is deal semiconductor nexa taihua 2023",
+          "deal semiconductor nexa taihua 2023 nexa taihua semiconductor"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "deal_healthcare_biocrest_oncopharma_2024": {
+        "text": "deal healthcare biocrest oncopharma 2024: $14.2B healthcare merger between BioCrest Labs and OncoPharm Therapeutics. Nearly collapsed twice—IP valuation and regulatory approval. Resolved after three sleepless days. WSJ called it 'the deal that reshaped modern cancer treatment.'",
+        "probes": [
+          "deal healthcare biocrest oncopharma 2024",
+          "what is deal healthcare biocrest oncopharma 2024",
+          "deal healthcare biocrest oncopharma 2024 healthcare merger between"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "personal_memento_stratos_aerospace": {
+        "text": "personal memento stratos aerospace: Small lucite from first $500M transaction—funded Stratos Aerospace expansion. Keeps on my desk as a reminder to bring the same energy to every deal, no matter the size.",
+        "probes": [
+          "personal memento stratos aerospace",
+          "what is personal memento stratos aerospace",
+          "personal memento stratos aerospace small lucite first"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "transaction_quantumchip_silicon_core_2025": {
+        "text": "transaction quantumchip silicon core 2025: $8.5B semiconductor merger between QuantumChip Technologies and Silicon Core. Key challenge: U.S.-China regulatory approvals. Requires patience and strategic navigation.",
+        "probes": [
+          "transaction quantumchip silicon core 2025",
+          "what is transaction quantumchip silicon core 2025",
+          "transaction quantumchip silicon core 2025 semiconductor merger between"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "transaction_solaris_nordic_renewables_2025": {
+        "text": "transaction solaris nordic renewables 2025: Confidential $5B+ cross-border renewable energy acquisition: Solaris Energy Group acquiring Nordic Renewables. Key challenge: aligning government incentives and policy frameworks across jurisdictions.",
+        "probes": [
+          "transaction solaris nordic renewables 2025",
+          "what is transaction solaris nordic renewables 2025",
+          "transaction solaris nordic renewables 2025 confidential cross border"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "weekly_deal_call": {
+        "text": "weekly deal call: Weekly deal call held every Monday at 7 AM to accommodate Asian market participants. A consistent ritual that keeps me sharp and aligned with global time zones.",
+        "probes": [
+          "weekly deal call",
+          "what is weekly deal call",
+          "weekly deal call weekly deal call"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "potential_omnix_ai_takeprivate": {
+        "text": "potential omnix ai takeprivate: Potential $20B take-private transaction involving Omnix AI(AI powerhouse). If successful, would be a transformative deal for Legend Investments, reshaping our AI and alternative investment strategy.",
+        "probes": [
+          "potential omnix ai takeprivate",
+          "what is potential omnix ai takeprivate",
+          "potential omnix ai takeprivate potential 20b take"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "career_goldman_sachs_2001": {
+        "text": "career goldman sachs 2001: 2001: Goldman Sachs analyst — M&A modeling, survived dot-com crash.\n2004: Morgan Stanley associate — early social media tech deals.\n31: VP, led defining transactions.\n2015: Joined Legend Investments as MD.\nFirst major deal: NeuralNet Systems IPO(largest tech IPO) — built reputation for cross-border complexity.\n\nTrust earned one deal at a time.",
+        "probes": [
+          "career goldman sachs 2001",
+          "what is career goldman sachs 2001",
+          "career goldman sachs 2001 2001 goldman sachs"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "career_morgan_stanley_2004": {
+        "text": "career morgan stanley 2004: 2004: Associate at Morgan Stanley — gained exposure to early social media tech deals.",
+        "probes": [
+          "career morgan stanley 2004",
+          "what is career morgan stanley 2004",
+          "career morgan stanley 2004 2004 associate morgan"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "promotion_vp_2013": {
+        "text": "promotion vp 2013: Age 31: Promoted to Vice President, leading defining transactions of the era.",
+        "probes": [
+          "promotion vp 2013",
+          "what is promotion vp 2013",
+          "promotion vp 2013 age promoted vice"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "join_legend_2015": {
+        "text": "join legend 2015: 2015: Joined Legend Investments as Managing Director.",
+        "probes": [
+          "join legend 2015",
+          "what is join legend 2015",
+          "join legend 2015 2015 joined legend"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "education_penn_bachelor_economics": {
+        "text": "education penn bachelor economics: Bachelor's in Economics from University of Pennsylvania.",
+        "probes": [
+          "education penn bachelor economics",
+          "what is education penn bachelor economics",
+          "education penn bachelor economics bachelor economics university"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "education_harvard_mba_baker_scholar": {
+        "text": "education harvard mba baker scholar: MBA from Harvard Business School(Baker Scholar).",
+        "probes": [
+          "education harvard mba baker scholar",
+          "what is education harvard mba baker scholar",
+          "education harvard mba baker scholar mba harvard business"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "mentorship_and_recruitment": {
+        "text": "mentorship and recruitment: Guest lecturing, mentoring, recruiting at Penn and Harvard.\nEndowed Penn scholarship for first-gen finance students.",
+        "probes": [
+          "mentorship and recruitment",
+          "what is mentorship and recruitment",
+          "mentorship and recruitment guest lecturing mentoring"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "philosophy_finance_for_all": {
+        "text": "philosophy finance for all: Belief: Talent is the greatest investment. Finance should be a pathway to opportunity—accessible to all with hunger and discipline, not just privilege.",
+        "probes": [
+          "philosophy finance for all",
+          "what is philosophy finance for all",
+          "philosophy finance for all belief talent greatest"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "relationship_sarah_chen_deep_connection": {
+        "text": "relationship sarah chen deep connection: Met at Goldman conference in 2008; deepened connection on a delayed flight from Hong Kong in 2009. Five hours of conversation on market trends and jazz. Relationship now spans 15 years—trusted for insights on Asian markets, even at 3 AM. A model of authentic, long-term professional connection.",
+        "probes": [
+          "relationship sarah chen deep connection",
+          "what is relationship sarah chen deep connection",
+          "relationship sarah chen deep connection met goldman conference"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "golf_as_relationship_building_tool": {
+        "text": "golf as relationship building tool: Maintains a 7-handicap; golf is not about scores but about deep, uninterrupted connection. Regular play at National Golf Links, Cypress Point, and Muirfield has facilitated key business outcomes. Example: With Jim(tech CEO), a $2.3 billion merger framework was developed between the 7th and 8th holes. Hosts 'Quarterly Links' at Pebble Beach, bringing together clients, prospects, and leaders. Result: 3 major client acquisitions and a sovereign wealth fund partnership. Caddie Tom, with 30 years of experience, provides invaluable corporate intelligence—functions as a walking Bloomberg terminal.",
+        "probes": [
+          "golf as relationship building tool",
+          "what is golf as relationship building tool",
+          "golf as relationship building tool maintains handicap golf"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "personal_client_relationships_approach": {
+        "text": "personal client relationships approach: Oversees 50 high-net-worth individuals and 30 institutional clients, treating each with the attention of a family office. Example: With client Robert, spent evenings with his children to understand their vision for succession, leading to a complete restructured transition plan during family dinners. Attended children's weddings, family celebrations, and supported through personal losses. Team jokes that I run a concierge service rather than an investment firm. Clients receive personal, immediate responses—even at midnight—ensuring trust is built through genuine, consistent human connection.",
+        "probes": [
+          "personal client relationships approach",
+          "what is personal client relationships approach",
+          "personal client relationships approach oversees high net"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "travel_as_networking_strategy": {
+        "text": "travel as networking strategy: On a plane three times a week, traveling between New York, London, Hong Kong, and Dubai. Memorized every premium lounge—practically a global network of touchpoints. Closed a crucial deal in Singapore with Chipset Core after three days of face-to-face interaction, including a 4 AM dim sum run(jet lag benefits). Learned that some cultures require in-person engagement—no Zoom substitute. Implemented the '48-hour protocol': for major clients or opportunities, can be anywhere in the world within 48 hours. Even had a tailor create flight-specific suits for long-haul travel. Demonstrates deep commitment to in-person, culturally grounded business engagement.",
+        "probes": [
+          "travel as networking strategy",
+          "what is travel as networking strategy",
+          "travel as networking strategy plane three times"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "network_triangle_ecosystem": {
+        "text": "network triangle ecosystem: Developed the 'Network Triangle': professional relationships, social connections, and knowledge sharing. Hosts quarterly 'Future Focus' dinner series with diverse groups—fintech innovators, traditional bankers, academics, artists, philosophers. Conversations are off-the-record and wide-ranging. Last month's dinner led to an unexpected collaboration between Stellar Investments and quantum computing startup Energia. Runs a mentorship circle connecting senior executives with young talent—paying forward early-career guidance. The real magic occurs when networks intersect: e.g., a client's daughter interns at a portfolio company, or a golf buddy becomes a strategic investor. This creates a thriving community—where trust, mutual value, and human connection drive long-term impact. In this business, community is everything.",
+        "probes": [
+          "network triangle ecosystem",
+          "what is network triangle ecosystem",
+          "network triangle ecosystem developed network triangle"
+        ],
+        "probe_provenance": "sidecar"
+      }
+    }
+  }
+}

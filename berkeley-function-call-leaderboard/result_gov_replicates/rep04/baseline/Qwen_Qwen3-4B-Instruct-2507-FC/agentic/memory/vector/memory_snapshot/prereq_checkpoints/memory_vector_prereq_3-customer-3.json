@@ -1,0 +1,14 @@
+{
+    "core_memory": {
+        "next_id": 1,
+        "store": {
+            "0": "User Michael, 35, from Seattle, requires signature on espresso machine delivery. Will be home to receive package, especially during rain. Past issues with soggy, damaged deliveries. Will adjust schedule to greet driver or bring package inside immediately."
+        }
+    },
+    "archival_memory": {
+        "next_id": 1,
+        "store": {
+            "0": "Michael, from Seattle, is hosting a small family gathering with siblings and close friends. The event includes a planned 'latte art showdown' featuring espresso-based drinks. Due to the delayed delivery of his ordered espresso machine, he is now considering alternatives such as a standard drip coffee maker or visiting a local coffee shop to brew coffee in person."
+        }
+    }
+}

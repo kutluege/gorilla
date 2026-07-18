@@ -1,0 +1,13 @@
+{
+    "core_memory": {
+        "next_id": 2,
+        "store": {
+            "0": "Recent bloodwork: Fasting glucose 135 mg/dL(target <100), A1C 6.9% (target <6.5%), morning readings 125-130 mg/dL. Doctor advised increasing dietary fiber and adding light exercise after meals.",
+            "1": "Type 2 Diabetes: Metformin 1000 mg BID. A1C ~6.9%. Adding Ozempic(semaglutide) low dose. Better appetite control. Fasting glucose 125-130 mg/dL. Hypertension: Losartan 50 mg daily. BP 135-140/80-90 mmHg. Doctor recommends stress management and low sodium. Taking daily magnesium supplement."
+        }
+    },
+    "archival_memory": {
+        "next_id": 0,
+        "store": {}
+    }
+}

@@ -1,0 +1,17 @@
+{
+  "backend": "vector",
+  "tiers": {
+    "core": {
+      "0": {
+        "text": "Patient is on metformin 1000 mg twice daily for Type 2 Diabetes. A1C around 6.9%. Recently added semaglutide (Ozempic) at a low dose to improve blood sugar control and appetite management. Fasting blood sugar typically ranges between 125-130 mg/dL.",
+        "probes": [
+          "Patient is on metformin 1000 mg twice daily for Type 2 Diabetes. A1C around 6.9%. Recently added semaglutide (Ozempic) at a low dose to improve blood sugar control and appetite management. Fasting blood sugar typically ranges between 125-130 mg/dL.",
+          "what do you know about patient metformin 1000 twice",
+          "patient metformin 1000 twice daily type diabetes a1c"
+        ],
+        "probe_provenance": "write_time"
+      }
+    },
+    "archival": {}
+  }
+}

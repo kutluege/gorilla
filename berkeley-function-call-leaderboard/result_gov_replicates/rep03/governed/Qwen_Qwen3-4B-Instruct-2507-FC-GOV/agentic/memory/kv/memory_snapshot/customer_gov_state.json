@@ -1,0 +1,71 @@
+{
+  "backend": "kv",
+  "tiers": {
+    "core": {
+      "user_introduction_michael": {
+        "text": "user introduction michael: Michael, 35, lives in Seattle, freelance graphic designer, values design aesthetics in gadgets, interested in high-quality coffee machines to enhance his morning routine.",
+        "probes": [
+          "user introduction michael",
+          "what is user introduction michael",
+          "user introduction michael michael lives seattle"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "user_preference_espresso": {
+        "text": "user preference espresso: Michael prefers a sleek, modern espresso machine with a stainless-steel finish, designed for a café-like experience without requiring professional barista skills. He values simplicity, aesthetics, and a seamless fit into his design-focused lifestyle.",
+        "probes": [
+          "user preference espresso",
+          "what is user preference espresso",
+          "user preference espresso michael prefers sleek"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "user_warranty_inquiry": {
+        "text": "user warranty inquiry: Michael is concerned about warranty policies, especially for higher-end models. He has had negative experiences with short warranty periods from other brands and wants assurance that your company offers a longer, more customer-friendly warranty with reliable support.",
+        "probes": [
+          "user warranty inquiry",
+          "what is user warranty inquiry",
+          "user warranty inquiry michael concerned warranty"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "user_delivery_preparation": {
+        "text": "user delivery preparation: Michael will be available to receive the package in person if it arrives. He has experienced issues with soggy deliveries during rain and requires a signature upon delivery. He wants to be home to greet the courier and ensure the package is safely received indoors.",
+        "probes": [
+          "user delivery preparation",
+          "what is user delivery preparation",
+          "user delivery preparation michael will available"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "user_interest_in_monthly_bean_subscription": {
+        "text": "user interest in monthly bean subscription: Michael is specifically interested in a monthly coffee bean subscription, as well as an extended 19-month warranty plan for members. He values long-term loyalty rewards and is considering signing up for a membership tier that supports ongoing upgrades to his coffee gear.",
+        "probes": [
+          "user interest in monthly bean subscription",
+          "what is user interest in monthly bean subscription",
+          "user interest in monthly bean subscription michael specifically interested"
+        ],
+        "probe_provenance": "write_time"
+      },
+      "user_question_membership_model": {
+        "text": "user question membership model: Michael wants to know if there's a membership with coffee bean shipments, accessory discounts, loyalty points, or a small fee for free shipping and exclusive pricing on new products.",
+        "probes": [
+          "user question membership model",
+          "what is user question membership model",
+          "user question membership model michael wants membership"
+        ],
+        "probe_provenance": "write_time"
+      },
+      "user_request_extended_warranty": {
+        "text": "user request extended warranty: Michael is requesting confirmation on whether the loyalty program includes an extended warranty for espresso machines or future purchases. He emphasizes peace of mind and is specifically interested in a 24-month warranty option for high-end appliances.",
+        "probes": [
+          "user request extended warranty",
+          "what is user request extended warranty",
+          "user request extended warranty michael requesting confirmation"
+        ],
+        "probe_provenance": "write_time"
+      }
+    },
+    "archival": {}
+  }
+}

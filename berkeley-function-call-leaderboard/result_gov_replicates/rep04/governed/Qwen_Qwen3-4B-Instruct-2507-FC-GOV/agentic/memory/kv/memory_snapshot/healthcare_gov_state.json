@@ -1,0 +1,81 @@
+{
+  "backend": "kv",
+  "tiers": {
+    "core": {
+      "diabetes_treatment": {
+        "text": "diabetes treatment: Type 2 Diabetes: Currently on metformin 1000 mg twice daily. A1C around 6.9%. Doctor suggested adding semaglutide (Ozempic) at a low dose to improve blood sugar control and appetite management. Fasting blood sugar typically ranges between 125-130 mg/dL.",
+        "probes": [
+          "diabetes treatment",
+          "what is diabetes treatment",
+          "diabetes treatment type diabetes currently"
+        ],
+        "probe_provenance": "write_time"
+      },
+      "hypertension_treatment": {
+        "text": "hypertension treatment: High Blood Pressure: Currently on losartan 50 mg once daily. Blood pressure range: 135-140/80-90 mmHg. Doctor recommends stress management and reduced sodium intake instead of increasing dosage. Taking a daily magnesium supplement, which may support blood pressure regulation.",
+        "probes": [
+          "hypertension treatment",
+          "what is hypertension treatment",
+          "hypertension treatment high blood pressure"
+        ],
+        "probe_provenance": "write_time"
+      },
+      "hypothyroidism_treatment": {
+        "text": "hypothyroidism treatment: Hypothyroidism: On levothyroxine 75 mcg once daily. Taken on an empty stomach, at least 30 minutes before eating. Last TSH result: 2.1 mIU/L (within normal range). No dosage changes needed. Noticeable sluggishness if a dose is missed; uses a pill organizer to stay on track.",
+        "probes": [
+          "hypothyroidism treatment",
+          "what is hypothyroidism treatment",
+          "hypothyroidism treatment hypothyroidism levothyroxine mcg"
+        ],
+        "probe_provenance": "write_time"
+      },
+      "osteoarthritis_treatment": {
+        "text": "osteoarthritis treatment: Osteoarthritis: Uses acetaminophen as needed for mild pain. Takes meloxicam 7.5 mg when joints are particularly stiff (knees and hands), but only as needed due to concern about NSAID overuse. Doctor recommended glucosamine supplements; effect on symptoms is uncertain and not yet confirmed.",
+        "probes": [
+          "osteoarthritis treatment",
+          "what is osteoarthritis treatment",
+          "osteoarthritis treatment osteoarthritis uses acetaminophen"
+        ],
+        "probe_provenance": "write_time"
+      },
+      "cholesterol_management": {
+        "text": "cholesterol management: Statin therapy: Atorvastatin 10 mg daily. Started due to LDL of 130 mg/dL and triglycerides of 140 mg/dL. Cholesterol levels improving; no side effects reported (e.g., muscle aches). Doctor confirms this low-dose regimen is effective and well-tolerated.",
+        "probes": [
+          "cholesterol management",
+          "what is cholesterol management",
+          "cholesterol management statin therapy atorvastatin"
+        ],
+        "probe_provenance": "write_time"
+      },
+      "medication_interactions_precautions": {
+        "text": "medication interactions precautions: Avoid frequent NSAID use (e.g., meloxicam) with losartan due to kidney risk. Take levothyroxine separately from calcium/iron to prevent absorption issues. Combine supplements with meals when possible.",
+        "probes": [
+          "medication interactions precautions",
+          "what is medication interactions precautions",
+          "medication interactions precautions avoid frequent nsaid"
+        ],
+        "probe_provenance": "write_time"
+      },
+      "overall_health_goals": {
+        "text": "overall health goals: Medication routine is effective and well-organized using a pill planner and phone reminders. Focuses on lifestyle changes to reduce reliance on medications. Goal: Maintain optimal health and avoid unnecessary prescriptions by managing conditions naturally when possible.",
+        "probes": [
+          "overall health goals",
+          "what is overall health goals",
+          "overall health goals medication routine effective"
+        ],
+        "probe_provenance": "write_time"
+      }
+    },
+    "archival": {
+      "diabetes_blood_glucose_2024_q3": {
+        "text": "diabetes blood glucose 2024 q3: Fasting blood glucose: 135 mg/dL; A1C: 6.9%; Morning readings: 125-130 mg/dL; Recommendations: Increase dietary fiber, add light exercise after meals; Cholesterol: Total: 195 mg/dL; LDL: 130 mg/dL(target: <100 mg/dL); HDL: 58 mg/dL(good range); Triglycerides: 140 mg/dL(slightly elevated); Recommendations: Increase healthy fats(avocados, nuts), reduce saturated fats; Blood pressure: Last check-up: 138/85 mmHg(target: <130/80 mmHg); Home readings: 135–140 systolic, 80–90 diastolic; Influences: Stress, salt intake; Actions: Reduce sodium, increase water intake—seems to help; Vitamin D: Level: 22 ng/mL(deficient; normal: 30-50 ng/mL); Treatment: 2,000 IU daily supplement; Follow-up: Retest in 3–4 months.",
+        "probes": [
+          "diabetes blood glucose 2024 q3",
+          "what is diabetes blood glucose 2024 q3",
+          "diabetes blood glucose 2024 q3 fasting blood glucose"
+        ],
+        "probe_provenance": "stored_text"
+      }
+    }
+  }
+}

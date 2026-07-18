@@ -1,0 +1,16 @@
+{
+    "core_memory": {
+        "next_id": 2,
+        "store": {
+            "0": "User Michael, 35, lives in Seattle, freelance graphic designer, values design aesthetics, seeks user-friendly espresso machines with caf\u00e9-like experience for non-professionals, prefers sleek stainless-steel finishes, balances functionality and design.",
+            "1": "Regarding 11: Michael(Seattle) needs urgent delivery update for espresso machine. 11-day estimate missed. Tracking inactive for 7+ days. Suspected fulfillment delay. Awaiting confirmation of dispatch, status, or replacement. Rainy weather noted. Wants clear timeline or express shipping option."
+        }
+    },
+    "archival_memory": {
+        "next_id": 2,
+        "store": {
+            "0": "First-time buyer inquiry from Michael(35, freelance graphic designer, Seattle) asking about pricing, new customer discounts, bundle deals, shipping, product specs, warranty, and temperature performance. Specifically inquires about adjustable temperature settings or reliable hot coffee output in espresso machines, with concern about microwaving coffee due to insufficient heat in previous drip machines.",
+            "1": "Michael's espresso machine order(placed with regular shipping) had an estimated delivery of 11 business days. Order included: stainless-steel frothing pitcher, extra filters. All items were in stock at time of purchase. Tracking shows no updates in over 7 days. Concern: delivery delay despite in-stock status and free shipping eligibility. Requesting clarification on shipping origin and potential dispatch delay."
+        }
+    }
+}

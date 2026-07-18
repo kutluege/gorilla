@@ -1,0 +1,71 @@
+{
+  "backend": "kv",
+  "tiers": {
+    "core": {
+      "user_introduction_michael": {
+        "text": "user introduction michael: Michael, 35, lives in Seattle, freelance graphic designer, values design aesthetics in gadgets, interested in high-quality coffee machines to enhance his morning routine.",
+        "probes": [
+          "user introduction michael",
+          "what is user introduction michael",
+          "user introduction michael michael lives seattle"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "user_feedback_michael_performance_espresso": {
+        "text": "user feedback michael performance espresso: Michael loves the espresso machine's consistent crema and steam wand for latte art. He appreciates the coffee grinder's impact on flavor and aroma, and the vacuum-sealed canisters help maintain bean freshness in Seattle's humid climate. The digital scale aids in consistent brewing.",
+        "probes": [
+          "user feedback michael performance espresso",
+          "what is user feedback michael performance espresso",
+          "user feedback michael performance espresso michael loves espresso"
+        ],
+        "probe_provenance": "write_time"
+      },
+      "user_feedback_michael_shipping_delays": {
+        "text": "user feedback michael shipping delays: Michael reports shipping delays, inconsistent tracking, and one instance of damaged arrival. While support responded quickly and provided a replacement, the experience was stressful and impacted initial satisfaction.",
+        "probes": [
+          "user feedback michael shipping delays",
+          "what is user feedback michael shipping delays",
+          "user feedback michael shipping delays michael reports shipping"
+        ],
+        "probe_provenance": "write_time"
+      },
+      "user_feedback_michael_order_management": {
+        "text": "user feedback michael order management: Michael wants a unified order dashboard and proactive emails about shipping delays or backorders (e.g., 'This item may take a week longer to ship'). This would help him plan purchases and reduce uncertainty.",
+        "probes": [
+          "user feedback michael order management",
+          "what is user feedback michael order management",
+          "user feedback michael order management michael wants unified"
+        ],
+        "probe_provenance": "write_time"
+      },
+      "user_feedback_michael_customer_service": {
+        "text": "user feedback michael customer service: Michael praises timely, thorough support and the personal touch in resolving queries. He suggests streamlining support so agents can instantly view his full purchase history when switching channels, reducing the need to re-explain details.",
+        "probes": [
+          "user feedback michael customer service",
+          "what is user feedback michael customer service",
+          "user feedback michael customer service michael praises timely"
+        ],
+        "probe_provenance": "write_time"
+      },
+      "user_feedback_michael_loyalty_program": {
+        "text": "user feedback michael loyalty program: Michael loves first-time buyer discounts and proposes a loyalty rewards program with an annual membership. Perks include free shipping, extended warranties, and early access to new products. He sees this as a way to reward repeat customers and deepen brand commitment.",
+        "probes": [
+          "user feedback michael loyalty program",
+          "what is user feedback michael loyalty program",
+          "user feedback michael loyalty program michael loves first"
+        ],
+        "probe_provenance": "write_time"
+      },
+      "user_feedback_michael_brand_recommendation": {
+        "text": "user feedback michael brand recommendation: Michael praises your products' quality and design. His café-at-home setup boosts productivity and professionalism. He promotes your brand on Instagram (@coffee_creations_1237), driving organic interest and inquiries.",
+        "probes": [
+          "user feedback michael brand recommendation",
+          "what is user feedback michael brand recommendation",
+          "user feedback michael brand recommendation michael praises products"
+        ],
+        "probe_provenance": "write_time"
+      }
+    },
+    "archival": {}
+  }
+}

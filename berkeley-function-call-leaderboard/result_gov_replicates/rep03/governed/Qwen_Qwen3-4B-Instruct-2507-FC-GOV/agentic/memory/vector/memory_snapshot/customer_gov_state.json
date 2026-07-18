@@ -1,0 +1,243 @@
+{
+  "backend": "vector",
+  "tiers": {
+    "core": {
+      "0": {
+        "text": "Michael: Satisfied with stainless-steel design, durability, and aesthetic harmony. Praises espresso machine’s consistent crema and steam wand for latte art. Highlights grinder and vacuum-sealed canisters improving bean freshness in humid Seattle weather. Values digital scale for brewing consistency.",
+        "probes": [
+          "Michael: Satisfied with stainless-steel design, durability, and aesthetic harmony. Praises espresso machine’s consistent crema and steam wand for latte art. Highlights grinder and vacuum-sealed canisters improving bean freshness in humid Seattle weather. Values digital scale for brewing consistency.",
+          "what do you know about michael satisfied stainless steel",
+          "michael satisfied stainless steel design durability aesthetic harmony"
+        ],
+        "probe_provenance": "write_time"
+      },
+      "1": {
+        "text": "Michael: Wants coffee grinder and bean recommendations to pair with stainless-steel espresso machine. Seeks small, stylish grinder that matches design. Values fresh grinding for matcha lattes and cappuccinos. Looking for quality, aesthetic appeal, and cost-effective option.",
+        "probes": [
+          "Michael: Wants coffee grinder and bean recommendations to pair with stainless-steel espresso machine. Seeks small, stylish grinder that matches design. Values fresh grinding for matcha lattes and cappuccinos. Looking for quality, aesthetic appeal, and cost-effective option.",
+          "what do you know about michael wants coffee grinder",
+          "michael wants coffee grinder bean recommendations pair stainless"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "2": {
+        "text": "Michael: Confirmed order for coffee grinder. Interested in $39 storage canister and a dedicated cleaning kit for espresso machine and grinder. Has created a dedicated 'coffee corner' in kitchen—ready to complete setup with cohesive, high-quality, aesthetically aligned products.",
+        "probes": [
+          "Michael: Confirmed order for coffee grinder. Interested in $39 storage canister and a dedicated cleaning kit for espresso machine and grinder. Has created a dedicated 'coffee corner' in kitchen—ready to complete setup with cohesive, high-quality, aesthetically aligned products.",
+          "what do you know about michael confirmed order coffee",
+          "michael confirmed order coffee grinder interested storage canister"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "3": {
+        "text": "Michael: Seeking loyalty or referral discount for second purchase. Values cost-efficiency as a freelancer. Interested in potential grinder upgrades or accessories with better value. Looking for incentives that balance savings with long-term quality and performance.",
+        "probes": [
+          "Michael: Seeking loyalty or referral discount for second purchase. Values cost-efficiency as a freelancer. Interested in potential grinder upgrades or accessories with better value. Looking for incentives that balance savings with long-term quality and performance.",
+          "what do you know about michael seeking loyalty referral",
+          "michael seeking loyalty referral discount second purchase values"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "4": {
+        "text": "Michael: Excited to finalize second order. Acknowledges past delivery issue but remains satisfied with service and espresso machine performance. Lattes are consistently delicious; believes a premium steam wand would elevate experience. Values reliability, design, and consistent performance.",
+        "probes": [
+          "Michael: Excited to finalize second order. Acknowledges past delivery issue but remains satisfied with service and espresso machine performance. Lattes are consistently delicious; believes a premium steam wand would elevate experience. Values reliability, design, and consistent performance.",
+          "what do you know about michael excited finalize second",
+          "michael excited finalize second order acknowledges past delivery"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "5": {
+        "text": "Michael: Placed two orders. First: stainless-steel grinder, cleaning tablets, frothing pitcher. Second: vacuum-sealed canisters, Garmin digital scale. Enjoys turning kitchen into a 'mini coffee lab'—values precision, design, and performance.",
+        "probes": [
+          "Michael: Placed two orders. First: stainless-steel grinder, cleaning tablets, frothing pitcher. Second: vacuum-sealed canisters, Garmin digital scale. Enjoys turning kitchen into a 'mini coffee lab'—values precision, design, and performance.",
+          "what do you know about michael placed two orders",
+          "michael placed two orders first stainless steel grinder"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "6": {
+        "text": "Michael: Interested in a flexible coffee subscription with core espresso roast and optional lighter roasts. Values flexibility and responsiveness. This remains a preference, not an active membership or purchase.",
+        "probes": [
+          "Michael: Interested in a flexible coffee subscription with core espresso roast and optional lighter roasts. Values flexibility and responsiveness. This remains a preference, not an active membership or purchase.",
+          "what do you know about michael interested flexible coffee",
+          "michael interested flexible coffee subscription core espresso roast"
+        ],
+        "probe_provenance": "sidecar"
+      }
+    },
+    "archival": {
+      "0": {
+        "text": "Michael from Seattle, freelance graphic designer, prefers sleek, modern stainless-steel espresso machines with user-friendly features for a café-like experience without being a professional barista. Interested in design aesthetics and ease of use.",
+        "probes": [
+          "Michael from Seattle, freelance graphic designer, prefers sleek, modern stainless-steel espresso machines with user-friendly features for a café-like experience without being a professional barista. Interested in design aesthetics and ease of use.",
+          "what do you know about michael seattle freelance graphic",
+          "michael seattle freelance graphic designer prefers sleek modern"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "1": {
+        "text": "Michael from Seattle is a first-time buyer interested in the SleekFlow ES-300 espresso machine. Inquired about pricing, first-time buyer discounts, and any bundle or limited-time promotions available.",
+        "probes": [
+          "Michael from Seattle is a first-time buyer interested in the SleekFlow ES-300 espresso machine. Inquired about pricing, first-time buyer discounts, and any bundle or limited-time promotions available.",
+          "what do you know about michael seattle first time",
+          "michael seattle first time buyer interested sleekflow 300"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "2": {
+        "text": "Michael from Seattle is concerned about shipping times and origin. He wants to know if products are shipped from a local warehouse, especially for delivery during rainy weather, and if there's a reliable timeline for receiving the SleekFlow ES-300 before a family gathering later this month.",
+        "probes": [
+          "Michael from Seattle is concerned about shipping times and origin. He wants to know if products are shipped from a local warehouse, especially for delivery during rainy weather, and if there's a reliable timeline for receiving the SleekFlow ES-300 before a family gathering later this month.",
+          "what do you know about michael seattle concerned shipping",
+          "michael seattle concerned shipping times origin wants products"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "3": {
+        "text": "Michael from Seattle, a coffee lover, is asking detailed questions about the SleekFlow ES-300 espresso machine, including brewing frequency, cleaning complexity, footprint size, and how it fits into his kitchen space. He values thorough product details and was referred by a friend who had a positive experience with your customer support.",
+        "probes": [
+          "Michael from Seattle, a coffee lover, is asking detailed questions about the SleekFlow ES-300 espresso machine, including brewing frequency, cleaning complexity, footprint size, and how it fits into his kitchen space. He values thorough product details and was referred by a friend who had a positive experience with your customer support.",
+          "what do you know about michael seattle coffee lover",
+          "michael seattle coffee lover asking detailed questions sleekflow"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "4": {
+        "text": "Michael from Seattle is concerned about kitchen space and appliance placement. He wants a clear, precise understanding of the SleekFlow ES-300's dimensions to assess how it will fit with existing appliances on his counter. He’s open to minor rearrangements but wants to mentally prepare before making a purchase.",
+        "probes": [
+          "Michael from Seattle is concerned about kitchen space and appliance placement. He wants a clear, precise understanding of the SleekFlow ES-300's dimensions to assess how it will fit with existing appliances on his counter. He’s open to minor rearrangements but wants to mentally prepare before making a purchase.",
+          "what do you know about michael seattle concerned kitchen",
+          "michael seattle concerned kitchen space appliance placement wants"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "5": {
+        "text": "Michael from Seattle is inquiring about the warranty policy for the SleekFlow ES-300 espresso machine. He has had negative experiences with short warranty periods from other brands and is seeking a more comprehensive, customer-friendly quality guarantee, especially for a higher-end model.",
+        "probes": [
+          "Michael from Seattle is inquiring about the warranty policy for the SleekFlow ES-300 espresso machine. He has had negative experiences with short warranty periods from other brands and is seeking a more comprehensive, customer-friendly quality guarantee, especially for a higher-end model.",
+          "what do you know about michael seattle inquiring warranty",
+          "michael seattle inquiring warranty policy sleekflow 300 espresso"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "6": {
+        "text": "Michael from Seattle is concerned about coffee temperature consistency in espresso machines. He previously had issues with drip coffee makers that didn’t heat sufficiently, leading him to microwave his coffee. He wants to know if the SleekFlow ES-300 produces reliably hot espresso and whether it has adjustable temperature settings.",
+        "probes": [
+          "Michael from Seattle is concerned about coffee temperature consistency in espresso machines. He previously had issues with drip coffee makers that didn’t heat sufficiently, leading him to microwave his coffee. He wants to know if the SleekFlow ES-300 produces reliably hot espresso and whether it has adjustable temperature settings.",
+          "what do you know about michael seattle concerned coffee",
+          "michael seattle concerned coffee temperature consistency espresso machines"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "7": {
+        "text": "Michael: Expresses interest in a coffee bean subscription service that recommends roasts tailored to his grinder settings(espresso, drip, pour-over). Values convenience, consistency, and trust in product quality. Currently consumes beans regularly due to freelance schedule and Seattle coffee culture. Interested in future updates if service is not yet available.",
+        "probes": [
+          "Michael: Expresses interest in a coffee bean subscription service that recommends roasts tailored to his grinder settings(espresso, drip, pour-over). Values convenience, consistency, and trust in product quality. Currently consumes beans regularly due to freelance schedule and Seattle coffee culture. Interested in future updates if service is not yet available.",
+          "what do you know about michael expresses interest coffee",
+          "michael expresses interest coffee bean subscription service recommends"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "8": {
+        "text": "Michael: Concerned about shipping discrepancies. Grinder bundle(shipped from Oregon warehouse) has not updated in days—tracking shows 'Label Created – Awaiting Item', suggesting carrier hasn't received it. Second order(canisters and Garmin scale) shipped from East Coast(Ohio/Pennsylvania), shows 'in transit', and was unexpectedly moving faster than expected. Noted recent weather disruptions(heavy rains, flooding) impacting local deliveries. Now worries warehouse in Oregon may be short-staffed or item on backorder without labeling. Questions if there’s a mix-up or fulfillment error.",
+        "probes": [
+          "Michael: Concerned about shipping discrepancies. Grinder bundle(shipped from Oregon warehouse) has not updated in days—tracking shows 'Label Created – Awaiting Item', suggesting carrier hasn't received it. Second order(canisters and Garmin scale) shipped from East Coast(Ohio/Pennsylvania), shows 'in transit', and was unexpectedly moving faster than expected. Noted recent weather disruptions(heavy rains, flooding) impacting local deliveries. Now worries warehouse in Oregon may be short-staffed or item on backorder without labeling. Questions if there’s a mix-up or fulfillment error.",
+          "what do you know about michael concerned shipping discrepancies",
+          "michael concerned shipping discrepancies grinder bundle shipped oregon"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "9": {
+        "text": "Michael: Planning to be out of town in Portland next weekend for a freelance gig. Will be away 4–5 days. Concerned about package delivery during absence—especially for delicate items like the grinder. Worries about rain damage, neighbor pickup, or mishandling. Requests an approximate arrival date to plan for house-sitting or delivery monitoring. Emphasizes need to inspect grinder immediately upon arrival to avoid damage or dents, referencing past negative experience with a damaged espresso machine.",
+        "probes": [
+          "Michael: Planning to be out of town in Portland next weekend for a freelance gig. Will be away 4–5 days. Concerned about package delivery during absence—especially for delicate items like the grinder. Worries about rain damage, neighbor pickup, or mishandling. Requests an approximate arrival date to plan for house-sitting or delivery monitoring. Emphasizes need to inspect grinder immediately upon arrival to avoid damage or dents, referencing past negative experience with a damaged espresso machine.",
+          "what do you know about michael planning out town",
+          "michael planning out town portland next weekend freelance"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "10": {
+        "text": "Michael: Expresses excitement about potential monthly coffee bean subscription and extended 19-month warranty for members. Already made multiple purchases and plans to continue upgrading coffee gear. Specifically interested in a loyalty membership that rewards long-term loyalty with tangible benefits like a monthly bean subscription and extended warranty. Values cost-efficiency, product reliability, and seamless integration with his growing coffee station.",
+        "probes": [
+          "Michael: Expresses excitement about potential monthly coffee bean subscription and extended 19-month warranty for members. Already made multiple purchases and plans to continue upgrading coffee gear. Specifically interested in a loyalty membership that rewards long-term loyalty with tangible benefits like a monthly bean subscription and extended warranty. Values cost-efficiency, product reliability, and seamless integration with his growing coffee station.",
+          "what do you know about michael expresses excitement potential",
+          "michael expresses excitement potential monthly coffee bean subscription"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "11": {
+        "text": "Michael: Confirmed interest in signing up for the Premium Coffee Member Program with specific questions about warranty coverage(19-month extended warranty on espresso machine and future purchases) and bean subscription details. Seeks small-batch, 513 mL, nuanced roasts from Pacific Northwest local roasters. Values high-quality, regionally sourced beans that match Seattle’s coffee standards. Expects premium curation and authenticity in both product reliability and bean sourcing.",
+        "probes": [
+          "Michael: Confirmed interest in signing up for the Premium Coffee Member Program with specific questions about warranty coverage(19-month extended warranty on espresso machine and future purchases) and bean subscription details. Seeks small-batch, 513 mL, nuanced roasts from Pacific Northwest local roasters. Values high-quality, regionally sourced beans that match Seattle’s coffee standards. Expects premium curation and authenticity in both product reliability and bean sourcing.",
+          "what do you know about michael confirmed interest signing",
+          "michael confirmed interest signing premium coffee member program"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "12": {
+        "text": "Michael: Inquires about the status of a loyalty program offering early access to limited-edition items or prototypes. Expresses interest in being among the first to test new gadgets or exclusive products before general release. Believes there is a sizable community of passionate coffee lovers who would value such an opportunity. Seeks confirmation on whether this feature is live, in development, or planned for launch.",
+        "probes": [
+          "Michael: Inquires about the status of a loyalty program offering early access to limited-edition items or prototypes. Expresses interest in being among the first to test new gadgets or exclusive products before general release. Believes there is a sizable community of passionate coffee lovers who would value such an opportunity. Seeks confirmation on whether this feature is live, in development, or planned for launch.",
+          "what do you know about michael inquires status loyalty",
+          "michael inquires status loyalty program offering early access"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "13": {
+        "text": "Michael: Highly satisfied with sleek stainless-steel design, durability, and aesthetic harmony of coffee products. Finds strong alignment with his graphic design identity and visual kitchen setup. Highlights satisfaction with espresso machine, frothing pitcher, cleaning tablets, and digital scale.",
+        "probes": [
+          "Michael: Highly satisfied with sleek stainless-steel design, durability, and aesthetic harmony of coffee products. Finds strong alignment with his graphic design identity and visual kitchen setup. Highlights satisfaction with espresso machine, frothing pitcher, cleaning tablets, and digital scale.",
+          "what do you know about michael highly satisfied sleek",
+          "michael highly satisfied sleek stainless steel design durability"
+        ],
+        "probe_provenance": "write_time"
+      },
+      "14": {
+        "text": "Michael: Satisfied with design, durability, and aesthetic harmony. Praises espresso machine performance and steam wand for latte art. Values grinder and vacuum-sealed canisters for freshness in humid Seattle weather. Digital scale improves brewing consistency. Notes shipping delays, inconsistent tracking, and damaged first order as frustrations. Support responded quickly and provided replacement.",
+        "probes": [
+          "Michael: Satisfied with design, durability, and aesthetic harmony. Praises espresso machine performance and steam wand for latte art. Values grinder and vacuum-sealed canisters for freshness in humid Seattle weather. Digital scale improves brewing consistency. Notes shipping delays, inconsistent tracking, and damaged first order as frustrations. Support responded quickly and provided replacement.",
+          "what do you know about michael satisfied design durability",
+          "michael satisfied design durability aesthetic harmony praises espresso"
+        ],
+        "probe_provenance": "write_time"
+      },
+      "15": {
+        "text": "Michael: Satisfied with design, durability, and aesthetic harmony. Praises espresso machine performance and steam wand for latte art. Values grinder and vacuum-sealed canisters for freshness in humid Seattle weather. Digital scale improves brewing consistency. Notes shipping delays, inconsistent tracking, damaged first order, and fragmented order management. Suggests a unified dashboard and proactive email alerts for backorders or shipping delays before purchase.",
+        "probes": [
+          "Michael: Satisfied with design, durability, and aesthetic harmony. Praises espresso machine performance and steam wand for latte art. Values grinder and vacuum-sealed canisters for freshness in humid Seattle weather. Digital scale improves brewing consistency. Notes shipping delays, inconsistent tracking, damaged first order, and fragmented order management. Suggests a unified dashboard and proactive email alerts for backorders or shipping delays before purchase.",
+          "what do you know about michael satisfied design durability",
+          "michael satisfied design durability aesthetic harmony praises espresso"
+        ],
+        "probe_provenance": "write_time"
+      },
+      "16": {
+        "text": "Michael: Satisfied with design, durability, and aesthetic harmony. Praises espresso machine performance and steam wand for latte art. Values grinder and vacuum-sealed canisters for freshness in humid Seattle weather. Digital scale improves brewing consistency. Notes shipping delays, inconsistent tracking, damaged first order, and fragmented order management. Suggests a unified dashboard and proactive email alerts for backorders or shipping delays before purchase. Appreciates timely, thorough customer service. Suggests streamlining support so agents can access full purchase history when switching channels.",
+        "probes": [
+          "Michael: Satisfied with design, durability, and aesthetic harmony. Praises espresso machine performance and steam wand for latte art. Values grinder and vacuum-sealed canisters for freshness in humid Seattle weather. Digital scale improves brewing consistency. Notes shipping delays, inconsistent tracking, damaged first order, and fragmented order management. Suggests a unified dashboard and proactive email alerts for backorders or shipping delays before purchase. Appreciates timely, thorough customer service. Suggests streamlining support so agents can access full purchase history when switching channels.",
+          "what do you know about michael satisfied design durability",
+          "michael satisfied design durability aesthetic harmony praises espresso"
+        ],
+        "probe_provenance": "write_time"
+      },
+      "17": {
+        "text": "Michael: Satisfied with design, durability, and aesthetic harmony. Praises espresso machine performance and steam wand for latte art. Values grinder and vacuum-sealed canisters for freshness in humid Seattle weather. Digital scale improves brewing consistency. Notes shipping delays, inconsistent tracking, damaged first order, and fragmented order management. Suggests a unified dashboard and proactive email alerts for backorders or shipping delays before purchase. Appreciates timely, thorough customer service. Suggests streamlining support so agents can access full purchase history when switching channels. Expresses strong interest in a loyalty program with free shipping, extended warranties, and coffee bean deliveries. Wants annual membership with early access to new products and exclusive deals.",
+        "probes": [
+          "Michael: Satisfied with design, durability, and aesthetic harmony. Praises espresso machine performance and steam wand for latte art. Values grinder and vacuum-sealed canisters for freshness in humid Seattle weather. Digital scale improves brewing consistency. Notes shipping delays, inconsistent tracking, damaged first order, and fragmented order management. Suggests a unified dashboard and proactive email alerts for backorders or shipping delays before purchase. Appreciates timely, thorough customer service. Suggests streamlining support so agents can access full purchase history when switching channels. Expresses strong interest in a loyalty program with free shipping, extended warranties, and coffee bean deliveries. Wants annual membership with early access to new products and exclusive deals.",
+          "what do you know about michael satisfied design durability",
+          "michael satisfied design durability aesthetic harmony praises espresso"
+        ],
+        "probe_provenance": "write_time"
+      },
+      "18": {
+        "text": "Michael: Satisfied with design, durability, and aesthetic harmony. Praises espresso machine performance and steam wand for latte art. Values grinder and vacuum-sealed canisters for freshness in humid Seattle weather. Digital scale improves brewing consistency. Notes shipping delays, inconsistent tracking, damaged first order, and fragmented order management. Suggests a unified dashboard and proactive email alerts for backorders or shipping delays before purchase. Appreciates timely, thorough customer service. Suggests streamlining support so agents can access full purchase history when switching channels. Expresses strong interest in a loyalty program with free shipping, extended warranties, and coffee bean deliveries. Wants annual membership with early access to new products and exclusive deals. Grateful for quality and design that enhance home coffee experience, boosting productivity and client confidence. Happy to recommend brand on Instagram @coffee_creations_1237.",
+        "probes": [
+          "Michael: Satisfied with design, durability, and aesthetic harmony. Praises espresso machine performance and steam wand for latte art. Values grinder and vacuum-sealed canisters for freshness in humid Seattle weather. Digital scale improves brewing consistency. Notes shipping delays, inconsistent tracking, damaged first order, and fragmented order management. Suggests a unified dashboard and proactive email alerts for backorders or shipping delays before purchase. Appreciates timely, thorough customer service. Suggests streamlining support so agents can access full purchase history when switching channels. Expresses strong interest in a loyalty program with free shipping, extended warranties, and coffee bean deliveries. Wants annual membership with early access to new products and exclusive deals. Grateful for quality and design that enhance home coffee experience, boosting productivity and client confidence. Happy to recommend brand on Instagram @coffee_creations_1237.",
+          "what do you know about michael satisfied design durability",
+          "michael satisfied design durability aesthetic harmony praises espresso"
+        ],
+        "probe_provenance": "write_time"
+      }
+    }
+  }
+}

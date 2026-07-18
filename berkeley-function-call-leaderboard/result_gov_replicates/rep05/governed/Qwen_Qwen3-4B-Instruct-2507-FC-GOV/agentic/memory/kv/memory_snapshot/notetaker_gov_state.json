@@ -1,0 +1,71 @@
+{
+  "backend": "kv",
+  "tiers": {
+    "core": {
+      "tuesday_updates": {
+        "text": "tuesday updates: System downtime from 10 AM - 12 PM, slowed down workflow. HR sent updated benefits package—review before next month’s deadline. Sent follow-up emails to vendors, waiting on response.",
+        "probes": [
+          "tuesday updates",
+          "what is tuesday updates",
+          "tuesday updates system downtime slowed"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "wednesday_updates": {
+        "text": "wednesday updates: Presentation to leadership went well, but need to tweak a few slides for next week’s review. Client proposal draft ready—send it for legal approval. Need to onboard new hire—schedule one-on-one.",
+        "probes": [
+          "wednesday updates",
+          "what is wednesday updates",
+          "wednesday updates presentation leadership went"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "urgent_tasks": {
+        "text": "urgent tasks: Submit tax documents before Friday. Review credit card statement for errors. Call auto repair shop about weird noise in the engine.",
+        "probes": [
+          "urgent tasks",
+          "what is urgent tasks",
+          "urgent tasks submit tax documents"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "work_related_tasks": {
+        "text": "work related tasks: Finalize quarterly budget. Review vendor contract before signing. Finish security compliance training module.",
+        "probes": [
+          "work related tasks",
+          "what is work related tasks",
+          "work related tasks finalize quarterly budget"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "tech_tasks": {
+        "text": "tech tasks: Back up laptop files. Update phone software. Cancel unused subscriptions.",
+        "probes": [
+          "tech tasks",
+          "what is tech tasks",
+          "tech tasks back laptop files"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "diet_goals": {
+        "text": "diet goals: Cut back on sugar—too much soda lately. Meal prep on Sunday—grilled chicken, quinoa, and veggies. Hydration—aim for at least 3L of water per day. Protein shake after workouts.",
+        "probes": [
+          "diet goals",
+          "what is diet goals",
+          "diet goals cut back sugar"
+        ],
+        "probe_provenance": "write_time"
+      },
+      "supplements_and_meds": {
+        "text": "supplements and meds: Vitamin D3—1000 IU daily. Omega-3s—good for joints. Iron levels were low last check-up—remember to take supplements. Probiotics—help with digestion, take in the morning.",
+        "probes": [
+          "supplements and meds",
+          "what is supplements and meds",
+          "supplements and meds vitamin 1000 daily"
+        ],
+        "probe_provenance": "write_time"
+      }
+    },
+    "archival": {}
+  }
+}

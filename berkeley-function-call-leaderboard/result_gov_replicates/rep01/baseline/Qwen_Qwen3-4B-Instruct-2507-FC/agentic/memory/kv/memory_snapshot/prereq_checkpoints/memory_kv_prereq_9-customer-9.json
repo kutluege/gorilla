@@ -1,0 +1,12 @@
+{
+    "core_memory": {
+        "user_inquiry_pricing": "Michael is a first-time buyer looking for pricing details on espresso machines, specifically interested in any new customer discounts, promotional offers, or bundle deals. He saw a 'New Customer Discount' on the homepage but didn\u2019t click it in time.",
+        "user_shipping_inquiry": "Michael in Seattle is concerned about shipping times and origin. He wants to know if products are shipped from a local warehouse, especially given his upcoming family gathering later this month. He values reliability and timely delivery despite rainy weather.",
+        "michael_subscription_inquiry": "Michael is inquiring about a subscription or membership program for loyal customers. He\u2019s interested in perks like free shipping, early access to new products, or monthly discounts. He\u2019s a frequent buyer and sees value in organizing and cost-effectively managing his coffee station purchases.",
+        "michael_membership_model_inquiry": "Michael is asking about the current subscription or membership program. He wants to know if it's bean-only or includes discounts on accessories, machines, or cleaning kits. He's interested in a loyalty model with points, free shipping, or exclusive pricing on new releases.",
+        "michael_early_access_inquiry": "Michael is asking about a loyalty program that grants early access to limited-edition items or prototypes. He believes there\u2019s a community of passionate coffee lovers who would be eager to test new gadgets before public release.",
+        "michael_member_portal_inquiry": "Michael is asking about the member portal integration. He wants to know if there's a dedicated portal to track orders, manage subscriptions, pause shipments during travel, or switch bean preferences. He\u2019s concerned about rain-soaked boxes and wants to avoid stockpiling beans on his porch.",
+        "michael_streamlined_purchasing_inquiry": "Michael wants to streamline purchases: consolidated orders, free shipping, and bonus freebies(sample coffee, discount codes) to reduce friction and enhance his coffee experience."
+    },
+    "archival_memory": {}
+}

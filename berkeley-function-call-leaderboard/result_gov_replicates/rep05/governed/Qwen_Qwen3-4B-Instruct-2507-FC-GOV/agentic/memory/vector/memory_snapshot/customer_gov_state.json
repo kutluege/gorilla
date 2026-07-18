@@ -1,0 +1,180 @@
+{
+  "backend": "vector",
+  "tiers": {
+    "core": {
+      "0": {
+        "text": "User Michael, 35, lives in Seattle, works as a freelance graphic designer, values design aesthetics in appliances, and is interested in high-quality coffee machines to enhance his morning routine. Specifically, he is considering both standard drip coffee makers and espresso machines.",
+        "probes": [
+          "User Michael, 35, lives in Seattle, works as a freelance graphic designer, values design aesthetics in appliances, and is interested in high-quality coffee machines to enhance his morning routine. Specifically, he is considering both standard drip coffee makers and espresso machines.",
+          "what do you know about michael lives seattle works",
+          "michael lives seattle works freelance graphic designer values"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "1": {
+        "text": "Michael, 35, Seattle. Prioritizes coffee grinder as MVP. Bundled order(grinder, tablets, pitcher) to ship as single unit. Will be out of town next weekend(Portland). Prefers package delivered during return or to have friend house-sit. Wants arrival date to plan accordingly.",
+        "probes": [
+          "Michael, 35, Seattle. Prioritizes coffee grinder as MVP. Bundled order(grinder, tablets, pitcher) to ship as single unit. Will be out of town next weekend(Portland). Prefers package delivered during return or to have friend house-sit. Wants arrival date to plan accordingly.",
+          "what do you know about michael seattle prioritizes coffee",
+          "michael seattle prioritizes coffee grinder mvp bundled order"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "2": {
+        "text": "Michael, 35, Seattle. Freelance graphic designer. Interested in a tiered loyalty program with free shipping, exclusive pricing, or small monthly fee. Seeks early access, monthly bean subscriptions, and 19-month warranty. Values long-term value and seamless integration with coffee station upgrades.",
+        "probes": [
+          "Michael, 35, Seattle. Freelance graphic designer. Interested in a tiered loyalty program with free shipping, exclusive pricing, or small monthly fee. Seeks early access, monthly bean subscriptions, and 19-month warranty. Values long-term value and seamless integration with coffee station upgrades.",
+          "what do you know about michael seattle freelance graphic",
+          "michael seattle freelance graphic designer interested tiered loyalty"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "3": {
+        "text": "Michael, 35, Seattle. Charge ~$49.99, posted 3 days ago. No descriptor. Likely auto-activated Premium Tier membership. Requested billing audit with explanation (note/code). Priority: Resolve directly. Ready to provide screenshots or transaction ID.",
+        "probes": [
+          "Michael, 35, Seattle. Charge ~$49.99, posted 3 days ago. No descriptor. Likely auto-activated Premium Tier membership. Requested billing audit with explanation (note/code). Priority: Resolve directly. Ready to provide screenshots or transaction ID.",
+          "what do you know about michael seattle charge posted",
+          "michael seattle charge posted days ago descriptor likely"
+        ],
+        "probe_provenance": "write_time"
+      }
+    },
+    "archival": {
+      "0": {
+        "text": "Michael from Seattle, freelance graphic designer, prefers sleek, modern stainless-steel espresso machines with a café-like experience for non-professional users. Interested in balance between design, ease of use, and performance.",
+        "probes": [
+          "Michael from Seattle, freelance graphic designer, prefers sleek, modern stainless-steel espresso machines with a café-like experience for non-professional users. Interested in balance between design, ease of use, and performance.",
+          "what do you know about michael seattle freelance graphic",
+          "michael seattle freelance graphic designer prefers sleek modern"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "1": {
+        "text": "Michael from Seattle is a first-time buyer looking for a sleek espresso machine with a café-like experience. He is interested in pricing details, first-time buyer discounts, and any current bundle or limited-time promotions available.",
+        "probes": [
+          "Michael from Seattle is a first-time buyer looking for a sleek espresso machine with a café-like experience. He is interested in pricing details, first-time buyer discounts, and any current bundle or limited-time promotions available.",
+          "what do you know about michael seattle first time",
+          "michael seattle first time buyer looking sleek espresso"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "2": {
+        "text": "Michael from Seattle is concerned about shipping times and origin. He wants to know if products are shipped from a local warehouse, and if so, what the delivery timeline is, especially since he's hosting a family gathering later this month.",
+        "probes": [
+          "Michael from Seattle is concerned about shipping times and origin. He wants to know if products are shipped from a local warehouse, and if so, what the delivery timeline is, especially since he's hosting a family gathering later this month.",
+          "what do you know about michael seattle concerned shipping",
+          "michael seattle concerned shipping times origin wants products"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "3": {
+        "text": "Michael from Seattle, a coffee lover, is seeking detailed product information on espresso machines, including brewing frequency, cleaning complexity, footprint size, and overall usability. He values transparency and has heard positive feedback from a friend about your customer support and product details.",
+        "probes": [
+          "Michael from Seattle, a coffee lover, is seeking detailed product information on espresso machines, including brewing frequency, cleaning complexity, footprint size, and overall usability. He values transparency and has heard positive feedback from a friend about your customer support and product details.",
+          "what do you know about michael seattle coffee lover",
+          "michael seattle coffee lover seeking detailed product information"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "4": {
+        "text": "Michael from Seattle is inquiring about warranty and quality guarantees for espresso machines. He has had negative experiences with short warranty periods from other brands and is seeking a more customer-friendly, long-term support policy, especially for higher-end models.",
+        "probes": [
+          "Michael from Seattle is inquiring about warranty and quality guarantees for espresso machines. He has had negative experiences with short warranty periods from other brands and is seeking a more customer-friendly, long-term support policy, especially for higher-end models.",
+          "what do you know about michael seattle inquiring warranty",
+          "michael seattle inquiring warranty quality guarantees espresso machines"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "5": {
+        "text": "Michael from Seattle expresses concern about coffee temperature in drip machines. He previously had issues with machines that didn’t heat coffee enough, leading him to microwave his brew. He is now specifically asking whether your espresso machines(or any models) offer adjustable temperature settings or reliably produce hot coffee to avoid the need for microwaving.",
+        "probes": [
+          "Michael from Seattle expresses concern about coffee temperature in drip machines. He previously had issues with machines that didn’t heat coffee enough, leading him to microwave his brew. He is now specifically asking whether your espresso machines(or any models) offer adjustable temperature settings or reliably produce hot coffee to avoid the need for microwaving.",
+          "what do you know about michael seattle expresses concern",
+          "michael seattle expresses concern coffee temperature drip machines"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "6": {
+        "text": "Michael, 35, Seattle. Concerned about shipping delays: Coffee grinder bundle(shipped from Oregon regional warehouse) shows 'Label Created—Awaiting Item' status; no update in days. Second order(canisters & Garmin scale) from East Coast(Ohio/Pennsylvania) shows 'in transit' status, arriving later. Wants clarification on delivery timelines and possible expedited options for the grinder order.",
+        "probes": [
+          "Michael, 35, Seattle. Concerned about shipping delays: Coffee grinder bundle(shipped from Oregon regional warehouse) shows 'Label Created—Awaiting Item' status; no update in days. Second order(canisters & Garmin scale) from East Coast(Ohio/Pennsylvania) shows 'in transit' status, arriving later. Wants clarification on delivery timelines and possible expedited options for the grinder order.",
+          "what do you know about michael seattle concerned shipping",
+          "michael seattle concerned shipping delays coffee grinder bundle"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "7": {
+        "text": "Michael, 35, Seattle. Freelance graphic designer. Currently owns an espresso machine and practices latte art inspired by digital design. Highly interested in a loyalty membership program with perks such as early access to new products(e.g., stainless-steel grinder, vacuum-sealed canisters, digital scale), potential monthly coffee bean subscription, and an extended 19-month warranty. Actively planning future upgrades to coffee station. Seeks a tiered membership that rewards long-term loyalty and offers tangible value beyond discounts.",
+        "probes": [
+          "Michael, 35, Seattle. Freelance graphic designer. Currently owns an espresso machine and practices latte art inspired by digital design. Highly interested in a loyalty membership program with perks such as early access to new products(e.g., stainless-steel grinder, vacuum-sealed canisters, digital scale), potential monthly coffee bean subscription, and an extended 19-month warranty. Actively planning future upgrades to coffee station. Seeks a tiered membership that rewards long-term loyalty and offers tangible value beyond discounts.",
+          "what do you know about michael seattle freelance graphic",
+          "michael seattle freelance graphic designer currently owns espresso"
+        ],
+        "probe_provenance": "stored_text"
+      },
+      "8": {
+        "text": "Michael, 35, Seattle. Freelance graphic designer. Signed up for Premium Tier membership. Confirmed interest in extended 19-month warranty on espresso machine and future appliances. Specifically requests 513 mL, small-batch, nuanced coffee bean subscriptions sourced from local Pacific Northwest roasters(or high-quality national partners with regional focus). Standards for beans are high—seeking rare, artisanal, and hard-to-find roasts not available in local grocery stores.",
+        "probes": [
+          "Michael, 35, Seattle. Freelance graphic designer. Signed up for Premium Tier membership. Confirmed interest in extended 19-month warranty on espresso machine and future appliances. Specifically requests 513 mL, small-batch, nuanced coffee bean subscriptions sourced from local Pacific Northwest roasters(or high-quality national partners with regional focus). Standards for beans are high—seeking rare, artisanal, and hard-to-find roasts not available in local grocery stores.",
+          "what do you know about michael seattle freelance graphic",
+          "michael seattle freelance graphic designer signed premium tier"
+        ],
+        "probe_provenance": "stored_text"
+      },
+      "9": {
+        "text": "Michael, 35, Seattle. Freelance graphic designer. Expresses interest in early access to limited-edition items and prototype testing. Currently enrolled in Premium Tier with monthly bean subscription. Actively engaged with community-driven product launches and design-inspired coffee experiences. Seeks transparency on availability, selection process, and how to apply for early access to new gadgets or exclusive releases.",
+        "probes": [
+          "Michael, 35, Seattle. Freelance graphic designer. Expresses interest in early access to limited-edition items and prototype testing. Currently enrolled in Premium Tier with monthly bean subscription. Actively engaged with community-driven product launches and design-inspired coffee experiences. Seeks transparency on availability, selection process, and how to apply for early access to new gadgets or exclusive releases.",
+          "what do you know about michael seattle freelance graphic",
+          "michael seattle freelance graphic designer expresses interest early"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "10": {
+        "text": "Michael, 35, Seattle. Freelance graphic designer. Currently in Premium Tier with monthly bean subscription. Seeks a dedicated member portal to track orders, manage subscriptions, pause shipments during travel, and switch bean preferences. Specifically concerned about rain-soaked cardboard box nightmares in Seattle—wants flexible, weather-resilient delivery options(e.g., curbside pickup, local delivery, or pause during vacations). Values control and convenience in managing subscriptions.",
+        "probes": [
+          "Michael, 35, Seattle. Freelance graphic designer. Currently in Premium Tier with monthly bean subscription. Seeks a dedicated member portal to track orders, manage subscriptions, pause shipments during travel, and switch bean preferences. Specifically concerned about rain-soaked cardboard box nightmares in Seattle—wants flexible, weather-resilient delivery options(e.g., curbside pickup, local delivery, or pause during vacations). Values control and convenience in managing subscriptions.",
+          "what do you know about michael seattle freelance graphic",
+          "michael seattle freelance graphic designer currently premium tier"
+        ],
+        "probe_provenance": "stored_text"
+      },
+      "11": {
+        "text": "Michael, 35, Seattle. Freelance graphic designer. In Premium Tier with monthly bean subscription. Asks about membership fee structure, trial period, and potential discounts or promotional bonuses for loyal customers with multiple purchases. Specifically inquires about reduced rates, sign-up bonuses, or flexible payment options(e.g., monthly vs. annual). Seeks a risk-free way to test benefits before long-term commitment.",
+        "probes": [
+          "Michael, 35, Seattle. Freelance graphic designer. In Premium Tier with monthly bean subscription. Asks about membership fee structure, trial period, and potential discounts or promotional bonuses for loyal customers with multiple purchases. Specifically inquires about reduced rates, sign-up bonuses, or flexible payment options(e.g., monthly vs. annual). Seeks a risk-free way to test benefits before long-term commitment.",
+          "what do you know about michael seattle freelance graphic",
+          "michael seattle freelance graphic designer premium tier monthly"
+        ],
+        "probe_provenance": "stored_text"
+      },
+      "12": {
+        "text": "Michael, 35, Seattle. Freelance graphic designer. In Premium Tier with monthly bean subscription. Asks about prioritized customer service for members. Values responsiveness and detailed support—already received excellent service. Inquires about VIP perks like dedicated phone lines, priority chat support, or faster response times, especially during critical moments(e.g., machine issues before a coffee tasting). Seeks reliable, timely assistance without compromising quality.",
+        "probes": [
+          "Michael, 35, Seattle. Freelance graphic designer. In Premium Tier with monthly bean subscription. Asks about prioritized customer service for members. Values responsiveness and detailed support—already received excellent service. Inquires about VIP perks like dedicated phone lines, priority chat support, or faster response times, especially during critical moments(e.g., machine issues before a coffee tasting). Seeks reliable, timely assistance without compromising quality.",
+          "what do you know about michael seattle freelance graphic",
+          "michael seattle freelance graphic designer premium tier monthly"
+        ],
+        "probe_provenance": "stored_text"
+      },
+      "13": {
+        "text": "Michael, 35, Seattle. Freelance graphic designer. In Premium Tier with monthly bean subscription. Primarily an espresso drinker(prefers dark roasts, specialized espresso blends), but dabbles in pour-over(prefers mellower, lighter roasts). Seeks flexible subscription options: a core 'espresso roast of the month' plus optional add-on for lighter roasts, or the ability to swap roasts monthly based on schedule or guest preferences. Values flexibility as much as a well-frothed latte foam—wants a subscription that adapts to his creative and social rhythm.",
+        "probes": [
+          "Michael, 35, Seattle. Freelance graphic designer. In Premium Tier with monthly bean subscription. Primarily an espresso drinker(prefers dark roasts, specialized espresso blends), but dabbles in pour-over(prefers mellower, lighter roasts). Seeks flexible subscription options: a core 'espresso roast of the month' plus optional add-on for lighter roasts, or the ability to swap roasts monthly based on schedule or guest preferences. Values flexibility as much as a well-frothed latte foam—wants a subscription that adapts to his creative and social rhythm.",
+          "what do you know about michael seattle freelance graphic",
+          "michael seattle freelance graphic designer premium tier monthly"
+        ],
+        "probe_provenance": "stored_text"
+      },
+      "14": {
+        "text": "Michael, 35, Seattle. Freelance graphic designer. In Premium Tier with monthly bean subscription. Seeks to streamline purchasing process—wants fewer logins, consolidated checkouts, and reduced shipping costs. Currently pays shipping individually for each purchase. Asks for membership benefits that include bonus freebies(e.g., sample-size coffee flavors) or occasional discount codes on future machines. Highly open to enhancements that improve coffee experience and reduce friction in buying new products.",
+        "probes": [
+          "Michael, 35, Seattle. Freelance graphic designer. In Premium Tier with monthly bean subscription. Seeks to streamline purchasing process—wants fewer logins, consolidated checkouts, and reduced shipping costs. Currently pays shipping individually for each purchase. Asks for membership benefits that include bonus freebies(e.g., sample-size coffee flavors) or occasional discount codes on future machines. Highly open to enhancements that improve coffee experience and reduce friction in buying new products.",
+          "what do you know about michael seattle freelance graphic",
+          "michael seattle freelance graphic designer premium tier monthly"
+        ],
+        "probe_provenance": "stored_text"
+      }
+    }
+  }
+}

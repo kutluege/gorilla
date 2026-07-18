@@ -1,0 +1,12 @@
+{
+    "core_memory": {
+        "user_inquiry_pricing": "Michael is a first-time buyer looking for pricing details on espresso machines, specifically interested in any new customer discounts, promotional offers, or bundle deals. He saw a 'New Customer Discount' on the homepage but didn\u2019t click it in time.",
+        "user_shipping_inquiry": "Michael in Seattle is concerned about shipping times and origin. He wants to know if products are shipped from a local warehouse, especially given his upcoming family gathering later this month. He values reliability and timely delivery despite rainy weather.",
+        "user_support_feedback": "Michael's friend praised your support, helping him feel confident. He's concerned about brewing frequency, cleaning, and machine size in his kitchen.",
+        "michael_shipping_status_update": "Tracking stuck; no location update. Urgent delivery needed for family gathering. Exploring drip coffee or local shop as backup.",
+        "michael_delivery_preparation": "Will be home to receive package. Aware of past soggy deliveries in rain. Requests to be available to greet driver or quickly bring package inside. Requires signature on delivery to prevent exposure to weather or unattended storage.",
+        "michael_new_orders_details": "Michael ordered: stainless-steel grinder, cleaning tablets, frothing pitcher; and vacuum-sealed canisters, Garmin digital scale. Building a mini coffee lab in his Seattle kitchen.",
+        "michael_billing_security_inquiry": "Michael is verifying billing/shipping for second order. Uses same address and card. Worried about past Apple Pay security hold. Requests immediate review for any red flags. Wants to avoid similar issues."
+    },
+    "archival_memory": {}
+}

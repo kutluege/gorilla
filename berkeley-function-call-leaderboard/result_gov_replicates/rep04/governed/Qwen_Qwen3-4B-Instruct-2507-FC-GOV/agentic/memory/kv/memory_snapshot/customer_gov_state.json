@@ -1,0 +1,198 @@
+{
+  "backend": "kv",
+  "tiers": {
+    "core": {
+      "user_preference_michael_espresso": {
+        "text": "user preference michael espresso: Michael prefers a sleek, modern stainless-steel espresso machine with a café-like experience, easy to use, and designed for non-professional baristas.",
+        "probes": [
+          "user preference michael espresso",
+          "what is user preference michael espresso",
+          "user preference michael espresso michael prefers sleek"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "user_inquiry_michael_pricing": {
+        "text": "user inquiry michael pricing: Michael is interested in pricing for espresso machines, specifically asking about first-time buyer discounts, new customer offers, and any bundle or limited-time promotions.",
+        "probes": [
+          "user inquiry michael pricing",
+          "what is user inquiry michael pricing",
+          "user inquiry michael pricing michael interested pricing"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "user_inquiry_michael_subscription": {
+        "text": "user inquiry michael subscription: Michael asks about a loyalty program with perks like free shipping, early access, or monthly discounts on accessories and coffee machines to organize and save on purchases as his coffee station grows.",
+        "probes": [
+          "user inquiry michael subscription",
+          "what is user inquiry michael subscription",
+          "user inquiry michael subscription michael asks loyalty"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "user_inquiry_michael_subscription_details": {
+        "text": "user inquiry michael subscription details: Michael is interested in a membership with perks like a monthly coffee bean subscription, an extended 19-month warranty, and rewards for frequent purchases. He is considering signing up to support ongoing upgrades to his coffee gear.",
+        "probes": [
+          "user inquiry michael subscription details",
+          "what is user inquiry michael subscription details",
+          "user inquiry michael subscription details michael interested membership"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "user_inquiry_michael_membership_pricing": {
+        "text": "user inquiry michael membership pricing: Michael is asking about the membership fee structure(monthly, yearly, or otherwise), whether there’s a trial period, and if he qualifies for a reduced rate or promotional sign-up bonus as a loyal customer with multiple purchases.",
+        "probes": [
+          "user inquiry michael membership pricing",
+          "what is user inquiry michael membership pricing",
+          "user inquiry michael membership pricing michael asking membership"
+        ],
+        "probe_provenance": "stored_text"
+      },
+      "user_inquiry_michael_streamlined_purchasing": {
+        "text": "user inquiry michael streamlined purchasing: Michael wants membership to streamline purchasing by reducing logins, eliminating repeated checkouts, and including bonus freebies like sample-size coffee flavors or occasional discount codes on future machines. He’s always experimenting with the perfect coffee experience.",
+        "probes": [
+          "user inquiry michael streamlined purchasing",
+          "what is user inquiry michael streamlined purchasing",
+          "user inquiry michael streamlined purchasing michael wants membership"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "user_feedback_michael_brand_recommendation": {
+        "text": "user feedback michael brand recommendation: Michael thanks the brand for high-quality gear that boosts his productivity and professional image. He shares coffee creations on Instagram (@coffee_creations_1237) and enthusiastically recommends the brand.",
+        "probes": [
+          "user feedback michael brand recommendation",
+          "what is user feedback michael brand recommendation",
+          "user feedback michael brand recommendation michael thanks brand"
+        ],
+        "probe_provenance": "write_time"
+      }
+    },
+    "archival": {
+      "michael_order_delivery_status_update": {
+        "text": "michael order delivery status update: Michael's order is currently showing as 'in transit' with no recent updates. The tracking indicates out-of-state origin, which may contribute to delays. Customer support has been contacted to verify fulfillment status, shipping origin, and whether expedited shipping or a replacement is possible. Michael is awaiting a response and is considering alternative plans for his family gathering. He values transparency and timely updates, especially given the personal nature of the event.",
+        "probes": [
+          "michael order delivery status update",
+          "what is michael order delivery status update",
+          "michael order delivery status update michael order currently"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "michael_exchange_policy_clarity": {
+        "text": "michael exchange policy clarity: Michael is inquiring about the process for lost or damaged packages during transit. He wants to know if the company files a claim with the carrier on his behalf or if he needs to initiate it himself. He is concerned about the value of the espresso machine and the potential impact on his budget, as it's a significant personal investment. He values a clear, customer-friendly return and exchange process, especially for delayed or lost shipments.",
+        "probes": [
+          "michael exchange policy clarity",
+          "what is michael exchange policy clarity",
+          "michael exchange policy clarity michael inquiring process"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "michael_delivery_signature_preparation": {
+        "text": "michael delivery signature preparation: Michael has expressed a strong preference to be home and available to receive his package if it arrives in the near future. He is particularly concerned about rain-related delivery issues and has experienced soggy boxes in the past. He emphasizes the importance of having a signature upon delivery and wants to be present to greet the courier or quickly bring the package inside. He will adjust his schedule(including design work) to accommodate the delivery time. He values timely, reliable delivery with a signature requirement to prevent packages from being left unattended or exposed to weather.",
+        "probes": [
+          "michael delivery signature preparation",
+          "what is michael delivery signature preparation",
+          "michael delivery signature preparation michael expressed strong"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "user_order_michael_bundle_1": {
+        "text": "user order michael bundle 1: Bundle order: Stainless-steel coffee grinder + specialized cleaning tablets + upgraded frothing pitcher.",
+        "probes": [
+          "user order michael bundle 1",
+          "what is user order michael bundle 1",
+          "user order michael bundle 1 bundle order stainless"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "user_order_michael_bundle_2": {
+        "text": "user order michael bundle 2: Order: Vacuum-sealed coffee canisters + Garmin-collaborated digital scale.",
+        "probes": [
+          "user order michael bundle 2",
+          "what is user order michael bundle 2",
+          "user order michael bundle 2 order vacuum sealed"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "user_shipping_concern_michael_grinder": {
+        "text": "user shipping concern michael grinder: Grinder bundle shipped from Oregon regional warehouse; tracking shows 'Label Created — Awaiting Item'; no update in days. Concerned about delivery delay.",
+        "probes": [
+          "user shipping concern michael grinder",
+          "what is user shipping concern michael grinder",
+          "user shipping concern michael grinder grinder bundle shipped"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "user_shipping_concern_michael_canisters_scale": {
+        "text": "user shipping concern michael canisters scale: Canisters and scale order shipped from East Coast distribution center(Ohio/Pennsylvania); tracking shows 'In transit'; estimated delivery later than grinder bundle.",
+        "probes": [
+          "user shipping concern michael canisters scale",
+          "what is user shipping concern michael canisters scale",
+          "user shipping concern michael canisters scale canisters scale order"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "user_shipping_anomaly_michael": {
+        "text": "user shipping anomaly michael: Tracking anomaly: Second order(East Coast) now shows earlier delivery than first order(Oregon), despite longer distance. Concerns about potential mix-up, warehouse staffing issues, or backorder status. Weather-related delays(heavy rain, flooding) in Seattle region may have impacted local shipping.",
+        "probes": [
+          "user shipping anomaly michael",
+          "what is user shipping anomaly michael",
+          "user shipping anomaly michael tracking anomaly second"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "user_concern_grinder_physical_dispatch": {
+        "text": "user concern grinder physical dispatch: Michael is deeply concerned that the stainless-steel grinder bundle may never have left the Oregon warehouse. He emphasizes that a 'Label Created' status does not guarantee physical dispatch and is wary of potential oversights or missing items. He views the grinder as the essential MVP for his espresso game and is prioritizing its timely arrival.",
+        "probes": [
+          "user concern grinder physical dispatch",
+          "what is user concern grinder physical dispatch",
+          "user concern grinder physical dispatch michael deeply concerned"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "user_bundled_order_verification_michael": {
+        "text": "user bundled order verification michael: Michael is verifying whether his orders were shipped as complete bundles. He is concerned about potential split shipments(e.g., grinder bundle split so that the frothing pitcher ships separately), which could lead to confusion or missing items. He wants to ensure all items from each order arrive together to avoid receiving a smaller box without the main component(the grinder) he’s most excited about.",
+        "probes": [
+          "user bundled order verification michael",
+          "what is user bundled order verification michael",
+          "user bundled order verification michael michael verifying whether"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "user_delivery_protection_michael_portland_trip": {
+        "text": "user delivery protection michael portland trip: Michael is traveling to Portland next weekend for a freelance gig. He will be away for 4–5 days. He is concerned about package delivery attempts during his absence, especially for delicate items like the coffee grinder. He wants to avoid damage from rain or neighbor pickup and prefers to have a confirmed arrival date so he can arrange for a friend to house-sit or monitor the porch. He references a past experience with a damaged espresso machine and is especially cautious about the grinder's safety.",
+        "probes": [
+          "user delivery protection michael portland trip",
+          "what is user delivery protection michael portland trip",
+          "user delivery protection michael portland trip michael traveling portland"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "user_coffee_station_evolution_michael": {
+        "text": "user coffee station evolution michael: Michael is excited about transforming his kitchen into a full-fledged coffee station. He jokes that he's 'one appliance away from becoming a barista' and is considering a career pivot to barista by morning. He emphasizes the importance of testing all components(grinder, scale, frothing pitcher) before hosting a weekend gathering, as his social circle expects premium brews. He values precision, consistency, and a professional-quality experience.",
+        "probes": [
+          "user coffee station evolution michael",
+          "what is user coffee station evolution michael",
+          "user coffee station evolution michael michael excited transforming"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "user_delivery_synchronization_michael": {
+        "text": "user delivery synchronization michael: Michael is asking whether the two orders(grinder bundle and canisters/scale) will arrive around the same time. He is inquiring about known delays on the grinder order and whether delivery coordination options exist(e.g., specific drop-off date, pickup location, or hold). He is open to personally retrieving the packages to avoid porch exposure, especially in rain. He wants to be clearly informed if any item is out of stock or has a longer lead time to avoid repeatedly checking dead tracking links.",
+        "probes": [
+          "user delivery synchronization michael",
+          "what is user delivery synchronization michael",
+          "user delivery synchronization michael michael asking whether"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "user_billing_security_michael": {
+        "text": "user billing security michael: Michael is confirming the accuracy of his billing and shipping details for the second order. He is using the same address and credit card as before. He recalls a past security hold issue with Apple Pay on a different website and is concerned about potential fraud flags or unauthorized holds. He wants to be proactively informed of any red flags to avoid reliving that stressful experience.",
+        "probes": [
+          "user billing security michael",
+          "what is user billing security michael",
+          "user billing security michael michael confirming accuracy"
+        ],
+        "probe_provenance": "sidecar"
+      }
+    }
+  }
+}

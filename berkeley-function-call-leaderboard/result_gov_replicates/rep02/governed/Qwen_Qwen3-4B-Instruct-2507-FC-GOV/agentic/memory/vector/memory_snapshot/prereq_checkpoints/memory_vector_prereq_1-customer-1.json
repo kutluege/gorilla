@@ -1,0 +1,17 @@
+{
+    "core_memory": {
+        "next_id": 2,
+        "store": {
+            "0": "User Michael, 35, lives in Seattle, looking for a sleek stainless-steel espresso machine with easy-to-use features. Interested in local shipping, delivery timeframes, and availability before a family gathering later this month.",
+            "1": "Regarding friend: User Michael, 35, lives in Seattle, freelance graphic designer, seeking a sleek stainless-steel espresso machine. Key concerns: brewing frequency, cleaning ease, size, and kitchen space. Interested in first-time discount, local shipping, and bundle offers."
+        }
+    },
+    "archival_memory": {
+        "next_id": 3,
+        "store": {
+            "0": "User Michael, 35, lives in Seattle, freelance graphic designer, seeking a sleek stainless-steel espresso machine. Key concerns: brewing frequency, cleaning ease, size, kitchen space, and potential need to reorganize existing appliances. Specifically asking for precise dimensions to avoid 'kitchen Tetris' issues.",
+            "1": "User Michael, 35, lives in Seattle, freelance graphic designer, seeking a sleek stainless-steel espresso machine. Concerned about warranty length and service quality, especially for higher-end models. Wants assurance of a robust, customer-friendly support policy.",
+            "2": "User Michael, 35, lives in Seattle, freelance graphic designer, seeking a sleek stainless-steel espresso machine with reliable hot coffee output. Specifically concerned about temperature consistency\u2014no microwaving needed\u2014and wants to know if machines have adjustable temperature settings or ensure reliably hot brews."
+        }
+    }
+}

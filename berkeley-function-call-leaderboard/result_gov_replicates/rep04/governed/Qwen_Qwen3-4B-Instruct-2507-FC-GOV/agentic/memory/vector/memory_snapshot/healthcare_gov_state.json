@@ -1,0 +1,99 @@
+{
+  "backend": "vector",
+  "tiers": {
+    "core": {
+      "0": {
+        "text": "Recent blood glucose and A1C results: Fasting glucose 135 mg/dL(target <100 mg/dL), A1C 6.9% (target 6.5%). Doctor advised increasing dietary fiber and adding light exercise after meals. Morning home readings consistently 125–130 mg/dL.",
+        "probes": [
+          "Recent blood glucose and A1C results: Fasting glucose 135 mg/dL(target <100 mg/dL), A1C 6.9% (target 6.5%). Doctor advised increasing dietary fiber and adding light exercise after meals. Morning home readings consistently 125–130 mg/dL.",
+          "what do you know about recent blood glucose a1c",
+          "recent blood glucose a1c results fasting 135 target"
+        ],
+        "probe_provenance": "stored_text"
+      },
+      "1": {
+        "text": "Vitamin D: Level was 22 ng/mL (deficient; normal >30 ng/mL). Now taking D3 2,000 IU daily. Also taking calcium supplement with vitamin K2 to improve absorption, as recommended due to early osteopenia (spine T-score -1.8, hip T-score -1.5).",
+        "probes": [
+          "Vitamin D: Level was 22 ng/mL (deficient; normal >30 ng/mL). Now taking D3 2,000 IU daily. Also taking calcium supplement with vitamin K2 to improve absorption, as recommended due to early osteopenia (spine T-score -1.8, hip T-score -1.5).",
+          "what do you know about vitamin level deficient normal",
+          "vitamin level deficient normal now taking 000 daily"
+        ],
+        "probe_provenance": "write_time"
+      },
+      "2": {
+        "text": "Thyroid test results: TSH 2.1 mIU/L(normal range: 0.5–4.5 mIU/L), T4 1.2 ng/dL(within normal range). Stable and consistent with current levothyroxine dosage. Regular monitoring continues due to past history of hypothyroidism.",
+        "probes": [
+          "Thyroid test results: TSH 2.1 mIU/L(normal range: 0.5–4.5 mIU/L), T4 1.2 ng/dL(within normal range). Stable and consistent with current levothyroxine dosage. Regular monitoring continues due to past history of hypothyroidism.",
+          "what do you know about thyroid test results tsh",
+          "thyroid test results tsh miu normal range within"
+        ],
+        "probe_provenance": "stored_text"
+      },
+      "3": {
+        "text": "Osteoarthritis: Acetaminophen as needed. Meloxicam 7.5 mg taken intermittently for flare-ups (knees/hands stiff). Avoids frequent use due to kidney risk with losartan. Levothyroxine taken separately from calcium/iron supplements to prevent absorption issues.",
+        "probes": [
+          "Osteoarthritis: Acetaminophen as needed. Meloxicam 7.5 mg taken intermittently for flare-ups (knees/hands stiff). Avoids frequent use due to kidney risk with losartan. Levothyroxine taken separately from calcium/iron supplements to prevent absorption issues.",
+          "what do you know about osteoarthritis acetaminophen needed meloxicam",
+          "osteoarthritis acetaminophen needed meloxicam taken intermittently flare ups"
+        ],
+        "probe_provenance": "write_time"
+      },
+      "4": {
+        "text": "Liver and kidney function results: ALT 42 U/L(slightly elevated; normal <35 U/L), possibly linked to recent medication adjustments. Doctor recommends monitoring closely. Creatinine 0.9 mg/dL(within normal range: 0.6–1.2 mg/dL), no kidney function concerns.",
+        "probes": [
+          "Liver and kidney function results: ALT 42 U/L(slightly elevated; normal <35 U/L), possibly linked to recent medication adjustments. Doctor recommends monitoring closely. Creatinine 0.9 mg/dL(within normal range: 0.6–1.2 mg/dL), no kidney function concerns.",
+          "what do you know about liver kidney function results",
+          "liver kidney function results alt slightly elevated normal"
+        ],
+        "probe_provenance": "stored_text"
+      },
+      "5": {
+        "text": "Inflammatory markers: CRP 3.2 mg/L(slightly elevated; ideal <3.0 mg/L), indicating mild inflammation—likely related to osteoarthritis. ESR 18 mm/hr(within normal range: 0–20 mm/hr), so no major inflammation detected.",
+        "probes": [
+          "Inflammatory markers: CRP 3.2 mg/L(slightly elevated; ideal <3.0 mg/L), indicating mild inflammation—likely related to osteoarthritis. ESR 18 mm/hr(within normal range: 0–20 mm/hr), so no major inflammation detected.",
+          "what do you know about inflammatory markers crp slightly",
+          "inflammatory markers crp slightly elevated ideal indicating mild"
+        ],
+        "probe_provenance": "stored_text"
+      },
+      "6": {
+        "text": "Type 2 Diabetes: Currently on metformin 1000 mg twice daily. A1C remains at 6.9% (target 6.5%). Doctor has recommended adding semaglutide (Ozempic) at a low dose to improve glucose control and appetite management. Home fasting glucose consistently between 125–130 mg/dL.",
+        "probes": [
+          "Type 2 Diabetes: Currently on metformin 1000 mg twice daily. A1C remains at 6.9% (target 6.5%). Doctor has recommended adding semaglutide (Ozempic) at a low dose to improve glucose control and appetite management. Home fasting glucose consistently between 125–130 mg/dL.",
+          "what do you know about type diabetes currently metformin",
+          "type diabetes currently metformin 1000 twice daily a1c"
+        ],
+        "probe_provenance": "write_time"
+      }
+    },
+    "archival": {
+      "0": {
+        "text": "Osteoarthritis: Uses acetaminophen as needed for mild pain. Takes meloxicam 7.5 mg intermittently (not daily) for flare-ups, especially when knees and hands are stiff. Avoids daily NSAID use to minimize risk. Doctor suggested glucosamine supplements; effect unclear and not yet confirmed.",
+        "probes": [
+          "Osteoarthritis: Uses acetaminophen as needed for mild pain. Takes meloxicam 7.5 mg intermittently (not daily) for flare-ups, especially when knees and hands are stiff. Avoids daily NSAID use to minimize risk. Doctor suggested glucosamine supplements; effect unclear and not yet confirmed.",
+          "what do you know about osteoarthritis uses acetaminophen needed",
+          "osteoarthritis uses acetaminophen needed mild pain takes meloxicam"
+        ],
+        "probe_provenance": "write_time"
+      },
+      "1": {
+        "text": "Cholesterol management: Taking atorvastatin 10 mg daily. Initial LDL: 130 mg/dL (target <100 mg/dL), triglycerides: 140 mg/dL. Doctor prescribed low-dose statin to improve lipid profile. Cholesterol levels have improved with no reported side effects (e.g., muscle aches), which is reassuring.",
+        "probes": [
+          "Cholesterol management: Taking atorvastatin 10 mg daily. Initial LDL: 130 mg/dL (target <100 mg/dL), triglycerides: 140 mg/dL. Doctor prescribed low-dose statin to improve lipid profile. Cholesterol levels have improved with no reported side effects (e.g., muscle aches), which is reassuring.",
+          "what do you know about cholesterol management taking atorvastatin",
+          "cholesterol management taking atorvastatin daily initial ldl 130"
+        ],
+        "probe_provenance": "write_time"
+      },
+      "2": {
+        "text": "General health supplements: Takes a daily multivitamin, omega-3 supplements for heart health, and probiotics for digestion. Post-gallbladder removal (a few years ago), occasionally uses digestive enzymes when eating heavier meals. Noted that gallbladder removal affects fat digestion, so now mindful of fatty foods and portion sizes.",
+        "probes": [
+          "General health supplements: Takes a daily multivitamin, omega-3 supplements for heart health, and probiotics for digestion. Post-gallbladder removal (a few years ago), occasionally uses digestive enzymes when eating heavier meals. Noted that gallbladder removal affects fat digestion, so now mindful of fatty foods and portion sizes.",
+          "what do you know about general health supplements takes",
+          "general health supplements takes daily multivitamin omega heart"
+        ],
+        "probe_provenance": "write_time"
+      }
+    }
+  }
+}

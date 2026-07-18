@@ -1,0 +1,71 @@
+{
+  "backend": "kv",
+  "tiers": {
+    "core": {
+      "tuesday_updates": {
+        "text": "tuesday updates: System downtime from 10 AM - 12 PM, slowed down workflow. HR sent updated benefits package—review before next month’s deadline. Sent follow-up emails to vendors, waiting on response.",
+        "probes": [
+          "tuesday updates",
+          "what is tuesday updates",
+          "tuesday updates system downtime slowed"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "wednesday_updates": {
+        "text": "wednesday updates: Presentation to leadership went well, but need to tweak a few slides for next week’s review. Client proposal draft ready—send it for legal approval. Need to onboard new hire—schedule one-on-one.",
+        "probes": [
+          "wednesday updates",
+          "what is wednesday updates",
+          "wednesday updates presentation leadership went"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "thursday_updates": {
+        "text": "thursday updates: Finance wants cost-cutting recommendations—brainstorm ideas. Project deadline approaching—check in with Dev team. Caught a mistake in last month’s sales data.",
+        "probes": [
+          "thursday updates",
+          "what is thursday updates",
+          "thursday updates finance wants cost"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "friday_updates": {
+        "text": "friday updates: Wrapped up pending reports, but still waiting for final approval. Followed up with vendors—two responded, one still pending. Training session next Monday—prep materials this weekend.",
+        "probes": [
+          "friday updates",
+          "what is friday updates",
+          "friday updates wrapped pending reports"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "urgent_tax_submission": {
+        "text": "urgent tax submission: Submit tax documents before Friday.",
+        "probes": [
+          "urgent tax submission",
+          "what is urgent tax submission",
+          "urgent tax submission submit tax documents"
+        ],
+        "probe_provenance": "write_time"
+      },
+      "credit_card_review": {
+        "text": "credit card review: Review credit card statement for errors.",
+        "probes": [
+          "credit card review",
+          "what is credit card review",
+          "credit card review review credit card"
+        ],
+        "probe_provenance": "write_time"
+      },
+      "auto_repair_call": {
+        "text": "auto repair call: Call auto repair shop about weird noise in the engine.",
+        "probes": [
+          "auto repair call",
+          "what is auto repair call",
+          "auto repair call call auto repair"
+        ],
+        "probe_provenance": "write_time"
+      }
+    },
+    "archival": {}
+  }
+}

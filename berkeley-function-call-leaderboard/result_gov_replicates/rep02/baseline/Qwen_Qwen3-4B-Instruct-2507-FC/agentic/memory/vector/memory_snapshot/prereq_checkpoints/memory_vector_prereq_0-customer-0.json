@@ -1,0 +1,16 @@
+{
+    "core_memory": {
+        "next_id": 1,
+        "store": {
+            "0": "User Michael, 35, in Seattle, freelance designer, wants sleek stainless-steel espresso machine with reliable hot coffee, no need to microwave. Inquired about temperature control and consistent heat output. Values design, ease of use, and long-term reliability."
+        }
+    },
+    "archival_memory": {
+        "next_id": 3,
+        "store": {
+            "0": "Michael, a first-time buyer from Seattle, interested in a sleek stainless-steel espresso machine, inquired about shipping details. Specifically, wants to know if products are shipped from a local warehouse, shipping timeframes, and whether delivery can be arranged before a family gathering later this month.",
+            "1": "Michael, a first-time buyer from Seattle, is concerned about kitchen space and the footprint of the espresso machine. Specifically, wants to confirm dimensions to avoid 'kitchen Tetris' and ensure the machine fits with existing appliances on his counter.",
+            "2": "Michael, a first-time buyer from Seattle, is inquiring about warranty policy for the espresso machine. Specifically, wants to know if it includes a long-term, customer-friendly warranty, especially for higher-end models, to ensure reliability and ease of service."
+        }
+    }
+}

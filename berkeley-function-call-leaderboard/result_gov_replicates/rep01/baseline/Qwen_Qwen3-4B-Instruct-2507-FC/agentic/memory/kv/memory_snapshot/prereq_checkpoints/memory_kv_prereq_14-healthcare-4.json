@@ -1,0 +1,13 @@
+{
+    "core_memory": {},
+    "archival_memory": {
+        "diabetes_treatment": "Metformin 1000 mg twice daily; A1C ~6.9%; Fasting blood glucose 125-130 mg/dL; Added semaglutide(Ozempic) at low dose for appetite control.",
+        "hypertension_treatment": "Losartan 50 mg once daily; BP range: 135-140/80-90 mmHg; Doctor recommends stress management and reduced sodium intake; Taking daily magnesium supplement.",
+        "hypothyroidism_treatment": "Levothyroxine 75 mcg once daily; Taken on empty stomach, 30 minutes before eating; Last TSH: 2.1 mIU/L(normal range); Stable for years; Missed doses cause sluggishness; Uses pill organizer.",
+        "osteoarthritis_treatment": "Acetaminophen as needed for mild pain; Meloxicam 7.5 mg when joints are stiff(knees/hands); Used intermittently to avoid overuse of NSAIDs; Considering glucosamine supplements; Uncertain if they\u2019ve provided noticeable benefit.",
+        "vitamin_d_and_bone_health": "Vitamin D3 2,000 IU daily; Blood level: 22 ng/mL(low; normal >30 ng/mL); Taking calcium supplements due to early osteopenia on bone density scan; Doctor recommends combining with vitamin K2 for better absorption and bone health.",
+        "cholesterol_treatment": "Atorvastatin 10 mg daily; Initial LDL: 130 mg/dL; Triglycerides: 140 mg/dL; Started low-dose statin to improve lipid profile; Cholesterol levels improving; No side effects reported; No muscle aches.",
+        "general_health_supplements": "Daily multivitamin; Omega-3 supplements for heart health; Probiotics for digestion; Digestive enzymes taken when eating heavier meals; Post-gallbladder removal: mindful of fatty food digestion due to altered fat metabolism.",
+        "medication_interactions_precautions": "Avoid frequent use of meloxicam(NSAID) with losartan due to potential kidney function risks; Take levothyroxine separately from calcium and iron supplements to prevent absorption interference; Proactively monitor kidney function and thyroid medication timing."
+    }
+}

@@ -1,0 +1,19 @@
+{
+    "core_memory": {
+        "next_id": 1,
+        "store": {
+            "0": "Recent blood glucose and A1C results: Fasting blood glucose 135 mg/dL(target <100 mg/dL), A1C 6.9% (target 6.5%). Doctor recommended increasing dietary fiber and engaging in light exercise after meals. Morning home readings consistently between 125-130 mg/dL."
+        }
+    },
+    "archival_memory": {
+        "next_id": 6,
+        "store": {
+            "0": "Blood pressure reading: 138/85 mmHg(target <130/80 mmHg). Home readings fluctuate between 135-140 systolic and 80-90 diastolic, influenced by stress and salt intake. Doctor advised reducing sodium intake and increasing water consumption\u2014these changes appear to have a positive effect.",
+            "1": "Vitamin D levels: 22 ng/mL(deficient; normal range 30-50 ng/mL). Doctor prescribed 2,000 IU daily supplement. Will be retested in a few months to assess improvement.",
+            "2": "Thyroid function: TSH 2.1 mIU/L(normal range 0.5\u20134.5 mIU/L), T4 1.2 ng/dL(within normal range). Stable results indicate current levothyroxine dosage is effective. Regular monitoring continues due to past history of hypothyroidism.",
+            "3": "Bone density scan results: Spine T-score -1.8 (osteopenia), Hip T-score -1.5 (borderline). Doctor advised maintaining strength training and increasing calcium intake to prevent further bone loss. Patient has started incorporating more dairy and leafy greens into diet, and now takes a calcium supplement with vitamin K2 to improve absorption.",
+            "4": "Liver and kidney function: ALT 42 U/L(slightly elevated; normal <35 U/L), possibly linked to recent medication adjustments. Doctor recommends monitoring closely. Creatinine 0.9 mg/dL(within normal range 0.6\u20131.2 mg/dL), indicating no kidney function concerns.",
+            "5": "Inflammatory markers: CRP 3.2 mg/L(slightly elevated; ideal <3.0 mg/L), indicating mild inflammation\u2014likely related to osteoarthritis. ESR 18 mm/hr(within normal range: 0\u201320 mm/hr), suggesting no significant systemic inflammation."
+        }
+    }
+}

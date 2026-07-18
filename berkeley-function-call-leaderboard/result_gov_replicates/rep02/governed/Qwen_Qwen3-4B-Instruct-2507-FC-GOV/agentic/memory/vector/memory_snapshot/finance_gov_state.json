@@ -1,0 +1,63 @@
+{
+  "backend": "vector",
+  "tiers": {
+    "core": {
+      "0": {
+        "text": "Sarah Chen(CEO, Pacific Dynamics): Met at Goldman 2008. Deepened on delayed HK flight 2009 through conversation on markets and jazz. Now a trusted advisor—can be consulted anytime, even at 3 AM, for Asian market insights. A cornerstone of authentic, long-term professional relationships.",
+        "probes": [
+          "Sarah Chen(CEO, Pacific Dynamics): Met at Goldman 2008. Deepened on delayed HK flight 2009 through conversation on markets and jazz. Now a trusted advisor—can be consulted anytime, even at 3 AM, for Asian market insights. A cornerstone of authentic, long-term professional relationships.",
+          "what do you know about sarah chen ceo pacific",
+          "sarah chen ceo pacific dynamics met goldman 2008"
+        ],
+        "probe_provenance": "stored_text"
+      },
+      "1": {
+        "text": "Golf as relationship builder: 7-handicap, connection-focused. $2.3B merger with MineCore CEO Jim. 'Quarterly Links' at Pebble Beach led to 3 acquisitions and sovereign wealth fund partnership. Caddie Tom(30 years with CEOs/politicians) provides deep insights—a walking Bloomberg terminal.",
+        "probes": [
+          "Golf as relationship builder: 7-handicap, connection-focused. $2.3B merger with MineCore CEO Jim. 'Quarterly Links' at Pebble Beach led to 3 acquisitions and sovereign wealth fund partnership. Caddie Tom(30 years with CEOs/politicians) provides deep insights—a walking Bloomberg terminal.",
+          "what do you know about golf relationship builder handicap",
+          "golf relationship builder handicap connection focused merger minecore"
+        ],
+        "probe_provenance": "stored_text"
+      },
+      "2": {
+        "text": "Global network: 3x/week travel between NY, London, HK, Dubai. Closed Singapore deal with Chipset Core after 3 days, including 4 AM dim sum. '48-hour protocol': respond within 48 hours. Tailored suits for long-haul flights. In-person engagement essential for trust and cultural understanding.",
+        "probes": [
+          "Global network: 3x/week travel between NY, London, HK, Dubai. Closed Singapore deal with Chipset Core after 3 days, including 4 AM dim sum. '48-hour protocol': respond within 48 hours. Tailored suits for long-haul flights. In-person engagement essential for trust and cultural understanding.",
+          "what do you know about global network week travel",
+          "global network week travel between london dubai closed"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "3": {
+        "text": "Bloomberg Terminal: 'Mission Control' layout. 3 AM alert in 2022 crisis caught unusual patterns. LIVE function enables Asian coordination. AI/ML: Aladdin platform adopted, 15% better risk-adjusted returns. Custom models for emerging markets. 'Risk Radar' dashboard. Licensed to three firms.",
+        "probes": [
+          "Bloomberg Terminal: 'Mission Control' layout. 3 AM alert in 2022 crisis caught unusual patterns. LIVE function enables Asian coordination. AI/ML: Aladdin platform adopted, 15% better risk-adjusted returns. Custom models for emerging markets. 'Risk Radar' dashboard. Licensed to three firms.",
+          "what do you know about bloomberg terminal mission control",
+          "bloomberg terminal mission control layout alert 2022 crisis"
+        ],
+        "probe_provenance": "write_time"
+      }
+    },
+    "archival": {
+      "0": {
+        "text": "Personalized client relationships: 50 HNWIs, 30 institutional clients. Robert’s succession: co-developed plan through family dinners. Attended weddings, celebrations, supported through personal losses. Concierge-style service: responds to midnight texts with care. Trust built through genuine connection, not transactions.",
+        "probes": [
+          "Personalized client relationships: 50 HNWIs, 30 institutional clients. Robert’s succession: co-developed plan through family dinners. Attended weddings, celebrations, supported through personal losses. Concierge-style service: responds to midnight texts with care. Trust built through genuine connection, not transactions.",
+          "what do you know about personalized client relationships hnwis",
+          "personalized client relationships hnwis institutional clients robert succession"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "1": {
+        "text": "Data visualization leader: Tableau evangelist. Created dynamic ESG dashboard for Vertex, Nexus, Summit. Clients respond positively. HoloLens AR experiments – future-focused. Technical deal-making evolution: Dealogic as virtual deal diary with soft signals (management dynamics, cultural fit). Custom scoring system to predict deal success. Python/R mastery. Automated analytics. ML model from earnings call transcripts now essential for equity trading desk. Relationship tech: Salesforce 'Client Journey Map' tracks investment preferences and personal milestones. Notion replaces Evernote for deal notes (linked databases match cognitive workflow). Superhuman saves hours in email management. AI meeting assistants auto-summarize calls and generate action items. Future vision: Blockchain for settlement systems; quantum computing for portfolio optimization. Running simulations on IBM's quantum platform. Dedicated Sunday 'tech meditation' time to read blogs and test tools – essential for staying ahead.",
+        "probes": [
+          "Data visualization leader: Tableau evangelist. Created dynamic ESG dashboard for Vertex, Nexus, Summit. Clients respond positively. HoloLens AR experiments – future-focused. Technical deal-making evolution: Dealogic as virtual deal diary with soft signals (management dynamics, cultural fit). Custom scoring system to predict deal success. Python/R mastery. Automated analytics. ML model from earnings call transcripts now essential for equity trading desk. Relationship tech: Salesforce 'Client Journey Map' tracks investment preferences and personal milestones. Notion replaces Evernote for deal notes (linked databases match cognitive workflow). Superhuman saves hours in email management. AI meeting assistants auto-summarize calls and generate action items. Future vision: Blockchain for settlement systems; quantum computing for portfolio optimization. Running simulations on IBM's quantum platform. Dedicated Sunday 'tech meditation' time to read blogs and test tools – essential for staying ahead.",
+          "what do you know about data visualization leader tableau",
+          "data visualization leader tableau evangelist created dynamic esg"
+        ],
+        "probe_provenance": "write_time"
+      }
+    }
+  }
+}

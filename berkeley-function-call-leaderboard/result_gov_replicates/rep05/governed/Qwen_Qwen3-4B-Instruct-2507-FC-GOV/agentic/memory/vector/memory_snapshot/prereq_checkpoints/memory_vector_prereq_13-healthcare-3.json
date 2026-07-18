@@ -1,0 +1,12 @@
+{
+    "core_memory": {
+        "next_id": 1,
+        "store": {
+            "0": "Recent bloodwork: Fasting glucose 135 mg/dL(target <100), A1C 6.9% (target <6.5%), morning readings 125-130 mg/dL. Doctor advised increasing dietary fiber and adding light exercise after meals."
+        }
+    },
+    "archival_memory": {
+        "next_id": 0,
+        "store": {}
+    }
+}

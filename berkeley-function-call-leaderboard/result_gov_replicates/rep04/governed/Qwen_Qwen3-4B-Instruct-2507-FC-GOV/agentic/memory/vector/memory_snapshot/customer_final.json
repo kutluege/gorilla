@@ -1,0 +1,23 @@
+{
+    "core_memory": {
+        "next_id": 4,
+        "store": {
+            "0": "User Michael, 35, lives in Seattle, freelance graphic designer, values design aesthetics, seeks user-friendly espresso machines with caf\u00e9-like experience for non-professionals, prefers sleek stainless-steel finishes, balances functionality and design.",
+            "1": "Regarding 11: Michael(Seattle) needs urgent delivery update. 11-day estimate missed. Tracking inactive. Suspected delay. Awaiting dispatch/status/replacement. Rainy weather. Wants clear timeline or express shipping. [Updated: Package received, machine damaged. Seeking replacement or repair.]",
+            "2": "Michael(Seattle) - Charge inquiry: No active subscription, no auto-renewal, charge not tied to any order. Requesting full billing audit for error.",
+            "3": "Michael(Seattle) - Interested in top-tier espresso machine with multiple boilers, fast heat-up, and advanced controls(temperature, shot timing, pressure). Targets event use(5+ people), aiming to blend home use with professional caf\u00e9 standards. Values sleek stainless-steel design and reliability."
+        }
+    },
+    "archival_memory": {
+        "next_id": 7,
+        "store": {
+            "0": "First-time buyer inquiry from Michael(35, freelance graphic designer, Seattle) asking about pricing, new customer discounts, bundle deals, shipping, product specs, warranty, and temperature performance. Specifically inquires about adjustable temperature settings or reliable hot coffee output in espresso machines, with concern about microwaving coffee due to insufficient heat in previous drip machines.",
+            "1": "Regarding 11: Michael(Seattle) needs urgent delivery update. 11-day estimate missed. Tracking inactive. Suspected delay. Awaiting dispatch/status/replacement. Rainy weather. Wants clear timeline or express shipping. [Updated: Package received, machine damaged. Seeking replacement or repair.]\n\nAdditional context: Michael(35, Seattle) has placed two separate orders. First order: Coffee grinder(stainless-steel), cleaning tablets, upgraded frothing pitcher. Second order: Vacuum-sealed coffee canisters and Garmin digital scale. His kitchen is evolving into a mini coffee lab. Values design, functionality, and precision in brewing.\n\nClarification: The Oregon grinder shipment was labeled but not physically picked up by carrier due to local logistics delays. No backorder or stock issue. Re-labeled and re-dispatched. New tracking link sent. Michael emphasizes the grinder as the 'MVP' of his coffee setup. Canisters and scale are secondary. Prioritizing timely delivery of the grinder to elevate his espresso game.",
+            "2": "Michael(35, Seattle) has placed two separate orders. First order: Coffee grinder(stainless-steel), cleaning tablets, upgraded frothing pitcher. Second order: Vacuum-sealed coffee canisters and Garmin digital scale. His kitchen is evolving into a mini coffee lab. Values design, functionality, and precision in brewing.",
+            "3": "Michael(35, Seattle) is traveling to Portland next weekend(3-day trip). Will be away during potential delivery attempts. Worries about package left on porch in rain or neighbor picking up. Requests approximate arrival date to plan for house-sitting or safekeeping. Prioritizes protecting delicate grinder from damage. Avoids repeat of previous espresso machine damage.",
+            "4": "Michael(35, Seattle) asks if the two orders arrive together or if there\u2019s a delay on the grinder. Wants to know if he can request a specific drop-off date or hold the package at a pickup location. Prefers personal retrieval to avoid porch exposure. Willing to drive a few miles. Needs clear status updates to avoid refreshing dead tracking links.",
+            "5": "Michael(35, Seattle) requests verification of billing and shipping address for second order. Using same address and card as before. Expresses concern about past security hold from Apple Pay. Wants to ensure no red flags or discrepancies exist. Requests proactive communication if any issues are detected.",
+            "6": "Michael(Seattle) - Inquiry about intangible resources for high-capacity espresso machine users: how-to videos, masterclasses on advanced milk steaming, maintenance, and technique refinement. Seeks to improve barista skills, especially for high-volume use(dozens of drinks in a row). Interested in learning from experts to elevate coffee quality and consistency during events and pop-ups."
+        }
+    }
+}

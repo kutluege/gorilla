@@ -1,0 +1,14 @@
+{
+    "core_memory": {
+        "next_id": 3,
+        "store": {
+            "0": "User Michael, 35, lives in Seattle, freelance graphic designer, values design aesthetics, seeks sleek, modern stainless-steel espresso machines with user-friendly features for non-professional users, aiming for a caf\u00e9-like home coffee experience.",
+            "1": "Regarding pricing: User Michael, 35, lives in Seattle, freelance graphic designer, values design aesthetics, seeks sleek, modern stainless-steel espresso machines, user-friendly for non-professionals, interested in pricing, first-time buyer discounts, and bundle deals or limited-time promotions.",
+            "2": "User Michael, 35, freelance graphic designer in Seattle. Wants compact stainless-steel espresso machine with steam wand. Fits 38 sq ft kitchen. 17% off(code CAFE17). Wants shipping estimate for event at end of month. Seeks processing and shipping timeline. Interested in expedited shipping."
+        }
+    },
+    "archival_memory": {
+        "next_id": 0,
+        "store": {}
+    }
+}

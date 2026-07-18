@@ -1,0 +1,246 @@
+{
+  "include_student": false,
+  "primary_result": true,
+  "n_replicates": 5,
+  "arms": [
+    "baseline",
+    "governed"
+  ],
+  "reference_arm": "baseline",
+  "seed": 12345,
+  "n_boot": 10000,
+  "total_units_dropped": 6,
+  "excluded": {
+    "student_units": 10,
+    "unmatched_questions": 0,
+    "unscored_questions": 0
+  },
+  "comparisons": {
+    "kv|governed_vs_baseline": {
+      "n_pairs": 450,
+      "n_units": 17,
+      "acc_baseline": 0.21777777777777776,
+      "acc_governed": 0.2111111111111111,
+      "discordant_baseline_only": 34,
+      "discordant_governed_only": 31,
+      "mcnemar_p": 0.8043170001933986,
+      "bootstrap_delta": -0.006666666666666667,
+      "bootstrap_ci95": [
+        -0.05054945054945055,
+        0.03956043956043956
+      ],
+      "backend": "kv",
+      "arm": "governed",
+      "reference": "baseline",
+      "n_units_dropped": 3,
+      "dropped_units": [
+        {
+          "replicate": 1,
+          "backend": "kv",
+          "scenario": "healthcare",
+          "reason": "chain_dead",
+          "dead_in": [
+            "governed"
+          ],
+          "n_questions": 25
+        },
+        {
+          "replicate": 2,
+          "backend": "kv",
+          "scenario": "healthcare",
+          "reason": "chain_dead",
+          "dead_in": [
+            "baseline",
+            "governed"
+          ],
+          "n_questions": 25
+        },
+        {
+          "replicate": 5,
+          "backend": "kv",
+          "scenario": "healthcare",
+          "reason": "chain_dead",
+          "dead_in": [
+            "governed"
+          ],
+          "n_questions": 25
+        }
+      ],
+      "mcnemar_p_holm": 1.0
+    },
+    "vector|governed_vs_baseline": {
+      "n_pairs": 450,
+      "n_units": 17,
+      "acc_baseline": 0.18,
+      "acc_governed": 0.18,
+      "discordant_baseline_only": 35,
+      "discordant_governed_only": 35,
+      "mcnemar_p": 1.0,
+      "bootstrap_delta": 0.0,
+      "bootstrap_ci95": [
+        -0.03655913978494624,
+        0.043010752688172046
+      ],
+      "backend": "vector",
+      "arm": "governed",
+      "reference": "baseline",
+      "n_units_dropped": 3,
+      "dropped_units": [
+        {
+          "replicate": 1,
+          "backend": "vector",
+          "scenario": "healthcare",
+          "reason": "chain_dead",
+          "dead_in": [
+            "governed"
+          ],
+          "n_questions": 25
+        },
+        {
+          "replicate": 3,
+          "backend": "vector",
+          "scenario": "healthcare",
+          "reason": "chain_dead",
+          "dead_in": [
+            "baseline",
+            "governed"
+          ],
+          "n_questions": 25
+        },
+        {
+          "replicate": 4,
+          "backend": "vector",
+          "scenario": "healthcare",
+          "reason": "chain_dead",
+          "dead_in": [
+            "baseline"
+          ],
+          "n_questions": 25
+        }
+      ],
+      "mcnemar_p_holm": 1.0
+    }
+  },
+  "holm_m": 2,
+  "per_backend": {
+    "kv": {
+      "n_pairs": 450,
+      "n_units": 17,
+      "acc_baseline": 0.21777777777777776,
+      "acc_governed": 0.2111111111111111,
+      "discordant_baseline_only": 34,
+      "discordant_governed_only": 31,
+      "mcnemar_p": 0.8043170001933986,
+      "bootstrap_delta": -0.006666666666666667,
+      "bootstrap_ci95": [
+        -0.05054945054945055,
+        0.03956043956043956
+      ],
+      "backend": "kv",
+      "arm": "governed",
+      "reference": "baseline",
+      "n_units_dropped": 3,
+      "dropped_units": [
+        {
+          "replicate": 1,
+          "backend": "kv",
+          "scenario": "healthcare",
+          "reason": "chain_dead",
+          "dead_in": [
+            "governed"
+          ],
+          "n_questions": 25
+        },
+        {
+          "replicate": 2,
+          "backend": "kv",
+          "scenario": "healthcare",
+          "reason": "chain_dead",
+          "dead_in": [
+            "baseline",
+            "governed"
+          ],
+          "n_questions": 25
+        },
+        {
+          "replicate": 5,
+          "backend": "kv",
+          "scenario": "healthcare",
+          "reason": "chain_dead",
+          "dead_in": [
+            "governed"
+          ],
+          "n_questions": 25
+        }
+      ],
+      "mcnemar_p_holm": 1.0
+    },
+    "vector": {
+      "n_pairs": 450,
+      "n_units": 17,
+      "acc_baseline": 0.18,
+      "acc_governed": 0.18,
+      "discordant_baseline_only": 35,
+      "discordant_governed_only": 35,
+      "mcnemar_p": 1.0,
+      "bootstrap_delta": 0.0,
+      "bootstrap_ci95": [
+        -0.03655913978494624,
+        0.043010752688172046
+      ],
+      "backend": "vector",
+      "arm": "governed",
+      "reference": "baseline",
+      "n_units_dropped": 3,
+      "dropped_units": [
+        {
+          "replicate": 1,
+          "backend": "vector",
+          "scenario": "healthcare",
+          "reason": "chain_dead",
+          "dead_in": [
+            "governed"
+          ],
+          "n_questions": 25
+        },
+        {
+          "replicate": 3,
+          "backend": "vector",
+          "scenario": "healthcare",
+          "reason": "chain_dead",
+          "dead_in": [
+            "baseline",
+            "governed"
+          ],
+          "n_questions": 25
+        },
+        {
+          "replicate": 4,
+          "backend": "vector",
+          "scenario": "healthcare",
+          "reason": "chain_dead",
+          "dead_in": [
+            "baseline"
+          ],
+          "n_questions": 25
+        }
+      ],
+      "mcnemar_p_holm": 1.0
+    }
+  },
+  "manifest": "C:\\Users\\USER\\Desktop\\Tezim\\BFCL\\gorilla\\berkeley-function-call-leaderboard\\result_gov_replicates\\manifest.jsonl",
+  "run_id": "govrep_20260718T125332Z",
+  "git_head": "8f4ea3024969d6107bb53f574a5c18ea24688657",
+  "served_models": [
+    "Qwen/Qwen3-4B-Instruct-2507"
+  ],
+  "replicates_analyzed": [
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "allow_unscored": false,
+  "unscored": []
+}

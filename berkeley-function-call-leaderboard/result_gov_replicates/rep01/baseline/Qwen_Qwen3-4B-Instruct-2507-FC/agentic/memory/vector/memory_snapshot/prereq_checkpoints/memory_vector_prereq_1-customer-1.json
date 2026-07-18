@@ -1,0 +1,15 @@
+{
+    "core_memory": {
+        "next_id": 2,
+        "store": {
+            "0": "User Michael, 35, lives in Seattle, freelance graphic designer, values design aesthetics, seeks coffee machine with sleek stainless-steel finish. Prefers caf\u00e9-like experience at home without barista skills, looking for balance between simplicity and advanced features like steam wands.",
+            "1": "User Michael, 35, seeks stainless-steel espresso machine with steam wand. Inquires about 17% discount(code: ESPRESSO17), 6-month no-interest financing, and shipping timeline. Needs machine by end of month for upcoming event. Wants estimated arrival date and expedited shipping option."
+        }
+    },
+    "archival_memory": {
+        "next_id": 1,
+        "store": {
+            "0": "User Michael, first-time buyer, interested in espresso machine with stainless-steel design, seeking pricing info and first-time buyer discounts. Noted interest in 'New Customer Discount' and bundle deals or limited-time promotions. Also inquired about shipping from local warehouse, delivery time, and availability before a family gathering later this month. Additional concerns: cleaning complexity, machine size, brewing frequency, and overall fit in kitchen space. Inspired by a friend's positive experience with your customer support and appliance quality. Now specifically concerned about kitchen counter space and 'kitchen Tetris'\u2014wants precise dimensions to avoid reorganizing existing appliances. Also asked about warranty and quality guarantee\u2014specifically looking for a longer, more customer-friendly policy, especially for higher-end models. Finally, raised concern about temperature consistency in drip coffee makers\u2014specifically wanting reliable, hot coffee without needing to microwave. Looking for adjustable temperature settings or at least consistent heat performance."
+        }
+    }
+}

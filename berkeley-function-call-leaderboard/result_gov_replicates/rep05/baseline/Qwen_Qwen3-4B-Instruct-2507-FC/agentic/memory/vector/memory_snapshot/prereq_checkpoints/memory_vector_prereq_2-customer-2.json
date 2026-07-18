@@ -1,0 +1,15 @@
+{
+    "core_memory": {
+        "next_id": 1,
+        "store": {
+            "0": "User Michael, 35, from Seattle, freelance graphic designer. Ordered stainless-steel espresso machine(regular shipping, 11-day estimate), with frothing pitcher and filters. All items in stock. Delivery delayed. Hosting family gathering; latte art showdown is central to the event."
+        }
+    },
+    "archival_memory": {
+        "next_id": 2,
+        "store": {
+            "0": "User Michael, first-time buyer in Seattle, freelance graphic designer, specifically inquires about temperature control in coffee machines, concerned about drip makers that don\u2019t heat sufficiently and past experience of microwaving coffee. Wants to know if your machines offer adjustable temperature settings or reliably hot coffee to avoid post-brew heating.",
+            "1": "User Michael, from Seattle, freelance graphic designer, has expressed concern about rainy weather causing package damage due to soggy deliveries. He emphasizes the need to be home to receive deliveries, especially with signature required. He wants to be notified of any updated shipping schedule or imminent delivery(e.g., tomorrow) so he can prepare to greet the courier and ensure safe, timely receipt of his espresso machine order."
+        }
+    }
+}

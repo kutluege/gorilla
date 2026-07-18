@@ -1,0 +1,13 @@
+{
+    "core_memory": {
+        "next_id": 2,
+        "store": {
+            "0": "User Michael, 35, lives in Seattle, freelance graphic designer, values design aesthetics, seeks sleek, modern stainless-steel espresso machines with user-friendly features for non-professional users, aiming for a caf\u00e9-like home coffee experience.",
+            "1": "Regarding pricing: User Michael, 35, lives in Seattle, freelance graphic designer, values design aesthetics, seeks sleek, modern stainless-steel espresso machines, user-friendly for non-professionals, interested in pricing, first-time buyer discounts, and bundle deals or limited-time promotions."
+        }
+    },
+    "archival_memory": {
+        "next_id": 0,
+        "store": {}
+    }
+}

@@ -1,0 +1,22 @@
+{
+    "core_memory": {
+        "next_id": 7,
+        "store": {
+            "0": "Recent blood glucose and A1C results: Fasting glucose 135 mg/dL(target <100 mg/dL), A1C 6.9% (target 6.5%). Doctor advised increasing dietary fiber and adding light exercise after meals. Morning home readings consistently 125\u2013130 mg/dL.",
+            "1": "Vitamin D: Level was 22 ng/mL(deficient; normal >30 ng/mL). Now taking D3 2,000 IU daily. Also taking calcium supplement with vitamin K2 to improve absorption, as recommended due to early osteopenia(spine T-score -1.8, hip T-score -1.5).",
+            "2": "Thyroid test results: TSH 2.1 mIU/L(normal range: 0.5\u20134.5 mIU/L), T4 1.2 ng/dL(within normal range). Stable and consistent with current levothyroxine dosage. Regular monitoring continues due to past history of hypothyroidism.",
+            "3": "Osteoarthritis: Acetaminophen as needed. Meloxicam 7.5 mg taken intermittently for flare-ups(knees/hands stiff). Avoids frequent use due to kidney risk with losartan. Levothyroxine taken separately from calcium/iron supplements to prevent absorption issues.",
+            "4": "Liver and kidney function results: ALT 42 U/L(slightly elevated; normal <35 U/L), possibly linked to recent medication adjustments. Doctor recommends monitoring closely. Creatinine 0.9 mg/dL(within normal range: 0.6\u20131.2 mg/dL), no kidney function concerns.",
+            "5": "Inflammatory markers: CRP 3.2 mg/L(slightly elevated; ideal <3.0 mg/L), indicating mild inflammation\u2014likely related to osteoarthritis. ESR 18 mm/hr(within normal range: 0\u201320 mm/hr), so no major inflammation detected.",
+            "6": "Type 2 Diabetes: Currently on metformin 1000 mg twice daily. A1C remains at 6.9% (target 6.5%). Doctor has recommended adding semaglutide(Ozempic) at a low dose to improve glucose control and appetite management. Home fasting glucose consistently between 125\u2013130 mg/dL."
+        }
+    },
+    "archival_memory": {
+        "next_id": 3,
+        "store": {
+            "0": "Osteoarthritis: Uses acetaminophen as needed for mild pain. Takes meloxicam 7.5 mg intermittently(not daily) for flare-ups, especially when knees and hands are stiff. Avoids daily NSAID use to minimize risk. Doctor suggested glucosamine supplements; effect unclear and not yet confirmed.",
+            "1": "Cholesterol management: Taking atorvastatin 10 mg daily. Initial LDL: 130 mg/dL(target <100 mg/dL), triglycerides: 140 mg/dL. Doctor prescribed low-dose statin to improve lipid profile. Cholesterol levels have improved with no reported side effects(e.g., muscle aches), which is reassuring.",
+            "2": "General health supplements: Takes a daily multivitamin, omega-3 supplements for heart health, and probiotics for digestion. Post-gallbladder removal(a few years ago), occasionally uses digestive enzymes when eating heavier meals. Noted that gallbladder removal affects fat digestion, so now mindful of fatty foods and portion sizes."
+        }
+    }
+}

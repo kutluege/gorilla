@@ -1,0 +1,12 @@
+{
+    "core_memory": {},
+    "archival_memory": {
+        "diabetes_hypertension_health_history": "Fasting blood glucose: 135 mg/dL; A1C: 6.9%; LDL: 130 mg/dL(target <100); HDL: 58 mg/dL; Triglycerides: 140 mg/dL. Recommendations: Increase fiber and healthy fats(avocados, nuts), reduce saturated fats, light post-meal exercise, monitor glucose and cholesterol regularly.",
+        "blood_pressure_monitoring": "Latest reading: 138/85 mmHg; Target: <130/80 mmHg; Home readings fluctuate between 135-140 systolic and 80-90 diastolic; Influenced by stress and salt intake; Actions: Reduce sodium intake, increase water consumption, manage stress, monitor regularly.",
+        "vitamin_d_levels": "Current level: 22 ng/mL(deficient); Normal range: 30-50 ng/mL; Treatment: 2,000 IU daily supplement; Next retest in 3\u20134 months; Notes: Sunlight exposure may be insufficient despite living in Kansas.",
+        "thyroid_function": "TSH: 2.1 mIU/L(normal range: 0.5-4.5 mIU/L); T4: 1.2 ng/dL(within normal range); Status: Stable; Notes: Past history of hypothyroidism; Current levothyroxine dosage is effective; Regular monitoring recommended.",
+        "bone_density_scan": "Spine T-score: -1.8 (osteopenia); Hip T-score: -1.5 (borderline); Recommendation: Strength training, increased calcium and vitamin K2 intake, regular monitoring; Actions: Added dairy and leafy greens; Taking calcium supplement with vitamin K2; Next scan in 2\u20133 years.",
+        "liver_kidney_function": "ALT: 42 U/L(elevated; normal <35 U/L); Possible cause: recent medication adjustments; Monitoring advised; Creatinine: 0.9 mg/dL(normal range: 0.6-1.2 mg/dL); Kidney function: normal; Notes: No immediate concerns, but follow-up needed for ALT trend.",
+        "inflammatory_markers": "C-reactive protein(CRP): 3.2 mg/L(slightly elevated; ideal <3.0 mg/L); Likely related to osteoarthritis; ESR: 18 mm/hr(normal range: 0-20 mm/hr); Interpretation: Mild inflammation present, primarily due to joint degeneration; No signs of systemic inflammation or infection."
+    }
+}

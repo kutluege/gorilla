@@ -1,0 +1,171 @@
+{
+  "backend": "kv",
+  "tiers": {
+    "core": {
+      "current_transaction_2_leveraged_buyout": {
+        "text": "current transaction 2 leveraged buyout: A $3.2B leveraged buyout of VertexSoft, a fast-growing SaaS provider, where structuring the debt financing remains a key challenge.",
+        "probes": [
+          "current transaction 2 leveraged buyout",
+          "what is current transaction 2 leveraged buyout",
+          "current transaction 2 leveraged buyout leveraged buyout vertexsoft"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "legend_investments_key_relationship_sarah_chen": {
+        "text": "legend investments key relationship sarah chen: Built a 15-year trust with Sarah Chen(Pacific Dynamics CEO) on a 2008 flight over shared jazz and market interests. Now a vital source for Asian market insights, callable at 3 AM for urgent decisions.",
+        "probes": [
+          "legend investments key relationship sarah chen",
+          "what is legend investments key relationship sarah chen",
+          "legend investments key relationship sarah chen built year trust"
+        ],
+        "probe_provenance": "stored_text"
+      },
+      "legend_investments_personal_client_relationships": {
+        "text": "legend investments personal client relationships: Offers family-office level care: spent evenings with Robert's children to guide succession, attended family events, and responds personally to midnight texts—building trust through genuine connection.",
+        "probes": [
+          "legend investments personal client relationships",
+          "what is legend investments personal client relationships",
+          "legend investments personal client relationships offers family office"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "legend_investments_global_travel_network": {
+        "text": "legend investments global travel network: Travels 3x/week globally; closed key Singapore deal after 3 days of face-to-face engagement, including a 4 AM dim sum run. Implements '48-hour protocol' for urgent meetings. Tailored flight suits for long-haul comfort and professionalism.",
+        "probes": [
+          "legend investments global travel network",
+          "what is legend investments global travel network",
+          "legend investments global travel network travels week globally"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "legend_investments_network_triangle_ecosystem": {
+        "text": "legend investments network triangle ecosystem: Network Triangle: professional, social, knowledge-sharing. 'Future Focus' dinners drive collaborations. Mentorship circle connects execs with talent. Intersections create community: daughter interns, golf buddy invests.",
+        "probes": [
+          "legend investments network triangle ecosystem",
+          "what is legend investments network triangle ecosystem",
+          "legend investments network triangle ecosystem network triangle professional"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "aladdin_risk_radar_customization": {
+        "text": "aladdin risk radar customization: Implemented Aladdin platform; achieved 15% higher risk-adjusted returns. Customized with volatility models for emerging markets. Built 'Risk Radar' dashboard. Licensed to 3 firms.",
+        "probes": [
+          "aladdin risk radar customization",
+          "what is aladdin risk radar customization",
+          "aladdin risk radar customization implemented aladdin platform"
+        ],
+        "probe_provenance": "write_time"
+      },
+      "dealogic_soft_signals_model": {
+        "text": "dealogic soft signals model: Custom Dealogic diary tracks soft signals (management, culture). Built success-prediction model. Self-taught Python/R. Automated analytics. ML model from earnings calls now used by equity trading desk.",
+        "probes": [
+          "dealogic soft signals model",
+          "what is dealogic soft signals model",
+          "dealogic soft signals model custom dealogic diary"
+        ],
+        "probe_provenance": "write_time"
+      }
+    },
+    "archival": {
+      "career_path_goldman_sachs_2001": {
+        "text": "career path goldman sachs 2001: Started as an analyst at Goldman Sachs in 2001, gaining experience in M&A modeling and surviving the dot-com crash.",
+        "probes": [
+          "career path goldman sachs 2001",
+          "what is career path goldman sachs 2001",
+          "career path goldman sachs 2001 started analyst goldman"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "career_path_morgan_stanley_2004": {
+        "text": "career path morgan stanley 2004: Moved to Morgan Stanley in 2004 as an associate, gaining exposure to early social media tech deals.",
+        "probes": [
+          "career path morgan stanley 2004",
+          "what is career path morgan stanley 2004",
+          "career path morgan stanley 2004 moved morgan stanley"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "career_path_vp_2011": {
+        "text": "career path vp 2011: Promoted to Vice President in 2011, leading some of the defining transactions of that era.",
+        "probes": [
+          "career path vp 2011",
+          "what is career path vp 2011",
+          "career path vp 2011 promoted vice president"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "career_path_legend_investments_2015": {
+        "text": "career path legend investments 2015: Joined Legend Investments as Managing Director in 2015. First major transaction: led NeuralNet Systems' IPO, the firm's largest tech IPO to date. Built a reputation for handling complex, cross-border deals.",
+        "probes": [
+          "career path legend investments 2015",
+          "what is career path legend investments 2015",
+          "career path legend investments 2015 joined legend investments"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "career_milestone_network_and_track_record": {
+        "text": "career milestone network and track record: Learned that in global finance, network and track record are currency—trust is earned one successful deal at a time.",
+        "probes": [
+          "career milestone network and track record",
+          "what is career milestone network and track record",
+          "career milestone network and track record learned global finance"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "education_penn_bachelor_s_economics": {
+        "text": "education penn bachelor s economics: Earned a Bachelor's in Economics from the University of Pennsylvania, which laid the foundation for a career in finance.",
+        "probes": [
+          "education penn bachelor s economics",
+          "what is education penn bachelor s economics",
+          "education penn bachelor s economics earned bachelor economics"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "education_harvard_mba_baker_scholar": {
+        "text": "education harvard mba baker scholar: Pursued an MBA at Harvard Business School, where I was a Baker Scholar. The experience shaped my strategic thinking and leadership philosophy.",
+        "probes": [
+          "education harvard mba baker scholar",
+          "what is education harvard mba baker scholar",
+          "education harvard mba baker scholar pursued mba harvard"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "current_engagement_penn": {
+        "text": "current engagement penn: Stay connected with the University of Pennsylvania through guest lecturing, mentoring students, and recruiting top finance talent.",
+        "probes": [
+          "current engagement penn",
+          "what is current engagement penn",
+          "current engagement penn stay connected university"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "current_engagement_harvard": {
+        "text": "current engagement harvard: Active in Harvard Business School through mentorship, guest lectures, and talent recruitment.",
+        "probes": [
+          "current engagement harvard",
+          "what is current engagement harvard",
+          "current engagement harvard active harvard business"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "scholarship_endowment_penn": {
+        "text": "scholarship endowment penn: Recently endowed a scholarship at the University of Pennsylvania for first-generation college students interested in finance.",
+        "probes": [
+          "scholarship endowment penn",
+          "what is scholarship endowment penn",
+          "scholarship endowment penn recently endowed scholarship"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "philosophy_talent_as_investment": {
+        "text": "philosophy talent as investment: Believe that talent is the greatest investment in finance. Finance should be a pathway to opportunity—not just for the privileged, but for those with hunger and discipline.",
+        "probes": [
+          "philosophy talent as investment",
+          "what is philosophy talent as investment",
+          "philosophy talent as investment believe talent greatest"
+        ],
+        "probe_provenance": "sidecar"
+      }
+    }
+  }
+}
