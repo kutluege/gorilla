@@ -1,0 +1,58 @@
+{
+  "note": "DIAGNOSTIC ONLY (G11): entropy never decides; margin decides. Scenario accuracy is the governed arm's official per-scenario accuracy from parse_wrra; association is scenario-level, not causal.",
+  "s2_margin_gate": 0.01,
+  "n_stage2_decisions": 258,
+  "dH_mean_median_split": 0.403701,
+  "by_reason": {
+    "stage2_accept": {
+      "n": 12,
+      "min_margin_med": 0.0256,
+      "dH_mean_med": 0.403
+    },
+    "stage2_accept_low_confidence": {
+      "n": 243,
+      "min_margin_med": 0.018,
+      "dH_mean_med": 0.4034
+    },
+    "stage2_accept_rewritten": {
+      "n": 3,
+      "min_margin_med": 0.0048,
+      "dH_mean_med": 0.6926
+    }
+  },
+  "margin_x_entropy_2x2": {
+    "margin_confident__dH_high": {
+      "n": 90,
+      "scenario_acc_mean": 0.1097,
+      "chain_dead_rate": 0.0
+    },
+    "margin_confident__dH_low": {
+      "n": 69,
+      "scenario_acc_mean": 0.1646,
+      "chain_dead_rate": 0.0
+    },
+    "margin_low__dH_high": {
+      "n": 26,
+      "scenario_acc_mean": 0.1128,
+      "chain_dead_rate": 0.0
+    },
+    "margin_low__dH_low": {
+      "n": 70,
+      "scenario_acc_mean": 0.1717,
+      "chain_dead_rate": 0.0
+    }
+  },
+  "headline_retrocheck": {
+    "question": "among margin-confident accepts, do entropy-alarmed (dH_mean>median) writes sit in worse scenarios?",
+    "margin_confident_dH_high": {
+      "n": 90,
+      "scenario_acc_mean": 0.1097,
+      "chain_dead_rate": 0.0
+    },
+    "margin_confident_dH_low": {
+      "n": 69,
+      "scenario_acc_mean": 0.1646,
+      "chain_dead_rate": 0.0
+    }
+  }
+}

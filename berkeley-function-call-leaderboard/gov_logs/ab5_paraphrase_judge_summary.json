@@ -1,0 +1,128 @@
+{
+  "note": "SECONDARY metric. judged = official-style keyword match OR DeBERTa-MNLI entailment (p>0.5) of any ground-truth string by the final free-text message. official_style is this script's reimplementation of agentic_checker (sanity cross-check vs score files, may differ slightly on final-message pick).",
+  "entail_threshold": 0.5,
+  "per_run": {
+    "rep01/baseline/kv": {
+      "n": 155,
+      "official_style": 21,
+      "judged": 22
+    },
+    "rep01/baseline/vector": {
+      "n": 155,
+      "official_style": 22,
+      "judged": 24
+    },
+    "rep01/governed/kv": {
+      "n": 155,
+      "official_style": 18,
+      "judged": 20
+    },
+    "rep01/governed/vector": {
+      "n": 155,
+      "official_style": 22,
+      "judged": 24
+    },
+    "rep02/baseline/kv": {
+      "n": 155,
+      "official_style": 21,
+      "judged": 22
+    },
+    "rep02/baseline/vector": {
+      "n": 155,
+      "official_style": 21,
+      "judged": 23
+    },
+    "rep02/governed/kv": {
+      "n": 155,
+      "official_style": 17,
+      "judged": 20
+    },
+    "rep02/governed/vector": {
+      "n": 155,
+      "official_style": 17,
+      "judged": 21
+    },
+    "rep03/baseline/kv": {
+      "n": 155,
+      "official_style": 24,
+      "judged": 27
+    },
+    "rep03/baseline/vector": {
+      "n": 155,
+      "official_style": 21,
+      "judged": 22
+    },
+    "rep03/governed/kv": {
+      "n": 155,
+      "official_style": 28,
+      "judged": 30
+    },
+    "rep03/governed/vector": {
+      "n": 155,
+      "official_style": 16,
+      "judged": 19
+    },
+    "rep04/baseline/kv": {
+      "n": 155,
+      "official_style": 22,
+      "judged": 23
+    },
+    "rep04/baseline/vector": {
+      "n": 155,
+      "official_style": 14,
+      "judged": 16
+    },
+    "rep04/governed/kv": {
+      "n": 155,
+      "official_style": 22,
+      "judged": 24
+    },
+    "rep04/governed/vector": {
+      "n": 155,
+      "official_style": 22,
+      "judged": 26
+    },
+    "rep05/baseline/kv": {
+      "n": 155,
+      "official_style": 24,
+      "judged": 25
+    },
+    "rep05/baseline/vector": {
+      "n": 155,
+      "official_style": 24,
+      "judged": 27
+    },
+    "rep05/governed/kv": {
+      "n": 155,
+      "official_style": 24,
+      "judged": 26
+    },
+    "rep05/governed/vector": {
+      "n": 155,
+      "official_style": 27,
+      "judged": 31
+    }
+  },
+  "pooled_per_arm_backend": {
+    "baseline/kv": {
+      "n": 775,
+      "official_style": 112,
+      "judged": 119
+    },
+    "baseline/vector": {
+      "n": 775,
+      "official_style": 102,
+      "judged": 112
+    },
+    "governed/kv": {
+      "n": 775,
+      "official_style": 109,
+      "judged": 120
+    },
+    "governed/vector": {
+      "n": 775,
+      "official_style": 104,
+      "judged": 121
+    }
+  }
+}
