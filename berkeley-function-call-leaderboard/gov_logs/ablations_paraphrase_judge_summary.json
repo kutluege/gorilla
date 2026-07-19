@@ -1,0 +1,86 @@
+{
+  "note": "SECONDARY metric over ablations, pooled across 3 replicates. Same judge as ab5_paraphrase_judge (keyword match OR MNLI entailment p>0.5 of any ground truth by final message).",
+  "entail_threshold": 0.5,
+  "pooled_per_arm_backend": {
+    "baseline/kv": {
+      "n": 465,
+      "official_style": 61,
+      "judged": 66
+    },
+    "baseline/vector": {
+      "n": 465,
+      "official_style": 62,
+      "judged": 71
+    },
+    "governed_full/kv": {
+      "n": 465,
+      "official_style": 52,
+      "judged": 58
+    },
+    "governed_full/vector": {
+      "n": 465,
+      "official_style": 55,
+      "judged": 61
+    },
+    "geo_off/kv": {
+      "n": 465,
+      "official_style": 41,
+      "judged": 45
+    },
+    "geo_off/vector": {
+      "n": 465,
+      "official_style": 45,
+      "judged": 53
+    },
+    "stage0_only/kv": {
+      "n": 465,
+      "official_style": 57,
+      "judged": 62
+    },
+    "stage0_only/vector": {
+      "n": 465,
+      "official_style": 59,
+      "judged": 68
+    },
+    "s2_off/kv": {
+      "n": 465,
+      "official_style": 64,
+      "judged": 71
+    },
+    "s2_off/vector": {
+      "n": 465,
+      "official_style": 57,
+      "judged": 66
+    },
+    "read_adaptive/kv": {
+      "n": 465,
+      "official_style": 45,
+      "judged": 52
+    },
+    "read_adaptive/vector": {
+      "n": 465,
+      "official_style": 52,
+      "judged": 60
+    },
+    "read_set3/kv": {
+      "n": 465,
+      "official_style": 54,
+      "judged": 57
+    },
+    "read_set3/vector": {
+      "n": 465,
+      "official_style": 66,
+      "judged": 73
+    },
+    "p_only/kv": {
+      "n": 465,
+      "official_style": 40,
+      "judged": 44
+    },
+    "p_only/vector": {
+      "n": 465,
+      "official_style": 43,
+      "judged": 49
+    }
+  }
+}
