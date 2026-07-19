@@ -1,0 +1,12 @@
+{
+    "core_memory": {
+        "next_id": 0,
+        "store": {}
+    },
+    "archival_memory": {
+        "next_id": 1,
+        "store": {
+            "0": "Updated legacy and career path:\n- Started as analyst at Goldman Sachs(2001): cut teeth on M&A modeling; survived dot-com crash\n- Associate at Morgan Stanley(2004): gained exposure to early social media tech deals\n- Vice President by age 31: led defining transactions of that era\n- 2015: Joined Legend Investments as Managing Director\n- First major transaction: NeuralNet Systems IPO(largest tech IPO to date)\n- Built reputation for tackling complex, cross-border deals\n\nCore insight: In global finance, network and track record are currency. Trust is earned one successful deal at a time.\n\nEducation & Impact:\n- B.A. in Economics, University of Pennsylvania\n- MBA from Harvard Business School(Baker Scholar)\n- Active engagement: guest lecturing, mentoring students, recruiting top talent\n- Recently endowed a scholarship at Penn for first-generation finance students\n\nBelief: Talent is the greatest investment. Finance should be a pathway to opportunity\u2014not just for the privileged, but for those with hunger and discipline."
+        }
+    }
+}

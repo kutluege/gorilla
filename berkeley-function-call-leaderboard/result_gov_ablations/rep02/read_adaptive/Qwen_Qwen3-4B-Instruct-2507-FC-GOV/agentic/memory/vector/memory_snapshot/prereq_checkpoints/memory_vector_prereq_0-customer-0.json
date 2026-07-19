@@ -1,0 +1,12 @@
+{
+    "core_memory": {
+        "next_id": 1,
+        "store": {
+            "0": "User Michael, 35, lives in Seattle, seeks sleek stainless-steel espresso machine, easy to use, no barista skills needed, shipping from local warehouse, reliable delivery during rainy season, aiming to receive before a family gathering later this month."
+        }
+    },
+    "archival_memory": {
+        "next_id": 0,
+        "store": {}
+    }
+}

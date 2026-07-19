@@ -1,0 +1,12 @@
+{
+    "core_memory": {
+        "user_introduction_michael": "Michael, 35, lives in Seattle, freelance graphic designer, values design aesthetics in gadgets, interested in high-quality coffee machines to enhance his morning routine.",
+        "user_preference_espresso": "Michael prefers a sleek, modern espresso machine with a stainless-steel finish. He seeks a caf\u00e9-like experience at home without being a professional barista, valuing ease of use and design aesthetics.",
+        "user_current_orders": "Michael has placed two separate orders: 1) A bundle with a stainless-steel coffee grinder, specialized cleaning tablets, and an upgraded frothing pitcher. 2) A second order including vacuum-sealed coffee canisters and a digital scale collaborated with Garmin.",
+        "user_delivery_synchronization_query": "Michael wants to know if orders arrive together, or if grinder has delay. He asks about drop-off dates, holding packages, or in-person pickup. Wants to be notified if any item is out of stock.",
+        "user_billing_security_check": "Michael is verifying billing/shipping for the second order. Using same address and card. Worried about past Apple Pay security hold. Wants to know if any red flags exist on your end."
+    },
+    "archival_memory": {
+        "michael_grinder_shipment_status": "Michael is deeply concerned that the stainless-steel coffee grinder bundle may never leave the Oregon warehouse due to a labeling delay. He emphasizes its importance to his espresso routine and expresses anxiety about potential oversights or missing items. He has been a loyal customer and values reliability, especially for high-priority items like the grinder."
+    }
+}

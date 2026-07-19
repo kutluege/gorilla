@@ -1,0 +1,17 @@
+{
+    "core_memory": {
+        "next_id": 1,
+        "store": {
+            "0": "User Michael, 35, lives in Seattle, freelance graphic designer. Interested in espresso machines. Prefers sleek, stainless-steel design. Delivery delayed. Family gathering; planned 'latte art showdown'. Requires signature on delivery. Tracking shows no updates. Package stuck outside Washington."
+        }
+    },
+    "archival_memory": {
+        "next_id": 4,
+        "store": {
+            "0": "User Michael, first-time buyer, interested in espresso machines with a focus on design and ease of use. Inquired about pricing, first-time buyer discounts, bundle deals, shipping, product dimensions, warranty policy, and temperature performance. Specifically asked about adjustable temperature settings and reliable hot coffee output, with concern about past issues with drip coffee makers that didn't heat properly, leading to microwaving coffee.",
+            "1": "Michael's espresso machine order has not been updated in over a week. Tracking shows the package is still in transit outside of Washington state, with no recent updates. User is anxious about delivery for an upcoming family gathering.",
+            "2": "Michael's order included a stainless-steel frothing pitcher and extra filters. Estimated delivery was 11 business days(regular shipping). All items were in stock at checkout. No back-order or supply shortage expected. Current issue: tracking shows no updates, package appears stuck outside Washington. User is concerned about delivery for a family gathering and potential need for alternatives like drip coffee or local caf\u00e9.",
+            "3": "Michael is preparing for a potential replacement or refund if the espresso machine order is confirmed lost or damaged. He wants to know if the company files a carrier claim on his behalf, or if he needs to do it himself. He values the purchase as a personal investment and is concerned about the financial and emotional impact of a lost shipment. He also emphasizes the need to be home to receive the package, especially during rain. He has had past experiences with soggy deliveries and requires a signature on delivery. He will adjust his schedule to be available to greet the driver or quickly bring the package inside."
+        }
+    }
+}

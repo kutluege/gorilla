@@ -1,0 +1,14 @@
+{
+    "core_memory": {
+        "next_id": 1,
+        "store": {
+            "0": "Patient with Type 2 Diabetes on metformin 1000 mg twice daily. A1C around 6.9%. Recently added semaglutide(Ozempic) at low dose for better blood sugar control and appetite management. Fasting blood sugar typically between 125-130 mg/dL."
+        }
+    },
+    "archival_memory": {
+        "next_id": 1,
+        "store": {
+            "0": "Osteoarthritis management: Takes acetaminophen as needed for mild pain. Uses meloxicam 7.5 mg when joints are particularly stiff(knees and hands), but only intermittently due to concern about NSAID overuse. Doctor suggested glucosamine supplements; effect on symptoms is unclear and not yet confirmed. Also adjusted vitamin D intake: now takes vitamin D3 2,000 IU daily after low levels(22 ng/mL) on blood test(normal >30 ng/mL). Takes calcium supplements due to early osteopenia on bone density scan. Doctor recommends combining with vitamin K2 to improve absorption."
+        }
+    }
+}

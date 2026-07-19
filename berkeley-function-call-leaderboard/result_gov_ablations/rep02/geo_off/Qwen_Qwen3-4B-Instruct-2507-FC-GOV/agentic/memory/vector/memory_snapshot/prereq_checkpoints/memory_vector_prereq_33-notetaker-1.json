@@ -1,0 +1,14 @@
+{
+    "core_memory": {
+        "next_id": 3,
+        "store": {
+            "0": "Thursday: Finance wants cost-cutting recommendations\u2014brainstorm ideas. Project deadline approaching\u2014check in with Dev team. Caught a mistake in last month\u2019s sales data.",
+            "1": "Personal: Schedule dentist appointment. Stick to gym 3x this week. Call mom\u2014it\u2019s been a while.",
+            "2": "Tech: Back up laptop files. Update phone software. Cancel unused subscriptions."
+        }
+    },
+    "archival_memory": {
+        "next_id": 0,
+        "store": {}
+    }
+}

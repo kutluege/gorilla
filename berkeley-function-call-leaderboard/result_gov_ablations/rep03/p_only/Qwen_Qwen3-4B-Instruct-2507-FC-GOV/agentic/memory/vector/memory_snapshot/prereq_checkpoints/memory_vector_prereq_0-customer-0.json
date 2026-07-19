@@ -1,0 +1,12 @@
+{
+    "core_memory": {
+        "next_id": 1,
+        "store": {
+            "0": "User Michael, 35, in Seattle, wants local shipping for espresso machine. Inquiring about delivery time before family gathering later this month. Concerned about kitchen space and footprint. Wants to mentally prepare for potential appliance rearrangements due to machine size."
+        }
+    },
+    "archival_memory": {
+        "next_id": 0,
+        "store": {}
+    }
+}

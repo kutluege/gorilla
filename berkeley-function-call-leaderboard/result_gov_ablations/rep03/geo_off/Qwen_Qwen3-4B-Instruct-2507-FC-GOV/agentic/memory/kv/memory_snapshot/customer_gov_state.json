@@ -1,0 +1,81 @@
+{
+  "backend": "kv",
+  "tiers": {
+    "core": {
+      "user_preference_michael_espresso": {
+        "text": "user preference michael espresso: Michael prefers a sleek, modern espresso machine with a stainless-steel finish, designed for non-professional users who want a café-like experience at home. He values simplicity, aesthetics, and seamless integration into his design-focused lifestyle.",
+        "probes": [
+          "user preference michael espresso",
+          "what is user preference michael espresso",
+          "user preference michael espresso michael prefers sleek"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "user_billing_security_michael_apple_pay": {
+        "text": "user billing security michael apple pay: Michael wants to streamline his purchasing process with membership. He seeks reduced friction—like one-click ordering, consolidated checkout, and automatic free shipping above $150. He’s also open to bonus freebies such as sample-size coffee flavors or occasional discount codes on future machines.",
+        "probes": [
+          "user billing security michael apple pay",
+          "what is user billing security michael apple pay",
+          "user billing security michael apple pay michael wants streamline"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "user_interest_in_subscription_michael_positive": {
+        "text": "user interest in subscription michael positive: Michael wants a subscription/membership for loyal customers with perks like free shipping, early access, or monthly discounts to organize and save on coffee station purchases.",
+        "probes": [
+          "user interest in subscription michael positive",
+          "what is user interest in subscription michael positive",
+          "user interest in subscription michael positive michael wants subscription"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "user_inquiry_about_early_access_to_limited_edition_items_remember": {
+        "text": "user inquiry about early access to limited edition items remember: Michael is asking about early access to limited-edition items. He’s confident in the brand’s community of passionate coffee lovers and wants to test prototypes or secure new gadgets before general release.",
+        "probes": [
+          "user inquiry about early access to limited edition items remember",
+          "what is user inquiry about early access to limited edition items remember",
+          "user inquiry about early access to limited edition items remember michael asking early"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "user_inquiry_about_membership_portal_features_another": {
+        "text": "user inquiry about membership portal features another: Michael wants a dedicated membership portal to track orders, manage subscriptions, pause shipments during travel, and switch bean preferences. He’s concerned about rain-soaked boxes in Seattle and wants to avoid stockpiling beans on his porch.",
+        "probes": [
+          "user inquiry about membership portal features another",
+          "what is user inquiry about membership portal features another",
+          "user inquiry about membership portal features another michael wants dedicated"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "user_financial_inquiry_about_membership_fee_and_trial_financial": {
+        "text": "user financial inquiry about membership fee and trial financial: Michael is inquiring about membership fee structure(monthly, yearly, or otherwise), trial period, and potential reduced rate or promotional bonus as a loyal customer with multiple purchases.",
+        "probes": [
+          "user financial inquiry about membership fee and trial financial",
+          "what is user financial inquiry about membership fee and trial financial",
+          "user financial inquiry about membership fee and trial financial michael inquiring membership"
+        ],
+        "probe_provenance": "stored_text"
+      },
+      "user_customization_request_for_coffee_subscription": {
+        "text": "user customization request for coffee subscription: Michael wants a customizable coffee subscription: a primary espresso roast of the month and an optional lighter roast for pour-over. He seeks flexibility to swap roasts based on his schedule, like a well-frothed latte foam.",
+        "probes": [
+          "user customization request for coffee subscription",
+          "what is user customization request for coffee subscription",
+          "user customization request for coffee subscription michael wants customizable"
+        ],
+        "probe_provenance": "sidecar"
+      }
+    },
+    "archival": {
+      "billing_anomaly_michael_unauthorized_charge": {
+        "text": "billing anomaly michael unauthorized charge: Michael has reported an unauthorized charge not tied to any known order, subscription, or product. No welcome email, invoice, or shipping confirmation exists. Charge amount does not match prior purchases or tax rates. No membership or promotional sign-up recorded. Requesting internal investigation into billing system logs to identify root cause (e.g., system error, duplicate transaction, or misapplied promo).",
+        "probes": [
+          "billing anomaly michael unauthorized charge",
+          "what is billing anomaly michael unauthorized charge",
+          "billing anomaly michael unauthorized charge michael reported unauthorized"
+        ],
+        "probe_provenance": "write_time"
+      }
+    }
+  }
+}

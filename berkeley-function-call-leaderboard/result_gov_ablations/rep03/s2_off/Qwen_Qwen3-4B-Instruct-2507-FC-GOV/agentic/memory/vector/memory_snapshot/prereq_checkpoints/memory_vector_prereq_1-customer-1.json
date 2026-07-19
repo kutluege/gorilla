@@ -1,0 +1,12 @@
+{
+    "core_memory": {
+        "next_id": 1,
+        "store": {
+            "0": "User Michael, 35, lives in Seattle, values design aesthetics, seeks user-friendly espresso machine, prefers stainless-steel finish, first-time buyer discount, bundle deal, shipping from local Seattle warehouse, 3\u20135 business day delivery, aiming to receive before family gathering."
+        }
+    },
+    "archival_memory": {
+        "next_id": 0,
+        "store": {}
+    }
+}

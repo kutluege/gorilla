@@ -1,0 +1,16 @@
+{
+    "core_memory": {
+        "next_id": 1,
+        "store": {
+            "0": "User Michael, 35, from Seattle. Damaged espresso machine(order #[Your Order Number]): crushed box, dent, bent steam wand, misaligned reservoir. Transit damage covered. Requesting fast cross-ship replacement. Open to upgrade or waiver. Prioritizing quick resolution to resume hosting."
+        }
+    },
+    "archival_memory": {
+        "next_id": 3,
+        "store": {
+            "0": "Michael, from Seattle, is hosting a small family gathering with siblings and close friends. He planned a 'latte art showdown' featuring his new espresso machine, which hasn't arrived. He is now considering alternatives like a drip coffee maker or visiting a local coffee shop to serve drinks, due to the delay.",
+            "1": "Michael, from Seattle, is hosting a small family gathering with siblings and close friends. He planned a 'latte art showdown' featuring his new espresso machine, which hasn't arrived. He is now considering alternatives like a drip coffee maker or visiting a local coffee shop to serve drinks, due to the delay. He is particularly concerned about rainy weather damaging packages and has requested updates if the courier might deliver tomorrow. He emphasizes the need for a signature upon delivery to prevent packages from being left unattended or exposed to rain.",
+            "2": "Updated with user\u2019s final request: Fast cross-ship replacement from regional Seattle warehouse. No return needed. Open to waiver of fees. User emphasizes pride in barista skills as a freelance graphic designer and values a smooth, stress-free resolution. No further action required from user beyond sending photos to support."
+        }
+    }
+}

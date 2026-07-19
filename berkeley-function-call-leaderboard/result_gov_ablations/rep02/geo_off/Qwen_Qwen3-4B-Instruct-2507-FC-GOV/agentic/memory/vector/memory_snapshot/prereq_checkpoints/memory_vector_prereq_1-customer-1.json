@@ -1,0 +1,15 @@
+{
+    "core_memory": {
+        "next_id": 1,
+        "store": {
+            "0": "User Michael, 35, lives in Seattle, freelance graphic designer, seeks espresso machine with sleek stainless-steel finish, ease of use, design, and strong warranty. Interested in SEATTLE15 discount, local shipping, precise dimensions, and reliable quality guarantee\u2014especially for higher-end models."
+        }
+    },
+    "archival_memory": {
+        "next_id": 2,
+        "store": {
+            "0": "User Michael, 35, lives in Seattle, freelance graphic designer, seeks espresso machine with sleek stainless-steel finish for caf\u00e9-like experience at home, prioritizes ease of use and design. Interested in first-time buyer discounts(SEATTLE15), bundle deals, and local shipping options. Concerned about delivery time for a family gathering later this month.",
+            "1": "User Michael confirms kitchen space constraints and concerns about 'kitchen Tetris' due to existing appliances. Specifically requests precise dimensions of espresso machines(Aether Series and Nova Compact) to avoid reorganization. Emphasizes need for clear, measurable footprint data before purchase."
+        }
+    }
+}

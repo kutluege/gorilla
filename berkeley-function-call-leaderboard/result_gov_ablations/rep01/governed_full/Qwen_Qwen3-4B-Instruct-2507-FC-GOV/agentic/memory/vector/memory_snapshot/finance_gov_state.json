@@ -1,0 +1,189 @@
+{
+  "backend": "vector",
+  "tiers": {
+    "core": {
+      "0": {
+        "text": "Empowerment, accountability, growth. Mentor 3 directors biweekly. 94% retention. 15 to Harvard/Stanford/INSEAD. Accelerated path attracts GS, MS talent. 40% diverse senior leadership(↑15%). Partnered with SEO, Girls Who Invest.",
+        "probes": [
+          "Empowerment, accountability, growth. Mentor 3 directors biweekly. 94% retention. 15 to Harvard/Stanford/INSEAD. Accelerated path attracts GS, MS talent. 40% diverse senior leadership(↑15%). Partnered with SEO, Girls Who Invest.",
+          "what do you know about empowerment accountability growth mentor",
+          "empowerment accountability growth mentor directors biweekly retention harvard"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "1": {
+        "text": "Sarah Chen, Pacific Dynamics: Met at Goldman 2008. Deepened on delayed HK flight 2009. 5-hour conversation on markets & jazz. 15-year trust; now trusted for urgent Asian market insights, even at 3 AM.",
+        "probes": [
+          "Sarah Chen, Pacific Dynamics: Met at Goldman 2008. Deepened on delayed HK flight 2009. 5-hour conversation on markets & jazz. 15-year trust; now trusted for urgent Asian market insights, even at 3 AM.",
+          "what do you know about sarah chen pacific dynamics",
+          "sarah chen pacific dynamics met goldman 2008 deepened"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "2": {
+        "text": "Bloomberg Terminal: 'Mission Control' layout for real-time data and anomaly detection. 2022 crisis alert at 3 AM caught unusual regional bank trading, enabling early position adjustments. LIVE function critical for Asian office deal coordination during trading hours.",
+        "probes": [
+          "Bloomberg Terminal: 'Mission Control' layout for real-time data and anomaly detection. 2022 crisis alert at 3 AM caught unusual regional bank trading, enabling early position adjustments. LIVE function critical for Asian office deal coordination during trading hours.",
+          "what do you know about bloomberg terminal mission control",
+          "bloomberg terminal mission control layout real time data"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "3": {
+        "text": "AI/ML integration via Aladdin improved risk-adjusted returns by 15%. Custom risk models for emerging markets, inspired by early currency crises. 'Risk Radar' dashboard combines Aladdin with proprietary algorithms. Licensed to three firms; now a strategic asset.",
+        "probes": [
+          "AI/ML integration via Aladdin improved risk-adjusted returns by 15%. Custom risk models for emerging markets, inspired by early currency crises. 'Risk Radar' dashboard combines Aladdin with proprietary algorithms. Licensed to three firms; now a strategic asset.",
+          "what do you know about integration via aladdin improved",
+          "integration via aladdin improved risk adjusted returns custom"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "4": {
+        "text": "Tableau expert; transforms complex data into compelling stories. ESG dashboard for Vertex, Nexus, Summit shows environmental impact. Clients engage with insights. HoloLens AR for 3D market data—early stage, future-focused.",
+        "probes": [
+          "Tableau expert; transforms complex data into compelling stories. ESG dashboard for Vertex, Nexus, Summit shows environmental impact. Clients engage with insights. HoloLens AR for 3D market data—early stage, future-focused.",
+          "what do you know about tableau expert transforms complex",
+          "tableau expert transforms complex data into compelling stories"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "5": {
+        "text": "Dealogic tracks soft signals: management dynamics, cultural fit. Python/R models predict deal success and market reactions. Self-taught coding during pandemic; automated analytics. Earnings call ML model now essential for equity trading desk.",
+        "probes": [
+          "Dealogic tracks soft signals: management dynamics, cultural fit. Python/R models predict deal success and market reactions. Self-taught coding during pandemic; automated analytics. Earnings call ML model now essential for equity trading desk.",
+          "what do you know about dealogic tracks soft signals",
+          "dealogic tracks soft signals management dynamics cultural fit"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "6": {
+        "text": "Salesforce 'Client Journey Map' tracks client preferences and milestones. Notion for deal notes. Superhuman saves email time. AI meeting assistants auto-summarize calls. Exploring blockchain and quantum computing(IBM simulations). Sunday 'tech meditation' time to stay ahead.",
+        "probes": [
+          "Salesforce 'Client Journey Map' tracks client preferences and milestones. Notion for deal notes. Superhuman saves email time. AI meeting assistants auto-summarize calls. Exploring blockchain and quantum computing(IBM simulations). Sunday 'tech meditation' time to stay ahead.",
+          "what do you know about salesforce client journey map",
+          "salesforce client journey map tracks preferences milestones notion"
+        ],
+        "probe_provenance": "stored_text"
+      }
+    },
+    "archival": {
+      "0": {
+        "text": "Landmark deals:\n- 2019: Poison pill defense of Surreal Inc. (Harvard case study)\n- $8.6B Nexa/Taihua semiconductor merger: global diplomacy, IP/regulatory hurdles\n- $14.2B BioCrest/OncoPharm merger: overcame IP and regulatory issues; WSJ called it 'the deal that reshaped modern cancer treatment'\nMemento: Lucite from first $500M deal(funded Stratos Aerospace) on desk – a reminder of energy and drive.",
+        "probes": [
+          "Landmark deals:\n- 2019: Poison pill defense of Surreal Inc. (Harvard case study)\n- $8.6B Nexa/Taihua semiconductor merger: global diplomacy, IP/regulatory hurdles\n- $14.2B BioCrest/OncoPharm merger: overcame IP and regulatory issues; WSJ called it 'the deal that reshaped modern cancer treatment'\nMemento: Lucite from first $500M deal(funded Stratos Aerospace) on desk – a reminder of energy and drive.",
+          "what do you know about landmark deals 2019 poison",
+          "landmark deals 2019 poison pill defense surreal inc"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "1": {
+        "text": "Career journey:\n- Started as analyst at Goldman Sachs(2001): M&A modeling, survived dot-com crash\n- Associate at Morgan Stanley(2004): exposure to early social media tech deals\n- Vice President by age 31: led defining transactions of era\n- Joined Legend Investments as Managing Director(2015): first major transaction was NeuralNet Systems IPO(largest tech IPO to date)\n\nCore insight: Network and track record are currency. Trust is earned one successful deal at a time.",
+        "probes": [
+          "Career journey:\n- Started as analyst at Goldman Sachs(2001): M&A modeling, survived dot-com crash\n- Associate at Morgan Stanley(2004): exposure to early social media tech deals\n- Vice President by age 31: led defining transactions of era\n- Joined Legend Investments as Managing Director(2015): first major transaction was NeuralNet Systems IPO(largest tech IPO to date)\n\nCore insight: Network and track record are currency. Trust is earned one successful deal at a time.",
+          "what do you know about career journey started analyst",
+          "career journey started analyst goldman sachs 2001 modeling"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "2": {
+        "text": "Crisis management insights:\n- During the 2020 market crash, led a Saturday morning team meeting as markets freefell. Focused on methodical analysis, identified opportunities, and emerged stronger.\n- Stayed on the trading floor daily during downturns, sharing stress and strategic decisions to maintain morale.\n- Made key hires during the crisis that transformed long-term performance.\n- During a major fund redemption event, took personal responsibility for investor communication while empowering portfolio managers to adjust strategies.\n- Key lesson: Transparency and presence during crises build trust with team and clients. Leadership is tested not in bull markets, but in storms.",
+        "probes": [
+          "Crisis management insights:\n- During the 2020 market crash, led a Saturday morning team meeting as markets freefell. Focused on methodical analysis, identified opportunities, and emerged stronger.\n- Stayed on the trading floor daily during downturns, sharing stress and strategic decisions to maintain morale.\n- Made key hires during the crisis that transformed long-term performance.\n- During a major fund redemption event, took personal responsibility for investor communication while empowering portfolio managers to adjust strategies.\n- Key lesson: Transparency and presence during crises build trust with team and clients. Leadership is tested not in bull markets, but in storms.",
+          "what do you know about crisis management insights during",
+          "crisis management insights during 2020 market crash led"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "3": {
+        "text": "Leadership beyond office walls:\n- Serves on boards of 3 non-profits focused on financial literacy and economic empowerment.\n- Firm foundation launched $50M initiative for scholarships and internships for underprivileged students in finance.\n- Regularly speaks at universities and conferences(e.g., Financial Institute National Conference) on ethical leadership.\n- Pioneering program: senior executives spend 2 weeks annually teaching financial skills in underserved communities.\n- Social impact strengthens culture and attracts mission-driven talent.\n- Core belief: financial success and social responsibility are mutually reinforcing.\n- Future focus: developing next-gen leaders who balance exceptional performance with unwavering integrity.",
+        "probes": [
+          "Leadership beyond office walls:\n- Serves on boards of 3 non-profits focused on financial literacy and economic empowerment.\n- Firm foundation launched $50M initiative for scholarships and internships for underprivileged students in finance.\n- Regularly speaks at universities and conferences(e.g., Financial Institute National Conference) on ethical leadership.\n- Pioneering program: senior executives spend 2 weeks annually teaching financial skills in underserved communities.\n- Social impact strengthens culture and attracts mission-driven talent.\n- Core belief: financial success and social responsibility are mutually reinforcing.\n- Future focus: developing next-gen leaders who balance exceptional performance with unwavering integrity.",
+          "what do you know about leadership beyond office walls",
+          "leadership beyond office walls serves boards non profits"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "4": {
+        "text": "Sarah Chen, Pacific Dynamics: Established deep trust through shared experiences(delayed flight, 2009) beyond initial business meeting. Key relationship for Asian market intelligence and crisis decision-making. Value: 24/7 access to strategic insight, emotional intelligence, and trust-based judgment.",
+        "probes": [
+          "Sarah Chen, Pacific Dynamics: Established deep trust through shared experiences(delayed flight, 2009) beyond initial business meeting. Key relationship for Asian market intelligence and crisis decision-making. Value: 24/7 access to strategic insight, emotional intelligence, and trust-based judgment.",
+          "what do you know about sarah chen pacific dynamics",
+          "sarah chen pacific dynamics established deep trust through"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "5": {
+        "text": "Golf strategy: Non-transactional, interruption-free environment enables deep trust and strategic ideation. 'Quarterly Links' at Pebble Beach drives client acquisition and partnerships. Caddie Tom: 30-year veteran with unparalleled corporate intelligence—provides real-time, context-rich insights on executives, markets, and industry shifts.",
+        "probes": [
+          "Golf strategy: Non-transactional, interruption-free environment enables deep trust and strategic ideation. 'Quarterly Links' at Pebble Beach drives client acquisition and partnerships. Caddie Tom: 30-year veteran with unparalleled corporate intelligence—provides real-time, context-rich insights on executives, markets, and industry shifts.",
+          "what do you know about golf strategy non transactional",
+          "golf strategy non transactional interruption free environment enables"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "6": {
+        "text": "Client relationship philosophy: Trust is earned through deep personal engagement. Goes beyond financial advisory to include family dynamics, emotional support, and shared life events. Personal presence at weddings, celebrations, and crises builds lasting loyalty. Midnight responses and family dinners demonstrate commitment to holistic client care. This approach differentiates the firm as a trusted partner, not just a service provider.",
+        "probes": [
+          "Client relationship philosophy: Trust is earned through deep personal engagement. Goes beyond financial advisory to include family dynamics, emotional support, and shared life events. Personal presence at weddings, celebrations, and crises builds lasting loyalty. Midnight responses and family dinners demonstrate commitment to holistic client care. This approach differentiates the firm as a trusted partner, not just a service provider.",
+          "what do you know about client relationship philosophy trust",
+          "client relationship philosophy trust earned through deep personal"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "7": {
+        "text": "Travel as strategic engagement: Face-to-face interaction is non-negotiable for key deals. In-person meetings, shared meals(e.g., 4 AM dim sum), and cultural immersion build trust where digital tools fail. '48-hour protocol' ensures rapid global response to major opportunities. Travel logistics optimized with tailored suits for long-haul flights—demonstrating commitment to operational excellence and cultural sensitivity.",
+        "probes": [
+          "Travel as strategic engagement: Face-to-face interaction is non-negotiable for key deals. In-person meetings, shared meals(e.g., 4 AM dim sum), and cultural immersion build trust where digital tools fail. '48-hour protocol' ensures rapid global response to major opportunities. Travel logistics optimized with tailored suits for long-haul flights—demonstrating commitment to operational excellence and cultural sensitivity.",
+          "what do you know about travel strategic engagement face",
+          "travel strategic engagement face interaction non negotiable key"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "8": {
+        "text": "Network Triangle: A three-pillar ecosystem of trust—professional relationships, social connections, and knowledge sharing. 'Future Focus' dinners foster cross-sector innovation and serendipitous collaborations. Mentorship circle enables talent development and gives back to the community. Network intersections(e.g., family connections, shared hobbies) create organic, sustainable relationships. This community-driven approach is the true foundation of long-term influence and value creation in the business world.",
+        "probes": [
+          "Network Triangle: A three-pillar ecosystem of trust—professional relationships, social connections, and knowledge sharing. 'Future Focus' dinners foster cross-sector innovation and serendipitous collaborations. Mentorship circle enables talent development and gives back to the community. Network intersections(e.g., family connections, shared hobbies) create organic, sustainable relationships. This community-driven approach is the true foundation of long-term influence and value creation in the business world.",
+          "what do you know about network triangle three pillar",
+          "network triangle three pillar ecosystem trust professional relationships"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "9": {
+        "text": "Myth: Success = Intelligence/Talent. Reality: Resilience. Brilliance alone doesn't win. The difference between success and plateau is resilience—can you take a hit and keep moving? Can you handle rejection? Lost a major deal at Intelligent Motors—crushed. Mentor's wisdom: 'If you’re in this business long enough, you’re going to lose more than you win—the key is making sure your wins are bigger than your losses.' Now treat setbacks as tuition fees for long-term success.",
+        "probes": [
+          "Myth: Success = Intelligence/Talent. Reality: Resilience. Brilliance alone doesn't win. The difference between success and plateau is resilience—can you take a hit and keep moving? Can you handle rejection? Lost a major deal at Intelligent Motors—crushed. Mentor's wisdom: 'If you’re in this business long enough, you’re going to lose more than you win—the key is making sure your wins are bigger than your losses.' Now treat setbacks as tuition fees for long-term success.",
+          "what do you know about myth success intelligence talent",
+          "myth success intelligence talent reality resilience brilliance alone"
+        ],
+        "probe_provenance": "write_time"
+      },
+      "10": {
+        "text": "Lesson: Create your own luck. People think success is about being in the right place at the right time. But luck favors those who proactively create opportunities. Waiting for the perfect deal or condition leads to stagnation. Younger self: reached out to industry leaders with specific questions. Most ignored, but a few responded—those conversations opened doors. Proactivity creates access. You gain more by showing up than by waiting.",
+        "probes": [
+          "Lesson: Create your own luck. People think success is about being in the right place at the right time. But luck favors those who proactively create opportunities. Waiting for the perfect deal or condition leads to stagnation. Younger self: reached out to industry leaders with specific questions. Most ignored, but a few responded—those conversations opened doors. Proactivity creates access. You gain more by showing up than by waiting.",
+          "what do you know about lesson create own luck",
+          "lesson create own luck people think success right"
+        ],
+        "probe_provenance": "write_time"
+      },
+      "11": {
+        "text": "Advice to young professionals: Bet on yourself. No one hands you opportunities. You must make yourself undeniable. Transition to leadership: not 'ready' traditionally, but stepped up, took ownership, figured things out. Best growth path: act like a leader before the title, think like an investor before capital, operate like a CEO before the office. Opportunities catch up.",
+        "probes": [
+          "Advice to young professionals: Bet on yourself. No one hands you opportunities. You must make yourself undeniable. Transition to leadership: not 'ready' traditionally, but stepped up, took ownership, figured things out. Best growth path: act like a leader before the title, think like an investor before capital, operate like a CEO before the office. Opportunities catch up.",
+          "what do you know about advice young professionals bet",
+          "advice young professionals bet yourself one hands opportunities"
+        ],
+        "probe_provenance": "write_time"
+      },
+      "12": {
+        "text": "Success isn’t just about what you achieve—it’s about what you sustain. Anyone can have a good year or lucky break. Long-term success comes from consistent good decisions, risk management, and humility to keep learning. People who made millions overnight lost it quickly—no habits to sustain it. Real key: stay hungry, stay curious, never let short-term wins make you complacent. The moment you think you’ve made it is when you stop growing. Growth is the only real indicator of lasting success.",
+        "probes": [
+          "Success isn’t just about what you achieve—it’s about what you sustain. Anyone can have a good year or lucky break. Long-term success comes from consistent good decisions, risk management, and humility to keep learning. People who made millions overnight lost it quickly—no habits to sustain it. Real key: stay hungry, stay curious, never let short-term wins make you complacent. The moment you think you’ve made it is when you stop growing. Growth is the only real indicator of lasting success.",
+          "what do you know about success isn achieve sustain",
+          "success isn achieve sustain anyone can good year"
+        ],
+        "probe_provenance": "write_time"
+      }
+    }
+  }
+}

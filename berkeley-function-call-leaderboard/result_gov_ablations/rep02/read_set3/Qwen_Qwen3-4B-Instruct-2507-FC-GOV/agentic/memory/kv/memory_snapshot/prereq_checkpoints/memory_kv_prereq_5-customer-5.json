@@ -1,0 +1,17 @@
+{
+    "core_memory": {
+        "michael_gathering_context": "Michael hosts weekend gatherings. Friends expect cappuccinos/lattes. Delayed by damaged machine. Using French press temporarily. Disappointed and ironic after build-up. Aims to serve authentic espresso soon.",
+        "michael_support_preference": "Michael wants hassle-free replacement. Has photos of box, dents, bent steam wand. Tech-savvy, willing to send photos or video. Avoids forms, snail mail, delays. Prefers speed and simplicity.",
+        "michael_shipping_insurance_query": "Michael asks if damage during transit is covered under shipping insurance or handled in-house. He inquires about cross-shipment(receiving a replacement without returning the damaged unit). He wants to avoid chasing the courier and prefers a simple, in-house resolution. He values speed and ease.",
+        "michael_order_info": "Michael has the order number, shipping details, and email confirmations. He wants to speed up replacement and is open to fast shipping. Willing to consider a regional upgrade if available, but prefers waiving any additional cost given the damage during transit and the effort already invested.",
+        "michael_client_perks_context": "Michael, a freelance designer, wants to impress clients with barista skills. Excited to showcase latte art on Instagram or in-home. Damaged machine undermines this. Remains hopeful and cooperative.",
+        "michael_new_orders_context": "Michael ordered: stainless-steel grinder, cleaning tablets, frothing pitcher; and vacuum-sealed canisters, Garmin digital scale. Views kitchen as a 'mini coffee lab' focused on precision and quality.",
+        "michael_billing_security_check": "Michael using same address and card. Concerned about billing/ship address issues. Had past Apple Pay security hold. Wants to verify no red flags or discrepancies to avoid repeat experience."
+    },
+    "archival_memory": {
+        "michael_espresso_order_2023": "Order placed by Michael from Seattle for a stainless-steel espresso machine with steam wand. Shipping expected to originate from out of state. Tracking status is stuck; no updates in over a week. Customer is anxious about delivery and has tried multiple tracking methods without success.",
+        "michael_shipment_status_update": "Customer Michael is concerned about the status of his espresso machine order, which has not updated in over a week. He suspects carrier delays due to Seattle's rainy weather. He is seeking a clear timeline or confirmation of any issues(e.g., lost package) to decide on replacement or expedited shipping. He values transparency and wants to act promptly if there's a problem.",
+        "michael_exchange_policy_query": "Michael is inquiring about the process for lost or damaged packages. He wants to know if the company files a claim with the carrier on his behalf or if he needs to do it himself. He emphasizes that the espresso machine is a significant purchase and a personal investment, and he wants to be fully prepared for any resolution process.",
+        "michael_timeline_request": "Michael is requesting a realistic delivery timeline for his espresso machine order. He is asking for either a direct update from the shipping carrier or an internal note indicating a delay. He wants to adjust his plans(e.g., switch to French press or reschedule latte taste test) based on the information."
+    }
+}

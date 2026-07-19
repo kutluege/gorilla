@@ -1,0 +1,144 @@
+{
+  "backend": "vector",
+  "tiers": {
+    "core": {
+      "0": {
+        "text": "User Michael, 35, in Seattle, needs espresso machine for family gathering this week. Delivery delayed; tracking stuck, package in transit from out-of-state. Event includes siblings and friends; planned 'latte art showdown.' Seeking resolution or temporary alternative(local coffee shop, drip maker).",
+        "probes": [
+          "User Michael, 35, in Seattle, needs espresso machine for family gathering this week. Delivery delayed; tracking stuck, package in transit from out-of-state. Event includes siblings and friends; planned 'latte art showdown.' Seeking resolution or temporary alternative(local coffee shop, drip maker).",
+          "what do you know about michael seattle needs espresso",
+          "michael seattle needs espresso machine family gathering week"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "1": {
+        "text": "User Michael, 35, in Seattle: Grinder bundle(Oregon) tracking stuck; suspects package never left warehouse. Canisters & scale(East Coast) in transit. Grinder is essential MVP for espresso game; can delay canisters/scale. Deep concern about missing items or shipping errors.",
+        "probes": [
+          "User Michael, 35, in Seattle: Grinder bundle(Oregon) tracking stuck; suspects package never left warehouse. Canisters & scale(East Coast) in transit. Grinder is essential MVP for espresso game; can delay canisters/scale. Deep concern about missing items or shipping errors.",
+          "what do you know about michael seattle grinder bundle",
+          "michael seattle grinder bundle oregon tracking stuck suspects"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "2": {
+        "text": "Michael(Seattle, 35): Unexplained charge ~$49.99, posted 3 days ago. No subscription, no opt-in, no notification. Requesting investigation. If auto-enrolled, wants full explanation. Values transparency, clarity, trust. No bank dispute if resolved. Committed to future purchases.",
+        "probes": [
+          "Michael(Seattle, 35): Unexplained charge ~$49.99, posted 3 days ago. No subscription, no opt-in, no notification. Requesting investigation. If auto-enrolled, wants full explanation. Values transparency, clarity, trust. No bank dispute if resolved. Committed to future purchases.",
+          "what do you know about michael seattle unexplained charge",
+          "michael seattle unexplained charge posted days ago subscription"
+        ],
+        "probe_provenance": "write_time"
+      }
+    },
+    "archival": {
+      "0": {
+        "text": "User Michael, 35, lives in Seattle, freelance graphic designer, seeks espresso machine with sleek stainless-steel finish for café-like experience at home, prioritizes ease of use and design. Interested in first-time buyer discounts(SEATTLE15), bundle deals, and local shipping options. Concerned about delivery time for a family gathering later this month.",
+        "probes": [
+          "User Michael, 35, lives in Seattle, freelance graphic designer, seeks espresso machine with sleek stainless-steel finish for café-like experience at home, prioritizes ease of use and design. Interested in first-time buyer discounts(SEATTLE15), bundle deals, and local shipping options. Concerned about delivery time for a family gathering later this month.",
+          "what do you know about michael lives seattle freelance",
+          "michael lives seattle freelance graphic designer seeks espresso"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "1": {
+        "text": "User Michael confirms kitchen space constraints and concerns about 'kitchen Tetris' due to existing appliances. Specifically requests precise dimensions of espresso machines(Aether Series and Nova Compact) to avoid reorganization. Emphasizes need for clear, measurable footprint data before purchase.",
+        "probes": [
+          "User Michael confirms kitchen space constraints and concerns about 'kitchen Tetris' due to existing appliances. Specifically requests precise dimensions of espresso machines(Aether Series and Nova Compact) to avoid reorganization. Emphasizes need for clear, measurable footprint data before purchase.",
+          "what do you know about michael confirms kitchen space",
+          "michael confirms kitchen space constraints concerns tetris due"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "2": {
+        "text": "Michael from Seattle has an espresso machine order with a stainless-steel finish and steam wand. The tracking status is stuck, showing 'in transit' from an out-of-state location. The delivery has been delayed beyond the expected date, and no updates have been received for over a week. User is anxious about the package's whereabouts and is seeking resolution. Requested: contact customer support with a clear message, possible expedited shipping, or a local pickup option.",
+        "probes": [
+          "Michael from Seattle has an espresso machine order with a stainless-steel finish and steam wand. The tracking status is stuck, showing 'in transit' from an out-of-state location. The delivery has been delayed beyond the expected date, and no updates have been received for over a week. User is anxious about the package's whereabouts and is seeking resolution. Requested: contact customer support with a clear message, possible expedited shipping, or a local pickup option.",
+          "what do you know about michael seattle espresso machine",
+          "michael seattle espresso machine order stainless steel finish"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "3": {
+        "text": "Michael from Seattle placed an order for an espresso machine with regular shipping, expecting an 11-business-day delivery. He qualified for free shipping by adding accessories: stainless-steel frothing pitcher and extra filters. All items were in stock at checkout. Concern: delivery delay despite stock availability and reasonable estimate. Question: Could the delay be due to shipping origin(out-of-state), handling issues, or a miscommunication in the delivery timeline? Need to verify if accessories are shipped separately or included in the main package.",
+        "probes": [
+          "Michael from Seattle placed an order for an espresso machine with regular shipping, expecting an 11-business-day delivery. He qualified for free shipping by adding accessories: stainless-steel frothing pitcher and extra filters. All items were in stock at checkout. Concern: delivery delay despite stock availability and reasonable estimate. Question: Could the delay be due to shipping origin(out-of-state), handling issues, or a miscommunication in the delivery timeline? Need to verify if accessories are shipped separately or included in the main package.",
+          "what do you know about michael seattle placed order",
+          "michael seattle placed order espresso machine regular shipping"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "4": {
+        "text": "Michael from Seattle is preparing for a potential replacement or refund if the espresso machine is confirmed lost or damaged during transit. He wants to understand the company's process: whether they file a carrier claim on his behalf, if he needs to initiate it himself, and the timeline for resolution. He emphasizes that the purchase was a significant personal investment—budgeted for months—and represents a gift to himself for upgrading his morning ritual. He seeks clarity on the return/exchange policy for delayed or lost shipments to feel confident in the process. Additionally, he is now aware of weather-related delivery risks(soggy boxes) and has requested: 1) real-time updates if the package is arriving soon(e.g., tomorrow), 2) confirmation of signature requirement, and 3) a clear plan to be home to receive it(to avoid damage or delays due to rain). He will adjust his schedule accordingly to greet the driver or quickly bring the package inside.",
+        "probes": [
+          "Michael from Seattle is preparing for a potential replacement or refund if the espresso machine is confirmed lost or damaged during transit. He wants to understand the company's process: whether they file a carrier claim on his behalf, if he needs to initiate it himself, and the timeline for resolution. He emphasizes that the purchase was a significant personal investment—budgeted for months—and represents a gift to himself for upgrading his morning ritual. He seeks clarity on the return/exchange policy for delayed or lost shipments to feel confident in the process. Additionally, he is now aware of weather-related delivery risks(soggy boxes) and has requested: 1) real-time updates if the package is arriving soon(e.g., tomorrow), 2) confirmation of signature requirement, and 3) a clear plan to be home to receive it(to avoid damage or delays due to rain). He will adjust his schedule accordingly to greet the driver or quickly bring the package inside.",
+          "what do you know about michael seattle preparing potential",
+          "michael seattle preparing potential replacement refund espresso machine"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "5": {
+        "text": "User Michael, 35, Seattle: Unexplained charge unrelated to any order. Previous purchases (canisters, scale, grinder) all billed correctly. No subscription, no shipping fee, no tax/duty. Charge amount doesn’t match product or tax rates. Requesting billing system review for root cause. Seeking transparent resolution. Additionally, if this charge is due to an auto-enrolled membership, would like full explanation of how that could have happened—especially given no prior opt-in, no email, no notification. Emphasizes importance of transparency in customer onboarding and trust in brand experience.",
+        "probes": [
+          "User Michael, 35, Seattle: Unexplained charge unrelated to any order. Previous purchases (canisters, scale, grinder) all billed correctly. No subscription, no shipping fee, no tax/duty. Charge amount doesn’t match product or tax rates. Requesting billing system review for root cause. Seeking transparent resolution. Additionally, if this charge is due to an auto-enrolled membership, would like full explanation of how that could have happened—especially given no prior opt-in, no email, no notification. Emphasizes importance of transparency in customer onboarding and trust in brand experience.",
+          "what do you know about michael seattle unexplained charge",
+          "michael seattle unexplained charge unrelated any order previous"
+        ],
+        "probe_provenance": "write_time"
+      },
+      "6": {
+        "text": "User Michael, 35, in Seattle, is asking whether his orders were bundled correctly. Specifically, concerned that the coffee grinder bundle might be split—e.g., the frothing pitcher shipping separately—due to stock or location issues. Wants to avoid confusion where only part of the order arrives. Emphasizes that the grinder is the centerpiece of his espresso game and cannot afford partial shipments.",
+        "probes": [
+          "User Michael, 35, in Seattle, is asking whether his orders were bundled correctly. Specifically, concerned that the coffee grinder bundle might be split—e.g., the frothing pitcher shipping separately—due to stock or location issues. Wants to avoid confusion where only part of the order arrives. Emphasizes that the grinder is the centerpiece of his espresso game and cannot afford partial shipments.",
+          "what do you know about michael seattle asking whether",
+          "michael seattle asking whether orders bundled correctly specifically"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "7": {
+        "text": "User Michael, 35, in Seattle, is traveling to Portland next weekend for a freelance gig. Concerned about package delivery during his absence: fears boxes may be left on porch in rain or picked up by neighbor. Specifically worries about delicate coffee grinder being damaged. Wants to know approximate arrival date to plan for friend to house-sit or monitor delivery. Has prior experience with damaged espresso machine and is cautious about handling.",
+        "probes": [
+          "User Michael, 35, in Seattle, is traveling to Portland next weekend for a freelance gig. Concerned about package delivery during his absence: fears boxes may be left on porch in rain or picked up by neighbor. Specifically worries about delicate coffee grinder being damaged. Wants to know approximate arrival date to plan for friend to house-sit or monitor delivery. Has prior experience with damaged espresso machine and is cautious about handling.",
+          "what do you know about michael seattle traveling portland",
+          "michael seattle traveling portland next weekend freelance gig"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "8": {
+        "text": "User Michael, 35, in Seattle, is seeking clarity on delivery timelines: wants to know if the grinder bundle and canisters/scale order will arrive around the same time. Concerned about delay on grinder shipment. Asks if carriers allow specific drop-off dates or holding at pickup locations. Expresses willingness to personally retrieve packages to avoid porch exposure. Wants to be informed if any items are out of stock or have longer lead times to avoid refreshing dead tracking links.",
+        "probes": [
+          "User Michael, 35, in Seattle, is seeking clarity on delivery timelines: wants to know if the grinder bundle and canisters/scale order will arrive around the same time. Concerned about delay on grinder shipment. Asks if carriers allow specific drop-off dates or holding at pickup locations. Expresses willingness to personally retrieve packages to avoid porch exposure. Wants to be informed if any items are out of stock or have longer lead times to avoid refreshing dead tracking links.",
+          "what do you know about michael seattle seeking clarity",
+          "michael seattle seeking clarity delivery timelines wants grinder"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "9": {
+        "text": "User Michael, 35, Seattle: Unexplained charge unrelated to any order. Previous purchases (canisters, scale, grinder) all billed correctly. No subscription, no shipping fee, no tax/duty. Charge amount ~$49.99, posted 3 days ago. No additional descriptor on statement beyond company name. Requesting billing system review for root cause. If due to auto-enrollment, wants full explanation of how that could have happened—no prior opt-in, no email, no notification. All supporting details (transaction ID, screenshot) available upon request. Emphasizes transparency and trust in brand experience.",
+        "probes": [
+          "User Michael, 35, Seattle: Unexplained charge unrelated to any order. Previous purchases (canisters, scale, grinder) all billed correctly. No subscription, no shipping fee, no tax/duty. Charge amount ~$49.99, posted 3 days ago. No additional descriptor on statement beyond company name. Requesting billing system review for root cause. If due to auto-enrollment, wants full explanation of how that could have happened—no prior opt-in, no email, no notification. All supporting details (transaction ID, screenshot) available upon request. Emphasizes transparency and trust in brand experience.",
+          "what do you know about michael seattle unexplained charge",
+          "michael seattle unexplained charge unrelated any order previous"
+        ],
+        "probe_provenance": "write_time"
+      },
+      "10": {
+        "text": "User Michael(Seattle, 35) inquires about coffee subscription customization: prefers dark roasts and espresso blends as primary, but enjoys pour-over with mellower roasts. Seeks flexibility—either a dedicated 'espresso roast of the month' plus optional lighter roast add-on, or the ability to swap roasts monthly. Values flexibility as much as a well-frothed latte foam.",
+        "probes": [
+          "User Michael(Seattle, 35) inquires about coffee subscription customization: prefers dark roasts and espresso blends as primary, but enjoys pour-over with mellower roasts. Seeks flexibility—either a dedicated 'espresso roast of the month' plus optional lighter roast add-on, or the ability to swap roasts monthly. Values flexibility as much as a well-frothed latte foam.",
+          "what do you know about michael seattle inquires coffee",
+          "michael seattle inquires coffee subscription customization prefers dark"
+        ],
+        "probe_provenance": "stored_text"
+      },
+      "11": {
+        "text": "User Michael(Seattle, 35) seeks to streamline purchasing process: currently logs in, checks out individually, and pays shipping each time. Seeks membership benefits that reduce friction—e.g., consolidated checkout, automatic free shipping, and bonus freebies(sample-size coffee flavors, discount codes on future machines). Open to enhancing coffee experience through simplified purchasing and occasional rewards.",
+        "probes": [
+          "User Michael(Seattle, 35) seeks to streamline purchasing process: currently logs in, checks out individually, and pays shipping each time. Seeks membership benefits that reduce friction—e.g., consolidated checkout, automatic free shipping, and bonus freebies(sample-size coffee flavors, discount codes on future machines). Open to enhancing coffee experience through simplified purchasing and occasional rewards.",
+          "what do you know about michael seattle seeks streamline",
+          "michael seattle seeks streamline purchasing process currently logs"
+        ],
+        "probe_provenance": "stored_text"
+      }
+    }
+  }
+}

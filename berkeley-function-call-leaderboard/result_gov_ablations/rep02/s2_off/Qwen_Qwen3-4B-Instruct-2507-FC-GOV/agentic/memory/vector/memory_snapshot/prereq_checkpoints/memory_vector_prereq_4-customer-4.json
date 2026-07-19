@@ -1,0 +1,19 @@
+{
+    "core_memory": {
+        "next_id": 3,
+        "store": {
+            "0": "User Michael, 35, Seattle. Freelance graphic designer. Wants a coffee grinder with conical burrs, wide grind range, low noise, and sleek stainless-steel design to match espresso machine. Prioritizes aesthetics, ease of cleaning, and consistency for home brewing.",
+            "1": "User Michael, 35, Seattle. Freelance graphic designer. Confirmed order for coffee grinder with stainless-steel finish, conical burrs, wide grind range. Requests $39 storage canister and cleaning kit for espresso machine and grinder. Kitchen reorganized into a cohesive coffee corner.",
+            "2": "User Michael, 35, Seattle. Freelance graphic designer. Interested in a coffee bean subscription service that pairs with the new grinder\u2019s settings(espresso, drip, pour-over). Seeks curated roasts, trusted taste, and convenience. Wants to stay informed on future service launches if not yet available."
+        }
+    },
+    "archival_memory": {
+        "next_id": 4,
+        "store": {
+            "0": "Michael, a first-time buyer from Seattle, is interested in user-friendly espresso machines with a sleek stainless-steel design. Inquiring about pricing, first-time buyer discounts, current bundle deals, shipping from a local warehouse, detailed product specifications(including exact dimensions), warranty policy, and temperature performance. Specifically concerned about whether machines produce reliably hot coffee and have adjustable temperature settings to avoid microwaving coffee. Mentions past issues with drip coffee makers that didn't heat sufficiently.",
+            "1": "Michael has requested confirmation of delivery timing and a signature requirement for his espresso machine order. He is particularly concerned about rainy weather damaging packages and wants to be present to receive the shipment. He has previously experienced soggy deliveries and emphasizes the importance of a signature for secure delivery.",
+            "2": "User Michael, 35, Seattle. Freelance graphic designer. Open to payment flexibility. Previously used credit card. Inquires about financing options or payment plans for the coffee grinder(a kitchen investment). Interested in pairing payment with coffee subscription if available. Will opt for simplest method unless clear advantage exists(e.g., interest-free financing, bundled payment with subscription). Values transparency and simplicity.",
+            "3": "User Michael, 35, Seattle. Freelance graphic designer. Interested in premium coffee tools(digital scale, temperature-controlled kettle) for connoisseur-level brewing. Values design and craftsmanship but prioritizes a balanced, non-lab-like kitchen aesthetic. Seeks tools that genuinely improve brewing results over being just 'cool gadgets' to show off. Prefers moderation and functionality over excess."
+        }
+    }
+}

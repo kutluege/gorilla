@@ -1,0 +1,19 @@
+{
+    "core_memory": {
+        "next_id": 1,
+        "store": {
+            "0": "Patient with Type 2 Diabetes on metformin 1000 mg twice daily. A1C around 6.9%. Recently added semaglutide(Ozempic) at low dose. Noted improvement in appetite control. Fasting blood sugar typically between 125-130 mg/dL."
+        }
+    },
+    "archival_memory": {
+        "next_id": 6,
+        "store": {
+            "0": "Hypothyroidism managed with levothyroxine 75 mcg daily, taken on empty stomach, 30 minutes before eating. Last TSH: 2.1 mIU/L(normal range), stable for years. Missed doses lead to next-day sluggishness. Uses pill organizer to prevent missed doses.",
+            "1": "Osteoarthritis management: Acetaminophen as needed for mild pain. Uses meloxicam 7.5 mg when joints are stiff(knees, hands), taken only as needed due to NSAID concerns. Doctor suggested glucosamine supplements; effect unclear. No daily use to minimize NSAID exposure.",
+            "2": "Vitamin D deficiency detected(22 ng/mL vs. normal >30 ng/mL). Now taking vitamin D3 2,000 IU daily. Also taking calcium supplements due to early osteopenia on bone density scan. Doctor recommends combining with vitamin K2 to improve absorption and bone health.",
+            "3": "Takes atorvastatin 10 mg daily for cholesterol management. LDL was 130 mg/dL, triglycerides 140 mg/dL; doctor prescribed low-dose statin. Cholesterol levels improving. No side effects reported(e.g., muscle aches), which is reassuring given statin concerns.",
+            "4": "Daily multivitamin, omega-3 supplements(heart health), and probiotics(digestion). Takes digestive enzymes when eating heavier meals due to gallbladder removal. Now mindful of fatty food digestion, as gallbladder removal affects fat breakdown and absorption.",
+            "5": "Patient with Type 2 Diabetes, hypertension, osteoarthritis, and hypothyroidism. On metformin 1000 mg BID, semaglutide(Ozempic) low dose, losartan 50 mg daily, levothyroxine 75 mcg daily. TSH stable at 2.1 mIU/L. Missed doses cause next-day sluggishness; uses pill organizer. Osteoarthritis: acetaminophen as needed, meloxicam 7.5 mg when stiff(knees/hands), only as needed. Glucosamine supplements tried; effect unclear. Vitamin D3 2,000 IU daily. Calcium + K2 for early osteopenia. Atorvastatin 10 mg daily\u2014cholesterol improving, no side effects. Daily multivitamin, omega-3, probiotics. Digestive enzymes with heavier meals due to gallbladder removal; mindful of fatty foods. Aware of medication interactions: NSAIDs(meloxicam) may affect kidney function with losartan(ACE inhibitor), so taken only as needed. Takes levothyroxine separately from calcium and iron supplements to avoid absorption interference."
+        }
+    }
+}

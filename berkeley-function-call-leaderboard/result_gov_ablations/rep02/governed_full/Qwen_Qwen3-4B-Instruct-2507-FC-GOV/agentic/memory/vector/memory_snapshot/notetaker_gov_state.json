@@ -1,0 +1,99 @@
+{
+  "backend": "vector",
+  "tiers": {
+    "core": {
+      "1": {
+        "text": "Wednesday: Presentation to leadership went well, but need to tweak a few slides for next week’s review. Client proposal draft ready—send it for legal approval. Need to onboard new hire—schedule one-on-one.",
+        "probes": [
+          "Wednesday: Presentation to leadership went well, but need to tweak a few slides for next week’s review. Client proposal draft ready—send it for legal approval. Need to onboard new hire—schedule one-on-one.",
+          "what do you know about wednesday presentation leadership went",
+          "wednesday presentation leadership went well need tweak few"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "3": {
+        "text": "Friday: Wrapped up pending reports, but still waiting for final approval. Followed up with vendors—two responded, one still pending. Training session next Monday—prep materials this weekend.",
+        "probes": [
+          "Friday: Wrapped up pending reports, but still waiting for final approval. Followed up with vendors—two responded, one still pending. Training session next Monday—prep materials this weekend.",
+          "what do you know about friday wrapped pending reports",
+          "friday wrapped pending reports still waiting final approval"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "4": {
+        "text": "Urgent: Submit tax documents before Friday. Review credit card statement for errors. Call auto repair shop about weird noise in the engine.",
+        "probes": [
+          "Urgent: Submit tax documents before Friday. Review credit card statement for errors. Call auto repair shop about weird noise in the engine.",
+          "what do you know about urgent submit tax documents",
+          "urgent submit tax documents before friday review credit"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "6": {
+        "text": "Tech: Back up laptop files. Update phone software. Cancel unused subscriptions.",
+        "probes": [
+          "Tech: Back up laptop files. Update phone software. Cancel unused subscriptions.",
+          "what do you know about tech back laptop files",
+          "tech back laptop files update phone software cancel"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "8": {
+        "text": "Organizing: Sort through closet—donate old clothes. Shred old mail. Restock pantry—running low on rice and cereal.",
+        "probes": [
+          "Organizing: Sort through closet—donate old clothes. Shred old mail. Restock pantry—running low on rice and cereal.",
+          "what do you know about organizing sort through closet",
+          "organizing sort through closet donate old clothes shred"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "9": {
+        "text": "Elementary school: Finalize admission paperwork. Attend orientation next Thursday. Research after-school programs.",
+        "probes": [
+          "Elementary school: Finalize admission paperwork. Attend orientation next Thursday. Research after-school programs.",
+          "what do you know about elementary school finalize admission",
+          "elementary school finalize admission paperwork attend orientation next"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "10": {
+        "text": "Family time: Take kid to park this weekend. Pick out a new bedtime story book. Help with counting practice—teacher says focus on numbers 1-20.",
+        "probes": [
+          "Family time: Take kid to park this weekend. Pick out a new bedtime story book. Help with counting practice—teacher says focus on numbers 1-20.",
+          "what do you know about family time take kid",
+          "family time take kid park weekend pick out"
+        ],
+        "probe_provenance": "sidecar"
+      }
+    },
+    "archival": {
+      "0": {
+        "text": "Diet: Cut back on sugar—too much soda lately. Meal prep on Sunday—grilled chicken, quinoa, and veggies. Hydration—aim for at least 3L of water per day. Protein shake after workouts.",
+        "probes": [
+          "Diet: Cut back on sugar—too much soda lately. Meal prep on Sunday—grilled chicken, quinoa, and veggies. Hydration—aim for at least 3L of water per day. Protein shake after workouts.",
+          "what do you know about diet cut back sugar",
+          "diet cut back sugar too much soda lately"
+        ],
+        "probe_provenance": "write_time"
+      },
+      "1": {
+        "text": "Mental Health: Try to get 7+ hours of sleep. Limit screen time before bed. Schedule a day off next month—too much back-to-back work lately. Find time for hobbies—maybe pick up guitar again.",
+        "probes": [
+          "Mental Health: Try to get 7+ hours of sleep. Limit screen time before bed. Schedule a day off next month—too much back-to-back work lately. Find time for hobbies—maybe pick up guitar again.",
+          "what do you know about mental health try get",
+          "mental health try get hours sleep limit screen"
+        ],
+        "probe_provenance": "write_time"
+      },
+      "2": {
+        "text": "Supplements & Meds: Vitamin D3—1000 IU daily. Omega-3s—good for joints. Iron levels were low last check-up—remember to take supplements. Probiotics—help with digestion, take in the morning.",
+        "probes": [
+          "Supplements & Meds: Vitamin D3—1000 IU daily. Omega-3s—good for joints. Iron levels were low last check-up—remember to take supplements. Probiotics—help with digestion, take in the morning.",
+          "what do you know about supplements meds vitamin 1000",
+          "supplements meds vitamin 1000 daily omega good joints"
+        ],
+        "probe_provenance": "write_time"
+      }
+    }
+  }
+}

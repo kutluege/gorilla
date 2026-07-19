@@ -1,0 +1,20 @@
+{
+    "core_memory": {
+        "next_id": 2,
+        "store": {
+            "0": "User Michael, 35, lives in Seattle, freelance graphic designer, values design aesthetics in appliances, interested in high-quality coffee machines for morning routine, specifically looking at drip and espresso machines.",
+            "1": "Michael values a clean, organized kitchen and is concerned about space. He wants an espresso machine with a minimal footprint to avoid disrupting his existing appliance layout. Prefers compact, sleek designs that blend seamlessly into his counter setup."
+        }
+    },
+    "archival_memory": {
+        "next_id": 6,
+        "store": {
+            "0": "Michael, a 35-year-old freelance graphic designer in Seattle, is exploring espresso machines for a caf\u00e9-like home experience without being a professional barista. Prefers sleek, modern designs with stainless-steel finishes. Interested in user-friendly features, ease of use, and aesthetic appeal over complex technical functions.",
+            "1": "Michael is a first-time buyer looking for espresso machines with a focus on design, ease of use, and affordability. Inquired about pricing range, new customer discounts, and bundle deals. Noted a 'New Customer Discount' promotion seen on homepage but not claimed yet.",
+            "2": "Michael, based in Seattle, is concerned about shipping times and local delivery options. Wants to receive his espresso machine before a family gathering later this month. Inquires whether shipments come from a local warehouse or out of state, and if there's a reliable delivery timeline during rainy weather in Seattle.",
+            "3": "Michael's friend purchased a kitchen appliance(air fryer or blender) from the company and praised the excellent customer support. This led Michael to explore coffee machines. Michael is now asking detailed questions about brewing frequency, cleaning complexity, machine size, and space requirements to ensure the appliance fits his routine and kitchen layout.",
+            "4": "Michael is inquiring about warranty policies for coffee machines, specifically concerned about long-term reliability and customer support. He has had negative experiences with short warranty periods from other brands and is looking for a robust, customer-friendly guarantee, especially for higher-end models.",
+            "5": "Michael has had issues with drip coffee makers that don't heat sufficiently, leading him to microwave his coffee. He is specifically asking about temperature control or reliable hot coffee performance in espresso machines, noting that consistent temperature is crucial for his at-home coffee experience."
+        }
+    }
+}

@@ -1,0 +1,12 @@
+{
+    "core_memory": {
+        "blood_glucose_fasting_latest": "135 mg/dL",
+        "morning_blood_glucose_range": "2.1 mIU/L(within normal range)",
+        "doctor_recommendations": "Supplement suggested, but effect not yet confirmed",
+        "hdl_cholesterol_58_mg": "130 mg/dL(initial level, now improving)",
+        "triglycerides": "140 mg/dL(initial level, now improving)",
+        "doctor_cholesterol_recommendations": "Taken separately from calcium and iron supplements to avoid interference with absorption",
+        "blood_pressure_latest": "135-140 / 80-90 mmHg"
+    },
+    "archival_memory": {}
+}

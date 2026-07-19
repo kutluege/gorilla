@@ -1,0 +1,25 @@
+{
+    "core_memory": {
+        "tuesday_updates": "System downtime from 10 AM - 12 PM, slowed down workflow. HR sent updated benefits package\u2014review before next month\u2019s deadline. Sent follow-up emails to vendors, waiting on response.",
+        "wednesday_updates": "Presentation to leadership went well, but need to tweak a few slides for next week\u2019s review. Client proposal draft ready\u2014send it for legal approval. Need to onboard new hire\u2014schedule one-on-one.",
+        "thursday_updates": "Finance wants cost-cutting recommendations\u2014brainstorm ideas. Project deadline approaching\u2014check in with Dev team. Caught a mistake in last month\u2019s sales data.",
+        "urgent_tax_submission": "Submit tax documents before Friday.",
+        "credit_card_review": "Review credit card statement for errors.",
+        "auto_repair_call": "Call auto repair shop about weird noise in the engine.",
+        "gym_strength_training": "Workout at least 3x this week, focusing on legs and back"
+    },
+    "archival_memory": {
+        "diet_sugar_reduction": "Cut back on sugar\u2014too much soda lately",
+        "meal_prep_sunday": "Meal prep on Sunday: grilled chicken, quinoa, and veggies",
+        "daily_hydration": "Aim for at least 3L of water per day",
+        "post_workout_protein_shake": "Have a protein shake after workouts",
+        "mental_health_sleep_goal": "Aim for 7+ hours of sleep",
+        "screen_time_before_bed": "Limit screen time before bed",
+        "scheduled_day_off": "Schedule a day off next month to reduce back-to-back work",
+        "hobbies_guitar": "Find time for hobbies\u2014consider picking up guitar again",
+        "supplements_vitamin_d3": "Take Vitamin D3\u20141000 IU daily",
+        "supplements_omega_3s": "Take Omega-3s\u2014beneficial for joint health",
+        "supplements_iron": "Iron levels were low in last check-up\u2014remember to take iron supplements",
+        "supplements_probiotics": "Take probiotics\u2014support digestion, in the morning"
+    }
+}

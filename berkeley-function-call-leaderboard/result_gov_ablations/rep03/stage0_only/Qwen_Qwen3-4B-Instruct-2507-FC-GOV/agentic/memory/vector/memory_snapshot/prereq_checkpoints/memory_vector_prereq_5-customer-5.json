@@ -1,0 +1,18 @@
+{
+    "core_memory": {
+        "next_id": 1,
+        "store": {
+            "0": "User Michael, 35, Seattle. Grinder is MVP. Critical to confirm dispatch from Oregon warehouse. Label created but no scan\u2014risk of missing item. Tracking stuck. Will greet driver. Rain concern: soggy boxes."
+        }
+    },
+    "archival_memory": {
+        "next_id": 5,
+        "store": {
+            "0": "User Michael, 35, lives in Seattle, freelance graphic designer, seeks a user-friendly espresso machine with a sleek stainless-steel finish. Concerned about kitchen space and appliance placement. Specifically asking for precise dimensions of the espresso machine to avoid 'kitchen Tetris' scenarios. Wants to ensure the machine fits without requiring major rearrangements of existing appliances or storage.",
+            "1": "User Michael, 35, lives in Seattle, freelance graphic designer, seeks a user-friendly espresso machine with a sleek stainless-steel finish. Concerned about kitchen space and appliance placement. Wants confirmation on warranty policy, especially for higher-end models. Values long-term reliability and customer support, with a history of negative experiences with short warranty periods from other brands.",
+            "2": "User Michael, 35, lives in Seattle, freelance graphic designer, seeks a user-friendly espresso machine with a sleek stainless-steel finish. Concerned about kitchen space, warranty, and temperature consistency. Specifically asking whether machines have adjustable temperature settings or reliably produce hot coffee to avoid microwaving, which he finds unsatisfactory for his at-home coffee experience.",
+            "3": "Michael(Seattle) reports conflicting tracking updates: Grinder bundle(Oregon warehouse) shows 'Label Created \u2014 Awaiting Item' for 3+ days. Second order(canisters, Garmin scale) from East(Ohio/Pennsylvania) shows 'In transit' and now updated to 'Estimated delivery: 3 days from today'\u2014sooner than expected despite longer distance. Concern: Oregon shipment stagnant; possible warehouse delay, backorder, or labeling error. Weather impact: Heavy rains, flooding, local shipping delays this season. Worry: Mix-up or mislabeling? Need clarity on status and delivery timelines.",
+            "4": "Michael(Seattle) requests: Verify billing and shipping address for second order(canisters, Garmin scale). Uses same address and card as before. Has had prior security hold issue with Apple Pay\u2014wants to avoid similar experience. Requests immediate check for red flags(e.g., mismatched address, payment error, fraud alert). Will act on any warning signs proactively."
+        }
+    }
+}

@@ -1,0 +1,13 @@
+{
+    "core_memory": {
+        "next_id": 2,
+        "store": {
+            "0": "User Michael, 35, lives in Seattle, freelance graphic designer, seeks a sleek, modern stainless-steel espresso machine. Inquiring about temperature control in coffee machines to avoid microwaving. Specifically asking for reliably hot coffee and adjustable temperature settings.",
+            "1": "Regarding speaking: User Michael, 35, lives in Seattle, freelance graphic designer, seeks a sleek, modern stainless-steel espresso machine. Inquiring about precise dimensions to avoid kitchen 'Tetris' issues. Concerned about space, appliance placement, and routine compatibility."
+        }
+    },
+    "archival_memory": {
+        "next_id": 0,
+        "store": {}
+    }
+}

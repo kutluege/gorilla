@@ -1,0 +1,16 @@
+{
+    "core_memory": {
+        "next_id": 1,
+        "store": {
+            "0": "User Michael, in Seattle, freelance designer, seeks espresso machine with sleek stainless-steel finish, reliable hot coffee, no need to microwave. Inquires about temperature settings in Aura ES-300 and Lume E-200."
+        }
+    },
+    "archival_memory": {
+        "next_id": 3,
+        "store": {
+            "0": "User Michael, 35, lives in Seattle, freelance graphic designer, seeks user-friendly espresso machine with caf\u00e9-like experience, prefers sleek stainless-steel finish, inquiring about pricing, new customer discount, bundle deals, and shipping from local warehouse. Concerned about delivery timing for a family gathering later this month.",
+            "1": "User Michael, in Seattle, freelance designer, concerned about kitchen counter space, wants to avoid 'kitchen Tetris' by confirming espresso machine dimensions before purchase. Specifically interested in Aura ES-300 and Lume E-200 sizes, footprint, and how they compare to existing appliances.",
+            "2": "User Michael, in Seattle, freelance designer, concerned about warranty and quality guarantee for espresso machine. Specifically inquires about length of warranty, service support, and reliability of higher-end models(Aura ES-300, Lume E-200). Values long-term support and wants to avoid short warranty periods or poor service experiences."
+        }
+    }
+}

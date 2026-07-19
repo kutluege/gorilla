@@ -1,0 +1,17 @@
+{
+  "backend": "kv",
+  "tiers": {
+    "core": {},
+    "archival": {
+      "diabetes_bloodwork_2024_q3": {
+        "text": "diabetes bloodwork 2024 q3: Fasting blood glucose: 135 mg/dL; A1C: 6.9%; Morning readings: 125-130 mg/dL; Recommendations: Increase dietary fiber, add light exercise after meals;\n\nCholesterol results: Total cholesterol: 195 mg/dL (acceptable); LDL: 130 mg/dL (above target <100 mg/dL); HDL: 58 mg/dL (good range); Triglycerides: 140 mg/dL (slightly elevated);\n\nDoctor’s recommendations: Increase intake of healthy fats (avocados, nuts); reduce saturated fats;\n\nBlood pressure: 138/85 mmHg (last check-up); Target: <130/80 mmHg; Home readings: 135–140 systolic, 80–90 diastolic; Influenced by stress and salt intake; Actions: Reducing sodium, increasing water intake — showing improvement;\n\nVitamin D: Level: 22 ng/mL (deficient; normal range: 30-50 ng/mL); Treatment: Starting 2,000 IU daily supplement; Follow-up: Retest in 3 months.",
+        "probes": [
+          "diabetes bloodwork 2024 q3",
+          "what is diabetes bloodwork 2024 q3",
+          "diabetes bloodwork 2024 q3 fasting blood glucose"
+        ],
+        "probe_provenance": "write_time"
+      }
+    }
+  }
+}

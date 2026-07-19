@@ -1,0 +1,12 @@
+{
+    "core_memory": {
+        "next_id": 1,
+        "store": {
+            "0": "User Michael, 35, lives in Seattle, freelance graphic designer, concerned about counter space and appliance reorganization. Wants clear dimensions and realistic footprint assessment. Inquiring about warranty policy for higher-end models, seeking a long-term, customer-friendly quality guarantee."
+        }
+    },
+    "archival_memory": {
+        "next_id": 0,
+        "store": {}
+    }
+}

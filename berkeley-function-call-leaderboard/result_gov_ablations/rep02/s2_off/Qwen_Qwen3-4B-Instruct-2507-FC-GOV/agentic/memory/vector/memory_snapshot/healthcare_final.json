@@ -1,0 +1,14 @@
+{
+    "core_memory": {
+        "next_id": 1,
+        "store": {
+            "0": "Patient with Type 2 Diabetes on metformin 1000 mg twice daily. A1C around 6.9%. Recently added semaglutide(Ozempic) at low dose for better blood sugar control and appetite management. Fasting blood sugar typically between 125-130 mg/dL."
+        }
+    },
+    "archival_memory": {
+        "next_id": 1,
+        "store": {
+            "0": "Patient on levothyroxine 75 mcg daily, taken on an empty stomach with at least 30 minutes before eating. Last TSH test result: 2.1 mIU/L(within normal range). Doctor has not adjusted dosage in years. Noted that missing a dose leads to feeling sluggish the next day; uses a pill organizer to maintain consistency. Also manages osteoarthritis with acetaminophen as needed for mild pain and meloxicam 7.5 mg when joints are particularly stiff(knees and hands). Uses meloxicam intermittently to avoid overuse of NSAIDs. Doctor suggested glucosamine supplements; patient is unsure if they\u2019ve provided any benefit. Vitamin D3 2,000 IU daily due to low levels(22 ng/mL; normal >30 ng/mL). Also takes calcium supplements due to early signs of osteopenia on bone density scan. Doctor recommends combining calcium with vitamin K2 to improve absorption."
+        }
+    }
+}

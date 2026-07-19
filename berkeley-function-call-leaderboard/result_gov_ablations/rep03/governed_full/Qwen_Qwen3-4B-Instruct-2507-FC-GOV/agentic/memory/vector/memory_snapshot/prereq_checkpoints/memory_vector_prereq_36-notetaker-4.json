@@ -1,0 +1,21 @@
+{
+    "core_memory": {
+        "next_id": 11,
+        "store": {
+            "1": "Mental Health: Try to get 7+ hours of sleep. Limit screen time before bed. Schedule a day off next month\u2014too much back-to-back work lately. Find time for hobbies\u2014maybe pick up guitar again.",
+            "3": "Friday: Wrapped up pending reports, but still waiting for final approval. Followed up with vendors\u2014two responded, one still pending. Training session next Monday\u2014prep materials this weekend.",
+            "4": "Urgent: Submit tax documents before Friday. Review credit card statement for errors. Call auto repair shop about weird noise in the engine.",
+            "6": "Tech: Back up laptop files. Update phone software. Cancel unused subscriptions.",
+            "8": "Organizing: Sort through closet\u2014donate old clothes. Shred old mail. Restock pantry\u2014running low on rice and cereal.",
+            "9": "Elementary school: Finalize admission paperwork. Attend orientation next Thursday. Research after-school programs.",
+            "10": "Family time: Take kid to park this weekend. Pick out a new bedtime story book. Help with counting practice\u2014teacher says focus on numbers 1-20."
+        }
+    },
+    "archival_memory": {
+        "next_id": 2,
+        "store": {
+            "0": "Diet: Cut back on sugar\u2014too much soda lately. Meal prep on Sunday\u2014grilled chicken, quinoa, and veggies. Hydration\u2014aim for at least 3L of water per day. Protein shake after workouts.",
+            "1": "Supplements & Meds: Vitamin D3\u20141000 IU daily. Omega-3s\u2014good for joints. Iron levels were low last check-up\u2014remember to take supplements. Probiotics\u2014help with digestion, take in the morning."
+        }
+    }
+}

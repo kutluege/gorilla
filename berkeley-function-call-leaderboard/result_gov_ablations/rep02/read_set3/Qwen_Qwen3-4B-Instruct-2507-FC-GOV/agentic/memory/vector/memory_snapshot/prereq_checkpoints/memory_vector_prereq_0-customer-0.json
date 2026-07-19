@@ -1,0 +1,12 @@
+{
+    "core_memory": {
+        "next_id": 1,
+        "store": {
+            "0": "User Michael, 35, lives in Seattle, freelance graphic designer, seeks stainless-steel espresso machine with easy use and caf\u00e9-like results, interested in first-time buyer discounts, bundle deals, local shipping, and detailed specs: how often it can brew, cleaning ease, size, and kitchen footprint."
+        }
+    },
+    "archival_memory": {
+        "next_id": 0,
+        "store": {}
+    }
+}

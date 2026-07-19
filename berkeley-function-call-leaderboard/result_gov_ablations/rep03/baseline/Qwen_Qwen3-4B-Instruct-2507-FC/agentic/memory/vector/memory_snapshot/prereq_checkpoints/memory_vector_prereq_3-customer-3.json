@@ -1,0 +1,16 @@
+{
+    "core_memory": {
+        "next_id": 1,
+        "store": {
+            "0": "User Michael, 35, from Seattle. Ordered stainless-steel espresso machine with steam wand. Delivery stuck in 'in transit' for over a week. Family gathering with siblings/friends. 'Latte art showdown' planned. Alternatives: drip coffee maker or local coffee house."
+        }
+    },
+    "archival_memory": {
+        "next_id": 3,
+        "store": {
+            "0": "User Michael, 35, from Seattle, ordered a stainless-steel espresso machine with steam wand. Delivery tracking shows status stuck in 'in transit' with no updates for over a week. Shipping origin appears to be out of state. User is anxious about missing family gathering and has tried multiple tracking methods without success. Requesting assistance in escalating the issue to customer support.",
+            "1": "User Michael, 35, from Seattle. Ordered stainless-steel espresso machine with steam wand. Estimated delivery: 11 business days(regular shipping). Qualified for free shipping with frothing pitcher and extra filters. All items were in stock at time of order. No back-order or supply shortage expected. Delivery status stuck in 'in transit' with no updates for over a week. Concerned about family gathering and 'latte art showdown'. Considering alternatives: drip coffee maker or local coffee house.",
+            "2": "User Michael, 35, from Seattle. Inquired about return/exchange process for lost or delayed espresso machine shipment. Confirmed free shipping with frothing pitcher and filters. Policy: Company files carrier claim on behalf of customer for lost/damaged packages. Customer only needs to provide order number and proof of purchase. Replacement shipped at no cost. Process takes 5\u20137 business days after claim approval. Customer retains all accessories(frothing pitcher, filters) if exchanged. Additional note: Concerned about rainy weather damaging packages. Will be home to receive delivery. Requires signature for delivery. Will arrange design work around delivery window to ensure presence."
+        }
+    }
+}

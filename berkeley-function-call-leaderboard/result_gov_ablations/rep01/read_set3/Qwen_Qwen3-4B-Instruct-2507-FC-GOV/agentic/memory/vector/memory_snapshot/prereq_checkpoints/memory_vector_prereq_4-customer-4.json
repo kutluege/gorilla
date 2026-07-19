@@ -1,0 +1,19 @@
+{
+    "core_memory": {
+        "next_id": 3,
+        "store": {
+            "0": "User Michael, 35, Seattle freelance graphic designer. Machine damaged: bent steam wand, dent. Urgent. Wants cross-shipment, fast regional delivery, upgrade waived. No return needed. Order details ready. Excited for positive resolution. Awaiting next steps.",
+            "1": "Michael(Seattle, 35) confirmed order intent for coffee grinder. Interested in storage canister and cleaning kit for espresso machine & grinder. Kitchen reorganized into a cohesive coffee corner. Aesthetic and functional setup prioritized. Open to accessory bundle options.",
+            "2": "Michael(Seattle, 35) interested in digital scale or temperature-controlled kettle. Values function and design balance. Wants tools that enhance brewing without making kitchen look like a lab. Seeks elegant, subtle, and aesthetically pleasing options."
+        }
+    },
+    "archival_memory": {
+        "next_id": 4,
+        "store": {
+            "0": "Michael, a first-time buyer from Seattle, interested in espresso machines with design, ease of use, pricing, shipping, dimensions, warranty, and temperature performance. Specifically concerned about drip coffee makers that don\u2019t heat sufficiently and has had to microwave coffee. Wants to know if your espresso or drip machines have adjustable temperature settings or reliably produce hot coffee to avoid microwaving. Values consistent, high-quality brew temperature for at-home coffee experience.",
+            "1": "Michael(Seattle, 35, freelance graphic designer) reported that his espresso machine order status is stuck, showing 'in transit' with no updates for over a week. The tracking indicates the package is located outside Washington state, and multiple attempts to refresh or verify tracking have failed. User is anxious about the delivery and seeks resolution.",
+            "2": "Michael(Seattle, 35, freelance graphic designer) ordered an espresso machine with regular shipping, expecting an 11-business-day delivery. He qualified for free shipping by adding accessories: stainless-steel frothing pitcher and extra filters. All items were in stock at checkout. Now, the package is stuck in transit outside Washington with no updates. User is concerned about potential supply issues or shipping errors despite initial stock confirmation.",
+            "3": "Michael(Seattle, 35, freelance graphic designer) is preparing for a potential replacement of his lost or delayed espresso machine. He wants to understand the process for filing a claim with the carrier, whether it's handled by the company or required by the customer. He emphasizes that the machine is a significant personal investment and a gift to himself for upgrading his morning routine. He seeks clarity on the return/exchange policy for lost shipments and wants to be prepared if the package is confirmed lost or damaged. Additionally, he is aware of past issues with rainy weather damaging packages upon delivery and has requested that he be available to receive the package in person if it arrives. He specifically notes that a signature is required and will ensure he is home to greet the driver to prevent the package from being left unattended or exposed to rain."
+        }
+    }
+}

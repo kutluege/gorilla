@@ -1,0 +1,12 @@
+{
+    "core_memory": {
+        "next_id": 1,
+        "store": {
+            "0": "Well-managed medication routine using pill planner and phone reminders. Focuses on lifestyle changes\u2014diet, stress management, activity\u2014to reduce medication reliance. Goal: maintain optimal health and avoid unnecessary prescriptions by using natural strategies when possible."
+        }
+    },
+    "archival_memory": {
+        "next_id": 0,
+        "store": {}
+    }
+}

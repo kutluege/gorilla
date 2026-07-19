@@ -1,0 +1,17 @@
+{
+    "core_memory": {
+        "user_name": "Michael",
+        "user_location": "Seattle",
+        "user_profession": "Freelance graphic designer",
+        "user_interests": "Sleek, modern design; morning routine; home coffee experience",
+        "user_preference": "Stainless steel finish, caf\u00e9-like experience without professional barista skills"
+    },
+    "archival_memory": {
+        "user_inquiry_pricing": "Michael is interested in pricing for espresso machines, specifically asking about first-time buyer discounts, new customer offers, and bundle deals.",
+        "user_shipping_concern": "Michael is in Seattle and is concerned about shipping times and whether products are shipped from a local warehouse. He wants to receive the product before a family gathering later this month.",
+        "user_additional_questions": "Michael is asking detailed questions about machine usability: brewing frequency, cleaning difficulty, footprint(kitchen counter space), and overall practicality for a freelance designer's morning routine.",
+        "user_kitchen_space_concern": "Michael is concerned about the footprint of the espresso machine and how it might impact his existing kitchen counter layout. He wants to mentally prepare for potential rearrangements(like moving the toaster oven or reorganizing the spice rack).",
+        "user_warranty_concern": "Michael is asking about warranty policies for coffee machines, specifically concerned about long-term reliability and customer support for higher-end models. He wants assurance that service is accessible and not a headache.",
+        "user_temperature_concern": "Michael is concerned about coffee temperature consistency, specifically whether the espresso machines produce reliably hot coffee(not too cold, not too hot) and whether they have adjustable temperature settings to avoid needing to microwave his coffee."
+    }
+}

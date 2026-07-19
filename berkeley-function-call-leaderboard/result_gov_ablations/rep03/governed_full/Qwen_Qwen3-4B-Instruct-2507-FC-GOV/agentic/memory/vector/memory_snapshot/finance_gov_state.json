@@ -1,0 +1,207 @@
+{
+  "backend": "vector",
+  "tiers": {
+    "core": {
+      "0": {
+        "text": "MD's first major win: 2019 poison pill strategy against hostile takeover of Surreal Incorporated. Case study at Harvard Business School. Highlighted innovation in defensive corporate strategies.",
+        "probes": [
+          "MD's first major win: 2019 poison pill strategy against hostile takeover of Surreal Incorporated. Case study at Harvard Business School. Highlighted innovation in defensive corporate strategies.",
+          "what do you know about first major win 2019",
+          "first major win 2019 poison pill strategy against"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "1": {
+        "text": "Key deal: $8.6B cross-border semiconductor merger between Nexa Semiconductors and Taihua Microelectronics. Coordinated across three continents; navigated IP and regulatory hurdles. Taught that global finance requires both technical precision and diplomatic acumen.",
+        "probes": [
+          "Key deal: $8.6B cross-border semiconductor merger between Nexa Semiconductors and Taihua Microelectronics. Coordinated across three continents; navigated IP and regulatory hurdles. Taught that global finance requires both technical precision and diplomatic acumen.",
+          "what do you know about key deal cross border",
+          "key deal cross border semiconductor merger between nexa"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "2": {
+        "text": "Leadership at Legend Investments: empowerment, accountability, continuous growth. Open-door policy; weekly strategic roundtable for all-level input. Junior analyst's ESG scoring idea now implemented. Leadership is about fostering innovation, not having all answers.",
+        "probes": [
+          "Leadership at Legend Investments: empowerment, accountability, continuous growth. Open-door policy; weekly strategic roundtable for all-level input. Junior analyst's ESG scoring idea now implemented. Leadership is about fostering innovation, not having all answers.",
+          "what do you know about leadership legend investments empowerment",
+          "leadership legend investments empowerment accountability continuous growth open"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "3": {
+        "text": "Client relationships are built on genuine personal connection. With Robert, I engaged his children to shape a successful succession plan. I attend family events, support through personal losses, and respond to midnight texts with care—trust is earned in authentic moments, not transactions.",
+        "probes": [
+          "Client relationships are built on genuine personal connection. With Robert, I engaged his children to shape a successful succession plan. I attend family events, support through personal losses, and respond to midnight texts with care—trust is earned in authentic moments, not transactions.",
+          "what do you know about client relationships built genuine",
+          "client relationships built genuine personal connection robert engaged"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "4": {
+        "text": "Bloomberg Terminal is my 'Mission Control'—customized for real-time data, anomaly detection, and global coordination. 2022 crisis alert at 3 AM caught unusual regional bank trading, enabling early position shifts. LIVE function critical for aligning Asian and global offices during key deals.",
+        "probes": [
+          "Bloomberg Terminal is my 'Mission Control'—customized for real-time data, anomaly detection, and global coordination. 2022 crisis alert at 3 AM caught unusual regional bank trading, enabling early position shifts. LIVE function critical for aligning Asian and global offices during key deals.",
+          "what do you know about bloomberg terminal mission control",
+          "bloomberg terminal mission control customized real time data"
+        ],
+        "probe_provenance": "write_time"
+      },
+      "5": {
+        "text": "Implemented Aladdin platform despite board resistance. 15% higher risk-adjusted returns. Built 'Risk Radar' dashboard using Aladdin and proprietary models for emerging market volatility. Inspired by early currency crises. Licensed to three firms.",
+        "probes": [
+          "Implemented Aladdin platform despite board resistance. 15% higher risk-adjusted returns. Built 'Risk Radar' dashboard using Aladdin and proprietary models for emerging market volatility. Inspired by early currency crises. Licensed to three firms.",
+          "what do you know about implemented aladdin platform despite",
+          "implemented aladdin platform despite board resistance higher risk"
+        ],
+        "probe_provenance": "write_time"
+      },
+      "6": {
+        "text": "Tableau evangelist. Crafted ESG dashboard for Vertex, Nexus, Summit using multi-source data. Clients engage with clear environmental impact insights. Experimenting with HoloLens AR for 3D market data presentations. Early stage, but believe it's the future of financial storytelling.",
+        "probes": [
+          "Tableau evangelist. Crafted ESG dashboard for Vertex, Nexus, Summit using multi-source data. Clients engage with clear environmental impact insights. Experimenting with HoloLens AR for 3D market data presentations. Early stage, but believe it's the future of financial storytelling.",
+          "what do you know about tableau evangelist crafted esg",
+          "tableau evangelist crafted esg dashboard vertex nexus summit"
+        ],
+        "probe_provenance": "write_time"
+      }
+    },
+    "archival": {
+      "0": {
+        "text": "2019: Structured poison pill defense for Surreal Incorporated, now a Harvard Business School case study. Demonstrated innovative defensive strategy in corporate finance.",
+        "probes": [
+          "2019: Structured poison pill defense for Surreal Incorporated, now a Harvard Business School case study. Demonstrated innovative defensive strategy in corporate finance.",
+          "what do you know about 2019 structured poison pill",
+          "2019 structured poison pill defense surreal incorporated now"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "1": {
+        "text": "2023: $8.6B semiconductor merger between Nexa Semiconductors and Taihua Microelectronics. Cross-continental coordination, IP and regulatory challenges resolved. Highlighted diplomacy and technical execution in global finance.",
+        "probes": [
+          "2023: $8.6B semiconductor merger between Nexa Semiconductors and Taihua Microelectronics. Cross-continental coordination, IP and regulatory challenges resolved. Highlighted diplomacy and technical execution in global finance.",
+          "what do you know about 2023 semiconductor merger between",
+          "2023 semiconductor merger between nexa semiconductors taihua microelectronics"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "2": {
+        "text": "Q4 2023: $14.2B healthcare merger between BioCrest Labs and OncoPharm Therapeutics. Overcame IP valuation and regulatory hurdles. Finalized after three sleepless nights. WSJ hailed it as 'the deal that reshaped modern cancer treatment.' A testament to resilience and strategic leadership under pressure.",
+        "probes": [
+          "Q4 2023: $14.2B healthcare merger between BioCrest Labs and OncoPharm Therapeutics. Overcame IP valuation and regulatory hurdles. Finalized after three sleepless nights. WSJ hailed it as 'the deal that reshaped modern cancer treatment.' A testament to resilience and strategic leadership under pressure.",
+          "what do you know about 2023 healthcare merger between",
+          "2023 healthcare merger between biocrest labs oncopharm therapeutics"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "3": {
+        "text": "Ongoing $8.5B semiconductor merger: QuantumChip Technologies & Silicon Core — U.S.-China regulatory navigation. A masterclass in patience and strategic diplomacy. Builds on prior experience with Nexa-Taihua deal(2023).",
+        "probes": [
+          "Ongoing $8.5B semiconductor merger: QuantumChip Technologies & Silicon Core — U.S.-China regulatory navigation. A masterclass in patience and strategic diplomacy. Builds on prior experience with Nexa-Taihua deal(2023).",
+          "what do you know about ongoing semiconductor merger quantumchip",
+          "ongoing semiconductor merger quantumchip technologies silicon core china"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "4": {
+        "text": "Ongoing $3.2B LBO of VertexSoft(SaaS provider) — debt financing structure remains a key challenge. Requires balancing cost, risk, and growth potential in a high-growth sector.",
+        "probes": [
+          "Ongoing $3.2B LBO of VertexSoft(SaaS provider) — debt financing structure remains a key challenge. Requires balancing cost, risk, and growth potential in a high-growth sector.",
+          "what do you know about ongoing lbo vertexsoft saas",
+          "ongoing lbo vertexsoft saas provider debt financing structure"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "5": {
+        "text": "Confidential $5B+ renewable energy acquisition: Solaris Energy Group acquiring Nordic Renewables — jurisdictional alignment of government incentives is a major hurdle. Reflects growing strategic focus on ESG and sustainable infrastructure.",
+        "probes": [
+          "Confidential $5B+ renewable energy acquisition: Solaris Energy Group acquiring Nordic Renewables — jurisdictional alignment of government incentives is a major hurdle. Reflects growing strategic focus on ESG and sustainable infrastructure.",
+          "what do you know about confidential renewable energy acquisition",
+          "confidential renewable energy acquisition solaris group acquiring nordic"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "6": {
+        "text": "Weekly deal call at 7 AM to accommodate Asian market participants — a consistent practice that enhances global coordination and keeps leadership sharp. Rooted in the firm’s commitment to inclusive, time-zone-aware decision-making.",
+        "probes": [
+          "Weekly deal call at 7 AM to accommodate Asian market participants — a consistent practice that enhances global coordination and keeps leadership sharp. Rooted in the firm’s commitment to inclusive, time-zone-aware decision-making.",
+          "what do you know about weekly deal call accommodate",
+          "weekly deal call accommodate asian market participants consistent"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "7": {
+        "text": "Potential $20B take-private transaction: Omnix AI — an AI powerhouse. If executed, would represent a transformative opportunity for Legend Investments, aligning with our AI-driven trading and ESG strategy pillars. A 'game-changer' in scale and strategic impact.",
+        "probes": [
+          "Potential $20B take-private transaction: Omnix AI — an AI powerhouse. If executed, would represent a transformative opportunity for Legend Investments, aligning with our AI-driven trading and ESG strategy pillars. A 'game-changer' in scale and strategic impact.",
+          "what do you know about potential 20b take private",
+          "potential 20b take private transaction omnix powerhouse executed"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "8": {
+        "text": "2001–2004: Career at Goldman Sachs and Morgan Stanley. Gained foundational experience in M&A modeling and early tech sector dynamics during dot-com era and social media rise. Developed analytical rigor and resilience under market volatility.",
+        "probes": [
+          "2001–2004: Career at Goldman Sachs and Morgan Stanley. Gained foundational experience in M&A modeling and early tech sector dynamics during dot-com era and social media rise. Developed analytical rigor and resilience under market volatility.",
+          "what do you know about 2001 2004 career goldman",
+          "2001 2004 career goldman sachs morgan stanley gained"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "9": {
+        "text": "2015: Joined Legend Investments as Managing Director. First major transaction: NeuralNet Systems IPO — largest tech IPO in firm’s history. Marked the beginning of a reputation for excellence in cross-border, complex deals.",
+        "probes": [
+          "2015: Joined Legend Investments as Managing Director. First major transaction: NeuralNet Systems IPO — largest tech IPO in firm’s history. Marked the beginning of a reputation for excellence in cross-border, complex deals.",
+          "what do you know about 2015 joined legend investments",
+          "2015 joined legend investments managing director first major"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "10": {
+        "text": "Core leadership principle: Trust in global finance is earned through consistent, successful execution. Network and track record are the true currency. Each deal builds credibility, influence, and long-term relationships.",
+        "probes": [
+          "Core leadership principle: Trust in global finance is earned through consistent, successful execution. Network and track record are the true currency. Each deal builds credibility, influence, and long-term relationships.",
+          "what do you know about core leadership principle trust",
+          "core leadership principle trust global finance earned through"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "11": {
+        "text": "Education: B.S. in Economics, University of Pennsylvania; MBA from Harvard Business School(Baker Scholar). A foundation of rigorous analytical training and leadership development.",
+        "probes": [
+          "Education: B.S. in Economics, University of Pennsylvania; MBA from Harvard Business School(Baker Scholar). A foundation of rigorous analytical training and leadership development.",
+          "what do you know about education economics university pennsylvania",
+          "education economics university pennsylvania mba harvard business school"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "12": {
+        "text": "Ongoing engagement with Penn and HBS: guest lecturing, mentoring students, recruiting top talent. Demonstrates commitment to nurturing the next generation of finance leaders.",
+        "probes": [
+          "Ongoing engagement with Penn and HBS: guest lecturing, mentoring students, recruiting top talent. Demonstrates commitment to nurturing the next generation of finance leaders.",
+          "what do you know about ongoing engagement penn hbs",
+          "ongoing engagement penn hbs guest lecturing mentoring students"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "13": {
+        "text": "Endowed a scholarship at University of Pennsylvania for first-generation college students interested in finance. A tangible commitment to equity and access in the finance industry.",
+        "probes": [
+          "Endowed a scholarship at University of Pennsylvania for first-generation college students interested in finance. A tangible commitment to equity and access in the finance industry.",
+          "what do you know about endowed scholarship university pennsylvania",
+          "endowed scholarship university pennsylvania first generation college students"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "14": {
+        "text": "Core belief: Talent is the greatest investment in finance. Finance should be a pathway to opportunity—not just for the privileged, but for those with hunger, discipline, and resilience. This philosophy shapes firm culture and talent strategy.",
+        "probes": [
+          "Core belief: Talent is the greatest investment in finance. Finance should be a pathway to opportunity—not just for the privileged, but for those with hunger, discipline, and resilience. This philosophy shapes firm culture and talent strategy.",
+          "what do you know about core belief talent greatest",
+          "core belief talent greatest investment finance should pathway"
+        ],
+        "probe_provenance": "sidecar"
+      }
+    }
+  }
+}

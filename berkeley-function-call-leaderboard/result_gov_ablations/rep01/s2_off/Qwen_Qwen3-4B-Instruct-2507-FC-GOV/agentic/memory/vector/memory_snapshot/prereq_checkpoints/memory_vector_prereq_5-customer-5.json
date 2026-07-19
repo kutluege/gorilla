@@ -1,0 +1,19 @@
+{
+    "core_memory": {
+        "next_id": 2,
+        "store": {
+            "0": "User Michael, 35, Seattle. Grinder from Oregon\u2014tracking stuck. Label generated? Worried about oversight. Traveling to Portland next weekend. Will be away. Worried about porch exposure. Prefers grinder inside ASAP. Needs arrival date to plan.",
+            "1": "User Michael, 35, satisfied customer. Ordered coffee grinder and accessories. Expresses interest in steam wand to enhance espresso performance. Values brand responsiveness and product quality. Looking forward to finalizing second order. Confirmed positive experience despite past delivery issues."
+        }
+    },
+    "archival_memory": {
+        "next_id": 5,
+        "store": {
+            "0": "User Michael, 35, Seattle. Grinder from Oregon\u2014tracking stuck. Label generated but no physical pickup? Worried about oversight. Grinder essential for espresso game. Can live without canisters/scale. Prioritizing grinder delivery. Concerned about order bundling: worried grinder bundle might be split(e.g., pitcher shipped separately). Wants to avoid confusion of partial shipments. Ensures main item arrives with full order.",
+            "1": "Michael's espresso machine order has not been updated in over a week. Tracking shows the package is still in transit outside of Washington state, with no recent updates. User is anxious about delivery for an upcoming family gathering.",
+            "2": "Michael's order included a stainless-steel frothing pitcher and extra filters. Estimated delivery was 11 business days(regular shipping). All items were in stock at checkout. No back-order or supply shortage expected. Current issue: tracking shows no updates, package appears stuck outside Washington. User is concerned about delivery for a family gathering and potential need for alternatives like drip coffee or local caf\u00e9.",
+            "3": "Michael is preparing for a potential replacement or refund if the espresso machine order is confirmed lost or damaged. He wants to know if the company files a carrier claim on his behalf, or if he needs to do it himself. He values the purchase as a personal investment and is concerned about the financial and emotional impact of a lost shipment. He also emphasizes the need to be home to receive the package, especially during rain. He has had past experiences with soggy deliveries and requires a signature on delivery. He will adjust his schedule to be available to greet the driver or quickly bring the package inside.",
+            "4": "User Michael, 35, Seattle. Grinder from Oregon\u2014tracking stuck. Label generated? Worried about oversight. Traveling to Portland next weekend. Will be away. Worried about porch exposure. Prefers grinder inside ASAP. Needs arrival date. Excited about coffee station. Friends joke he\u2019s one step from coffee shop. Considering barista pivot. Wants full setup before weekend gatherings. Committed to premium brews. Asking: Will both orders arrive together? Is grinder delayed? Can request specific drop-off date or hold at pickup? Open to driving a few miles for safe retrieval. Willing to accept stock delays if informed in advance. Needs clear updates to avoid refreshing dead tracking links."
+        }
+    }
+}

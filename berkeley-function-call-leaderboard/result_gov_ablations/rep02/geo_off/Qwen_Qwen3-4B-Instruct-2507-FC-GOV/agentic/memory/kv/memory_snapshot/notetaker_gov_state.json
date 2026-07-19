@@ -1,0 +1,71 @@
+{
+  "backend": "kv",
+  "tiers": {
+    "core": {
+      "tuesday_updates": {
+        "text": "tuesday updates: Try to get 7+ hours of sleep",
+        "probes": [
+          "tuesday updates",
+          "what is tuesday updates",
+          "tuesday updates try get hours"
+        ],
+        "probe_provenance": "write_time"
+      },
+      "wednesday_updates": {
+        "text": "wednesday updates: Schedule a day off next month—too much back-to-back work lately",
+        "probes": [
+          "wednesday updates",
+          "what is wednesday updates",
+          "wednesday updates schedule day off"
+        ],
+        "probe_provenance": "write_time"
+      },
+      "tech_tasks": {
+        "text": "tech tasks: Find time for hobbies—maybe pick up guitar again",
+        "probes": [
+          "tech tasks",
+          "what is tech tasks",
+          "tech tasks find time hobbies"
+        ],
+        "probe_provenance": "write_time"
+      },
+      "gym_frequency": {
+        "text": "gym frequency: Gym at least 3x this week",
+        "probes": [
+          "gym frequency",
+          "what is gym frequency",
+          "gym frequency gym least week"
+        ],
+        "probe_provenance": "write_time"
+      },
+      "sunday_meal_prep_diet": {
+        "text": "sunday meal prep diet: Meal prep on Sunday—grilled chicken, quinoa, and veggies",
+        "probes": [
+          "sunday meal prep diet",
+          "what is sunday meal prep diet",
+          "sunday meal prep diet meal prep sunday"
+        ],
+        "probe_provenance": "write_time"
+      },
+      "hydration_goal": {
+        "text": "hydration goal: Hydration—aim for at least 3L of water per day",
+        "probes": [
+          "hydration goal",
+          "what is hydration goal",
+          "hydration goal hydration aim least"
+        ],
+        "probe_provenance": "write_time"
+      },
+      "post_workout_protein_diet": {
+        "text": "post workout protein diet: Protein shake after workouts",
+        "probes": [
+          "post workout protein diet",
+          "what is post workout protein diet",
+          "post workout protein diet protein shake after"
+        ],
+        "probe_provenance": "write_time"
+      }
+    },
+    "archival": {}
+  }
+}

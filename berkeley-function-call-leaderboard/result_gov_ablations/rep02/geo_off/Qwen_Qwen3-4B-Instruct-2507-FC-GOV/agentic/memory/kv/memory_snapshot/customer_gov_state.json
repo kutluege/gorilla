@@ -1,0 +1,225 @@
+{
+  "backend": "kv",
+  "tiers": {
+    "core": {
+      "user_introduction_michael": {
+        "text": "user introduction michael: Michael, 35, lives in Seattle, freelance graphic designer, values design aesthetics in gadgets, interested in high-quality coffee machines to enhance his morning routine.",
+        "probes": [
+          "user introduction michael",
+          "what is user introduction michael",
+          "user introduction michael michael lives seattle"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "michael_warranty_safety_concern_figured": {
+        "text": "michael warranty safety concern figured: Michael prioritizes safety and warranty protection. He declined to use the damaged machine to avoid voiding guarantees or risking leaks/leaks. Emphasized need for a fully functional, safe replacement.",
+        "probes": [
+          "michael warranty safety concern figured",
+          "what is michael warranty safety concern figured",
+          "michael warranty safety concern figured michael prioritizes safety"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "user_interest_in_coffee_beans_subscription_19": {
+        "text": "user interest in coffee beans subscription 19: Michael is specifically interested in a monthly coffee bean subscription and an extended 19-month warranty plan for members. He values loyalty rewards and is considering signing up for a membership tier that supports ongoing upgrades to his coffee gear.",
+        "probes": [
+          "user interest in coffee beans subscription 19",
+          "what is user interest in coffee beans subscription 19",
+          "user interest in coffee beans subscription 19 michael specifically interested"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "user_charge_analysis_taxes_duties": {
+        "text": "user charge analysis taxes duties: Michael suspects the charge is a tax/duty fee, but amount is unusual—neither typical tax nor product price. Strongly suggests a billing error, not a legitimate tax or duty charge.",
+        "probes": [
+          "user charge analysis taxes duties",
+          "what is user charge analysis taxes duties",
+          "user charge analysis taxes duties michael suspects charge"
+        ],
+        "probe_provenance": "write_time"
+      },
+      "user_concern_auto_enrollment_more": {
+        "text": "user concern auto enrollment more: Michael worries about accidental auto-enrollment into a membership. He values transparency and believes it’s a tech error, not intentional. He trusts our support track record.",
+        "probes": [
+          "user concern auto enrollment more",
+          "what is user concern auto enrollment more",
+          "user concern auto enrollment more michael worries accidental"
+        ],
+        "probe_provenance": "write_time"
+      },
+      "user_charge_details": {
+        "text": "user charge details: Michael is prepared to provide supporting documents (screenshot, transaction ID, date). Charge was ~$49.99, posted 3 days ago, with no descriptor beyond company name. All info is ready to share with support.",
+        "probes": [
+          "user charge details",
+          "what is user charge details",
+          "user charge details michael prepared provide"
+        ],
+        "probe_provenance": "write_time"
+      },
+      "user_final_request": {
+        "text": "user final request: Michael requests a direct investigation into the charge and a refund or clear explanation to avoid a card issuer dispute. He emphasizes his trust in your service and wants worry-free future purchases. Values transparency and a swift, simple resolution.",
+        "probes": [
+          "user final request",
+          "what is user final request",
+          "user final request michael requests direct"
+        ],
+        "probe_provenance": "write_time"
+      }
+    },
+    "archival": {
+      "user_new_customer_promo": {
+        "text": "user new customer promo: Michael is requesting an estimated arrival date for the SleekFlow ES-300, given his family gathering at the end of the month. He is concerned about potential delays due to out-of-state shipping or processing times, and is asking about expedited shipping options.",
+        "probes": [
+          "user new customer promo",
+          "what is user new customer promo",
+          "user new customer promo michael requesting estimated"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "user_free_shipping_inquiry": {
+        "text": "user free shipping inquiry: Michael emphasizes that he is only willing to pay legitimate charges tied to received products or agreed services. He confirms his last purchases were coffee canisters, digital scale, and grinder bundle—all billed correctly. The new charge is not tied to any of these. He requests a direct investigation into the billing system to identify the cause and resolve the discrepancy.",
+        "probes": [
+          "user free shipping inquiry",
+          "what is user free shipping inquiry",
+          "user free shipping inquiry michael emphasizes only"
+        ],
+        "probe_provenance": "write_time"
+      },
+      "user_order_tracking_inquiry": {
+        "text": "user order tracking inquiry: Michael is asking about real-time order tracking capabilities. He is particularly concerned about package safety in Seattle's rainy weather and wants to know if he can monitor delivery progress(e.g., arrival at local distribution center) to ensure the package is not left out in the rain or requires a signature.",
+        "probes": [
+          "user order tracking inquiry",
+          "what is user order tracking inquiry",
+          "user order tracking inquiry michael asking real"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "user_return_exchange_policy_300": {
+        "text": "user return exchange policy 300: Michael is inquiring about the return and exchange policy for the SleekFlow ES-300. He is concerned about potential defects, size mismatch, or changes of heart, and wants to know if he has to pay for return shipping. He is cautious due to past negative experiences with brands that made returns difficult.",
+        "probes": [
+          "user return exchange policy 300",
+          "what is user return exchange policy 300",
+          "user return exchange policy 300 michael inquiring return"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "user_coffee_grinder_and_beans_recommendation": {
+        "text": "user coffee grinder and beans recommendation: Michael is seeking recommendations for coffee beans and a small grinder that pair well with the SleekFlow ES-300 espresso machine. He is inspired by his friend’s coffee purist habits and wants to invest in a high-quality, aesthetically compatible grinder to enhance his brewing experience, especially for espresso and lattes.",
+        "probes": [
+          "user coffee grinder and beans recommendation",
+          "what is user coffee grinder and beans recommendation",
+          "user coffee grinder and beans recommendation michael seeking recommendations"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "user_order_tracking_stuck": {
+        "text": "user order tracking stuck: Michael's order for the SleekFlow ES-300 is showing a stagnant tracking status, with no updates in over 7 days. The package appears to be in transit outside of Washington state, and he has tried multiple browser refreshes and tracking page reloads without success. He is concerned about the package's safety and delivery timeline.",
+        "probes": [
+          "user order tracking stuck",
+          "what is user order tracking stuck",
+          "user order tracking stuck michael order sleekflow"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "user_delivery_estimate_discrepancy": {
+        "text": "user delivery estimate discrepancy: Michael originally received an estimated delivery time of 11 business days for regular shipping. He qualified for free shipping by adding accessories(stainless-steel frothing pitcher and extra filters). He believes the items were in stock at checkout and does not expect back-orders or supply shortages. He is now concerned that the delivery delay may indicate a fulfillment or logistics issue rather than a simple shipping delay.",
+        "probes": [
+          "user delivery estimate discrepancy",
+          "what is user delivery estimate discrepancy",
+          "user delivery estimate discrepancy michael originally received"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "user_inquiry_about_carrier_delays_seattle": {
+        "text": "user inquiry about carrier delays seattle: Michael is concerned about potential carrier-related delays due to Seattle's rainy weather. He is asking if there are any known issues with transit delays in the region, especially for shipments originating from out-of-state hubs. He is seeking a clear, updated timeline for delivery and is prepared to initiate expedited shipping or a replacement if the package is lost or delayed beyond a reasonable period.",
+        "probes": [
+          "user inquiry about carrier delays seattle",
+          "what is user inquiry about carrier delays seattle",
+          "user inquiry about carrier delays seattle michael concerned potential"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "user_exchange_policy_lost_package": {
+        "text": "user exchange policy lost package: Michael is inquiring about the process for a lost or damaged package during transit. He wants to know if the company files a claim with the carrier on his behalf or if he needs to do it himself. He emphasizes that the espresso machine is a significant investment and a personal upgrade, and he wants to be fully prepared for a replacement or refund if the package is lost or damaged. He is concerned about the financial and emotional impact of a failed delivery.",
+        "probes": [
+          "user exchange policy lost package",
+          "what is user exchange policy lost package",
+          "user exchange policy lost package michael inquiring process"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "user_package_delivery_preparation": {
+        "text": "user package delivery preparation: Michael is preparing to receive his espresso machine and wants to ensure he is home to greet the delivery driver, especially given past issues with soggy packages in rainy weather. He emphasizes the importance of a signature delivery and is ready to adjust his schedule(e.g., design work) to be available. He is specifically asking for real-time updates if the package is expected to arrive tomorrow or in the next few days.",
+        "probes": [
+          "user package delivery preparation",
+          "what is user package delivery preparation",
+          "user package delivery preparation michael preparing receive"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "michael_damage_report_2024": {
+        "text": "michael damage report 2024: Michael received a damaged SleekFlow ES-300 espresso machine with a significant dent, bent steam wand, misaligned water reservoir, and compromised packaging. Full replacement is warranted. Case escalated to logistics and quality assurance for review. Customer expressed concern for safety and usability. Accessories(frothing pitcher) have minor scratches but are functional.",
+        "probes": [
+          "michael damage report 2024",
+          "what is michael damage report 2024",
+          "michael damage report 2024 michael received damaged"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "michael_hosting_timeline_concern_terms": {
+        "text": "michael hosting timeline concern terms: Michael is hosting weekend gatherings and has been eagerly anticipating serving café-style lattes and cappuccinos. The delayed and damaged delivery has caused embarrassment and disappointment among family and friends. He hopes for a quick resolution to resume hosting with a fully functional espresso machine soon.",
+        "probes": [
+          "michael hosting timeline concern terms",
+          "what is michael hosting timeline concern terms",
+          "michael hosting timeline concern terms michael hosting weekend"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "michael_hassle_free_replacement_request": {
+        "text": "michael hassle free replacement request: Michael is requesting a seamless, hassle-free replacement process. He has already taken multiple photos of the damaged box, dents, and bent steam wand and is willing to provide a video if needed. He references past negative experiences with complicated forms and slow shipping labels, emphasizing a need for simplicity and speed in the resolution process.",
+        "probes": [
+          "michael hassle free replacement request",
+          "what is michael hassle free replacement request",
+          "michael hassle free replacement request michael requesting seamless"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "michael_cross_shipment_inquiry": {
+        "text": "michael cross shipment inquiry: Michael is asking about cross-shipments to avoid long wait times. He inquires whether shipping insurance covers damage caused by the courier and whether the company handles claims in-house. He hopes the process is simpler than chasing shipping companies independently and wants to avoid delays in receiving a functional machine.",
+        "probes": [
+          "michael cross shipment inquiry",
+          "what is michael cross shipment inquiry",
+          "michael cross shipment inquiry michael asking cross"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "michael_warranty_shipping_damage_inquiry_remember": {
+        "text": "michael warranty shipping damage inquiry remember: Michael is clarifying whether shipping-related damage is covered under the warranty or a separate no-hassle return policy. He notes the damage occurred before use, distinguishing it from typical product defects. He seeks confirmation that such cases fall under a broad return policy, not just product malfunctions.",
+        "probes": [
+          "michael warranty shipping damage inquiry remember",
+          "what is michael warranty shipping damage inquiry remember",
+          "michael warranty shipping damage inquiry remember michael clarifying whether"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "michael_fast_shipping_upgrade_inquiry_make": {
+        "text": "michael fast shipping upgrade inquiry make: Michael has all order details(order number, shipping info, email confirmations) and is seeking faster replacement shipping. He is open to a regional upgrade if available and affordable, but is first prioritizing a quick resolution. He is willing to discuss a waiver of replacement cost given the inconvenience and effort already experienced.",
+        "probes": [
+          "michael fast shipping upgrade inquiry make",
+          "what is michael fast shipping upgrade inquiry make",
+          "michael fast shipping upgrade inquiry make michael all order"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "michael_instagram_barista_perk_really": {
+        "text": "michael instagram barista perk really: Michael, a freelance graphic designer, enjoys using his barista skills to impress clients and collaborators on Instagram. The espresso machine was a key part of this personal brand. He values a seamless, stress-free resolution and is open to providing photos, videos, or returning the damaged unit with proper packaging.",
+        "probes": [
+          "michael instagram barista perk really",
+          "what is michael instagram barista perk really",
+          "michael instagram barista perk really michael freelance graphic"
+        ],
+        "probe_provenance": "sidecar"
+      }
+    }
+  }
+}

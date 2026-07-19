@@ -1,0 +1,18 @@
+{
+    "core_memory": {
+        "next_id": 1,
+        "store": {
+            "0": "Patient with Type 2 Diabetes on metformin 1000 mg twice daily. A1C around 6.9%. Recently added semaglutide(Ozempic) at low dose for better blood sugar control and appetite management. Fasting blood sugar typically between 125-130 mg/dL."
+        }
+    },
+    "archival_memory": {
+        "next_id": 5,
+        "store": {
+            "0": "Patient with hypothyroidism on levothyroxine 75 mcg daily. Taken on empty stomach, 30 minutes before eating. Last TSH test: 2.1 mIU/L(normal range), indicating stable control. Reports feeling sluggish if a dose is missed; uses pill organizer to prevent missed doses.",
+            "1": "Patient with osteoarthritis manages pain with acetaminophen as needed. Uses meloxicam 7.5 mg intermittently for inflammation and stiffness in knees and hands. Avoids daily NSAID use to prevent overexposure. Doctor recommended glucosamine supplements; patient reports uncertain effectiveness.",
+            "2": "Patient adjusted vitamin D intake due to low levels(22 ng/mL; normal >30 ng/mL). Now takes vitamin D3 2,000 IU daily. Also takes calcium supplements due to early osteopenia on bone density scan. Doctor recommends combining with vitamin K2 to improve absorption and bone health.",
+            "3": "Patient takes atorvastatin 10 mg daily for cholesterol management. Previous LDL: 130 mg/dL, triglycerides: 140 mg/dL. Doctor prescribed low-dose statin to improve lipid profile. Cholesterol levels have improved, and patient reports no side effects(e.g., muscle aches), which is reassuring.",
+            "4": "Patient takes a daily multivitamin, omega-3 supplements for heart health, and probiotics for digestion. Post-gallbladder removal(a few years ago), takes digestive enzymes when consuming heavier or fatty meals. Noted that gallbladder removal affects fat digestion, requiring mindful food choices, especially with high-fat foods."
+        }
+    }
+}

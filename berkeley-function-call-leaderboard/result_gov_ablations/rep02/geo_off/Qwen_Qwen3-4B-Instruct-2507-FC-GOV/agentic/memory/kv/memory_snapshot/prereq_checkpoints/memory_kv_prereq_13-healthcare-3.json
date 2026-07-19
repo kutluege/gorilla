@@ -1,0 +1,12 @@
+{
+    "core_memory": {
+        "blood_glucose_fasting_latest": "135 mg/dL",
+        "morning_blood_glucose_range": "-1.5",
+        "doctor_recommendations": "Increase dietary fiber, add light exercise after meals",
+        "hdl_cholesterol_58_mg": "42 U/L",
+        "triglycerides": "18 mm/hr",
+        "doctor_cholesterol_recommendations": "Continue strength training, increase calcium intake, take calcium + vitamin K2 supplement for better absorption",
+        "blood_pressure_latest": "-1.8"
+    },
+    "archival_memory": {}
+}

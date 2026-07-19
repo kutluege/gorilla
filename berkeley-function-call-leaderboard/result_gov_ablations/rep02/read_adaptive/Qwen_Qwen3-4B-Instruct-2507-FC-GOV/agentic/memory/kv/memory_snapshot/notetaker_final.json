@@ -1,0 +1,12 @@
+{
+    "core_memory": {
+        "urgent_tax_submission": "Submit tax documents before Friday.",
+        "credit_card_statement_review": "Review credit card statement for errors.",
+        "auto_repair_shop_call": "Call auto repair shop about weird noise in the engine.",
+        "diet_sugar_reduction": "Cut back on sugar\u2014too much soda lately",
+        "meal_prep_sunday": "Meal prep on Sunday: grilled chicken, quinoa, and veggies",
+        "supplements_vitamin_d3": "Take 1000 IU of Vitamin D3 daily",
+        "supplements_omega_3s": "Take omega-3s for joint health"
+    },
+    "archival_memory": {}
+}

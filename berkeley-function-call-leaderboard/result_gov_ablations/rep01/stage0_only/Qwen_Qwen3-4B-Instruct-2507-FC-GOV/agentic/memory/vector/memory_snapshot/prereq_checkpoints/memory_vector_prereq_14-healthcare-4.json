@@ -1,0 +1,18 @@
+{
+    "core_memory": {
+        "next_id": 7,
+        "store": {
+            "0": "Well-organized medication routine using pill planner and phone reminders. Focuses on lifestyle changes(diet, stress, exercise) to reduce medication reliance. Goal: long-term health through proactive, natural management when possible, minimizing unnecessary prescriptions.",
+            "1": "Patient on losartan 50 mg once daily for hypertension. Blood pressure typically ranges 135-140/80-90 mmHg. Doctor recommends stress management and reduced sodium intake instead of increasing dosage. Taking daily magnesium supplement, which may support blood pressure regulation.",
+            "2": "Patient on levothyroxine 75 mcg daily, taken on an empty stomach with a 30-minute wait before eating. Last TSH test: 2.1 mIU/L(within normal range). No dosage changes needed. Noted that missing a dose leads to feeling sluggish the next day; uses a pill organizer to stay on track.",
+            "3": "Osteoarthritis: acetaminophen as needed; meloxicam 7.5 mg intermittently(knees/hands). Doctor warned NSAIDs + losartan may affect kidneys\u2014so meloxicam used sparingly. Levothyroxine taken separately from calcium/iron supplements to avoid absorption issues.",
+            "4": "Patient adjusted vitamin D intake due to low levels(22 ng/mL; normal >30 ng/mL). Now taking vitamin D3 2,000 IU daily. Also taking calcium supplements due to early osteopenia on bone density scan. Doctor recommends combining with vitamin K2 to improve calcium absorption and bone health.",
+            "5": "On atorvastatin 10 mg daily for cholesterol. LDL 130 mg/dL, triglycerides 140 mg/dL initially. Low-dose statin prescribed to improve profile. Cholesterol improving; no side effects like muscle aches reported.",
+            "6": "Patient takes a daily multivitamin, omega-3 supplements for heart health, and probiotics for digestion. Post-gallbladder removal, takes digestive enzymes when consuming heavier or fatty meals. Aware that gallbladder removal affects fat digestion, so mindful of dietary fat intake."
+        }
+    },
+    "archival_memory": {
+        "next_id": 0,
+        "store": {}
+    }
+}

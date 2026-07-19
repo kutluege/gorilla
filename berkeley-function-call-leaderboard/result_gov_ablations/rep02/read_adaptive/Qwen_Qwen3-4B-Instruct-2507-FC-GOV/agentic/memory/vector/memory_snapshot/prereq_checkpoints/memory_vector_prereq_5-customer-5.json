@@ -1,0 +1,14 @@
+{
+    "core_memory": {
+        "next_id": 1,
+        "store": {
+            "0": "Michael(35, Seattle): orders confirmed. Grinder arrives Friday, April 12. Canisters/scale arrive Monday, April 15. Fully fulfilled, no delays, no splits. Safe, secure delivery. Can request specific delivery time or pickup. Excited to test grinder and host premium brews."
+        }
+    },
+    "archival_memory": {
+        "next_id": 1,
+        "store": {
+            "0": "Michael(35, Seattle): freelance designer. Orders: stainless-steel grinder, cleaning tablets, frothing pitcher; vacuum-sealed canisters, Garmin digital scale. Kitchen as mini coffee lab. Prefers local delivery, in-home signature, 17% off, no-interest financing, ready for rainy weather. Concerned about shipping delays: Oregon warehouse(grinder bundle) stuck at 'Label Created \u2014 Awaiting Item'; East Coast order(canisters, scale) now shows earlier arrival despite longer distance. Suspects backorder, staffing issues, or mix-up due to recent rainy weather and regional delays. Emphasizes that the grinder is critical to his espresso game\u2014wants absolute confirmation it will leave the warehouse and reach him. Willing to wait on canisters and scale if needed. Now asks if orders were bundled correctly\u2014specifically, whether the grinder bundle might be split(e.g., pitcher shipping separately). Wants to avoid confusion where a smaller box arrives without the main item. Additional concern: Will be out of town in Portland next weekend(3 days). Worries about package delivery during absence\u2014risk of rain, neighbor pickup, or damage to delicate grinder. Requests approximate arrival date to plan for friend to house-sit or monitor delivery. Prioritizes safe, undamaged receipt of the grinder. Now asks: Will the two orders arrive around the same time? Is there a known delay on the grinder? Can he request a specific drop-off date or hold the item at a pickup location? Is there a risk of out-of-stock or longer lead time? Wants to avoid refreshing dead tracking links. Lastly, asks to verify billing and shipping address for second order. Uses same address and credit card as before. Once had a security hold with Apple Pay\u2014wants to avoid similar issues. Requests immediate check for red flags."
+        }
+    }
+}

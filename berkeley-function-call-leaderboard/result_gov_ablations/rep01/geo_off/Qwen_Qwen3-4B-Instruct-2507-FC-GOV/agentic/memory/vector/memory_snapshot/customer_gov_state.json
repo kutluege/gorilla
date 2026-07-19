@@ -1,0 +1,144 @@
+{
+  "backend": "vector",
+  "tiers": {
+    "core": {
+      "0": {
+        "text": "Michael, 35, from Seattle. Freelance graphic designer. Devoted fan. Updated: No recurring membership or subscription signed up for. No welcome email or invoice received. Charge not linked to subscription. Investigating product-related charge.",
+        "probes": [
+          "Michael, 35, from Seattle. Freelance graphic designer. Devoted fan. Updated: No recurring membership or subscription signed up for. No welcome email or invoice received. Charge not linked to subscription. Investigating product-related charge.",
+          "what do you know about michael seattle freelance graphic",
+          "michael seattle freelance graphic designer devoted fan updated"
+        ],
+        "probe_provenance": "write_time"
+      },
+      "1": {
+        "text": "Michael, a first-time buyer from Seattle, freelance graphic designer, inquires about temperature control in espresso machines, specifically whether they produce reliably hot coffee and have adjustable temperature settings to avoid microwaving.",
+        "probes": [
+          "Michael, a first-time buyer from Seattle, freelance graphic designer, inquires about temperature control in espresso machines, specifically whether they produce reliably hot coffee and have adjustable temperature settings to avoid microwaving.",
+          "what do you know about michael first time buyer",
+          "michael first time buyer seattle freelance graphic designer"
+        ],
+        "probe_provenance": "sidecar"
+      }
+    },
+    "archival": {
+      "0": {
+        "text": "Michael, a first-time buyer from Seattle, is interested in a stainless-steel espresso machine with a café-like experience. Inquired about pricing, first-time buyer discounts, bundle deals, and shipping details—specifically whether products are shipped from a local warehouse and delivery timelines for a family gathering later this month.",
+        "probes": [
+          "Michael, a first-time buyer from Seattle, is interested in a stainless-steel espresso machine with a café-like experience. Inquired about pricing, first-time buyer discounts, bundle deals, and shipping details—specifically whether products are shipped from a local warehouse and delivery timelines for a family gathering later this month.",
+          "what do you know about michael first time buyer",
+          "michael first time buyer seattle interested stainless steel"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "1": {
+        "text": "Michael, a first-time buyer from Seattle, freelance graphic designer, is concerned about kitchen space and appliance layout. Specifically, wants to confirm the exact dimensions of the espresso machine to avoid 'kitchen Tetris' and ensure it fits with existing appliances on his counter.",
+        "probes": [
+          "Michael, a first-time buyer from Seattle, freelance graphic designer, is concerned about kitchen space and appliance layout. Specifically, wants to confirm the exact dimensions of the espresso machine to avoid 'kitchen Tetris' and ensure it fits with existing appliances on his counter.",
+          "what do you know about michael first time buyer",
+          "michael first time buyer seattle freelance graphic designer"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "2": {
+        "text": "Michael, a first-time buyer from Seattle, freelance graphic designer, is inquiring about warranty and quality guarantee policies for espresso machines, specifically seeking a longer, more customer-friendly policy than offered by other brands.",
+        "probes": [
+          "Michael, a first-time buyer from Seattle, freelance graphic designer, is inquiring about warranty and quality guarantee policies for espresso machines, specifically seeking a longer, more customer-friendly policy than offered by other brands.",
+          "what do you know about michael first time buyer",
+          "michael first time buyer seattle freelance graphic designer"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "3": {
+        "text": "Michael, a 35-year-old freelance graphic designer from Seattle, is purchasing his first espresso machine with a stainless-steel finish, steam wand, and adjustable temperature control. He is concerned about applying a new-customer 17% off discount at checkout and wants clear, step-by-step guidance on how to use the coupon code correctly to avoid missing out on the offer. He is also inquiring about available payment methods, including credit card, PayPal, Apple Pay, and potential financing options(e.g., no-interest for six months). He prefers to use a credit card but is open to financing if it offers no-interest terms. He is now asking about shipping times, specifically an estimated arrival date based on current inventory, and whether expedited shipping is available. He has a small event at the end of the month and wants to ensure the machine arrives in time.",
+        "probes": [
+          "Michael, a 35-year-old freelance graphic designer from Seattle, is purchasing his first espresso machine with a stainless-steel finish, steam wand, and adjustable temperature control. He is concerned about applying a new-customer 17% off discount at checkout and wants clear, step-by-step guidance on how to use the coupon code correctly to avoid missing out on the offer. He is also inquiring about available payment methods, including credit card, PayPal, Apple Pay, and potential financing options(e.g., no-interest for six months). He prefers to use a credit card but is open to financing if it offers no-interest terms. He is now asking about shipping times, specifically an estimated arrival date based on current inventory, and whether expedited shipping is available. He has a small event at the end of the month and wants to ensure the machine arrives in time.",
+          "what do you know about michael year old freelance",
+          "michael year old freelance graphic designer seattle purchasing"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "4": {
+        "text": "Michael from Seattle inquired about shipping discrepancies: the coffee grinder bundle(shipped from Oregon) has not updated in days, showing 'Label Created — Awaiting Item,' suggesting the carrier hasn't received it. The second order(canisters and digital scale) is from a distribution center in the Midwest(Ohio/Pennsylvania), marked as 'in transit,' and expected to arrive later due to longer distance. However, tracking for the second order now shows an earlier arrival date, possibly due to weather-related delays in the region of origin. Michael suspects a potential mix-up: the Oregon warehouse may be short-staffed, or the item is on backorder without clear labeling. He’s concerned about processing delays and transparency in fulfillment. He has now confirmed that the grinder bundle is shipped as a single, complete package and not split into separate shipments. All items in the bundle(grinder, cleaning tablets, frothing pitcher) are included in one shipment with a unified tracking number.",
+        "probes": [
+          "Michael from Seattle inquired about shipping discrepancies: the coffee grinder bundle(shipped from Oregon) has not updated in days, showing 'Label Created — Awaiting Item,' suggesting the carrier hasn't received it. The second order(canisters and digital scale) is from a distribution center in the Midwest(Ohio/Pennsylvania), marked as 'in transit,' and expected to arrive later due to longer distance. However, tracking for the second order now shows an earlier arrival date, possibly due to weather-related delays in the region of origin. Michael suspects a potential mix-up: the Oregon warehouse may be short-staffed, or the item is on backorder without clear labeling. He’s concerned about processing delays and transparency in fulfillment. He has now confirmed that the grinder bundle is shipped as a single, complete package and not split into separate shipments. All items in the bundle(grinder, cleaning tablets, frothing pitcher) are included in one shipment with a unified tracking number.",
+          "what do you know about michael seattle inquired shipping",
+          "michael seattle inquired shipping discrepancies coffee grinder bundle"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "5": {
+        "text": "Michael, 35, from Seattle, freelance graphic designer, deeply engaged with coffee gear. Recently inquired about a potential monthly coffee bean subscription and extended 19-month warranty for members. Expresses strong interest in loyalty programs that reward frequent purchases, especially for premium items like stainless-steel grinders, vacuum-sealed canisters, and digital scales. Looking for a membership tier that offers early access, exclusive discounts, and long-term product protection.",
+        "probes": [
+          "Michael, 35, from Seattle, freelance graphic designer, deeply engaged with coffee gear. Recently inquired about a potential monthly coffee bean subscription and extended 19-month warranty for members. Expresses strong interest in loyalty programs that reward frequent purchases, especially for premium items like stainless-steel grinders, vacuum-sealed canisters, and digital scales. Looking for a membership tier that offers early access, exclusive discounts, and long-term product protection.",
+          "what do you know about michael seattle freelance graphic",
+          "michael seattle freelance graphic designer deeply engaged coffee"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "6": {
+        "text": "Michael, 35, from Seattle. Freelance graphic designer. Interested in joining loyalty program with confirmation on extended warranty for espresso machines(including future purchases). Specifically asks about bean subscription curation: sourcing from local Pacific Northwest roasters or national brands. Seeks nuanced, 513 mL, small-batch roasts not available in local grocery stores. High standards for beans due to Seattle’s coffee culture.",
+        "probes": [
+          "Michael, 35, from Seattle. Freelance graphic designer. Interested in joining loyalty program with confirmation on extended warranty for espresso machines(including future purchases). Specifically asks about bean subscription curation: sourcing from local Pacific Northwest roasters or national brands. Seeks nuanced, 513 mL, small-batch roasts not available in local grocery stores. High standards for beans due to Seattle’s coffee culture.",
+          "what do you know about michael seattle freelance graphic",
+          "michael seattle freelance graphic designer interested joining loyalty"
+        ],
+        "probe_provenance": "stored_text"
+      },
+      "7": {
+        "text": "Michael, 35, from Seattle. Freelance graphic designer. Inquires about the status of early access to limited-edition items in a loyalty program. Expresses strong interest in testing prototypes or securing brand-new gadgets before public release. Believes there is a sizable community of passionate coffee lovers who would value such access. Seeks confirmation on whether early access is currently live, in development, or in a pre-launch waitlist.",
+        "probes": [
+          "Michael, 35, from Seattle. Freelance graphic designer. Inquires about the status of early access to limited-edition items in a loyalty program. Expresses strong interest in testing prototypes or securing brand-new gadgets before public release. Believes there is a sizable community of passionate coffee lovers who would value such access. Seeks confirmation on whether early access is currently live, in development, or in a pre-launch waitlist.",
+          "what do you know about michael seattle freelance graphic",
+          "michael seattle freelance graphic designer inquires status early"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "8": {
+        "text": "Michael, 35, from Seattle. Freelance graphic designer. Inquires about membership integration with customer account system: dedicated portal for tracking orders, managing subscriptions, pausing shipments during travel, and switching bean preferences. Specifically mentions concern about rain-soaked cardboard box nightmares in Seattle. Seeks flexibility to pause or adjust subscriptions during short trips or design gigs.",
+        "probes": [
+          "Michael, 35, from Seattle. Freelance graphic designer. Inquires about membership integration with customer account system: dedicated portal for tracking orders, managing subscriptions, pausing shipments during travel, and switching bean preferences. Specifically mentions concern about rain-soaked cardboard box nightmares in Seattle. Seeks flexibility to pause or adjust subscriptions during short trips or design gigs.",
+          "what do you know about michael seattle freelance graphic",
+          "michael seattle freelance graphic designer inquires membership integration"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "9": {
+        "text": "Michael, 35, from Seattle. Freelance graphic designer. Clear statement: Willing to pay legitimate charges only if product/service was received or agreed to. The mystery charge is not tied to any known purchase (coffee canisters, digital scale, grinder bundle). No subscription, no shipping fee, no tax. Requested direct audit of billing system for explanation and reversal. Final action: Send formal request to billing support team for transaction audit and resolution. Additional note: If the charge is due to an accidental membership enrollment or auto-renewal, would like a clear explanation of how that could have occurred. Emphasizes that automatic sign-ups without explicit consent are a key concern for customer trust and brand perception. Expresses confidence in your support team’s track record and believes this is likely a technical error, not a policy failure.",
+        "probes": [
+          "Michael, 35, from Seattle. Freelance graphic designer. Clear statement: Willing to pay legitimate charges only if product/service was received or agreed to. The mystery charge is not tied to any known purchase (coffee canisters, digital scale, grinder bundle). No subscription, no shipping fee, no tax. Requested direct audit of billing system for explanation and reversal. Final action: Send formal request to billing support team for transaction audit and resolution. Additional note: If the charge is due to an accidental membership enrollment or auto-renewal, would like a clear explanation of how that could have occurred. Emphasizes that automatic sign-ups without explicit consent are a key concern for customer trust and brand perception. Expresses confidence in your support team’s track record and believes this is likely a technical error, not a policy failure.",
+          "what do you know about michael seattle freelance graphic",
+          "michael seattle freelance graphic designer clear statement willing"
+        ],
+        "probe_provenance": "write_time"
+      },
+      "10": {
+        "text": "Michael, 35, from Seattle. Freelance graphic designer. Inquires about prioritized customer service for members/subscribers. Acknowledges existing responsiveness but asks if loyal customers get VIP perks like dedicated phone lines, priority chat support, or faster response times—especially during critical moments(e.g., machine issues before a coffee tasting). Seeks assurance that urgent questions are handled quickly and with care.",
+        "probes": [
+          "Michael, 35, from Seattle. Freelance graphic designer. Inquires about prioritized customer service for members/subscribers. Acknowledges existing responsiveness but asks if loyal customers get VIP perks like dedicated phone lines, priority chat support, or faster response times—especially during critical moments(e.g., machine issues before a coffee tasting). Seeks assurance that urgent questions are handled quickly and with care.",
+          "what do you know about michael seattle freelance graphic",
+          "michael seattle freelance graphic designer inquires prioritized customer"
+        ],
+        "probe_provenance": "stored_text"
+      },
+      "11": {
+        "text": "Michael, 35, from Seattle. Freelance graphic designer. Inquires about customization options for coffee subscription. Primarily an espresso drinker(prefers dark roasts, specialized espresso blends), but dabbles in pour-over(prefers mellower, lighter roasts). Seeks flexibility: either a core 'espresso roast of the month' plus optional add-on for lighter roast, or full swapability of roasts based on schedule or guest preferences. Compares flexibility to that of a well-frothed latte foam—dynamic, responsive, and adaptable.",
+        "probes": [
+          "Michael, 35, from Seattle. Freelance graphic designer. Inquires about customization options for coffee subscription. Primarily an espresso drinker(prefers dark roasts, specialized espresso blends), but dabbles in pour-over(prefers mellower, lighter roasts). Seeks flexibility: either a core 'espresso roast of the month' plus optional add-on for lighter roast, or full swapability of roasts based on schedule or guest preferences. Compares flexibility to that of a well-frothed latte foam—dynamic, responsive, and adaptable.",
+          "what do you know about michael seattle freelance graphic",
+          "michael seattle freelance graphic designer inquires customization options"
+        ],
+        "probe_provenance": "stored_text"
+      },
+      "12": {
+        "text": "Michael, 35, from Seattle. Freelance graphic designer. Charge: ~$49.99, posted 3 days ago. No product/service linked. No subscription, no tax, no shipping fee. No descriptor on statement. Ready to provide transaction ID or screenshot. Requesting audit for explanation and reversal. Concerned about accidental auto-enrollment; emphasizes transparency and consent in customer trust.",
+        "probes": [
+          "Michael, 35, from Seattle. Freelance graphic designer. Charge: ~$49.99, posted 3 days ago. No product/service linked. No subscription, no tax, no shipping fee. No descriptor on statement. Ready to provide transaction ID or screenshot. Requesting audit for explanation and reversal. Concerned about accidental auto-enrollment; emphasizes transparency and consent in customer trust.",
+          "what do you know about michael seattle freelance graphic",
+          "michael seattle freelance graphic designer charge posted days"
+        ],
+        "probe_provenance": "write_time"
+      }
+    }
+  }
+}

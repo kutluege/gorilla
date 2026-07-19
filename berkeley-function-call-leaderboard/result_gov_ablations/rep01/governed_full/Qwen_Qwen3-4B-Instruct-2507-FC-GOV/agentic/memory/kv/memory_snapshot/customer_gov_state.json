@@ -1,0 +1,135 @@
+{
+  "backend": "kv",
+  "tiers": {
+    "core": {
+      "user_kitchen_space_concern": {
+        "text": "user kitchen space concern: Michael is concerned about the footprint of the espresso machine and how it might impact his existing kitchen counter layout. He wants precise dimensions to mentally prepare for potential rearrangements, avoiding 'kitchen Tetris' scenarios.",
+        "probes": [
+          "user kitchen space concern",
+          "what is user kitchen space concern",
+          "user kitchen space concern michael concerned footprint"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "michael_subscription_inquiry": {
+        "text": "michael subscription inquiry: Michael is inquiring about a subscription or membership program for loyal customers. He’s interested in perks like free shipping, early access to new products, or monthly discounts. He values organization and cost-effectiveness as he builds a growing coffee station.",
+        "probes": [
+          "michael subscription inquiry",
+          "what is michael subscription inquiry",
+          "michael subscription inquiry michael inquiring subscription"
+        ],
+        "probe_provenance": "write_time"
+      },
+      "michael_membership_model_inquiry": {
+        "text": "michael membership model inquiry: Michael is asking about the current subscription or membership program structure. He wants to know if it's bean-only or includes discounts on accessories, machines, or cleaning kits. He’s interested in a loyalty model with points, free shipping, and exclusive pricing on new releases.",
+        "probes": [
+          "michael membership model inquiry",
+          "what is michael membership model inquiry",
+          "michael membership model inquiry michael asking current"
+        ],
+        "probe_provenance": "write_time"
+      },
+      "michael_early_access_inquiry": {
+        "text": "michael early access inquiry: Michael is confirming if the loyalty program includes early access to limited-edition items or prototypes. He’s part of a community of passionate coffee lovers and is eager to test new gadgets or exclusive products before general release.",
+        "probes": [
+          "michael early access inquiry",
+          "what is michael early access inquiry",
+          "michael early access inquiry michael confirming loyalty"
+        ],
+        "probe_provenance": "write_time"
+      },
+      "michael_membership_fee_inquiry": {
+        "text": "michael membership fee inquiry: Michael is asking about membership fees: whether there’s a monthly/yearly charge, a trial period, or a reduced rate for loyal customers. He’s interested in a promotional sign-up bonus and wants to test benefits before committing to a recurring charge.",
+        "probes": [
+          "michael membership fee inquiry",
+          "what is michael membership fee inquiry",
+          "michael membership fee inquiry michael asking membership"
+        ],
+        "probe_provenance": "write_time"
+      },
+      "michael_prioritized_support_inquiry": {
+        "text": "michael prioritized support inquiry: Michael is asking if loyalty or membership members receive prioritized customer service. He values responsiveness and wants to know if there are VIP perks like dedicated phone lines or faster chat support, especially for urgent issues like machine problems before a coffee tasting.",
+        "probes": [
+          "michael prioritized support inquiry",
+          "what is michael prioritized support inquiry",
+          "michael prioritized support inquiry michael asking loyalty"
+        ],
+        "probe_provenance": "write_time"
+      },
+      "michael_purchasing_streamlining": {
+        "text": "michael purchasing streamlining: Michael wants to streamline purchases with one-click ordering, consolidated checkout, and automatic shipping discounts. He’s open to sample-size freebies or occasional discount codes on future machines.",
+        "probes": [
+          "michael purchasing streamlining",
+          "what is michael purchasing streamlining",
+          "michael purchasing streamlining michael wants streamline"
+        ],
+        "probe_provenance": "write_time"
+      }
+    },
+    "archival": {
+      "michael_new_product_inquiry": {
+        "text": "michael new product inquiry: Michael is interested in a new line of kitchen appliances, specifically a sleek, high-end coffee grinder and related accessories like a $39 specialized storage canister that keeps beans fresher for longer. He is excited to expand his current espresso machine setup and wants to know more about the features, pricing, and availability of these new products.",
+        "probes": [
+          "michael new product inquiry",
+          "what is michael new product inquiry",
+          "michael new product inquiry michael interested new"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "michael_grinder_specifications_inquiry": {
+        "text": "michael grinder specifications inquiry: Michael is seeking detailed specs on the new coffee grinder, including burr type(prefers conical for consistency), grind-size range, noise levels, ease of cleaning, and aesthetic design. He specifically wants a sleek, stainless-steel finish to match his espresso machine and avoid clunky or plasticky designs. He values both functionality and visual harmony with his kitchen's design aesthetic.",
+        "probes": [
+          "michael grinder specifications inquiry",
+          "what is michael grinder specifications inquiry",
+          "michael grinder specifications inquiry michael seeking detailed"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "michael_coffee_subscription_inquiry": {
+        "text": "michael coffee subscription inquiry: Michael is intrigued by the possibility of a coffee bean subscription service that pairs with the new grinder. He’s interested in curated roasts tailored to brewing methods(espresso, drip, pour-over) and would appreciate recommendations that match his grinder’s settings. He values convenience, consistency, and trust in the quality—especially given his positive experience with the espresso machine. If the service isn’t available yet, he’d like to be informed about future plans to stay updated.",
+        "probes": [
+          "michael coffee subscription inquiry",
+          "what is michael coffee subscription inquiry",
+          "michael coffee subscription inquiry michael intrigued possibility"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "michael_returning_customer_discount": {
+        "text": "michael returning customer discount: Michael is inquiring about loyalty or referral programs for returning customers. He’s looking for a discount or promotional offer on his second purchase of a coffee grinder or related accessories. He values cost efficiency as a freelancer but is also willing to invest in durable, high-quality products. He’d like to know if there’s a loyalty program, a referral bonus, or a returning-customer discount that could apply to his order.",
+        "probes": [
+          "michael returning customer discount",
+          "what is michael returning customer discount",
+          "michael returning customer discount michael inquiring loyalty"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "michael_shipping_concerns": {
+        "text": "michael shipping concerns: Michael is concerned about shipping delays due to Seattle’s rainy weather and wants to confirm if new products ship from the same local warehouse as the espresso machine. He is also interested in expedited shipping options(if available and reasonable) and would like assurance that packages are handled carefully to avoid dented or damaged boxes. He’s anxious about repeating the previous delivery experience and values transparency in shipping timelines and packaging safety.",
+        "probes": [
+          "michael shipping concerns",
+          "what is michael shipping concerns",
+          "michael shipping concerns michael concerned shipping"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "michael_payment_options": {
+        "text": "michael payment options: Michael is open to various payment methods for the coffee grinder and accessories. He previously used a credit card but is interested in special financing or payment plans, especially if paired with a coffee bean subscription. He views the grinder as an investment in his daily routine and appreciates flexibility to spread payments if it offers clear benefits. However, he will likely opt for the simplest option unless there’s a tangible advantage to financing or subscription-based payment.",
+        "probes": [
+          "michael payment options",
+          "what is michael payment options",
+          "michael payment options michael open various"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "michael_additional_coffee_tools_inquiry": {
+        "text": "michael additional coffee tools inquiry: Michael is curious about additional coffee tools like a digital scale or temperature-controlled kettle. He values both craftsmanship and design but wants to avoid a 'lab-like' kitchen. He’s open to tools that genuinely improve brewing results, not just for show. He believes in moderation and prefers a balanced, stylish setup that enhances his coffee experience without overwhelming his kitchen.",
+        "probes": [
+          "michael additional coffee tools inquiry",
+          "what is michael additional coffee tools inquiry",
+          "michael additional coffee tools inquiry michael curious additional"
+        ],
+        "probe_provenance": "sidecar"
+      }
+    }
+  }
+}

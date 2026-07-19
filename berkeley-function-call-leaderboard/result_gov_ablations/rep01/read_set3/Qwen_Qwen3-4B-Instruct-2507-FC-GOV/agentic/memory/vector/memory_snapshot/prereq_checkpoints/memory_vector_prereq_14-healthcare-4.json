@@ -1,0 +1,16 @@
+{
+    "core_memory": {
+        "next_id": 5,
+        "store": {
+            "0": "Hypertension: Losartan 50 mg once daily. BP: 135\u2013140/80\u201390 mmHg. Doctor recommends stress management and low sodium intake instead of increasing dose. Taking daily magnesium supplement for potential BP support.",
+            "1": "Hypothyroidism: On levothyroxine 75 mcg daily, taken on an empty stomach, 30 minutes before eating. Last TSH: 2.1 mIU/L(within normal range). No dosage changes needed. Notice sluggishness if a dose is missed; uses a pill organizer to stay on track.",
+            "2": "Osteoarthritis: Uses acetaminophen as needed for mild pain. Takes meloxicam 7.5 mg only when joints are stiff(e.g., knees, hands), not daily to avoid overuse of NSAIDs. Doctor recommended glucosamine supplements; effect unclear\u2014no definitive improvement reported yet.",
+            "3": "Vitamin D & Bone Health: D3 2000 IU daily(from 22 ng/mL to target >30 ng/mL). Calcium supplements for early osteopenia. K2 recommended for calcium absorption. Also on atorvastatin 10 mg daily. LDL improved from 130 mg/dL. Triglycerides 140 mg/dL initially. No side effects reported.",
+            "4": "Overall Assessment: Medication routine working well. Organized with pill planner and phone reminders. Focuses on lifestyle changes to reduce medication reliance. Goal: Stay healthy, avoid unnecessary prescriptions, manage conditions naturally when possible."
+        }
+    },
+    "archival_memory": {
+        "next_id": 0,
+        "store": {}
+    }
+}

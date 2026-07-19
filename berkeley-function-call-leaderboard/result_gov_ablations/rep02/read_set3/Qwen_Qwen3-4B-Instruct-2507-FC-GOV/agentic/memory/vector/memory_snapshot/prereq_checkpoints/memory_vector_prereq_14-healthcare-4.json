@@ -1,0 +1,15 @@
+{
+    "core_memory": {
+        "next_id": 2,
+        "store": {
+            "0": "Recent blood glucose and A1C results: Fasting glucose 135 mg/dL(target <100 mg/dL), A1C 6.9% (target 6.5%). Doctor advised increasing dietary fiber and adding light exercise after meals. Morning home readings range 125\u2013130 mg/dL.",
+            "1": "Thyroid test results: TSH 2.1 mIU/L(normal range 0.5\u20134.5 mIU/L), T4 1.2 ng/dL(within normal range). Stable and consistent with previous readings. Levothyroxine dosage is working well. Regular monitoring continues due to past history of hypothyroidism."
+        }
+    },
+    "archival_memory": {
+        "next_id": 1,
+        "store": {
+            "0": "Vitamin D test result: 22 ng/mL(deficient; normal range 30-50 ng/mL). Doctor prescribed 2,000 IU daily supplement. Scheduled retest in 3-4 months to monitor improvement."
+        }
+    }
+}

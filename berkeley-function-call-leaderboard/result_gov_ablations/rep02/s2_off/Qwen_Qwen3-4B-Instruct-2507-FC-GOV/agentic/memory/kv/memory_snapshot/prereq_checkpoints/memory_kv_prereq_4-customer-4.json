@@ -1,0 +1,15 @@
+{
+    "core_memory": {
+        "user_introduction_michael": "Michael, 35, lives in Seattle, freelance graphic designer, interested in high-quality coffee machines that match his design aesthetic and lifestyle.",
+        "user_preference_michael_espresso": "Michael prefers a sleek, modern espresso machine with a stainless-steel finish, designed for non-professional users who want a caf\u00e9-like experience at home. He values simplicity, ease of use, and aesthetic appeal.",
+        "user_shipping_inquiry_michael": "Michael in Seattle is concerned about shipping times and whether products are shipped from a local warehouse. He wants to ensure timely delivery before a family gathering later this month.",
+        "user_support_feedback_michael": "Michael\u2019s friend praised your customer support for being excellent and detailed, which helped Michael feel confident in asking in-depth questions about coffee machine features, including brewing frequency, cleaning complexity, and footprint size.",
+        "user_warranty_inquiry_michael": "Michael wants a comprehensive warranty for coffee machines, especially for higher-end models, to ensure long-term reliability and excellent customer support.",
+        "user_inquiry_michael_promo_code": "Michael wants to apply a 17% first-time buyer discount at checkout. He needs clear steps: find 'Enter Coupon Code' field, type the code(e.g., ESSESS17), click 'Apply', and confirm it's active before finalizing order.",
+        "user_inquiry_michael_coffee_grinder_recommendations": "Michael wants a stylish, small coffee grinder that pairs with his stainless-steel espresso machine. He values fresh grinding for optimal flavor and wants a design that matches his kitchen\u2019s modern aesthetic."
+    },
+    "archival_memory": {
+        "michael_order_shipping_status": "Michael's order is showing a stuck shipping status. The tracking link hasn't updated in several days, and the package appears to be in transit outside of Washington state. He has tried refreshing the page, re-entering the tracking number, and using a different browser, but no new updates are appearing. He is concerned about the delay and whether the package is still en route or if there has been an issue with the shipment.",
+        "michael_delivery_preparation_plan": "Michael has expressed a strong preference to be home to receive his espresso machine delivery. He is particularly concerned about rainy weather and soggy packages, and has emphasized that a signature is required. He wants to be present to greet the courier, ensure the package is properly secured indoors, and avoid any risk of damage due to weather or unattended delivery. He will adjust his schedule(including design work) to be available for the delivery, and has requested that any updated delivery schedule or courier notification be shared immediately."
+    }
+}

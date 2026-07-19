@@ -1,0 +1,16 @@
+{
+    "core_memory": {
+        "urgent_tax_submission": "Submit tax documents before Friday.",
+        "credit_card_review": "Review credit card statement for errors.",
+        "auto_repair_call": "Call auto repair shop about weird noise in the engine.",
+        "schedule_dentist_appointment": "Schedule dentist appointment.",
+        "schedule_pediatrician_visit": "Kid\u2019s cold isn\u2019t getting better\u2014schedule pediatrician visit.",
+        "check_vaccine_schedule": "Check vaccine schedule\u2014next shots due in two months.",
+        "shopping_buy_diapers": "Buy more diapers."
+    },
+    "archival_memory": {
+        "car_wash_vacuum_sunday": "Wash and vacuum the car on Sunday.",
+        "check_tire_pressure": "Check tire pressure.",
+        "refill_wiper_fluid": "Refill windshield wiper fluid."
+    }
+}

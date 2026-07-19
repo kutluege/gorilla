@@ -1,0 +1,25 @@
+{
+    "core_memory": {
+        "diabetes_blood_glucose_fasting": "135 mg/dL",
+        "diabetes_a1c": "6.9%",
+        "diabetes_morning_glucose": "125-130 mg/dL",
+        "diabetes_recommendations": "Increase dietary fiber, add light exercise after meals",
+        "cholesterol_total": "195 mg/dL",
+        "cholesterol_ldl": "130 mg/dL",
+        "cholesterol_hdl": "58 mg/dL"
+    },
+    "archival_memory": {
+        "vitamin_d_level": "22 ng/mL(deficient)",
+        "vitamin_d_recommendation": "Start 2,000 IU daily supplement; retest in 3\u20136 months",
+        "thyroid_tsh": "2.1 mIU/L(normal range: 0.5\u20134.5 mIU/L)",
+        "thyroid_t4": "1.2 ng/dL(within normal range)",
+        "thyroid_status": "Stable; levothyroxine dosage is effective",
+        "bone_density_tscore_spine": "-1.8 (osteopenia)",
+        "bone_density_tscore_hip": "-1.5 (borderline range)",
+        "bone_density_recommendations": "Strength training, increased calcium intake, calcium + vitamin K2 supplement",
+        "liver_function_alt": "42 U/L(elevated; normal <35 U/L)",
+        "liver_kidney_assessment": "ALT elevated\u2014possibly related to recent medication changes; creatinine normal at 0.9 mg/dL(within 0.6\u20131.2 mg/dL)",
+        "inflammatory_markers_crp": "3.2 mg/L(slightly elevated; ideal <3.0 mg/L)",
+        "inflammatory_markers_esr": "18 mm/hr(within normal range: 0\u201320 mm/hr)"
+    }
+}

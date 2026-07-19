@@ -1,0 +1,13 @@
+{
+    "core_memory": {
+        "next_id": 2,
+        "store": {
+            "0": "Thursday: Finance wants cost-cutting recommendations\u2014brainstorm ideas. Project deadline approaching\u2014check in with Dev team. Caught a mistake in last month\u2019s sales data.",
+            "1": "Friday: Wrapped up pending reports, but still waiting for final approval. Followed up with vendors\u2014two responded, one still pending. Training session next Monday\u2014prep materials this weekend."
+        }
+    },
+    "archival_memory": {
+        "next_id": 0,
+        "store": {}
+    }
+}

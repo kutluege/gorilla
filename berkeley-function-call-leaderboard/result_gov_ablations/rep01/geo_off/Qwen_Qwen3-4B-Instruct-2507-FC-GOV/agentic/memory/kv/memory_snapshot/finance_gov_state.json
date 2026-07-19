@@ -1,0 +1,81 @@
+{
+  "backend": "kv",
+  "tiers": {
+    "core": {
+      "md_legacy_deals": {
+        "text": "md legacy deals: Salesforce 'Client Journey Map' tracks preferences and milestones. Notion for deal notes, Superhuman for email. AI assistants auto-summarize calls. Exploring blockchain (settlement) and quantum computing (portfolio optimization) via IBM. Weekly 'tech meditation' on Sundays to learn and test tools.",
+        "probes": [
+          "md legacy deals",
+          "what is md legacy deals",
+          "md legacy deals salesforce client journey"
+        ],
+        "probe_provenance": "write_time"
+      },
+      "leadership_social_impact": {
+        "text": "leadership social impact: Board member: 3 non-profits. $50M foundation for finance scholarships. Speaks on ethical leadership. Execs teach finance in underserved communities(2 weeks/year). Belief: success & responsibility are mutually reinforcing. Focus: next-gen leaders with performance and integrity.",
+        "probes": [
+          "leadership social impact",
+          "what is leadership social impact",
+          "leadership social impact board member non"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "decade_long_term_goals": {
+        "text": "decade long term goals: Goal: grow private portfolio for passive income to step back from operations. Expand into AI-driven ETFs. Launch free financial education platform for underprivileged youth. True wealth = financial growth + impact.",
+        "probes": [
+          "decade long term goals",
+          "what is decade long term goals",
+          "decade long term goals goal grow private"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "ultimate_goal_freedom_and_transition_55": {
+        "text": "ultimate goal freedom and transition 55: Goal: freedom via financial independence. By 55: chairman role, strategy, mentorship. Launch global fund in sustainable/frontier markets—balancing profit and impact. Wealth is about what you build and leave behind.",
+        "probes": [
+          "ultimate goal freedom and transition 55",
+          "what is ultimate goal freedom and transition 55",
+          "ultimate goal freedom and transition 55 goal freedom via"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "global_network_travel_strategy": {
+        "text": "global network travel strategy: 3x/week global travel(NY, London, HK, Dubai). Closed Singapore deal with Chipset Core after 3 days, including 4 AM dim sum. '48-hour protocol' for major opportunities. Tailored flight suits. Face-to-face > virtual for trust and culture.",
+        "probes": [
+          "global network travel strategy",
+          "what is global network travel strategy",
+          "global network travel strategy week global travel"
+        ],
+        "probe_provenance": "stored_text"
+      },
+      "bloomberg_mission_control_layout": {
+        "text": "bloomberg mission control layout: Bloomberg 'Mission Control' layout: real-time data, anomaly detection algorithms. Key insight: 2022 crisis alert at 3 AM caught unusual regional bank trading, enabling early position shifts. Critical for Asian office coordination and deal timing.",
+        "probes": [
+          "bloomberg mission control layout",
+          "what is bloomberg mission control layout",
+          "bloomberg mission control layout bloomberg mission control"
+        ],
+        "probe_provenance": "write_time"
+      }
+    },
+    "archival": {
+      "career_trajectory": {
+        "text": "career trajectory: Dealogic customized with soft signals: management dynamics, cultural fit. Python/R model predicts deal success. Automated routine tasks. ML model from earnings call transcripts now essential for equity trading desk.",
+        "probes": [
+          "career trajectory",
+          "what is career trajectory",
+          "career trajectory dealogic customized soft"
+        ],
+        "probe_provenance": "write_time"
+      },
+      "education_and_mentorship": {
+        "text": "education and mentorship: Bachelor's in Economics, University of Pennsylvania.\nMBA from Harvard Business School(Baker Scholar).\nActive engagement: guest lecturing, mentoring students, recruiting top talent.\nEndowed a scholarship at Penn for first-generation finance students.\nBelief: Talent is the greatest investment; finance should be a pathway to opportunity for all, not just privileged individuals.",
+        "probes": [
+          "education and mentorship",
+          "what is education and mentorship",
+          "education and mentorship bachelor economics university"
+        ],
+        "probe_provenance": "sidecar"
+      }
+    }
+  }
+}

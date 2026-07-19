@@ -1,0 +1,12 @@
+{
+    "core_memory": {
+        "next_id": 1,
+        "store": {
+            "0": "User Michael, 35, seeks espresso machine with steam wand, local delivery, family gathering soon, 17% off, prefers credit card, wants no-interest financing, requires in-home signature, available to receive package, prepared for rainy weather."
+        }
+    },
+    "archival_memory": {
+        "next_id": 0,
+        "store": {}
+    }
+}

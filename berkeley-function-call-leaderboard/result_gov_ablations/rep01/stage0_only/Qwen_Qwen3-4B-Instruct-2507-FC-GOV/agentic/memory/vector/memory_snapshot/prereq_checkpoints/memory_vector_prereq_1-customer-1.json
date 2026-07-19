@@ -1,0 +1,15 @@
+{
+    "core_memory": {
+        "next_id": 2,
+        "store": {
+            "0": "User Michael, 35, lives in Seattle, freelance graphic designer, values design aesthetics, seeks user-friendly espresso machine with caf\u00e9-like experience for non-professionals, prefers sleek stainless-steel finish, balances functionality and style.",
+            "1": "User Michael: seeks coffee bean and grinder recommendations that pair aesthetically with stainless-steel espresso machine, especially for fresh grinding. Interested in a small, stylish grinder that complements design and supports coffee purist preferences."
+        }
+    },
+    "archival_memory": {
+        "next_id": 1,
+        "store": {
+            "0": "User Michael, 35, lives in Seattle, freelance graphic designer, seeks user-friendly espresso machine with caf\u00e9-like experience, prefers sleek stainless-steel finish, interested in pricing, new customer discounts, shipping details, product specs(size, cleaning, brewing, temperature), warranty, and concerns about drip coffee makers not heating sufficiently. Specifically asks about adjustable temperature settings and reliable hot coffee output to avoid microwaving."
+        }
+    }
+}

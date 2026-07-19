@@ -1,0 +1,14 @@
+{
+    "core_memory": {
+        "next_id": 1,
+        "store": {
+            "0": "User Michael, 35, Seattle. Ordered stainless-steel espresso machine with steam wand and accessories. Delivery delayed. Tracking stuck. Requesting fulfillment team escalation, local shipping, or expedited shipping."
+        }
+    },
+    "archival_memory": {
+        "next_id": 1,
+        "store": {
+            "0": "User Michael, 35, Seattle. Ordered stainless-steel espresso machine with steam wand and accessories. Delivery delayed. Tracking stuck. Requesting fulfillment team escalation, local shipping, or expedited shipping. Confirmed: requires signature on delivery due to past issues with soggy packages. Will be home to receive package; design work scheduled around delivery to ensure availability. Prefers local delivery to avoid rain-related damage."
+        }
+    }
+}

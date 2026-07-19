@@ -1,0 +1,153 @@
+{
+  "backend": "vector",
+  "tiers": {
+    "core": {
+      "0": {
+        "text": "MD's first major win: 2019 poison pill strategy against hostile takeover of Surreal Incorporated. Case study at Harvard Business School. Highlighted innovation in defensive corporate strategies.",
+        "probes": [
+          "MD's first major win: 2019 poison pill strategy against hostile takeover of Surreal Incorporated. Case study at Harvard Business School. Highlighted innovation in defensive corporate strategies.",
+          "what do you know about first major win 2019",
+          "first major win 2019 poison pill strategy against"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "1": {
+        "text": "Key deal: $8.6B cross-border semiconductor merger between Nexa Semiconductors and Taihua Microelectronics. Coordinated teams across three continents. Overcame IP and regulatory hurdles. Demonstrated that global finance requires both technical precision and diplomatic acumen.",
+        "probes": [
+          "Key deal: $8.6B cross-border semiconductor merger between Nexa Semiconductors and Taihua Microelectronics. Coordinated teams across three continents. Overcame IP and regulatory hurdles. Demonstrated that global finance requires both technical precision and diplomatic acumen.",
+          "what do you know about key deal cross border",
+          "key deal cross border semiconductor merger between nexa"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "2": {
+        "text": "Empowerment, accountability, growth. Mentorship: senior-emerging pairs. Biweekly mentorship of 3 directors. 94% retention. 15 to global programs. Accelerated path attracts GS/MS talent. 40% senior diversity(up from 15%). SEO & Girls Who Invest partnerships.",
+        "probes": [
+          "Empowerment, accountability, growth. Mentorship: senior-emerging pairs. Biweekly mentorship of 3 directors. 94% retention. 15 to global programs. Accelerated path attracts GS/MS talent. 40% senior diversity(up from 15%). SEO & Girls Who Invest partnerships.",
+          "what do you know about empowerment accountability growth mentorship",
+          "empowerment accountability growth mentorship senior emerging pairs biweekly"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "3": {
+        "text": "Tableau expert; crafted ESG dashboards for Vertex, Nexus, Summit (multi-source data). Clients engage with environmental impact insights. Experimenting with HoloLens AR for 3D market data – early stage, but believes it's the future of financial presentation.",
+        "probes": [
+          "Tableau expert; crafted ESG dashboards for Vertex, Nexus, Summit (multi-source data). Clients engage with environmental impact insights. Experimenting with HoloLens AR for 3D market data – early stage, but believes it's the future of financial presentation.",
+          "what do you know about tableau expert crafted esg",
+          "tableau expert crafted esg dashboards vertex nexus summit"
+        ],
+        "probe_provenance": "write_time"
+      },
+      "4": {
+        "text": "Dealogic with soft signals (management, culture). Python/R model predicts market reactions from earnings calls – now key for equity trading. Automated routine tasks, enabling strategic focus. Self-taught coding during pandemic; project became core tool.",
+        "probes": [
+          "Dealogic with soft signals (management, culture). Python/R model predicts market reactions from earnings calls – now key for equity trading. Automated routine tasks, enabling strategic focus. Self-taught coding during pandemic; project became core tool.",
+          "what do you know about dealogic soft signals management",
+          "dealogic soft signals management culture python model predicts"
+        ],
+        "probe_provenance": "write_time"
+      }
+    },
+    "archival": {
+      "0": {
+        "text": "2001–2004: Career at Goldman Sachs and Morgan Stanley. Goldman Sachs — M&A modeling, dot-com crash survival. Morgan Stanley — early exposure to social media tech deals. Developed foundational skills in valuation, risk modeling, and deal execution.",
+        "probes": [
+          "2001–2004: Career at Goldman Sachs and Morgan Stanley. Goldman Sachs — M&A modeling, dot-com crash survival. Morgan Stanley — early exposure to social media tech deals. Developed foundational skills in valuation, risk modeling, and deal execution.",
+          "what do you know about 2001 2004 career goldman",
+          "2001 2004 career goldman sachs morgan stanley modeling"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "1": {
+        "text": "Potential $20B take-private transaction with Omnix AI — if executed, would be a transformative deal for Legend Investments. Represents a strategic pivot into AI-driven infrastructure and future growth.",
+        "probes": [
+          "Potential $20B take-private transaction with Omnix AI — if executed, would be a transformative deal for Legend Investments. Represents a strategic pivot into AI-driven infrastructure and future growth.",
+          "what do you know about potential 20b take private",
+          "potential 20b take private transaction omnix executed would"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "2": {
+        "text": "Q4 2023: $14.2B healthcare merger between BioCrest Labs and OncoPharm Therapeutics. Overcame IP valuation and regulatory hurdles. Finalized after three sleepless nights. WSJ hailed it as 'the deal that reshaped modern cancer treatment.' A testament to resilience and strategic leadership under pressure.",
+        "probes": [
+          "Q4 2023: $14.2B healthcare merger between BioCrest Labs and OncoPharm Therapeutics. Overcame IP valuation and regulatory hurdles. Finalized after three sleepless nights. WSJ hailed it as 'the deal that reshaped modern cancer treatment.' A testament to resilience and strategic leadership under pressure.",
+          "what do you know about 2023 healthcare merger between",
+          "2023 healthcare merger between biocrest labs oncopharm therapeutics"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "3": {
+        "text": "Weekly 7 AM deal call with Asian market participants — established routine to maintain global alignment and sharpness. Reinforces cross-timezone coordination and strategic agility.",
+        "probes": [
+          "Weekly 7 AM deal call with Asian market participants — established routine to maintain global alignment and sharpness. Reinforces cross-timezone coordination and strategic agility.",
+          "what do you know about weekly deal call asian",
+          "weekly deal call asian market participants established routine"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "4": {
+        "text": "2015: Joined Legend Investments as Managing Director. First major transaction: NeuralNet Systems IPO — largest tech IPO in firm’s history. Marked the beginning of a reputation for complex, cross-border deal execution.",
+        "probes": [
+          "2015: Joined Legend Investments as Managing Director. First major transaction: NeuralNet Systems IPO — largest tech IPO in firm’s history. Marked the beginning of a reputation for complex, cross-border deal execution.",
+          "what do you know about 2015 joined legend investments",
+          "2015 joined legend investments managing director first major"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "5": {
+        "text": "Salesforce 'Client Journey Map' for client preferences and milestones. Notion for deal notes. Superhuman saves hours. AI meeting assistants auto-summarize calls and create action items. Blockchain for settlements, quantum computing for portfolio optimization – IBM simulations. Tech learning on Sundays (family calls it 'tech meditation').",
+        "probes": [
+          "Salesforce 'Client Journey Map' for client preferences and milestones. Notion for deal notes. Superhuman saves hours. AI meeting assistants auto-summarize calls and create action items. Blockchain for settlements, quantum computing for portfolio optimization – IBM simulations. Tech learning on Sundays (family calls it 'tech meditation').",
+          "what do you know about salesforce client journey map",
+          "salesforce client journey map preferences milestones notion deal"
+        ],
+        "probe_provenance": "write_time"
+      },
+      "6": {
+        "text": "Education: B.A. in Economics, University of Pennsylvania; MBA, Harvard Business School(Baker Scholar). Long-standing engagement with Penn and HBS through guest lectures, student mentoring, and talent recruitment. Endowed a scholarship at Penn for first-generation finance students. Core belief: finance should be accessible, driven by talent, hunger, and discipline—not privilege.",
+        "probes": [
+          "Education: B.A. in Economics, University of Pennsylvania; MBA, Harvard Business School(Baker Scholar). Long-standing engagement with Penn and HBS through guest lectures, student mentoring, and talent recruitment. Endowed a scholarship at Penn for first-generation finance students. Core belief: finance should be accessible, driven by talent, hunger, and discipline—not privilege.",
+          "what do you know about education economics university pennsylvania",
+          "education economics university pennsylvania mba harvard business school"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "7": {
+        "text": "Golf as a strategic relationship-building tool: 7-handicap, focuses on connection over score. Key outcomes: $2.3B merger framework with Jim, CEO of MineCore, developed during a round at an unspecified course(holes 7–8). Hosts 'Quarterly Links' at Pebble Beach—annual event attracting clients, prospects, and industry leaders. Resulted in three major client acquisitions and a sovereign wealth fund partnership. Caddie Tom, with 30 years of experience, serves as an informal source of corporate intelligence—provides insights on market trends, executive behavior, and deal dynamics that are often ahead of public data.",
+        "probes": [
+          "Golf as a strategic relationship-building tool: 7-handicap, focuses on connection over score. Key outcomes: $2.3B merger framework with Jim, CEO of MineCore, developed during a round at an unspecified course(holes 7–8). Hosts 'Quarterly Links' at Pebble Beach—annual event attracting clients, prospects, and industry leaders. Resulted in three major client acquisitions and a sovereign wealth fund partnership. Caddie Tom, with 30 years of experience, serves as an informal source of corporate intelligence—provides insights on market trends, executive behavior, and deal dynamics that are often ahead of public data.",
+          "what do you know about golf strategic relationship building",
+          "golf strategic relationship building tool handicap focuses connection"
+        ],
+        "probe_provenance": "stored_text"
+      },
+      "8": {
+        "text": "Regarding 50: Personalized client relationships: 50 HNWIs, 30 institutional clients. Approach treats each as a family office member. Case study: Robert’s succession planning—spent evenings with his children to understand their vision, co-developed a new transition plan through family dinners. Attended weddings, celebrations, and supported through personal loss. Team describes service as 'concierge'—emotional and personal support beyond financial advice. Responds to urgent messages at midnight with human, personalized responses. Trust is built through shared experiences and emotional presence, not just data or analysis.",
+        "probes": [
+          "Regarding 50: Personalized client relationships: 50 HNWIs, 30 institutional clients. Approach treats each as a family office member. Case study: Robert’s succession planning—spent evenings with his children to understand their vision, co-developed a new transition plan through family dinners. Attended weddings, celebrations, and supported through personal loss. Team describes service as 'concierge'—emotional and personal support beyond financial advice. Responds to urgent messages at midnight with human, personalized responses. Trust is built through shared experiences and emotional presence, not just data or analysis.",
+          "what do you know about regarding personalized client relationships",
+          "regarding personalized client relationships hnwis institutional clients approach"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "9": {
+        "text": "Global network maintained through strategic travel: 3 flights/week between NY, London, HK, Dubai. Memorized premium lounges—ritual of presence. Closed major deal with Chipset Core in Singapore after 3 days of in-person engagement, including a 4 AM dim sum run. Realized cultural nuances: some markets require physical presence, shared meals, and local context—cannot be replicated over Zoom. Team established '48-hour protocol': for key clients or opportunities, can deploy globally within 48 hours. Tailor created flight-specific suits for long-haul comfort and professional presence.",
+        "probes": [
+          "Global network maintained through strategic travel: 3 flights/week between NY, London, HK, Dubai. Memorized premium lounges—ritual of presence. Closed major deal with Chipset Core in Singapore after 3 days of in-person engagement, including a 4 AM dim sum run. Realized cultural nuances: some markets require physical presence, shared meals, and local context—cannot be replicated over Zoom. Team established '48-hour protocol': for key clients or opportunities, can deploy globally within 48 hours. Tailor created flight-specific suits for long-haul comfort and professional presence.",
+          "what do you know about global network maintained through",
+          "global network maintained through strategic travel flights week"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "10": {
+        "text": "Network ecosystem built on the 'Network Triangle': professional, social, and knowledge-sharing connections. Quarterly 'Future Focus' dinners bring together fintech, traditional banking, academia, artists, and philosophers. Off-the-record, open-ended conversations. Last month's event led to unexpected collaboration between Stellar Investments and quantum computing startup Energia. Runs senior-executive mentorship circle—connecting seasoned leaders with emerging talent. Network intersections create real value: client's daughter interns at a portfolio company; golf buddy becomes strategic investor. This is not just networking—it's building a community. Community is the true foundation of sustainable success in finance.",
+        "probes": [
+          "Network ecosystem built on the 'Network Triangle': professional, social, and knowledge-sharing connections. Quarterly 'Future Focus' dinners bring together fintech, traditional banking, academia, artists, and philosophers. Off-the-record, open-ended conversations. Last month's event led to unexpected collaboration between Stellar Investments and quantum computing startup Energia. Runs senior-executive mentorship circle—connecting seasoned leaders with emerging talent. Network intersections create real value: client's daughter interns at a portfolio company; golf buddy becomes strategic investor. This is not just networking—it's building a community. Community is the true foundation of sustainable success in finance.",
+          "what do you know about network ecosystem built triangle",
+          "network ecosystem built triangle professional social knowledge sharing"
+        ],
+        "probe_provenance": "sidecar"
+      }
+    }
+  }
+}

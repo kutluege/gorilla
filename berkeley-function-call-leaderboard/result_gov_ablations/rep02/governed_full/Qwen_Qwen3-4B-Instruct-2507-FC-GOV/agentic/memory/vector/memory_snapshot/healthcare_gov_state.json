@@ -1,0 +1,36 @@
+{
+  "backend": "vector",
+  "tiers": {
+    "core": {
+      "0": {
+        "text": "Fasting glucose: 135 mg/dL; HbA1c: 6.9%. Morning readings: 125-130 mg/dL. Recommendations: Increase dietary fiber(oats, legumes, veggies), 10-15 min walk after meals, consistent meal timing. Track glucose daily.",
+        "probes": [
+          "Fasting glucose: 135 mg/dL; HbA1c: 6.9%. Morning readings: 125-130 mg/dL. Recommendations: Increase dietary fiber(oats, legumes, veggies), 10-15 min walk after meals, consistent meal timing. Track glucose daily.",
+          "what do you know about fasting glucose 135 hba1c",
+          "fasting glucose 135 hba1c morning readings 125 130"
+        ],
+        "probe_provenance": "stored_text"
+      },
+      "1": {
+        "text": "Type 2 Diabetes: Metformin 1000 mg twice daily; A1C ~6.9%; Fasting glucose: 125-130 mg/dL. Added semaglutide (Ozempic) at low dose for appetite control and improved glucose management. Monitoring fasting glucose at home regularly.",
+        "probes": [
+          "Type 2 Diabetes: Metformin 1000 mg twice daily; A1C ~6.9%; Fasting glucose: 125-130 mg/dL. Added semaglutide (Ozempic) at low dose for appetite control and improved glucose management. Monitoring fasting glucose at home regularly.",
+          "what do you know about type diabetes metformin 1000",
+          "type diabetes metformin 1000 twice daily a1c fasting"
+        ],
+        "probe_provenance": "write_time"
+      }
+    },
+    "archival": {
+      "0": {
+        "text": "Diabetes management: Started metformin 1000 mg BID years ago. A1C remained around 6.9%. Recently added semaglutide (Ozempic) at low dose for appetite and glucose control. Noted improved appetite regulation and consistent fasting glucose (125-130 mg/dL). Blood pressure: Losartan 50 mg once daily; readings ~135-140/80-90 mmHg. Doctor recommends stress management and reduced sodium intake instead of increasing dosage. Taking daily magnesium supplement for potential blood pressure support. Hypothyroidism: Levothyroxine 75 mcg once daily, taken on empty stomach, 30 minutes before meals. Last TSH: 2.1 mIU/L (normal). Missed doses cause next-day sluggishness. Uses pill organizer to stay on track. Osteoarthritis: Acetaminophen as needed for mild pain. Meloxicam 7.5 mg when joints are stiff (knees/hands), taken only as needed due to NSAID concerns. Doctor suggested glucosamine supplements; effect unclear.",
+        "probes": [
+          "Diabetes management: Started metformin 1000 mg BID years ago. A1C remained around 6.9%. Recently added semaglutide (Ozempic) at low dose for appetite and glucose control. Noted improved appetite regulation and consistent fasting glucose (125-130 mg/dL). Blood pressure: Losartan 50 mg once daily; readings ~135-140/80-90 mmHg. Doctor recommends stress management and reduced sodium intake instead of increasing dosage. Taking daily magnesium supplement for potential blood pressure support. Hypothyroidism: Levothyroxine 75 mcg once daily, taken on empty stomach, 30 minutes before meals. Last TSH: 2.1 mIU/L (normal). Missed doses cause next-day sluggishness. Uses pill organizer to stay on track. Osteoarthritis: Acetaminophen as needed for mild pain. Meloxicam 7.5 mg when joints are stiff (knees/hands), taken only as needed due to NSAID concerns. Doctor suggested glucosamine supplements; effect unclear.",
+          "what do you know about diabetes management started metformin",
+          "diabetes management started metformin 1000 bid years ago"
+        ],
+        "probe_provenance": "write_time"
+      }
+    }
+  }
+}

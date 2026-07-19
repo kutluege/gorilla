@@ -1,0 +1,153 @@
+{
+  "backend": "vector",
+  "tiers": {
+    "core": {
+      "0": {
+        "text": "Tableau expert. Created ESG dashboard for Vertex, Nexus, Summit using multi-source data; enhanced client engagement. Perfecting storytelling through visuals. Experimenting with HoloLens AR for 3D market data—early stage, but future of financial presentation.",
+        "probes": [
+          "Tableau expert. Created ESG dashboard for Vertex, Nexus, Summit using multi-source data; enhanced client engagement. Perfecting storytelling through visuals. Experimenting with HoloLens AR for 3D market data—early stage, but future of financial presentation.",
+          "what do you know about tableau expert created esg",
+          "tableau expert created esg dashboard vertex nexus summit"
+        ],
+        "probe_provenance": "write_time"
+      },
+      "1": {
+        "text": "Implemented BlackRock's Aladdin platform despite cost concerns. 15% higher risk-adjusted returns. Custom risk models for emerging markets (informed by currency crisis experience). 'Risk Radar' dashboard combines Aladdin with proprietary algorithms. Licensed to three firms; strategic innovation.",
+        "probes": [
+          "Implemented BlackRock's Aladdin platform despite cost concerns. 15% higher risk-adjusted returns. Custom risk models for emerging markets (informed by currency crisis experience). 'Risk Radar' dashboard combines Aladdin with proprietary algorithms. Licensed to three firms; strategic innovation.",
+          "what do you know about implemented blackrock aladdin platform",
+          "implemented blackrock aladdin platform despite cost concerns higher"
+        ],
+        "probe_provenance": "write_time"
+      },
+      "2": {
+        "text": "Personal reminder: Small lucite from first $500M transaction(funded Stratos Aerospace expansion) remains on desk. Symbolizes bringing the same energy, focus, and determination to every deal, regardless of size.",
+        "probes": [
+          "Personal reminder: Small lucite from first $500M transaction(funded Stratos Aerospace expansion) remains on desk. Symbolizes bringing the same energy, focus, and determination to every deal, regardless of size.",
+          "what do you know about personal reminder small lucite",
+          "personal reminder small lucite first 500m transaction funded"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "3": {
+        "text": "Dealogic tracks soft signals: management dynamics, cultural fit. Custom scoring predicts deal success. Self-taught Python/R; automated analytics. ML model from earnings calls predicts market reactions—now essential for equity trading desk.",
+        "probes": [
+          "Dealogic tracks soft signals: management dynamics, cultural fit. Custom scoring predicts deal success. Self-taught Python/R; automated analytics. ML model from earnings calls predicts market reactions—now essential for equity trading desk.",
+          "what do you know about dealogic tracks soft signals",
+          "dealogic tracks soft signals management dynamics cultural fit"
+        ],
+        "probe_provenance": "write_time"
+      },
+      "4": {
+        "text": "Time management: 5:30 AM markets review, workout, high-stakes decisions. Time-blocked for portfolio reviews and research. Saturdays: financial planning, Pioneer Tech pre-seed review. Sundays: family, reading. System ensures efficiency and no missed opportunities.",
+        "probes": [
+          "Time management: 5:30 AM markets review, workout, high-stakes decisions. Time-blocked for portfolio reviews and research. Saturdays: financial planning, Pioneer Tech pre-seed review. Sundays: family, reading. System ensures efficiency and no missed opportunities.",
+          "what do you know about time management markets review",
+          "time management markets review workout high stakes decisions"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "5": {
+        "text": "Future goals: Build private portfolio for passive income; expand into AI-driven ETFs. Launch free financial education platform for underprivileged youth. True wealth = financial growth + societal impact.",
+        "probes": [
+          "Future goals: Build private portfolio for passive income; expand into AI-driven ETFs. Launch free financial education platform for underprivileged youth. True wealth = financial growth + societal impact.",
+          "what do you know about future goals build private",
+          "future goals build private portfolio passive income expand"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "6": {
+        "text": "Personal development: Mandarin fluency for China market insight. Ironman triathlon before 50. Resilience is key—endurance sports teach strategic pacing, risk assessment, and discipline, mirroring finance decisions.",
+        "probes": [
+          "Personal development: Mandarin fluency for China market insight. Ironman triathlon before 50. Resilience is key—endurance sports teach strategic pacing, risk assessment, and discipline, mirroring finance decisions.",
+          "what do you know about personal development mandarin fluency",
+          "personal development mandarin fluency china market insight ironman"
+        ],
+        "probe_provenance": "sidecar"
+      }
+    },
+    "archival": {
+      "0": {
+        "text": "Salesforce 'Client Journey Map' tracks client preferences and milestones. Notion for deal notes; Superhuman saves email time. AI meeting assistants for summaries and action items. Exploring blockchain and quantum computing (IBM simulations). Sunday 'tech meditation' for learning and testing tools.",
+        "probes": [
+          "Salesforce 'Client Journey Map' tracks client preferences and milestones. Notion for deal notes; Superhuman saves email time. AI meeting assistants for summaries and action items. Exploring blockchain and quantum computing (IBM simulations). Sunday 'tech meditation' for learning and testing tools.",
+          "what do you know about salesforce client journey map",
+          "salesforce client journey map tracks preferences milestones notion"
+        ],
+        "probe_provenance": "write_time"
+      },
+      "1": {
+        "text": "Ongoing transactions:\n1. $8.5B semiconductor merger: QuantumChip Technologies & Silicon Core. Navigating U.S.-China regulatory approvals—requires patience, strategic timing, and deep policy understanding.\n2. $3.2B leveraged buyout of VertexSoft(SaaS provider). Debt financing structure is a key challenge—requires balancing cost, risk, and growth potential.\n3. Confidential $5B+ cross-border acquisition: Solaris Energy Group acquiring Nordic Renewables. Aligning government incentives across jurisdictions is a major hurdle.\n\nWeekly deal call: Held every Monday at 7 AM to accommodate Asian market participants—keeps me sharp and aligned with global time zones.\n\nPotential $20B take-private transaction: Omnix AI—an AI powerhouse. If successful, would be a transformative deal for the firm, reshaping our AI investment strategy.",
+        "probes": [
+          "Ongoing transactions:\n1. $8.5B semiconductor merger: QuantumChip Technologies & Silicon Core. Navigating U.S.-China regulatory approvals—requires patience, strategic timing, and deep policy understanding.\n2. $3.2B leveraged buyout of VertexSoft(SaaS provider). Debt financing structure is a key challenge—requires balancing cost, risk, and growth potential.\n3. Confidential $5B+ cross-border acquisition: Solaris Energy Group acquiring Nordic Renewables. Aligning government incentives across jurisdictions is a major hurdle.\n\nWeekly deal call: Held every Monday at 7 AM to accommodate Asian market participants—keeps me sharp and aligned with global time zones.\n\nPotential $20B take-private transaction: Omnix AI—an AI powerhouse. If successful, would be a transformative deal for the firm, reshaping our AI investment strategy.",
+          "what do you know about ongoing transactions semiconductor merger",
+          "ongoing transactions semiconductor merger quantumchip technologies silicon core"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "2": {
+        "text": "Leadership in finance is about creating a culture of excellence while maintaining humanity. At Legend Investments, I oversee a team of 180 professionals across our investment, research, and operations divisions. My leadership philosophy centers on three pillars: empowerment, accountability, and continuous growth. I've found that the best ideas often come from the most unexpected places, so I maintain an open-door policy and encourage even our most junior analysts to challenge conventional thinking. Every Monday, I host a 'strategic roundtable' where team members from all levels can present investment theses or operational improvements. Last month, a second-year analyst proposed a novel approach to ESG scoring that we're now implementing across our portfolio. Leadership isn't about having all the answers—it's about fostering an environment where great ideas can flourish.",
+        "probes": [
+          "Leadership in finance is about creating a culture of excellence while maintaining humanity. At Legend Investments, I oversee a team of 180 professionals across our investment, research, and operations divisions. My leadership philosophy centers on three pillars: empowerment, accountability, and continuous growth. I've found that the best ideas often come from the most unexpected places, so I maintain an open-door policy and encourage even our most junior analysts to challenge conventional thinking. Every Monday, I host a 'strategic roundtable' where team members from all levels can present investment theses or operational improvements. Last month, a second-year analyst proposed a novel approach to ESG scoring that we're now implementing across our portfolio. Leadership isn't about having all the answers—it's about fostering an environment where great ideas can flourish.",
+          "what do you know about leadership finance creating culture",
+          "leadership finance creating culture excellence while maintaining humanity"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "3": {
+        "text": "Relationship with Sarah Chen(CEO, Pacific Dynamics): Connected on a delayed flight in 2008. Five hours of deep conversation on markets and jazz. Now a trusted advisor for Asian markets—accessible at any time. A true example of a resilient, relationship-driven network.",
+        "probes": [
+          "Relationship with Sarah Chen(CEO, Pacific Dynamics): Connected on a delayed flight in 2008. Five hours of deep conversation on markets and jazz. Now a trusted advisor for Asian markets—accessible at any time. A true example of a resilient, relationship-driven network.",
+          "what do you know about relationship sarah chen ceo",
+          "relationship sarah chen ceo pacific dynamics connected delayed"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "4": {
+        "text": "Regarding 50: Personalized client relationships: 50 HNWIs, 30 institutional clients. Spent evenings with Robert's children to co-develop succession plan. Attended family events, supported through losses. Concierge-level care: responds to midnight texts. Trust built through genuine connection, not transactions.",
+        "probes": [
+          "Regarding 50: Personalized client relationships: 50 HNWIs, 30 institutional clients. Spent evenings with Robert's children to co-develop succession plan. Attended family events, supported through losses. Concierge-level care: responds to midnight texts. Trust built through genuine connection, not transactions.",
+          "what do you know about regarding personalized client relationships",
+          "regarding personalized client relationships hnwis institutional clients spent"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "5": {
+        "text": "Global network: 3 flights/week. Closed key deal in Singapore with Chipset Core after 3 days of face-to-face, including 4 AM dim sum. No Zoom substitutes in some cultures. '48-hour protocol' for rapid global response. Tailored suits for long-haul flights.",
+        "probes": [
+          "Global network: 3 flights/week. Closed key deal in Singapore with Chipset Core after 3 days of face-to-face, including 4 AM dim sum. No Zoom substitutes in some cultures. '48-hour protocol' for rapid global response. Tailored suits for long-haul flights.",
+          "what do you know about global network flights week",
+          "global network flights week closed key deal singapore"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "6": {
+        "text": "Network Triangle: Professional, social, knowledge-sharing. 'Future Focus' dinners with diverse groups. Led to Stellar x Energia collaboration. Mentorship circle connects seniors with young talent. Intersections create magic: daughter interns, golf buddy invests. Community is the foundation of success.",
+        "probes": [
+          "Network Triangle: Professional, social, knowledge-sharing. 'Future Focus' dinners with diverse groups. Led to Stellar x Energia collaboration. Mentorship circle connects seniors with young talent. Intersections create magic: daughter interns, golf buddy invests. Community is the foundation of success.",
+          "what do you know about network triangle professional social",
+          "network triangle professional social knowledge sharing future focus"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "7": {
+        "text": "Sibling dynamic: Brilliant, tech-immersed younger sibling who pitches AI-driven fintech startups. Our relationship blends healthy competitiveness with mutual respect—my 'old money' risk management lessons challenge their innovation, and their forward-thinking vision keeps me grounded in the future. We push each other to think differently, and both want each other to succeed. A rare blend of business insight and personal connection.",
+        "probes": [
+          "Sibling dynamic: Brilliant, tech-immersed younger sibling who pitches AI-driven fintech startups. Our relationship blends healthy competitiveness with mutual respect—my 'old money' risk management lessons challenge their innovation, and their forward-thinking vision keeps me grounded in the future. We push each other to think differently, and both want each other to succeed. A rare blend of business insight and personal connection.",
+          "what do you know about sibling dynamic brilliant tech",
+          "sibling dynamic brilliant tech immersed younger who pitches"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "8": {
+        "text": "Family time system: Dedicated weekends for family—no work, no emails. When international deals align with school breaks, we turn them into family trips, blending business and leisure. Kids gain cultural exposure; I stay present while managing responsibilities. This intentional system ensures family remains a grounding force. Wealth is not just numbers—it’s shared life, presence, and connection.",
+        "probes": [
+          "Family time system: Dedicated weekends for family—no work, no emails. When international deals align with school breaks, we turn them into family trips, blending business and leisure. Kids gain cultural exposure; I stay present while managing responsibilities. This intentional system ensures family remains a grounding force. Wealth is not just numbers—it’s shared life, presence, and connection.",
+          "what do you know about family time system dedicated",
+          "family time system dedicated weekends work emails when"
+        ],
+        "probe_provenance": "sidecar"
+      }
+    }
+  }
+}

@@ -1,0 +1,216 @@
+{
+  "backend": "kv",
+  "tiers": {
+    "core": {
+      "innovation_and_adaptation": {
+        "text": "innovation and adaptation: Cross-functional innovation pods and AI platform SOAR. Fluid organizational structure enables talent mobility. Chair Innovation Committee. 'Future of Finance' symposium led to three strategic partnerships enhancing investment capabilities.",
+        "probes": [
+          "innovation and adaptation",
+          "what is innovation and adaptation",
+          "innovation and adaptation cross functional innovation"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "leadership_social_impact": {
+        "text": "leadership social impact: Board member for three non-profits. $50M scholarship program. Speaks on ethical leadership. Executives teach finance in underserved communities. Social impact strengthens culture and attracts talent. Financial success and social responsibility are mutually reinforcing.",
+        "probes": [
+          "leadership social impact",
+          "what is leadership social impact",
+          "leadership social impact board member three"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "personal_financial_goals_next_decade": {
+        "text": "personal financial goals next decade: Grow portfolio for substantial passive income. Expand into AI-driven ETFs. Launch free financial education platform for underprivileged youth. True wealth = financial growth + social impact.",
+        "probes": [
+          "personal financial goals next decade",
+          "what is personal financial goals next decade",
+          "personal financial goals next decade grow portfolio substantial"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "long_term_career_and_wealth_vision": {
+        "text": "long term career and wealth vision: Become chairman by 55, focusing on strategy and mentorship. Launch global fund in sustainable & frontier markets. True wealth = freedom, control, and legacy through impact-driven investments.",
+        "probes": [
+          "long term career and wealth vision",
+          "what is long term career and wealth vision",
+          "long term career and wealth vision become chairman focusing"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "deep_network_example_sarah_chen": {
+        "text": "deep network example sarah chen: Relationship with Sarah Chen, CEO of Pacific Dynamics, started at a 2008 Goldman conference. Deepened on a delayed HK flight through 5 hours of conversation on markets and jazz. Built lasting trust; now a go-to for Asian market insights, even at 3 AM.",
+        "probes": [
+          "deep network example sarah chen",
+          "what is deep network example sarah chen",
+          "deep network example sarah chen relationship sarah chen"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "bloomberg_mission_control_layout": {
+        "text": "bloomberg mission control layout: Bloomberg 'Mission Control' layout: real-time data, anomaly detection algorithms. Alerted during 2022 crisis at 3 AM on regional bank volumes, enabling early position adjustments. LIVE function critical for Asian office coordination during trading hours.",
+        "probes": [
+          "bloomberg mission control layout",
+          "what is bloomberg mission control layout",
+          "bloomberg mission control layout bloomberg mission control"
+        ],
+        "probe_provenance": "write_time"
+      },
+      "dealogic_soft_signals_model": {
+        "text": "dealogic soft signals model: Custom Dealogic diary tracks soft signals: management dynamics, cultural fit. Built predictive scoring system for deal success. Self-taught Python/R during pandemic. Automated analytics, freed team for strategy. ML model from earnings calls now essential for equity trading desk.",
+        "probes": [
+          "dealogic soft signals model",
+          "what is dealogic soft signals model",
+          "dealogic soft signals model custom dealogic diary"
+        ],
+        "probe_provenance": "write_time"
+      }
+    },
+    "archival": {
+      "deal_poison_pill_surreal_incorporated": {
+        "text": "deal poison pill surreal incorporated: Education foundation:\n- Bachelor's in Economics from University of Pennsylvania.\n- MBA from Harvard Business School(Baker Scholar).\n\nOngoing engagement:\n- Guest lecturing and mentoring students at both Penn and HBS.\n- Recruit top talent from these institutions.\n- Endowed a scholarship at Penn for first-generation finance students.\n\nBelief: Talent is the greatest investment. Finance should be a pathway to opportunity—accessible to all with hunger and discipline.",
+        "probes": [
+          "deal poison pill surreal incorporated",
+          "what is deal poison pill surreal incorporated",
+          "deal poison pill surreal incorporated education foundation bachelor"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "deal_semiconductor_nexa_taihua": {
+        "text": "deal semiconductor nexa taihua: Pioneer Tech is a technology company in pre-seed funding stage. Currently under review for potential inclusion in personal portfolio. Key considerations: growth narrative, margin of safety, asymmetric upside, and alignment with long-term investment philosophy. Due diligence is ongoing.",
+        "probes": [
+          "deal semiconductor nexa taihua",
+          "what is deal semiconductor nexa taihua",
+          "deal semiconductor nexa taihua pioneer tech technology"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "deal_healthcare_biocrest_oncopharma": {
+        "text": "deal healthcare biocrest oncopharma: $14.2B healthcare merger between BioCrest Labs and OncoPharm Therapeutics. Overcame IP valuation and regulatory approval hurdles. Recognized by WSJ as 'the deal that reshaped modern cancer treatment.'",
+        "probes": [
+          "deal healthcare biocrest oncopharma",
+          "what is deal healthcare biocrest oncopharma",
+          "deal healthcare biocrest oncopharma healthcare merger between"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "personal_memento_stratos_aerospace": {
+        "text": "personal memento stratos aerospace: Small lucite piece from first $500M transaction that funded Stratos Aerospace expansion. Kept on desk as a reminder to maintain energy and drive in every deal.",
+        "probes": [
+          "personal memento stratos aerospace",
+          "what is personal memento stratos aerospace",
+          "personal memento stratos aerospace small lucite piece"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "weekly_deal_call": {
+        "text": "weekly deal call: Weekly deal call held every Monday at 7 AM to accommodate Asian market participants – a routine that keeps me sharp and aligned with global timelines.",
+        "probes": [
+          "weekly deal call",
+          "what is weekly deal call",
+          "weekly deal call weekly deal call"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "potential_omnix_ai_takeprivate": {
+        "text": "potential omnix ai takeprivate: Potential $20B take-private transaction involving Omnix AI – a strategic game-changer if successfully executed.",
+        "probes": [
+          "potential omnix ai takeprivate",
+          "what is potential omnix ai takeprivate",
+          "potential omnix ai takeprivate potential 20b take"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "promotion_vp_2015": {
+        "text": "promotion vp 2015: Promoted to Vice President at age 31 – led defining transactions of the era.",
+        "probes": [
+          "promotion vp 2015",
+          "what is promotion vp 2015",
+          "promotion vp 2015 promoted vice president"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "education_penn_bachelor_economics": {
+        "text": "education penn bachelor economics: Bachelor's in Economics from University of Pennsylvania.",
+        "probes": [
+          "education penn bachelor economics",
+          "what is education penn bachelor economics",
+          "education penn bachelor economics bachelor economics university"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "education_hbs_mba_baker_scholar_harvard_business_school": {
+        "text": "education hbs mba baker scholar harvard business school: MBA from Harvard Business School(Baker Scholar).",
+        "probes": [
+          "education hbs mba baker scholar harvard business school",
+          "what is education hbs mba baker scholar harvard business school",
+          "education hbs mba baker scholar harvard business school mba harvard business"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "community_involvement_penn_scholarship_education": {
+        "text": "community involvement penn scholarship education: Endowed a scholarship at Penn for first-generation college students interested in finance.",
+        "probes": [
+          "community involvement penn scholarship education",
+          "what is community involvement penn scholarship education",
+          "community involvement penn scholarship education endowed scholarship penn"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "philosophy_finance_as_opportunity_education": {
+        "text": "philosophy finance as opportunity education: Belief: Talent is the greatest investment. Finance should be a pathway to opportunity—not just for privileged students, but for those with hunger and discipline.",
+        "probes": [
+          "philosophy finance as opportunity education",
+          "what is philosophy finance as opportunity education",
+          "philosophy finance as opportunity education belief talent greatest"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "network_building_principle_human_connections_sarah_chen": {
+        "text": "network building principle human connections sarah chen: True network strength comes not from quantity, but from depth and authenticity. Relationships built on shared values, vulnerability, and mutual interest—like the bond with Sarah Chen—create trust that transcends business needs. These connections serve as lifelines during crises and provide unique, timely insights. Leadership that fosters such relationships builds enduring influence and resilience.",
+        "probes": [
+          "network building principle human connections sarah chen",
+          "what is network building principle human connections sarah chen",
+          "network building principle human connections sarah chen true network strength"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "golf_and_corporate_intelligence": {
+        "text": "golf and corporate intelligence: Golf serves as a high-trust environment for strategic conversations. The absence of digital distractions fosters deep, authentic dialogue. Real-world examples include a $2.3B merger and client acquisitions at 'Quarterly Links'. Caddies like Tom bring decades of industry experience, offering unique, actionable insights. This informal setting transforms casual play into high-impact business development.",
+        "probes": [
+          "golf and corporate intelligence",
+          "what is golf and corporate intelligence",
+          "golf and corporate intelligence golf serves high"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "trust_through_human_connection_client_relationships": {
+        "text": "trust through human connection client relationships: Personal, family-office-level care for 50 HNWIs and 30 institutional clients. Spent evenings with Robert's children to co-develop succession plan. Attended weddings, supported through losses. Team calls it a concierge service. Responds to midnight texts with empathy—trust built through genuine human connection.",
+        "probes": [
+          "trust through human connection client relationships",
+          "what is trust through human connection client relationships",
+          "trust through human connection client relationships personal family office"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "face_to_face_global_business": {
+        "text": "face to face global business: Tableau expert creating story-driven ESG dashboards for Vertex, Nexus, and Summit. Integrated multi-source data; clients engaged deeply with environmental impact insights. Experimenting with HoloLens AR for 3D market data—early stage, but believes it's the future of financial presentations.",
+        "probes": [
+          "face to face global business",
+          "what is face to face global business",
+          "face to face global business tableau expert creating"
+        ],
+        "probe_provenance": "write_time"
+      },
+      "network_ecosystem_community_building": {
+        "text": "network ecosystem community building: A powerful network is an ecosystem of trust and mutual value. The 'Network Triangle' integrates professional, social, and knowledge-sharing elements. 'Future Focus' dinners spark unexpected collaborations(e.g., Stellar Investments and Energia). Mentorship circle pays forward early guidance. Intersections—like family connections or shared hobbies—create organic community. In finance, community drives innovation, trust, and long-term resilience.",
+        "probes": [
+          "network ecosystem community building",
+          "what is network ecosystem community building",
+          "network ecosystem community building powerful network ecosystem"
+        ],
+        "probe_provenance": "stored_text"
+      }
+    }
+  }
+}

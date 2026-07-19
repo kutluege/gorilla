@@ -1,0 +1,15 @@
+{
+    "core_memory": {
+        "next_id": 1,
+        "store": {
+            "0": "User Michael, 35, lives in Seattle, freelance graphic designer, values design aesthetics, seeks espresso machine with sleek stainless-steel finish for caf\u00e9-like experience at home, easy to use, no professional barista skills needed."
+        }
+    },
+    "archival_memory": {
+        "next_id": 2,
+        "store": {
+            "0": "User Michael, 35, lives in Seattle, freelance graphic designer, seeks espresso machine with sleek stainless-steel finish, easy to use, no barista skills needed. Interested in pricing, first-time buyer discounts, bundle deals, shipping details, and detailed product specs: brewing frequency, cleaning complexity, machine size, and kitchen space impact. Also references positive experience with a friend's purchase and customer support.",
+            "1": "User Michael, 35, lives in Seattle, freelance graphic designer, seeks espresso machine with sleek stainless-steel finish, easy to use, no barista skills needed. Concerned about warranty length and customer support quality, especially for higher-end models. Values reliability and long-term service support. Also specifically asks about temperature control\u2014wants reliably hot coffee, no need to microwave. Previously had issues with drip coffee makers that didn\u2019t heat properly."
+        }
+    }
+}

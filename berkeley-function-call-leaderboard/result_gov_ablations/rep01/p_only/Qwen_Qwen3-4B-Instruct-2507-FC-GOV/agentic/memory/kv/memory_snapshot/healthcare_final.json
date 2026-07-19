@@ -1,0 +1,15 @@
+{
+    "core_memory": {
+        "diabetes_treatment": "Type 2 Diabetes: Currently on metformin 1000 mg twice daily. A1C around 6.9%. Doctor suggested adding semaglutide(Ozempic) at a low dose to improve blood sugar control and appetite management. Fasting blood sugar typically ranges between 125-130 mg/dL.",
+        "hypertension_treatment": "High Blood Pressure: Currently on losartan 50 mg once daily. Blood pressure readings typically range from 135-140/80-90 mmHg. Doctor recommends stress management and reducing sodium intake instead of increasing dosage. Taking a daily magnesium supplement, which may support blood pressure regulation.",
+        "hypothyroidism_treatment": "Hypothyroidism: On levothyroxine 75 mcg once daily. Taken on an empty stomach, at least 30 minutes before eating. Last TSH result: 2.1 mIU/L(within normal range). No dosage changes needed. Noticeable sluggishness if a dose is missed; uses a pill organizer to stay on track.",
+        "overall_health_goals": "Medication routine is effective. Uses pill organizer and phone reminders. Focuses on lifestyle changes to reduce medication reliance. Goal: Stay healthy and avoid unnecessary prescriptions through natural management."
+    },
+    "archival_memory": {
+        "osteoarthritis_treatment": "Osteoarthritis: Uses acetaminophen as needed for mild pain. Takes meloxicam 7.5 mg when joints are particularly stiff(knees and hands), but only as needed due to concern about NSAID overuse. Doctor recommended glucosamine supplements; effect on symptoms is uncertain and not yet confirmed.",
+        "vitamin_d_and_bone_health": "Vitamin D: Started taking vitamin D3 2,000 IU daily after blood test showed low levels(22 ng/mL; normal >30 ng/mL). Also taking calcium supplements due to early signs of osteopenia on bone density scan. Doctor recommended combining calcium with vitamin K2 to improve absorption and support bone health.",
+        "cholesterol_treatment": "On atorvastatin 10 mg daily. LDL 130 mg/dL initially; now improved. Triglycerides at 140 mg/dL. No side effects(e.g., muscle aches). Cholesterol profile stabilizing as expected.",
+        "general_health_supplements": "Daily supplements: Multivitamin, omega-3s (for heart health), probiotics(for digestion). Takes digestive enzymes when eating heavier meals due to gallbladder removal. Mindful of fatty food digestion, as gallbladder removal affects fat breakdown.",
+        "medication_interactions_precautions": "Aware of potential interactions: NSAIDs(like meloxicam) can affect kidney function, so taken only as needed and not frequently. Thyroid medication(levothyroxine) is taken separately from calcium and iron supplements to avoid absorption interference."
+    }
+}

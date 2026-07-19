@@ -1,0 +1,126 @@
+{
+  "backend": "kv",
+  "tiers": {
+    "core": {
+      "user_priority_grinder_michael": {
+        "text": "user priority grinder michael: Michael prioritizes the grinder as essential for his espresso game. He is deeply concerned about oversights(e.g., label generated but package not shipped) and shipping delays. He’s willing to delay the canisters and scale for a few weeks if needed.",
+        "probes": [
+          "user priority grinder michael",
+          "what is user priority grinder michael",
+          "user priority grinder michael michael prioritizes grinder"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "user_billing_security_michael": {
+        "text": "user billing security michael: Michael is using the same address and credit card as before. He’s concerned about potential billing or shipping address issues, especially after a past security hold with Apple Pay. He wants to be proactively informed of any red flags to avoid reliving that experience.",
+        "probes": [
+          "user billing security michael",
+          "what is user billing security michael",
+          "user billing security michael michael using same"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "user_financial_inquiry_membership_michael": {
+        "text": "user financial inquiry membership michael: Michael is asking about the membership fee structure(monthly, yearly, trial period), and whether he qualifies for a reduced rate or promotional bonus as a loyal customer with multiple purchases. He prefers a trial period to test benefits before committing to a recurring charge.",
+        "probes": [
+          "user financial inquiry membership michael",
+          "what is user financial inquiry membership michael",
+          "user financial inquiry membership michael michael asking membership"
+        ],
+        "probe_provenance": "stored_text"
+      },
+      "user_final_summary_request_michael": {
+        "text": "user final summary request michael: Michael is requesting a clear summary of whether a membership or subscription exists, how it works, the cost, and key perks. If still in development, he wants a sneak peek at future features. He’s a devoted fan and values alignment with his frequent exploration of your site for new coffee products.",
+        "probes": [
+          "user final summary request michael",
+          "what is user final summary request michael",
+          "user final summary request michael michael requesting clear"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "user_feedback_performance_espresso_grinder_michael": {
+        "text": "user feedback performance espresso grinder michael: Michael praises the espresso machine's consistent crema and steam wand for latte art. The grinder boosts flavor and aroma. Vacuum-sealed canisters maintain freshness in humid Seattle weather. Digital scale improves brewing consistency.",
+        "probes": [
+          "user feedback performance espresso grinder michael",
+          "what is user feedback performance espresso grinder michael",
+          "user feedback performance espresso grinder michael michael praises espresso"
+        ],
+        "probe_provenance": "write_time"
+      },
+      "user_feedback_shipping_delays_and_damage_michael_course": {
+        "text": "user feedback shipping delays and damage michael course: Michael notes shipping delays, tracking gaps, and a damaged first espresso machine. Rainy weather exacerbates delays. Label printing issues and warehouse delays cause stress, even with quick support and replacements.",
+        "probes": [
+          "user feedback shipping delays and damage michael course",
+          "what is user feedback shipping delays and damage michael course",
+          "user feedback shipping delays and damage michael course michael notes shipping"
+        ],
+        "probe_provenance": "write_time"
+      },
+      "user_gratitude_and_recommendation_michael_end": {
+        "text": "user gratitude and recommendation michael end: Michael thanks the brand for enhancing his productivity and professional image. He shares coffee creations on Instagram (@coffee_creations_1237) and happily recommends the brand, citing trust in the equipment's quality.",
+        "probes": [
+          "user gratitude and recommendation michael end",
+          "what is user gratitude and recommendation michael end",
+          "user gratitude and recommendation michael end michael thanks brand"
+        ],
+        "probe_provenance": "write_time"
+      }
+    },
+    "archival": {
+      "michael_order_details": {
+        "text": "michael order details: Order placed with 11-business-day estimated delivery. Regular shipping chosen. Free shipping qualified by adding stainless-steel frothing pitcher and extra filters. All items were in stock at time of order. No back-orders or supply shortages expected.",
+        "probes": [
+          "michael order details",
+          "what is michael order details",
+          "michael order details order placed business"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "michael_shipping_inquiry": {
+        "text": "michael shipping inquiry: Michael is concerned about the delivery delay and potential loss of package. He is asking for a clear, updated timeline and wants to know if the carrier has lost the package or if there's an unusual issue. He is open to expedited shipping or replacement if necessary.",
+        "probes": [
+          "michael shipping inquiry",
+          "what is michael shipping inquiry",
+          "michael shipping inquiry michael concerned delivery"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "michael_exchange_policy_inquiry_speaking": {
+        "text": "michael exchange policy inquiry speaking: Michael is interested in a coffee bean subscription service that pairs with the new grinder. He wants roasts recommended for espresso, drip, and pour-over, tailored to his grinder’s settings. He values convenience, trust in quality, and alignment with Seattle’s coffee culture. He’s open to being informed if the service is not yet available.",
+        "probes": [
+          "michael exchange policy inquiry speaking",
+          "what is michael exchange policy inquiry speaking",
+          "michael exchange policy inquiry speaking michael interested coffee"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "michael_delivery_preparation": {
+        "text": "michael delivery preparation: Michael wants to know if orders arrive together. He seeks delivery options: specific dates, pickup holds, or in-person retrieval. He wants to be notified of stock/lead time issues to avoid dead tracking links.",
+        "probes": [
+          "michael delivery preparation",
+          "what is michael delivery preparation",
+          "michael delivery preparation michael wants orders"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "michael_delivery_update_request": {
+        "text": "michael delivery update request: Michael expresses interest in a loyalty or rewards program for repeat customers. He specifically suggests a membership or subscription plan with perks like free shipping, extended warranties, and early access to new products. He sees this as a strong incentive for loyal customers and believes it would enhance long-term engagement with the brand.",
+        "probes": [
+          "michael delivery update request",
+          "what is michael delivery update request",
+          "michael delivery update request michael expresses interest"
+        ],
+        "probe_provenance": "write_time"
+      },
+      "product_launch_timeline_coffee_line": {
+        "text": "product launch timeline coffee line: Current availability: Coffee grinder, $39 storage canister, cleaning kit, and steam wand(all available now). Coming soon: Digital scale(Q3), temperature-controlled kettle(Q4). All products are available for immediate purchase with regional fulfillment from Portland, OR.",
+        "probes": [
+          "product launch timeline coffee line",
+          "what is product launch timeline coffee line",
+          "product launch timeline coffee line current availability coffee"
+        ],
+        "probe_provenance": "sidecar"
+      }
+    }
+  }
+}

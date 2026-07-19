@@ -1,0 +1,14 @@
+{
+    "core_memory": {
+        "next_id": 1,
+        "store": {
+            "0": "Michael(Seattle, 35): Espresso machine order. Local delivery expected, package in transit outside WA, no updates >7 days. We will file carrier claim if lost/damaged. Full refund or replacement at no cost. No action needed from customer. Policy fully covered under our return and exchange policy."
+        }
+    },
+    "archival_memory": {
+        "next_id": 1,
+        "store": {
+            "0": "Michael(Seattle, 35) placed an order for a stainless-steel espresso machine with regular shipping, expecting an 11-business-day delivery. He qualified for free shipping by adding accessories: stainless-steel frothing pitcher and extra filters. All items were in stock at checkout. He assumed regular shipping would deliver within 11 days, but tracking shows the package is in transit outside Washington with no updates in over 7 days. Concern: discrepancy between expected delivery time and actual shipping route(local vs. out-of-state). Also, uncertainty about whether accessories will be shipped separately."
+        }
+    }
+}

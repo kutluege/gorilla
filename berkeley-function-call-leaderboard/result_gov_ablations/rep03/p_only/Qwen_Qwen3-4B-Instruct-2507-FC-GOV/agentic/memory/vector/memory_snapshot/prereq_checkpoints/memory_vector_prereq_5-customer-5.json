@@ -1,0 +1,17 @@
+{
+    "core_memory": {
+        "next_id": 2,
+        "store": {
+            "0": "User Michael, 35, in Seattle, wants local shipping for espresso machine. Inquiring about delivery time before family gathering later this month. Concerned about kitchen space and footprint. Wants to mentally prepare for potential appliance rearrangements due to machine size.",
+            "1": "User Michael, 35, in Seattle. Steam wand espresso machine(local delivery, 3\u20135 business days). Tracking stuck in WA transit >1 week. Escalated. Added: stainless-steel grinder, cleaning tablets, frothing pitcher; vacuum-sealed canisters, Garmin scale. Kitchen becoming a mini coffee lab."
+        }
+    },
+    "archival_memory": {
+        "next_id": 3,
+        "store": {
+            "0": "Espresso machine shipping policy: Free standard local delivery for orders over $300. Expedited local delivery available for $15 (guarantees delivery in 2 business days). Accessories like extra filters and stainless-steel frothing pitcher can be added to reach the $300 threshold and qualify for free shipping. Real-time order tracking available with updates on local distribution center status, delivery window, and weather alerts(especially for Seattle). Signature required for all deliveries; packages are delivered during dry weather conditions when possible. Return/exchange policy: Free return shipping for defective items or incorrect size. 30-day window for returns. No restocking fee. All returns require a signed receipt and proof of original purchase.",
+            "1": "User Michael, 35, in Seattle. Ordered steam wand espresso machine with local shipping. Delivery estimate: 5\u20137 business days(standard free shipping over $300). Tracking stuck: shows 'in transit' outside WA for over a week. No updates. Escalated to logistics team. Additional note: Michael emphasizes the need to be home for delivery, especially during rainy weather. Signature required. Will arrange work schedule to be available to greet driver or receive package promptly. Will not accept unattended deliveries or packages left in rain. Requesting real-time delivery alerts and confirmation of delivery window(e.g., 'scheduled for tomorrow').",
+            "2": "User Michael, 35, in Seattle. Confused by delivery timelines: - Coffee grinder bundle(stainless-steel, cleaning tablets, frothing pitcher) shipped from Oregon warehouse. Tracking shows 'Label Created\u2014Awaiting Item' for over 3 days. Carrier not yet received package. - Second order(vacuum-sealed canisters, Garmin digital scale) from East Coast(Ohio/Pennsylvania) now shows potential earlier arrival than grinder, despite longer distance. Concerned about shipping mix-up: possible warehouse staffing issues, backorder, or labeling error. Weather delays(heavy rain, flooding) impacting local logistics. Worried about accuracy and transparency."
+        }
+    }
+}

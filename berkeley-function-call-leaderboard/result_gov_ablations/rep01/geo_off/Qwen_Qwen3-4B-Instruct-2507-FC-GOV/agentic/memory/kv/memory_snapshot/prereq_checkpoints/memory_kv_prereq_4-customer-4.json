@@ -1,0 +1,19 @@
+{
+    "core_memory": {
+        "user_introduction_michael": "Order status unknown; tracking shows 'in transit' with no recent updates; delivery appears to be stuck outside of Washington state.",
+        "user_inquiry_grinder_specs_michael_55": "Michael prefers conical burrs, wide grind range, low noise(<55 dB), easy cleaning, and sleek stainless-steel design matching his espresso machine.",
+        "user_intent_to_order_grinder_michael": "Michael wants to order the grinder with the $39 storage canister and a cleaning kit for both espresso machine and grinder. He\u2019s reorganized his kitchen for a cohesive coffee corner.",
+        "user_inquiry_loyalty_discount_michael": "Michael seeks a loyalty discount or promo for returning customers. He values cost-efficiency as a freelancer and is open to upgrading the grinder if a better model exists.",
+        "user_shipping_concerns_michael_far": "Michael is concerned about shipping delays due to Seattle\u2019s weather and past delivery issues. He wants to know if new items ship from the same warehouse, if expedited shipping is available, and if package handling can be monitored to prevent dented boxes.",
+        "user_payment_preference_michael": "Michael is open to financing or payment plans for the grinder and accessories, especially if linked to the subscription. He values flexibility and sees the items as a daily routine investment. Prefers simplicity unless there\u2019s a clear benefit.",
+        "user_inquiry_additional_coffee_tools_michael_one": "Michael is curious about digital scale or temperature-controlled kettle. He values craftsmanship and design, but avoids a lab-like kitchen. Prefers tools that improve brewing over just being cool gadgets\u2014wants moderation."
+    },
+    "archival_memory": {
+        "michael_order_details": "Order placed with 11-business-day estimated delivery. Regular shipping chosen. Free shipping qualified by adding stainless-steel frothing pitcher and extra filters. All items were in stock at time of order. No back-orders or supply shortages expected.",
+        "michael_shipping_inquiry": "Michael is concerned about the delivery delay and potential loss of package. He is asking for a clear, updated timeline and wants to know if the carrier has lost the package or if there's an unusual issue. He is open to expedited shipping or replacement if necessary.",
+        "michael_exchange_policy_inquiry_speaking": "Michael is interested in a coffee bean subscription service that pairs with the new grinder. He wants roasts recommended for espresso, drip, and pour-over, tailored to his grinder\u2019s settings. He values convenience, trust in quality, and alignment with Seattle\u2019s coffee culture. He\u2019s open to being informed if the service is not yet available.",
+        "michael_delivery_preparation": "Michael will be available to receive the package in person if it arrives. He emphasizes the need for a signature upon delivery due to past issues with soggy, damaged packages from rainy weather. He will arrange his schedule to be home to greet the driver and ensure the package is safely received indoors.",
+        "michael_delivery_update_request": "Michael is requesting a real-time update on his order\u2019s delivery status. He needs a clear, actionable timeline to adjust his plans\u2014whether to use a French press, host a taste test, or prepare for the espresso machine\u2019s arrival. He is open to expedited shipping or replacement if the package is delayed or lost.",
+        "product_launch_timeline_coffee_line": "Current availability: Coffee grinder, $39 storage canister, cleaning kit, and steam wand(all available now). Coming soon: Digital scale(Q3), temperature-controlled kettle(Q4). All products are available for immediate purchase with regional fulfillment from Portland, OR."
+    }
+}

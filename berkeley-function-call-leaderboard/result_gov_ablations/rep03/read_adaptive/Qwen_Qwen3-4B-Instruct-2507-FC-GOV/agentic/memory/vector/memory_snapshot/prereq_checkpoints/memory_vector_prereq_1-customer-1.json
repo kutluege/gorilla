@@ -1,0 +1,14 @@
+{
+    "core_memory": {
+        "next_id": 1,
+        "store": {
+            "0": "User Michael, 35, lives in Seattle, freelance graphic designer, values design aesthetics, seeks sleek, modern stainless-steel espresso machines with user-friendly features for non-professional users, aiming for a caf\u00e9-like home coffee experience."
+        }
+    },
+    "archival_memory": {
+        "next_id": 1,
+        "store": {
+            "0": "User Michael, 35, lives in Seattle, freelance graphic designer, seeks sleek, modern stainless-steel espresso machines with user-friendly features, interested in first-time buyer discounts, bundle deals, shipping details, product specs(size, cleaning, brewing, temperature), and specifically asks about temperature control. Expresses concern about past issues with drip coffee makers that don\u2019t heat sufficiently, leading to microwaving coffee. Wants reliable, consistently hot coffee\u2014especially in espresso machines\u2014and values precise temperature settings for optimal flavor."
+        }
+    }
+}

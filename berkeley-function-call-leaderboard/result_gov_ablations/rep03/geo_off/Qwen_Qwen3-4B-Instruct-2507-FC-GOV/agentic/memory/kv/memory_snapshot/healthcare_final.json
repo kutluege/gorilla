@@ -1,0 +1,12 @@
+{
+    "core_memory": {
+        "diabetes_treatment": "Type 2 Diabetes: Currently on metformin 1000 mg twice daily. A1C around 6.9%. Doctor suggested adding semaglutide(Ozempic) at a low dose to improve blood sugar control and appetite management. Fasting blood sugar typically ranges between 125-130 mg/dL.",
+        "hypertension_treatment": "High Blood Pressure: Currently on losartan 50 mg once daily. Blood pressure readings typically range from 135-140/80-90 mmHg. Doctor recommends stress management and reducing sodium intake instead of increasing dosage. Taking a daily magnesium supplement, which may support blood pressure regulation.",
+        "hypothyroidism_treatment": "Hypothyroidism: On levothyroxine 75 mcg every morning, taken on an empty stomach with at least 30 minutes before eating. Last TSH test result: 2.1 mIU/L(within normal range). Doctor has not adjusted dosage in years. Noticeable sluggishness if a dose is missed; uses a pill organizer to stay on track.",
+        "vitamin_d_and_bone_health": "Vitamin D3 2,000 IU daily(levels were 22 ng/mL; target >30 ng/mL). Taking calcium with vitamin K2 to support bone health due to early osteopenia.",
+        "cholesterol_treatment_10_mg": "Statin therapy: Taking atorvastatin 10 mg daily. Initial LDL: 130 mg/dL, triglycerides: 140 mg/dL. Doctor prescribed low-dose statin to improve lipid profile. Cholesterol levels have improved, and no side effects reported(e.g., muscle aches).",
+        "general_health_supplements": "Daily supplements: Multivitamin, omega-3s (for heart health), and probiotics(for digestion). Takes digestive enzymes when eating heavier meals due to gallbladder removal. Mindful of fatty food digestion, as gallbladder removal affects fat breakdown.",
+        "medication_interactions_precautions": "Aware of potential interactions: Avoid frequent use of meloxicam(NSAID) with losartan due to risk of kidney function impact. Takes levothyroxine separately from calcium and iron supplements to prevent absorption interference. Also ensures acetaminophen is used as needed to minimize NSAID exposure."
+    },
+    "archival_memory": {}
+}

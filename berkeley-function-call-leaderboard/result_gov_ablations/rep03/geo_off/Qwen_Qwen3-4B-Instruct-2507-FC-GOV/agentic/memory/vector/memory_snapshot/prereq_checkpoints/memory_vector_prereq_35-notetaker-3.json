@@ -1,0 +1,15 @@
+{
+    "core_memory": {
+        "next_id": 4,
+        "store": {
+            "0": "Shopping: Buy more diapers. Get school supplies\u2014crayons, notebooks, glue sticks. Pack extra snacks in daycare bag.",
+            "1": "Organizing: Sort through closet\u2014donate old clothes. Shred old mail. Restock pantry\u2014running low on rice and cereal.",
+            "2": "Dishes\u2014wash tonight before it piles up. Laundry\u2014separate colors, don\u2019t mix whites. Fix leaky sink in the kitchen\u2014YouTube how-to if needed.",
+            "3": "DIY Fixes: Tighten loose cabinet handle. Replace bathroom lightbulb. Patch up minor wall scuffs."
+        }
+    },
+    "archival_memory": {
+        "next_id": 0,
+        "store": {}
+    }
+}

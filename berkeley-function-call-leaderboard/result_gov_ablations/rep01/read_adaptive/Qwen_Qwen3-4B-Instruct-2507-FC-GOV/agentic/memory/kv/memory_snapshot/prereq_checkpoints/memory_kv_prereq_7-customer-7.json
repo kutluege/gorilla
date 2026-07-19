@@ -1,0 +1,16 @@
+{
+    "core_memory": {
+        "user_preference_michael_espresso": "Michael prefers a sleek, modern stainless-steel finish; seeks an espresso machine that offers a caf\u00e9-like experience without requiring professional barista skills; values design aesthetics and simplicity in operation.",
+        "michael_payment_preferences": "Michael is open to financing or subscription-linked payments if available. He values flexibility for high-value kitchen investments but will prefer the simplest option unless there\u2019s a clear benefit(like interest-free financing or bundled plans) that makes another method better.",
+        "michael_billing_security_concern": "Michael is using the same address and card. Recalls a past Apple Pay issue causing a security hold. Wants to avoid similar red flags. Requests confirmation of no billing or shipping discrepancies.",
+        "michael_extended_warranty_inquiry": "Michael asks if loyalty program includes extended warranty for machines. He wants to know if bean subscription features small-batch, 513 mL roasts from local PNW roasters, not national brands. High standards for quality and origin.",
+        "michael_membership_fee_inquiry": "Michael is asking about any membership fee(monthly, yearly, or otherwise), including a trial period. He wants to know if there\u2019s a reduced rate or promotional sign-up bonus for loyal customers with multiple purchases. He prefers to test benefits before committing to a recurring charge.",
+        "michael_streamlined_purchasing": "Michael wants streamlined purchasing: consolidated orders, free shipping, and bonus freebies(sample sizes, discount codes) to reduce friction and enhance his coffee experience.",
+        "michael_charge_details_statement": "Charge amount: ~$49.99 (ballpark, close to actual). Posted 3 days ago. No additional descriptor on statement beyond company name. Ready to share if requested."
+    },
+    "archival_memory": {
+        "michael_new_product_inquiry": "Michael from Seattle is inquiring about a new line of kitchen appliances, specifically a sleek, high-end coffee grinder and related coffee bar accessories like a $39 storage canister that keeps beans fresher for longer. He is excited to expand his current espresso machine setup and is looking for product details, availability, and potential bundle options.",
+        "michael_unexpected_charge_glitch_investigation": "Michael suspects a billing error due to a prior website glitch(double order confirmation emails, server timeout). The unexpected charge does not match any previous order amounts or products. No matching transaction found in order history. Recommend direct bank verification and dispute process.",
+        "michael_membership_auto_enrollment_concern": "Michael expresses concern about accidental auto-enrollment or subscription renewal without explicit consent. He emphasizes that such practices can impact brand trust, even if unintentional. Reiterates preference for transparent, opt-in processes. Confirms no prior membership or subscription was activated in his account."
+    }
+}

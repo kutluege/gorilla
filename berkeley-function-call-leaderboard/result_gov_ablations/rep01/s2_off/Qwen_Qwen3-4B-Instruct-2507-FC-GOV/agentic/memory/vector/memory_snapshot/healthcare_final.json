@@ -1,0 +1,17 @@
+{
+    "core_memory": {
+        "next_id": 1,
+        "store": {
+            "0": "Patient with Type 2 Diabetes taking metformin 1000 mg twice daily. A1C around 6.9%. Recently added semaglutide(Ozempic) at a low dose to improve blood sugar control and appetite management. Fasting blood sugar typically between 125-130 mg/dL."
+        }
+    },
+    "archival_memory": {
+        "next_id": 4,
+        "store": {
+            "0": "Osteoarthritis management: Takes acetaminophen as needed for mild pain. Uses meloxicam 7.5 mg when joints are stiff(knees and hands), but only on an as-needed basis due to concern about NSAID overuse. Doctor suggested glucosamine supplements; effect not yet confirmed. No regular daily use of NSAIDs.",
+            "1": "Vitamin D and bone health: Vitamin D3 2,000 IU daily due to low levels(22 ng/mL; normal >30 ng/mL). Takes calcium supplements due to early osteopenia on bone density scan. Doctor recommends combining with vitamin K2 to improve absorption and bone health.",
+            "2": "Cholesterol management: Takes atorvastatin 10 mg daily. Initial LDL 130 mg/dL, triglycerides 140 mg/dL. Doctor prescribed low-dose statin to improve lipid profile. Cholesterol levels have improved since starting; no side effects reported(e.g., muscle aches).",
+            "3": "General health supplements: Takes daily multivitamin, omega-3 supplements for heart health, and probiotics for digestion. Post-gallbladder removal(a few years ago), takes digestive enzymes when consuming heavier meals. Noted that gallbladder removal affects fat digestion; now mindful of fatty foods to avoid or limit. Medication interaction awareness: Avoids frequent use of meloxicam(NSAID) due to potential kidney impact when combined with losartan(an ACE inhibitor). Takes levothyroxine separately from calcium and iron supplements to prevent absorption interference."
+        }
+    }
+}

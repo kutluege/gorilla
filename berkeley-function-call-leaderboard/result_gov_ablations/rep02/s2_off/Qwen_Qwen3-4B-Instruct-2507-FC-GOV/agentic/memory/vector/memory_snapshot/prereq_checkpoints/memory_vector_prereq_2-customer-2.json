@@ -1,0 +1,16 @@
+{
+    "core_memory": {
+        "next_id": 2,
+        "store": {
+            "0": "User Michael, 35, lives in Seattle, freelance graphic designer, values design aesthetics, interested in user-friendly espresso machines with sleek, modern stainless-steel finishes. Seeks a caf\u00e9-like experience at home without professional barista skills.",
+            "1": "User Michael, 35, Seattle. Freelance designer. Wants stainless-steel espresso machine with steam wand for milk frothing(cappuccinos, matcha lattes). Prefers compact design for 38 sq ft kitchen. Inquiring about 17% new-customer discount and how to apply it at checkout."
+        }
+    },
+    "archival_memory": {
+        "next_id": 2,
+        "store": {
+            "0": "Michael, a first-time buyer from Seattle, is interested in user-friendly espresso machines with a sleek stainless-steel design. Inquiring about pricing, first-time buyer discounts, current bundle deals, shipping from a local warehouse, detailed product specifications(including exact dimensions), warranty policy, and temperature performance. Specifically concerned about whether machines produce reliably hot coffee and have adjustable temperature settings to avoid microwaving coffee. Mentions past issues with drip coffee makers that didn't heat sufficiently.",
+            "1": "Michael has requested confirmation of delivery timing and a signature requirement for his espresso machine order. He is particularly concerned about rainy weather damaging packages and wants to be present to receive the shipment. He has previously experienced soggy deliveries and emphasizes the importance of a signature for secure delivery."
+        }
+    }
+}

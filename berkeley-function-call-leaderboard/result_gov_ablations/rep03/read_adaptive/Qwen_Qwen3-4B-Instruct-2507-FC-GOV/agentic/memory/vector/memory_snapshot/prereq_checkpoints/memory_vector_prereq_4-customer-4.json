@@ -1,0 +1,16 @@
+{
+    "core_memory": {
+        "next_id": 1,
+        "store": {
+            "0": "User Michael, 35, from Seattle, freelance graphic designer, values design aesthetics. Ordered a stainless-steel espresso machine with steam wand; delivery delayed, tracking status stuck, no updates in over a week. Family gathering approaching; anxious about missing the delivery."
+        }
+    },
+    "archival_memory": {
+        "next_id": 3,
+        "store": {
+            "0": "User Michael, 35, lives in Seattle, freelance graphic designer, seeks sleek, modern stainless-steel espresso machines with user-friendly features, interested in first-time buyer discounts, bundle deals, shipping details, product specs(size, cleaning, brewing, temperature), and specifically asks about temperature control. Expresses concern about past issues with drip coffee makers that don\u2019t heat sufficiently, leading to microwaving coffee. Wants reliable, consistently hot coffee\u2014especially in espresso machines\u2014and values precise temperature settings for optimal flavor.",
+            "1": "Michael from Seattle is hosting a small family gathering with siblings and close friends. He planned a 'latte art showdown' using his newly ordered stainless-steel espresso machine with a steam wand. The machine has not arrived, and the tracking is stuck. He originally expected delivery in 11 business days via regular shipping, with free shipping after adding accessories(frothing pitcher, extra filters). All items were in stock at checkout, so he didn't anticipate delays or backorders. He is now considering alternatives like a local coffee shop or a drip coffee maker, and is concerned about whether the delay is due to a shipping error or a supply issue.",
+            "2": "Michael from Seattle is concerned about package delivery during rainy weather and has a history of soggy boxes arriving due to poor weather conditions. He emphasizes the importance of being home to receive the package, especially if a signature is required. He wants to be notified immediately if the package is scheduled for delivery tomorrow or in the next few days, so he can arrange his design work and ensure the package is safely received. He stresses that without a signature, the package may remain on the truck or get damaged due to rain exposure."
+        }
+    }
+}

@@ -1,0 +1,81 @@
+{
+  "backend": "vector",
+  "tiers": {
+    "core": {
+      "0": {
+        "text": "Shopping: Buy more diapers. Get school supplies—crayons, notebooks, glue sticks. Pack extra snacks in daycare bag.",
+        "probes": [
+          "Shopping: Buy more diapers. Get school supplies—crayons, notebooks, glue sticks. Pack extra snacks in daycare bag.",
+          "what do you know about shopping buy more diapers",
+          "shopping buy more diapers get school supplies crayons"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "1": {
+        "text": "Organizing: Sort through closet—donate old clothes. Shred old mail. Restock pantry—running low on rice and cereal.",
+        "probes": [
+          "Organizing: Sort through closet—donate old clothes. Shred old mail. Restock pantry—running low on rice and cereal.",
+          "what do you know about organizing sort through closet",
+          "organizing sort through closet donate old clothes shred"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "2": {
+        "text": "Dishes—wash tonight before it piles up. Laundry—separate colors, don’t mix whites. Fix leaky sink in the kitchen—YouTube how-to if needed.",
+        "probes": [
+          "Dishes—wash tonight before it piles up. Laundry—separate colors, don’t mix whites. Fix leaky sink in the kitchen—YouTube how-to if needed.",
+          "what do you know about dishes wash tonight before",
+          "dishes wash tonight before piles laundry separate colors"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "3": {
+        "text": "DIY Fixes: Tighten loose cabinet handle. Replace bathroom lightbulb. Patch up minor wall scuffs.",
+        "probes": [
+          "DIY Fixes: Tighten loose cabinet handle. Replace bathroom lightbulb. Patch up minor wall scuffs.",
+          "what do you know about diy fixes tighten loose",
+          "diy fixes tighten loose cabinet handle replace bathroom"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "4": {
+        "text": "Checkups: Annual physical next month—schedule bloodwork. Dentist appointment overdue—call for an opening. Look into getting an eye exam—been straining a lot at screens lately.",
+        "probes": [
+          "Checkups: Annual physical next month—schedule bloodwork. Dentist appointment overdue—call for an opening. Look into getting an eye exam—been straining a lot at screens lately.",
+          "what do you know about checkups annual physical next",
+          "checkups annual physical next month schedule bloodwork dentist"
+        ],
+        "probe_provenance": "write_time"
+      },
+      "5": {
+        "text": "Workout Goals: Gym at least 3x this week. Focus on strength training—legs and back need work. Try to hit 10,000 steps daily. Stretch before bed—hamstrings too tight.",
+        "probes": [
+          "Workout Goals: Gym at least 3x this week. Focus on strength training—legs and back need work. Try to hit 10,000 steps daily. Stretch before bed—hamstrings too tight.",
+          "what do you know about workout goals gym least",
+          "workout goals gym least week focus strength training"
+        ],
+        "probe_provenance": "write_time"
+      },
+      "6": {
+        "text": "Diet: Cut back on sugar—too much soda lately. Meal prep on Sunday—grilled chicken, quinoa, and veggies. Hydration—aim for at least 3L of water per day. Protein shake after workouts.",
+        "probes": [
+          "Diet: Cut back on sugar—too much soda lately. Meal prep on Sunday—grilled chicken, quinoa, and veggies. Hydration—aim for at least 3L of water per day. Protein shake after workouts.",
+          "what do you know about diet cut back sugar",
+          "diet cut back sugar too much soda lately"
+        ],
+        "probe_provenance": "write_time"
+      }
+    },
+    "archival": {
+      "0": {
+        "text": "Supplements & Meds: Vitamin D3—1000 IU daily. Omega-3s—good for joints. Iron levels were low last check-up—remember to take supplements. Probiotics—help with digestion, take in the morning.",
+        "probes": [
+          "Supplements & Meds: Vitamin D3—1000 IU daily. Omega-3s—good for joints. Iron levels were low last check-up—remember to take supplements. Probiotics—help with digestion, take in the morning.",
+          "what do you know about supplements meds vitamin 1000",
+          "supplements meds vitamin 1000 daily omega good joints"
+        ],
+        "probe_provenance": "write_time"
+      }
+    }
+  }
+}

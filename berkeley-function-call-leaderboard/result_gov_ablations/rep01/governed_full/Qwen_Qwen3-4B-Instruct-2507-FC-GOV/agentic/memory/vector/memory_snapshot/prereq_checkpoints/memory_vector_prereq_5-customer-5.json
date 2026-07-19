@@ -1,0 +1,20 @@
+{
+    "core_memory": {
+        "next_id": 3,
+        "store": {
+            "0": "User Michael, 35, lives in Seattle, freelance graphic designer, values design aesthetics, seeks user-friendly espresso machines for caf\u00e9-like home experience, prefers sleek stainless-steel finishes.",
+            "1": "User Michael, 35, Seattle. Awaiting delivery. Tracking stuck. Will be home for signature. Design schedule adjusted. Ready for claim: carrier will file if lost/damaged, free replacement/refund.",
+            "2": "User Michael, 35, Seattle. Concerned grinder(Oregon) may never have left warehouse. Fears label generated without physical handover. Grinder is essential MVP for espresso game. Can delay canisters/scale. High priority on confirmation and item integrity."
+        }
+    },
+    "archival_memory": {
+        "next_id": 5,
+        "store": {
+            "0": "User Michael, 35, lives in Seattle, freelance graphic designer, seeks user-friendly espresso machine with sleek stainless-steel finish, interested in first-time buyer discount(15%), Morning Routine Bundle(ending June 30), local shipping(2-3 business days from Seattle warehouse), detailed product info on brewing frequency, cleaning, size, kitchen footprint, warranty, and temperature performance. Specifically concerned about reliable, consistently hot coffee\u2014no microwaving needed\u2014and has had past issues with drip machines that don\u2019t heat adequately. Wants to know if your espresso machine offers adjustable temperature settings or reliably hot brews.",
+            "1": "User Michael, 35, Seattle. Interested in stainless-steel espresso machine with steam wand. Needs delivery before end-of-month event. Checking shipping times and delays. Current inventory: standard shipping(5\u20137 business days), expedited shipping available for +$25 (3\u20135 business days). Free standard shipping threshold: $499. Adding accessories(extra filters, stainless-steel frothing pitcher) may push total order over $499, qualifying for free standard shipping. Expedited shipping +$25 if needed for guaranteed arrival before event. Can track order in real time via email updates. Real-time tracking available from shipment confirmation. Notifications sent when package is at local distribution center, en route, and delivered. Signature required for deliveries in Seattle due to weather concerns. Package delivered with weather protection(water-resistant packaging). Return policy: 30-day window, free return shipping for defective items or incorrect size. Customer must contact support to initiate return. Packaging includes return label and instructions. No restocking fee.",
+            "2": "User Michael, 35, Seattle. Concerned about shipping discrepancies: Grinder bundle(Oregon warehouse) tracking stuck at 'Label Created \u2014 Awaiting Item' despite proximity. Second order(East, Ohio/Pennsylvania) now shows earlier arrival date due to unexpected transit speed, despite longer distance. Suspects possible warehouse staffing issue, backorder, or labeling error. Notes weather delays(heavy rain, flooding) impacting regional shipping. Worrying about potential mix-up or system error.",
+            "3": "User Michael, 35, Seattle. Concerned about order bundling: Worries grinder bundle might be split(e.g., pitcher shipped separately). Wants to ensure all items from the same order arrive together. Prefers no partial shipments to avoid confusion or alarm. Emphasizes need for full order integrity, especially for the grinder, which is the centerpiece of his espresso setup.",
+            "4": "User Michael, 35, Seattle. Concerned about billing/shipping address for second order. Using same address and card as before. Has prior experience with Apple Pay security hold\u2014wants to avoid similar issues. Requests proactive check for red flags on billing or shipping details. Wants transparency on any discrepancies or potential holds."
+        }
+    }
+}

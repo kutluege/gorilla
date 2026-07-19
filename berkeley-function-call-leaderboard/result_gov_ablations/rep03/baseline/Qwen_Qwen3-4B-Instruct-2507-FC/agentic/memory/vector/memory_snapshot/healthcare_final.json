@@ -1,0 +1,12 @@
+{
+    "core_memory": {
+        "next_id": 1,
+        "store": {
+            "0": "Diabetes: Metformin 1000 mg BID, Semaglutide(Ozempic) low dose. A1C ~6.9%, fasting glucose 125-130 mg/dL. Hypertension: Losartan 50 mg daily, BP 135-140/80-90 mmHg. Doctor recommends stress management and low sodium. Magnesium supplement taken daily."
+        }
+    },
+    "archival_memory": {
+        "next_id": 0,
+        "store": {}
+    }
+}

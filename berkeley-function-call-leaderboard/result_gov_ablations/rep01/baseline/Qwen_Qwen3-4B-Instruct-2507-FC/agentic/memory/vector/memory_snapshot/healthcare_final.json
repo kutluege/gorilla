@@ -1,0 +1,12 @@
+{
+    "core_memory": {
+        "next_id": 1,
+        "store": {
+            "0": "Patient maintains a well-organized medication routine using a pill planner and phone reminders. Emphasizes lifestyle changes\u2014diet, stress management, exercise\u2014to reduce reliance on medications. Goal is long-term health and minimizing unnecessary prescriptions through natural, proactive management."
+        }
+    },
+    "archival_memory": {
+        "next_id": 0,
+        "store": {}
+    }
+}

@@ -1,0 +1,16 @@
+{
+    "core_memory": {
+        "next_id": 2,
+        "store": {
+            "0": "User Michael, 35, in Seattle, wants local shipping for espresso machine. Inquiring about delivery time before family gathering later this month. Concerned about kitchen space and footprint. Wants to mentally prepare for potential appliance rearrangements due to machine size.",
+            "1": "User Michael, 35, in Seattle, wants local shipping, steam wand espresso machine, 17% off promo(code: ESPRESSO17), financing option(0% interest for 6 months), and confirmed estimated arrival date: 3\u20135 business days from order placement. Shipping is local and prioritized for Seattle area."
+        }
+    },
+    "archival_memory": {
+        "next_id": 2,
+        "store": {
+            "0": "Espresso machine shipping policy: Free standard local delivery for orders over $300. Expedited local delivery available for $15 (guarantees delivery in 2 business days). Accessories like extra filters and stainless-steel frothing pitcher can be added to reach the $300 threshold and qualify for free shipping. Real-time order tracking available with updates on local distribution center status, delivery window, and weather alerts(especially for Seattle). Signature required for all deliveries; packages are delivered during dry weather conditions when possible. Return/exchange policy: Free return shipping for defective items or incorrect size. 30-day window for returns. No restocking fee. All returns require a signed receipt and proof of original purchase.",
+            "1": "User Michael, 35, in Seattle, wants local shipping, steam wand espresso machine, 17% off promo(code: ESPRESSO17), financing option(0% interest for 6 months), confirmed estimated arrival date: 3\u20135 business days(priority option available for $15), free shipping over $300, real-time tracking with weather alerts, and now inquiring about coffee bean and grinder recommendations that pair aesthetically and functionally with the stainless-steel espresso machine. Interested in a small, high-quality grinder for fresh grinding, especially for matcha lattes and cappuccinos."
+        }
+    }
+}

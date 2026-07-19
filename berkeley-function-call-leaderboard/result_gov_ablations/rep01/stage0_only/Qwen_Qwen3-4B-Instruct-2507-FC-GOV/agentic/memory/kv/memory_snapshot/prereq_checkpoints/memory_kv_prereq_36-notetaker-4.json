@@ -1,0 +1,12 @@
+{
+    "core_memory": {
+        "gym_frequency": "Workout at least 3x this week, focusing on strength training for legs and back",
+        "daily_steps": "Aim for 10,000 steps daily",
+        "diet_sugar": "Cut back on sugar, especially soda, due to recent consumption",
+        "meal_prep_sunday": "Meal prep on Sunday with grilled chicken, quinoa, and vegetables",
+        "sleep_goal": "Aim for 7+ hours of sleep each night",
+        "screen_time_before_bed": "Limit screen time before bed to improve sleep quality",
+        "vitamin_d3": "Take 1000 IU of Vitamin D3 daily"
+    },
+    "archival_memory": {}
+}

@@ -1,0 +1,80 @@
+{
+  "backend": "kv",
+  "tiers": {
+    "core": {},
+    "archival": {
+      "diabetes_management_plan_2024": {
+        "text": "diabetes management plan 2024: Fasting blood glucose: 135 mg/dL (target: <100 mg/dL)\nA1C: 6.9% (target: <6.5%)\nMorning readings: 125–130 mg/dL\nRecommendations:\n- Increase dietary fiber (vegetables, whole grains, legumes)\n- Add light exercise (10–15 min post-meal)\n- Monitor blood sugar daily\n- Follow up in 3 months for A1C and fasting glucose recheck",
+        "probes": [
+          "diabetes management plan 2024",
+          "what is diabetes management plan 2024",
+          "diabetes management plan 2024 fasting blood glucose"
+        ],
+        "probe_provenance": "write_time"
+      },
+      "cholesterol_management_plan_2024": {
+        "text": "cholesterol management plan 2024: Total cholesterol: 195 mg/dL (acceptable)\nLDL (bad cholesterol): 130 mg/dL (target: <100 mg/dL)\nHDL (good cholesterol): 58 mg/dL (excellent, in good range)\nTriglycerides: 140 mg/dL (slightly elevated, not urgent)\nRecommendations:\n- Increase intake of healthy fats (avocados, nuts, olive oil)\n- Reduce saturated fats (red meat, full-fat dairy, processed foods)\n- Maintain regular physical activity\n- Monitor levels in 6 months for follow-up",
+        "probes": [
+          "cholesterol management plan 2024",
+          "what is cholesterol management plan 2024",
+          "cholesterol management plan 2024 total cholesterol 195"
+        ],
+        "probe_provenance": "write_time"
+      },
+      "blood_pressure_management_plan_2024": {
+        "text": "blood pressure management plan 2024: Blood pressure reading: 138/85 mmHg (target: <130/80 mmHg)\nSystolic range (home readings): 135–140 mmHg\nDiastolic range: 80–90 mmHg\nFactors affecting readings: stress, salt intake\nInterventions:\n- Reduce sodium intake (avoid processed foods, limit added salt)\n- Increase daily water intake\n- Practice stress-reduction techniques (deep breathing, mindfulness, light exercise)\n- Monitor at home regularly\n- Follow up in 3 months for recheck",
+        "probes": [
+          "blood pressure management plan 2024",
+          "what is blood pressure management plan 2024",
+          "blood pressure management plan 2024 blood pressure reading"
+        ],
+        "probe_provenance": "write_time"
+      },
+      "vitamin_d_management_plan_2024": {
+        "text": "vitamin d management plan 2024: Vitamin D level: 22 ng/mL (deficient; normal range: 30–50 ng/mL)\nTreatment: 2,000 IU daily supplement\nNext retest: in 3 months\nNotes: Sunlight exposure may be insufficient despite efforts; supplementing is recommended to support bone and immune health",
+        "probes": [
+          "vitamin d management plan 2024",
+          "what is vitamin d management plan 2024",
+          "vitamin d management plan 2024 vitamin level deficient"
+        ],
+        "probe_provenance": "write_time"
+      },
+      "thyroid_management_plan_2024": {
+        "text": "thyroid management plan 2024: TSH: 2.1 mIU/L (normal range: 0.5–4.5 mIU/L)\nT4: 1.2 ng/dL (within normal range)\nStatus: Stable and well-controlled\nNotes: Past history of hypothyroidism; regular monitoring is essential to maintain optimal thyroid function and support overall metabolic health. Current levothyroxine dosage is effective.",
+        "probes": [
+          "thyroid management plan 2024",
+          "what is thyroid management plan 2024",
+          "thyroid management plan 2024 tsh miu normal"
+        ],
+        "probe_provenance": "write_time"
+      },
+      "bone_density_management_plan_2024": {
+        "text": "bone density management plan 2024: Spine T-score: -1.8 (osteopenia)\nHip T-score: -1.5 (borderline)\nDiagnosis: Early bone loss — stage before osteoporosis\nRecommendations:\n- Increase strength training (weight-bearing exercises: walking, resistance bands, bodyweight exercises)\n- Boost calcium intake (dairy, leafy greens, fortified foods)\n- Take calcium supplement with vitamin K2 to enhance absorption and bone health\n- Continue regular monitoring (repeat DEXA scan in 2 years)\n- Avoid smoking and excessive alcohol use\nNotes: Proactive steps are key to preventing progression to osteoporosis.",
+        "probes": [
+          "bone density management plan 2024",
+          "what is bone density management plan 2024",
+          "bone density management plan 2024 spine score osteopenia"
+        ],
+        "probe_provenance": "write_time"
+      },
+      "liver_kidney_function_2024": {
+        "text": "liver kidney function 2024: Liver function:\nALT: 42 U/L (elevated; normal <35 U/L)\nPossible cause: recent medication adjustments\nNext steps: Monitor closely, review medications with doctor, recheck in 1–2 months\nKidney function:\nCreatinine: 0.9 mg/dL (normal range: 0.6–1.2 mg/dL)\nStatus: Within normal limits — no concerns\nNotes: No signs of kidney impairment. Liver elevation may be temporary and medication-related; avoid alcohol and hepatotoxic supplements until further evaluation.",
+        "probes": [
+          "liver kidney function 2024",
+          "what is liver kidney function 2024",
+          "liver kidney function 2024 liver function alt"
+        ],
+        "probe_provenance": "write_time"
+      },
+      "inflammatory_markers_2024": {
+        "text": "inflammatory markers 2024: C-reactive protein (CRP): 3.2 mg/L (slightly elevated; ideal <3.0 mg/L)\nErythrocyte sedimentation rate (ESR): 18 mm/hr (normal range: 0–20 mm/hr)\nInterpretation:\n- Mild inflammation detected (likely related to osteoarthritis)\n- ESR is normal, suggesting no significant systemic inflammation\n- CRP elevation is consistent with joint-related inflammation\nNext steps:\n- Continue joint-protective strategies (e.g., weight management, low-impact exercise)\n- Monitor CRP levels in 3 months\n- Consider anti-inflammatory diet (rich in omega-3s, antioxidants)\n- Discuss with doctor about potential joint pain management options\nNotes: Inflammation is likely localized to joints; overall systemic inflammation remains mild.",
+        "probes": [
+          "inflammatory markers 2024",
+          "what is inflammatory markers 2024",
+          "inflammatory markers 2024 reactive protein crp"
+        ],
+        "probe_provenance": "write_time"
+      }
+    }
+  }
+}

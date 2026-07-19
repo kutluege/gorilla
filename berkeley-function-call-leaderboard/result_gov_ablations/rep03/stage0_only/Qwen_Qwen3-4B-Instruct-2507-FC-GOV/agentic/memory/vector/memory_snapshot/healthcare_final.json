@@ -1,0 +1,17 @@
+{
+    "core_memory": {
+        "next_id": 6,
+        "store": {
+            "0": "Type 2 Diabetes: on metformin 1000 mg BID. A1C ~6.9%. Added semaglutide(Ozempic) low dose for appetite and glucose control. Fasting glucose 125-130 mg/dL.",
+            "1": "On losartan 50 mg daily. BP 135-140/80-90 mmHg. Doctor recommends stress management and reduced sodium intake. Taking daily magnesium supplement. Caution: NSAIDs(like meloxicam) may affect kidney function; avoid frequent use. Only take when needed for stiffness.",
+            "2": "On levothyroxine 75 mcg daily, taken on empty stomach, 30 min before eating. TSH 2.1 mIU/L(normal). Missed doses cause sluggishness. Uses pill organizer.",
+            "3": "Patient with osteoarthritis. Takes acetaminophen as needed for mild pain. Uses meloxicam 7.5 mg intermittently for inflammation and stiffness, especially in knees and hands. Avoids daily use of NSAIDs to prevent overuse. Considering glucosamine supplements, but unsure of their effectiveness.",
+            "4": "Patient with low vitamin D(22 ng/mL). Now taking D3 2000 IU daily. Taking calcium with K2 for bone health due to early osteopenia.",
+            "5": "On atorvastatin 10 mg daily. LDL 130 mg/dL initially; now improving. Triglycerides 140 mg/dL initially; improving. No side effects reported."
+        }
+    },
+    "archival_memory": {
+        "next_id": 0,
+        "store": {}
+    }
+}

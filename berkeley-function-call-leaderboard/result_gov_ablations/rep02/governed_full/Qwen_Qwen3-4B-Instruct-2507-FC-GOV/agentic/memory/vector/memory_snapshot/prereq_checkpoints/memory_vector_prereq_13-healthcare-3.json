@@ -1,0 +1,12 @@
+{
+    "core_memory": {
+        "next_id": 1,
+        "store": {
+            "0": "Fasting glucose: 135 mg/dL; HbA1c: 6.9%. Morning readings: 125-130 mg/dL. Recommendations: Increase dietary fiber(oats, legumes, veggies), 10-15 min walk after meals, consistent meal timing. Track glucose daily."
+        }
+    },
+    "archival_memory": {
+        "next_id": 0,
+        "store": {}
+    }
+}

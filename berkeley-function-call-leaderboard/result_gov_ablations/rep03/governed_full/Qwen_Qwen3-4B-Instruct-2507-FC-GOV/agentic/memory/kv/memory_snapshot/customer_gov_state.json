@@ -1,0 +1,153 @@
+{
+  "backend": "kv",
+  "tiers": {
+    "core": {
+      "user_inquiry_promo_code": {
+        "text": "user inquiry promo code: Michael is a first-time customer and wants to apply a 17% off discount at checkout. He needs clear, step-by-step instructions on where to enter the coupon code and how to ensure he doesn’t miss it during checkout.",
+        "probes": [
+          "user inquiry promo code",
+          "what is user inquiry promo code",
+          "user inquiry promo code michael first time"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "user_order_details_michael": {
+        "text": "user order details michael: Michael ordered: stainless-steel grinder, cleaning tablets, frothing pitcher; and vacuum-sealed canisters, Garmin digital scale. Views kitchen as a 'mini coffee lab'.",
+        "probes": [
+          "user order details michael",
+          "what is user order details michael",
+          "user order details michael michael ordered stainless"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "user_billing_security_concern_michael": {
+        "text": "user billing security concern michael: Michael is using the same address and credit card. Has a past negative experience with a random security hold from Apple Pay. Wants to verify no billing or shipping red flags exist to avoid a repeat. Proactively checking for issues before they arise.",
+        "probes": [
+          "user billing security concern michael",
+          "what is user billing security concern michael",
+          "user billing security concern michael michael using same"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "user_inquiry_subscription_program": {
+        "text": "user inquiry subscription program: Michael is inquiring about a subscription or membership program for loyal customers. He’s interested in perks like free shipping, early access to new products, or monthly discounts. He values organization and cost-effectiveness as he builds a growing coffee station setup.",
+        "probes": [
+          "user inquiry subscription program",
+          "what is user inquiry subscription program",
+          "user inquiry subscription program michael inquiring subscription"
+        ],
+        "probe_provenance": "write_time"
+      },
+      "user_inquiry_extended_warranty": {
+        "text": "user inquiry extended warranty: Michael wants to know if a loyalty program offers a 19-month warranty or monthly bean subscription for durability and convenience.",
+        "probes": [
+          "user inquiry extended warranty",
+          "what is user inquiry extended warranty",
+          "user inquiry extended warranty michael wants loyalty"
+        ],
+        "probe_provenance": "write_time"
+      },
+      "user_inquiry_membership_model": {
+        "text": "user inquiry membership model: Michael is asking about the current subscription or membership program structure. He wants to know if it's bean-only or includes discounts on accessories, machines, or cleaning kits. He's interested in a loyalty model with points, free shipping, or exclusive pricing on new releases.",
+        "probes": [
+          "user inquiry membership model",
+          "what is user inquiry membership model",
+          "user inquiry membership model michael asking current"
+        ],
+        "probe_provenance": "write_time"
+      },
+      "user_inquiry_purchasing_streamlining": {
+        "text": "user inquiry purchasing streamlining: Michael wants membership to streamline purchases: consolidated orders, auto-discounts, and bonus freebies (e.g., sample coffee, discount codes on future machines).",
+        "probes": [
+          "user inquiry purchasing streamlining",
+          "what is user inquiry purchasing streamlining",
+          "user inquiry purchasing streamlining michael wants membership"
+        ],
+        "probe_provenance": "write_time"
+      }
+    },
+    "archival": {
+      "user_reported_damage_details": {
+        "text": "user reported damage details: The outer box had seven crushed corners and a caved-in top, suggesting rough handling during transit. Upon opening, the stainless-steel body on the right side of the espresso machine was found to have a significant dent with sharp edges, indicating it was likely hit from the side during shipping. This is not a minor scratch or cosmetic issue but a structural damage that affects the machine's integrity.",
+        "probes": [
+          "user reported damage details",
+          "what is user reported damage details",
+          "user reported damage details outer box seven"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "user_reported_additional_damage_steam_wand": {
+        "text": "user reported additional damage steam wand: The steam wand is bent at an odd angle and does not swivel smoothly. It appears to be structurally deformed, not just jammed. Attempting to straighten it could risk internal components snapping. This is a significant functional issue that affects the machine's usability and aesthetic design.",
+        "probes": [
+          "user reported additional damage steam wand",
+          "what is user reported additional damage steam wand",
+          "user reported additional damage steam wand steam wand bent"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "user_reported_damage_water_reservoir": {
+        "text": "user reported damage water reservoir: The water reservoir area is slightly misaligned, and the hinge does not close flush. This raises concerns about potential leaks or structural instability. While the frothing pitcher has a minor scratch, it is otherwise undamaged. The main concern remains the espresso unit, which has structural and functional damage affecting safety and usability.",
+        "probes": [
+          "user reported damage water reservoir",
+          "what is user reported damage water reservoir",
+          "user reported damage water reservoir water reservoir area"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "user_request_for_faster_resolution": {
+        "text": "user request for faster resolution: Michael is eager to resolve the issue quickly due to upcoming weekend gatherings with family and friends. His siblings and close friends have been asking about cappuccinos and lattes, and he feels it's ironic that after all the anticipation, he must explain that the machine arrived in poor condition. He is currently using a backup French press but misses the café-style espresso experience. He requests a prompt replacement to restore his ability to serve high-quality espresso drinks during gatherings.",
+        "probes": [
+          "user request for faster resolution",
+          "what is user request for faster resolution",
+          "user request for faster resolution michael eager resolve"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "user_preference_hassle_free_return": {
+        "text": "user preference hassle free return: Michael prefers a seamless, hassle-free return process. He has had negative past experiences with companies requiring multiple photos, complicated forms, or snail-mail shipping labels. He is willing to provide photographic evidence of the damage(including exterior box, dents, and bent steam wand) and is tech-savvy and ready to send them via video or photo upload if requested. He values speed, simplicity, and direct communication.",
+        "probes": [
+          "user preference hassle free return",
+          "what is user preference hassle free return",
+          "user preference hassle free return michael prefers seamless"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "user_question_cross_shipment_and_shipping_insurance": {
+        "text": "user question cross shipment and shipping insurance: Michael is asking whether a cross-shipment is possible(i.e., receiving a replacement before returning the damaged unit) and whether shipping damage is covered under your insurance or handled in-house. He is concerned about the complexity of chasing the courier and wants a simple, direct solution. He values speed and simplicity and is hoping the process is handled seamlessly by your team, not requiring him to contact third parties.",
+        "probes": [
+          "user question cross shipment and shipping insurance",
+          "what is user question cross shipment and shipping insurance",
+          "user question cross shipment and shipping insurance michael asking whether"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "user_question_warranty_vs_return_policy": {
+        "text": "user question warranty vs return policy: Michael is clarifying whether shipping-related damage is covered under the product warranty or the return policy. He notes that the damage occurred before he had a chance to use the machine, making it different from a typical malfunction. He is concerned about whether it falls under the no-hassle return policy or a separate warranty, and wants a clear explanation of how the policies apply in this case.",
+        "probes": [
+          "user question warranty vs return policy",
+          "what is user question warranty vs return policy",
+          "user question warranty vs return policy michael clarifying whether"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "user_request_for_faster_shipping_and_potential_upgrade": {
+        "text": "user request for faster shipping and potential upgrade: Michael has all his order details(order number, shipping info, email confirmations) and is eager to expedite the replacement process. He is open to a regional upgrade if faster shipping is possible, but is also willing to accept a standard replacement if it’s the most practical option. He is concerned about waiting two weeks and wants to ensure the replacement arrives quickly, ideally from a nearby warehouse. He is open to paying for an upgrade if it doesn’t break the bank, but is also willing to have it waived given the inconvenience and effort already experienced.",
+        "probes": [
+          "user request for faster shipping and potential upgrade",
+          "what is user request for faster shipping and potential upgrade",
+          "user request for faster shipping and potential upgrade michael all order"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "user_positive_experience_and_request_for_next_steps": {
+        "text": "user positive experience and request for next steps: Michael expresses appreciation for the positive and seamless support he’s received so far. He acknowledges the frustration but is confident in the resolution process due to the quality of customer service. He is eager to move forward and is ready to provide any required information. He asks for clear instructions on how to proceed: whether he needs a prepaid return label, how to package the damaged unit safely, and what photos or videos to send. He also mentions the pride he feels in showcasing his barista skills on Instagram and with clients, highlighting the personal and professional value of the machine.",
+        "probes": [
+          "user positive experience and request for next steps",
+          "what is user positive experience and request for next steps",
+          "user positive experience and request for next steps michael expresses appreciation"
+        ],
+        "probe_provenance": "sidecar"
+      }
+    }
+  }
+}

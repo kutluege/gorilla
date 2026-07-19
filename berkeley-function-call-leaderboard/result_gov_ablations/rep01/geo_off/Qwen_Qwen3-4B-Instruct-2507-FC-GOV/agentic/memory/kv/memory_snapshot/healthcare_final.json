@@ -1,0 +1,11 @@
+{
+    "core_memory": {},
+    "archival_memory": {
+        "diabetes_treatment_plan": "Acetaminophen as needed for mild pain. Meloxicam 7.5 mg prescribed for flare-ups(knees and hands), taken only when joints are stiff or painful. Avoids daily use to prevent NSAID overuse. Doctor suggested glucosamine supplements; effect not yet confirmed.",
+        "hypothyroidism_treatment_plan": "Levothyroxine 75 mcg once daily, taken on an empty stomach, 30 minutes before eating. Last TSH result: 2.1 mIU/L(within normal range). Doctor has not adjusted dosage in years. Noticeable sluggishness if a dose is missed; uses a pill organizer to stay on track.",
+        "vitamin_d_and_bone_health_plan": "Vitamin D3 2,000 IU daily due to low levels(22 ng/mL; normal >30 ng/mL). Taking calcium supplements due to early osteopenia on bone density scan. Doctor recommends combining with vitamin K2 to improve calcium absorption and bone health.",
+        "cholesterol_management_plan_10_mg": "Atorvastatin 10 mg daily. Started due to elevated LDL(130 mg/dL) and triglycerides(140 mg/dL). Cholesterol levels have improved since starting. No side effects reported(e.g., no muscle aches). Doctor confirmed this low-dose regimen is effective and well-tolerated.",
+        "general_health_supplements_3": "Daily multivitamin, omega-3 supplements for heart health, and probiotics for digestive support. Takes digestive enzymes when eating heavier meals due to gallbladder removal. Aware that fatty food digestion is affected post-gallbladder removal and adjusts diet accordingly.",
+        "medication_interactions_precautions": "Aware of potential interactions between losartan and meloxicam(NSAIDs may affect kidney function), so limits meloxicam use to flare-ups only. Takes levothyroxine separately from calcium and iron supplements to prevent interference with absorption. This is a proactive strategy to ensure safe and effective medication use."
+    }
+}

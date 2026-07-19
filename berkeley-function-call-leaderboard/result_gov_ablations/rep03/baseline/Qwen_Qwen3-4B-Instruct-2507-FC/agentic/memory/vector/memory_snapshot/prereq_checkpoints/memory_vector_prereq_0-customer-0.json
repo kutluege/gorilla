@@ -1,0 +1,12 @@
+{
+    "core_memory": {
+        "next_id": 1,
+        "store": {
+            "0": "User Michael, 35, seeks a sleek, modern stainless-steel espresso machine. Inquires about temperature reliability and consistent hot coffee output, specifically concerned about drip coffee makers that don't heat properly and the need to microwave coffee."
+        }
+    },
+    "archival_memory": {
+        "next_id": 0,
+        "store": {}
+    }
+}

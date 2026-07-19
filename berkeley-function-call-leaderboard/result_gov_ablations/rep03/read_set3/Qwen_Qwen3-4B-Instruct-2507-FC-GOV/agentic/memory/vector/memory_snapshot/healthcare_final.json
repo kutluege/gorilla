@@ -1,0 +1,14 @@
+{
+    "core_memory": {
+        "next_id": 3,
+        "store": {
+            "0": "Patient embraces aging with wisdom: listens to body, values small joys, advises younger self to not stress over small things, prioritize health early, and enjoy every stage. Aging is a natural, beautiful chapter.",
+            "1": "Patient manages diabetes and hypertension. Fasting glucose: 135 mg/dL; morning readings: 125\u2013130 mg/dL. A1C: 6.9% (target 6.5%). Recommends increased fiber and light post-meal exercise. Actively monitoring at home and adjusting carb intake to improve glucose control.",
+            "2": "Patient manages diabetes, hypertension, osteoarthritis, and hypothyroidism. On metformin 1000 mg BID. A1C ~6.9% (target 6.5%). Started low-dose semaglutide(Ozempic) for glucose control; notes improved appetite. Fasting glucose: 125\u2013130 mg/dL. Medications reviewed every few months with doctor."
+        }
+    },
+    "archival_memory": {
+        "next_id": 0,
+        "store": {}
+    }
+}

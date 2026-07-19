@@ -1,0 +1,71 @@
+{
+  "backend": "kv",
+  "tiers": {
+    "core": {
+      "blood_glucose_fasting_latest": {
+        "text": "blood glucose fasting latest: 135 mg/dL",
+        "probes": [
+          "blood glucose fasting latest",
+          "what is blood glucose fasting latest",
+          "blood glucose fasting latest 135"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "morning_blood_glucose_range": {
+        "text": "morning blood glucose range: 2.1 mIU/L (within normal range)",
+        "probes": [
+          "morning blood glucose range",
+          "what is morning blood glucose range",
+          "morning blood glucose range miu within normal"
+        ],
+        "probe_provenance": "write_time"
+      },
+      "doctor_recommendations": {
+        "text": "doctor recommendations: Supplement suggested, but effect not yet confirmed",
+        "probes": [
+          "doctor recommendations",
+          "what is doctor recommendations",
+          "doctor recommendations supplement suggested effect"
+        ],
+        "probe_provenance": "write_time"
+      },
+      "hdl_cholesterol_58_mg": {
+        "text": "hdl cholesterol 58 mg: 130 mg/dL (initial level, now improving)",
+        "probes": [
+          "hdl cholesterol 58 mg",
+          "what is hdl cholesterol 58 mg",
+          "hdl cholesterol 58 mg 130 initial level"
+        ],
+        "probe_provenance": "write_time"
+      },
+      "triglycerides": {
+        "text": "triglycerides: 140 mg/dL (initial level, now improving)",
+        "probes": [
+          "triglycerides",
+          "what is triglycerides",
+          "triglycerides 140 initial level"
+        ],
+        "probe_provenance": "write_time"
+      },
+      "doctor_cholesterol_recommendations": {
+        "text": "doctor cholesterol recommendations: Taken separately from calcium and iron supplements to avoid interference with absorption",
+        "probes": [
+          "doctor cholesterol recommendations",
+          "what is doctor cholesterol recommendations",
+          "doctor cholesterol recommendations taken separately calcium"
+        ],
+        "probe_provenance": "write_time"
+      },
+      "blood_pressure_latest": {
+        "text": "blood pressure latest: 135-140 / 80-90 mmHg",
+        "probes": [
+          "blood pressure latest",
+          "what is blood pressure latest",
+          "blood pressure latest 135 140 mmhg"
+        ],
+        "probe_provenance": "write_time"
+      }
+    },
+    "archival": {}
+  }
+}

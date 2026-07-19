@@ -1,0 +1,153 @@
+{
+  "backend": "vector",
+  "tiers": {
+    "core": {
+      "0": {
+        "text": "MD's first major win: 2019 poison pill strategy against hostile takeover of Surreal Incorporated. Case study at Harvard Business School. Highlighted innovation in defensive corporate strategies.",
+        "probes": [
+          "MD's first major win: 2019 poison pill strategy against hostile takeover of Surreal Incorporated. Case study at Harvard Business School. Highlighted innovation in defensive corporate strategies.",
+          "what do you know about first major win 2019",
+          "first major win 2019 poison pill strategy against"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "1": {
+        "text": "Potential $20B take-private transaction: Omnix AI. If executed, would be a transformative deal for Legend Investments—positioning the firm as a leader in AI-driven capital allocation.",
+        "probes": [
+          "Potential $20B take-private transaction: Omnix AI. If executed, would be a transformative deal for Legend Investments—positioning the firm as a leader in AI-driven capital allocation.",
+          "what do you know about potential 20b take private",
+          "potential 20b take private transaction omnix executed would"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "2": {
+        "text": "Empowerment, accountability, and growth drive leadership at Legend Investments. Weekly roundtables allow all team levels to present ideas. A junior analyst's ESG scoring model is now in use across portfolios. True leadership fosters innovation, not answers.",
+        "probes": [
+          "Empowerment, accountability, and growth drive leadership at Legend Investments. Weekly roundtables allow all team levels to present ideas. A junior analyst's ESG scoring model is now in use across portfolios. True leadership fosters innovation, not answers.",
+          "what do you know about empowerment accountability growth drive",
+          "empowerment accountability growth drive leadership legend investments weekly"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "3": {
+        "text": "Sarah Chen(CEO of Pacific Dynamics) is a trusted advisor built on a deep connection from a 2008 Goldman conference and a delayed flight in Hong Kong. Five hours of conversation on markets and jazz forged a lasting bond. She's now a go-to source for Asian market insights, even at 3 AM.",
+        "probes": [
+          "Sarah Chen(CEO of Pacific Dynamics) is a trusted advisor built on a deep connection from a 2008 Goldman conference and a delayed flight in Hong Kong. Five hours of conversation on markets and jazz forged a lasting bond. She's now a go-to source for Asian market insights, even at 3 AM.",
+          "what do you know about sarah chen ceo pacific",
+          "sarah chen ceo pacific dynamics trusted advisor built"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "4": {
+        "text": "Regarding 4 AM: Global network relies on travel. Three trips/week. Secured Singapore deal with Chipset Core after three days, including 4 AM dim sum. In-person engagement is vital. '48-hour protocol' enables rapid response. Tailored suits for long-haul flights show dedication to presence.",
+        "probes": [
+          "Regarding 4 AM: Global network relies on travel. Three trips/week. Secured Singapore deal with Chipset Core after three days, including 4 AM dim sum. In-person engagement is vital. '48-hour protocol' enables rapid response. Tailored suits for long-haul flights show dedication to presence.",
+          "what do you know about regarding global network relies",
+          "regarding global network relies travel three trips week"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "5": {
+        "text": "Mentor's advice: 'You'll lose more than you win—make wins bigger than losses.' Setbacks are tuition for resilience. Create opportunities. Bet on yourself: lead first. Sustainable success comes from consistency, humility, and growth. Growth is the only real indicator.",
+        "probes": [
+          "Mentor's advice: 'You'll lose more than you win—make wins bigger than losses.' Setbacks are tuition for resilience. Create opportunities. Bet on yourself: lead first. Sustainable success comes from consistency, humility, and growth. Growth is the only real indicator.",
+          "what do you know about mentor advice lose more",
+          "mentor advice lose more than win make wins"
+        ],
+        "probe_provenance": "write_time"
+      },
+      "6": {
+        "text": "Mentor's advice: 'You'll lose more than you win—make wins bigger than losses.' Setbacks are tuition for resilience. Proactively reach out to leaders—opportunities emerge. Bet on yourself: lead first. Act like a leader, think like an investor, operate like a CEO. Opportunities catch up.",
+        "probes": [
+          "Mentor's advice: 'You'll lose more than you win—make wins bigger than losses.' Setbacks are tuition for resilience. Proactively reach out to leaders—opportunities emerge. Bet on yourself: lead first. Act like a leader, think like an investor, operate like a CEO. Opportunities catch up.",
+          "what do you know about mentor advice lose more",
+          "mentor advice lose more than win make wins"
+        ],
+        "probe_provenance": "write_time"
+      }
+    },
+    "archival": {
+      "0": {
+        "text": "2019: Structured poison pill defense for Surreal Incorporated. Case study at Harvard Business School. Demonstrated innovative defensive strategy in corporate finance.",
+        "probes": [
+          "2019: Structured poison pill defense for Surreal Incorporated. Case study at Harvard Business School. Demonstrated innovative defensive strategy in corporate finance.",
+          "what do you know about 2019 structured poison pill",
+          "2019 structured poison pill defense surreal incorporated case"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "1": {
+        "text": "Confidential $5B+ renewable energy acquisition: Solaris Energy Group acquiring Nordic Renewables. Jurisdictional alignment of government incentives is a major hurdle—reflects the evolving complexity of green investment across regions.",
+        "probes": [
+          "Confidential $5B+ renewable energy acquisition: Solaris Energy Group acquiring Nordic Renewables. Jurisdictional alignment of government incentives is a major hurdle—reflects the evolving complexity of green investment across regions.",
+          "what do you know about confidential renewable energy acquisition",
+          "confidential renewable energy acquisition solaris group acquiring nordic"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "2": {
+        "text": "Golf is a strategic relationship tool. The $2.3B MineCore merger started on the course. Quarterly Links at Pebble Beach drove 3 acquisitions and a sovereign wealth fund deal. Caddie Tom, with 30 years of experience, provides deep corporate intelligence.",
+        "probes": [
+          "Golf is a strategic relationship tool. The $2.3B MineCore merger started on the course. Quarterly Links at Pebble Beach drove 3 acquisitions and a sovereign wealth fund deal. Caddie Tom, with 30 years of experience, provides deep corporate intelligence.",
+          "what do you know about golf strategic relationship tool",
+          "golf strategic relationship tool minecore merger started course"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "3": {
+        "text": "Client relationships are personal. With Robert, family dinners with his children led to a successful succession plan. Attending weddings, supporting through loss, and responding to midnight texts show a concierge-level commitment. Trust is earned through genuine human connection, not just financial analysis.",
+        "probes": [
+          "Client relationships are personal. With Robert, family dinners with his children led to a successful succession plan. Attending weddings, supporting through loss, and responding to midnight texts show a concierge-level commitment. Trust is earned through genuine human connection, not just financial analysis.",
+          "what do you know about client relationships personal robert",
+          "client relationships personal robert family dinners children led"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "4": {
+        "text": "Education & Philanthropy: Bachelor's in Economics from University of Pennsylvania; MBA from Harvard Business School(Baker Scholar). Active engagement with both institutions through guest lectures, student mentoring, and talent recruitment. Endowed a scholarship at Penn for first-generation finance students. Belief: Talent is the greatest investment in finance. Finance should be a pathway to opportunity—accessible to all who possess hunger and discipline.",
+        "probes": [
+          "Education & Philanthropy: Bachelor's in Economics from University of Pennsylvania; MBA from Harvard Business School(Baker Scholar). Active engagement with both institutions through guest lectures, student mentoring, and talent recruitment. Endowed a scholarship at Penn for first-generation finance students. Belief: Talent is the greatest investment in finance. Finance should be a pathway to opportunity—accessible to all who possess hunger and discipline.",
+          "what do you know about education philanthropy bachelor economics",
+          "education philanthropy bachelor economics university pennsylvania mba harvard"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "5": {
+        "text": "Led successful integration of BlackRock's Aladdin platform into Legend Investments' risk management workflow. Customized Aladdin with proprietary models for emerging market volatility, resulting in 15% higher risk-adjusted returns. Created 'Risk Radar' dashboard that combines Aladdin analytics with internal algorithms. The solution has been licensed to three external firms, demonstrating strong market demand and competitive advantage.",
+        "probes": [
+          "Led successful integration of BlackRock's Aladdin platform into Legend Investments' risk management workflow. Customized Aladdin with proprietary models for emerging market volatility, resulting in 15% higher risk-adjusted returns. Created 'Risk Radar' dashboard that combines Aladdin analytics with internal algorithms. The solution has been licensed to three external firms, demonstrating strong market demand and competitive advantage.",
+          "what do you know about led successful integration blackrock",
+          "led successful integration blackrock aladdin platform into legend"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "6": {
+        "text": "Became a leading advocate for data visualization at Legend Investments, focusing on storytelling through Tableau. Created a dynamic ESG dashboard for portfolio companies including Vertex Capital Partners, Nexus Financial Group, and Summit Equity Holdings, enabling clients to instantly grasp environmental impact. Successfully integrated data from multiple sources to deliver clear, client-centric insights. Piloting augmented reality(AR) presentations using Microsoft HoloLens for immersive 3D market data experiences—early stage but signals the future of financial communication.",
+        "probes": [
+          "Became a leading advocate for data visualization at Legend Investments, focusing on storytelling through Tableau. Created a dynamic ESG dashboard for portfolio companies including Vertex Capital Partners, Nexus Financial Group, and Summit Equity Holdings, enabling clients to instantly grasp environmental impact. Successfully integrated data from multiple sources to deliver clear, client-centric insights. Piloting augmented reality(AR) presentations using Microsoft HoloLens for immersive 3D market data experiences—early stage but signals the future of financial communication.",
+          "what do you know about became leading advocate data",
+          "became leading advocate data visualization legend investments focusing"
+        ],
+        "probe_provenance": "stored_text"
+      },
+      "7": {
+        "text": "Transformed deal-making through Dealogic customization, incorporating 'soft signals' such as management dynamics and cultural fit scores. Built a predictive scoring system for deal success based on historical data. Self-taught in Python and R during pandemic lockdowns, enabling automation of routine analytics. Developed a machine learning model that analyzes earnings call transcripts to predict market reactions—now a core tool for the equity trading desk, demonstrating the power of technical innovation in strategic decision-making.",
+        "probes": [
+          "Transformed deal-making through Dealogic customization, incorporating 'soft signals' such as management dynamics and cultural fit scores. Built a predictive scoring system for deal success based on historical data. Self-taught in Python and R during pandemic lockdowns, enabling automation of routine analytics. Developed a machine learning model that analyzes earnings call transcripts to predict market reactions—now a core tool for the equity trading desk, demonstrating the power of technical innovation in strategic decision-making.",
+          "what do you know about transformed deal making through",
+          "transformed deal making through dealogic customization incorporating soft"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "8": {
+        "text": "Built a comprehensive client relationship infrastructure using Salesforce 'Client Journey Map' to track investment preferences and personal milestones. Transitioned to Notion for deal notes, utilizing linked databases that align with cognitive workflow. Uses Superhuman to manage email efficiently, saving significant time. Piloting AI meeting assistants for automatic call summarization and action item generation. Proactively exploring blockchain for settlement systems and quantum computing for portfolio optimization—currently running simulations on IBM's quantum platform. Dedicates Sunday evenings to continuous learning and tool testing, a practice he calls 'tech meditation' time.",
+        "probes": [
+          "Built a comprehensive client relationship infrastructure using Salesforce 'Client Journey Map' to track investment preferences and personal milestones. Transitioned to Notion for deal notes, utilizing linked databases that align with cognitive workflow. Uses Superhuman to manage email efficiently, saving significant time. Piloting AI meeting assistants for automatic call summarization and action item generation. Proactively exploring blockchain for settlement systems and quantum computing for portfolio optimization—currently running simulations on IBM's quantum platform. Dedicates Sunday evenings to continuous learning and tool testing, a practice he calls 'tech meditation' time.",
+          "what do you know about built comprehensive client relationship",
+          "built comprehensive client relationship infrastructure using salesforce journey"
+        ],
+        "probe_provenance": "sidecar"
+      }
+    }
+  }
+}

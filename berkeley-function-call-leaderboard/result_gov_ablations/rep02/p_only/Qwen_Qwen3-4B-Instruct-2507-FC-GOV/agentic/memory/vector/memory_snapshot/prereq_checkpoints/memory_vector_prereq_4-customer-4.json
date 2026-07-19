@@ -1,0 +1,19 @@
+{
+    "core_memory": {
+        "next_id": 2,
+        "store": {
+            "0": "User Michael, 35, Seattle. Ordered stainless-steel espresso machine with steam wand and accessories. Delivery delayed. Tracking stuck. Requesting fulfillment team escalation, local shipping, or expedited shipping.",
+            "1": "User Michael, 35, Seattle. Confirmed interest in ordering the electric coffee grinder. Interested in $39 storage canister and a cleaning kit for espresso machine and grinder. Has reorganized kitchen counter into a dedicated 'coffee corner'."
+        }
+    },
+    "archival_memory": {
+        "next_id": 5,
+        "store": {
+            "0": "User Michael, 35, Seattle. Ordered stainless-steel espresso machine with steam wand and accessories. Delivery delayed. Tracking stuck. Requesting fulfillment team escalation, local shipping, or expedited shipping. Confirmed: requires signature on delivery due to past issues with soggy packages. Will be home to receive package; design work scheduled around delivery to ensure availability. Prefers local delivery to avoid rain-related damage.",
+            "1": "User Michael, 35, Seattle. Expresses interest in a coffee bean subscription service that pairs with the new electric grinder. Specifically requests roasts recommended for espresso, drip, and pour-over. Mentions trust in product quality based on positive experience with espresso machine. Also inquires about future plans if service is not yet available.",
+            "2": "User Michael, 35, Seattle. Inquires about loyalty or referral program for returning customers. Specifically asks about discounts on second purchase, potential for upgraded grinder, and cost-saving options. Expresses concern for freelance expenses but values long-term investment in quality products. Previously had shipping issues with espresso machine.",
+            "3": "User Michael, 35, Seattle. Inquires about payment options for coffee grinder and accessories. Expresses openness to financing or subscription pairing. Values flexibility and cost management as a freelancer. Interested in spreading payments for a kitchen investment, but prefers simplicity unless there\u2019s a clear advantage. Previously experienced shipping delays and package damage.",
+            "4": "User Michael, 35, Seattle. Expresses interest in additional coffee connoisseur tools(digital scale, temperature-controlled kettle). Balances appreciation for craft and design with a desire to avoid a 'lab-like' kitchen. Values moderation and aesthetics. Prefers tools that genuinely improve brewing results over just being 'cool gadgets'."
+        }
+    }
+}

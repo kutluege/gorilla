@@ -1,0 +1,18 @@
+{
+    "core_memory": {
+        "next_id": 7,
+        "store": {
+            "0": "Type 2 Diabetes: Metformin 1000 mg BID; A1C ~6.9%; adding semaglutide(Ozempic) low dose for appetite control and glycemic improvement. Fasting BG 125\u2013130 mg/dL. Monitoring ongoing.",
+            "1": "Hypertension: Losartan 50 mg once daily. BP range: 135\u2013140/80\u201390 mmHg(slightly above target). Doctor recommends stress management and reduced sodium intake instead of increasing dose. Daily magnesium supplement taken for potential BP support.",
+            "2": "Hypothyroidism: Levothyroxine 75 mcg once daily. Taken on empty stomach, 30 minutes before eating. Last TSH: 2.1 mIU/L(normal). No dosage changes. Sluggishness if missed. Uses pill organizer. **Critical: Taken separately from calcium and iron supplements to avoid absorption issues.**",
+            "3": "Osteoarthritis: Uses acetaminophen as needed for mild pain. Takes meloxicam 7.5 mg as needed for joint stiffness(knees, hands); avoids daily use to limit NSAID exposure. Doctor recommended glucosamine supplements; effect unclear\u2014no definitive improvement noted yet.",
+            "4": "Vitamin D & Bone Health: Vitamin D3 2,000 IU daily(started after blood test showed 22 ng/mL; normal >30 ng/mL). Taking calcium supplements due to early osteopenia on bone density scan. Doctor recommends combining with vitamin K2 to improve calcium absorption and bone health.",
+            "5": "Cardiovascular Health: Taking atorvastatin 10 mg daily. Started due to LDL 130 mg/dL and triglycerides 140 mg/dL. Cholesterol levels improving; no side effects reported(e.g., muscle aches). Doctor recommends low-dose statin for lipid management; ongoing monitoring planned.",
+            "6": "General Health Supplements: Daily multivitamin, omega-3 supplements(for heart health), and probiotics(for digestion). Post-gallbladder removal: Takes digestive enzymes when consuming heavier meals. Noted that fatty food digestion is now more challenging; mindful of dietary fat intake."
+        }
+    },
+    "archival_memory": {
+        "next_id": 0,
+        "store": {}
+    }
+}

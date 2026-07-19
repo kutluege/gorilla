@@ -1,0 +1,17 @@
+{
+    "core_memory": {
+        "next_id": 2,
+        "store": {
+            "0": "User Michael, 35, Seattle freelance designer, values design & coffee. Ordered espresso machine, pitcher, filters. Tracking inactive >1 week. Awaiting delivery update. Will switch to French press or latte taste test if no delivery in 48 hours.",
+            "1": "User Michael: seeks coffee bean and grinder recommendations that pair aesthetically with stainless-steel espresso machine, especially for fresh grinding. Interested in a small, stylish grinder that complements design and supports coffee purist preferences."
+        }
+    },
+    "archival_memory": {
+        "next_id": 3,
+        "store": {
+            "0": "User Michael, 35, lives in Seattle, freelance graphic designer, seeks user-friendly espresso machine with caf\u00e9-like experience, prefers sleek stainless-steel finish, interested in pricing, new customer discounts, shipping details, product specs(size, cleaning, brewing, temperature), warranty, and concerns about drip coffee makers not heating sufficiently. Specifically asks about adjustable temperature settings and reliable hot coffee output to avoid microwaving.",
+            "1": "User Michael ordered a stainless-steel espresso machine with regular shipping(estimated 11 business days), including a stainless-steel frothing pitcher and extra filters. The order was placed with confidence in stock availability, but tracking shows no updates in over a week. He is now concerned about delivery delays and whether the accessories will arrive separately or with the main package. He values design and functionality and is hosting a family gathering where coffee is central. He seeks clarity on the shipment status and potential delays.",
+            "2": "User Michael is concerned about package delivery during rainy weather and potential damage from soggy boxes. He emphasizes the need to be home to receive the package, especially if a signature is required. He wants to be prepared to greet the courier or quickly bring the package inside to avoid it being left unattended or damaged. He values timely delivery and protecting the integrity of his purchase."
+        }
+    }
+}

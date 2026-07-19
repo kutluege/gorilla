@@ -1,0 +1,13 @@
+{
+    "core_memory": {},
+    "archival_memory": {
+        "diabetes_blood_glucose_2024_q3": "Fasting blood glucose: 135 mg/dL; A1C: 6.9%; Morning readings: 125-130 mg/dL; Recommendations: Increase dietary fiber, add light exercise after meals.",
+        "cholesterol_2024_q3": "Total cholesterol: 195 mg/dL; LDL: 130 mg/dL(target: under 100 mg/dL); HDL: 58 mg/dL(good range); Triglycerides: 140 mg/dL(slightly elevated); Recommendations: Increase healthy fats(avocados, nuts); Reduce saturated fats.",
+        "blood_pressure_2024_q3": "Reading: 138/85 mmHg; Target: below 130/80 mmHg; Range: 135-140 systolic, 80-90 diastolic; Influences: stress, salt intake; Actions: reduce sodium, increase water intake \u2014 showing improvement.",
+        "vitamin_d_2024_q3": "Level: 22 ng/mL(deficient); Normal range: 30-50 ng/mL; Treatment: 2,000 IU daily supplement; Next test: in a few months to monitor improvement.",
+        "thyroid_2024_q3": "TSH: 2.1 mIU/L(normal range: 0.5-4.5 mIU/L); T4: 1.2 ng/dL(within target); Status: Stable; Past history: Hypothyroidism; Current treatment: Levothyroxine \u2014 working well.",
+        "bone_density_2024_q3": "Spine T-score: -1.8 (osteopenia); Hip T-score: -1.5 (borderline); Recommendation: Strength training, increased calcium and vitamin K2 intake; Actions: Added dairy and leafy greens; Taking calcium supplement with vitamin K2.",
+        "liver_kidney_function_2024_q3": "ALT: 42 U/L(elevated; normal <35 U/L); Possible cause: recent medication adjustments; Creatinine: 0.9 mg/dL(normal range: 0.6\u20131.2 mg/dL); Kidney function: normal; Action: Monitor ALT levels closely, review medications with doctor.",
+        "inflammatory_markers_2024_q3": "C-reactive protein(CRP): 3.2 mg/L(slightly elevated; ideal <3.0 mg/L); Likely related to osteoarthritis; ESR: 18 mm/hr(normal range: 0-20 mm/hr); Interpretation: Mild inflammation detected, primarily likely due to joint condition."
+    }
+}

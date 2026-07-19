@@ -1,0 +1,17 @@
+{
+    "core_memory": {
+        "next_id": 2,
+        "store": {
+            "0": "User Michael, 35, lives in Seattle, freelance graphic designer, seeks a sleek, modern stainless-steel espresso machine offering caf\u00e9-like coffee at home without professional barista skills.",
+            "1": "Michael, a first-time buyer from Seattle, freelance graphic designer, inquires about temperature control in espresso machines, specifically whether they produce reliably hot coffee and have adjustable temperature settings to avoid microwaving."
+        }
+    },
+    "archival_memory": {
+        "next_id": 3,
+        "store": {
+            "0": "Michael, a first-time buyer from Seattle, is interested in a stainless-steel espresso machine with a caf\u00e9-like experience. Inquired about pricing, first-time buyer discounts, bundle deals, and shipping details\u2014specifically whether products are shipped from a local warehouse and delivery timelines for a family gathering later this month.",
+            "1": "Michael, a first-time buyer from Seattle, freelance graphic designer, is concerned about kitchen space and appliance layout. Specifically, wants to confirm the exact dimensions of the espresso machine to avoid 'kitchen Tetris' and ensure it fits with existing appliances on his counter.",
+            "2": "Michael, a first-time buyer from Seattle, freelance graphic designer, is inquiring about warranty and quality guarantee policies for espresso machines, specifically seeking a longer, more customer-friendly policy than offered by other brands."
+        }
+    }
+}

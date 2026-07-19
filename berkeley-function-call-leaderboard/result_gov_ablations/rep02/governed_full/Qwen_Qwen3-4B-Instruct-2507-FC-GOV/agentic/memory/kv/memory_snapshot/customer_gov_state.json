@@ -1,0 +1,90 @@
+{
+  "backend": "kv",
+  "tiers": {
+    "core": {
+      "user_preference_espresso": {
+        "text": "user preference espresso: Michael prefers a sleek, modern espresso machine with a stainless-steel finish, designed for a café-like experience without requiring professional barista skills. He values simplicity, aesthetics, and seamless integration into his home office environment.",
+        "probes": [
+          "user preference espresso",
+          "what is user preference espresso",
+          "user preference espresso michael prefers sleek"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "user_inquiry_pricing": {
+        "text": "user inquiry pricing: Michael is a first-time buyer looking for pricing details on espresso machines, specifically interested in any new customer discounts, promotional offers, or bundle deals. He saw a 'New Customer Discount' on the homepage but didn't click it in time.",
+        "probes": [
+          "user inquiry pricing",
+          "what is user inquiry pricing",
+          "user inquiry pricing michael first time"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "user_shipping_inquiry": {
+        "text": "user shipping inquiry: Michael in Seattle is concerned about shipping times and origin. He wants to know if products are shipped from a local warehouse, and if not, what the delivery timeframe is—especially since he's hosting a family gathering later this month.",
+        "probes": [
+          "user shipping inquiry",
+          "what is user shipping inquiry",
+          "user shipping inquiry michael seattle concerned"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "user_order_details_bundle": {
+        "text": "user order details bundle: Michael ordered a bundle including: 1. Stainless-steel coffee grinder(sleek, modern design), 2. Specialized cleaning tablets, 3. Upgraded frothing pitcher. This was his first major order after purchasing the espresso machine.",
+        "probes": [
+          "user order details bundle",
+          "what is user order details bundle",
+          "user order details bundle michael ordered bundle"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "user_billing_shipping_security": {
+        "text": "user billing shipping security: Michael is using the same address and credit card for both orders. He recalls a past security hold with Apple Pay and is cautious about billing or shipping anomalies. He wants to confirm there are no red flags or unexpected holds and requests transparency if any issues are detected.",
+        "probes": [
+          "user billing shipping security",
+          "what is user billing shipping security",
+          "user billing shipping security michael using same"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "user_inquiry_membership_model": {
+        "text": "user inquiry membership model: Michael explores loyalty program with subscriptions, rewards, or perks. He stresses no auto-enrollment or auto-renewal without explicit consent. Values transparency and wants to understand how such errors could occur, even if rare.",
+        "probes": [
+          "user inquiry membership model",
+          "what is user inquiry membership model",
+          "user inquiry membership model michael explores loyalty"
+        ],
+        "probe_provenance": "write_time"
+      },
+      "user_inquiry_streamlined_purchasing": {
+        "text": "user inquiry streamlined purchasing: Michael wants a streamlined purchasing process via membership: consolidated checkout, automatic reordering, and bonus freebies like sample-size coffee flavors or discount codes on future machines. He values ease and is open to enhancements for his coffee experimentation.",
+        "probes": [
+          "user inquiry streamlined purchasing",
+          "what is user inquiry streamlined purchasing",
+          "user inquiry streamlined purchasing michael wants streamlined"
+        ],
+        "probe_provenance": "sidecar"
+      }
+    },
+    "archival": {
+      "user_charge_inquiry_seattle_michael": {
+        "text": "user charge inquiry seattle michael: Michael from Seattle reported an unexpected charge not tied to any known order. No membership or subscription was activated. The charge does not match any prior purchases or product bundles. Suspected billing error. Escalated to billing and fraud team for audit. User prefers resolution without bank dispute.",
+        "probes": [
+          "user charge inquiry seattle michael",
+          "what is user charge inquiry seattle michael",
+          "user charge inquiry seattle michael michael seattle reported"
+        ],
+        "probe_provenance": "write_time"
+      },
+      "user_charge_details_michael_seattle": {
+        "text": "user charge details michael seattle: Charge amount: ~$49.99 (ballpark). Posted 3 days ago. No additional descriptor on statement beyond company name. No transaction ID or order reference visible. User has all supporting documents ready (screenshot, transaction ID) and is willing to share them if needed.",
+        "probes": [
+          "user charge details michael seattle",
+          "what is user charge details michael seattle",
+          "user charge details michael seattle charge amount ballpark"
+        ],
+        "probe_provenance": "write_time"
+      }
+    }
+  }
+}
