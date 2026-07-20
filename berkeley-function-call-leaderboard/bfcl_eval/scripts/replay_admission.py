@@ -340,17 +340,26 @@ def replay_one(rec, chain: Chain, cfg: GovConfig, emb: Embedder, policy, row, co
     counters["stage0_signals_match" if sig_match else "stage0_signals_mismatch"] += 1
 
     # Stage-0 outcome comparison (both stage0-final and escalated records).
+    gov2 = rec.get("schema") == "gov2"
     logged_reason = rec.get("reason") or ""
-    logged_stage0_final = logged_reason in STAGE0_FINAL_REASONS
-    if policy == "geometry_margin_entropy_v1" and s0_reason in (
+    if gov2:
+        # gov2 records carry the truth directly: escalated flag + reason_code.
+        logged_escalated = bool(rec.get("escalated"))
+        replay_escalated = s0_decision == GovDecision.ESCALATE
+        stage0_match = replay_escalated == logged_escalated
+        if stage0_match and not logged_escalated:
+            stage0_match = (s0_decision == GovDecision.NOOP) == (
+                rec.get("action") == "NOOP"
+            )
+    elif policy == "geometry_margin_entropy_v1" and s0_reason in (
         "exact_duplicate", "unretrievable_novel"
     ):
-        # New-policy-only outcomes: comparable only against gov2 logs; against
-        # legacy logs they are the documented allowed deviation (plan Step 2).
+        # New-policy-only outcomes vs a LEGACY log: the documented allowed
+        # deviation (plan Step 2 acceptance), counted separately.
         row["stage0_new_reason"] = s0_reason
         counters["stage0_new_reason_codes"] += 1
         stage0_match = None
-    elif logged_stage0_final:
+    elif logged_reason in STAGE0_FINAL_REASONS:
         stage0_match = (
             s0_decision.value == rec.get("decision") and s0_reason == logged_reason
         )
@@ -372,6 +381,10 @@ def replay_one(rec, chain: Chain, cfg: GovConfig, emb: Embedder, policy, row, co
         )
         row["replayed_decision"] = final_decision
         row["replayed_reason"] = final_reason
+        if gov2:
+            match = final_decision == rec.get("decision")
+            row["decision_match"] = match
+            counters["decision_match" if match else "decision_mismatch"] += 1
         return
 
     if policy == "legacy_full":
@@ -401,11 +414,14 @@ def replay_one(rec, chain: Chain, cfg: GovConfig, emb: Embedder, policy, row, co
     )
 
     if s0_decision != GovDecision.ESCALATE:
-        row["replayed_action"] = (
-            "NOOP" if s0_decision == GovDecision.NOOP else "ADD"
-        )
+        action = "NOOP" if s0_decision == GovDecision.NOOP else "ADD"
+        row["replayed_action"] = action
         row["replayed_reason"] = s0_reason
         row["replayed_stage"] = "GEOMETRY"
+        if gov2:
+            match = action == rec.get("action")
+            row["decision_match"] = match
+            counters["decision_match" if match else "decision_mismatch"] += 1
         return
     user_text = rec.get("user_text") or ""
     me = compute_margin_entropy_signals(candidate, signals, cache, cfg, user_text)
@@ -419,6 +435,10 @@ def replay_one(rec, chain: Chain, cfg: GovConfig, emb: Embedder, policy, row, co
     row["flagged"] = flagged
     row["rewritten_call"] = rewritten
     counters[f"v1_action_{action}"] += 1
+    if gov2:
+        match = action == rec.get("action") and code == rec.get("reason_code")
+        row["decision_match"] = match
+        counters["decision_match" if match else "decision_mismatch"] += 1
 
 
 # ---------------------------------------------------------------------------

@@ -540,8 +540,49 @@ def test_live_v1_end_to_end():
           all(k in rec["latency_ms"] for k in ("s0", "s1", "total")))
 
 
+def test_ablation_knobs():
+    print("[ablation knobs: rewrite-disable + NC shuffle]")
+    cfg = make_cfg(me_rewrite_disabled=True)
+    session = make_session("kv", KV_SNAPSHOT, log_file="knobs.jsonl")
+    cand = build_candidate("kv", "core_memory_add(key='favorite_drink_kind', value='matcha tea')")
+    me = _synthetic_me(locate=True, strong=True, interf=True)
+    s0 = Stage0Signals(sim_max=0.3, r=0.5, n_items=5)
+    s0.verbatim_values = []
+    action, code, rewritten, flagged = apply_option_a_rule(
+        cand, s0, me, session.cache, cfg,
+        "My favorite drink these days is matcha tea", preflight_ok=True,
+    )
+    check("GOV_ME_REWRITE_DISABLED forces flagged ADD",
+          action == "ADD" and rewritten is None and flagged, f"{action}/{code}")
+
+    from bfcl_eval.model_handler.middleware.admission_policy import (
+        _NC_POOLS,
+        nc_shuffle_dh,
+    )
+
+    def run_sequence():
+        _NC_POOLS.clear()
+        outs = []
+        for i, dh in enumerate((0.5, -0.1, 0.3)):
+            m = _synthetic_me(True, True, True)
+            m.dH_mean, m.dH_self = dh, dh / 2
+            c = build_candidate("kv", f"core_memory_add(key='k_{i}', value='v{i}')")
+            nc_shuffle_dh(m, c, n_items=7, seed=12345)
+            outs.append((m.dH_mean, m.dH_self))
+        return outs
+
+    seq1 = run_sequence()
+    seq2 = run_sequence()
+    check("first decision keeps own dH (empty pool)", seq1[0] == (0.5, 0.25), str(seq1))
+    check("later decisions draw from the pool",
+          seq1[1] in [(0.5, 0.25)] and seq1[1] != (-0.1, -0.05), str(seq1))
+    check("NC shuffle deterministic for fixed seed+order", seq1 == seq2)
+    _NC_POOLS.clear()
+
+
 def main():
     test_truth_table()
+    test_ablation_knobs()
     test_preflight_guard()
     test_smallstore()
     test_kv_safe_rewrite()

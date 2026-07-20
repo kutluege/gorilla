@@ -191,6 +191,11 @@ class GovConfig:
     me_churn_vec: float = 0.34  # GOV_ME_CHURN_VEC
     me_dup_eps: float = 0.02  # GOV_ME_DUP_EPS: near-NOOP band widening
     me_calib: str = ""  # GOV_ME_CALIB: frozen calibration JSON (risk_v1)
+    # Ablation knobs (plan SS18): arm 7 disables SAFE_REWRITE; the NC arm
+    # permutes dH within (backend, store-size bin) at decision time, seeded.
+    me_rewrite_disabled: bool = False  # GOV_ME_REWRITE_DISABLED
+    me_shuffle_dh: bool = False  # GOV_ME_SHUFFLE_DH (negative control)
+    me_shuffle_seed: int = 12345  # GOV_ME_SHUFFLE_SEED
 
     @classmethod
     def from_env(cls) -> "GovConfig":
@@ -249,6 +254,9 @@ class GovConfig:
             me_churn_vec=float(os.getenv("GOV_ME_CHURN_VEC", "0.34")),
             me_dup_eps=float(os.getenv("GOV_ME_DUP_EPS", "0.02")),
             me_calib=os.getenv("GOV_ME_CALIB", ""),
+            me_rewrite_disabled=_env_flag("GOV_ME_REWRITE_DISABLED", False),
+            me_shuffle_dh=_env_flag("GOV_ME_SHUFFLE_DH", False),
+            me_shuffle_seed=int(os.getenv("GOV_ME_SHUFFLE_SEED", "12345")),
         )
         if cfg.policy not in GOV_POLICIES:
             raise ValueError(
@@ -734,6 +742,12 @@ def decide(
 # Stage 1 (NLI) escalation resolver -- STAGE0 doc SS7, Plan 1 Step 5.
 # Pure logic with an injected scorer; the DeBERTa singleton lives in
 # semantic_entropy._get_nli_model() and is only touched when GOV_NLI_ENABLED.
+#
+# PLAN v2 (2026-07-21): OFFLINE-ONLY. Online NLI is retired from the decision
+# path -- this resolver runs only under GOV_POLICY=legacy_full (historical
+# replay). New policies route escalations through admission_policy.py and
+# assert that no NLI model loads (see _get_nli_scorer). NLI's remaining roles
+# are the offline paraphrase-tolerant judge and optional offline calibration.
 # ---------------------------------------------------------------------------
 
 
@@ -954,6 +968,11 @@ def stage1_resolve(
 # ---------------------------------------------------------------------------
 # Stage 2 (retrieval entropy) escalation resolver -- STAGE0 doc SS8, Plan 1 Step 6.
 # Consumes retrieval_sim + probe_gen (lazy imports: Stage 0 never pays for them).
+#
+# PLAN v2 (2026-07-21): LEGACY-ONLY. stage2_resolve + the value-rewriting
+# canonicalize path run only under GOV_POLICY=legacy_full; the live successor
+# is admission_policy.compute_margin_entropy_signals + apply_option_a_rule
+# (per-channel margins, dH, churn; KV key-suffix rewrites only).
 # ---------------------------------------------------------------------------
 
 
@@ -1738,11 +1757,18 @@ class GovernanceSession:
         latency = diagnostics.get("latency_ms", {})
         latency["total"] = round((time.perf_counter() - t_total) * 1000, 3)
 
+        import hashlib
+
+        candidate_id = hashlib.sha256(
+            f"{self.test_id}|{self.step}|{idx}|{candidate.raw_call}".encode("utf-8")
+        ).hexdigest()[:16]
+
         log_gov_record(
             {
                 "ts": time.time(),
                 "event": "decision",
                 "schema": "gov2",
+                "candidate_id": candidate_id,
                 "test_id": self.test_id,
                 "step_idx": self.step,
                 "call_idx": idx,
@@ -1773,6 +1799,7 @@ class GovernanceSession:
                 "s0_fast_path": bool(s0_diag.get("fast_path", False)),
                 "floor_rank": s0_diag.get("floor_rank"),
                 "s1_me": s1_diag,
+                "nc_shuffle": diagnostics.get("nc_shuffle"),
                 # Stage-1 probe source, logged verbatim so offline replay and
                 # calibration can reconstruct decision probes (legacy logs
                 # lack this -- their replay uses the logged stage blocks).

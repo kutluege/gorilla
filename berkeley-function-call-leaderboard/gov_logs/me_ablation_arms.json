@@ -1,0 +1,39 @@
+[
+  {"label": "baseline", "model": "Qwen/Qwen3-4B-Instruct-2507-FC", "gov_env": null},
+  {"label": "geometry_only", "model": "Qwen/Qwen3-4B-Instruct-2507-FC-GOV", "gov_env": {
+    "GOV_POLICY": "geometry_only", "GOV_ME_SHADOW": "0",
+    "GOV_DELTA": "0.32", "GOV_SIM_HIGH": "0.95"}},
+  {"label": "geo_old_margin", "model": "Qwen/Qwen3-4B-Instruct-2507-FC-GOV", "gov_env": {
+    "GOV_POLICY": "legacy_full", "GOV_NLI_ENABLED": "0",
+    "GOV_S2_ENABLED": "1", "GOV_S2_SHADOW": "0", "GOV_S2_MARGIN": "0.01",
+    "GOV_DELTA": "0.32", "GOV_SIM_HIGH": "0.95"}},
+  {"label": "entropy_only_rule", "model": "Qwen/Qwen3-4B-Instruct-2507-FC-GOV", "gov_env": {
+    "GOV_POLICY": "geometry_margin_entropy_v1", "GOV_ME_SHADOW": "0",
+    "GOV_ME_MARGIN_KV": "-1e9", "GOV_ME_MARGIN_VEC": "-1e9",
+    "GOV_DELTA": "0.32", "GOV_SIM_HIGH": "0.95"}},
+  {"label": "joint_v1", "model": "Qwen/Qwen3-4B-Instruct-2507-FC-GOV", "gov_env": {
+    "GOV_POLICY": "geometry_margin_entropy_v1", "GOV_ME_SHADOW": "0",
+    "GOV_DELTA": "0.32", "GOV_SIM_HIGH": "0.95"}},
+  {"label": "risk_v1", "model": "Qwen/Qwen3-4B-Instruct-2507-FC-GOV", "gov_env": {
+    "GOV_POLICY": "geometry_margin_entropy_risk_v1", "GOV_ME_SHADOW": "0",
+    "GOV_ME_CALIB": "gov_logs/margin_entropy_calibration.json",
+    "GOV_DELTA": "0.32", "GOV_SIM_HIGH": "0.95"}},
+  {"label": "joint_no_rewrite", "model": "Qwen/Qwen3-4B-Instruct-2507-FC-GOV", "gov_env": {
+    "GOV_POLICY": "geometry_margin_entropy_v1", "GOV_ME_SHADOW": "0",
+    "GOV_ME_REWRITE_DISABLED": "1",
+    "GOV_DELTA": "0.32", "GOV_SIM_HIGH": "0.95"}},
+  {"label": "shared_thresholds", "model": "Qwen/Qwen3-4B-Instruct-2507-FC-GOV", "gov_env": {
+    "GOV_POLICY": "geometry_margin_entropy_v1", "GOV_ME_SHADOW": "0",
+    "GOV_ME_MARGIN_KV": "0.05", "GOV_ME_MARGIN_VEC": "0.05",
+    "GOV_ME_DH_KV": "0.05", "GOV_ME_DH_VEC": "0.05",
+    "GOV_ME_CHURN_KV": "0.34", "GOV_ME_CHURN_VEC": "0.34",
+    "GOV_DELTA": "0.32", "GOV_SIM_HIGH": "0.95"}},
+  {"label": "no_neighbor_dh", "model": "Qwen/Qwen3-4B-Instruct-2507-FC-GOV", "gov_env": {
+    "GOV_POLICY": "geometry_margin_entropy_v1", "GOV_ME_SHADOW": "0",
+    "GOV_ME_DH_KV": "1e9", "GOV_ME_DH_VEC": "1e9",
+    "GOV_DELTA": "0.32", "GOV_SIM_HIGH": "0.95"}},
+  {"label": "nc_shuffled_entropy", "model": "Qwen/Qwen3-4B-Instruct-2507-FC-GOV", "gov_env": {
+    "GOV_POLICY": "geometry_margin_entropy_v1", "GOV_ME_SHADOW": "0",
+    "GOV_ME_SHUFFLE_DH": "1", "GOV_ME_SHUFFLE_SEED": "12345",
+    "GOV_DELTA": "0.32", "GOV_SIM_HIGH": "0.95"}}
+]

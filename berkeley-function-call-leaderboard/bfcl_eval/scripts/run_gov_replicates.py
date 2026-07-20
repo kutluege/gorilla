@@ -165,6 +165,23 @@ def gov_env_of(env):
     return {k: v for k, v in sorted(env.items()) if k.startswith("GOV_")}
 
 
+def _calibration_sha(calib_path):
+    """sha16 of the frozen calibration file an arm points at (gate G3 pinning);
+    None when the arm has no GOV_ME_CALIB or the file is missing."""
+    if not calib_path:
+        return None
+    import hashlib
+
+    p = Path(calib_path)
+    if not p.exists():
+        return None
+    h = hashlib.sha256()
+    with open(p, "rb") as f:
+        for chunk in iter(lambda: f.read(1 << 20), b""):
+            h.update(chunk)
+    return h.hexdigest()[:16]
+
+
 def probe_server(base_url):
     """Probe the tunneled endpoint: served model id + vLLM version.
 
@@ -258,6 +275,13 @@ def run_replicates(cfg, run_cmd=default_run_cmd, probe=probe_server,
         "arms": [
             {"label": a["label"], "model": a["model"],
              "gov_env": dict(sorted((a["gov_env"] or {}).items()))
+             if a["gov_env"] is not None else None,
+             # Plan v2 SS16 manifest versioning: absence of gov_policy in old
+             # manifests means legacy_full (the analyzer's default).
+             "gov_policy": (a["gov_env"] or {}).get("GOV_POLICY", "legacy_full")
+             if a["gov_env"] is not None else None,
+             "calibration_sha": _calibration_sha(
+                 (a["gov_env"] or {}).get("GOV_ME_CALIB"))
              if a["gov_env"] is not None else None}
             for a in arms
         ],
@@ -397,7 +421,11 @@ def main():
         "base_url": os.environ["REMOTE_OPENAI_BASE_URL"],
     }
     if args.arms_json:
-        arms = json.loads(args.arms_json)
+        raw_arms = args.arms_json
+        if raw_arms.startswith("@"):  # @path/to/arms.json (plan v2 SS18 matrix)
+            with open(raw_arms[1:], "r", encoding="utf-8") as f:
+                raw_arms = f.read()
+        arms = json.loads(raw_arms)
         for a in arms:
             if not {"label", "model"} <= set(a):
                 raise SystemExit(f"--arms-json arm needs label+model: {a}")

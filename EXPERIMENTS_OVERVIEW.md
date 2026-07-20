@@ -191,3 +191,48 @@ The honest meta-conclusion, stated in the source docs and worth repeating: on a 
 | **Replicated 5× survival-conditional A/B (baseline vs governed)** | ✅ **Run (2026-07-18/19)** — null on official score; see `EVAL_RESULTS.md` |
 | Read-time gate arm, placement/eviction arm, destructive-guard arm (one-at-a-time ablations) | ✅ **Run (2026-07-19)** — 8 arms × 3 reps; only `geo_off` significant (KV −10.6 pp, Holm p=0.0013); `p_only` marginal; read arms null |
 | Paraphrase-tolerant NLI judge (secondary metric) + G11 entropy retro-check | ✅ Run (2026-07-19) — governed +9/775 Vector under paraphrase tolerance; entropy signal informative but inert by design |
+
+## 7. Plan v2: two-stage Geometry → joint Margin–Entropy admission (2026-07-21)
+
+Full design in `TWO_STAGE_GEOMETRY_MARGIN_ENTROPY_PLAN.md`; implementation landed on
+branch `claude/nihai-plan-v2-cascade-thresholds-k34u67`.
+
+**Architecture.** The Geometry → NLI → Stage-2 cascade is replaced by
+`MemoryMutationAdmissionBoundary` (`middleware/memory_mutation.py` +
+`admission_policy.py`): Stage 0 geometry (unchanged core, wrapped by
+`geometry_gate.py` with an exact-duplicate fast path and a retrievability floor)
+routes only geometrically ambiguous writes to a deterministic, LLM-free,
+NLI-free Stage 1 that decides ADD / NOOP / SAFE_REWRITE / ABSTAIN from joint
+margin + entropy signals (`entropy_metrics.py`). **Online NLI is removed from
+the decision path** (`stage1_resolve` remains importable for
+`GOV_POLICY=legacy_full` replay only; new policies assert no NLI model loads);
+the paraphrase-tolerant judge and offline calibration are NLI's only remaining
+roles. ABSTAIN is observational in v1 (executes + tags; risk-coverage measured
+before any v2 suppression). SAFE_REWRITE is non-destructive dual representation:
+KV keys only, values byte-identical, no Vector rewrites.
+
+**Policy registry** (`GOV_POLICY`): `legacy_full` (default; old behavior bit for
+bit) | `geometry_only` | `geometry_margin_entropy_v1` (Option-A rule) |
+`geometry_margin_entropy_risk_v1` (Option-B calibrated logistic; needs
+`GOV_ME_CALIB`). Shadow-first via `GOV_ME_SHADOW=1`. gov2 log schema adds
+action/reason_code/stage/s1 signals/user_text/candidate_id/decision_features_sha;
+v1 parsers keep working.
+
+**Verification status (2026-07-21).**
+- 19 offline suites green (17 legacy unchanged: 491 checks; new:
+  `test_entropy_metrics` 42, `test_admission_policy` 100,
+  `test_replay_admission` 19, `test_calibrate_margin_entropy` 30).
+- `replay_admission.py --policy legacy_full` reproduces all **1,787/1,787**
+  decisions of the 5 governed A/B logs bit-identically (signals + stage-0 +
+  final reason); byte-identical across reruns.
+- §18 ablation matrix expressed as pure env arms (`gov_logs/me_ablation_arms.json`,
+  `--arms-json @file` dry-run verified), incl. rewrite-disable and the
+  seeded shuffled-entropy negative control (`GOV_ME_SHUFFLE_DH`).
+- Calibration pipeline (`calibrate_margin_entropy.py`): leave-one-scenario-out
+  chain-grouped CV, no-GT-in-features assertion, nested-model ΔAUC (gate G1)
+  with grouped bootstrap, Option-A risk-coverage grid, Option-B monotone
+  logistic + isotonic + freeze ceremony (refuses overwrite).
+
+**Next (requires the tunnel/GPU):** Phase 3 shadow harvests (≥3 reps, gov2
+logging) → outcomes labeling → G1 gate → threshold freeze → Phase 6 ablations →
+Phase 7 confirmatory 5× A/B (pre-registered primary: v1 vs geometry_only).

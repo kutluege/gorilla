@@ -287,7 +287,11 @@ def apply_option_a_rule(
     if locate and strong and not interf:
         return "ADD", "s1_confident" + suffix, None, False
     if locate and strong and interf:
-        rewritten = _safe_rewrite(candidate, cache, s0, user_text)
+        rewritten = (
+            None
+            if cfg.me_rewrite_disabled  # ablation arm 7 (plan SS18)
+            else _safe_rewrite(candidate, cache, s0, user_text)
+        )
         if rewritten is not None:
             return "SAFE_REWRITE", "s1_bounded_interference" + suffix, rewritten, False
         return "ADD", "s1_bounded_interference" + suffix, None, True
@@ -331,6 +335,40 @@ def _safe_rewrite(
     if str(new_cand.args.get("value")) != str(candidate.args.get("value")):
         return None
     return new_call
+
+
+# ---------------------------------------------------------------------------
+# NC arm: shuffled-entropy negative control (plan SS18). dH values are permuted
+# WITHIN (backend, store-size bin) at decision time: each decision swaps its
+# dH_mean/dH_self for a value drawn from the rolling pool of previously seen
+# values in its bin, selected by a seeded hash of the candidate -- deterministic
+# for a fixed log order, destroys the dH<->candidate pairing, preserves the
+# marginal distribution.
+# ---------------------------------------------------------------------------
+
+_NC_POOLS: dict = {}
+
+
+def _store_size_bin(n_items: int) -> int:
+    return min(int(n_items) // 5, 4)  # bins: 0-4, 5-9, 10-14, 15-19, 20+
+
+
+def nc_shuffle_dh(me: MarginEntropySignals, candidate: WriteCandidate,
+                  n_items: int, seed: int) -> None:
+    key = (candidate.backend, _store_size_bin(n_items))
+    pool = _NC_POOLS.setdefault(key, [])
+    own = (me.dH_mean, me.dH_self)
+    if pool:
+        digest = hashlib.sha256(
+            f"{seed}|{candidate.raw_call}|{len(pool)}".encode("utf-8")
+        ).digest()
+        idx = int.from_bytes(digest[:4], "big") % len(pool)
+        swapped = pool[idx]
+        me.dH_mean = swapped[0]
+        me.dH_self = swapped[1]
+    if own[0] is not None or own[1] is not None:
+        pool.append(own)
+        del pool[:-200]  # bounded rolling pool
 
 
 # ---------------------------------------------------------------------------
@@ -484,6 +522,10 @@ class MemoryMutationAdmissionBoundary:
         me = compute_margin_entropy_signals(
             candidate, geo.signals, cache, self.cfg, user_text
         )
+        if self.cfg.me_shuffle_dh:
+            original = {"dH_mean": me.dH_mean, "dH_self": me.dH_self}
+            nc_shuffle_dh(me, candidate, geo.signals.n_items, self.cfg.me_shuffle_seed)
+            diagnostics["nc_shuffle"] = {"original": original, "seed": self.cfg.me_shuffle_seed}
         confidence = None
         if self.risk_model is not None:
             confidence = risk_score(self.risk_model, candidate, geo.signals, me)
