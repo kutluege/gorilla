@@ -79,6 +79,17 @@ def _env_flag(name: str, default: bool) -> bool:
 # Config
 # ---------------------------------------------------------------------------
 
+# Admission-policy selector (Plan v2 SS16). ``legacy_full`` reproduces the old
+# Geometry -> NLI -> Stage-2 cascade bit for bit (reads GOV_NLI_*/GOV_S2_* as
+# before); the new policies route escalations through admission_policy.py and
+# IGNORE GOV_NLI_* (no NLI model may load — see _get_nli_scorer guard).
+GOV_POLICIES = (
+    "legacy_full",
+    "geometry_only",
+    "geometry_margin_entropy_v1",
+    "geometry_margin_entropy_risk_v1",
+)
+
 
 @dataclass
 class GovConfig:
@@ -165,6 +176,21 @@ class GovConfig:
     read_shadow: bool = True
     read_margin: float = 0.05  # single threshold to start; split per-backend if needed
     read_set_max: int = 4  # ambiguous-set bound (clamped 2..4 by the gate)
+    # -- Plan v2 admission policy (GOV_POLICY / GOV_ME_*, plan SS16) ----------
+    # Numeric defaults are PRE-CALIBRATION placeholders; Phase 5 freezes the
+    # real values into gov_logs/margin_entropy_calibration.json (SS13.3) and
+    # arms pass them via env. me_shadow=1 is the shadow-first discipline.
+    policy: str = "legacy_full"
+    me_shadow: bool = True
+    me_r: float = 2.0  # GOV_ME_R: locate rank threshold R
+    me_margin_kv: float = 0.10  # GOV_ME_MARGIN_KV (nmargin, scale-free)
+    me_margin_vec: float = 0.05  # GOV_ME_MARGIN_VEC (raw cosine margin)
+    me_dh_kv: float = 0.05  # GOV_ME_DH_KV (nats)
+    me_dh_vec: float = 0.05  # GOV_ME_DH_VEC
+    me_churn_kv: float = 0.34  # GOV_ME_CHURN_KV (Jaccard distance of top-3)
+    me_churn_vec: float = 0.34  # GOV_ME_CHURN_VEC
+    me_dup_eps: float = 0.02  # GOV_ME_DUP_EPS: near-NOOP band widening
+    me_calib: str = ""  # GOV_ME_CALIB: frozen calibration JSON (risk_v1)
 
     @classmethod
     def from_env(cls) -> "GovConfig":
@@ -212,7 +238,22 @@ class GovConfig:
             read_shadow=_env_flag("GOV_READ_SHADOW", True),
             read_margin=float(os.getenv("GOV_READ_MARGIN", "0.05")),
             read_set_max=int(os.getenv("GOV_READ_SET_MAX", "4")),
+            policy=os.getenv("GOV_POLICY", "legacy_full"),
+            me_shadow=_env_flag("GOV_ME_SHADOW", True),
+            me_r=float(os.getenv("GOV_ME_R", "2")),
+            me_margin_kv=float(os.getenv("GOV_ME_MARGIN_KV", "0.10")),
+            me_margin_vec=float(os.getenv("GOV_ME_MARGIN_VEC", "0.05")),
+            me_dh_kv=float(os.getenv("GOV_ME_DH_KV", "0.05")),
+            me_dh_vec=float(os.getenv("GOV_ME_DH_VEC", "0.05")),
+            me_churn_kv=float(os.getenv("GOV_ME_CHURN_KV", "0.34")),
+            me_churn_vec=float(os.getenv("GOV_ME_CHURN_VEC", "0.34")),
+            me_dup_eps=float(os.getenv("GOV_ME_DUP_EPS", "0.02")),
+            me_calib=os.getenv("GOV_ME_CALIB", ""),
         )
+        if cfg.policy not in GOV_POLICIES:
+            raise ValueError(
+                f"[GOV] unknown GOV_POLICY {cfg.policy!r}; known: {GOV_POLICIES}"
+            )
         cfg.validate()
         return cfg
 
@@ -337,6 +378,10 @@ class MemoryItem:
     tier: str  # "core" | "archival"
     category: str = ""
     low_confidence: bool = False
+    # Plan v2 SS9.3: ABSTAIN is observational in v1 -- the write executes and
+    # the stored item is tagged so risk-coverage curves can be computed offline.
+    abstained: bool = False
+    flagged: bool = False  # ADD-with-flag outcomes (s1_bounded_interference etc.)
     # Stage 2 probe cache: generated at write time, persisted to the
     # <scenario>_gov_state.json sidecar. Empty until GOV_S2_ENABLED runs.
     probes: list = field(default_factory=list)
@@ -1364,6 +1409,17 @@ class GovernanceSession:
         self._nli_loaded = nli_scorer is not None
         self.user_text: str = ""  # latest user turn (Stage 2 probe source)
         self._low_conf_texts: set = set()  # (tier, text) to flag at observe time
+        # Plan v2: generalized flag tagging -- (tier, text) -> "abstained"|"flagged".
+        self._flagged_texts: dict = {}
+        # Plan v2 admission boundary (SS7): constructed for NEW policies only;
+        # legacy_full keeps the original code path and never builds one.
+        self._boundary = None
+        if cfg.policy != "legacy_full":
+            from bfcl_eval.model_handler.middleware.admission_policy import (
+                MemoryMutationAdmissionBoundary,
+            )
+
+            self._boundary = MemoryMutationAdmissionBoundary(cfg)
         # Probe-cache sidecar (Stage 2): <scenario>_gov_state.json next to the
         # backend snapshot. Only touched when GOV_S2_ENABLED.
         if sidecar_path is not None:
@@ -1450,6 +1506,11 @@ class GovernanceSession:
     def _get_nli_scorer(self):
         if not self._nli_loaded:
             self._nli_loaded = True
+            if self.cfg.policy != "legacy_full":
+                # Plan v2 SS16: new policies IGNORE GOV_NLI_* and must never
+                # load an NLI model (test: no_online_nli). Injected test
+                # scorers (self._nli_scorer set in __init__) are unaffected.
+                return None
             from bfcl_eval.model_handler.middleware.semantic_entropy import (
                 _get_nli_model,
             )
@@ -1458,6 +1519,8 @@ class GovernanceSession:
         return self._nli_scorer
 
     def _govern_one(self, idx: int, candidate: WriteCandidate, governed: list):
+        if self._boundary is not None:
+            return self._govern_one_admission(idx, candidate, governed)
         v_w = self._whiten_one(candidate.text)
         preflight_ok = preflight_would_succeed(candidate, self.cache)
         signals = compute_signals(v_w, candidate, self.cache, self.thresholds, self.cfg)
@@ -1549,6 +1612,184 @@ class GovernanceSession:
                 "stage1": stage1_log,
                 "stage2": stage2_log,
                 "latency_ms": signals.latency_ms,
+            },
+            self.cfg,
+        )
+
+    def _govern_one_admission(self, idx: int, candidate: WriteCandidate, governed: list):
+        """Plan v2 path (GOV_POLICY != legacy_full): route the candidate through
+        the MemoryMutationAdmissionBoundary and apply its decision with exactly
+        the legacy commit mechanics (decoy + synthetic success for NOOP, in-place
+        call replacement for SAFE_REWRITE, pass-through for ADD/ABSTAIN).
+
+        Shadow discipline (GOV_ME_SHADOW or GOV_DRY_RUN): compute + log the full
+        gov2 record, never intervene. A boundary failure degrades to ungoverned
+        pass-through with an ``admission_error`` log line -- governance must
+        never break inference.
+        """
+        from bfcl_eval.model_handler.middleware.memory_mutation import (
+            from_write_candidate,
+        )
+
+        t_total = time.perf_counter()
+        try:
+            mmc = from_write_candidate(candidate, source="tool_call")
+            mmc.metadata.update({"step_idx": self.step, "call_idx": idx})
+            ad = self._boundary.evaluate(
+                mmc,
+                self.cache,
+                self.thresholds,
+                self._whiten_one,
+                user_text=self.user_text,
+                write_candidate=candidate,
+            )
+        except Exception as e:
+            log_gov_record(
+                {
+                    "ts": time.time(),
+                    "event": "admission_error",
+                    "schema": "gov2",
+                    "test_id": self.test_id,
+                    "step_idx": self.step,
+                    "call_idx": idx,
+                    "backend": candidate.backend,
+                    "op": candidate.op,
+                    "error": repr(e),
+                },
+                self.cfg,
+            )
+            return
+
+        diagnostics = dict(ad.diagnostics)
+        signals: Stage0Signals = diagnostics.pop("signals")
+        preflight_ok = diagnostics.get("preflight_ok", True)
+        s0_diag = diagnostics.get("s0", {})
+        s1_diag = diagnostics.get("s1")
+        flagged = bool(diagnostics.get("flagged", False))
+        shadowed = self.cfg.me_shadow or self.cfg.dry_run
+
+        # Legacy-parser-compatible decision mapping (ABSTAIN executes the write).
+        decision_compat = {
+            "NOOP": "NOOP",
+            "ADD": "ADD",
+            "SAFE_REWRITE": "REWRITE",
+            "ABSTAIN": "ADD",
+        }[ad.action]
+
+        shadow_id = None
+        synthetic = None
+        applied = "none"
+        rewritten_call = None
+        if not shadowed:
+            if ad.action == "NOOP":
+                if candidate.backend == "vector" and candidate.kind == "add":
+                    shadow_id = self._shadow_next
+                    self._shadow_next += 1
+                    self._issued_shadow_ids.add(shadow_id)
+                synthetic = synthetic_success(candidate, shadow_id)
+                governed[idx] = DECOY_CALL
+                self._pending[idx] = {
+                    "mode": "noop",
+                    "original_call": candidate.raw_call,
+                    "synthetic": synthetic,
+                }
+                applied = "noop"
+            elif ad.action == "SAFE_REWRITE":
+                rewritten_call = ad.rewritten_call
+                governed[idx] = rewritten_call
+                self._pending[idx] = {
+                    "mode": "rewrite",
+                    "original_call": candidate.raw_call,
+                    "rewritten_call": rewritten_call,
+                }
+                applied = "rewrite"
+                rc = build_candidate(self.backend, rewritten_call)
+                if rc is not None and flagged:
+                    self._flagged_texts[(rc.tier, rc.text)] = "flagged"
+            else:  # ADD | ABSTAIN: the write executes unchanged
+                if ad.action == "ABSTAIN":
+                    self._flagged_texts[(candidate.tier, candidate.text)] = "abstained"
+                elif flagged:
+                    self._flagged_texts[(candidate.tier, candidate.text)] = "flagged"
+
+        if self.cfg.verbose:
+            print(
+                f"[GOV] {self.test_id} step={self.step} {candidate.op} "
+                f"sim_max={signals.sim_max:.3f} r={signals.r:.3f} "
+                f"-> {ad.action} ({ad.reason_code})"
+                + (" [shadow]" if shadowed else "")
+            )
+
+        policy_block = {
+            "name": self.cfg.policy,
+            "shadow": shadowed,
+            "thresholds": {
+                "R": self.cfg.me_r,
+                "M_kv": self.cfg.me_margin_kv,
+                "M_vec": self.cfg.me_margin_vec,
+                "D_kv": self.cfg.me_dh_kv,
+                "D_vec": self.cfg.me_dh_vec,
+                "C_kv": self.cfg.me_churn_kv,
+                "C_vec": self.cfg.me_churn_vec,
+                "dup_eps": self.cfg.me_dup_eps,
+            },
+            "calibration": self.cfg.me_calib or None,
+        }
+        latency = diagnostics.get("latency_ms", {})
+        latency["total"] = round((time.perf_counter() - t_total) * 1000, 3)
+
+        log_gov_record(
+            {
+                "ts": time.time(),
+                "event": "decision",
+                "schema": "gov2",
+                "test_id": self.test_id,
+                "step_idx": self.step,
+                "call_idx": idx,
+                "backend": candidate.backend,
+                "op": candidate.op,
+                "tier": candidate.tier,
+                "candidate_ref": candidate.ref,
+                "candidate_text": candidate.text,
+                "sim_max": round(signals.sim_max, 4),
+                "r": round(signals.r, 4),
+                "tau_t": round(signals.tau_t, 4),
+                "delta": self.cfg.delta,
+                "sim_high": self.cfg.sim_high,
+                "verbatim_mode": signals.verbatim_mode,
+                "verbatim_values": signals.verbatim_values,
+                "verbatim_hits": signals.verbatim_hits,
+                "verbatim_misses": signals.verbatim_misses,
+                "n_items": signals.n_items,
+                "rho": round(signals.rho, 4),
+                # Legacy-compatible fields (v1 parsers keep working):
+                "decision": decision_compat,
+                "reason": ad.reason_code,
+                # gov2 truth:
+                "action": ad.action,
+                "reason_code": ad.reason_code,
+                "stage": ad.stage,
+                "escalated": bool(diagnostics.get("escalated", False)),
+                "s0_fast_path": bool(s0_diag.get("fast_path", False)),
+                "floor_rank": s0_diag.get("floor_rank"),
+                "s1_me": s1_diag,
+                # Stage-1 probe source, logged verbatim so offline replay and
+                # calibration can reconstruct decision probes (legacy logs
+                # lack this -- their replay uses the logged stage blocks).
+                "user_text": self.user_text,
+                "policy": policy_block,
+                "confidence": ad.confidence,
+                "decision_features_sha": diagnostics.get("decision_features_sha"),
+                "preflight_ok": preflight_ok,
+                "dry_run": self.cfg.dry_run,
+                "synthetic_result": synthetic,
+                "shadow_id": shadow_id,
+                "applied": applied,
+                "original_call": candidate.raw_call if applied == "rewrite" else None,
+                "rewritten_call": rewritten_call,
+                "low_confidence": flagged,  # legacy-compatible alias
+                "flagged": flagged,
+                "latency_ms": latency,
             },
             self.cfg,
         )
@@ -1818,6 +2059,8 @@ class GovernanceSession:
         rebuilt, remapped = [], {}
         for idx, call in enumerate(governed):
             for pre in self._expansions.get(idx, []):
+                if self._boundary is not None and self._expansion_is_duplicate(pre):
+                    continue  # dropped + logged (plan SS7.3: expansion_noop)
                 rebuilt.append(pre)  # injected calls execute genuinely; no pending
             if idx in self._pending:
                 remapped[len(rebuilt)] = self._pending[idx]
@@ -1825,6 +2068,69 @@ class GovernanceSession:
         self._pending = remapped
         self._expansions = {}
         return rebuilt
+
+    def _expansion_is_duplicate(self, call: str) -> bool:
+        """Plan v2 SS7.3: placement-expansion writes are gated through the
+        boundary STAGE 0 ONLY (escalating a governance-generated write would be
+        circular; the boundary maps expansion escalations to ADD). An expansion
+        Stage 0 calls duplicate is dropped and logged (``expansion_noop``)."""
+        from bfcl_eval.model_handler.middleware.memory_mutation import (
+            from_write_candidate,
+        )
+
+        candidate = build_candidate(self.backend, call)
+        if candidate is None:
+            return False  # not a gated write (e.g. the remove half): keep it
+        try:
+            mmc = from_write_candidate(candidate, source="placement_expansion")
+            mmc.metadata.update({"step_idx": self.step})
+            ad = self._boundary.evaluate(
+                mmc,
+                self.cache,
+                self.thresholds,
+                self._whiten_one,
+                user_text=self.user_text,
+                write_candidate=candidate,
+            )
+        except Exception as e:
+            log_gov_record(
+                {
+                    "ts": time.time(),
+                    "event": "admission_error",
+                    "schema": "gov2",
+                    "test_id": self.test_id,
+                    "step_idx": self.step,
+                    "backend": self.backend,
+                    "op": candidate.op,
+                    "source": "placement_expansion",
+                    "error": repr(e),
+                },
+                self.cfg,
+            )
+            return False
+        is_dup = ad.action == "NOOP" and ad.reason_code == "expansion_noop"
+        log_gov_record(
+            {
+                "ts": time.time(),
+                "event": "expansion_gate",
+                "schema": "gov2",
+                "test_id": self.test_id,
+                "step_idx": self.step,
+                "backend": self.backend,
+                "op": candidate.op,
+                "tier": candidate.tier,
+                "candidate_text": candidate.text,
+                "source": "placement_expansion",
+                "action": ad.action,
+                "reason_code": ad.reason_code,
+                "dropped": is_dup and not self.cfg.me_shadow and not self.cfg.dry_run,
+            },
+            self.cfg,
+        )
+        # Shadow discipline: log the verdict, drop nothing.
+        if self.cfg.me_shadow or self.cfg.dry_run:
+            return False
+        return is_dup
 
     def patch_results(self, execution_results: list, decoded_calls: list) -> list:
         """Substitute synthetic successes at suppressed (NOOP) indices, restore
@@ -1989,6 +2295,11 @@ class GovernanceSession:
         if (tier, text) in self._low_conf_texts:
             item.low_confidence = True
             self._low_conf_texts.discard((tier, text))
+        flag_kind = self._flagged_texts.pop((tier, text), None)
+        if flag_kind == "abstained":
+            item.abstained = True
+        elif flag_kind == "flagged":
+            item.flagged = True
         if self.cfg.s2_enabled:
             # Write-time probe cache (SS8.3): cheap, deterministic templates.
             from bfcl_eval.model_handler.middleware.probe_gen import (
