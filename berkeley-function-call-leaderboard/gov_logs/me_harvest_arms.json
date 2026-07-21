@@ -1,0 +1,9 @@
+[
+  {"label": "baseline", "model": "Qwen/Qwen3-4B-Instruct-2507-FC", "gov_env": null},
+  {"label": "v1_shadow", "model": "Qwen/Qwen3-4B-Instruct-2507-FC-GOV", "gov_env": {
+    "GOV_DRY_RUN": "1",
+    "GOV_POLICY": "geometry_margin_entropy_v1",
+    "GOV_ME_SHADOW": "1",
+    "GOV_SIM_HIGH": "0.95",
+    "GOV_DELTA": "0.32"}}
+]
