@@ -155,3 +155,23 @@ $arms = '[' +
    `Qwen/Qwen3-4B-Instruct-2507`).
 4. Gov-log dirs `repNN_<arm>/governance_log.jsonl` exist for governed arms and
    contain exactly one attempt's decisions (step 2 above was done).
+
+---
+
+## Addendum 2026-07-22: the `created` fingerprint is server-dependent
+
+On the 2026-07-21/22 tunnel machine (vLLM reported as 0.9.1 via /version, same
+as the July campaign server), `/v1/models` `data[0].created` is stamped
+**per-request** (three probes 3 s apart returned values 3 s apart), not at
+vLLM startup. The §0 fingerprint check is therefore UNUSABLE on such servers:
+a moving `created` does NOT prove a restart, and two differing values across a
+tunnel drop prove nothing either way.
+
+Operational rule when `created` is per-request (detect with two probes a few
+seconds apart):
+1. Instance identity cannot be verified via the API. Treat a manifest as
+   same-instance only on direct operator confirmation that the vLLM process
+   was not restarted; otherwise assume restart and void the manifest (the
+   conservative default used for the 2026-07-22 me_harvest restart).
+2. Record in the run report that instance continuity is asserted, not
+   verified, for any resume performed under this rule.
