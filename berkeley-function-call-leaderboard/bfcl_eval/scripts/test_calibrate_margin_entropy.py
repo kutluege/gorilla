@@ -174,6 +174,28 @@ def main():
         check("informative fit (train AUC > 0.6)", model["train_auc"] > 0.6,
               str(model["train_auc"]))
 
+    print("[NC shuffle negative control]")
+    from bfcl_eval.scripts.calibrate_margin_entropy import nc_shuffle_entropy_features
+
+    nc_rows = nc_shuffle_entropy_features(rows, 12345)
+    check("labels/margin features untouched",
+          all(a["label"] == b["label"]
+              and a["features"]["nmargin_med"] == b["features"]["nmargin_med"]
+              for a, b in zip(rows, nc_rows)))
+    check("entropy features actually permuted",
+          any(a["features"]["dH_mean"] != b["features"]["dH_mean"]
+              for a, b in zip(rows, nc_rows)))
+    nc_rep = nested_auc_report(nc_rows, seed=12345, n_boot=300)
+    nc_d = nc_rep.get("dAUC_entropy_given_geometry_margin")
+    real_d = d
+    check("NC destroys the planted entropy gain",
+          nc_d is not None and real_d is not None
+          and nc_d["mean"] < real_d["mean"]
+          and nc_d["ci95"][0] <= 0.0, f"nc={nc_d} real={real_d}")
+    nc_rows2 = nc_shuffle_entropy_features(rows, 12345)
+    check("NC shuffle deterministic",
+          json.dumps(nc_rows) == json.dumps(nc_rows2))
+
     print("[freeze ceremony]")
     import subprocess
 

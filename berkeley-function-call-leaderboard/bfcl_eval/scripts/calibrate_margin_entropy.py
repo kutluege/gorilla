@@ -194,6 +194,27 @@ def attach_outcomes(rows, outcomes_path, label):
 # ---------------------------------------------------------------------------
 
 
+def nc_shuffle_entropy_features(rows, seed):
+    """Offline negative control (plan SS18 NC / SS23 Phase 3): permute the
+    ENTROPY features jointly across rows WITHIN (backend, store-size bin),
+    fixed seed. Destroys the entropy<->outcome pairing while preserving the
+    marginal distribution and the geometry/margin features. Returns new rows."""
+    rng = np.random.default_rng(seed)
+    bins = defaultdict(list)
+    for i, r in enumerate(rows):
+        n = r["features"].get("n_items") or 0
+        bins[(r["backend"], min(int(n) // 5, 4))].append(i)
+    out = [json.loads(json.dumps(r)) for r in rows]
+    for o, r in zip(out, rows):
+        o["chain"] = r["chain"]  # restore hashable tuple after the deep copy
+    for idx_list in bins.values():
+        perm = rng.permutation(len(idx_list))
+        for slot, src in zip(idx_list, (idx_list[int(p)] for p in perm)):
+            for feat in ENTROPY_FEATURES:
+                out[slot]["features"][feat] = rows[src]["features"].get(feat)
+    return out
+
+
 def cv_splits(rows):
     scenarios = sorted({r["scenario"] for r in rows})
     for held_out in scenarios:
@@ -524,6 +545,11 @@ def main():
         report["n_positive"] = pos
         if rows and pos and pos < len(rows):
             report["nested_models"] = nested_auc_report(rows, seed=args.seed)
+            # Offline NC (SS23 Phase 3): the same nested analysis on rows whose
+            # entropy features are permuted within (backend, size-bin). G1
+            # requires the real dAUC CI to exclude 0 AND this one to sit at ~0.
+            nc_rows = nc_shuffle_entropy_features(rows, args.seed)
+            report["nested_models_nc_shuffled"] = nested_auc_report(nc_rows, seed=args.seed)
             report["option_a"] = {}
             for backend in ("kv", "vector"):
                 best, table = option_a_grid(rows, backend, args.target_risk)
