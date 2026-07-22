@@ -130,6 +130,74 @@ def delta_h_self(
 
 
 # ---------------------------------------------------------------------------
+# Entropy v2 (post-G1 redefinition, 2026-07-22): the G1-fail analysis showed
+# raw-score softmax entropy is scale-degenerate (cosine compression -> H ~ log k
+# always; BM25 ties -> H = log k exactly). Two replacements at better layers:
+#
+#   zscore_entropy -- affine-invariant score entropy: softmax over z-scored
+#     top-k scores. Ties degenerate to log k BY DEFINITION (pure ambiguity);
+#     any real separation registers regardless of the backend's score scale.
+#
+#   vn_entropy -- von Neumann entropy of the retrieval neighborhood's
+#     normalized embedding Gram matrix rho = K/tr(K): S = -sum lam_i log lam_i.
+#     exp(S) is the effective semantic rank (Vendi score) of the neighborhood.
+#     Computed at the EMBEDDING layer, so KV gets a semantic signal that
+#     BM25-over-key-names cannot provide. Deterministic, no sampling;
+#     conceptually a deterministic retrieval-side analog of SeaKR's
+#     Gram-determinant uncertainty.
+# ---------------------------------------------------------------------------
+
+
+def zscore_entropy(scores: Sequence[float], k: int = 5) -> float:
+    """Softmax entropy (nats) over z-scored top-k scores; affine-invariant.
+    <2 scores -> 0.0 (no ambiguity); all-tied -> log(n) (pure ambiguity)."""
+    s = sorted((float(x) for x in scores), reverse=True)[: int(k)]
+    n = len(s)
+    if n < 2:
+        return 0.0
+    mean = sum(s) / n
+    var = sum((x - mean) ** 2 for x in s) / n
+    sigma = math.sqrt(var)
+    if sigma < _EPS:
+        return math.log(n)
+    z = [(x - mean) / sigma for x in s]
+    zmax = max(z)
+    e = [math.exp(x - zmax) for x in z]
+    tot = sum(e)
+    p = [x / tot for x in e]
+    return -sum(x * math.log(max(x, 1e-12)) for x in p)
+
+
+def vn_entropy(embeddings) -> float:
+    """Von Neumann entropy of the L2-normalized embedding set: eigenvalue
+    entropy of rho = (E E^T)/tr(E E^T). 0 for a single vector; log m for m
+    mutually orthogonal vectors; collapses toward 0 as vectors duplicate."""
+    import numpy as np
+
+    E = np.asarray(embeddings, dtype=np.float64)
+    if E.ndim != 2 or E.shape[0] == 0:
+        return 0.0
+    if E.shape[0] == 1:
+        return 0.0
+    norms = np.linalg.norm(E, axis=1, keepdims=True)
+    norms[norms < _EPS] = 1.0
+    E = E / norms
+    K = E @ E.T
+    tr = float(np.trace(K))
+    if tr < _EPS:
+        return 0.0
+    lam = np.linalg.eigvalsh(K / tr)
+    lam = np.clip(lam, 0.0, None)
+    lam = lam / max(float(lam.sum()), _EPS)
+    return float(-np.sum(lam * np.log(np.clip(lam, 1e-12, None))))
+
+
+def effective_rank(s_vn: float) -> float:
+    """Vendi-style effective semantic rank: exp(S_vn)."""
+    return float(math.exp(s_vn))
+
+
+# ---------------------------------------------------------------------------
 # Top-set extraction for churn
 # ---------------------------------------------------------------------------
 

@@ -19,11 +19,14 @@ from bfcl_eval.model_handler.middleware.entropy_metrics import (  # noqa: E402
     churn,
     delta_h_self,
     disp,
+    effective_rank,
     median,
     n_eff_norm,
     nmargin,
     rank_self,
     top_identity_set,
+    vn_entropy,
+    zscore_entropy,
 )
 from bfcl_eval.model_handler.middleware.retrieval_sim import entropy  # noqa: E402
 
@@ -132,7 +135,52 @@ def test_delta_h_self():
     check("corpus not mutated", corpus == before)
 
 
+def test_zscore_entropy():
+    print("[zscore_entropy]")
+    import math as m
+
+    check("all tied -> log n", abs(zscore_entropy([2.0, 2.0, 2.0]) - m.log(3)) < 1e-9)
+    check("singleton -> 0", zscore_entropy([5.0]) == 0.0)
+    check("empty -> 0", zscore_entropy([]) == 0.0)
+    h_sep = zscore_entropy([10.0, 1.0, 0.9, 0.8, 0.7])
+    h_flat = zscore_entropy([1.0, 0.99, 0.98, 0.97, 0.96])
+    check("separated top-1 < near-flat", h_sep < h_flat, f"{h_sep} vs {h_flat}")
+    check("affine invariance (scale)",
+          abs(zscore_entropy([3.0, 2.0, 1.0]) - zscore_entropy([300.0, 200.0, 100.0])) < 1e-9)
+    check("affine invariance (shift)",
+          abs(zscore_entropy([3.0, 2.0, 1.0]) - zscore_entropy([3.5, 2.5, 1.5])) < 1e-9)
+    # The cosine-compression case that killed v1: tiny differences on a high
+    # base still separate after z-scoring.
+    h_cos = zscore_entropy([0.83, 0.62, 0.61, 0.60, 0.59])
+    check("compressed cosine scale still separates", h_cos < m.log(5) - 0.05, str(h_cos))
+
+
+def test_vn_entropy():
+    print("[vn_entropy]")
+    import math as m
+
+    import numpy as np
+
+    check("single vector -> 0", vn_entropy([[1.0, 0.0]]) == 0.0)
+    check("empty -> 0", vn_entropy(np.zeros((0, 3))) == 0.0)
+    orth = np.eye(3)
+    check("orthogonal set -> log m", abs(vn_entropy(orth) - m.log(3)) < 1e-9)
+    dup = np.array([[1.0, 0.0], [1.0, 0.0], [1.0, 0.0]])
+    check("pure duplicates -> ~0", vn_entropy(dup) < 1e-9)
+    mixed = np.array([[1.0, 0.0], [1.0, 0.0], [0.0, 1.0]])
+    v_mixed = vn_entropy(mixed)
+    check("duplicate pair + distinct sits between", 0.1 < v_mixed < m.log(3), str(v_mixed))
+    check("adding a duplicate LOWERS S_vn",
+          vn_entropy(np.vstack([orth, [1.0, 0.0, 0.0]])) < vn_entropy(orth))
+    check("effective_rank of orthogonal-3 = 3",
+          abs(effective_rank(vn_entropy(orth)) - 3.0) < 1e-6)
+    check("scale of rows irrelevant (normalized internally)",
+          abs(vn_entropy(orth * 7.3) - vn_entropy(orth)) < 1e-9)
+
+
 def main():
+    test_zscore_entropy()
+    test_vn_entropy()
     test_nmargin()
     test_n_eff_norm()
     test_disp()

@@ -63,12 +63,19 @@ FEATURE_KEYS = (
     "churn",
     "smallstore",
     "backend_kv",
+    # entropy v2 (offline re-featurization, refeature_entropy_v2.py):
+    "dHz_self",
+    "dHz_neighbor",
+    "svn_pre",
+    "dSvn",
+    "vendi_ratio",
 )
 FORBIDDEN_FEATURE_TOKENS = ("question", "ground_truth", "answer", "score", "accuracy")
 
 GEOMETRY_FEATURES = ("sim_max", "r", "tau_t", "rho", "n_items", "backend_kv")
 MARGIN_FEATURES = ("rank_self_med", "nmargin_med")
 ENTROPY_FEATURES = ("dH_self", "dH_mean", "n_eff_norm", "churn")
+ENTROPY_V2_FEATURES = ("dHz_self", "dHz_neighbor", "svn_pre", "dSvn", "vendi_ratio")
 
 # Option-B monotone sign constraints (plan SS9.4): harm increases as margin
 # decreases, rank increases, dH increases. +1 -> coef >= 0, -1 -> coef <= 0,
@@ -194,11 +201,11 @@ def attach_outcomes(rows, outcomes_path, label):
 # ---------------------------------------------------------------------------
 
 
-def nc_shuffle_entropy_features(rows, seed):
+def nc_shuffle_entropy_features(rows, seed, feats=ENTROPY_FEATURES):
     """Offline negative control (plan SS18 NC / SS23 Phase 3): permute the
-    ENTROPY features jointly across rows WITHIN (backend, store-size bin),
-    fixed seed. Destroys the entropy<->outcome pairing while preserving the
-    marginal distribution and the geometry/margin features. Returns new rows."""
+    given entropy features jointly across rows WITHIN (backend, store-size
+    bin), fixed seed. Destroys the entropy<->outcome pairing while preserving
+    the marginal distribution and the geometry/margin features."""
     rng = np.random.default_rng(seed)
     bins = defaultdict(list)
     for i, r in enumerate(rows):
@@ -210,7 +217,7 @@ def nc_shuffle_entropy_features(rows, seed):
     for idx_list in bins.values():
         perm = rng.permutation(len(idx_list))
         for slot, src in zip(idx_list, (idx_list[int(p)] for p in perm)):
-            for feat in ENTROPY_FEATURES:
+            for feat in feats:
                 out[slot]["features"][feat] = rows[src]["features"].get(feat)
     return out
 
@@ -309,6 +316,11 @@ def nested_auc_report(rows, seed=12345, n_boot=2000):
             GEOMETRY_FEATURES + MARGIN_FEATURES + ENTROPY_FEATURES
         ),
     }
+    has_v2 = any(r["features"].get("dHz_self") is not None for r in rows)
+    if has_v2:
+        nests["geometry+margin+entropy_v2"] = list(
+            GEOMETRY_FEATURES + MARGIN_FEATURES + ENTROPY_V2_FEATURES
+        )
     # Out-of-fold predictions per nest (leave-one-scenario-out).
     preds = {name: np.zeros(len(rows)) for name in nests}
     index_of = {id(r): i for i, r in enumerate(rows)}
@@ -334,28 +346,34 @@ def nested_auc_report(rows, seed=12345, n_boot=2000):
     for i, r in enumerate(rows):
         by_chain[r["chain"]].append(i)
     rng = np.random.default_rng(seed)
-    deltas = []
+    delta_specs = {"dAUC_entropy_given_geometry_margin": "geometry+margin+entropy"}
+    if has_v2:
+        delta_specs["dAUC_entropy_v2_given_geometry_margin"] = "geometry+margin+entropy_v2"
+    deltas = {name: [] for name in delta_specs}
     for _ in range(n_boot):
         sample_idx = []
         for c in rng.choice(len(chains), size=len(chains), replace=True):
             sample_idx.extend(by_chain[chains[int(c)]])
         idx = np.array(sample_idx)
         yb = y[idx]
-        a_full = auc(yb, preds["geometry+margin+entropy"][idx])
         a_gm = auc(yb, preds["geometry+margin"][idx])
-        if a_full is None or a_gm is None:
+        if a_gm is None:
             continue
-        deltas.append(a_full - a_gm)
-    if deltas:
-        deltas = np.sort(np.array(deltas))
-        report["dAUC_entropy_given_geometry_margin"] = {
-            "mean": float(np.mean(deltas)),
-            "ci95": [
-                float(np.percentile(deltas, 2.5)),
-                float(np.percentile(deltas, 97.5)),
-            ],
-            "n_boot_effective": len(deltas),
-        }
+        for name, nest in delta_specs.items():
+            a_full = auc(yb, preds[nest][idx])
+            if a_full is not None:
+                deltas[name].append(a_full - a_gm)
+    for name, vals in deltas.items():
+        if vals:
+            arr = np.sort(np.array(vals))
+            report[name] = {
+                "mean": float(np.mean(arr)),
+                "ci95": [
+                    float(np.percentile(arr, 2.5)),
+                    float(np.percentile(arr, 97.5)),
+                ],
+                "n_boot_effective": len(arr),
+            }
     return report
 
 
@@ -513,6 +531,9 @@ def main():
                     help="glob of gov2 harvest arm dirs (or .jsonl files)")
     ap.add_argument("--outcomes", default=None,
                     help="outcomes.jsonl joined on candidate_id (SS13.2)")
+    ap.add_argument("--extra-features", default=None,
+                    help="features_v2.jsonl (refeature_entropy_v2.py) joined "
+                         "on candidate_id; enables the entropy-v2 nested test")
     ap.add_argument("--label", default="harmful_write")
     ap.add_argument("--target-risk", type=float, default=0.15)
     ap.add_argument("--seed", type=int, default=12345)
@@ -526,6 +547,22 @@ def main():
         sys.exit(f"[calibrate] no logs match {args.logs!r}")
     rows, manifest = load_decisions(log_dirs)
     print(f"[calibrate] escalated gov2 decisions: {len(rows)} from {len(log_dirs)} arms")
+    if args.extra_features:
+        extra = {}
+        with open(args.extra_features, "r", encoding="utf-8") as f:
+            for line in f:
+                line = line.strip()
+                if line:
+                    rec = json.loads(line)
+                    extra[rec["candidate_id"]] = rec
+        n_merged = 0
+        for row in rows:
+            e = extra.get(row["candidate_id"])
+            if e:
+                n_merged += 1
+                for feat in ENTROPY_V2_FEATURES:
+                    row["features"][feat] = e.get(feat)
+        print(f"[calibrate] entropy-v2 features merged for {n_merged}/{len(rows)}")
     assert_no_gt_in_features(rows)
 
     report = {
@@ -550,6 +587,13 @@ def main():
             # requires the real dAUC CI to exclude 0 AND this one to sit at ~0.
             nc_rows = nc_shuffle_entropy_features(rows, args.seed)
             report["nested_models_nc_shuffled"] = nested_auc_report(nc_rows, seed=args.seed)
+            if args.extra_features:
+                nc_v2 = nc_shuffle_entropy_features(
+                    rows, args.seed, feats=ENTROPY_V2_FEATURES
+                )
+                report["nested_models_nc_shuffled_v2"] = nested_auc_report(
+                    nc_v2, seed=args.seed
+                )
             report["option_a"] = {}
             for backend in ("kv", "vector"):
                 best, table = option_a_grid(rows, backend, args.target_risk)
