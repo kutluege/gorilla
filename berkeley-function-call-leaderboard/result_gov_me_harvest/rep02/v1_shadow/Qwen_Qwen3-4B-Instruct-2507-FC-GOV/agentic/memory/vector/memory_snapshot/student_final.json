@@ -1,0 +1,12 @@
+{
+    "core_memory": {
+        "next_id": 1,
+        "store": {
+            "0": "CS student's routine: stretches, breakfast, classes, research, group project, gym, study, weekend planning. Key tools: unified to-do list, scheduled breaks, flexibility. Focus on balance, well-being, and sustainable productivity."
+        }
+    },
+    "archival_memory": {
+        "next_id": 0,
+        "store": {}
+    }
+}

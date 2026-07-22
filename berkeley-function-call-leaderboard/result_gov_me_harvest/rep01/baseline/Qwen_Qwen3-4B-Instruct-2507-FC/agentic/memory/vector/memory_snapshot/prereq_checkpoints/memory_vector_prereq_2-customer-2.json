@@ -1,0 +1,18 @@
+{
+    "core_memory": {
+        "next_id": 1,
+        "store": {
+            "0": "User Michael, 35, lives in Seattle, freelance graphic designer, seeks user-friendly espresso machine with stainless-steel finish, interested in temperature control, reliable hot coffee, and avoiding microwave use. Wants adjustable temperature settings or consistent high heat."
+        }
+    },
+    "archival_memory": {
+        "next_id": 5,
+        "store": {
+            "0": "User Michael, 35, lives in Seattle, freelance graphic designer, seeks user-friendly espresso machine with stainless-steel finish, interested in pricing, discounts, and shipping details. Concerned about delivery time during rainy season and wants to receive product before a family gathering later this month. Inquired about local warehouse and shipping timeline.",
+            "1": "User Michael is concerned about kitchen space and appliance layout. He wants to mentally prepare for potential rearrangements due to the size of the espresso machine. Specifically, he\u2019s interested in the dimensions of the Aura Espresso 300 and how it compares to other kitchen appliances in terms of footprint and depth.",
+            "2": "User Michael is inquiring about warranty and quality guarantee policies for coffee machines. He has had negative experiences with short warranty periods from other brands and is seeking a more customer-friendly, long-term support policy, especially for higher-end models.",
+            "3": "Michael from Seattle has an espresso machine order that is stuck in 'in transit' status with no updates for over a week. The tracking shows the package is located outside Washington state, and multiple attempts to refresh or verify the status have failed. Customer has contacted support and is seeking resolution. Originally estimated delivery was 11 business days, and the order included accessories(stainless-steel frothing pitcher and extra filters) with free shipping. All items were in stock at checkout, so no back-order or supply shortage was expected. Customer is concerned about the delay affecting a family gathering with a planned 'latte art showdown'.\n\nAdditional note: Michael is aware of past issues with soggy packages during rainy weather and has requested that if the package arrives, he be available to receive it in person. He specifically wants to be home to greet the driver or quickly bring the package inside. He emphasizes that a signature is required, and if not, the package may remain on the truck for another day. He is prepared to adjust his schedule(including design work) to accommodate the delivery.",
+            "4": "Michael from Seattle is preparing for a potential replacement or refund if the espresso machine order is confirmed lost or damaged. He is concerned about the process for filing a claim with the carrier and wants to know if the company handles it on his behalf. He emphasizes that the purchase was a significant personal investment and a gift to himself, and he wants to be fully prepared in case of a loss or delay."
+        }
+    }
+}

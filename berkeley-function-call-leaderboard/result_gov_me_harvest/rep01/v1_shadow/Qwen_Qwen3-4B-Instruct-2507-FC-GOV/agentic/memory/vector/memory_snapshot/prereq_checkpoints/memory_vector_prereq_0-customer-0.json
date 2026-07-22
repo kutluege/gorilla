@@ -1,0 +1,15 @@
+{
+    "core_memory": {
+        "next_id": 1,
+        "store": {
+            "0": "User Michael is concerned about coffee temperature consistency. Previously had issues with drip machines that don\u2019t heat enough, leading to microwaving coffee. Wants to know if espresso or drip machines offer adjustable temperature settings or reliably hot coffee to avoid this issue."
+        }
+    },
+    "archival_memory": {
+        "next_id": 2,
+        "store": {
+            "0": "User Michael, 35, lives in Seattle, freelance graphic designer, seeks user-friendly espresso machine with sleek stainless-steel finish for caf\u00e9-like home coffee experience. Interested in pricing, new customer discounts, bundle deals, and shipping details\u2014specifically local delivery, delivery time, and availability before a family gathering later this month.",
+            "1": "User Michael is concerned about warranty and quality guarantee for espresso machine. Wants a long-term, customer-friendly policy, especially for higher-end models. Previously had negative experiences with short warranty periods and poor service."
+        }
+    }
+}

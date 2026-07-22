@@ -1,0 +1,16 @@
+{
+    "core_memory": {
+        "next_id": 3,
+        "store": {
+            "0": "User Michael, 35, lives in Seattle, freelance graphic designer, seeks sleek, modern stainless-steel espresso machines with user-friendly features for non-professional baristas, aiming for a caf\u00e9-like experience at home. Inquiring about pricing, first-time buyer discounts, and promotional offers.",
+            "1": "User Michael, 35, in Seattle, freelance graphic designer. Wants stainless-steel espresso machine with steam wand for lattes/cappuccinos. Seeks user-friendly features for home caf\u00e9 experience. Counter space is 38 sq ft; may need to move toaster oven.",
+            "2": "Michael's concern about lost/delayed shipments and return/exchange. Wants to know if carrier claims are filed on his behalf and if shipping costs are waived. Emphasizes the espresso machine is a personal investment and gift to himself. Seeks transparent, step-by-step process for return or exchange."
+        }
+    },
+    "archival_memory": {
+        "next_id": 1,
+        "store": {
+            "0": "User Michael, 35, in Seattle, freelance graphic designer. Looking for stainless-steel espresso machine with steam wand for home caf\u00e9 use. Concerned about counter space(38 sq ft) and wants to ensure correct application of first-time buyer discount. Inquires about 17% off coupon, payment methods(credit card, PayPal, Apple Pay, financing), and expedited shipping. Specifically concerned about shipping times, especially in rainy Seattle weather. Wants real-time tracking to avoid soggy deliveries, especially if signature is required. Inquires about return/exchange policy\u2014specifically, whether shipping costs are waived for lost or delayed items. Emphasizes the espresso machine is a significant personal investment and a gift to himself. Now adds: if the package arrives within 1\u20132 days, will be home to receive it, ready to greet the driver or quickly bring it inside. If a signature is required, will be present to avoid package being left in rain or sitting on the truck."
+        }
+    }
+}

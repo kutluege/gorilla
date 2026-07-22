@@ -1,0 +1,15 @@
+{
+    "core_memory": {
+        "next_id": 1,
+        "store": {
+            "0": "User Michael, 35, lives in Seattle, freelance graphic designer, seeks espresso machine with sleek stainless-steel finish, interested in exact dimensions, long-term warranty, and reliable hot coffee\u2014specifically adjustable temperature settings or consistent high heat to avoid microwaving."
+        }
+    },
+    "archival_memory": {
+        "next_id": 2,
+        "store": {
+            "0": "User Michael, 35, lives in Seattle, freelance graphic designer, seeks espresso machine with sleek stainless-steel finish, interested in exact dimensions, long-term warranty, and reliable hot coffee\u2014specifically adjustable temperature settings or consistent high heat to avoid microwaving. Order placed with regular shipping, estimated delivery of 11 business days. Included accessories: stainless-steel frothing pitcher and extra filters. No back-order issues reported at time of purchase. Tracking shows package stuck in transit outside of Washington with no updates in over a week. Concerned about supply shortage or fulfillment error despite all items being in stock at checkout. Additional note: Michael is aware of past issues with soggy deliveries during rain. He will be available to receive the package in person if it arrives, and requires a signature for delivery to prevent it from being left unattended or damaged. He will adjust his work schedule to accommodate the delivery time.",
+            "1": "Michael from Seattle is preparing for a potential replacement or refund if his espresso machine order is confirmed lost or damaged during transit. He is concerned about the process, especially whether the carrier claim is handled by the company or requires customer action. He emphasizes that the purchase was a significant personal investment and a gift to himself, and he wants to be fully prepared for the worst-case scenario."
+        }
+    }
+}

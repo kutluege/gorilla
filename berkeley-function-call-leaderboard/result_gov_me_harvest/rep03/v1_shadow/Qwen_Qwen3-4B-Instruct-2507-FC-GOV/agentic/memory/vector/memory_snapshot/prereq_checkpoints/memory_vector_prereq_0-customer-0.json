@@ -1,0 +1,12 @@
+{
+    "core_memory": {
+        "next_id": 1,
+        "store": {
+            "0": "User Michael, 35, lives in Seattle, freelance graphic designer, seeks espresso machine with sleek stainless-steel finish, interested in exact dimensions, long-term warranty, and reliable hot coffee\u2014specifically adjustable temperature settings or consistent high heat to avoid microwaving."
+        }
+    },
+    "archival_memory": {
+        "next_id": 0,
+        "store": {}
+    }
+}

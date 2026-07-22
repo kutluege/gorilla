@@ -1,0 +1,11 @@
+{
+    "core_memory": {
+        "user_introduction_michael": "Michael, 35, lives in Seattle, freelance graphic designer, values design aesthetics in gadgets, interested in high-quality coffee machines to enhance his morning routine.",
+        "user_preference_espresso": "Michael prefers a sleek, modern espresso machine with a stainless-steel finish, aiming for a caf\u00e9-like experience without being overly complex. He values design aesthetics and is open to models that offer ease of use for non-professional baristas.",
+        "user_inquiry_pricing": "Michael is interested in pricing for espresso machines and is specifically looking for first-time buyer discounts, new customer offers, or bundle deals. He saw a 'New Customer Discount' on the homepage but didn't click it in time.",
+        "user_shipping_inquiry": "Michael is in Seattle and is concerned about shipping times, especially due to rainy weather. He wants to know if products are shipped from a local warehouse, the expected delivery time, and whether the shipping will be reliable for a family gathering later this month.",
+        "user_temperature_preference": "Michael is concerned about coffee temperature consistency and has had issues with drip coffee makers that don't heat sufficiently, leading him to microwave his coffee. He wants to know if your espresso machines offer adjustable temperature settings or reliably produce hot coffee.",
+        "escalation_status_michael": "Order escalated to logistics team for delivery status update. Team will confirm shipment origin, tracking status, and provide revised delivery timeline with signature requirement if needed. Customer will be notified via email and app if there's a change in delivery date or weather-related delay."
+    },
+    "archival_memory": {}
+}

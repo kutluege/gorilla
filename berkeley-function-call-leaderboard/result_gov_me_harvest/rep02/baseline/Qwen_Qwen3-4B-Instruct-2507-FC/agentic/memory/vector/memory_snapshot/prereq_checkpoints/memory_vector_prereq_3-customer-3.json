@@ -1,0 +1,15 @@
+{
+    "core_memory": {
+        "next_id": 1,
+        "store": {
+            "0": "User Michael, 35, Seattle. Ordered espresso machine, accessories. 11-day delivery. Tracking stuck. Gathering in 3 days. Needs timeline or escalation. Will be home. Requires signature. Will greet driver or bring in quickly."
+        }
+    },
+    "archival_memory": {
+        "next_id": 2,
+        "store": {
+            "0": "Michael ordered an espresso machine with a steam wand, stainless-steel frothing pitcher, and extra filters. Estimated delivery was 11 business days. Shipping was regular, free due to qualifying for the threshold. All items were in stock at time of order. Tracking is stuck, and delivery has not arrived by the event date. Michael is hosting a family gathering with a planned latte art showdown. He is concerned about the delay and wants to know if there's a resolution or if the order is affected by a supply issue or fulfillment error.",
+            "1": "Michael is asking about the process for lost or damaged shipments. He wants to know if the company files a claim with the carrier on his behalf or if he needs to do it himself. He is concerned about the cost of the espresso machine, which he has budgeted for, and wants to be prepared for a replacement or refund if the package is lost. He values the product as a personal investment in his morning routine and a gift to himself."
+        }
+    }
+}

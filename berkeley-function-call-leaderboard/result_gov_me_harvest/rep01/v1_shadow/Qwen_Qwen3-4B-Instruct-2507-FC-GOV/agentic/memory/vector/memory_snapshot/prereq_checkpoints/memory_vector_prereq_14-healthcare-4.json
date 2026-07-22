@@ -1,0 +1,19 @@
+{
+    "core_memory": {
+        "next_id": 1,
+        "store": {
+            "0": "Recent blood glucose and A1C results: Fasting glucose 135 mg/dL(target <100 mg/dL), A1C 6.9% (target 6.5%). Doctor advised increasing dietary fiber and adding light exercise after meals. Morning home readings range 125-130 mg/dL."
+        }
+    },
+    "archival_memory": {
+        "next_id": 6,
+        "store": {
+            "0": "Blood pressure: Last check-up reading 138/85 mmHg(above target of <130/80 mmHg). Home readings fluctuate between 135-140 systolic and 80-90 diastolic, influenced by stress and salt intake. Doctor advised aiming for <130/80 mmHg. Patient is reducing sodium intake and increasing water consumption, which appears to help.",
+            "1": "Vitamin D levels: 22 ng/mL(deficient; normal range 30-50 ng/mL). Doctor prescribed 2,000 IU daily supplement. Patient will be retested in 3\u20134 months to assess improvement. Note: Sunlight exposure was previously thought to be sufficient.",
+            "2": "Thyroid function: TSH 2.1 mIU/L(normal range 0.5\u20134.5 mIU/L), T4 1.2 ng/dL(within normal range). Stable results indicate current levothyroxine dosage is effective. Regular monitoring is maintained due to past history of hypothyroidism.",
+            "3": "Bone density scan results: Spine T-score -1.8 (osteopenia), Hip T-score -1.5 (borderline). Doctor advised increasing strength training and calcium intake to prevent further bone loss. Patient has started adding dairy and leafy greens to diet, and now takes a calcium supplement with vitamin K2 to improve absorption.",
+            "4": "Liver function: ALT level 42 U/L(slightly elevated; normal <35 U/L). Doctor suspects possible link to recent medication adjustments. Will monitor closely. Kidney function: Creatinine 0.9 mg/dL(within normal range 0.6\u20131.2 mg/dL); no concerns.",
+            "5": "Inflammatory markers: CRP 3.2 mg/L(slightly elevated; ideal <3.0 mg/L), indicating mild inflammation\u2014likely related to osteoarthritis. ESR 18 mm/hr(within normal range 0-20 mm/hr); no significant inflammation detected."
+        }
+    }
+}

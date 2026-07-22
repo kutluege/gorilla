@@ -1,0 +1,13 @@
+{
+    "core_memory": {
+        "next_id": 2,
+        "store": {
+            "0": "Type 2 Diabetes: metformin 1000 mg BID, semaglutide(Ozempic) low dose. A1C ~6.9%, fasting glucose 125\u2013130 mg/dL. Hypertension: losartan 50 mg daily, BP 135\u2013140/80\u201390 mmHg. Doctor recommends stress management and low sodium intake. Daily magnesium supplement for BP support.",
+            "1": "Patient reflects on a well-managed, organized medication routine with a pill planner and phone reminders. Emphasizes lifestyle changes to reduce reliance on medications. Goal: maintain long-term health through natural management when possible, avoiding unnecessary prescriptions."
+        }
+    },
+    "archival_memory": {
+        "next_id": 0,
+        "store": {}
+    }
+}

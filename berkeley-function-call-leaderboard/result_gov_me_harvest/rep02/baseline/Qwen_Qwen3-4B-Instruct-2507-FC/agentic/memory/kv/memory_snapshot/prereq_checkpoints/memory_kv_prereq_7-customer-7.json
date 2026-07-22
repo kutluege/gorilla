@@ -1,0 +1,12 @@
+{
+    "core_memory": {
+        "user_introduction_michael": "Michael, 35, lives in Seattle, freelance graphic designer, values design aesthetics in gadgets, interested in high-quality coffee machines to enhance his morning routine.",
+        "user_preference_espresso": "Michael prefers a sleek, modern espresso machine with a stainless-steel finish, aiming for a caf\u00e9-like experience without being overly complex. He values design aesthetics and is open to models that offer ease of use for non-professional baristas.",
+        "user_shipping_inquiry": "Michael is in Seattle and is concerned about shipping times, especially due to rainy weather. He wants to know if products are shipped from a local warehouse, the expected delivery time, and whether the shipping will be reliable for a family gathering later this month.",
+        "user_temperature_preference": "Michael is concerned about coffee temperature consistency and has had issues with drip coffee makers that don't heat sufficiently, leading him to microwave his coffee. He wants to know if your espresso machines offer adjustable temperature settings or reliably produce hot coffee.",
+        "escalation_status_michael": "Order escalated to logistics team for delivery status update. Team will confirm shipment origin, tracking status, and provide revised delivery timeline with signature requirement if needed. Customer will be notified via email and app if there's a change in delivery date or weather-related delay.",
+        "user_question_membership_model": "Michael is asking about the current subscription or membership program. He wants to know if it's coffee-bean-only or includes discounts on accessories, machines, or cleaning kits. He's interested in a loyalty model with points, free shipping, or exclusive pricing on new releases.",
+        "user_inquiry_streamlined_purchasing": "Michael wants to streamline purchasing: consolidated orders, free shipping, or bonus freebies(e.g., sample coffee flavors, discount codes on future machines). He\u2019s open to anything that enhances his coffee experience."
+    },
+    "archival_memory": {}
+}

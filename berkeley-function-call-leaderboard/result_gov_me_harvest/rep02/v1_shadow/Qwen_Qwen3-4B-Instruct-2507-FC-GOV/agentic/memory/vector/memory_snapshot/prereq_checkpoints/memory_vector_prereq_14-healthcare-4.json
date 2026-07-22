@@ -1,0 +1,15 @@
+{
+    "core_memory": {
+        "next_id": 1,
+        "store": {
+            "0": "Type 2 Diabetes: Metformin 1000 mg BID. A1C ~6.9%. Adding semaglutide(Ozempic) low dose. Improved appetite. Fasting glucose: 125\u2013130 mg/dL.\nHypertension: Losartan 50 mg OD. BP: 135\u2013140/80\u201390 mmHg. Doctor recommends stress management and low sodium. Taking daily magnesium supplement."
+        }
+    },
+    "archival_memory": {
+        "next_id": 2,
+        "store": {
+            "0": "Blood pressure reading: 138/85 mmHg(target: <130/80 mmHg). Home readings fluctuate between 135-140 mmHg(systolic) and 80-90 mmHg(diastolic). Factors affecting readings: stress levels and salt intake. Current actions: reducing sodium intake, increasing water consumption\u2014showing positive trends.",
+            "1": "Vitamin D level: 22 ng/mL(deficient; normal range: 30-50 ng/mL). Doctor's action: Started daily supplement of 2,000 IU. Next retest scheduled in 3-4 months to monitor improvement.\n\nThyroid results:\n- TSH: 2.1 mIU/L(normal range: 0.5-4.5 mIU/L)\n- T4: 1.2 ng/dL(within normal range)\n- Status: Stable; current levothyroxine dosage is effective. Regular monitoring continues due to past history of hypothyroidism.\n\nBone density scan results:\n- Spine T-score: -1.8 (osteopenia)\n- Hip T-score: -1.5 (borderline)\n- Doctor's recommendations: Continue strength training, increase calcium and vitamin D intake to prevent further bone loss.\n- Current actions: Adding more dairy and leafy greens to diet, taking a calcium supplement with vitamin K2 to improve absorption.\n\nLiver and kidney function tests:\n- ALT: 42 U/L(elevated; normal <35 U/L)\n- Creatinine: 0.9 mg/dL(within normal range: 0.6-1.2 mg/dL)\n- Interpretation: Mild elevation in ALT may be related to recent medication adjustments. No current concern for kidney function. Doctor recommends monitoring closely and reviewing medication regimen.\n\nInflammatory markers:\n- C-reactive protein(CRP): 3.2 mg/L(slightly elevated; ideal <3.0 mg/L)\n- ESR: 18 mm/hr(within normal range: 0-20 mm/hr)\n- Interpretation: Mild inflammation detected, likely related to osteoarthritis. ESR is normal, suggesting no significant systemic inflammation. CRP elevation is a key indicator of joint-related inflammation."
+        }
+    }
+}

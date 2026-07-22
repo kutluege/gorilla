@@ -1,0 +1,21 @@
+{
+    "core_memory": {
+        "next_id": 7,
+        "store": {
+            "0": "User Michael, 35, lives in Seattle, works as a freelance graphic designer, values design aesthetics in appliances, and is interested in high-quality coffee machines to enhance his morning routine. Specifically, he is considering both standard drip coffee makers and espresso machines.",
+            "1": "User Michael is interested in pricing details for espresso machines, specifically asking about first-time buyer discounts, new customer offers, and any bundle deals or limited-time promotions available for new customers.",
+            "2": "User Michael will be home to receive the espresso machine, has arranged his work schedule around delivery, and requires a signature upon delivery to prevent exposure to rain or damage. He is especially concerned about soggy boxes and has requested real-time delivery updates.",
+            "3": "User Michael is inquiring about the warranty policy for coffee machines, specifically asking about the length of coverage, service support, and whether it's more accommodating than other brands, especially for higher-end models. He values reliability and long-term quality assurance.",
+            "4": "User Michael wants specs on the new coffee grinder: conical burrs, wide grind range(fine to coarse), noise <45 dB, easy cleaning, and sleek stainless-steel design matching his espresso machine. Emphasizes design aesthetics and modern, minimalist look.",
+            "5": "User Michael is interested in a coffee bean subscription service with roasts tailored to grinder settings(espresso, drip, pour-over). He values convenience, trust in quality, and seamless integration with his coffee routine. Also open to being updated on future plans if service is not yet available.",
+            "6": "User Michael is confirming an order for the coffee grinder and is interested in matching accessories: the storage canister and a dedicated cleaning kit for both espresso machine and grinder. He has reorganized his kitchen into a cohesive 'coffee corner' and values an integrated, seamless setup."
+        }
+    },
+    "archival_memory": {
+        "next_id": 2,
+        "store": {
+            "0": "User Michael, 35, lives in Seattle, works as a freelance graphic designer, values design aesthetics in appliances, and is interested in high-quality coffee machines to enhance his morning routine. Specifically, he is considering both standard drip coffee makers and espresso machines. He is particularly interested in espresso machines that offer a caf\u00e9-like experience without requiring professional barista skills, with a focus on sleek, modern designs featuring stainless-steel finishes. He has also asked about brewing frequency, cleaning complexity, machine size, and space requirements to ensure it fits his kitchen routine and counter space. He is now specifically concerned about the physical footprint of the machine and how it will fit in his kitchen, which already has several appliances on the counter. He wants clear, precise dimensions to avoid 'kitchen Tetris' scenarios and is seeking a compact, unobtrusive design. He is also inquiring about warranty policy, including 3-year coverage, free support, and repair options. Additionally, he is concerned about temperature consistency and wants to know if your espresso machines produce reliably hot coffee with adjustable temperature settings to avoid microwaving his coffee.",
+            "1": "User Michael is a first-time buyer looking to purchase an espresso machine with a stainless-steel finish and steam wand. He values design aesthetics, reliability, and a purist coffee experience. He is seeking a small, high-quality coffee grinder that pairs beautifully with a stainless-steel espresso machine, supports fresh bean grinding, and complements his kitchen\u2019s modern aesthetic. He values functionality, design, and the ability to achieve optimal flavor through freshly ground beans. He is open to a small investment and wants a product that is both practical and visually cohesive with his existing setup."
+        }
+    }
+}
