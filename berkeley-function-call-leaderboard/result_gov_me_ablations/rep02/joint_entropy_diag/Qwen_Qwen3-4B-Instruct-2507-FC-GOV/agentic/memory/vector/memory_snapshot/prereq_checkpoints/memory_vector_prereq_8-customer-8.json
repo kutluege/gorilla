@@ -1,0 +1,20 @@
+{
+    "core_memory": {
+        "next_id": 4,
+        "store": {
+            "0": "Michael(Seattle, 35): Ordered stainless-steel espresso machine with steam wand. Shipping from out-of-state, status stuck in 'in transit' for over a week. No updates, tracking shows location outside WA. User anxious about delivery before family gathering.",
+            "1": "Michael(Seattle, 35): Lost shipment policy confirmed. We file carrier claims. No cost to customer. Will be home to receive package. Requests notification if delivery scheduled for tomorrow or next 2 days. Will be available for signature.",
+            "2": "Michael(Seattle, 35): Verified billing/shipping for second order. Same address and card as before. No discrepancies found. No red flags or security holds detected. Payment and shipping details confirmed as accurate and active. Security review completed.",
+            "3": "Michael(Seattle, 35): Investigating unexpected charge. No subscription, no duplicate order. Suspected billing error. If accidental membership, want clear explanation. No auto-enrollment. All subscriptions require explicit opt-in. System does not auto-enroll. Trust framework. Prevent future errors."
+        }
+    },
+    "archival_memory": {
+        "next_id": 4,
+        "store": {
+            "0": "Michael(Seattle, 35) ordered a stainless-steel espresso machine with steam wand and accessories(frothing pitcher, extra filters) on a regular shipping basis. Estimated delivery was 11 business days. All items were in stock at time of order. No back-order or supply shortage expected. Tracking shows package in transit outside WA with no updates for over a week. User is concerned about delivery delay and potential loss of order.",
+            "1": "Michael(Seattle, 35): Traveling to Portland next weekend for a freelance gig. Will be away 4 days. Concerned about package delivery during absence\u2014especially for delicate grinder. Wants to know approximate arrival date to plan for house-sitting or neighbor pickup. Emphasizes need to avoid damage from rain or mishandling. Recalls past experience with damaged espresso machine. Requests proactive delivery coordination to ensure safe receipt.",
+            "2": "Michael(Seattle, 35): Interested in membership integration with customer account system. Wants a dedicated portal to track orders, manage subscription, pause shipments during travel, and switch bean preferences. Concerned about rain-soaked cardboard box nightmares in Seattle. Seeks flexibility to avoid stockpiling beans during vacations. Also inquired about prioritized customer service for members\u2014specifically, dedicated phone lines or chat support. Values timely, detailed responses, especially before coffee tastings or when machine issues arise. Now inquires about coffee subscription customization: prefers dark roasts for espresso, but enjoys lighter pour-over roasts. Seeks flexibility to swap roasts or have a set 'espresso roast of the month' with optional add-on for lighter roasts. Wants flexibility as dynamic as a well-frothed latte foam. Beyond that, seeks to streamline purchasing process. Currently logs in, checks out individually, and pays for shipping each time. Wants membership to reduce friction\u2014e.g., auto-apply discounts, free shipping on all orders, and bonus freebies(sample-size coffee flavors, occasional discount codes on future machines). Open to enhancing coffee experience through simplified, frictionless purchasing.",
+            "3": "Michael(Seattle, 35): Investigating unexpected charge not tied to prior orders. No subscription, no duplicate order, no matching transaction. Suspected billing error due to server timeout or system glitch. Requested formal investigation by billing team. Will proceed with direct resolution if charge cannot be reversed. Ready to escalate to credit card dispute if necessary. Prioritizing resolution without escalation."
+        }
+    }
+}

@@ -1,0 +1,117 @@
+{
+  "backend": "kv",
+  "tiers": {
+    "core": {
+      "career_path": {
+        "text": "career path: 2001: Goldman Sachs analyst(M&A, dot-com crash). 2004: Morgan Stanley associate(social media tech). 31: VP, led key transactions. 2015: MD at Legend Investments — NeuralNet Systems IPO(largest tech IPO). Trust built through track record and network.",
+        "probes": [
+          "career path",
+          "what is career path",
+          "career path 2001 goldman sachs"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "education_and_mentorship": {
+        "text": "education and mentorship: B.A. Econ, Penn. MBA, Harvard(Baker Scholar). Guest lecturer, mentor, recruiter. Endowed first-gen finance scholarship at Penn. Belief: Talent is greatest investment; finance should be a pathway for all, not just the privileged.",
+        "probes": [
+          "education and mentorship",
+          "what is education and mentorship",
+          "education and mentorship econ penn mba"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "family_first_hour_routine": {
+        "text": "family first hour routine: Sunday 7:00 PM – 8:00 PM: No work devices. Shared activity with family. Gratitude ritual. Purpose: Anchor presence, reinforce emotional resilience.",
+        "probes": [
+          "family first hour routine",
+          "what is family first hour routine",
+          "family first hour routine sunday work devices"
+        ],
+        "probe_provenance": "write_time"
+      },
+      "kids_financial_literacy_plan": {
+        "text": "kids financial literacy plan: 14yo: Stocks (Apple, Tesla), compounding, weekly reviews. 10yo: Play-based learning—'zipline' as risk/reward, budgeting games. Focus: curiosity, effort, resilience.",
+        "probes": [
+          "kids financial literacy plan",
+          "what is kids financial literacy plan",
+          "kids financial literacy plan 14yo stocks apple"
+        ],
+        "probe_provenance": "write_time"
+      },
+      "parents_retirement_security": {
+        "text": "parents retirement security: Dad: Small business owner. Mom: Pragmatic, long-term thinker. Key lesson: Financial security = protection, not just growth. Proudest achievement: Smooth transition to retirement with no stress. Ensured they have full access to resources, peace of mind, and autonomy.",
+        "probes": [
+          "parents retirement security",
+          "what is parents retirement security",
+          "parents retirement security dad small business"
+        ],
+        "probe_provenance": "write_time"
+      },
+      "sibling_dynamic_tech_vs_old_money": {
+        "text": "sibling dynamic tech vs old money: Sibling dynamic: I handle 'old money' (tradition, risk management), they build 'future money' (AI fintech). Regular exchange of ideas—AI pitches vs. risk lessons. Healthy competition, mutual respect. Goal: Push each other to think differently while supporting shared success.",
+        "probes": [
+          "sibling dynamic tech vs old money",
+          "what is sibling dynamic tech vs old money",
+          "sibling dynamic tech vs old money sibling dynamic handle"
+        ],
+        "probe_provenance": "write_time"
+      },
+      "family_weekend_routine": {
+        "text": "family weekend routine: Exclusive weekends: No work. Family activities (hiking, cooking, storytelling). Align with school breaks for international trips. Goal: Presence, joy, cultural exposure. Wealth = relationships, not numbers.",
+        "probes": [
+          "family weekend routine",
+          "what is family weekend routine",
+          "family weekend routine exclusive weekends work"
+        ],
+        "probe_provenance": "write_time"
+      }
+    },
+    "archival": {
+      "leadership_philosophy": {
+        "text": "leadership philosophy: Leadership pillars: empowerment, accountability, growth. Open-door policy. Weekly 'strategic roundtable' for all levels. Implemented ESG scoring innovation from a second-year analyst.",
+        "probes": [
+          "leadership philosophy",
+          "what is leadership philosophy",
+          "leadership philosophy leadership pillars empowerment"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "talent_retention_and_mentorship": {
+        "text": "talent retention and mentorship: Mentorship program: senior pairs with emerging leaders. Biweekly mentorship with 3 high-potential directors. 94% retention. 15 to top universities. Accelerated path attracts top talent. 40% senior leadership diversity(up from 15%). Partnered with SEO and Girls Who Invest.",
+        "probes": [
+          "talent retention and mentorship",
+          "what is talent retention and mentorship",
+          "talent retention and mentorship mentorship program senior"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "crisis_management": {
+        "text": "crisis management: Led through 2020 crash: gathered team, analyzed positions, made key hires. On trading floor daily, shared stress and decisions. During fund redemptions, led investor comms, empowered PMs. Transparency and presence built trust. Greatest test of leadership is guiding through storms, not bull markets.",
+        "probes": [
+          "crisis management",
+          "what is crisis management",
+          "crisis management led through 2020"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "innovation_and_adaptation": {
+        "text": "innovation and adaptation: Innovation pods: PMs + tech on new strategies. Chair Innovation Committee. Launched SOAR AI platform in-house. Fluid org structure enables talent mobility. 'Future of Finance' symposium led to 3 strategic partnerships enhancing capabilities.",
+        "probes": [
+          "innovation and adaptation",
+          "what is innovation and adaptation",
+          "innovation and adaptation innovation pods pms"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "leadership_social_impact": {
+        "text": "leadership social impact: Serves on 3 non-profits. $50M foundation for finance scholarships. Speaks on ethical leadership. Execs teach finance in underserved communities twice yearly. Social impact strengthens culture and attracts talent. Believe success and responsibility are mutually reinforcing. Focused on next-gen leaders with integrity.",
+        "probes": [
+          "leadership social impact",
+          "what is leadership social impact",
+          "leadership social impact serves non profits"
+        ],
+        "probe_provenance": "sidecar"
+      }
+    }
+  }
+}

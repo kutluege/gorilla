@@ -1,0 +1,14 @@
+{
+    "core_memory": {
+        "next_id": 1,
+        "store": {
+            "0": "User Michael, 35, lives in Seattle, freelance graphic designer. Ordered stainless-steel espresso machine. Delivery delayed, tracking stuck. Will be available to receive delivery in person, including signing if required. Requests real-time updates and will adjust schedule to ensure safe arrival."
+        }
+    },
+    "archival_memory": {
+        "next_id": 1,
+        "store": {
+            "0": "Michael, from Seattle, is hosting a small family gathering with siblings and close friends. He planned a 'latte art showdown' using his newly ordered stainless-steel espresso machine. Due to a delayed delivery, he is now considering alternatives such as a standard drip coffee maker or visiting a local coffee shop for morning brews. He seeks a quick, practical solution to maintain the event's excitement without compromising on coffee quality."
+        }
+    }
+}

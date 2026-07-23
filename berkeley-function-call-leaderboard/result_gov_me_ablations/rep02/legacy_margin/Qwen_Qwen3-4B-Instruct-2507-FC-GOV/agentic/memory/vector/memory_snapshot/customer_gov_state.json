@@ -1,0 +1,72 @@
+{
+  "backend": "vector",
+  "tiers": {
+    "core": {
+      "0": {
+        "text": "User Michael, 35, from Seattle. Freelance designer. Ordered espresso machine. Damaged: box, dent, bent steam wand, misaligned reservoir. Full replacement. Cross-ship, no return. Free. Fast local shipping(3–5 days). Upgrade option under $50. No return needed. Photos/video to be sent immediately.",
+        "probes": [
+          "User Michael, 35, from Seattle. Freelance designer. Ordered espresso machine. Damaged: box, dent, bent steam wand, misaligned reservoir. Full replacement. Cross-ship, no return. Free. Fast local shipping(3–5 days). Upgrade option under $50. No return needed. Photos/video to be sent immediately.",
+          "what do you know about michael seattle freelance designer",
+          "michael seattle freelance designer ordered espresso machine damaged"
+        ],
+        "probe_provenance": "sidecar"
+      }
+    },
+    "archival": {
+      "0": {
+        "text": "Michael, from Seattle, is hosting a small family gathering with siblings and close friends. He planned a 'latte art showdown' using his newly ordered stainless-steel espresso machine. Due to a delayed delivery, he is now considering alternatives such as a standard drip coffee maker or visiting a local coffee shop for morning brews. He seeks a quick, practical solution to maintain the event's excitement without compromising on coffee quality.",
+        "probes": [
+          "Michael, from Seattle, is hosting a small family gathering with siblings and close friends. He planned a 'latte art showdown' using his newly ordered stainless-steel espresso machine. Due to a delayed delivery, he is now considering alternatives such as a standard drip coffee maker or visiting a local coffee shop for morning brews. He seeks a quick, practical solution to maintain the event's excitement without compromising on coffee quality.",
+          "what do you know about michael seattle hosting small",
+          "michael seattle hosting small family gathering siblings close"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "1": {
+        "text": "Michael(Seattle) reports damaged stainless-steel espresso machine: outer box has seven crushed corners and caved-in top, indicating severe handling issues. Upon opening, significant dent on the right side of the machine's stainless-steel body with inward deformation and sharp edges, suggesting direct impact. Also observed: drip tray popped out(can be reinserted), steam wand is bent at an odd angle and does not swivel smoothly. Concerned about internal components if attempted to be straightened. Water reservoir area is slightly misaligned, hinge does not close flush—raises concerns about potential leaks or electrical issues. The frothing pitcher(in separate small box) has a minor external scratch but is otherwise intact. Full replacement requested due to structural, functional, and safety-related damage.",
+        "probes": [
+          "Michael(Seattle) reports damaged stainless-steel espresso machine: outer box has seven crushed corners and caved-in top, indicating severe handling issues. Upon opening, significant dent on the right side of the machine's stainless-steel body with inward deformation and sharp edges, suggesting direct impact. Also observed: drip tray popped out(can be reinserted), steam wand is bent at an odd angle and does not swivel smoothly. Concerned about internal components if attempted to be straightened. Water reservoir area is slightly misaligned, hinge does not close flush—raises concerns about potential leaks or electrical issues. The frothing pitcher(in separate small box) has a minor external scratch but is otherwise intact. Full replacement requested due to structural, functional, and safety-related damage.",
+          "what do you know about michael seattle reports damaged",
+          "michael seattle reports damaged stainless steel espresso machine"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "2": {
+        "text": "Michael(Seattle) has order details(order number, shipping, email confirmations). Wants to expedite replacement. Asks if fast shipping to nearby region is possible. Open to upgrading replacement if cost is reasonable. Expressly requests waiving cost given the inconvenience and effort already experienced. Will discuss upgrade or waiver once replacement details are confirmed. Additional note: Highly concerned about grinder shipment status. Requests confirmation that the package has physically left the Oregon warehouse and been scanned into the carrier’s system. Emphasizes that 'Label Created — Awaiting Item' does not confirm dispatch. Wants a clear, verifiable update on physical shipment status. Also notes that the grinder is the key component for elevating espresso game. Can wait on canisters and scale for a few weeks if needed. Additional concern: Will be out of town in Portland next weekend(a few days). Requests delivery scheduling to avoid porch exposure in rain. Wants to avoid neighbor pickup or potential damage to delicate grinder. Asks for approximate arrival date to plan for friend to house-sit or monitor delivery. Prioritizes safe, secure, and damage-free receipt of the package.",
+        "probes": [
+          "Michael(Seattle) has order details(order number, shipping, email confirmations). Wants to expedite replacement. Asks if fast shipping to nearby region is possible. Open to upgrading replacement if cost is reasonable. Expressly requests waiving cost given the inconvenience and effort already experienced. Will discuss upgrade or waiver once replacement details are confirmed. Additional note: Highly concerned about grinder shipment status. Requests confirmation that the package has physically left the Oregon warehouse and been scanned into the carrier’s system. Emphasizes that 'Label Created — Awaiting Item' does not confirm dispatch. Wants a clear, verifiable update on physical shipment status. Also notes that the grinder is the key component for elevating espresso game. Can wait on canisters and scale for a few weeks if needed. Additional concern: Will be out of town in Portland next weekend(a few days). Requests delivery scheduling to avoid porch exposure in rain. Wants to avoid neighbor pickup or potential damage to delicate grinder. Asks for approximate arrival date to plan for friend to house-sit or monitor delivery. Prioritizes safe, secure, and damage-free receipt of the package.",
+          "what do you know about michael seattle order details",
+          "michael seattle order details number shipping email confirmations"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "3": {
+        "text": "User Michael, 35, from Seattle. Freelance designer. Ordered espresso machine(full replacement: box, dent, bent steam wand, misaligned reservoir). Cross-ship, no return. Free, local shipping(3–5 days). Upgrade option under $50. Additional orders: stainless-steel grinder, cleaning tablets, frothing pitcher; vacuum-sealed canisters, Garmin digital scale. Kitchen becoming a mini coffee lab.",
+        "probes": [
+          "User Michael, 35, from Seattle. Freelance designer. Ordered espresso machine(full replacement: box, dent, bent steam wand, misaligned reservoir). Cross-ship, no return. Free, local shipping(3–5 days). Upgrade option under $50. Additional orders: stainless-steel grinder, cleaning tablets, frothing pitcher; vacuum-sealed canisters, Garmin digital scale. Kitchen becoming a mini coffee lab.",
+          "what do you know about michael seattle freelance designer",
+          "michael seattle freelance designer ordered espresso machine full"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "4": {
+        "text": "User Michael, 35, from Seattle. Freelance designer. Interested in membership with rewards: free shipping, early access, discounts, and cost-effective purchasing. Specifically excited about stainless-steel grinder, vacuum-sealed canisters, digital scale, and potential monthly coffee bean subscription or 19-month warranty plan. Looking for loyalty program that supports ongoing upgrades and purchases for growing coffee station. Signed up for coffee bean subscription with interest in extended warranty for espresso machine and future purchases. High standards for beans: seeking nuanced, 513 mL, small-batch roasts from local Pacific Northwest roasters or national specialty brands. Prefers rare, high-quality, hard-to-find beans not available in local grocery stores. Inquired about early access to limited-edition items. Confirmed: the 'Early Access Program' is live and available to members. Includes pre-orders for prototypes, exclusive gadgets, and seasonal releases. Accessible via member dashboard with a waitlist system and priority notification. Now asking about financial details: membership fee(monthly/yearly), trial period, and loyalty-based discounts or promotional sign-up bonuses. As a loyal customer with multiple purchases, seeking reduced rate or sign-up bonus. Prefers to test benefits before committing to recurring charge.",
+        "probes": [
+          "User Michael, 35, from Seattle. Freelance designer. Interested in membership with rewards: free shipping, early access, discounts, and cost-effective purchasing. Specifically excited about stainless-steel grinder, vacuum-sealed canisters, digital scale, and potential monthly coffee bean subscription or 19-month warranty plan. Looking for loyalty program that supports ongoing upgrades and purchases for growing coffee station. Signed up for coffee bean subscription with interest in extended warranty for espresso machine and future purchases. High standards for beans: seeking nuanced, 513 mL, small-batch roasts from local Pacific Northwest roasters or national specialty brands. Prefers rare, high-quality, hard-to-find beans not available in local grocery stores. Inquired about early access to limited-edition items. Confirmed: the 'Early Access Program' is live and available to members. Includes pre-orders for prototypes, exclusive gadgets, and seasonal releases. Accessible via member dashboard with a waitlist system and priority notification. Now asking about financial details: membership fee(monthly/yearly), trial period, and loyalty-based discounts or promotional sign-up bonuses. As a loyal customer with multiple purchases, seeking reduced rate or sign-up bonus. Prefers to test benefits before committing to recurring charge.",
+          "what do you know about michael seattle freelance designer",
+          "michael seattle freelance designer interested membership rewards free"
+        ],
+        "probe_provenance": "stored_text"
+      },
+      "5": {
+        "text": "User Michael, 35, from Seattle. Freelance designer. Feedback on order management: Multiple orders placed in quick succession. Requests a unified order dashboard for easier tracking and status updates. Suggests proactive communication about backorders or shipping slowdowns (e.g., 'Hey, this item might take a week longer to ship due to inventory constraints') to help customers plan purchases and reduce guesswork. Customer service: timely, thorough responses. Positive experience with billing and return policy questions. Suggestion: streamline chat/email support so agents can instantly see full purchase history when switching channels. Minor improvement, but highly appreciated for the personal touch. Loyalty/rewards program: appreciates first-time buyer discounts. Suggests a membership or subscription plan with perks like free shipping, extended warranties, and coffee bean deliveries. Would love early access to new products and special deals. Envisioning a 'Yes, let me get that annual membership' experience.",
+        "probes": [
+          "User Michael, 35, from Seattle. Freelance designer. Feedback on order management: Multiple orders placed in quick succession. Requests a unified order dashboard for easier tracking and status updates. Suggests proactive communication about backorders or shipping slowdowns (e.g., 'Hey, this item might take a week longer to ship due to inventory constraints') to help customers plan purchases and reduce guesswork. Customer service: timely, thorough responses. Positive experience with billing and return policy questions. Suggestion: streamline chat/email support so agents can instantly see full purchase history when switching channels. Minor improvement, but highly appreciated for the personal touch. Loyalty/rewards program: appreciates first-time buyer discounts. Suggests a membership or subscription plan with perks like free shipping, extended warranties, and coffee bean deliveries. Would love early access to new products and special deals. Envisioning a 'Yes, let me get that annual membership' experience.",
+          "what do you know about michael seattle freelance designer",
+          "michael seattle freelance designer feedback order management multiple"
+        ],
+        "probe_provenance": "write_time"
+      }
+    }
+  }
+}

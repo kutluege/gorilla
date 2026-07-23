@@ -1,0 +1,198 @@
+{
+  "backend": "vector",
+  "tiers": {
+    "core": {
+      "0": {
+        "text": "Time management is core to both professional and personal finance. Mornings: 5:30 AM market review, workout. Day: time-blocked decision-making, research. Saturdays: high-level planning, reviewing Pioneer Tech(pre-seed). Sundays: family, reading. Structure enables efficiency and opportunity capture.",
+        "probes": [
+          "Time management is core to both professional and personal finance. Mornings: 5:30 AM market review, workout. Day: time-blocked decision-making, research. Saturdays: high-level planning, reviewing Pioneer Tech(pre-seed). Sundays: family, reading. Structure enables efficiency and opportunity capture.",
+          "what do you know about time management core both",
+          "time management core both professional personal finance mornings"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "1": {
+        "text": "Investing is about vision. Goal: grow private portfolio for substantial passive income, enabling a step back from operations. Strategy: expand into AI-driven ETFs for digital investors. Also launching a financial education platform for underprivileged youth. True wealth includes impact.",
+        "probes": [
+          "Investing is about vision. Goal: grow private portfolio for substantial passive income, enabling a step back from operations. Strategy: expand into AI-driven ETFs for digital investors. Also launching a financial education platform for underprivileged youth. True wealth includes impact.",
+          "what do you know about investing vision goal grow",
+          "investing vision goal grow private portfolio substantial passive"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "2": {
+        "text": "Personal development is key to wealth-building. Goal: Mandarin fluency to understand China’s market and culture. Also, complete Ironman triathlon before 50. Mental discipline of endurance sports mirrors finance: strategic pacing, risk assessment, knowing when to push or hold back.",
+        "probes": [
+          "Personal development is key to wealth-building. Goal: Mandarin fluency to understand China’s market and culture. Also, complete Ironman triathlon before 50. Mental discipline of endurance sports mirrors finance: strategic pacing, risk assessment, knowing when to push or hold back.",
+          "what do you know about personal development key wealth",
+          "personal development key wealth building goal mandarin fluency"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "3": {
+        "text": "Goal: freedom through financial independence. By 55, transition to chairman role—focus on strategy and mentorship. Launch global fund on sustainable and frontier markets. Wealth is about what you build and leave behind.",
+        "probes": [
+          "Goal: freedom through financial independence. By 55, transition to chairman role—focus on strategy and mentorship. Launch global fund on sustainable and frontier markets. Wealth is about what you build and leave behind.",
+          "what do you know about goal freedom through financial",
+          "goal freedom through financial independence transition chairman role"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "4": {
+        "text": "Led through 2020 crash: gathered team, analyzed positions, found opportunities. On trading floor daily. Made key hires that transformed performance. During fund redemptions, led investor comms, empowered PMs. Transparency and presence build trust. True leadership is guiding through storms.",
+        "probes": [
+          "Led through 2020 crash: gathered team, analyzed positions, found opportunities. On trading floor daily. Made key hires that transformed performance. During fund redemptions, led investor comms, empowered PMs. Transparency and presence build trust. True leadership is guiding through storms.",
+          "what do you know about led through 2020 crash",
+          "led through 2020 crash gathered team analyzed positions"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "5": {
+        "text": "Innovation pods connect PMs with tech teams. I chair Innovation Committee. Launched SOAR—AI platform by in-house quants, analysts, ML experts. Org restructured for fluidity and talent mobility. 'Future of Finance' symposium drove three strategic partnerships, boosting investment capabilities.",
+        "probes": [
+          "Innovation pods connect PMs with tech teams. I chair Innovation Committee. Launched SOAR—AI platform by in-house quants, analysts, ML experts. Org restructured for fluidity and talent mobility. 'Future of Finance' symposium drove three strategic partnerships, boosting investment capabilities.",
+          "what do you know about innovation pods connect pms",
+          "innovation pods connect pms tech teams chair committee"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "6": {
+        "text": "Bloomberg Terminal is my 'Mission Control' hub with real-time data, anomaly detection, and LIVE function for Asian coordination. 3 AM 2022 alert detected unusual trading, enabling early position shifts. Critical for risk management and global deal execution.",
+        "probes": [
+          "Bloomberg Terminal is my 'Mission Control' hub with real-time data, anomaly detection, and LIVE function for Asian coordination. 3 AM 2022 alert detected unusual trading, enabling early position shifts. Critical for risk management and global deal execution.",
+          "what do you know about bloomberg terminal mission control",
+          "bloomberg terminal mission control hub real time data"
+        ],
+        "probe_provenance": "sidecar"
+      }
+    },
+    "archival": {
+      "0": {
+        "text": "MD's first major win: 2019 poison pill strategy against hostile takeover of Surreal Incorporated, now a Harvard Business School case study.",
+        "probes": [
+          "MD's first major win: 2019 poison pill strategy against hostile takeover of Surreal Incorporated, now a Harvard Business School case study.",
+          "what do you know about first major win 2019",
+          "first major win 2019 poison pill strategy against"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "1": {
+        "text": "Key deal: $8.6B cross-border semiconductor merger between Nexa Semiconductors and Taihua Microelectronics, requiring coordination across three continents, overcoming IP and regulatory hurdles. Highlighted the diplomatic and strategic aspects of global finance.",
+        "probes": [
+          "Key deal: $8.6B cross-border semiconductor merger between Nexa Semiconductors and Taihua Microelectronics, requiring coordination across three continents, overcoming IP and regulatory hurdles. Highlighted the diplomatic and strategic aspects of global finance.",
+          "what do you know about key deal cross border",
+          "key deal cross border semiconductor merger between nexa"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "2": {
+        "text": "Most proud deal: $14.2B healthcare merger between BioCrest Labs and OncoPharm Therapeutics. Overcame two major setbacks—IP valuation and regulatory approval. Resolved through 3 sleepless nights of negotiation. Recognized by WSJ as 'the deal that reshaped modern cancer treatment.' Now contextualized within a broader leadership framework: the $8.5B semiconductor deal, $3.2B SaaS LBO, and $5B+ renewable energy acquisition are current challenges reflecting the same principles of resilience, diplomacy, and precision. These are rooted in a career journey that began at Goldman Sachs(2001), through Morgan Stanley(2004), and culminated in leadership at Legend Investments(2015), where trust is earned through one successful deal at a time. This journey is grounded in education: Bachelor's in Economics from University of Pennsylvania, MBA from Harvard Business School(Baker Scholar). Active engagement with both institutions through guest lecturing, mentoring, and recruiting. Recently endowed a Penn scholarship for first-generation finance students. Core belief: Talent is the greatest investment. Finance should be a pathway to opportunity—not just for the privileged, but for those with hunger and discipline.",
+        "probes": [
+          "Most proud deal: $14.2B healthcare merger between BioCrest Labs and OncoPharm Therapeutics. Overcame two major setbacks—IP valuation and regulatory approval. Resolved through 3 sleepless nights of negotiation. Recognized by WSJ as 'the deal that reshaped modern cancer treatment.' Now contextualized within a broader leadership framework: the $8.5B semiconductor deal, $3.2B SaaS LBO, and $5B+ renewable energy acquisition are current challenges reflecting the same principles of resilience, diplomacy, and precision. These are rooted in a career journey that began at Goldman Sachs(2001), through Morgan Stanley(2004), and culminated in leadership at Legend Investments(2015), where trust is earned through one successful deal at a time. This journey is grounded in education: Bachelor's in Economics from University of Pennsylvania, MBA from Harvard Business School(Baker Scholar). Active engagement with both institutions through guest lecturing, mentoring, and recruiting. Recently endowed a Penn scholarship for first-generation finance students. Core belief: Talent is the greatest investment. Finance should be a pathway to opportunity—not just for the privileged, but for those with hunger and discipline.",
+          "what do you know about most proud deal healthcare",
+          "most proud deal healthcare merger between biocrest labs"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "3": {
+        "text": "Relationship with Sarah Chen(CEO, Pacific Dynamics): First met at Goldman conference in 2008. Deepened during a delayed flight from Hong Kong in 2009, where five hours of conversation on market trends and jazz built a lasting bond. Now a trusted advisor—can be called at 3 AM for insights on Asian markets. This relationship exemplifies the value of deep, human-centered connections in finance.",
+        "probes": [
+          "Relationship with Sarah Chen(CEO, Pacific Dynamics): First met at Goldman conference in 2008. Deepened during a delayed flight from Hong Kong in 2009, where five hours of conversation on market trends and jazz built a lasting bond. Now a trusted advisor—can be called at 3 AM for insights on Asian markets. This relationship exemplifies the value of deep, human-centered connections in finance.",
+          "what do you know about relationship sarah chen ceo",
+          "relationship sarah chen ceo pacific dynamics first met"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "4": {
+        "text": "Golf as a strategic relationship-building tool: Maintains a 7-handicap, but focuses on the experience, not the score. Key venues: National Golf Links, Cypress Point, Muirfield. A pivotal deal with Jim(tech CEO, MineCore) was conceived between the 7th and 8th holes during a round—resulted in a $2.3 billion merger. Hosts 'Quarterly Links' at Pebble Beach, bringing together clients, prospects, and leaders. The event led to three major client acquisitions and a sovereign wealth fund partnership. Notably, caddie Tom—30 years of experience with CEOs and politicians—provides invaluable corporate intelligence, acting as a 'walking Bloomberg terminal' of industry insights.",
+        "probes": [
+          "Golf as a strategic relationship-building tool: Maintains a 7-handicap, but focuses on the experience, not the score. Key venues: National Golf Links, Cypress Point, Muirfield. A pivotal deal with Jim(tech CEO, MineCore) was conceived between the 7th and 8th holes during a round—resulted in a $2.3 billion merger. Hosts 'Quarterly Links' at Pebble Beach, bringing together clients, prospects, and leaders. The event led to three major client acquisitions and a sovereign wealth fund partnership. Notably, caddie Tom—30 years of experience with CEOs and politicians—provides invaluable corporate intelligence, acting as a 'walking Bloomberg terminal' of industry insights.",
+          "what do you know about golf strategic relationship building",
+          "golf strategic relationship building tool maintains handicap focuses"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "5": {
+        "text": "Personalized client relationships: Oversees 50 high-net-worth individuals and 30 institutional clients with family-office-level attention. Key example: Supported Robert during family succession planning by spending evenings with his children to understand their vision, leading to a complete restructured transition plan through family dinners. Attended children's weddings, family celebrations, and supported through personal losses. Team humor: 'runs a concierge service rather than an investment firm.' Clients receive immediate, personal responses—even at midnight—ensuring trust is built through genuine connection, not transactional interactions. Trust is earned in moments of emotional and personal engagement.",
+        "probes": [
+          "Personalized client relationships: Oversees 50 high-net-worth individuals and 30 institutional clients with family-office-level attention. Key example: Supported Robert during family succession planning by spending evenings with his children to understand their vision, leading to a complete restructured transition plan through family dinners. Attended children's weddings, family celebrations, and supported through personal losses. Team humor: 'runs a concierge service rather than an investment firm.' Clients receive immediate, personal responses—even at midnight—ensuring trust is built through genuine connection, not transactional interactions. Trust is earned in moments of emotional and personal engagement.",
+          "what do you know about personalized client relationships oversees",
+          "personalized client relationships oversees high net worth individuals"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "6": {
+        "text": "Global network maintained through frequent travel: Typically on a plane three times a week, traveling between New York, London, Hong Kong, and Dubai. Memorized every premium lounge—though exhausting, it enables face-to-face engagement. Key example: Closed a crucial deal with Chipset Core in Singapore after three days of interaction, including a 4 AM dim sum run(jet lag advantage). Learned that some cultures require in-person, culturally grounded business—no substitute for shared meals and local context. Team implemented the '48-hour protocol': for major clients or opportunities, can be anywhere in the world within 48 hours. Even had a tailor create flight-specific suits for long-haul travel. This physical presence and cultural immersion are central to trust-building and deal execution.",
+        "probes": [
+          "Global network maintained through frequent travel: Typically on a plane three times a week, traveling between New York, London, Hong Kong, and Dubai. Memorized every premium lounge—though exhausting, it enables face-to-face engagement. Key example: Closed a crucial deal with Chipset Core in Singapore after three days of interaction, including a 4 AM dim sum run(jet lag advantage). Learned that some cultures require in-person, culturally grounded business—no substitute for shared meals and local context. Team implemented the '48-hour protocol': for major clients or opportunities, can be anywhere in the world within 48 hours. Even had a tailor create flight-specific suits for long-haul travel. This physical presence and cultural immersion are central to trust-building and deal execution.",
+          "what do you know about global network maintained through",
+          "global network maintained through frequent travel typically plane"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "7": {
+        "text": "Network Triangle framework: Combines three pillars—professional relationships, social connections, and knowledge sharing—to build a resilient ecosystem of trust and mutual value. Hosts quarterly 'Future Focus' dinner series with diverse groups(fintech innovators, traditional bankers, academics, artists, philosophers). Conversations are off-the-record and wide-ranging. Last month's event led to an unexpected collaboration between Stellar Investments and quantum computing startup Energia. Runs a mentorship circle connecting senior executives with emerging talent—paying forward early-career guidance. The true value emerges when networks intersect: e.g., a client's daughter interns at a portfolio company, or a golf buddy becomes a strategic investor. This intersection creates a self-sustaining community—where relationships evolve beyond transactional ties into shared purpose. In finance, community is not just beneficial—it's foundational.",
+        "probes": [
+          "Network Triangle framework: Combines three pillars—professional relationships, social connections, and knowledge sharing—to build a resilient ecosystem of trust and mutual value. Hosts quarterly 'Future Focus' dinner series with diverse groups(fintech innovators, traditional bankers, academics, artists, philosophers). Conversations are off-the-record and wide-ranging. Last month's event led to an unexpected collaboration between Stellar Investments and quantum computing startup Energia. Runs a mentorship circle connecting senior executives with emerging talent—paying forward early-career guidance. The true value emerges when networks intersect: e.g., a client's daughter interns at a portfolio company, or a golf buddy becomes a strategic investor. This intersection creates a self-sustaining community—where relationships evolve beyond transactional ties into shared purpose. In finance, community is not just beneficial—it's foundational.",
+          "what do you know about network triangle framework combines",
+          "network triangle framework combines three pillars professional relationships"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "8": {
+        "text": "Tableau evangelist within the firm, specializing in data storytelling and visualization. Perfecting templates with emphasis on color schemes and font choices for board presentations. Developed dynamic dashboard tracking ESG metrics across portfolio companies like Vertex Capital Partners, Nexus Financial Group, and Summit Equity Holdings. Integrated multi-source data for clear environmental impact communication. Experimenting with augmented reality(HoloLens) for 3D market data visualization—early stage but believes this is the future of financial presentations.",
+        "probes": [
+          "Tableau evangelist within the firm, specializing in data storytelling and visualization. Perfecting templates with emphasis on color schemes and font choices for board presentations. Developed dynamic dashboard tracking ESG metrics across portfolio companies like Vertex Capital Partners, Nexus Financial Group, and Summit Equity Holdings. Integrated multi-source data for clear environmental impact communication. Experimenting with augmented reality(HoloLens) for 3D market data visualization—early stage but believes this is the future of financial presentations.",
+          "what do you know about tableau evangelist within firm",
+          "tableau evangelist within firm specializing data storytelling visualization"
+        ],
+        "probe_provenance": "stored_text"
+      },
+      "9": {
+        "text": "Dealogic as virtual deal diary with custom tracking of 'soft signals' like management dynamics and cultural fit scores. Built custom scoring system predicting deal success rates from historical patterns. Self-taught in Python and R during pandemic lockdowns. Automated routine analytical tasks, freeing team for strategic work. Created ML model analyzing earnings call transcripts to predict market reactions with high accuracy—originated as personal project, now essential for equity trading desk.",
+        "probes": [
+          "Dealogic as virtual deal diary with custom tracking of 'soft signals' like management dynamics and cultural fit scores. Built custom scoring system predicting deal success rates from historical patterns. Self-taught in Python and R during pandemic lockdowns. Automated routine analytical tasks, freeing team for strategic work. Created ML model analyzing earnings call transcripts to predict market reactions with high accuracy—originated as personal project, now essential for equity trading desk.",
+          "what do you know about dealogic virtual deal diary",
+          "dealogic virtual deal diary custom tracking soft signals"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "10": {
+        "text": "Customized Salesforce with 'Client Journey Map' tracking investment preferences and personal milestones. Replaced Evernote with Notion for deal notes due to linked database capabilities. Uses Superhuman for email management, saving hours weekly. Testing AI meeting assistants that summarize calls and generate action items automatically. Exploring blockchain for settlement systems and quantum computing for portfolio optimization. Running simulations on IBM's quantum platform. Dedicates Sunday evenings to tech blog reading and tool testing—family calls it 'tech meditation' time.",
+        "probes": [
+          "Customized Salesforce with 'Client Journey Map' tracking investment preferences and personal milestones. Replaced Evernote with Notion for deal notes due to linked database capabilities. Uses Superhuman for email management, saving hours weekly. Testing AI meeting assistants that summarize calls and generate action items automatically. Exploring blockchain for settlement systems and quantum computing for portfolio optimization. Running simulations on IBM's quantum platform. Dedicates Sunday evenings to tech blog reading and tool testing—family calls it 'tech meditation' time.",
+          "what do you know about customized salesforce client journey",
+          "customized salesforce client journey map tracking investment preferences"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "11": {
+        "text": "You create your own luck by proactively positioning yourself. Waiting for the perfect opportunity leads to stagnation. Instead, reaching out to industry leaders with specific, thoughtful questions—despite low response rates—opens unexpected doors. A few responses led to breakthrough connections. Proactivity, not passivity, is how opportunity finds you.",
+        "probes": [
+          "You create your own luck by proactively positioning yourself. Waiting for the perfect opportunity leads to stagnation. Instead, reaching out to industry leaders with specific, thoughtful questions—despite low response rates—opens unexpected doors. A few responses led to breakthrough connections. Proactivity, not passivity, is how opportunity finds you.",
+          "what do you know about create own luck proactively",
+          "create own luck proactively positioning yourself waiting perfect"
+        ],
+        "probe_provenance": "write_time"
+      },
+      "12": {
+        "text": "Bet on yourself: no one will hand you an opportunity. Growth comes from taking ownership before you have the title. Act like a leader, think like an investor, operate like a CEO—before you get the role. My transition into leadership wasn’t about being 'ready'; it was about stepping up, taking responsibility, and figuring things out. The opportunities follow those who act first.",
+        "probes": [
+          "Bet on yourself: no one will hand you an opportunity. Growth comes from taking ownership before you have the title. Act like a leader, think like an investor, operate like a CEO—before you get the role. My transition into leadership wasn’t about being 'ready'; it was about stepping up, taking responsibility, and figuring things out. The opportunities follow those who act first.",
+          "what do you know about bet yourself one will",
+          "bet yourself one will hand opportunity growth comes"
+        ],
+        "probe_provenance": "write_time"
+      },
+      "13": {
+        "text": "Success isn't about what you achieve—it's about what you sustain. Short-term wins don't guarantee longevity. Long-term success comes from consistent good decisions, risk management, and humility. I've seen people lose fortunes after quick gains because they lacked sustainable habits. The real key: stay hungry, stay curious, never become complacent. The moment you think you've made it is when you stop growing. Growth is the only true indicator of lasting success.",
+        "probes": [
+          "Success isn't about what you achieve—it's about what you sustain. Short-term wins don't guarantee longevity. Long-term success comes from consistent good decisions, risk management, and humility. I've seen people lose fortunes after quick gains because they lacked sustainable habits. The real key: stay hungry, stay curious, never become complacent. The moment you think you've made it is when you stop growing. Growth is the only true indicator of lasting success.",
+          "what do you know about success isn achieve sustain",
+          "success isn achieve sustain short term wins guarantee"
+        ],
+        "probe_provenance": "write_time"
+      }
+    }
+  }
+}

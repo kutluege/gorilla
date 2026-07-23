@@ -1,0 +1,12 @@
+{
+    "core_memory": {
+        "user_introduction_michael": "Michael, 35, lives in Seattle, freelance graphic designer, values design aesthetics in gadgets, interested in high-quality coffee machines to enhance his morning routine.",
+        "user_delivery_preparation_instructions": "Michael will be available to receive the package in person, especially during rain. He requires a signature on delivery to prevent the package from being left unattended or damaged. He wants to greet the courier and ensure the box is safely brought inside.",
+        "user_shipping_confusion_grinder": "The coffee grinder bundle was marked as shipped from a regional warehouse in Oregon, but tracking shows 'Label Created\u2014Awaiting Item,' suggesting the carrier hasn't received the package. This is causing concern about delivery delays.",
+        "user_shipping_anomaly_concern": "Second order now shows faster delivery than grinder bundle despite longer distance. Michael suspects a mix-up: warehouse delay, backorder, or labeling error. Weather disruptions may have worsened local delays.",
+        "user_bundle_integrity_concern": "Michael worries the grinder bundle might be split(e.g., pitcher shipped separately). He wants all items in each order to arrive together to avoid confusion or missing key items.",
+        "user_coffee_shop_aspirations": "Michael is excited about becoming a barista and running a small coffee shop. He wants everything fully set up and tested before hosting gatherings to deliver premium brews and avoid disappointing his social circle.",
+        "user_billing_security_concern": "Michael uses same address/credit card. Had a past security hold on Apple Pay. Wants to avoid similar issues. Requests immediate verification of billing and shipping details."
+    },
+    "archival_memory": {}
+}

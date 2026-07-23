@@ -1,0 +1,171 @@
+{
+  "backend": "vector",
+  "tiers": {
+    "core": {
+      "0": {
+        "text": "User Michael, 35, Seattle. Design-focused coffee enthusiast. Values aesthetics and balance. Prefers functional, unobtrusive upgrades. Positive feedback on sleek stainless-steel design, durability, and quality. Products feel well-constructed. Kitchen now has a cohesive, design-focused look.",
+        "probes": [
+          "User Michael, 35, Seattle. Design-focused coffee enthusiast. Values aesthetics and balance. Prefers functional, unobtrusive upgrades. Positive feedback on sleek stainless-steel design, durability, and quality. Products feel well-constructed. Kitchen now has a cohesive, design-focused look.",
+          "what do you know about michael seattle design focused",
+          "michael seattle design focused coffee enthusiast values aesthetics"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "1": {
+        "text": "User Michael, 35, Seattle. Returning customer. 15% off second purchase. Aether Grinder, canister, cleaning kit. 0% financing. 38 sq ft kitchen. Exploring commercial-style or large-capacity espresso machine for events, pop-ups, and higher volume use. Opted out of Aether Coffee Club trial.",
+        "probes": [
+          "User Michael, 35, Seattle. Returning customer. 15% off second purchase. Aether Grinder, canister, cleaning kit. 0% financing. 38 sq ft kitchen. Exploring commercial-style or large-capacity espresso machine for events, pop-ups, and higher volume use. Opted out of Aether Coffee Club trial.",
+          "what do you know about michael seattle returning customer",
+          "michael seattle returning customer off second purchase aether"
+        ],
+        "probe_provenance": "write_time"
+      }
+    },
+    "archival": {
+      "0": {
+        "text": "Michael from Seattle, freelance graphic designer, seeks a home espresso machine with a sleek, modern stainless-steel finish. Interested in user-friendly features for non-professional baristas, aiming for a café-like experience without complexity.",
+        "probes": [
+          "Michael from Seattle, freelance graphic designer, seeks a home espresso machine with a sleek, modern stainless-steel finish. Interested in user-friendly features for non-professional baristas, aiming for a café-like experience without complexity.",
+          "what do you know about michael seattle freelance graphic",
+          "michael seattle freelance graphic designer seeks home espresso"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "1": {
+        "text": "Michael from Seattle is a first-time buyer looking for a home espresso machine with a sleek stainless-steel finish. Inquired about pricing, first-time buyer discounts, and any bundle or limited-time promotions available.",
+        "probes": [
+          "Michael from Seattle is a first-time buyer looking for a home espresso machine with a sleek stainless-steel finish. Inquired about pricing, first-time buyer discounts, and any bundle or limited-time promotions available.",
+          "what do you know about michael seattle first time",
+          "michael seattle first time buyer looking home espresso"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "2": {
+        "text": "Michael from Seattle is concerned about shipping times and origin. He wants to know if products are shipped from a local warehouse, and if so, what the delivery timeline is, especially since he's hosting a family gathering later this month.",
+        "probes": [
+          "Michael from Seattle is concerned about shipping times and origin. He wants to know if products are shipped from a local warehouse, and if so, what the delivery timeline is, especially since he's hosting a family gathering later this month.",
+          "what do you know about michael seattle concerned shipping",
+          "michael seattle concerned shipping times origin wants products"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "3": {
+        "text": "Michael from Seattle, a coffee lover, is seeking detailed product information on espresso machines, including brewing frequency, cleaning complexity, footprint size, and how well the machine fits into a kitchen counter space. He values user-friendly design and has heard positive feedback from a friend about your customer support.",
+        "probes": [
+          "Michael from Seattle, a coffee lover, is seeking detailed product information on espresso machines, including brewing frequency, cleaning complexity, footprint size, and how well the machine fits into a kitchen counter space. He values user-friendly design and has heard positive feedback from a friend about your customer support.",
+          "what do you know about michael seattle coffee lover",
+          "michael seattle coffee lover seeking detailed product information"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "4": {
+        "text": "Michael from Seattle is concerned about kitchen space and appliance placement. He wants a clear, precise understanding of the Aether ES-300's dimensions to assess how it will fit with existing appliances on his counter, and is considering potential reorganization(e.g., moving the toaster oven or reorganizing the spice rack). He values practicality and wants to avoid 'kitchen Tetris' surprises.",
+        "probes": [
+          "Michael from Seattle is concerned about kitchen space and appliance placement. He wants a clear, precise understanding of the Aether ES-300's dimensions to assess how it will fit with existing appliances on his counter, and is considering potential reorganization(e.g., moving the toaster oven or reorganizing the spice rack). He values practicality and wants to avoid 'kitchen Tetris' surprises.",
+          "what do you know about michael seattle concerned kitchen",
+          "michael seattle concerned kitchen space appliance placement wants"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "5": {
+        "text": "Michael from Seattle is inquiring about warranty and quality guarantees for coffee machines, specifically concerned about past negative experiences with short warranty periods and poor after-sales service. He wants assurance that your company offers a robust, customer-friendly policy, especially for higher-end models like the Aether ES-300 or Nova ES-500.",
+        "probes": [
+          "Michael from Seattle is inquiring about warranty and quality guarantees for coffee machines, specifically concerned about past negative experiences with short warranty periods and poor after-sales service. He wants assurance that your company offers a robust, customer-friendly policy, especially for higher-end models like the Aether ES-300 or Nova ES-500.",
+          "what do you know about michael seattle inquiring warranty",
+          "michael seattle inquiring warranty quality guarantees coffee machines"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "6": {
+        "text": "Michael from Seattle is concerned about coffee temperature consistency, specifically whether your espresso machines maintain a reliably hot brew(92–96°C) and whether they offer adjustable temperature settings. He previously had issues with drip machines that didn’t heat sufficiently, leading him to microwave his coffee—something he wants to avoid.",
+        "probes": [
+          "Michael from Seattle is concerned about coffee temperature consistency, specifically whether your espresso machines maintain a reliably hot brew(92–96°C) and whether they offer adjustable temperature settings. He previously had issues with drip machines that didn’t heat sufficiently, leading him to microwave his coffee—something he wants to avoid.",
+          "what do you know about michael seattle concerned coffee",
+          "michael seattle concerned coffee temperature consistency specifically whether"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "7": {
+        "text": "User Michael, 35, Seattle. Purchasing espresso machine with stainless-steel finish, steam wand, for 38 sq ft kitchen. 17% discount code: COFFEE17. Payment options: credit card, PayPal, Apple Pay. Financing: 0% interest for 6 months. Shipping: standard 5–7 business days(free if $150+), expedited $29.99 (3–5 days). Real-time tracking, signature required, weather-resistant packaging. Return policy: free return for defects/wrong size, 14-day window. Inquiry about coffee beans and grinder recommendations—specifically a small, stylish grinder that pairs aesthetically with stainless-steel espresso machine and supports fresh grinding for optimal flavor.",
+        "probes": [
+          "User Michael, 35, Seattle. Purchasing espresso machine with stainless-steel finish, steam wand, for 38 sq ft kitchen. 17% discount code: COFFEE17. Payment options: credit card, PayPal, Apple Pay. Financing: 0% interest for 6 months. Shipping: standard 5–7 business days(free if $150+), expedited $29.99 (3–5 days). Real-time tracking, signature required, weather-resistant packaging. Return policy: free return for defects/wrong size, 14-day window. Inquiry about coffee beans and grinder recommendations—specifically a small, stylish grinder that pairs aesthetically with stainless-steel espresso machine and supports fresh grinding for optimal flavor.",
+          "what do you know about michael seattle purchasing espresso",
+          "michael seattle purchasing espresso machine stainless steel finish"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "8": {
+        "text": "User Michael, 35, Seattle. Confirmed interest in ordering the Aether Precision Grinder with stainless-steel finish, conical burrs, and adjustable grind settings. Also interested in the $39 storage canister and a specialized cleaning kit for espresso machine and grinder. Will be adding to kitchen 'coffee corner' in 38 sq ft space. Pre-launch interest in coffee bean subscription service. Discount code: COFFEE17. Financing: 0% interest for 6 months. Order confirmation and delivery details to be provided.",
+        "probes": [
+          "User Michael, 35, Seattle. Confirmed interest in ordering the Aether Precision Grinder with stainless-steel finish, conical burrs, and adjustable grind settings. Also interested in the $39 storage canister and a specialized cleaning kit for espresso machine and grinder. Will be adding to kitchen 'coffee corner' in 38 sq ft space. Pre-launch interest in coffee bean subscription service. Discount code: COFFEE17. Financing: 0% interest for 6 months. Order confirmation and delivery details to be provided.",
+          "what do you know about michael seattle confirmed interest",
+          "michael seattle confirmed interest ordering aether precision grinder"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "9": {
+        "text": "User Michael, 35, Seattle. Coffee enthusiast and freelance designer. Signed up for loyalty program. Interested in extended warranty(esp. for espresso machine and future purchases). Inquiring about coffee bean subscription: sourcing(local PNW roasters vs. national brands), roast size(513 mL small-batch), and flavor nuance. High standards for beans—seeking rare, single-origin, small-batch roasts not available in local stores. Now exploring early access to limited-edition items. Active in community of passionate coffee lovers. Interested in testing prototypes or pre-launch access to new gadgets. Asking about membership integration: dedicated portal for order tracking, subscription management, pausing shipments, and switching bean preferences. Concerned about rain-soaked cardboard boxes in Seattle—wants flexibility for travel and design gigs. Inquiring about financials: membership fee(monthly/yearly), trial period, reduced rate for loyal customers, and promotional sign-up bonus. Now asking about customer service: prioritized support for members. Values responsiveness and detailed communication. Wants quick answers, especially before hosting a coffee tasting where machine performance is critical.",
+        "probes": [
+          "User Michael, 35, Seattle. Coffee enthusiast and freelance designer. Signed up for loyalty program. Interested in extended warranty(esp. for espresso machine and future purchases). Inquiring about coffee bean subscription: sourcing(local PNW roasters vs. national brands), roast size(513 mL small-batch), and flavor nuance. High standards for beans—seeking rare, single-origin, small-batch roasts not available in local stores. Now exploring early access to limited-edition items. Active in community of passionate coffee lovers. Interested in testing prototypes or pre-launch access to new gadgets. Asking about membership integration: dedicated portal for order tracking, subscription management, pausing shipments, and switching bean preferences. Concerned about rain-soaked cardboard boxes in Seattle—wants flexibility for travel and design gigs. Inquiring about financials: membership fee(monthly/yearly), trial period, reduced rate for loyal customers, and promotional sign-up bonus. Now asking about customer service: prioritized support for members. Values responsiveness and detailed communication. Wants quick answers, especially before hosting a coffee tasting where machine performance is critical.",
+          "what do you know about michael seattle coffee enthusiast",
+          "michael seattle coffee enthusiast freelance designer signed loyalty"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "10": {
+        "text": "User Michael, 35, Seattle, inquired about warranty and service coverage for a high-performance espresso machine. Specifically asked about: - Warranty duration and terms (especially for high-volume use) - Service options (dedicated service center vs. authorized repair shops) - Repair accessibility and support for event-dependent usage.",
+        "probes": [
+          "User Michael, 35, Seattle, inquired about warranty and service coverage for a high-performance espresso machine. Specifically asked about: - Warranty duration and terms (especially for high-volume use) - Service options (dedicated service center vs. authorized repair shops) - Repair accessibility and support for event-dependent usage.",
+          "what do you know about michael seattle inquired warranty",
+          "michael seattle inquired warranty service coverage high performance"
+        ],
+        "probe_provenance": "write_time"
+      },
+      "11": {
+        "text": "User Michael, 35, Seattle, inquired about shipping and delivery for a high-performance espresso machine. Specifically asked about: - Freight vs. standard shipping options - In-home delivery and installation assistance - Special handling for heavy, complex machines - Risk of damage (e.g., corner dents) during transit - Water line setup (plumbed-in vs. portable) and whether it requires planning or professional installation.",
+        "probes": [
+          "User Michael, 35, Seattle, inquired about shipping and delivery for a high-performance espresso machine. Specifically asked about: - Freight vs. standard shipping options - In-home delivery and installation assistance - Special handling for heavy, complex machines - Risk of damage (e.g., corner dents) during transit - Water line setup (plumbed-in vs. portable) and whether it requires planning or professional installation.",
+          "what do you know about michael seattle inquired shipping",
+          "michael seattle inquired shipping delivery high performance espresso"
+        ],
+        "probe_provenance": "write_time"
+      },
+      "12": {
+        "text": "User Michael, 35, Seattle, inquired about payment options and loyalty benefits for a high-performance espresso machine. Specifically asked about: - Loyalty program or membership discounts (e.g., free shipping, store credit) - Financing options (zero-interest plans) - Cost-splitting strategies to avoid large upfront payments - Preference for spreading cost over time without depleting wallet.",
+        "probes": [
+          "User Michael, 35, Seattle, inquired about payment options and loyalty benefits for a high-performance espresso machine. Specifically asked about: - Loyalty program or membership discounts (e.g., free shipping, store credit) - Financing options (zero-interest plans) - Cost-splitting strategies to avoid large upfront payments - Preference for spreading cost over time without depleting wallet.",
+          "what do you know about michael seattle inquired payment",
+          "michael seattle inquired payment options loyalty benefits high"
+        ],
+        "probe_provenance": "write_time"
+      },
+      "13": {
+        "text": "User Michael, 35, Seattle, seeking technical maintenance advice for a high-performance espresso machine. Specifically asked about: - Daily cleaning (beyond basic backflush and steam wand rinsing) - Weekly/monthly deep cleaning (e.g., boiler draining, group head cleaning) - Calibration of water pressure and extraction settings - Best practices for high-volume use to prevent clogs and maintain consistency.",
+        "probes": [
+          "User Michael, 35, Seattle, seeking technical maintenance advice for a high-performance espresso machine. Specifically asked about: - Daily cleaning (beyond basic backflush and steam wand rinsing) - Weekly/monthly deep cleaning (e.g., boiler draining, group head cleaning) - Calibration of water pressure and extraction settings - Best practices for high-volume use to prevent clogs and maintain consistency.",
+          "what do you know about michael seattle seeking technical",
+          "michael seattle seeking technical maintenance advice high performance"
+        ],
+        "probe_provenance": "write_time"
+      },
+      "14": {
+        "text": "User Michael, 35, Seattle, confirmed compatibility between his Aether Grinder and a high-performance espresso machine. Specifically asked about: - Dosing and grind consistency compatibility - Water filtration system recommendations for Seattle’s water quality - Impact of water hardness on taste and machine longevity - Whether Aether products are designed to work seamlessly together.",
+        "probes": [
+          "User Michael, 35, Seattle, confirmed compatibility between his Aether Grinder and a high-performance espresso machine. Specifically asked about: - Dosing and grind consistency compatibility - Water filtration system recommendations for Seattle’s water quality - Impact of water hardness on taste and machine longevity - Whether Aether products are designed to work seamlessly together.",
+          "what do you know about michael seattle confirmed compatibility",
+          "michael seattle confirmed compatibility between aether grinder high"
+        ],
+        "probe_provenance": "write_time"
+      },
+      "15": {
+        "text": "User Michael, 35, Seattle, inquired about intangible resources and educational content for high-end espresso machine users. Specifically asked about: - How-to videos and tutorials on espresso techniques, milk steaming, and maintenance - Masterclasses on advanced barista skills - Access to expert-led workshops or live sessions - Resources to refine technique for high-volume, professional-level use.",
+        "probes": [
+          "User Michael, 35, Seattle, inquired about intangible resources and educational content for high-end espresso machine users. Specifically asked about: - How-to videos and tutorials on espresso techniques, milk steaming, and maintenance - Masterclasses on advanced barista skills - Access to expert-led workshops or live sessions - Resources to refine technique for high-volume, professional-level use.",
+          "what do you know about michael seattle inquired intangible",
+          "michael seattle inquired intangible resources educational content high"
+        ],
+        "probe_provenance": "write_time"
+      }
+    }
+  }
+}

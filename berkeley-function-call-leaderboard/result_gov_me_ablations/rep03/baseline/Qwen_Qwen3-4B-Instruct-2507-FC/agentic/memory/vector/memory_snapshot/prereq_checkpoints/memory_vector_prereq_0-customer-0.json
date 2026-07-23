@@ -1,0 +1,18 @@
+{
+    "core_memory": {
+        "next_id": 2,
+        "store": {
+            "0": "User Michael, 35, lives in Seattle, freelance graphic designer, values design aesthetics in appliances, interested in high-quality coffee machines for morning routine, specifically inquiring about drip and espresso machines.",
+            "1": "Michael from Seattle, freelance graphic designer, concerned about coffee temperature consistency; specifically asking if espresso machines offer adjustable temperature settings or reliably produce hot coffee(to avoid microwaving); values precision and a seamless at-home coffee experience."
+        }
+    },
+    "archival_memory": {
+        "next_id": 4,
+        "store": {
+            "0": "Michael from Seattle, freelance graphic designer, interested in espresso machines with a sleek, modern, stainless-steel finish, seeks a caf\u00e9-like experience without being a professional barista, values design aesthetics and ease of use.",
+            "1": "Michael from Seattle, first-time buyer, inquiring about pricing, new customer discount, and bundle deals for espresso machines; specifically interested in Aura, Nova, or Eclipse models.",
+            "2": "Michael from Seattle, concerned about shipping times and local delivery options; specifically asking if espresso machines ship from a local warehouse, and if so, what the delivery timeline is for a family gathering later this month.",
+            "3": "Michael from Seattle, freelance graphic designer, coffee enthusiast, asking detailed questions about espresso machine usability: brewing frequency, cleaning complexity, footprint size, and kitchen space compatibility; references friend's positive experience with customer support."
+        }
+    }
+}

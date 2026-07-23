@@ -1,0 +1,21 @@
+{
+    "core_memory": {
+        "next_id": 2,
+        "store": {
+            "0": "User Michael, 35, lives in Seattle, freelance graphic designer, seeks a sleek, modern stainless-steel espresso machine offering caf\u00e9-like coffee at home without professional barista skills.",
+            "1": "User Michael, 35, seeks stainless-steel espresso machine with steam wand for lattes/cappuccinos. Wants clear instructions on applying 17% off new-customer discount at checkout."
+        }
+    },
+    "archival_memory": {
+        "next_id": 7,
+        "store": {
+            "0": "User Michael from Seattle is interested in a sleek stainless-steel semi-automatic espresso machine. Inquired about pricing, discounts, shipping, product specs, warranty, and temperature performance. Specifically asked about adjustable temperature settings and reliable hot coffee output to avoid microwaving.",
+            "1": "User Michael, 35, freelance graphic designer in Seattle, interested in stainless-steel espresso machine with steam wand. Confirmed 17% off promo code SEALEGACY17 for first purchase. Inquiring about available payment methods: credit card, PayPal, Apple Pay, and potential no-interest financing(6 months). Prefers credit card but open to financing if available and interest-free.",
+            "2": "User Michael, 35, in Seattle, needs espresso machine with steam wand for a family event at end of month. Concerned about shipping times due to regional delays and weather. Wants confirmed estimated arrival date based on current inventory. Inquires about expedited shipping options if needed to ensure machine arrives in time.",
+            "3": "User Michael, 35, in Seattle, wants to confirm shipping details: expedited shipping cost and free standard shipping threshold. Currently considering adding accessories(extra filters, stainless-steel frothing pitcher) to qualify for free shipping. Interested in knowing if order value exceeds a minimum to unlock free standard shipping, and whether expedited shipping is priced separately.",
+            "4": "User Michael, 35, in Seattle, concerned about package safety in rainy weather. Wants real-time order tracking to monitor delivery status, especially to ensure package is not left outdoors during rain. Expresses interest in signature requirements and real-time updates to avoid soggy or damaged boxes. Values transparency and proactive delivery management.",
+            "5": "User Michael, 35, in Seattle, seeks clarity on return/exchange policy for espresso machine. Concerned about shipping costs if returning due to defect or size mismatch. Values transparency and ease of process\u2014especially after past negative experiences with brands that made returns difficult. Wants to know if return shipping is free, if defects are covered, and if exchanges are straightforward.",
+            "6": "User Michael, 35, in Seattle, freelance graphic designer, interested in pairing a high-end espresso machine with a fresh-ground coffee experience. Asks for recommendations on coffee beans and a small grinder that complements the stainless-steel machine aesthetically and functionally. Values quality, aroma, and design harmony. Specifically seeks a grinder that matches the machine's modern, sleek look and supports fresh bean grinding for optimal espresso flavor."
+        }
+    }
+}

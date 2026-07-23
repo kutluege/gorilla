@@ -1,0 +1,21 @@
+{
+    "core_memory": {
+        "next_id": 2,
+        "store": {
+            "0": "Recent blood glucose and A1C results: Fasting glucose 135 mg/dL(target <100 mg/dL), A1C 6.9% (target 6.5%). Doctor recommended increasing dietary fiber and adding light exercise after meals. Morning home readings range 125-130 mg/dL.",
+            "1": "Diabetes: Metformin 1000 mg twice daily for several years. Added semaglutide(Ozempic) at low dose as per doctor's recommendation. Noted improved appetite control. Fasting blood glucose at home: 125-130 mg/dL. A1C: 6.9% (target 6.5%)."
+        }
+    },
+    "archival_memory": {
+        "next_id": 7,
+        "store": {
+            "0": "Blood pressure reading: 138/85 mmHg(on the high side). Target: below 130/80 mmHg. Home readings fluctuate between 135-140 systolic and 80-90 diastolic, influenced by stress and salt intake. Taking steps to reduce sodium intake and increase water consumption, which appears to help.",
+            "1": "Vitamin D levels: 22 ng/mL(deficient; normal range 30-50 ng/mL). Doctor prescribed 2,000 IU daily supplement. Will be retested in a few months to assess improvement.",
+            "2": "Thyroid results: TSH 2.1 mIU/L(normal range: 0.5\u20134.5 mIU/L), T4 1.2 ng/dL(within normal range). Stable and consistent with previous readings. Levothyroxine dosage is working well. Regular monitoring continues due to past history of hypothyroidism.",
+            "3": "Bone density scan results: Spine T-score -1.8 (osteopenia), Hip T-score -1.5 (borderline). Doctor advised increasing strength training and calcium intake to prevent further bone loss. Taking steps: added more dairy and leafy greens to diet, now taking a calcium supplement with vitamin K2 to improve absorption.",
+            "4": "Liver and kidney function results: ALT 42 U/L(slightly elevated; normal <35 U/L). Doctor suspects possible link to recent medication adjustments. Monitoring advised. Creatinine 0.9 mg/dL(within normal range: 0.6\u20131.2 mg/dL), so no concerns with kidney function.",
+            "5": "Inflammatory markers: CRP 3.2 mg/L(slightly elevated; ideal <3.0 mg/L), indicating mild inflammation\u2014likely related to osteoarthritis. ESR 18 mm/hr(within normal range: 0-20 mm/hr), so no major inflammation detected.",
+            "6": "Hypertension: Losartan 50 mg once daily. Blood pressure range: 135-140/80-90 mmHg(slightly above ideal). Doctor recommends stress management and reduced sodium intake instead of increasing dosage. Taking daily magnesium supplement, which may support blood pressure regulation.\n\nHypothyroidism: Levothyroxine 75 mcg every morning on empty stomach, with 30-minute wait before eating. Last TSH: 2.1 mIU/L(normal range). Doctor has not changed dosage in years. Notice sluggishness if dose is missed; uses pill organizer to stay on track.\n\nOsteoarthritis: Acetaminophen as needed for mild pain. Meloxicam 7.5 mg prescribed for flare-ups(knees and hands). Taken only when joints are stiff, to avoid overuse of NSAIDs. Doctor suggested glucosamine supplements; effect not yet confirmed.\n\nVitamin D & Bone Health: Vitamin D3 2,000 IU daily(started after blood test showed 22 ng/mL \u2014 below normal threshold of 30 ng/mL). Taking calcium supplements due to early osteopenia on bone density scan. Doctor recommends combining with vitamin K2 to improve absorption.\n\nCholesterol Management: Atorvastatin 10 mg daily. Started due to LDL of 130 mg/dL and triglycerides of 140 mg/dL. Cholesterol levels have improved with no reported side effects(e.g., muscle aches). Doctor confirmed this low-dose regimen is effective and well-tolerated.\n\nGeneral Health Supplements: Daily multivitamin, omega-3 supplements(for heart health), and probiotics(for digestion). Post-gallbladder removal: Take digestive enzymes when consuming heavier meals. Be mindful of fatty foods, as digestion has changed since surgery.\n\nMedication Interactions & Safety Notes: \n- Avoid frequent use of meloxicam(NSAID) due to potential kidney effects when combined with losartan(an ACE inhibitor). Doctor advised limiting NSAID use to flare-ups only.\n- Take levothyroxine separately from calcium and iron supplements(at least 4 hours apart) to prevent interference with absorption."
+        }
+    }
+}

@@ -1,0 +1,24 @@
+{
+    "core_memory": {
+        "next_id": 6,
+        "store": {
+            "0": "Michael from Seattle, 35, freelance graphic designer. Grinder is essential MVP. Requires confirmation it left Oregon warehouse. Needs full transparency, real-time updates, and signature delivery. Will be home to receive both packages. Can delay canisters/scale but not grinder.",
+            "1": "Michael from Seattle, freelance graphic designer, concerned about coffee temperature consistency; specifically asking if espresso machines offer adjustable temperature settings or reliably produce hot coffee(to avoid microwaving); values precision and a seamless at-home coffee experience.",
+            "2": "Michael from Seattle, first-time buyer, interested in Aura Pro espresso machine. Confirmed SEED17 discount. Payment options: credit card, PayPal, Apple Pay. 0% interest financing for 6 months available for purchases up to $500.",
+            "3": "Michael from Seattle: Aura Pro espresso machine + frothing pitcher & filters. Expected 11-day delivery. Free shipping. All in stock. Tracking stuck: 'in transit' out of state, no updates. Concerned about fulfillment error. Need shipping origin, timeline, and accessory package confirmation.",
+            "4": "Michael from Seattle: Return/exchange policy inquiry confirmed. Carrier claims filed on behalf. No action needed. Updated: Requests real-time delivery updates, signature requirement, and to be home to receive package. Will greet driver or quickly bring in to avoid soggy boxes or delays in rain.",
+            "5": "Michael from Seattle, 35, freelance graphic designer. Active coffee enthusiast. Owns Aura Pro espresso machine and frothing pitcher. Interested in a loyalty program with benefits like free shipping, early access to new products, and exclusive discounts to support his growing coffee station."
+        }
+    },
+    "archival_memory": {
+        "next_id": 6,
+        "store": {
+            "0": "Michael from Seattle, freelance graphic designer, interested in espresso machines with a sleek, modern, stainless-steel finish, seeks a caf\u00e9-like experience without being a professional barista, values design aesthetics and ease of use.",
+            "1": "Michael from Seattle, first-time buyer, inquiring about pricing, new customer discount, and bundle deals for espresso machines; specifically interested in Aura, Nova, or Eclipse models.",
+            "2": "Michael from Seattle, concerned about shipping times and local delivery options; specifically asking if espresso machines ship from a local warehouse, and if so, what the delivery timeline is for a family gathering later this month. Updated: Tracking status is stuck, showing 'in transit' from out of state for over a week. User has tried multiple browser refreshes and tracking checks without updates. Requesting immediate escalation to logistics team for real-time status and potential local fulfillment option.",
+            "3": "Michael from Seattle, freelance graphic designer, coffee enthusiast, asking detailed questions about espresso machine usability: brewing frequency, cleaning complexity, footprint size, and kitchen space compatibility; references friend's positive experience with customer support.",
+            "4": "Michael from Seattle: Confused about shipping discrepancies between two orders. Grinder bundle(shipped from Oregon) shows 'Label Created\u2014Awaiting Item'\u2014no carrier update. Canisters + scale order(from Ohio/Pennsylvania) shows 'in transit'\u2014further distance, likely later delivery. Concerned about fulfillment accuracy, tracking reliability, and whether the grinder order is stuck in processing.",
+            "5": "Michael from Seattle: Concerned about order bundling accuracy. Specifically asks if the stainless-steel grinder bundle(grinder, cleaning tablets, frothing pitcher) might be split into separate shipments. Worried about receiving only the pitcher or other accessories without the grinder. Wants to ensure all items in the bundle arrive together to avoid confusion or missing pieces. Prefers full bundle delivery or clear communication if split."
+        }
+    }
+}

@@ -1,0 +1,17 @@
+{
+    "core_memory": {
+        "user_introduction_michael": "Michael, 35, lives in Seattle, freelance graphic designer, values design aesthetics in gadgets, interested in high-quality coffee machines to enhance his morning routine.",
+        "user_billing_security_concern": "Michael using same address/credit card. Concerned about billing or shipping issues after past Apple Pay security hold. Wants to be informed of any red flags to avoid repeat experience. Requests transparency on payment and shipping verification.",
+        "user_billing_security_concern_new_charge_apple_pay": "Michael noticed an unexpected charge on his credit card statement and is seeking clarification. This follows his previous concern about billing or shipping issues after a past Apple Pay security hold. He wants transparency on payment verification and is worried about potential red flags or fraud.",
+        "user_billing_security_concern_charge_details_here": "Charge appeared suddenly, no linked order. Michael double-checked transactions and finds no recent purchases. Concerned about fraud or system error, given past Apple Pay hold experience.",
+        "user_billing_security_concern_final_analysis": "Charge is likely a billing error. No order, tax, or subscription match. No notice. We will investigate and refund it promptly.",
+        "user_billing_security_concern_transaction_details": "Michael offers to provide transaction details: charge amount ~$49.99, posted 3 days ago, no additional descriptor. Has screenshots, transaction ID, and date ready to share.",
+        "user_billing_security_concern_final_request": "Michael requests a direct resolution: refund or clear explanation, without bank dispute. Wants to preserve trust and ensure future purchases are worry-free. Values your support and product quality."
+    },
+    "archival_memory": {
+        "user_inquiry_shipment_delay_seattle_weather": "Michael is concerned about potential shipping delays due to Seattle's rainy weather affecting carrier operations. He is seeking confirmation if the company is seeing similar issues or if there's any updated timeline for delivery. He emphasizes the need for transparency to assess whether a replacement or expedited shipping is warranted.",
+        "user_inquiry_lost_package_exchange_policy": "Michael is inquiring about the company's process for lost or damaged packages during transit. He wants to know if the company files a claim with the carrier on his behalf or if he needs to do it himself. He emphasizes the value of the purchase and his desire to be prepared, as the espresso machine is a significant investment and a personal upgrade to his morning routine.",
+        "user_inquiry_delivery_signature_requirements": "Michael is confirming that he will be home to receive the package if it arrives, especially given past issues with soggy deliveries during rain. He emphasizes the need for a signature upon delivery and requests updates if the courier is scheduled to deliver tomorrow. He wants to ensure the package is safely received and not left unattended or exposed to rain.",
+        "user_request_for_shipping_update": "Michael is requesting a real-time update on his order's shipping status. He is seeking either a direct ping from the shipping carrier or an internal note indicating a delay. His goal is to establish a realistic timeline to adjust his plans\u2014such as switching to a French press or rescheduling the latte art event\u2014without further uncertainty."
+    }
+}

@@ -1,0 +1,90 @@
+{
+  "backend": "vector",
+  "tiers": {
+    "core": {
+      "0": {
+        "text": "Sarah Chen(CEO, Pacific Dynamics): Met at Goldman 2008; bonded during a 2009 delayed flight. Shared deep conversations on markets and jazz, forming a 15-year trust. Now a go-to advisor for Asian markets, reachable anytime, even at 3 AM.",
+        "probes": [
+          "Sarah Chen(CEO, Pacific Dynamics): Met at Goldman 2008; bonded during a 2009 delayed flight. Shared deep conversations on markets and jazz, forming a 15-year trust. Now a go-to advisor for Asian markets, reachable anytime, even at 3 AM.",
+          "what do you know about sarah chen ceo pacific",
+          "sarah chen ceo pacific dynamics met goldman 2008"
+        ],
+        "probe_provenance": "stored_text"
+      },
+      "1": {
+        "text": "Golf as relationship tool: 7-handicap; key deals at top courses. $2.3B merger with Jim(MineCore) during holes 7-8. 'Quarterly Links' at Pebble Beach led to 3 acquisitions & sovereign wealth fund partnership. Caddie Tom(30 years) provides deep corporate intelligence as walking Bloomberg terminal.",
+        "probes": [
+          "Golf as relationship tool: 7-handicap; key deals at top courses. $2.3B merger with Jim(MineCore) during holes 7-8. 'Quarterly Links' at Pebble Beach led to 3 acquisitions & sovereign wealth fund partnership. Caddie Tom(30 years) provides deep corporate intelligence as walking Bloomberg terminal.",
+          "what do you know about golf relationship tool handicap",
+          "golf relationship tool handicap key deals top courses"
+        ],
+        "probe_provenance": "stored_text"
+      },
+      "2": {
+        "text": "Personal client approach: 50 HNWIs, 30 institutional clients. Deep family involvement: succession planning with Robert's children via dinners. Attended weddings, supported through personal losses. Concierge service: personal midnight responses. Trust built on genuine connection, not transactions.",
+        "probes": [
+          "Personal client approach: 50 HNWIs, 30 institutional clients. Deep family involvement: succession planning with Robert's children via dinners. Attended weddings, supported through personal losses. Concierge service: personal midnight responses. Trust built on genuine connection, not transactions.",
+          "what do you know about personal client approach hnwis",
+          "personal client approach hnwis institutional clients deep family"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "3": {
+        "text": "Global network: 3 trips/week between NY, London, HK, Dubai. Face-to-face essential; closed deal with Chipset Core in Singapore after 3 days, including 4 AM dim sum. '48-hour protocol' for major opportunities. Tailor-designed suits for long-haul flights.",
+        "probes": [
+          "Global network: 3 trips/week between NY, London, HK, Dubai. Face-to-face essential; closed deal with Chipset Core in Singapore after 3 days, including 4 AM dim sum. '48-hour protocol' for major opportunities. Tailor-designed suits for long-haul flights.",
+          "what do you know about global network trips week",
+          "global network trips week between london dubai face"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "4": {
+        "text": "Network Triangle: Professional, social, knowledge sharing. 'Future Focus' dinners led to Stellar Investments x Energia collaboration. Mentorship circle for senior execs & young talent. Intersections: client's daughter interns; golf buddy becomes investor. Community is the true foundation of success.",
+        "probes": [
+          "Network Triangle: Professional, social, knowledge sharing. 'Future Focus' dinners led to Stellar Investments x Energia collaboration. Mentorship circle for senior execs & young talent. Intersections: client's daughter interns; golf buddy becomes investor. Community is the true foundation of success.",
+          "what do you know about network triangle professional social",
+          "network triangle professional social knowledge sharing future focus"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "5": {
+        "text": "Resilience is the true differentiator. Loss of major deal with Intelligent Motors was a turning point. Mentor advised: 'You’ll lose more than you win—the key is making wins bigger than losses.' Now views failure as tuition, not defeat. Transformed mindset: setbacks are growth engines.",
+        "probes": [
+          "Resilience is the true differentiator. Loss of major deal with Intelligent Motors was a turning point. Mentor advised: 'You’ll lose more than you win—the key is making wins bigger than losses.' Now views failure as tuition, not defeat. Transformed mindset: setbacks are growth engines.",
+          "what do you know about resilience true differentiator loss",
+          "resilience true differentiator loss major deal intelligent motors"
+        ],
+        "probe_provenance": "write_time"
+      },
+      "6": {
+        "text": "Create your own luck. Proactivity beats waiting. Habit: reaching out to leaders with specific questions. Most ignored, but a few responded—opened doors to opportunities. Opportunity finds those who show up, not those who wait.",
+        "probes": [
+          "Create your own luck. Proactivity beats waiting. Habit: reaching out to leaders with specific questions. Most ignored, but a few responded—opened doors to opportunities. Opportunity finds those who show up, not those who wait.",
+          "what do you know about create own luck proactivity",
+          "create own luck proactivity beats waiting habit reaching"
+        ],
+        "probe_provenance": "write_time"
+      }
+    },
+    "archival": {
+      "0": {
+        "text": "Key deals:\n- 2019: Poison pill defense of Surreal Inc. (Harvard Business School case study)\n- $8.6B cross-border semiconductor merger between Nexa Semiconductors and Taihua Microelectronics(global diplomacy, IP and regulatory challenges)\n- $14.2B healthcare merger between BioCrest Labs and OncoPharm Therapeutics(overcame IP/regulatory hurdles; WSJ called it 'the deal that reshaped modern cancer treatment')\nPersonal memento: Small lucite from first $500M transaction(funded Stratos Aerospace expansion) remains on desk as a daily reminder of drive, energy, and resilience in every transaction.\n\nCurrent transactions:\n- $8.5B QuantumChip-Silicon Core semiconductor merger(U.S.-China regulatory navigation)\n- $3.2B VertexSoft LBO(debt financing challenge)\n- $5B+ Solaris-Nordic Renewables renewable energy acquisition(jurisdictional incentive alignment)\n\nWeekly Monday 7 AM deal call(Asian markets) – maintains strategic sharpness\n\nPotential $20B take-private: Omnix AI(AI powerhouse) – transformative if executed.\n\nCareer path:\n- 2001: Analyst at Goldman Sachs(M&A modeling, survived dot-com crash)\n- 2004: Associate at Morgan Stanley(exposed to early social media tech deals)\n- 31: Vice President, led defining transactions of era\n- 2015: Joined Legend Investments as Managing Director\n- First major Legend deal: NeuralNet Systems IPO(largest tech IPO to date)\n\nCore insight: In global finance, network and track record are currency. Trust is earned one successful deal at a time.\n\nEducation & values:\n- B.A. in Economics, University of Pennsylvania\n- MBA from Harvard Business School(Baker Scholar)\n- Active guest lecturer, mentor, and recruiter at Penn and HBS\n- Recently endowed a scholarship at Penn for first-generation college students in finance\n\nBelief: Talent is the greatest investment. Finance should be a pathway to opportunity—not just for the privileged, but for those with hunger and discipline.",
+        "probes": [
+          "Key deals:\n- 2019: Poison pill defense of Surreal Inc. (Harvard Business School case study)\n- $8.6B cross-border semiconductor merger between Nexa Semiconductors and Taihua Microelectronics(global diplomacy, IP and regulatory challenges)\n- $14.2B healthcare merger between BioCrest Labs and OncoPharm Therapeutics(overcame IP/regulatory hurdles; WSJ called it 'the deal that reshaped modern cancer treatment')\nPersonal memento: Small lucite from first $500M transaction(funded Stratos Aerospace expansion) remains on desk as a daily reminder of drive, energy, and resilience in every transaction.\n\nCurrent transactions:\n- $8.5B QuantumChip-Silicon Core semiconductor merger(U.S.-China regulatory navigation)\n- $3.2B VertexSoft LBO(debt financing challenge)\n- $5B+ Solaris-Nordic Renewables renewable energy acquisition(jurisdictional incentive alignment)\n\nWeekly Monday 7 AM deal call(Asian markets) – maintains strategic sharpness\n\nPotential $20B take-private: Omnix AI(AI powerhouse) – transformative if executed.\n\nCareer path:\n- 2001: Analyst at Goldman Sachs(M&A modeling, survived dot-com crash)\n- 2004: Associate at Morgan Stanley(exposed to early social media tech deals)\n- 31: Vice President, led defining transactions of era\n- 2015: Joined Legend Investments as Managing Director\n- First major Legend deal: NeuralNet Systems IPO(largest tech IPO to date)\n\nCore insight: In global finance, network and track record are currency. Trust is earned one successful deal at a time.\n\nEducation & values:\n- B.A. in Economics, University of Pennsylvania\n- MBA from Harvard Business School(Baker Scholar)\n- Active guest lecturer, mentor, and recruiter at Penn and HBS\n- Recently endowed a scholarship at Penn for first-generation college students in finance\n\nBelief: Talent is the greatest investment. Finance should be a pathway to opportunity—not just for the privileged, but for those with hunger and discipline.",
+          "what do you know about key deals 2019 poison",
+          "key deals 2019 poison pill defense surreal inc"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "1": {
+        "text": "Success isn’t about what you achieve—it’s about what you sustain. Long-term success comes from consistent good decisions, risk management, and humility. Short-term wins breed complacency. The real key: stay hungry, stay curious, never let success make you stop growing. Growth is the only true indicator of lasting success. Complacency kills sustainability.",
+        "probes": [
+          "Success isn’t about what you achieve—it’s about what you sustain. Long-term success comes from consistent good decisions, risk management, and humility. Short-term wins breed complacency. The real key: stay hungry, stay curious, never let success make you stop growing. Growth is the only true indicator of lasting success. Complacency kills sustainability.",
+          "what do you know about success isn achieve sustain",
+          "success isn achieve sustain long term comes consistent"
+        ],
+        "probe_provenance": "write_time"
+      }
+    }
+  }
+}

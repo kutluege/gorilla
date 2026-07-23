@@ -1,0 +1,13 @@
+{
+    "core_memory": {
+        "next_id": 2,
+        "store": {
+            "0": "User Michael, 35, lives in Seattle, freelance graphic designer, values design aesthetics, seeks sleek stainless-steel espresso machine, user-friendly, wants caf\u00e9-like experience, shipping from local warehouse, delivery time, and availability before family gathering later this month.",
+            "1": "User Michael: stainless-steel espresso machine with steam wand. 17% discount. Local Seattle warehouse. Free shipping with accessories. Real-time tracking. Return/exchange policy: free return shipping. No cost for defects or wrong size. Transparent, no hidden fees. Customer-friendly."
+        }
+    },
+    "archival_memory": {
+        "next_id": 0,
+        "store": {}
+    }
+}

@@ -1,0 +1,14 @@
+{
+    "core_memory": {
+        "next_id": 1,
+        "store": {
+            "0": "Patient embraces aging with wisdom: listens to their body, practices self-care, and appreciates small joys. Admonishes younger self to relax, prioritize health early, and enjoy every stage. Aging is not fear\u2014it\u2019s a meaningful chapter lived with courage and presence."
+        }
+    },
+    "archival_memory": {
+        "next_id": 1,
+        "store": {
+            "0": "Patient manages chronic osteoarthritis pain with practical, compassionate strategies: warm baths with Epsom salts, morning heating pad use, and exploring gentle movement like tai chi and stretching. Recognizes that aging isn\u2019t about eliminating discomfort\u2014but about adapting, staying active, and preserving the ability to enjoy daily life. Focus on resilience, not perfection."
+        }
+    }
+}

@@ -1,0 +1,12 @@
+{
+    "core_memory": {
+        "diabetes_treatment": "Type 2 Diabetes: Currently on metformin 1000 mg twice daily. A1C around 6.9%. Doctor suggested adding semaglutide(Ozempic) at a low dose to improve blood sugar control and appetite management. Fasting blood sugar typically ranges between 125-130 mg/dL.",
+        "hypertension_treatment": "High Blood Pressure: Currently on losartan 50 mg once daily. Blood pressure readings typically range from 135-140/80-90 mmHg. Doctor recommends stress management and reduced sodium intake instead of increasing dosage. Taking a daily magnesium supplement, which may support blood pressure regulation.",
+        "hypothyroidism_treatment": "Hypothyroidism: On levothyroxine 75 mcg once daily. Taken on an empty stomach, with at least 30 minutes before eating. Last TSH test result: 2.1 mIU/L(within normal range). Doctor has not adjusted dosage. Noticeable sluggishness if a dose is missed; uses a pill organizer to stay on track.",
+        "osteoarthritis_treatment": "Osteoarthritis: Uses acetaminophen as needed for mild pain. Takes meloxicam 7.5 mg when joints(knees and hands) are particularly stiff or painful. Avoids daily use of NSAIDs to prevent overuse. Doctor recommended glucosamine supplements; effect on symptoms is uncertain and not yet confirmed.",
+        "cholesterol_management": "Cholesterol management: Taking atorvastatin 10 mg daily. Initial LDL was 130 mg/dL(elevated), triglycerides at 140 mg/dL. Started low-dose statin to improve lipid profile. Cholesterol levels have improved since starting treatment. No reported side effects(e.g., muscle aches), which is reassuring.",
+        "medication_interactions": "Avoid frequent meloxicam with losartan(kidney risk). Take levothyroxine separately from calcium/iron. Space all meds by at least 4 hours to prevent absorption issues.",
+        "overall_health_goals": "Medication routine is working well. Stays organized with a pill planner and phone reminders. Focuses on lifestyle changes to reduce reliance on medications. Goal: Maintain optimal health and avoid unnecessary prescriptions by managing conditions naturally when possible."
+    },
+    "archival_memory": {}
+}

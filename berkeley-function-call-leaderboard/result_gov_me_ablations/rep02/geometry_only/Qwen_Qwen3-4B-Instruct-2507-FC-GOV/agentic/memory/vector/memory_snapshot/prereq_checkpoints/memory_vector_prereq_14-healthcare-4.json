@@ -1,0 +1,19 @@
+{
+    "core_memory": {
+        "next_id": 1,
+        "store": {
+            "0": "Diabetes: Metformin 1000 mg twice daily(long-term). Added semaglutide(Ozempic) low dose(GLP-1 agonist) for appetite control and glycemic improvement. Fasting glucose: 125\u2013130 mg/dL. HbA1C: 6.9% (target <7.0%). Appetite reduced, better satiety."
+        }
+    },
+    "archival_memory": {
+        "next_id": 6,
+        "store": {
+            "0": "Hypothyroidism: Levothyroxine 75 mcg daily. Taken on empty stomach, 30+ minutes before eating. Last TSH: 2.1 mIU/L(normal range: 0.4\u20134.0). Stable for years. Missed dose \u2192 feeling sluggish next day. Uses pill organizer to prevent missed doses.",
+            "1": "Osteoarthritis: Acetaminophen as needed for mild pain. Meloxicam 7.5 mg prescribed for flare-ups(knees, hands); taken only when joints are stiff, not daily to avoid NSAID overuse. Doctor suggested glucosamine supplements\u2014no definitive evidence of benefit yet; ongoing trial.",
+            "2": "Vitamin D & Bone Health: Vitamin D3 2,000 IU daily(corrected from 22 ng/mL; target >30 ng/mL). Calcium supplement(due to early osteopenia on bone density scan). Doctor recommends combining with vitamin K2 to improve absorption and bone health.",
+            "3": "Cholesterol Management: Atorvastatin 10 mg daily(low-dose statin). LDL: 130 mg/dL(elevated), Triglycerides: 140 mg/dL(elevated). Started to improve lipid profile. No side effects reported(e.g., muscle aches). Doctor\u2019s recommendation for LDL control and triglyceride reduction.",
+            "4": "General Health Supplements: Daily multivitamin, omega-3s (for heart health), probiotics(for digestion). Post-gallbladder removal: Take digestive enzymes with heavier meals. Digestive changes: More mindful of fatty foods due to altered fat digestion post-removal.",
+            "5": "Medication Interactions & Safety: \n- Avoid frequent use of meloxicam(NSAID) with losartan due to potential kidney function risk; taken only during flare-ups. \n- Take levothyroxine separately from calcium and iron supplements(at least 4 hours apart) to prevent absorption interference. \n- Monitor kidney function and thyroid hormone levels regularly."
+        }
+    }
+}

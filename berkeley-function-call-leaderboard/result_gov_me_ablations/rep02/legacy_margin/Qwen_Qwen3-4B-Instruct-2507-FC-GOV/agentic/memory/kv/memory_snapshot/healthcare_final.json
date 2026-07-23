@@ -1,0 +1,13 @@
+{
+    "core_memory": {},
+    "archival_memory": {
+        "patient_diabetes_history_fasting_glucose_135": "Fasting blood glucose level of 135 mg/dL, above target of <100 mg/dL. A1C of 6.9%, just above target of 6.5%. Doctor recommended increasing dietary fiber and adding light exercise after meals. Morning readings range between 125-130 mg/dL.",
+        "patient_cholesterol_profile": "Total cholesterol: 195 mg/dL(acceptable), LDL(bad cholesterol): 130 mg/dL(above target of <100 mg/dL), HDL(good cholesterol): 58 mg/dL(within good range), Triglycerides: 140 mg/dL(slightly elevated). Doctor advised increasing intake of healthy fats(avocados, nuts) and reducing saturated fats.",
+        "patient_blood_pressure_tracking": "Latest reading: 138/85 mmHg(on the high side). Target: below 130/80 mmHg. Home readings fluctuate between 135\u2013140 mmHg(systolic) and 80\u201390 mmHg(diastolic), influenced by stress and salt intake. Taking steps to reduce sodium intake and increase water consumption, which appears to help.",
+        "patient_vitamin_d_levels": "Vitamin D level: 22 ng/mL(deficient; normal range: 30-50 ng/mL). Doctor prescribed 2,000 IU daily supplement. Will be retested in a few months to assess improvement.",
+        "patient_thyroid_function": "TSH: 2.1 mIU/L(within normal range of 0.5\u20134.5 mIU/L). T4: 1.2 ng/dL(normal), indicating that current levothyroxine dosage is effective. Regular monitoring is maintained due to past history of hypothyroidism.",
+        "patient_bone_density_scan": "Spine T-score: -1.8 (osteopenia), Hip T-score: -1.5 (borderline). Doctor advised maintaining strength training and increasing calcium intake to prevent further bone loss. Started adding more dairy and leafy greens to diet, and now taking a calcium supplement with vitamin K2 to improve absorption.",
+        "patient_liver_kidney_function": "ALT levels: 42 U/L(elevated; normal <35 U/L). Doctor suspects possible link to recent medication adjustments. Creatinine: 0.9 mg/dL(within normal range of 0.6\u20131.2 mg/dL), indicating no kidney concerns.",
+        "patient_inflammatory_markers": "C-reactive protein(CRP): 3.2 mg/L(slightly elevated; ideal <3.0 mg/L), indicating mild inflammation\u2014likely related to osteoarthritis. ESR: 18 mm/hr(within normal range of 0-20 mm/hr), so no major inflammation detected."
+    }
+}

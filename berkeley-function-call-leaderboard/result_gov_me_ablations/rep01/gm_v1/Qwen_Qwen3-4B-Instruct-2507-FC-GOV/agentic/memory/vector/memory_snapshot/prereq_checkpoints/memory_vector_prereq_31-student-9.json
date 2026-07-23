@@ -1,0 +1,12 @@
+{
+    "core_memory": {
+        "next_id": 1,
+        "store": {
+            "0": "User reflects on family as supportive, close-knit, and lively. Family traditions with Archie provide emotional grounding and resilience. Home is a sanctuary where unconditional love and presence are central, helping the user stay grounded during academic and professional challenges."
+        }
+    },
+    "archival_memory": {
+        "next_id": 0,
+        "store": {}
+    }
+}

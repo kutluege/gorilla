@@ -1,0 +1,18 @@
+{
+    "core_memory": {
+        "next_id": 2,
+        "store": {
+            "0": "User Michael, 35, lives in Seattle, freelance graphic designer, values design aesthetics, seeks sleek stainless-steel espresso machine, user-friendly, wants caf\u00e9-like experience, shipping from local warehouse, delivery time, and availability before family gathering later this month.",
+            "1": "User Michael: stainless-steel espresso machine. Seattle warehouse. Free shipping. Tracking stuck, outside WA. Replacement if lost: we file claim. Full refund or replacement at no cost. Signature required. Will be home. Will greet driver or bring in immediately."
+        }
+    },
+    "archival_memory": {
+        "next_id": 4,
+        "store": {
+            "0": "User Michael's order details: Ordered a stainless-steel espresso machine with steam wand on [date not specified]. Estimated delivery: 11 business days. Free shipping included with accessories: stainless-steel frothing pitcher and extra filters. All items were in stock at time of order. Shipping was marked as originating from a local Seattle warehouse. Tracking is currently stuck, showing transit outside Washington. Customer expressed concern about delivery delay affecting family gathering. Requesting clarification on fulfillment process and potential supply chain issue.",
+            "1": "User Michael, 35, lives in Seattle, freelance graphic designer, values design aesthetics, seeks sleek stainless-steel espresso machine, user-friendly, caf\u00e9-like experience, shipping from local warehouse, delivery time, availability before family gathering. Orders: 1) Stainless-steel grinder, cleaning tablets, frothing pitcher. 2) Vacuum-sealed canisters, Garmin digital scale. Kitchen becoming a mini coffee lab.",
+            "2": "User Michael has expressed strong concern about the coffee grinder shipment from Oregon. He emphasizes that a label created without physical handover to carrier indicates a potential oversight. He is especially invested in the grinder as the 'MVP' of his espresso setup. He is willing to accept a delay but insists on full transparency. He has stated that he can wait on the canisters and scale, but the grinder must not be lost or delayed. Tracking update required within 24 hours with confirmation of pickup and dispatch.",
+            "3": "User Michael is traveling to Portland next weekend for a freelance gig. He will be away for 4\u20135 days. He is concerned about package delivery during his absence, especially for the coffee grinder bundle. He requests: 1) Delivery to be scheduled for a date when he is home(not during travel). 2) A clear arrival window to allow him to plan for a friend to house-sit or monitor the porch. 3) Full transparency on delivery attempts and carrier behavior. He emphasizes that the grinder is delicate and must not be exposed to rain or mishandling. If delivery occurs during absence, he will need a plan to retrieve it immediately upon return."
+        }
+    }
+}

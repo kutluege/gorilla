@@ -1,0 +1,21 @@
+{
+    "core_memory": {},
+    "archival_memory": {
+        "diabetes_blood_glucose_2024_q3": "Fasting blood glucose: 135 mg/dL; A1C: 6.9%; Morning readings: 125-130 mg/dL; Recommendations: Increase dietary fiber, light exercise after meals.",
+        "cholesterol_results_2024_q3": "Total cholesterol: 195 mg/dL; LDL: 130 mg/dL(target: under 100 mg/dL); HDL: 58 mg/dL(good range); Triglycerides: 140 mg/dL(slightly elevated); Recommendations: Increase healthy fats(avocados, nuts), reduce saturated fats.",
+        "blood_pressure_2024_q3": "Reading: 138/85 mmHg; Target: below 130/80 mmHg; Range: 135\u2013140 systolic, 80\u201390 diastolic; Factors: stress, salt intake; Actions: reduce sodium, increase water intake.",
+        "vitamin_d_levels_2024_q3": "Level: 22 ng/mL(deficient); Normal range: 30-50 ng/mL; Treatment: 2,000 IU daily supplement; Next test: in a few months.",
+        "thyroid_results_2024_q3": "TSH: 2.1 mIU/L(normal range: 0.5-4.5 mIU/L); T4: 1.2 ng/dL(within target); Status: Stable; Past history: Hypothyroidism; Current treatment: Levothyroxine(working well).",
+        "bone_density_results_2024_q3": "Spine T-score: -1.8 (osteopenia); Hip T-score: -1.5 (borderline); Recommendations: Strength training, increased calcium and vitamin D intake, calcium supplement with vitamin K2 for absorption.",
+        "liver_kidney_function_2024_q3": "ALT: 42 U/L(elevated; normal <35 U/L); Possible cause: recent medication adjustments; Creatinine: 0.9 mg/dL(normal range: 0.6-1.2 mg/dL); Kidney function: normal; Next step: monitor ALT levels closely.",
+        "inflammatory_markers_2024_q3": "C-reactive protein(CRP): 3.2 mg/L(slightly elevated; ideal <3.0 mg/L); Likely related to osteoarthritis; ESR: 18 mm/hr(normal range: 0-20 mm/hr); Interpretation: Mild inflammation, primarily due to joint condition.",
+        "diabetes_treatment_plan": "Type 2 Diabetes: Metformin 1000 mg twice daily for several years. Recently added semaglutide(Ozempic) at low dose for appetite control and blood sugar management. Fasting blood sugar typically 125-130 mg/dL. A1C around 6.9%.",
+        "hypertension_treatment_plan": "Losartan 50 mg once daily. Blood pressure typically 135-140/80-90 mmHg. Doctor recommends stress management and reduced sodium intake instead of increasing dosage. Taking a daily magnesium supplement for potential blood pressure support.",
+        "hypothyroidism_treatment_plan": "Levothyroxine 75 mcg once daily, taken on an empty stomach, 30 minutes before eating. Last TSH test: 2.1 mIU/L(within normal range). No dosage changes in years. Notice sluggishness if a dose is missed; uses a pill organizer to stay on track.",
+        "osteoarthritis_treatment_plan": "Acetaminophen as needed for mild pain. Meloxicam 7.5 mg prescribed for flare-ups(knees and hands), taken only when joints are stiff, to avoid overuse of NSAIDs. Glucosamine supplements tried, but effect unclear\u2014no definitive improvement noted yet.",
+        "vitamin_d_and_bone_health_plan": "Vitamin D3 2,000 IU daily due to low levels(22 ng/mL; normal >30 ng/mL). Taking calcium supplements due to early osteopenia on bone density scan. Doctor recommends combining with vitamin K2 to improve calcium absorption and bone health.",
+        "cholesterol_management_plan": "Atorvastatin 10 mg daily for cholesterol management. Initial LDL: 130 mg/dL, triglycerides: 140 mg/dL. Doctor prescribed low-dose statin to improve lipid profile. Cholesterol levels have improved so far, with no reported side effects(e.g., muscle aches), which is reassuring.",
+        "general_health_supplements": "Daily multivitamin, omega-3 supplements for heart health, and probiotics for digestion. Post-gallbladder removal: Take digestive enzymes when consuming heavier or fatty meals. Aware that gallbladder removal affects fat digestion, so mindful of dietary fat intake.",
+        "medication_interactions_precautions": "Aware of potential interactions between losartan and meloxicam(NSAIDs may affect kidney function), so limit meloxicam use to flare-ups only. Take levothyroxine separately from calcium and iron supplements to avoid interference with absorption."
+    }
+}

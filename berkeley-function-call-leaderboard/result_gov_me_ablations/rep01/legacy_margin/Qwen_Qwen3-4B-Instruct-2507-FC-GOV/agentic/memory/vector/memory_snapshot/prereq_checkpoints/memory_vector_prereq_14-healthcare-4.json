@@ -1,0 +1,14 @@
+{
+    "core_memory": {
+        "next_id": 1,
+        "store": {
+            "0": "Recent blood glucose and A1C results: Fasting glucose 135 mg/dL(target <100 mg/dL), A1C 6.9% (target 6.5%). Doctor advised increasing dietary fiber and adding light exercise after meals. Morning home readings consistently 125\u2013130 mg/dL."
+        }
+    },
+    "archival_memory": {
+        "next_id": 1,
+        "store": {
+            "0": "Vitamin D levels: 22 ng/mL(deficient; normal range 30-50 ng/mL). Doctor prescribed 2,000 IU daily supplement. Scheduled retest in 3-4 months to monitor improvement. Note: Despite regular sun exposure, levels remain low, suggesting possible dietary or absorption factors.\n\nBone density scan results: Spine T-score -1.8 (osteopenia), Hip T-score -1.5 (borderline). Doctor advised strength training and increased calcium intake to prevent further bone loss. Patient now includes more dairy and leafy greens in diet and takes a calcium supplement with vitamin K2 to improve absorption.\n\nLiver and kidney function: ALT 42 U/L(elevated; normal <35 U/L), possibly linked to recent medication changes. Creatinine 0.9 mg/dL(normal range 0.6\u20131.2 mg/dL)\u2014kidney function is within normal limits. Doctor recommends monitoring ALT closely and reviewing medication regimen.\n\nInflammatory markers: CRP 3.2 mg/L(slightly elevated; ideal <3.0 mg/L), likely related to osteoarthritis. ESR 18 mm/hr(within normal range: 0-20 mm/hr), indicating no major systemic inflammation."
+        }
+    }
+}

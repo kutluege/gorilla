@@ -1,0 +1,17 @@
+{
+    "core_memory": {
+        "user_name": "Michael",
+        "user_location": "Seattle",
+        "user_profession": "Freelance graphic designer",
+        "user_interests": "Modern design, sleek stainless-steel finishes, home coffee routine",
+        "user_preference": "Espresso machine with caf\u00e9-like experience, beginner-friendly, modern design"
+    },
+    "archival_memory": {
+        "user_inquiry_pricing": "Michael is interested in pricing for the SleekPress SP-3000 espresso machine and is asking about first-time buyer discounts and bundle deals.",
+        "user_shipping_concern": "Michael is in Seattle and is concerned about shipping times and whether products are shipped from a local warehouse. He wants to receive the espresso machine before a family gathering later this month.",
+        "user_additional_questions": "Michael is asking about brewing frequency, cleaning complexity, machine size, and kitchen space impact\u2014specifically for the SleekPress SP-3000 espresso machine.",
+        "user_kitchen_space_concern": "Michael is concerned about the physical footprint of the espresso machine and wants precise dimensions to avoid kitchen 'Tetris' reorganization.",
+        "user_warranty_concern": "Michael is asking about warranty policy for the SleekPress SP-3000, specifically looking for a long-term, customer-friendly guarantee due to past negative experiences with short-term warranties.",
+        "user_temperature_concern": "Michael is concerned about coffee temperature consistency and has had issues with drip machines that don\u2019t heat sufficiently, leading him to microwave coffee. He wants to know if the SleekPress SP-3000 produces reliably hot coffee with adjustable temperature settings."
+    }
+}

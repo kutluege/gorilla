@@ -1,0 +1,17 @@
+{
+  "backend": "vector",
+  "tiers": {
+    "core": {
+      "0": {
+        "text": "Fasting glucose: 135 mg/dL (target <100). A1C: 6.9% (target ≤6.5%). Morning readings: 125–130 mg/dL. Action: Increase fiber, light exercise post-meal. Note: Seasonal factors (e.g., winter joint pain) may impact glucose control; adjust diet/activity accordingly.",
+        "probes": [
+          "Fasting glucose: 135 mg/dL (target <100). A1C: 6.9% (target ≤6.5%). Morning readings: 125–130 mg/dL. Action: Increase fiber, light exercise post-meal. Note: Seasonal factors (e.g., winter joint pain) may impact glucose control; adjust diet/activity accordingly.",
+          "what do you know about fasting glucose 135 target",
+          "fasting glucose 135 target 100 a1c morning readings"
+        ],
+        "probe_provenance": "write_time"
+      }
+    },
+    "archival": {}
+  }
+}

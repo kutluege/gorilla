@@ -233,6 +233,25 @@ v1 parsers keep working.
   with grouped bootstrap, Option-A risk-coverage grid, Option-B monotone
   logistic + isotonic + freeze ceremony (refuses overwrite).
 
-**Next (requires the tunnel/GPU):** Phase 3 shadow harvests (≥3 reps, gov2
-logging) → outcomes labeling → G1 gate → threshold freeze → Phase 6 ablations →
-Phase 7 confirmatory 5× A/B (pre-registered primary: v1 vs geometry_only).
+**Phase 3/5 (2026-07-21/22).** 3× shadow harvest (`govrep_20260721T234427Z`) +
+frozen calibration — **gate G1 FAIL** (nested ΔAUC(entropy | geometry+margin)
+CI includes/undershoots 0; NC clean), entropy terms dropped from the live rule.
+Entropy v2 redefinition (affine-invariant z-score entropy + von Neumann/Vendi
+neighborhood entropy) re-tested offline: same negative — the layer was not the
+problem (`gov_logs/entropy_v2_report.json`).
+
+**Phase 6 (2026-07-22/23).** G1-fail reduced matrix (baseline / geometry_only /
+gm_v1 / legacy_margin / joint_entropy_diag × 3 reps,
+`govrep_20260722T074659Z` + rep3 resume `govrep_20260723T075136Z` after a
+tunnel drop; instance continuity asserted-not-verified per RESUME_PROTOCOL
+addendum). No arm differs from baseline after Holm; gm_v1 point estimates ≈ 0
+vs both comparators but CIs exceed the −2 pp non-inferiority margin at n=3, and
+no pre-registered secondary (harmful-write rate 1/3 reps in favor, dup=0,
+NLI=0) shows superiority ⇒ **gate G2 FAIL**
+(`gov_logs/ME_ABLATIONS_PHASE6_G2.md`).
+
+**Next (requires the tunnel/GPU):** Phase 7 confirmatory 5× A/B with
+**geometry_only as the headline arm** (pre-registered G2-fail consequence);
+baseline / geometry_only / gm_v1 arms, full §19 stats → `EVAL_RESULTS_V2.md`;
+then Phase 8 thesis analysis (risk-coverage, negative-result narrative per
+§24).

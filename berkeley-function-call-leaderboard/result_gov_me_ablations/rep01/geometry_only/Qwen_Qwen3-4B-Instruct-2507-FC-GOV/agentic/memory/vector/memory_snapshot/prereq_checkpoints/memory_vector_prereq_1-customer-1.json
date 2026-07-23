@@ -1,0 +1,14 @@
+{
+    "core_memory": {
+        "next_id": 1,
+        "store": {
+            "0": "User Michael, 35, lives in Seattle. Seeks stainless-steel espresso machine with steam wand, fits 38 sq ft counter, reliable temperature control, local shipping, warranty, family use. Inquired about 17% off new-customer discount; needs clear checkout steps to apply coupon."
+        }
+    },
+    "archival_memory": {
+        "next_id": 1,
+        "store": {
+            "0": "User Michael, 35, lives in Seattle. Seeks stainless-steel espresso machine with steam wand, fits 38 sq ft counter, reliable temperature control, local shipping, warranty, family use. Inquired about 17% off new-customer discount, payment options(including 6-month no-interest financing), shipping timeline, free shipping threshold, real-time tracking, return/exchange policy, and coffee bean/grinder recommendations. Interested in a small, aesthetic grinder that pairs with stainless-steel espresso machine. Wants to grind beans fresh for optimal flavor, especially for espresso and matcha lattes. Seeks recommendations that match kitchen design and functionality."
+        }
+    }
+}

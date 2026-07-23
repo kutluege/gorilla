@@ -1,0 +1,12 @@
+{
+    "core_memory": {
+        "next_id": 1,
+        "store": {
+            "0": "User Michael, 35, lives in Seattle, freelance graphic designer, interested in sleek, modern espresso machines with stainless-steel finishes and user-friendly features for non-professionals. Inquiring about pricing, first-time buyer discounts, and any bundle or limited-time promotions."
+        }
+    },
+    "archival_memory": {
+        "next_id": 0,
+        "store": {}
+    }
+}

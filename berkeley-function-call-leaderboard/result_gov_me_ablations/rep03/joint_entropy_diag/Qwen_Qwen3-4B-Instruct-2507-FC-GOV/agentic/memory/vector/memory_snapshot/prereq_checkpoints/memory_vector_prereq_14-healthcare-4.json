@@ -1,0 +1,18 @@
+{
+    "core_memory": {
+        "next_id": 7,
+        "store": {
+            "0": "Type 2 Diabetes: Currently on metformin 1000 mg twice daily. A1C around 6.9%. Doctor recommended adding semaglutide(Ozempic) at a low dose to improve glycemic control and appetite suppression. Fasting blood sugar typically ranges between 125-130 mg/dL. Monitoring at home regularly.",
+            "1": "Hypertension: Currently on losartan 50 mg once daily. Blood pressure range: 135-140/80-90 mmHg. Doctor recommends stress management and reduced sodium intake instead of increasing dosage. Taking a daily magnesium supplement, which may support blood pressure regulation.",
+            "2": "Hypothyroidism: On levothyroxine 75 mcg once daily. Taken on an empty stomach, at least 30 minutes before eating. Last TSH result: 2.1 mIU/L(within normal range). Doctor has not adjusted dosage in years. Notice sluggishness if a dose is missed; uses a pill organizer to stay on track.",
+            "3": "Osteoarthritis: Uses acetaminophen as needed for mild pain. Takes meloxicam 7.5 mg when joints are particularly stiff(knees, hands), but not daily to avoid overuse of NSAIDs. Doctor suggested glucosamine supplements; effect unclear and not yet confirmed.",
+            "4": "Vitamin D & Bone Health: Vitamin D3 2,000 IU daily due to low levels(22 ng/mL \u2014 below normal threshold of 30 ng/mL). Also taking calcium supplements due to early osteopenia on bone density scan. Doctor recommends combining with vitamin K2 to improve calcium absorption and bone health.",
+            "5": "Atorvastatin 10 mg daily for cholesterol. LDL 130 mg/dL, triglycerides 140 mg/dL initially. Low-dose statin prescribed to improve profile. Levels improving; no side effects(e.g., muscle aches). Tolerated well.",
+            "6": "General Health Supplements: Daily multivitamin, omega-3s for heart health, and probiotics for digestion. Post-gallbladder removal: Takes digestive enzymes when consuming heavier meals. Aware that gallbladder removal affects fat digestion; now mindful of fatty foods to avoid or limit."
+        }
+    },
+    "archival_memory": {
+        "next_id": 0,
+        "store": {}
+    }
+}

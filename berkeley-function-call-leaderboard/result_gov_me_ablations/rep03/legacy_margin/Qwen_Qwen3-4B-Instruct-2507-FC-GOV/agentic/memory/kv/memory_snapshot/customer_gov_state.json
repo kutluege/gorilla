@@ -1,0 +1,71 @@
+{
+  "backend": "kv",
+  "tiers": {
+    "core": {
+      "user_introduction_michael": {
+        "text": "user introduction michael: Michael, 35, lives in Seattle, freelance graphic designer, values design aesthetics in gadgets, interested in high-quality coffee machines to enhance his morning routine.",
+        "probes": [
+          "user introduction michael",
+          "what is user introduction michael",
+          "user introduction michael michael lives seattle"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "user_bundle_integrity_concern": {
+        "text": "user bundle integrity concern: Michael worries the grinder bundle might be split(e.g., pitcher shipped separately). He wants all items in each order to arrive together to avoid confusion or missing key items.",
+        "probes": [
+          "user bundle integrity concern",
+          "what is user bundle integrity concern",
+          "user bundle integrity concern michael worries grinder"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "user_coffee_shop_aspirations": {
+        "text": "user coffee shop aspirations: Michael is excited about becoming a barista and running a small coffee shop. He wants everything fully set up and tested before hosting gatherings to deliver premium brews and avoid disappointing his social circle.",
+        "probes": [
+          "user coffee shop aspirations",
+          "what is user coffee shop aspirations",
+          "user coffee shop aspirations michael excited becoming"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "user_billing_security_concern": {
+        "text": "user billing security concern: Michael uses same address/credit card. Had a past security hold on Apple Pay. Wants to avoid similar issues. Requests immediate verification of billing and shipping details.",
+        "probes": [
+          "user billing security concern",
+          "what is user billing security concern",
+          "user billing security concern michael uses same"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "user_interest_in_subscription_program": {
+        "text": "user interest in subscription program: Michael is interested in a subscription or membership program offering perks like free shipping, early access to new products, or monthly discounts. He values organization and cost-effectiveness as he builds a comprehensive coffee station and frequently browses for accessories and new gadgets.",
+        "probes": [
+          "user interest in subscription program",
+          "what is user interest in subscription program",
+          "user interest in subscription program michael interested subscription"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "user_purchasing_process_streamlining_inquiry": {
+        "text": "user purchasing process streamlining inquiry: Michael wants membership to streamline purchases: free shipping on all orders, bonus freebies(like sample-size coffee), and occasional discount codes on future machines.",
+        "probes": [
+          "user purchasing process streamlining inquiry",
+          "what is user purchasing process streamlining inquiry",
+          "user purchasing process streamlining inquiry michael wants membership"
+        ],
+        "probe_provenance": "stored_text"
+      },
+      "user_unexpected_charge_details": {
+        "text": "user unexpected charge details: Amount: $49.99 (ballpark), Date: 3 days ago, Transaction ID: Not provided, Descriptor: Only 'Your Company Name' on statement, No additional details or descriptors.",
+        "probes": [
+          "user unexpected charge details",
+          "what is user unexpected charge details",
+          "user unexpected charge details amount ballpark date"
+        ],
+        "probe_provenance": "write_time"
+      }
+    },
+    "archival": {}
+  }
+}

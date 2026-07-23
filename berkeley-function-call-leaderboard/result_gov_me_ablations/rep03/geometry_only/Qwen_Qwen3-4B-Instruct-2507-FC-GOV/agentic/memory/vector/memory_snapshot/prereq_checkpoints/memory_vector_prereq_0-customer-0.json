@@ -1,0 +1,12 @@
+{
+    "core_memory": {
+        "next_id": 1,
+        "store": {
+            "0": "User Michael, 35, lives in Seattle, seeks sleek stainless-steel espresso machine, user-friendly, with built-in grinder and programmable timer, interested in local shipping, delivery time, and reliability during rainy season, with family gathering later this month."
+        }
+    },
+    "archival_memory": {
+        "next_id": 0,
+        "store": {}
+    }
+}

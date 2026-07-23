@@ -1,0 +1,16 @@
+{
+    "core_memory": {
+        "next_id": 1,
+        "store": {
+            "0": "User Michael, 35, lives in Seattle, freelance graphic designer, values design aesthetics, seeks sleek, modern stainless-steel espresso machine with steam wand for milk frothing(latte/cappuccino), compact footprint to fit 38 sq ft kitchen, needs to relocate toaster oven."
+        }
+    },
+    "archival_memory": {
+        "next_id": 3,
+        "store": {
+            "0": "User Michael, 35, lives in Seattle, freelance graphic designer, seeks sleek stainless-steel espresso machine with user-friendly features, interested in 15% new customer discount, bundle deals, shipping details, product dimensions, warranty policy, and reliable hot coffee output. Specifically asks about temperature settings and whether machines produce reliably hot coffee to avoid microwaving, which he finds unsatisfactory.",
+            "1": "User Michael, 35, first-time buyer, eligible for new-customer 17% off discount. Needs clear instructions on how to apply the coupon code during checkout: enter code 'FIRST17' in 'Enter Coupon Code' field before finalizing order. Also inquiring about payment options: prefers credit card, open to PayPal and Apple Pay, interested in no-interest financing(6 months) for premium items, but will use standard credit card if financing not available. Additional concern about shipping: wants to know estimated arrival date for espresso machine due to upcoming event at end of month. Currently in Seattle, where shipping can be delayed due to weather. Seeks clarity on processing time and shipping lead time, and whether expedited shipping is available. Now also asking about shipping fees: whether expedited shipping has a cost, and if there's a free standard shipping threshold(e.g., over $X). Considering adding accessories(extra filters, stainless-steel frothing pitcher) to qualify for free shipping. Will proceed with expedited shipping if it ensures timely delivery before event.",
+            "2": "User Michael, 35, in Seattle, has expressed concern about rainy weather impacting package delivery and doorstep damage. He specifically mentions past incidents where packages arrived soggy due to rain. He requests clear communication about delivery schedules, especially if delivery is scheduled for the next day. He emphasizes the need for a signature upon delivery to prevent packages from being left unattended or exposed to weather. He will adjust his schedule to be available to receive the package, ensuring it is safely brought indoors."
+        }
+    }
+}

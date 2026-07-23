@@ -1,0 +1,12 @@
+{
+    "core_memory": {
+        "next_id": 1,
+        "store": {
+            "0": "User Michael, 35, lives in Seattle, freelance graphic designer, seeks stainless-steel espresso machine, easy use, no barista skills, first-time buyer discount, bundle deals, local shipping, delivery by family gathering, and detailed info on brewing frequency, cleaning, and size."
+        }
+    },
+    "archival_memory": {
+        "next_id": 0,
+        "store": {}
+    }
+}

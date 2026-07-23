@@ -1,0 +1,81 @@
+{
+  "backend": "vector",
+  "tiers": {
+    "core": {
+      "2": {
+        "text": "Thursday: Finance wants cost-cutting recommendations—brainstorm ideas. Project deadline approaching—check in with Dev team. Caught a mistake in last month’s sales data. Workout: Gym 3x/week, focus on legs/back. Aim for 10k steps/day. Stretch before bed (hamstrings).",
+        "probes": [
+          "Thursday: Finance wants cost-cutting recommendations—brainstorm ideas. Project deadline approaching—check in with Dev team. Caught a mistake in last month’s sales data. Workout: Gym 3x/week, focus on legs/back. Aim for 10k steps/day. Stretch before bed (hamstrings).",
+          "what do you know about thursday finance wants cost",
+          "thursday finance wants cost cutting recommendations brainstorm ideas"
+        ],
+        "probe_provenance": "write_time"
+      },
+      "3": {
+        "text": "Friday: Wrapped up pending reports, but still waiting for final approval. Followed up with vendors—two responded, one still pending. Training session next Monday—prep materials this weekend.",
+        "probes": [
+          "Friday: Wrapped up pending reports, but still waiting for final approval. Followed up with vendors—two responded, one still pending. Training session next Monday—prep materials this weekend.",
+          "what do you know about friday wrapped pending reports",
+          "friday wrapped pending reports still waiting final approval"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "4": {
+        "text": "Urgent: Submit tax documents before Friday. Review credit card statement for errors. Call auto repair shop about weird noise in the engine.",
+        "probes": [
+          "Urgent: Submit tax documents before Friday. Review credit card statement for errors. Call auto repair shop about weird noise in the engine.",
+          "what do you know about urgent submit tax documents",
+          "urgent submit tax documents before friday review credit"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "5": {
+        "text": "Work-related: Finalize quarterly budget. Review vendor contract before signing. Finish security compliance training module.",
+        "probes": [
+          "Work-related: Finalize quarterly budget. Review vendor contract before signing. Finish security compliance training module.",
+          "what do you know about work related finalize quarterly",
+          "work related finalize quarterly budget review vendor contract"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "6": {
+        "text": "Tech: Back up laptop files. Update phone software. Cancel unused subscriptions.",
+        "probes": [
+          "Tech: Back up laptop files. Update phone software. Cancel unused subscriptions.",
+          "what do you know about tech back laptop files",
+          "tech back laptop files update phone software cancel"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "7": {
+        "text": "Car: Wash and vacuum on Sunday. Check tire pressure. Refill windshield wiper fluid.",
+        "probes": [
+          "Car: Wash and vacuum on Sunday. Check tire pressure. Refill windshield wiper fluid.",
+          "what do you know about car wash vacuum sunday",
+          "car wash vacuum sunday check tire pressure refill"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "8": {
+        "text": "Doctor: Kid’s cold isn’t getting better—schedule pediatrician visit. Check vaccine schedule—next shots due in two months. Monitor food allergies—keep a log if symptoms flare up.",
+        "probes": [
+          "Doctor: Kid’s cold isn’t getting better—schedule pediatrician visit. Check vaccine schedule—next shots due in two months. Monitor food allergies—keep a log if symptoms flare up.",
+          "what do you know about doctor kid cold isn",
+          "doctor kid cold isn getting better schedule pediatrician"
+        ],
+        "probe_provenance": "sidecar"
+      }
+    },
+    "archival": {
+      "0": {
+        "text": "Supplements & Meds: Vitamin D3—1000 IU daily. Omega-3s—good for joints. Iron levels were low last check-up—remember to take supplements. Probiotics—help with digestion, take in the morning.",
+        "probes": [
+          "Supplements & Meds: Vitamin D3—1000 IU daily. Omega-3s—good for joints. Iron levels were low last check-up—remember to take supplements. Probiotics—help with digestion, take in the morning.",
+          "what do you know about supplements meds vitamin 1000",
+          "supplements meds vitamin 1000 daily omega good joints"
+        ],
+        "probe_provenance": "write_time"
+      }
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+    "core_memory": {
+        "next_id": 2,
+        "store": {
+            "0": "User Michael, 35, lives in Seattle, freelance graphic designer, seeks a sleek, modern stainless-steel espresso machine offering caf\u00e9-like coffee at home without professional barista skills.",
+            "1": "Michael: Needs stainless-steel espresso machine with steam wand. Compact for 38 sq ft counter. 17% off(SEASONS17) at checkout. Payment: credit card, PayPal, Apple Pay. 6-month no-interest financing. Shipping: estimated arrival date for event at end of month. Expedited shipping available."
+        }
+    },
+    "archival_memory": {
+        "next_id": 1,
+        "store": {
+            "0": "User Michael, first-time buyer, expresses concern about coffee temperature consistency in drip machines. Specifically asks whether espresso machines offer adjustable temperature settings or reliably produce hot coffee to avoid microwaving, which he finds unsatisfactory."
+        }
+    }
+}

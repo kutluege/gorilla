@@ -1,0 +1,12 @@
+{
+    "core_memory": {
+        "next_id": 1,
+        "store": {
+            "0": "Diabetes: Metformin 1000 mg BID. Ozempic(low dose) for appetite & glucose. A1C: 6.9% (target \u22646.5%). Fasting glucose: 125\u2013130 mg/dL. Hypertension: Losartan 50 mg OD. BP: 135\u2013140/80\u201390 mmHg(target <140/90). Stress management, low sodium, daily magnesium. Seasonal monitoring(e.g., winter joint pain)."
+        }
+    },
+    "archival_memory": {
+        "next_id": 0,
+        "store": {}
+    }
+}

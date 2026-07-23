@@ -1,0 +1,81 @@
+{
+  "backend": "kv",
+  "tiers": {
+    "core": {
+      "tuesday_updates": {
+        "text": "tuesday updates: System downtime from 10 AM - 12 PM, slowed down workflow. HR sent updated benefits package—review before next month’s deadline. Sent follow-up emails to vendors, waiting on response.",
+        "probes": [
+          "tuesday updates",
+          "what is tuesday updates",
+          "tuesday updates system downtime slowed"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "password_change_reminder": {
+        "text": "password change reminder: IT updated security protocols—change passwords ASAP.",
+        "probes": [
+          "password change reminder",
+          "what is password change reminder",
+          "password change reminder updated security protocols"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "friday_updates": {
+        "text": "friday updates: Wrapped up pending reports, but still waiting for final approval. Followed up with vendors—two responded, one still pending. Training session next Monday—prep materials this weekend.",
+        "probes": [
+          "friday updates",
+          "what is friday updates",
+          "friday updates wrapped pending reports"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "urgent_tasks_friday": {
+        "text": "urgent tasks friday: Submit tax documents before Friday. Review credit card statement for errors. Call auto repair shop about weird noise in the engine.",
+        "probes": [
+          "urgent tasks friday",
+          "what is urgent tasks friday",
+          "urgent tasks friday submit tax documents"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "gym_frequency": {
+        "text": "gym frequency: Gym at least 3x this week.",
+        "probes": [
+          "gym frequency",
+          "what is gym frequency",
+          "gym frequency gym least week"
+        ],
+        "probe_provenance": "write_time"
+      },
+      "sugar_reduction": {
+        "text": "sugar reduction: Cut back on sugar—too much soda lately.",
+        "probes": [
+          "sugar reduction",
+          "what is sugar reduction",
+          "sugar reduction cut back sugar"
+        ],
+        "probe_provenance": "write_time"
+      },
+      "sleep_goal": {
+        "text": "sleep goal: Try to get 7+ hours of sleep.",
+        "probes": [
+          "sleep goal",
+          "what is sleep goal",
+          "sleep goal try get hours"
+        ],
+        "probe_provenance": "write_time"
+      }
+    },
+    "archival": {
+      "supplements_and_meds": {
+        "text": "supplements and meds: Vitamin D3—1000 IU daily. Omega-3s—good for joints. Iron levels were low last check-up—remember to take supplements. Probiotics—help with digestion, take in the morning.",
+        "probes": [
+          "supplements and meds",
+          "what is supplements and meds",
+          "supplements and meds vitamin 1000 daily"
+        ],
+        "probe_provenance": "write_time"
+      }
+    }
+  }
+}

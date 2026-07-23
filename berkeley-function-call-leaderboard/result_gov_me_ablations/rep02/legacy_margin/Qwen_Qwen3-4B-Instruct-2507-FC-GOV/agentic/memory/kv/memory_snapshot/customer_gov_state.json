@@ -1,0 +1,81 @@
+{
+  "backend": "kv",
+  "tiers": {
+    "core": {
+      "user_inquiry_pricing": {
+        "text": "user inquiry pricing: Michael is interested in pricing for espresso machines, specifically asking about first-time buyer discounts, new customer offers, and any bundle or limited-time promotions.",
+        "probes": [
+          "user inquiry pricing",
+          "what is user inquiry pricing",
+          "user inquiry pricing michael interested pricing"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "user_shipping_inquiry": {
+        "text": "user shipping inquiry: Michael is in Seattle and is concerned about shipping times, especially due to rainy weather. He wants to know if products are shipped from a local warehouse, and if so, what the expected delivery time is, particularly for a family gathering later this month.",
+        "probes": [
+          "user shipping inquiry",
+          "what is user shipping inquiry",
+          "user shipping inquiry michael seattle concerned"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "user_support_feedback": {
+        "text": "user support feedback: Michael’s friend praised your customer support for being excellent and detailed, which helped Michael feel confident in asking in-depth questions about coffee machine features, including brewing frequency, cleaning complexity, and footprint size.",
+        "probes": [
+          "user support feedback",
+          "what is user support feedback",
+          "user support feedback michael friend praised"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "user_warranty_inquiry": {
+        "text": "user warranty inquiry: Michael is concerned about warranty policies and service support, especially for higher-end models. He has had negative experiences with short warranty periods from other brands and wants assurance of long-term reliability and customer support.",
+        "probes": [
+          "user warranty inquiry",
+          "what is user warranty inquiry",
+          "user warranty inquiry michael concerned warranty"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "michael_recent_orders_details": {
+        "text": "michael recent orders details: Michael placed two orders: Order 1 includes a stainless-steel coffee grinder, cleaning tablets, and an upgraded frothing pitcher. Order 2 includes vacuum-sealed coffee canisters and a Garmin-collaborated digital scale. Both orders are from Seattle and reflect his growing coffee lab setup.",
+        "probes": [
+          "michael recent orders details",
+          "what is michael recent orders details",
+          "michael recent orders details michael placed two"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "michael_billing_shipping_security_inquiry": {
+        "text": "michael billing shipping security inquiry: Michael confirms same address/credit card. Has had past security hold with Apple Pay. Requests verification of no red flags or holds on this order.",
+        "probes": [
+          "michael billing shipping security inquiry",
+          "what is michael billing shipping security inquiry",
+          "michael billing shipping security inquiry michael confirms same"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "user_inquiry_streamlined_purchasing_and_bonus_freebies": {
+        "text": "user inquiry streamlined purchasing and bonus freebies: Michael wants a streamlined purchasing process with membership: one-click ordering, consolidated checkout, and bonus freebies like sample-size coffee flavors or discount codes on future machines to support his coffee experimentation.",
+        "probes": [
+          "user inquiry streamlined purchasing and bonus freebies",
+          "what is user inquiry streamlined purchasing and bonus freebies",
+          "user inquiry streamlined purchasing and bonus freebies michael wants streamlined"
+        ],
+        "probe_provenance": "write_time"
+      }
+    },
+    "archival": {
+      "return_exchange_policy_for_delayed_or_lost_shipments": {
+        "text": "return exchange policy for delayed or lost shipments: For delayed or lost shipments, we automatically initiate a claim with the carrier on the customer's behalf. If the package is confirmed lost or damaged, we process a full refund or a replacement unit at no cost to the customer. The customer is not required to file a claim manually. In cases of damage, we also offer a complimentary one-year extended warranty on the replacement unit. All claims are reviewed within 48 hours, and customers receive a status update via email. This policy applies to all orders over $200, including high-end appliances like espresso machines.",
+        "probes": [
+          "return exchange policy for delayed or lost shipments",
+          "what is return exchange policy for delayed or lost shipments",
+          "return exchange policy for delayed or lost shipments delayed lost shipments"
+        ],
+        "probe_provenance": "sidecar"
+      }
+    }
+  }
+}

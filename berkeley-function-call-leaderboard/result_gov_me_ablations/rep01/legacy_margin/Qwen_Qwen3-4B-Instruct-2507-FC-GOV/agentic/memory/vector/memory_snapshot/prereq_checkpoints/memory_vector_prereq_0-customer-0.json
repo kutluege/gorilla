@@ -1,0 +1,14 @@
+{
+    "core_memory": {
+        "next_id": 1,
+        "store": {
+            "0": "User Michael, 35, lives in Seattle, freelance graphic designer, seeks a sleek, modern stainless-steel espresso machine offering caf\u00e9-like coffee at home without professional barista skills."
+        }
+    },
+    "archival_memory": {
+        "next_id": 1,
+        "store": {
+            "0": "User Michael from Seattle is interested in a sleek stainless-steel semi-automatic espresso machine. Inquired about pricing, discounts, shipping, product specs, warranty, and temperature performance. Specifically asked about adjustable temperature settings and reliable hot coffee output to avoid microwaving."
+        }
+    }
+}

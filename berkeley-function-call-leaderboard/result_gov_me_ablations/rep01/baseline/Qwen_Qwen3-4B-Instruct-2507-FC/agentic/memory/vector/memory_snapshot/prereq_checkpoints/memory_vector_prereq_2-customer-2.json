@@ -1,0 +1,17 @@
+{
+    "core_memory": {
+        "next_id": 1,
+        "store": {
+            "0": "Michael(Seattle, 35) needs espresso machine for family gathering with siblings and friends. Delivery delayed; status stuck in 'in transit' outside Washington. Planning 'latte art showdown'. Alternatives: drip coffee maker or local coffee shop."
+        }
+    },
+    "archival_memory": {
+        "next_id": 4,
+        "store": {
+            "0": "User Michael from Seattle is interested in Aurora ES-300 espresso machine, seeking first-time buyer discount, bundle deals, shipping details, detailed product specs(size, cleaning, brewing, warranty), and specifically asks about temperature control\u2014concerned about drip coffee makers that don\u2019t heat enough and has had to microwave coffee. Wants to know if your espresso machine produces reliably hot coffee with adjustable temperature settings.",
+            "1": "Michael(Seattle, 35, freelance graphic designer) has an untracked espresso machine order with a shipping status stuck in 'in transit' outside of Washington. Order has been pending for about a week. User is anxious and seeking resolution. Tracking link has been refreshed multiple times without updates.",
+            "2": "Michael(Seattle, 35) ordered a stainless-steel espresso machine with regular shipping(estimated 11 business days). Qualified for free shipping with accessories: frothing pitcher and extra filters. All items were in stock at time of order. Now concerned about delivery delay and potential supply issues. Wants to confirm if the machine or accessories are still available and if there's a chance of expedited shipping.",
+            "3": "Michael(Seattle, 35) is preparing for potential loss or damage of his espresso machine order. Inquires about return/exchange process for delayed/lost shipments. Wants to know if carrier claims are filed automatically or if he needs to initiate them himself. Expresses concern about the value of the purchase and its significance as a personal upgrade. Requests clarity on policy to be prepared if needed. Also emphasizes need to be home for delivery\u2014especially during rain\u2014due to past issues with soggy packages. Requests notification if delivery is scheduled for the next day or if signature is required."
+        }
+    }
+}

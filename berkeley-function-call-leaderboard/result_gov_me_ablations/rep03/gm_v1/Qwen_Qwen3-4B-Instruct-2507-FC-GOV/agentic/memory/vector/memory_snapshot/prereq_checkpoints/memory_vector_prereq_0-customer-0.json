@@ -1,0 +1,14 @@
+{
+    "core_memory": {
+        "next_id": 1,
+        "store": {
+            "0": "User Michael, 35, lives in Seattle, freelance graphic designer, seeks a sleek, modern stainless-steel espresso machine offering caf\u00e9-like coffee at home without professional barista skills."
+        }
+    },
+    "archival_memory": {
+        "next_id": 1,
+        "store": {
+            "0": "User Michael, first-time buyer, expresses concern about coffee temperature consistency in drip machines. Specifically asks whether espresso machines offer adjustable temperature settings or reliably produce hot coffee to avoid microwaving, which he finds unsatisfactory."
+        }
+    }
+}

@@ -1,0 +1,373 @@
+{
+  "include_student": false,
+  "primary_result": true,
+  "n_replicates": 3,
+  "arms": [
+    "baseline",
+    "geometry_only",
+    "gm_v1",
+    "legacy_margin",
+    "joint_entropy_diag"
+  ],
+  "reference_arm": "geometry_only",
+  "seed": 12345,
+  "n_boot": 10000,
+  "total_units_dropped": 4,
+  "excluded": {
+    "student_units": 6,
+    "unmatched_questions": 0,
+    "unscored_questions": 0
+  },
+  "comparisons": {
+    "kv|baseline_vs_geometry_only": {
+      "n_pairs": 240,
+      "n_units": 9,
+      "acc_baseline": 0.17916666666666667,
+      "acc_governed": 0.21666666666666667,
+      "discordant_baseline_only": 20,
+      "discordant_governed_only": 29,
+      "mcnemar_p": 0.2528697301676033,
+      "bootstrap_delta": 0.0375,
+      "bootstrap_ci95": [
+        -0.0326530612244898,
+        0.12916666666666668
+      ],
+      "backend": "kv",
+      "arm": "baseline",
+      "reference": "geometry_only",
+      "n_units_dropped": 3,
+      "dropped_units": [
+        {
+          "replicate": 1,
+          "backend": "kv",
+          "scenario": "healthcare",
+          "reason": "chain_dead",
+          "dead_in": [
+            "baseline",
+            "legacy_margin",
+            "joint_entropy_diag"
+          ],
+          "n_questions": 25
+        },
+        {
+          "replicate": 2,
+          "backend": "kv",
+          "scenario": "healthcare",
+          "reason": "chain_dead",
+          "dead_in": [
+            "baseline"
+          ],
+          "n_questions": 25
+        },
+        {
+          "replicate": 3,
+          "backend": "kv",
+          "scenario": "healthcare",
+          "reason": "chain_dead",
+          "dead_in": [
+            "gm_v1"
+          ],
+          "n_questions": 25
+        }
+      ],
+      "mcnemar_p_holm": 1.0
+    },
+    "vector|baseline_vs_geometry_only": {
+      "n_pairs": 290,
+      "n_units": 11,
+      "acc_baseline": 0.19310344827586207,
+      "acc_governed": 0.21724137931034482,
+      "discordant_baseline_only": 24,
+      "discordant_governed_only": 31,
+      "mcnemar_p": 0.41875418826901556,
+      "bootstrap_delta": 0.02413793103448276,
+      "bootstrap_ci95": [
+        -0.025,
+        0.08135593220338982
+      ],
+      "backend": "vector",
+      "arm": "baseline",
+      "reference": "geometry_only",
+      "n_units_dropped": 1,
+      "dropped_units": [
+        {
+          "replicate": 1,
+          "backend": "vector",
+          "scenario": "healthcare",
+          "reason": "chain_dead",
+          "dead_in": [
+            "geometry_only"
+          ],
+          "n_questions": 25
+        }
+      ],
+      "mcnemar_p_holm": 1.0
+    },
+    "kv|gm_v1_vs_geometry_only": {
+      "n_pairs": 240,
+      "n_units": 9,
+      "acc_baseline": 0.17916666666666667,
+      "acc_governed": 0.19583333333333333,
+      "discordant_baseline_only": 11,
+      "discordant_governed_only": 15,
+      "mcnemar_p": 0.557197093963623,
+      "bootstrap_delta": 0.016666666666666666,
+      "bootstrap_ci95": [
+        -0.020833333333333332,
+        0.06808510638297872
+      ],
+      "backend": "kv",
+      "arm": "gm_v1",
+      "reference": "geometry_only",
+      "n_units_dropped": 3,
+      "dropped_units": [
+        {
+          "replicate": 1,
+          "backend": "kv",
+          "scenario": "healthcare",
+          "reason": "chain_dead",
+          "dead_in": [
+            "baseline",
+            "legacy_margin",
+            "joint_entropy_diag"
+          ],
+          "n_questions": 25
+        },
+        {
+          "replicate": 2,
+          "backend": "kv",
+          "scenario": "healthcare",
+          "reason": "chain_dead",
+          "dead_in": [
+            "baseline"
+          ],
+          "n_questions": 25
+        },
+        {
+          "replicate": 3,
+          "backend": "kv",
+          "scenario": "healthcare",
+          "reason": "chain_dead",
+          "dead_in": [
+            "gm_v1"
+          ],
+          "n_questions": 25
+        }
+      ],
+      "mcnemar_p_holm": 1.0
+    },
+    "vector|gm_v1_vs_geometry_only": {
+      "n_pairs": 290,
+      "n_units": 11,
+      "acc_baseline": 0.19310344827586207,
+      "acc_governed": 0.18620689655172415,
+      "discordant_baseline_only": 27,
+      "discordant_governed_only": 25,
+      "mcnemar_p": 0.8898839652765371,
+      "bootstrap_delta": -0.006896551724137931,
+      "bootstrap_ci95": [
+        -0.08135593220338982,
+        0.05964912280701754
+      ],
+      "backend": "vector",
+      "arm": "gm_v1",
+      "reference": "geometry_only",
+      "n_units_dropped": 1,
+      "dropped_units": [
+        {
+          "replicate": 1,
+          "backend": "vector",
+          "scenario": "healthcare",
+          "reason": "chain_dead",
+          "dead_in": [
+            "geometry_only"
+          ],
+          "n_questions": 25
+        }
+      ],
+      "mcnemar_p_holm": 1.0
+    },
+    "kv|legacy_margin_vs_geometry_only": {
+      "n_pairs": 240,
+      "n_units": 9,
+      "acc_baseline": 0.17916666666666667,
+      "acc_governed": 0.18333333333333332,
+      "discordant_baseline_only": 23,
+      "discordant_governed_only": 24,
+      "mcnemar_p": 1.0,
+      "bootstrap_delta": 0.004166666666666667,
+      "bootstrap_ci95": [
+        -0.08,
+        0.07916666666666666
+      ],
+      "backend": "kv",
+      "arm": "legacy_margin",
+      "reference": "geometry_only",
+      "n_units_dropped": 3,
+      "dropped_units": [
+        {
+          "replicate": 1,
+          "backend": "kv",
+          "scenario": "healthcare",
+          "reason": "chain_dead",
+          "dead_in": [
+            "baseline",
+            "legacy_margin",
+            "joint_entropy_diag"
+          ],
+          "n_questions": 25
+        },
+        {
+          "replicate": 2,
+          "backend": "kv",
+          "scenario": "healthcare",
+          "reason": "chain_dead",
+          "dead_in": [
+            "baseline"
+          ],
+          "n_questions": 25
+        },
+        {
+          "replicate": 3,
+          "backend": "kv",
+          "scenario": "healthcare",
+          "reason": "chain_dead",
+          "dead_in": [
+            "gm_v1"
+          ],
+          "n_questions": 25
+        }
+      ],
+      "mcnemar_p_holm": 1.0
+    },
+    "vector|legacy_margin_vs_geometry_only": {
+      "n_pairs": 290,
+      "n_units": 11,
+      "acc_baseline": 0.19310344827586207,
+      "acc_governed": 0.19310344827586207,
+      "discordant_baseline_only": 26,
+      "discordant_governed_only": 26,
+      "mcnemar_p": 1.0,
+      "bootstrap_delta": 0.0,
+      "bootstrap_ci95": [
+        -0.03793103448275862,
+        0.03728813559322034
+      ],
+      "backend": "vector",
+      "arm": "legacy_margin",
+      "reference": "geometry_only",
+      "n_units_dropped": 1,
+      "dropped_units": [
+        {
+          "replicate": 1,
+          "backend": "vector",
+          "scenario": "healthcare",
+          "reason": "chain_dead",
+          "dead_in": [
+            "geometry_only"
+          ],
+          "n_questions": 25
+        }
+      ],
+      "mcnemar_p_holm": 1.0
+    },
+    "kv|joint_entropy_diag_vs_geometry_only": {
+      "n_pairs": 240,
+      "n_units": 9,
+      "acc_baseline": 0.17916666666666667,
+      "acc_governed": 0.17083333333333334,
+      "discordant_baseline_only": 18,
+      "discordant_governed_only": 16,
+      "mcnemar_p": 0.8641662404406816,
+      "bootstrap_delta": -0.008333333333333333,
+      "bootstrap_ci95": [
+        -0.07083333333333333,
+        0.06086956521739131
+      ],
+      "backend": "kv",
+      "arm": "joint_entropy_diag",
+      "reference": "geometry_only",
+      "n_units_dropped": 3,
+      "dropped_units": [
+        {
+          "replicate": 1,
+          "backend": "kv",
+          "scenario": "healthcare",
+          "reason": "chain_dead",
+          "dead_in": [
+            "baseline",
+            "legacy_margin",
+            "joint_entropy_diag"
+          ],
+          "n_questions": 25
+        },
+        {
+          "replicate": 2,
+          "backend": "kv",
+          "scenario": "healthcare",
+          "reason": "chain_dead",
+          "dead_in": [
+            "baseline"
+          ],
+          "n_questions": 25
+        },
+        {
+          "replicate": 3,
+          "backend": "kv",
+          "scenario": "healthcare",
+          "reason": "chain_dead",
+          "dead_in": [
+            "gm_v1"
+          ],
+          "n_questions": 25
+        }
+      ],
+      "mcnemar_p_holm": 1.0
+    },
+    "vector|joint_entropy_diag_vs_geometry_only": {
+      "n_pairs": 290,
+      "n_units": 11,
+      "acc_baseline": 0.19310344827586207,
+      "acc_governed": 0.19310344827586207,
+      "discordant_baseline_only": 27,
+      "discordant_governed_only": 27,
+      "mcnemar_p": 1.0,
+      "bootstrap_delta": 0.0,
+      "bootstrap_ci95": [
+        -0.054838709677419356,
+        0.05818181818181818
+      ],
+      "backend": "vector",
+      "arm": "joint_entropy_diag",
+      "reference": "geometry_only",
+      "n_units_dropped": 1,
+      "dropped_units": [
+        {
+          "replicate": 1,
+          "backend": "vector",
+          "scenario": "healthcare",
+          "reason": "chain_dead",
+          "dead_in": [
+            "geometry_only"
+          ],
+          "n_questions": 25
+        }
+      ],
+      "mcnemar_p_holm": 1.0
+    }
+  },
+  "holm_m": 8,
+  "manifest": "C:\\Users\\USER\\Desktop\\Tezim\\BFCL\\gorilla\\berkeley-function-call-leaderboard\\result_gov_me_ablations\\manifest.jsonl",
+  "run_id": "govrep_20260723T075136Z",
+  "git_head": "19d9589c195921dc82d83715fe7cb7a41a4403d4",
+  "served_models": [
+    "Qwen/Qwen3-4B-Instruct-2507"
+  ],
+  "replicates_analyzed": [
+    1,
+    2,
+    3
+  ],
+  "allow_unscored": false,
+  "unscored": []
+}

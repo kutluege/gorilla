@@ -1,0 +1,14 @@
+{
+    "core_memory": {
+        "next_id": 1,
+        "store": {
+            "0": "User Michael, 35, lives in Seattle, freelance graphic designer, values design aesthetics, seeks sleek, modern stainless-steel espresso machines with user-friendly features for non-professional users, aiming for a caf\u00e9-like home coffee experience."
+        }
+    },
+    "archival_memory": {
+        "next_id": 1,
+        "store": {
+            "0": "User Michael, 35, lives in Seattle, freelance graphic designer, seeks sleek stainless-steel espresso machine with user-friendly features, interested in 15% new customer discount, bundle deals, shipping details, product dimensions, warranty policy, and reliable hot coffee output. Specifically asks about temperature settings and whether machines produce reliably hot coffee to avoid microwaving, which he finds unsatisfactory."
+        }
+    }
+}

@@ -1,0 +1,19 @@
+{
+    "core_memory": {
+        "next_id": 1,
+        "store": {
+            "0": "Recent blood glucose and A1C results: Fasting glucose 135 mg/dL(target <100 mg/dL), A1C 6.9% (target 6.5%). Doctor recommended increasing dietary fiber and adding light exercise after meals. Morning home readings range 125-130 mg/dL."
+        }
+    },
+    "archival_memory": {
+        "next_id": 6,
+        "store": {
+            "0": "Blood pressure reading: 138/85 mmHg(on the high side). Target: below 130/80 mmHg. Home readings fluctuate between 135-140 systolic and 80-90 diastolic, influenced by stress and salt intake. Taking steps to reduce sodium intake and increase water consumption, which appears to help.",
+            "1": "Vitamin D levels: 22 ng/mL(deficient; normal range 30-50 ng/mL). Doctor prescribed 2,000 IU daily supplement. Will be retested in a few months to assess improvement.",
+            "2": "Thyroid results: TSH 2.1 mIU/L(normal range: 0.5\u20134.5 mIU/L), T4 1.2 ng/dL(within normal range). Stable and consistent with previous readings. Levothyroxine dosage is working well. Regular monitoring continues due to past history of hypothyroidism.",
+            "3": "Bone density scan results: Spine T-score -1.8 (osteopenia), Hip T-score -1.5 (borderline). Doctor advised increasing strength training and calcium intake to prevent further bone loss. Taking steps: added more dairy and leafy greens to diet, now taking a calcium supplement with vitamin K2 to improve absorption.",
+            "4": "Liver and kidney function results: ALT 42 U/L(slightly elevated; normal <35 U/L). Doctor suspects possible link to recent medication adjustments. Monitoring advised. Creatinine 0.9 mg/dL(within normal range: 0.6\u20131.2 mg/dL), so no concerns with kidney function.",
+            "5": "Inflammatory markers: CRP 3.2 mg/L(slightly elevated; ideal <3.0 mg/L), indicating mild inflammation\u2014likely related to osteoarthritis. ESR 18 mm/hr(within normal range: 0-20 mm/hr), so no major inflammation detected."
+        }
+    }
+}

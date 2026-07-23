@@ -1,0 +1,12 @@
+{
+    "core_memory": {
+        "next_id": 1,
+        "store": {
+            "0": "User Michael, 35, lives in Seattle, freelance graphic designer, seeks sleek stainless-steel espresso machine with 10\" x 8\" footprint, compact design, first-time buyer discount, bundle deals, local Seattle shipping, and a 3-year limited warranty with free repair, 24/7 support, and no hidden fees."
+        }
+    },
+    "archival_memory": {
+        "next_id": 0,
+        "store": {}
+    }
+}

@@ -1,0 +1,12 @@
+{
+    "core_memory": {
+        "next_id": 1,
+        "store": {
+            "0": "Fasting glucose: 135 mg/dL; HbA1C: 6.9%. Morning: 125\u2013130 mg/dL. Cholesterol: LDL 130 (\u2191), HDL 58 (good), Trig 140 (\u2191). BP: 138/85 (high), target <130/80. Home: 135\u2013140/80\u201390. Stress & salt impact. Action: Reduce sodium, increase water. Seasonal factors(Kansas) may affect energy and joint pain."
+        }
+    },
+    "archival_memory": {
+        "next_id": 0,
+        "store": {}
+    }
+}

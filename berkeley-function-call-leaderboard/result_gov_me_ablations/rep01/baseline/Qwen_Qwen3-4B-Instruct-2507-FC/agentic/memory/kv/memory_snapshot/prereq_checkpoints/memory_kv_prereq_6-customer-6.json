@@ -1,0 +1,22 @@
+{
+    "core_memory": {
+        "michael_shipping_inquiry": "Michael wants to know if new items ship from same warehouse, if expedited shipping is available(reasonable fee), and if package handling(dented boxes) can be monitored.",
+        "michael_payment_preferences": "Michael is open to financing or payment plans for the grinder, especially if linked to a subscription. He sees it as an investment but prefers simplicity unless there's a clear benefit.",
+        "michael_additional_coffee_tools_inquiry": "Michael asks about digital scale or temperature-controlled kettle. He values craft and design but avoids lab-like kitchen\u2014prefers balance and moderation.",
+        "michael_new_grinder_order_details": "Ordered stainless-steel grinder(conical burrs, wide range), cleaning tablets, frothing pitcher. Second order: vacuum-sealed canisters & Garmin digital scale. Values precision, design, and seamless coffee experience.",
+        "michael_billing_security_concern": "Michael confirms same address and card for second order. Worried about past Apple Pay security hold. Wants proactive flagging of any billing/shipping red flags. Seeks assurance of secure, seamless transaction to avoid repeat issues.",
+        "michael_membership_interest": "Michael interested in monthly bean subscription, 19-month warranty, early access, and personalized recommendations. Excited about loyalty rewards for frequent purchases and long-term coffee station growth.",
+        "michael_streamlined_purchasing_inquiry": "Michael wants streamlined purchasing: one login, simplified checkout, no repeat shipping fees. Open to sample sizes and discount codes on future machines."
+    },
+    "archival_memory": {
+        "customer_promo_code": "ESPRESSO17",
+        "customer_event_date": "End of month",
+        "customer_accessories_considered": "Extra filters, stainless-steel frothing pitcher",
+        "customer_tracking_preference": "Real-time tracking, signature required, weather concerns(Seattle)",
+        "customer_return_policy_inquiry": "Defects, size concerns, shipping costs for returns",
+        "customer_grinder_inquiry": "Freshly ground beans, aesthetic pairing with espresso machine, budget-friendly option",
+        "michael_espresso_machine_weather_concern": "Seattle's rainy weather recently may have caused shipping delays; customer is seeking updated delivery timeline and potential carrier issues.",
+        "michael_espresso_machine_return_exchange_policy": "Customer inquires about return/exchange process for lost/damaged shipments; wants to know if carrier claim is filed on their behalf, and if there's a clear path for reimbursement or replacement.",
+        "michael_espresso_machine_delivery_preparation": "Customer will be home to receive package; concerned about rainy weather damaging boxes; requires signature confirmation and is prepared to greet delivery driver or quickly bring package inside."
+    }
+}

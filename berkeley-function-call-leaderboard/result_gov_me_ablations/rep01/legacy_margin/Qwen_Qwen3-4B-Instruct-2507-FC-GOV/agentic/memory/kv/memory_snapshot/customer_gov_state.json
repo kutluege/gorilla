@@ -1,0 +1,234 @@
+{
+  "backend": "kv",
+  "tiers": {
+    "core": {
+      "user_name": {
+        "text": "user name: Michael",
+        "probes": [
+          "user name",
+          "what is user name",
+          "user name michael"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "user_location": {
+        "text": "user location: Seattle",
+        "probes": [
+          "user location",
+          "what is user location",
+          "user location seattle"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "user_profession": {
+        "text": "user profession: Freelance graphic designer",
+        "probes": [
+          "user profession",
+          "what is user profession",
+          "user profession freelance graphic designer"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "user_interests": {
+        "text": "user interests: Modern design, sleek stainless-steel finishes, home coffee routine",
+        "probes": [
+          "user interests",
+          "what is user interests",
+          "user interests modern design sleek"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "user_recent_orders": {
+        "text": "user recent orders: Order 1: Coffee grinder(sleek stainless-steel), cleaning tablets, upgraded frothing pitcher. Order 2: Vacuum-sealed coffee canisters, digital scale(collaborated with Garmin).",
+        "probes": [
+          "user recent orders",
+          "what is user recent orders",
+          "user recent orders order coffee grinder"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "user_billing_security_concern": {
+        "text": "user billing security concern: Michael confirms same address and card for second order. Has had past Apple Pay security hold. Wants proactive verification of billing/shipping details to avoid unexpected holds or errors. Requests transparency on payment and address validation.",
+        "probes": [
+          "user billing security concern",
+          "what is user billing security concern",
+          "user billing security concern michael confirms same"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "user_request_to_streamline_purchasing": {
+        "text": "user request to streamline purchasing: Michael wants streamlined purchasing: consolidated orders, free shipping, and reduced checkout friction. Open to sample-size freebies or discount codes on future machines.",
+        "probes": [
+          "user request to streamline purchasing",
+          "what is user request to streamline purchasing",
+          "user request to streamline purchasing michael wants streamlined"
+        ],
+        "probe_provenance": "sidecar"
+      }
+    },
+    "archival": {
+      "user_inquiry_pricing": {
+        "text": "user inquiry pricing: Michael is interested in pricing for the SleekPress SP-3000 espresso machine and is asking about first-time buyer discounts and bundle deals.",
+        "probes": [
+          "user inquiry pricing",
+          "what is user inquiry pricing",
+          "user inquiry pricing michael interested pricing"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "user_shipping_concern": {
+        "text": "user shipping concern: Michael is in Seattle and is concerned about shipping times and whether products are shipped from a local warehouse. He wants to receive the espresso machine before a family gathering later this month.",
+        "probes": [
+          "user shipping concern",
+          "what is user shipping concern",
+          "user shipping concern michael seattle concerned"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "user_additional_questions": {
+        "text": "user additional questions: Michael is asking about brewing frequency, cleaning complexity, machine size, and kitchen space impact—specifically for the SleekPress SP-3000 espresso machine.",
+        "probes": [
+          "user additional questions",
+          "what is user additional questions",
+          "user additional questions michael asking brewing"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "user_kitchen_space_concern": {
+        "text": "user kitchen space concern: Michael is concerned about the physical footprint of the espresso machine and wants precise dimensions to avoid kitchen 'Tetris' reorganization.",
+        "probes": [
+          "user kitchen space concern",
+          "what is user kitchen space concern",
+          "user kitchen space concern michael concerned physical"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "user_warranty_concern": {
+        "text": "user warranty concern: Michael is asking about warranty policy for the SleekPress SP-3000, specifically looking for a long-term, customer-friendly guarantee due to past negative experiences with short-term warranties.",
+        "probes": [
+          "user warranty concern",
+          "what is user warranty concern",
+          "user warranty concern michael asking warranty"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "user_temperature_concern": {
+        "text": "user temperature concern: Michael is concerned about coffee temperature consistency and has had issues with drip machines that don’t heat sufficiently, leading him to microwave coffee. He wants to know if the SleekPress SP-3000 produces reliably hot coffee with adjustable temperature settings.",
+        "probes": [
+          "user temperature concern",
+          "what is user temperature concern",
+          "user temperature concern michael concerned coffee"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "new_customer_coupon_code": {
+        "text": "new customer coupon code: FIRST17",
+        "probes": [
+          "new customer coupon code",
+          "what is new customer coupon code",
+          "new customer coupon code first17"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "espresso_machine_payment_options": {
+        "text": "espresso machine payment options: Credit card, PayPal, Apple Pay, and 0% financing for 12 months(no interest) available for qualifying purchases.",
+        "probes": [
+          "espresso machine payment options",
+          "what is espresso machine payment options",
+          "espresso machine payment options credit card paypal"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "espresso_machine_shipment_estimate": {
+        "text": "espresso machine shipment estimate: Standard shipping: 5–7 business days from warehouse in California; expedited shipping available for $29.99 (3–5 business days). Estimated arrival: late June to early July, depending on order processing and inventory.",
+        "probes": [
+          "espresso machine shipment estimate",
+          "what is espresso machine shipment estimate",
+          "espresso machine shipment estimate standard shipping business"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "espresso_machine_free_shipping_threshold": {
+        "text": "espresso machine free shipping threshold: Free standard shipping on orders over $250. Expedited shipping is $29.99 (3–5 business days). Adding accessories(e.g., extra filters, frothing pitcher) increases total order value and helps qualify for free standard shipping.",
+        "probes": [
+          "espresso machine free shipping threshold",
+          "what is espresso machine free shipping threshold",
+          "espresso machine free shipping threshold free standard shipping"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "espresso_machine_order_tracking": {
+        "text": "espresso machine order tracking: Real-time tracking is available after shipment. You’ll receive an email with a tracking number and a link to the carrier’s website. Updates include: departure from warehouse, transit status, and estimated delivery. For Seattle customers, we recommend checking tracking every 12–24 hours during rainy weather to ensure safe delivery.",
+        "probes": [
+          "espresso machine order tracking",
+          "what is espresso machine order tracking",
+          "espresso machine order tracking real time tracking"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "espresso_machine_return_policy": {
+        "text": "espresso machine return policy: 30-day return window for defective items or incorrect size. Free return shipping for all returns. Items must be in original condition with all packaging and accessories. Exchanges are free and no restocking fee. Customer service handles returns and provides tracking for the return shipment.",
+        "probes": [
+          "espresso machine return policy",
+          "what is espresso machine return policy",
+          "espresso machine return policy day return window"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "espresso_machine_coffee_grinder_recommendation": {
+        "text": "espresso machine coffee grinder recommendation: Recommended: Baratza V60 grinder(sleek, minimalist design, perfect for espresso and pour-over). It’s compact, precise, and pairs beautifully with stainless-steel espresso machines. Price: $129. Alternative: Bonavita BGM-200 (budget-friendly, great for beginners, $79). Both are designed to complement modern kitchen aesthetics and support fresh grinding for optimal flavor.",
+        "probes": [
+          "espresso machine coffee grinder recommendation",
+          "what is espresso machine coffee grinder recommendation",
+          "espresso machine coffee grinder recommendation recommended baratza v60"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "user_feedback_shipping_delays": {
+        "text": "user feedback shipping delays: Michael has reported shipping delays, tracking issues, and one damaged first-order. Solutions include real-time tracking, warehouse verification, reinforced packaging, and pre-shipment checks.",
+        "probes": [
+          "user feedback shipping delays",
+          "what is user feedback shipping delays",
+          "user feedback shipping delays michael reported shipping"
+        ],
+        "probe_provenance": "write_time"
+      },
+      "user_feedback_order_management": {
+        "text": "user feedback order management: Michael requests a unified order dashboard and proactive inventory alerts (e.g., 'This item may take a week longer to ship due to inventory constraints'). He also wants consolidated orders with free shipping.",
+        "probes": [
+          "user feedback order management",
+          "what is user feedback order management",
+          "user feedback order management michael requests unified"
+        ],
+        "probe_provenance": "write_time"
+      },
+      "user_feedback_proactive_alerts": {
+        "text": "user feedback proactive alerts: Michael wants pre-purchase emails about backorders or shipping slowdowns to help him plan purchases and avoid guesswork.",
+        "probes": [
+          "user feedback proactive alerts",
+          "what is user feedback proactive alerts",
+          "user feedback proactive alerts michael wants pre"
+        ],
+        "probe_provenance": "write_time"
+      },
+      "user_feedback_support_consistency": {
+        "text": "user feedback support consistency: Michael appreciates timely and thorough customer service. Suggests streamlining support channels so agents can instantly see purchase history when switching between chat/email, without requiring re-explanation.",
+        "probes": [
+          "user feedback support consistency",
+          "what is user feedback support consistency",
+          "user feedback support consistency michael appreciates timely"
+        ],
+        "probe_provenance": "write_time"
+      },
+      "user_feedback_loyalty_program": {
+        "text": "user feedback loyalty program: Michael suggests launching a loyalty or rewards program for repeat customers, including perks like free shipping, extended warranties, and coffee bean deliveries. He’s interested in an annual membership with early access to new products and exclusive deals.",
+        "probes": [
+          "user feedback loyalty program",
+          "what is user feedback loyalty program",
+          "user feedback loyalty program michael suggests launching"
+        ],
+        "probe_provenance": "write_time"
+      }
+    }
+  }
+}

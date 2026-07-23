@@ -1,0 +1,12 @@
+{
+    "core_memory": {},
+    "archival_memory": {
+        "lab_results_2024_q3": "Fasting Blood Glucose: 135 mg/dL; A1C: 6.9%; Total Cholesterol: 195 mg/dL; LDL: 130 mg/dL; HDL: 58 mg/dL; Triglycerides: 140 mg/dL. Recommendations: Increase fiber and healthy fats(avocados, nuts), reduce saturated fats, light exercise after meals, monitor blood sugar and cholesterol.",
+        "blood_pressure_tracking_2024_q3": "Latest reading: 138/85 mmHg. Target: <130/80 mmHg. Home readings fluctuate between 135-140 systolic and 80-90 diastolic. Factors affecting readings: stress levels and salt intake. Actions: Reduce sodium intake, increase water consumption, monitor stress, and maintain consistent tracking.",
+        "vitamin_d_levels_2024_q3": "Vitamin D level: 22 ng/mL(deficient; normal range: 30-50 ng/mL). Treatment: Starting 2,000 IU daily supplement. Next retest in 3 months. Notes: Sunlight exposure may be insufficient despite seasonal variation in Kansas.",
+        "thyroid_function_2024_q3": "TSH: 2.1 mIU/L(normal range: 0.5-4.5 mIU/L); T4: 1.2 ng/dL(within normal range). Status: Stable; current levothyroxine dosage is effective. Past history of hypothyroidism managed successfully with regular monitoring.",
+        "bone_density_scan_2024_q3": "Spine T-score: -1.8 (osteopenia); Hip T-score: -1.5 (borderline). Recommendation: Increase strength training, calcium intake, and vitamin K2 supplementation. Actions: Added dairy and leafy greens to diet; now taking calcium + vitamin K2 supplement. Follow-up: Monitor bone density in 12\u201318 months.",
+        "liver_kidney_function_2024_q3": "ALT: 42 U/L(elevated; normal <35 U/L); likely related to recent medication adjustments. Creatinine: 0.9 mg/dL(normal range: 0.6-1.2 mg/dL); kidney function is normal. Recommendation: Monitor ALT levels closely, review medication list with doctor, and retest in 1\u20132 months.",
+        "inflammatory_markers_2024_q3": "C-reactive protein(CRP): 3.2 mg/L(slightly elevated; ideal <3.0 mg/L); likely related to osteoarthritis. ESR: 18 mm/hr(within normal range: 0-20 mm/hr); no major inflammation detected. Interpretation: Mild inflammation consistent with joint degeneration; ongoing management of osteoarthritis is key."
+    }
+}

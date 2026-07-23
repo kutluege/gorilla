@@ -1,0 +1,71 @@
+{
+  "backend": "kv",
+  "tiers": {
+    "core": {
+      "tuesday_updates": {
+        "text": "tuesday updates: System downtime from 10 AM - 12 PM, slowed down workflow. HR sent updated benefits package—review before next month’s deadline. Sent follow-up emails to vendors, waiting on response.",
+        "probes": [
+          "tuesday updates",
+          "what is tuesday updates",
+          "tuesday updates system downtime slowed"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "wednesday_updates": {
+        "text": "wednesday updates: Presentation to leadership went well, but need to tweak a few slides for next week’s review. Client proposal draft ready—send it for legal approval. Need to onboard new hire—schedule one-on-one.",
+        "probes": [
+          "wednesday updates",
+          "what is wednesday updates",
+          "wednesday updates presentation leadership went"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "thursday_updates": {
+        "text": "thursday updates: Finance wants cost-cutting recommendations—brainstorm ideas. Project deadline approaching—check in with Dev team. Caught a mistake in last month’s sales data.",
+        "probes": [
+          "thursday updates",
+          "what is thursday updates",
+          "thursday updates finance wants cost"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "friday_updates": {
+        "text": "friday updates: Wrapped up pending reports, but still waiting for final approval. Followed up with vendors—two responded, one still pending. Training session next Monday—prep materials this weekend.",
+        "probes": [
+          "friday updates",
+          "what is friday updates",
+          "friday updates wrapped pending reports"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "urgent_tasks": {
+        "text": "urgent tasks: Submit tax documents before Friday. Review credit card statement for errors. Call auto repair shop about weird noise in the engine.",
+        "probes": [
+          "urgent tasks",
+          "what is urgent tasks",
+          "urgent tasks submit tax documents"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "work_related_tasks": {
+        "text": "work related tasks: Finalize quarterly budget. Review vendor contract before signing. Finish security compliance training module.",
+        "probes": [
+          "work related tasks",
+          "what is work related tasks",
+          "work related tasks finalize quarterly budget"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "mental_health_goals": {
+        "text": "mental health goals: Try to get 7+ hours of sleep. Limit screen time before bed. Schedule a day off next month—too much back-to-back work lately. Find time for hobbies—maybe pick up guitar again.",
+        "probes": [
+          "mental health goals",
+          "what is mental health goals",
+          "mental health goals try get hours"
+        ],
+        "probe_provenance": "write_time"
+      }
+    },
+    "archival": {}
+  }
+}

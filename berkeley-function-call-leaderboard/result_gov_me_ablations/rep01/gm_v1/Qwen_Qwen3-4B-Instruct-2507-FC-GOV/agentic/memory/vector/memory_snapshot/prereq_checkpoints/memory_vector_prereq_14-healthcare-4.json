@@ -1,0 +1,14 @@
+{
+    "core_memory": {
+        "next_id": 3,
+        "store": {
+            "0": "Fasting glucose: 135 mg/dL(\u2191), A1C: 6.9% (\u2191). Morning: 125\u2013130 mg/dL. Fiber, post-meal walk.\nBP: 138/85 mmHg(\u2191). Home: 135\u2013140/80\u201390. Stress & salt key. Reducing salt, more water shows improvement.\nVitamin D: 22 ng/mL(deficient; normal: 30\u201350 ng/mL). Started 2,000 IU daily. Recheck in 3 months.",
+            "1": "Vitamin D: 2,000 IU D3 daily(started due to 22 ng/mL; normal >30). Calcium + K2 for bone health. Early osteopenia. Recheck D & bone density in 3 months. Cholesterol: Atorvastatin 10 mg daily(LDL 130\u2192improving; triglycerides 140). No side effects. Continue as prescribed.",
+            "2": "Osteoarthritis: Acetaminophen as needed for mild pain. Meloxicam 7.5 mg PRN(for stiff joints, especially knees/hands); used sparingly due to NSAID concerns. Doctor suggested glucosamine supplements\u2014effectiveness uncertain. Consider tracking pain levels and activity to assess impact."
+        }
+    },
+    "archival_memory": {
+        "next_id": 0,
+        "store": {}
+    }
+}

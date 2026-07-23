@@ -1,0 +1,18 @@
+{
+    "core_memory": {
+        "next_id": 7,
+        "store": {
+            "0": "Patient with Type 2 Diabetes on metformin 1000 mg twice daily. A1C around 6.9%. Recently added semaglutide(Ozempic) at low dose for better blood sugar control and appetite management. Fasting blood sugar typically between 125-130 mg/dL.",
+            "1": "Patient on losartan 50 mg once daily for hypertension. Blood pressure typically ranges 135-140/80-90 mmHg. Doctor recommends stress management and reduced sodium intake instead of increasing dosage. Taking a daily magnesium supplement, which may support blood pressure regulation.",
+            "2": "Patient on levothyroxine 75 mcg once daily, taken on an empty stomach with a 30-minute wait before eating. Last TSH test: 2.1 mIU/L(within normal range). No dosage changes needed. Noted that missing a dose leads to feeling sluggish the next day; uses a pill organizer to stay on track.",
+            "3": "Osteoarthritis managed with acetaminophen as needed. Uses meloxicam 7.5 mg intermittently for flare-ups(knees, hands). Avoids daily NSAID use. Doctor recommended glucosamine; patient unsure if it helps.",
+            "4": "Patient adjusted vitamin D intake due to low levels(22 ng/mL; normal >30 ng/mL). Now takes vitamin D3 2,000 IU daily. Also takes calcium supplements due to early osteopenia on bone density scan. Doctor recommends combining with vitamin K2 to improve absorption and bone health.",
+            "5": "Patient takes atorvastatin 10 mg daily for cholesterol management. Initial LDL: 130 mg/dL, triglycerides: 140 mg/dL. Doctor prescribed low-dose statin to improve lipid profile. Cholesterol levels have improved with no reported side effects(e.g., muscle aches), which is reassuring.",
+            "6": "Patient takes a daily multivitamin, omega-3 supplements for heart health, and probiotics for digestion. Post-gallbladder removal, occasionally uses digestive enzymes when consuming heavier or fatty meals. Aware that gallbladder removal affects fat digestion, so mindful of dietary fat intake."
+        }
+    },
+    "archival_memory": {
+        "next_id": 0,
+        "store": {}
+    }
+}

@@ -1,0 +1,99 @@
+{
+  "backend": "vector",
+  "tiers": {
+    "core": {
+      "0": {
+        "text": "Aging is not fear—it's a meaningful chapter lived with courage and presence. Manages medications with a pill planner and phone reminders. Focuses on lifestyle changes to reduce prescription reliance. Goal: maintain optimal health through natural, proactive self-care.",
+        "probes": [
+          "Aging is not fear—it's a meaningful chapter lived with courage and presence. Manages medications with a pill planner and phone reminders. Focuses on lifestyle changes to reduce prescription reliance. Goal: maintain optimal health through natural, proactive self-care.",
+          "what do you know about aging fear meaningful chapter",
+          "aging fear meaningful chapter lived courage presence manages"
+        ],
+        "probe_provenance": "write_time"
+      },
+      "1": {
+        "text": "Patient manages Type 2 Diabetes with metformin 1000 mg BID; A1C ~6.9%; added semaglutide (Ozempic) low dose for appetite and glucose control. Fasting glucose 125–130 mg/dL.",
+        "probes": [
+          "Patient manages Type 2 Diabetes with metformin 1000 mg BID; A1C ~6.9%; added semaglutide (Ozempic) low dose for appetite and glucose control. Fasting glucose 125–130 mg/dL.",
+          "what do you know about patient manages type diabetes",
+          "patient manages type diabetes metformin 1000 bid a1c"
+        ],
+        "probe_provenance": "write_time"
+      },
+      "2": {
+        "text": "Patient on losartan 50 mg daily; BP 135–140/80–90 mmHg. Doctor recommends stress management and low sodium intake over dose increase. Takes daily magnesium supplement for BP support. Warned about NSAID-kidney interaction; avoids frequent meloxicam use to protect kidney function.",
+        "probes": [
+          "Patient on losartan 50 mg daily; BP 135–140/80–90 mmHg. Doctor recommends stress management and low sodium intake over dose increase. Takes daily magnesium supplement for BP support. Warned about NSAID-kidney interaction; avoids frequent meloxicam use to protect kidney function.",
+          "what do you know about patient losartan daily 135",
+          "patient losartan daily 135 140 mmhg doctor recommends"
+        ],
+        "probe_provenance": "write_time"
+      },
+      "3": {
+        "text": "Patient on levothyroxine 75 mcg daily, taken on empty stomach, 30 min before food. TSH 2.1 mIU/L (normal). Missed doses cause next-day sluggishness; uses pill organizer.",
+        "probes": [
+          "Patient on levothyroxine 75 mcg daily, taken on empty stomach, 30 min before food. TSH 2.1 mIU/L (normal). Missed doses cause next-day sluggishness; uses pill organizer.",
+          "what do you know about patient levothyroxine mcg daily",
+          "patient levothyroxine mcg daily taken empty stomach min"
+        ],
+        "probe_provenance": "write_time"
+      },
+      "4": {
+        "text": "Patient manages osteoarthritis with acetaminophen as needed for mild pain; uses meloxicam 7.5 mg intermittently for inflammation and stiffness in knees and hands. Avoids daily NSAID use to prevent overexposure. Doctor recommended glucosamine supplements; effect unclear and not yet confirmed.",
+        "probes": [
+          "Patient manages osteoarthritis with acetaminophen as needed for mild pain; uses meloxicam 7.5 mg intermittently for inflammation and stiffness in knees and hands. Avoids daily NSAID use to prevent overexposure. Doctor recommended glucosamine supplements; effect unclear and not yet confirmed.",
+          "what do you know about patient manages osteoarthritis acetaminophen",
+          "patient manages osteoarthritis acetaminophen needed mild pain uses"
+        ],
+        "probe_provenance": "write_time"
+      },
+      "5": {
+        "text": "Patient takes vitamin D3 2,000 IU daily (levels were 22 ng/mL; now aiming for >30 ng/mL). Takes calcium supplements due to early osteopenia. Doctor recommends combining with vitamin K2 for absorption and bone health.",
+        "probes": [
+          "Patient takes vitamin D3 2,000 IU daily (levels were 22 ng/mL; now aiming for >30 ng/mL). Takes calcium supplements due to early osteopenia. Doctor recommends combining with vitamin K2 for absorption and bone health.",
+          "what do you know about patient takes vitamin 000",
+          "patient takes vitamin 000 daily levels now aiming"
+        ],
+        "probe_provenance": "write_time"
+      },
+      "6": {
+        "text": "Patient takes atorvastatin 10 mg daily for cholesterol. Initial LDL: 130 mg/dL, triglycerides: 140 mg/dL. Low-dose statin prescribed to improve lipid profile. Cholesterol levels have improved with no side effects (no muscle aches), which is reassuring.",
+        "probes": [
+          "Patient takes atorvastatin 10 mg daily for cholesterol. Initial LDL: 130 mg/dL, triglycerides: 140 mg/dL. Low-dose statin prescribed to improve lipid profile. Cholesterol levels have improved with no side effects (no muscle aches), which is reassuring.",
+          "what do you know about patient takes atorvastatin daily",
+          "patient takes atorvastatin daily cholesterol initial ldl 130"
+        ],
+        "probe_provenance": "write_time"
+      }
+    },
+    "archival": {
+      "0": {
+        "text": "Patient manages chronic osteoarthritis pain with practical, compassionate strategies: warm baths with Epsom salts, morning heating pad use, and exploring gentle movement like tai chi and stretching. Recognizes that aging isn’t about eliminating discomfort—but about adapting, staying active, and preserving the ability to enjoy daily life. Focus on resilience, not perfection.",
+        "probes": [
+          "Patient manages chronic osteoarthritis pain with practical, compassionate strategies: warm baths with Epsom salts, morning heating pad use, and exploring gentle movement like tai chi and stretching. Recognizes that aging isn’t about eliminating discomfort—but about adapting, staying active, and preserving the ability to enjoy daily life. Focus on resilience, not perfection.",
+          "what do you know about patient manages chronic osteoarthritis",
+          "patient manages chronic osteoarthritis pain practical compassionate strategies"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "1": {
+        "text": "Cholesterol results: \n- Total cholesterol: 195 mg/dL(acceptable) \n- LDL(bad cholesterol): 130 mg/dL(above target of <100 mg/dL) \n- HDL(good cholesterol): 58 mg/dL(within healthy range) \n- Triglycerides: 140 mg/dL(slightly elevated, not urgent)\n\nDoctor's advice: \n- Increase intake of healthy fats(avocados, nuts) \n- Reduce saturated fats in diet \n- Monitor trends over time for better management.\n\nBlood pressure update: \n- Last clinic reading: 138/85 mmHg(above target of <130/80 mmHg) \n- Home readings: 135–140 mmHg(systolic), 80–90 mmHg(diastolic) \n- Fluctuations linked to stress and salt intake \n- Action: Reducing sodium, increasing water intake — showing positive trends.",
+        "probes": [
+          "Cholesterol results: \n- Total cholesterol: 195 mg/dL(acceptable) \n- LDL(bad cholesterol): 130 mg/dL(above target of <100 mg/dL) \n- HDL(good cholesterol): 58 mg/dL(within healthy range) \n- Triglycerides: 140 mg/dL(slightly elevated, not urgent)\n\nDoctor's advice: \n- Increase intake of healthy fats(avocados, nuts) \n- Reduce saturated fats in diet \n- Monitor trends over time for better management.\n\nBlood pressure update: \n- Last clinic reading: 138/85 mmHg(above target of <130/80 mmHg) \n- Home readings: 135–140 mmHg(systolic), 80–90 mmHg(diastolic) \n- Fluctuations linked to stress and salt intake \n- Action: Reducing sodium, increasing water intake — showing positive trends.",
+          "what do you know about cholesterol results total 195",
+          "cholesterol results total 195 acceptable ldl bad 130"
+        ],
+        "probe_provenance": "stored_text"
+      },
+      "2": {
+        "text": "Vitamin D test result: \n- Level: 22 ng/mL(deficient; normal range: 30–50 ng/mL)\n- Action: Started daily supplement of 2,000 IU\n- Follow-up: Recheck in 3–4 months to monitor improvement\n- Note: Despite regular sun exposure, levels were low—suggesting possible dietary or seasonal factors.\n\nThyroid update: \n- TSH: 2.1 mIU/L(normal range: 0.5–4.5 mIU/L) \n- T4: 1.2 ng/dL(within normal range) \n- Status: Stable and well-controlled; current levothyroxine dosage is effective. \n- Past history of hypothyroidism managed with regular monitoring.\n\nBone density update: \n- Spine T-score: -1.8 (osteopenia; stage before osteoporosis) \n- Hip T-score: -1.5 (borderline range) \n- Doctor's advice: Maintain strength training and ensure adequate calcium and vitamin D intake \n- Actions taken: \n  - Increased dairy and leafy green consumption \n  - Started calcium supplement with vitamin K2 for better absorption \n- Ongoing: Monitor trends with future scans.\n\nLiver & kidney function: \n- ALT: 42 U/L(elevated; normal <35 U/L) — possibly linked to recent medication changes \n- Creatinine: 0.9 mg/dL(within normal range: 0.6–1.2 mg/dL) — kidney function is stable \n- Next step: Monitor ALT closely; doctor will review medications to assess impact.\n\nInflammatory markers: \n- C-reactive protein(CRP): 3.2 mg/L(slightly elevated; ideal <3.0 mg/L) — likely related to osteoarthritis \n- ESR: 18 mm/hr(within normal range: 0–20 mm/hr) — no major inflammation detected \n- Interpretation: Mild, localized inflammation consistent with joint degeneration; manageable with lifestyle and joint-supportive strategies.",
+        "probes": [
+          "Vitamin D test result: \n- Level: 22 ng/mL(deficient; normal range: 30–50 ng/mL)\n- Action: Started daily supplement of 2,000 IU\n- Follow-up: Recheck in 3–4 months to monitor improvement\n- Note: Despite regular sun exposure, levels were low—suggesting possible dietary or seasonal factors.\n\nThyroid update: \n- TSH: 2.1 mIU/L(normal range: 0.5–4.5 mIU/L) \n- T4: 1.2 ng/dL(within normal range) \n- Status: Stable and well-controlled; current levothyroxine dosage is effective. \n- Past history of hypothyroidism managed with regular monitoring.\n\nBone density update: \n- Spine T-score: -1.8 (osteopenia; stage before osteoporosis) \n- Hip T-score: -1.5 (borderline range) \n- Doctor's advice: Maintain strength training and ensure adequate calcium and vitamin D intake \n- Actions taken: \n  - Increased dairy and leafy green consumption \n  - Started calcium supplement with vitamin K2 for better absorption \n- Ongoing: Monitor trends with future scans.\n\nLiver & kidney function: \n- ALT: 42 U/L(elevated; normal <35 U/L) — possibly linked to recent medication changes \n- Creatinine: 0.9 mg/dL(within normal range: 0.6–1.2 mg/dL) — kidney function is stable \n- Next step: Monitor ALT closely; doctor will review medications to assess impact.\n\nInflammatory markers: \n- C-reactive protein(CRP): 3.2 mg/L(slightly elevated; ideal <3.0 mg/L) — likely related to osteoarthritis \n- ESR: 18 mm/hr(within normal range: 0–20 mm/hr) — no major inflammation detected \n- Interpretation: Mild, localized inflammation consistent with joint degeneration; manageable with lifestyle and joint-supportive strategies.",
+          "what do you know about vitamin test result level",
+          "vitamin test result level deficient normal range action"
+        ],
+        "probe_provenance": "stored_text"
+      }
+    }
+  }
+}

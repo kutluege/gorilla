@@ -1,0 +1,13 @@
+{
+    "core_memory": {},
+    "archival_memory": {
+        "diabetes_treatment_plan": "Metformin 1000 mg twice daily for several years. Recently added semaglutide(Ozempic) at low dose for appetite control and blood sugar management. Fasting blood sugar typically 125-130 mg/dL. A1C around 6.9%.",
+        "hypertension_treatment_plan": "Losartan 50 mg once daily. Blood pressure typically 135-140/80-90 mmHg. Doctor recommends stress management and reduced sodium intake instead of increasing dosage. Taking a daily magnesium supplement for potential blood pressure support.",
+        "hypothyroidism_treatment_plan": "Levothyroxine 75 mcg once daily, taken on an empty stomach, 30 minutes before eating. Last TSH test: 2.1 mIU/L(within normal range). Doctor has not changed dosage in years. Noticeable sluggishness if a dose is missed; uses a pill organizer to stay on track.",
+        "osteoarthritis_treatment_plan": "Acetaminophen as needed for mild pain. Meloxicam 7.5 mg prescribed for flare-ups(knees and hands), taken only when joints are stiff, to avoid overuse of NSAIDs. Doctor suggested glucosamine supplements; effect unclear and not yet confirmed.",
+        "vitamin_d_and_bone_health_plan": "Vitamin D3 2,000 IU daily due to low levels(22 ng/mL; normal >30 ng/mL). Taking calcium supplements due to early osteopenia on bone density scan. Doctor recommends combining with vitamin K2 to improve calcium absorption and bone health.",
+        "cholesterol_management_plan": "Atorvastatin 10 mg daily. Started due to elevated LDL(130 mg/dL) and triglycerides(140 mg/dL). Cholesterol levels have improved since starting. No reported side effects. Relief from concerns about muscle aches, which are uncommon but possible with statins.",
+        "general_health_supplements": "Daily multivitamin, omega-3 supplements for heart health, and probiotics for digestion. Takes digestive enzymes when eating heavier meals due to gallbladder removal. Aware that gallbladder removal affects fat digestion, so mindful of dietary fat intake.",
+        "medication_interactions_precautions": "Aware of potential interactions between losartan and meloxicam(NSAIDs may affect kidney function), so limits meloxicam use to flare-ups only. Takes levothyroxine separately from calcium and iron supplements to avoid interference with absorption."
+    }
+}

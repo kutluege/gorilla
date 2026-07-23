@@ -1,0 +1,80 @@
+{
+  "backend": "kv",
+  "tiers": {
+    "core": {},
+    "archival": {
+      "patient_diabetes_history_fasting_glucose_135": {
+        "text": "patient diabetes history fasting glucose 135: Fasting blood glucose level of 135 mg/dL, above target of <100 mg/dL. A1C of 6.9%, just above target of 6.5%. Doctor recommended increasing dietary fiber and adding light exercise after meals. Morning readings range between 125-130 mg/dL.",
+        "probes": [
+          "patient diabetes history fasting glucose 135",
+          "what is patient diabetes history fasting glucose 135",
+          "patient diabetes history fasting glucose 135 fasting blood glucose"
+        ],
+        "probe_provenance": "write_time"
+      },
+      "patient_cholesterol_profile": {
+        "text": "patient cholesterol profile: Total cholesterol: 195 mg/dL (acceptable), LDL (bad cholesterol): 130 mg/dL (above target of <100 mg/dL), HDL (good cholesterol): 58 mg/dL (within good range), Triglycerides: 140 mg/dL (slightly elevated). Doctor advised increasing intake of healthy fats (avocados, nuts) and reducing saturated fats.",
+        "probes": [
+          "patient cholesterol profile",
+          "what is patient cholesterol profile",
+          "patient cholesterol profile total cholesterol 195"
+        ],
+        "probe_provenance": "write_time"
+      },
+      "patient_blood_pressure_tracking": {
+        "text": "patient blood pressure tracking: Latest reading: 138/85 mmHg (on the high side). Target: below 130/80 mmHg. Home readings fluctuate between 135–140 mmHg (systolic) and 80–90 mmHg (diastolic), influenced by stress and salt intake. Taking steps to reduce sodium intake and increase water consumption, which appears to help.",
+        "probes": [
+          "patient blood pressure tracking",
+          "what is patient blood pressure tracking",
+          "patient blood pressure tracking latest reading 138"
+        ],
+        "probe_provenance": "write_time"
+      },
+      "patient_vitamin_d_levels": {
+        "text": "patient vitamin d levels: Vitamin D level: 22 ng/mL (deficient; normal range: 30-50 ng/mL). Doctor prescribed 2,000 IU daily supplement. Will be retested in a few months to assess improvement.",
+        "probes": [
+          "patient vitamin d levels",
+          "what is patient vitamin d levels",
+          "patient vitamin d levels vitamin level deficient"
+        ],
+        "probe_provenance": "write_time"
+      },
+      "patient_thyroid_function": {
+        "text": "patient thyroid function: TSH: 2.1 mIU/L (within normal range of 0.5–4.5 mIU/L). T4: 1.2 ng/dL (normal), indicating that current levothyroxine dosage is effective. Regular monitoring is maintained due to past history of hypothyroidism.",
+        "probes": [
+          "patient thyroid function",
+          "what is patient thyroid function",
+          "patient thyroid function tsh miu within"
+        ],
+        "probe_provenance": "write_time"
+      },
+      "patient_bone_density_scan": {
+        "text": "patient bone density scan: Spine T-score: -1.8 (osteopenia), Hip T-score: -1.5 (borderline). Doctor advised maintaining strength training and increasing calcium intake to prevent further bone loss. Started adding more dairy and leafy greens to diet, and now taking a calcium supplement with vitamin K2 to improve absorption.",
+        "probes": [
+          "patient bone density scan",
+          "what is patient bone density scan",
+          "patient bone density scan spine score osteopenia"
+        ],
+        "probe_provenance": "write_time"
+      },
+      "patient_liver_kidney_function": {
+        "text": "patient liver kidney function: ALT levels: 42 U/L (elevated; normal <35 U/L). Doctor suspects possible link to recent medication adjustments. Creatinine: 0.9 mg/dL (within normal range of 0.6–1.2 mg/dL), indicating no kidney concerns.",
+        "probes": [
+          "patient liver kidney function",
+          "what is patient liver kidney function",
+          "patient liver kidney function alt levels elevated"
+        ],
+        "probe_provenance": "write_time"
+      },
+      "patient_inflammatory_markers": {
+        "text": "patient inflammatory markers: C-reactive protein (CRP): 3.2 mg/L (slightly elevated; ideal <3.0 mg/L), indicating mild inflammation—likely related to osteoarthritis. ESR: 18 mm/hr (within normal range of 0-20 mm/hr), so no major inflammation detected.",
+        "probes": [
+          "patient inflammatory markers",
+          "what is patient inflammatory markers",
+          "patient inflammatory markers reactive protein crp"
+        ],
+        "probe_provenance": "write_time"
+      }
+    }
+  }
+}

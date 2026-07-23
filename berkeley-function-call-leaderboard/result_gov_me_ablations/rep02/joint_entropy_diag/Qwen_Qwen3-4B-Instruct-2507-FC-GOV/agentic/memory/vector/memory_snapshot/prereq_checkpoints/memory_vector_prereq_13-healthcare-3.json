@@ -1,0 +1,12 @@
+{
+    "core_memory": {
+        "next_id": 1,
+        "store": {
+            "0": "Fasting glucose: 135 mg/dL(target <100). A1C: 6.9% (target \u22646.5%). Morning readings: 125\u2013130 mg/dL. Action: Increase fiber, light exercise post-meals. Note: Seasonal factors(e.g., winter joint pain) may affect glucose control; adjust diet/exercise accordingly."
+        }
+    },
+    "archival_memory": {
+        "next_id": 0,
+        "store": {}
+    }
+}

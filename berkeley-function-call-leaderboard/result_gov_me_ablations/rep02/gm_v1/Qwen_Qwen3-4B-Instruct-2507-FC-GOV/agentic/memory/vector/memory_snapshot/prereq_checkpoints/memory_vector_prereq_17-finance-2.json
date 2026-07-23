@@ -1,0 +1,12 @@
+{
+    "core_memory": {
+        "next_id": 0,
+        "store": {}
+    },
+    "archival_memory": {
+        "next_id": 1,
+        "store": {
+            "0": "Career journey:\n- Started as analyst at Goldman Sachs(2001): M&A modeling, survived dot-com crash\n- Associate at Morgan Stanley(2004): Gained exposure to early social media tech deals\n- Vice President by age 31: Led defining transactions of that era\n- 2015: Joined Legend Investments as Managing Director\n- First major transaction: NeuralNet Systems IPO(largest tech IPO to date)\n- Built reputation for tackling complex, cross-border deals\n\nCore insight: In global finance, network and track record are currency. Trust is earned one successful deal at a time."
+        }
+    }
+}

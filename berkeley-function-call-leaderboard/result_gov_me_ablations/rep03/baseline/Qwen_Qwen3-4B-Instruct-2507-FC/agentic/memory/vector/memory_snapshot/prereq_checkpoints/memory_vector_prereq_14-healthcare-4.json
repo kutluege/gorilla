@@ -1,0 +1,18 @@
+{
+    "core_memory": {
+        "next_id": 7,
+        "store": {
+            "0": "Patient with Type 2 Diabetes on metformin 1000 mg twice daily. A1C around 6.9%. Recently added semaglutide(Ozempic) at low dose for better blood sugar control and appetite management. Fasting blood sugar typically between 125-130 mg/dL.",
+            "1": "Patient on losartan 50 mg once daily for hypertension. Blood pressure typically ranges 135-140/80-90 mmHg. Doctor recommends stress management and reduced sodium intake instead of increasing dosage. Taking daily magnesium supplement for potential blood pressure support.",
+            "2": "Patient on levothyroxine 75 mcg once daily, taken on empty stomach with at least 30 minutes before eating. Last TSH test: 2.1 mIU/L(within normal range). No dosage changes needed. Noted that missing a dose leads to feeling sluggish the next day; uses a pill organizer to stay on track.",
+            "3": "Patient with osteoarthritis manages pain with acetaminophen as needed. Uses meloxicam 7.5 mg intermittently for inflammation and stiffness(especially in knees and hands), avoiding daily use to minimize NSAID risks. Doctor suggested glucosamine supplements; effect unclear and not yet confirmed.",
+            "4": "Patient adjusted vitamin D intake due to low levels(22 ng/mL; normal >30 ng/mL). Now taking vitamin D3 2,000 IU daily. Also taking calcium supplements due to early osteopenia on bone density scan. Doctor recommends combining with vitamin K2 to improve calcium absorption and bone health.",
+            "5": "Patient on atorvastatin 10 mg daily for cholesterol management. Initial LDL: 130 mg/dL, triglycerides: 140 mg/dL. Doctor prescribed low-dose statin to improve lipid profile. Cholesterol levels have improved with no reported side effects(e.g., muscle aches), which is reassuring.",
+            "6": "Patient takes daily multivitamin, omega-3s for heart health, and probiotics for digestion. Post-gallbladder removal, takes digestive enzymes with fatty meals due to impaired fat digestion. Mindful of dietary fat intake."
+        }
+    },
+    "archival_memory": {
+        "next_id": 0,
+        "store": {}
+    }
+}

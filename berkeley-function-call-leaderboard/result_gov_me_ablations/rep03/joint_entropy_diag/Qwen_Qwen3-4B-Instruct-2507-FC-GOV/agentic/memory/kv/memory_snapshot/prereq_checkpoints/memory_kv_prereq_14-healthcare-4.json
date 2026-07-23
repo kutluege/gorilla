@@ -1,0 +1,27 @@
+{
+    "core_memory": {
+        "diabetes_medication_metformin": "Metformin 1000 mg twice daily(taken for several years). Helps maintain blood sugar control, but A1C remains around 6.9%.",
+        "diabetes_new_medication_semaglutide": "Semaglutide(Ozempic) \u2013 low-dose GLP-1 receptor agonist added by doctor. Helps control appetite and may improve glycemic control. Noted side effects or concerns so far: none reported.",
+        "diabetes_blood_sugar_monitoring": "Fasting blood sugar checked at home regularly. Range: 125\u2013130 mg/dL. This is within the target range for someone with Type 2 Diabetes, though individual goals may vary.",
+        "diabetes_next_steps": "A1C remains at ~6.9%, which is slightly above the ideal target of <6.5%. Doctor recommends continued monitoring and possible further adjustments. Will track fasting glucose and side effects of semaglutide closely over the next 3\u20136 months.",
+        "hypertension_medication_losartan": "Losartan 50 mg once daily. Blood pressure readings typically range from 135\u2013140 mmHg(systolic) / 80\u201390 mmHg(diastolic). This is slightly above ideal targets(<130/80 mmHg), but doctor recommends lifestyle changes over increasing dosage.",
+        "hypertension_lifestyle_interventions": "Doctor recommends stress management and reducing sodium intake to help lower blood pressure. No immediate change in medication dosage planned.",
+        "hypertension_magnesium_supplement": "Taking a daily magnesium supplement. Believed to support blood pressure regulation, though evidence is mixed. Will monitor for any changes in BP or symptoms."
+    },
+    "archival_memory": {
+        "hypothyroidism_medication_levothyroxine": "Levothyroxine 75 mcg once daily, taken on an empty stomach, at least 30 minutes before eating. Last TSH result: 2.1 mIU/L(within normal range). No dosage changes needed.",
+        "hypothyroidism_dose_mismanagement": "Noticeable sluggishness the day after missing a dose. Using a pill organizer to ensure consistent daily intake.",
+        "osteoarthritis_pain_management_acetaminophen": "Acetaminophen as needed for mild pain. Preferred for daily use due to lower risk of gastrointestinal side effects.",
+        "osteoarthritis_pain_management_meloxicam": "Meloxicam 7.5 mg prescribed for flare-ups(e.g., stiff knees and hands). Taken only as needed, not daily, to avoid overuse of NSAIDs. Effective during active pain or stiffness episodes.",
+        "osteoarthritis_glucosamine_supplements": "Doctor recommended glucosamine supplements. No definitive evidence of benefit yet; ongoing trial to assess impact on joint pain or function.",
+        "vitamin_d_intake": "Vitamin D3 2,000 IU daily, started after blood test showed low levels(22 ng/mL; normal >30 ng/mL). Aim is to raise levels to within the healthy range.",
+        "calcium_supplementation": "Taking calcium supplements due to early signs of osteopenia on bone density scan. Doctor recommends combining with vitamin K2 to improve absorption and support bone health.",
+        "cholesterol_statin_atorvastatin": "Atorvastatin 10 mg daily. Started due to elevated LDL(130 mg/dL) and triglycerides(140 mg/dL). Cholesterol levels have improved since starting; no side effects reported(e.g., no muscle aches). Doctor considers this a low-dose regimen, effective and well-tolerated.",
+        "general_health_supplements_multivitamin": "Daily multivitamin to support overall nutritional intake.",
+        "general_health_supplements_omega_3_3": "Omega-3 supplements taken daily for heart health support.",
+        "general_health_supplements_probiotics": "Probiotics taken daily to support digestive health.",
+        "digestive_enzymes_post_gallbladder_removal": "Take digestive enzymes when consuming heavier meals, especially those high in fat. Gallbladder removal affects fat digestion, so mindful eating is important.",
+        "medication_interactions_losartan_meloxicam": "Doctor warned that NSAIDs(like meloxicam) can affect kidney function, especially when combined with losartan(an ACE inhibitor). Therefore, meloxicam is taken only as needed and not frequently to minimize risk to kidney function.",
+        "medication_interactions_thyroid_and_supplements": "Levothyroxine should be taken separately from calcium and iron supplements(typically 4 hours apart) to avoid interference with absorption. This is a key practice to maintain optimal thyroid hormone levels."
+    }
+}

@@ -1,0 +1,24 @@
+{
+    "core_memory": {
+        "blood_glucose_fasting_latest": "135 mg/dL",
+        "morning_blood_glucose_range": "125-130 mg/dL",
+        "doctor_recommendations": "Increase dietary fiber, add light exercise after meals",
+        "total_cholesterol": "195 mg/dL",
+        "ldl_cholesterol": "130 mg/dL",
+        "hdl_cholesterol": "58 mg/dL",
+        "triglycerides": "140 mg/dL"
+    },
+    "archival_memory": {
+        "vitamin_d_level": "22 ng/mL(deficient; normal range: 30-50 ng/mL)",
+        "vitamin_d_treatment": "Starting 2,000 IU daily supplement",
+        "vitamin_d_follow_up": "Retest in a few months to assess improvement",
+        "tsh_level": "2.1 mIU/L(normal range: 0.5\u20134.5 mIU/L)",
+        "bone_density_spine_t_score": "-1.8 (osteopenia)",
+        "bone_density_hip_t_score": "-1.5 (borderline range)",
+        "bone_density_recommendations": "Continue strength training, increase calcium intake, take calcium supplement with vitamin K2 for better absorption",
+        "liver_function_alt": "42 U/L(elevated; normal <35 U/L)",
+        "liver_function_creatinine": "0.9 mg/dL(within normal range: 0.6\u20131.2 mg/dL; no kidney concerns)",
+        "inflammatory_markers_crp": "3.2 mg/L(slightly elevated; ideal <3.0 mg/L; likely related to osteoarthritis)",
+        "inflammatory_markers_esr": "18 mm/hr(within normal range: 0-20 mm/hr; no major inflammation)"
+    }
+}

@@ -1,0 +1,378 @@
+{
+  "backend": "kv",
+  "tiers": {
+    "core": {
+      "personal_investment_philosophy": {
+        "text": "personal investment philosophy: Long-term wealth focus: balance high-risk opportunities with stable income. Core in equities & private equity; include bonds, real estate, alternatives. Prioritize margin of safety and growth narratives. Goal: capital preservation and strategic growth, not just accumulation.",
+        "probes": [
+          "personal investment philosophy",
+          "what is personal investment philosophy",
+          "personal investment philosophy long term wealth"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "time_management_routine": {
+        "text": "time management routine: 5:30 AM: market review & workout. Day: time-blocked decisions, research, and portfolio checks. Saturdays: plan finances, review Pioneer Tech's pre-seed. Sundays: family & reading. Structure ensures efficiency and timely opportunities.",
+        "probes": [
+          "time management routine",
+          "what is time management routine",
+          "time management routine market review workout"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "long_term_financial_goals": {
+        "text": "long term financial goals: Grow private portfolio for passive income. Expand into AI-driven ETFs. Launch free financial ed platform for underprivileged youth. True wealth = financial growth + social impact.",
+        "probes": [
+          "long term financial goals",
+          "what is long term financial goals",
+          "long term financial goals grow private portfolio"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "ultimate_goal_freedom_and_transition": {
+        "text": "ultimate goal freedom and transition: Achieve financial freedom by 55. Transition to chairman role: focus on strategy & mentorship. Launch global fund in sustainable & frontier markets. Wealth = control + impact, not just accumulation.",
+        "probes": [
+          "ultimate goal freedom and transition",
+          "what is ultimate goal freedom and transition",
+          "ultimate goal freedom and transition achieve financial freedom"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "dealogic_soft_signals_model": {
+        "text": "dealogic soft signals model: Custom Dealogic tracks soft signals(management dynamics, cultural fit). Python/R model predicts deal success. Automated analytics. ML model analyzes earnings calls to predict market reactions – now essential for equity trading desk.",
+        "probes": [
+          "dealogic soft signals model",
+          "what is dealogic soft signals model",
+          "dealogic soft signals model custom dealogic tracks"
+        ],
+        "probe_provenance": "stored_text"
+      },
+      "personal_philosophy_on_resilience": {
+        "text": "personal philosophy on resilience: Success is not about talent or intelligence, but resilience. Setbacks are tuition fees—essential for long-term growth. Early loss on Intelligent Motors taught me to reframe failure as feedback. Key mindset: wins must be bigger than losses. Resilience = consistent recovery, not avoidance of risk.",
+        "probes": [
+          "personal philosophy on resilience",
+          "what is personal philosophy on resilience",
+          "personal philosophy on resilience success talent intelligence"
+        ],
+        "probe_provenance": "write_time"
+      },
+      "leadership_mindset": {
+        "text": "leadership mindset: Bet on yourself. Act like a leader, think like an investor, operate like a CEO. Growth comes from ownership, not permission. Opportunities follow bold action. No one hands you chances—you create them.",
+        "probes": [
+          "leadership mindset",
+          "what is leadership mindset",
+          "leadership mindset bet yourself act"
+        ],
+        "probe_provenance": "write_time"
+      }
+    },
+    "archival": {
+      "deal_poison_pill_surreal_2019": {
+        "text": "deal poison pill surreal 2019: 2019: Poison pill defense for Surreal Inc. (mid-cap tech). Became Harvard Business School case study.",
+        "probes": [
+          "deal poison pill surreal 2019",
+          "what is deal poison pill surreal 2019",
+          "deal poison pill surreal 2019 2019 poison pill"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "deal_semiconductor_nexa_taihua": {
+        "text": "deal semiconductor nexa taihua: $8.6B Nexa-Taihua semiconductor merger. Cross-continental coordination. Overcame IP and regulatory hurdles. Showed diplomacy is as vital as numbers in global finance.",
+        "probes": [
+          "deal semiconductor nexa taihua",
+          "what is deal semiconductor nexa taihua",
+          "deal semiconductor nexa taihua nexa taihua semiconductor"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "deal_healthcare_biocrest_oncopharma": {
+        "text": "deal healthcare biocrest oncopharma: $14.2B BioCrest-OncoPharm merger. Overcame IP and regulatory issues. Resolved after 3 sleepless nights. WSJ called it 'the deal that reshaped modern cancer treatment'.",
+        "probes": [
+          "deal healthcare biocrest oncopharma",
+          "what is deal healthcare biocrest oncopharma",
+          "deal healthcare biocrest oncopharma biocrest oncopharm merger"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "first_transaction_lucite_memento": {
+        "text": "first transaction lucite memento: Small lucite from first $500M transaction—funded Stratos Aerospace expansion—remains on desk as a reminder to bring the same energy and persistence to every deal, regardless of size.",
+        "probes": [
+          "first transaction lucite memento",
+          "what is first transaction lucite memento",
+          "first transaction lucite memento small lucite first"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "transaction_quantumchip_silicon_core": {
+        "text": "transaction quantumchip silicon core: $8.5B semiconductor merger between QuantumChip Technologies and Silicon Core. Key challenge: U.S.-China regulatory approvals. Requires patience, strategic alignment, and deep regulatory expertise.",
+        "probes": [
+          "transaction quantumchip silicon core",
+          "what is transaction quantumchip silicon core",
+          "transaction quantumchip silicon core semiconductor merger between"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "transaction_solaris_nordic_renewables": {
+        "text": "transaction solaris nordic renewables: $5B+ Solaris-Nordic Renewables acquisition. Aligning cross-jurisdictional green energy incentives.",
+        "probes": [
+          "transaction solaris nordic renewables",
+          "what is transaction solaris nordic renewables",
+          "transaction solaris nordic renewables solaris nordic renewables"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "weekly_deal_call": {
+        "text": "weekly deal call: Weekly 7 AM deal call(Asian market alignment) keeps me sharp and globally connected.",
+        "probes": [
+          "weekly deal call",
+          "what is weekly deal call",
+          "weekly deal call weekly deal call"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "potential_omnix_ai_takeprivate": {
+        "text": "potential omnix ai takeprivate: $20B potential take-private of Omnix AI(AI powerhouse). If successful, transformative for firm's tech portfolio.",
+        "probes": [
+          "potential omnix ai takeprivate",
+          "what is potential omnix ai takeprivate",
+          "potential omnix ai takeprivate 20b potential take"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "career_goldman_sachs_2001": {
+        "text": "career goldman sachs 2001: 2001: Analyst at Goldman Sachs — focused on M&A modeling; survived dot-com crash.",
+        "probes": [
+          "career goldman sachs 2001",
+          "what is career goldman sachs 2001",
+          "career goldman sachs 2001 2001 analyst goldman"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "career_morgan_stanley_2004": {
+        "text": "career morgan stanley 2004: 2004: Associate at Morgan Stanley — gained exposure to early social media tech deals.",
+        "probes": [
+          "career morgan stanley 2004",
+          "what is career morgan stanley 2004",
+          "career morgan stanley 2004 2004 associate morgan"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "promotion_vp_2010": {
+        "text": "promotion vp 2010: Promoted to VP at 31 — led defining era transactions.",
+        "probes": [
+          "promotion vp 2010",
+          "what is promotion vp 2010",
+          "promotion vp 2010 promoted led defining"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "first_transaction_legend_investments": {
+        "text": "first transaction legend investments: First deal at Legend: NeuralNet Systems IPO — largest tech IPO to date.",
+        "probes": [
+          "first transaction legend investments",
+          "what is first transaction legend investments",
+          "first transaction legend investments first deal legend"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "education_penn_ba": {
+        "text": "education penn ba: B.A. in Economics, University of Pennsylvania.",
+        "probes": [
+          "education penn ba",
+          "what is education penn ba",
+          "education penn ba economics university pennsylvania"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "education_hbs_mba": {
+        "text": "education hbs mba: MBA from Harvard Business School(Baker Scholar).",
+        "probes": [
+          "education hbs mba",
+          "what is education hbs mba",
+          "education hbs mba mba harvard business"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "mentorship_and_recruitment": {
+        "text": "mentorship and recruitment: Guest lecturing, mentoring students, recruiting talent at Penn and HBS.",
+        "probes": [
+          "mentorship and recruitment",
+          "what is mentorship and recruitment",
+          "mentorship and recruitment guest lecturing mentoring"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "penn_scholarship_endowment": {
+        "text": "penn scholarship endowment: Endowed Penn scholarship for first-gen finance students.",
+        "probes": [
+          "penn scholarship endowment",
+          "what is penn scholarship endowment",
+          "penn scholarship endowment endowed penn scholarship"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "leadership_philosophy_legend_investments": {
+        "text": "leadership philosophy legend investments: Leadership in finance is about creating a culture of excellence while maintaining humanity. At Legend Investments, I oversee a team of 180 professionals across investment, research, and operations. My leadership philosophy centers on three pillars: empowerment, accountability, and continuous growth. I maintain an open-door policy and encourage junior analysts to challenge conventional thinking. Every Monday, I host a 'strategic roundtable' where team members from all levels can present investment theses or operational improvements. Last month, a second-year analyst proposed a novel approach to ESG scoring that we're now implementing across our portfolio. Leadership isn't about having all the answers—it's about fostering an environment where great ideas can flourish.",
+        "probes": [
+          "leadership philosophy legend investments",
+          "what is leadership philosophy legend investments",
+          "leadership philosophy legend investments leadership finance creating"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "recent_achievement_esg_scoring": {
+        "text": "recent achievement esg scoring: A second-year analyst proposed a novel approach to ESG scoring during a strategic roundtable. The proposal has been adopted and is now being implemented across the portfolio, demonstrating the power of inclusive innovation.",
+        "probes": [
+          "recent achievement esg scoring",
+          "what is recent achievement esg scoring",
+          "recent achievement esg scoring second year analyst"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "weekly_roundtable_process": {
+        "text": "weekly roundtable process: A weekly strategic roundtable is held every Monday, allowing team members from all levels to present investment theses or operational improvements. This practice promotes transparency, cross-functional dialogue, and the emergence of fresh ideas from junior staff.",
+        "probes": [
+          "weekly roundtable process",
+          "what is weekly roundtable process",
+          "weekly roundtable process weekly strategic roundtable"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "talent_retention_and_development": {
+        "text": "talent retention and development: A year-long mentorship program pairs senior managers with emerging leaders. I personally mentor three high-potential directors biweekly. Retention rate for top performers is 94%. 15 team members attended Harvard, Stanford, and INSEAD. An accelerated partnership path attracts talent from top firms. Senior leadership diversity is now 40% women and minorities(up from 15%). Partnerships with SEO and Girls Who Invest support inclusive leadership pipelines.",
+        "probes": [
+          "talent retention and development",
+          "what is talent retention and development",
+          "talent retention and development year long mentorship"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "mentorship_program_success": {
+        "text": "mentorship program success: Biweekly mentorship meetings with high-potential directors on deal structuring and client management contribute to a 94% retention rate for top performers.",
+        "probes": [
+          "mentorship program success",
+          "what is mentorship program success",
+          "mentorship program success biweekly mentorship meetings"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "diversity_progress": {
+        "text": "diversity progress: Senior leadership diversity has increased to 40% women and minorities(from 15%). Achieved through strategic partnerships with SEO and Girls Who Invest to build inclusive talent pipelines.",
+        "probes": [
+          "diversity progress",
+          "what is diversity progress",
+          "diversity progress senior leadership diversity"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "crisis_management_2020": {
+        "text": "crisis management 2020: During the 2020 market crash, I led a Saturday morning team meeting, conducted daily presence on the trading floor, and made strategic decisions transparently. This resulted in key hires that transformed long-term performance.",
+        "probes": [
+          "crisis management 2020",
+          "what is crisis management 2020",
+          "crisis management 2020 during 2020 market"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "crisis_management_redemption_event": {
+        "text": "crisis management redemption event: During a major fund redemption crisis, I personally communicated with investors and empowered portfolio managers. Transparency and hands-on leadership maintained trust with clients and team members.",
+        "probes": [
+          "crisis management redemption event",
+          "what is crisis management redemption event",
+          "crisis management redemption event during major fund"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "innovation_pods_and_soar": {
+        "text": "innovation pods and soar: Cross-functional innovation pods link portfolio managers with tech teams. SOAR, an AI-driven platform developed in-house by quants, analysts, and ML experts, enables real-time market analysis and strategic decisions.",
+        "probes": [
+          "innovation pods and soar",
+          "what is innovation pods and soar",
+          "innovation pods and soar cross functional innovation"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "organizational_flexibility": {
+        "text": "organizational flexibility: Our organizational structure is fluid, allowing talent to move between teams based on market needs. This flexibility provides a competitive edge in rapidly evolving markets.",
+        "probes": [
+          "organizational flexibility",
+          "what is organizational flexibility",
+          "organizational flexibility organizational structure fluid"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "future_of_finance_outcomes": {
+        "text": "future of finance outcomes: The annual 'Future of Finance' symposium led to three strategic partnerships that have fundamentally enhanced our investment capabilities.",
+        "probes": [
+          "future of finance outcomes",
+          "what is future of finance outcomes",
+          "future of finance outcomes annual future finance"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "social_impact_board_and_initiatives": {
+        "text": "social impact board and initiatives: I serve on boards of non-profits focused on financial literacy and empowerment. A $50M foundation initiative funds scholarships and internships for underprivileged finance students. Senior executives teach financial skills in underserved communities for two weeks annually. These efforts strengthen culture and attract mission-driven talent.",
+        "probes": [
+          "social impact board and initiatives",
+          "what is social impact board and initiatives",
+          "social impact board and initiatives serve boards non"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "ethical_leadership_communication": {
+        "text": "ethical leadership communication: I regularly speak at universities and conferences like the Financial Institute National Conference on ethical leadership in finance, reinforcing our commitment to integrity.",
+        "probes": [
+          "ethical leadership communication",
+          "what is ethical leadership communication",
+          "ethical leadership communication regularly speak universities"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "deep_network_relationship_sarah_chen": {
+        "text": "deep network relationship sarah chen: Relationship with Sarah Chen, CEO of Pacific Dynamics: began at Goldman conference 2008, deepened on delayed flight from Hong Kong(2008), five hours of conversation on market trends and jazz. Foundation of trust lasting 15 years. Can be called at 3 AM for Asian market insights. Represents the value of authentic, value-driven relationships in finance.",
+        "probes": [
+          "deep network relationship sarah chen",
+          "what is deep network relationship sarah chen",
+          "deep network relationship sarah chen relationship sarah chen"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "golf_as_relationship_building_tool": {
+        "text": "golf as relationship building tool: Golf as a strategic relationship-building tool: 7-handicap player, active at National Golf Links, Cypress Point, and Muirfield. Key insight: The 7th-8th hole conversation with Jim(tech CEO) led to a $2.3 billion merger with MineCore. Hosts 'Quarterly Links' at Pebble Beach, bringing together clients, prospects, and industry leaders. Result: 3 major client acquisitions and a partnership with a leading sovereign wealth fund. Caddie Tom, with 30 years of experience, provides invaluable corporate intelligence—functions as a walking Bloomberg terminal. Highlights the value of unstructured, low-intensity environments for deep, authentic business conversations.",
+        "probes": [
+          "golf as relationship building tool",
+          "what is golf as relationship building tool",
+          "golf as relationship building tool golf strategic relationship"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "personal_client_relationship_approach": {
+        "text": "personal client relationship approach: Personalized client relationship model: Oversees 50 high-net-worth individuals and 30 institutional clients, treating each as if they were part of a family office. Key example: With client Robert, spent evenings with his children to understand their vision for the family business, leading to a complete restructure of the succession planning process through family dinners. Attended children's weddings, family celebrations, and supported through personal losses. Team humor: Runs a \"concierge service\" rather than a traditional investment firm. Core principle: Trust is earned through genuine, consistent, and personal connection—responds to midnight texts with human care, not automation. This approach builds deep loyalty and long-term client relationships.",
+        "probes": [
+          "personal client relationship approach",
+          "what is personal client relationship approach",
+          "personal client relationship approach personalized client relationship"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "travel_as_global_networking_strategy": {
+        "text": "travel as global networking strategy: Global networking through travel: On average 3 flights per week between New York, London, Hong Kong, and Dubai. Memorized every premium lounge at major airports. Key example: Closed a crucial deal with Chipset Core in Singapore after three days of face-to-face interaction, including a 4 AM dim sum run(jet lag benefit). Learned that some cultures require in-person engagement—meals, local context, shared experiences—over digital channels. Implemented '48-hour protocol': Can be anywhere in the world within 48 hours for major clients or opportunities. Personal touch: Tailor-made suits designed for long-haul flights. Core insight: Physical presence, cultural immersion, and shared experiences are irreplaceable in building trust and closing high-stakes deals.",
+        "probes": [
+          "travel as global networking strategy",
+          "what is travel as global networking strategy",
+          "travel as global networking strategy global networking through"
+        ],
+        "probe_provenance": "sidecar"
+      },
+      "network_triangle_ecosystem": {
+        "text": "network triangle ecosystem: Developed the 'Network Triangle' framework: Professional relationships, social connections, and knowledge sharing. Quarterly 'Future Focus' dinner series brings together diverse groups—fintech innovators, traditional bankers, academics, artists, philosophers—off-the-record and wide-ranging. Result: Last month's dinner led to an unexpected collaboration between Stellar Investments and quantum computing startup Energia. Runs a mentorship circle connecting senior executives with emerging talent—paying forward early-career guidance. The real value emerges when networks intersect: e.g., a client's daughter interns at a portfolio company, or a golf buddy becomes a strategic investor. Core insight: True network power comes not from size, but from depth, diversity, and organic intersections—creating a living, evolving community. In finance, community is the ultimate competitive advantage.",
+        "probes": [
+          "network triangle ecosystem",
+          "what is network triangle ecosystem",
+          "network triangle ecosystem developed network triangle"
+        ],
+        "probe_provenance": "sidecar"
+      }
+    }
+  }
+}

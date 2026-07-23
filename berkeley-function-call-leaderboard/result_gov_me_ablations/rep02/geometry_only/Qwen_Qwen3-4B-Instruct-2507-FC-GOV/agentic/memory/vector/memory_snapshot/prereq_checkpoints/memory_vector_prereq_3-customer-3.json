@@ -1,0 +1,19 @@
+{
+    "core_memory": {
+        "next_id": 1,
+        "store": {
+            "0": "User Michael, 35, in Seattle, freelance designer. Needs compact espresso machine. Delivery delayed. Family gathering this week; planned latte art showdown. Box severely damaged: seven crushed corners, caved-in top. Machine has impact damage on right side: dent and sharp edges. Seeking replacement."
+        }
+    },
+    "archival_memory": {
+        "next_id": 6,
+        "store": {
+            "0": "User Michael, 35, in Seattle, freelance designer. Needs compact espresso machine with minimal footprint. Delivery delayed. Family gathering this week; planned latte art showdown. Alternatives: drip coffee maker or local coffee shop. Concerned about rainy weather damaging packages. Will be home to receive delivery. Requires signature on package. Will adjust work schedule to greet driver or quickly bring package inside to prevent soggy boxes.",
+            "1": "Michael is a first-time buyer looking for pricing transparency and promotional offers. Interested in a 'New Customer Discount' and any bundle deals or limited-time promos for espresso machines with a sleek, stainless-steel design.",
+            "2": "Michael in Seattle is concerned about shipping times and origin. Wants to know if products ship from a local warehouse, and if so, what the delivery timeframe is, especially for a family gathering later this month.",
+            "3": "Michael has a friend who purchased a kitchen appliance(air fryer or blender) from the company and praised the excellent customer support. Michael is now seeking detailed information on espresso machine usability, including brewing frequency, cleaning complexity, and footprint size to ensure it fits his kitchen counter and routine.",
+            "4": "Michael is inquiring about warranty policy for espresso machines, specifically concerned about short warranty periods from other brands. Wants assurance of a long-term, customer-friendly quality guarantee, especially for higher-end models.",
+            "5": "Michael has had issues with drip coffee makers that don't heat enough, leading him to microwave his coffee. He\u2019s specifically asking about temperature control or reliable hot coffee output in espresso machines, as temperature is critical to his at-home coffee experience."
+        }
+    }
+}

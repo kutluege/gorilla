@@ -1,0 +1,18 @@
+{
+    "core_memory": {
+        "michael_espresso_machine_status": "Delivery delayed, tracking not updating, family gathering planned for end of month with latte art showdown.",
+        "michael_espresso_machine_estimated_delivery": "11 business days(regular shipping), free shipping qualified with accessories: stainless-steel frothing pitcher and extra filters.",
+        "michael_espresso_machine_customer_note": "Customer is checking emails for courier updates; willing to provide order number or email address if needed; expresses concern about delay but remains calm and appreciative; emphasizes desire to have a smooth experience and share the new machine with family and friends."
+    },
+    "archival_memory": {
+        "customer_promo_code": "ESPRESSO17",
+        "customer_event_date": "End of month",
+        "customer_accessories_considered": "Extra filters, stainless-steel frothing pitcher",
+        "customer_tracking_preference": "Real-time tracking, signature required, weather concerns(Seattle)",
+        "customer_return_policy_inquiry": "Defects, size concerns, shipping costs for returns",
+        "customer_grinder_inquiry": "Freshly ground beans, aesthetic pairing with espresso machine, budget-friendly option",
+        "michael_espresso_machine_weather_concern": "Seattle's rainy weather recently may have caused shipping delays; customer is seeking updated delivery timeline and potential carrier issues.",
+        "michael_espresso_machine_return_exchange_policy": "Customer inquires about return/exchange process for lost/damaged shipments; wants to know if carrier claim is filed on their behalf, and if there's a clear path for reimbursement or replacement.",
+        "michael_espresso_machine_delivery_preparation": "Customer will be home to receive package; concerned about rainy weather damaging boxes; requires signature confirmation and is prepared to greet delivery driver or quickly bring package inside."
+    }
+}

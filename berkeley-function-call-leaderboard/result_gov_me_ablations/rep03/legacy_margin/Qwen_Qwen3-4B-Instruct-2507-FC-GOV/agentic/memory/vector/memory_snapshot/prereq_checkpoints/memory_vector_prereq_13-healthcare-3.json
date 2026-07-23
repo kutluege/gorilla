@@ -1,0 +1,16 @@
+{
+    "core_memory": {
+        "next_id": 1,
+        "store": {
+            "0": "Patient embraces aging with wisdom: listens to their body, practices self-care, and appreciates small joys. Admonishes younger self to relax, prioritize health early, and enjoy every stage. Aging is not fear\u2014it\u2019s a meaningful chapter lived with courage and presence."
+        }
+    },
+    "archival_memory": {
+        "next_id": 3,
+        "store": {
+            "0": "Patient manages chronic osteoarthritis pain with practical, compassionate strategies: warm baths with Epsom salts, morning heating pad use, and exploring gentle movement like tai chi and stretching. Recognizes that aging isn\u2019t about eliminating discomfort\u2014but about adapting, staying active, and preserving the ability to enjoy daily life. Focus on resilience, not perfection.",
+            "1": "Cholesterol results: \n- Total cholesterol: 195 mg/dL(acceptable) \n- LDL(bad cholesterol): 130 mg/dL(above target of <100 mg/dL) \n- HDL(good cholesterol): 58 mg/dL(within healthy range) \n- Triglycerides: 140 mg/dL(slightly elevated, not urgent)\n\nDoctor's advice: \n- Increase intake of healthy fats(avocados, nuts) \n- Reduce saturated fats in diet \n- Monitor trends over time for better management.\n\nBlood pressure update: \n- Last clinic reading: 138/85 mmHg(above target of <130/80 mmHg) \n- Home readings: 135\u2013140 mmHg(systolic), 80\u201390 mmHg(diastolic) \n- Fluctuations linked to stress and salt intake \n- Action: Reducing sodium, increasing water intake \u2014 showing positive trends.",
+            "2": "Vitamin D test result: \n- Level: 22 ng/mL(deficient; normal range: 30\u201350 ng/mL)\n- Action: Started daily supplement of 2,000 IU\n- Follow-up: Recheck in 3\u20134 months to monitor improvement\n- Note: Despite regular sun exposure, levels were low\u2014suggesting possible dietary or seasonal factors.\n\nThyroid update: \n- TSH: 2.1 mIU/L(normal range: 0.5\u20134.5 mIU/L) \n- T4: 1.2 ng/dL(within normal range) \n- Status: Stable and well-controlled; current levothyroxine dosage is effective. \n- Past history of hypothyroidism managed with regular monitoring.\n\nBone density update: \n- Spine T-score: -1.8 (osteopenia; stage before osteoporosis) \n- Hip T-score: -1.5 (borderline range) \n- Doctor's advice: Maintain strength training and ensure adequate calcium and vitamin D intake \n- Actions taken: \n  - Increased dairy and leafy green consumption \n  - Started calcium supplement with vitamin K2 for better absorption \n- Ongoing: Monitor trends with future scans.\n\nLiver & kidney function: \n- ALT: 42 U/L(elevated; normal <35 U/L) \u2014 possibly linked to recent medication changes \n- Creatinine: 0.9 mg/dL(within normal range: 0.6\u20131.2 mg/dL) \u2014 kidney function is stable \n- Next step: Monitor ALT closely; doctor will review medications to assess impact.\n\nInflammatory markers: \n- C-reactive protein(CRP): 3.2 mg/L(slightly elevated; ideal <3.0 mg/L) \u2014 likely related to osteoarthritis \n- ESR: 18 mm/hr(within normal range: 0\u201320 mm/hr) \u2014 no major inflammation detected \n- Interpretation: Mild, localized inflammation consistent with joint degeneration; manageable with lifestyle and joint-supportive strategies."
+        }
+    }
+}

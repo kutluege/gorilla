@@ -1,0 +1,15 @@
+{
+    "core_memory": {
+        "next_id": 2,
+        "store": {
+            "0": "User Michael, 35, lives in Seattle, freelance graphic designer, values design aesthetics, seeks sleek stainless-steel espresso machine, user-friendly, wants caf\u00e9-like experience, shipping from local warehouse, delivery time, and availability before family gathering later this month.",
+            "1": "User Michael: stainless-steel espresso machine. Seattle warehouse. Free shipping. Tracking stuck, outside WA. Replacement if lost: we file claim. Full refund or replacement at no cost. Signature required. Will be home. Will greet driver or bring in immediately."
+        }
+    },
+    "archival_memory": {
+        "next_id": 1,
+        "store": {
+            "0": "User Michael's order details: Ordered a stainless-steel espresso machine with steam wand on [date not specified]. Estimated delivery: 11 business days. Free shipping included with accessories: stainless-steel frothing pitcher and extra filters. All items were in stock at time of order. Shipping was marked as originating from a local Seattle warehouse. Tracking is currently stuck, showing transit outside Washington. Customer expressed concern about delivery delay affecting family gathering. Requesting clarification on fulfillment process and potential supply chain issue."
+        }
+    }
+}

@@ -1,0 +1,13 @@
+{
+    "core_memory": {},
+    "archival_memory": {
+        "diabetes_treatment_plan": "Type 2 Diabetes: Metformin 1000 mg twice daily for several years. Recently added semaglutide(Ozempic) at low dose for appetite control. Fasting blood sugar: 125-130 mg/dL. A1C: ~6.9%. Monitoring ongoing with doctor.",
+        "hypertension_treatment_plan": "Losartan 50 mg once daily. Blood pressure range: 135-140/80-90 mmHg. Doctor recommends stress management and reduced sodium intake instead of increasing dosage. Taking daily magnesium supplement for potential blood pressure support.",
+        "hypothyroidism_treatment_plan": "Levothyroxine 75 mcg once daily, taken on an empty stomach, 30 minutes before eating. Last TSH: 2.1 mIU/L(within normal range). No dosage changes needed. Missed doses lead to feeling sluggish; using a pill organizer to stay on track.",
+        "osteoarthritis_treatment_plan": "Acetaminophen as needed for mild pain. Meloxicam 7.5 mg prescribed for flare-ups(knees and hands), taken only when joints are stiff, to avoid overuse of NSAIDs. Glucosamine supplements tried, but effect unclear\u2014no definitive improvement noted yet.",
+        "vitamin_d_and_bone_health_plan": "Vitamin D3 2,000 IU daily due to low levels(22 ng/mL; normal >30 ng/mL). Taking calcium supplements due to early osteopenia on bone density scan. Doctor recommends combining with vitamin K2 to improve absorption and bone health.",
+        "cholesterol_management_plan": "Atorvastatin 10 mg daily for cholesterol management. Initial LDL: 130 mg/dL, triglycerides: 140 mg/dL. Doctor prescribed low-dose statin to improve lipid profile. Cholesterol levels have improved since starting; no side effects reported(e.g., no muscle aches).",
+        "general_health_supplements": "Daily multivitamin, omega-3 supplements(for heart health), and probiotics(for digestion). Post-gallbladder removal: take digestive enzymes when consuming heavier or fatty meals. Mindful of altered fat digestion due to gallbladder removal.",
+        "medication_interactions_and_precautions": "Awareness of potential interactions: NSAIDs(meloxicam) can affect kidney function when combined with losartan(an ACE inhibitor), so meloxicam is taken only during flare-ups and not frequently. Thyroid medication(levothyroxine) is taken separately from calcium and iron supplements to avoid interference with absorption. All medications are spaced out appropriately(e.g., at least 4 hours apart)."
+    }
+}
