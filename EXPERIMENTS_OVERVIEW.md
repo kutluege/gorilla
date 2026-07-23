@@ -255,3 +255,24 @@ NLI=0) shows superiority ⇒ **gate G2 FAIL**
 baseline / geometry_only / gm_v1 arms, full §19 stats → `EVAL_RESULTS_V2.md`;
 then Phase 8 thesis analysis (risk-coverage, negative-result narrative per
 §24).
+
+## 8. Plan v3: entropy repositioned as the compression controller (2026-07-23)
+
+Status: **pre-registered, not started; gates G0/G1' precede any GPU spend.**
+Full design in `ENTROPY_COMPRESSION_PLAN_V3.md`; companion literature brief in
+`berkeley-function-call-leaderboard/docs/deep_research_prompt_entropy_memory.md`.
+
+G1/G2 falsified entropy as a *harmful-write predictor at admission*; Plan v3
+tests the surviving hypothesis that entropy's home is **store compression**:
+a new Stage-C consolidation pass whose v1 mechanism is entropy-marginal
+eviction (victim = argmin marginal von Neumann entropy loss, archive-then-move,
+core tier only — a feasibility census over the Phase-6 logs shows core at
+capacity for 647/1743 kv and 235/2122 vector decisions while archival never
+binds). Five-arm ablation: baseline / geometry_only (control) /
+geometry_compression (attribution: same trigger, geometric victim) / hybrid
+(geometry admission + entropy compression) / entropy_only (`admit_nondup`
+diagnostic, exact-dup fast path retained). Offline kill-gates (trigger census
+G0, counterfactual later-needed-preservation G1' with random + shuffled-ΔS
+negative controls) sit before any implementation-heavy or GPU work; live gate
+G2' is hybrid-vs-geometry_only non-inferiority (−2 pp) plus a replicated
+hybrid-vs-geometry_compression direction, under the §19 statistics unchanged.
