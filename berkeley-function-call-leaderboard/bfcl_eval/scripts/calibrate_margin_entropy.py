@@ -69,13 +69,55 @@ FEATURE_KEYS = (
     "svn_pre",
     "dSvn",
     "vendi_ratio",
+    # marginal-diff signals (H-Nav Stage 1.3, refeature_diff.py). Answer-blind
+    # by construction: diff_signals.py imports no benchmark data and
+    # test_diff_signals.py AST-scans it. The ground-truth-derived ``oracle_*``
+    # diagnostics live in a separate file and are deliberately NOT listed here,
+    # so assert_no_gt_in_features rejects them if they ever leak in.
+    "has_old",
+    "diff_edit_ratio",
+    "diff_added_frac",
+    "diff_n_added_clauses",
+    "diff_n_dropped_clauses",
+    "diff_novel_tok_frac_target",
+    "diff_novel_tok_frac_store",
+    "diff_n_new_values",
+    "diff_n_new_values_unseen_in_store",
+    "diff_n_new_entities",
+    "diff_n_new_dates",
+    "diff_sim_max",
+    "diff_sim_max_raw",
+    "diff_cos_target",
+    "diff_cos_store_max",
+    "diff_dSvn",
+    "diff_rank_self_post",
 )
-FORBIDDEN_FEATURE_TOKENS = ("question", "ground_truth", "answer", "score", "accuracy")
+FORBIDDEN_FEATURE_TOKENS = ("question", "ground_truth", "answer", "score", "accuracy",
+                            "oracle", "gold")
 
 GEOMETRY_FEATURES = ("sim_max", "r", "tau_t", "rho", "n_items", "backend_kv")
 MARGIN_FEATURES = ("rank_self_med", "nmargin_med")
 ENTROPY_FEATURES = ("dH_self", "dH_mean", "n_eff_norm", "churn")
 ENTROPY_V2_FEATURES = ("dHz_self", "dHz_neighbor", "svn_pre", "dSvn", "vendi_ratio")
+DIFF_FEATURES = (
+    "has_old",
+    "diff_edit_ratio",
+    "diff_added_frac",
+    "diff_n_added_clauses",
+    "diff_n_dropped_clauses",
+    "diff_novel_tok_frac_target",
+    "diff_novel_tok_frac_store",
+    "diff_n_new_values",
+    "diff_n_new_values_unseen_in_store",
+    "diff_n_new_entities",
+    "diff_n_new_dates",
+    "diff_sim_max",
+    "diff_sim_max_raw",
+    "diff_cos_target",
+    "diff_cos_store_max",
+    "diff_dSvn",
+    "diff_rank_self_post",
+)
 
 # Option-B monotone sign constraints (plan SS9.4): harm increases as margin
 # decreases, rank increases, dH increases. +1 -> coef >= 0, -1 -> coef <= 0,
@@ -105,9 +147,14 @@ def sha_file(path: Path) -> str:
 # ---------------------------------------------------------------------------
 
 
-def load_decisions(log_dirs):
+def load_decisions(log_dirs, escalated_only=True):
     """Escalated gov2 decisions -> feature rows. Chain = (backend, scenario,
-    replicate); replicate inferred from the arm directory name."""
+    replicate); replicate inferred from the arm directory name.
+
+    ``escalated_only=False`` keeps Stage-0-resolved decisions too (H-Nav Stage 1
+    works on the NOOP region, which never reaches Stage 1). The default is
+    unchanged, so the frozen margin-entropy calibration path is untouched.
+    """
     rows = []
     manifest = []
     for d in log_dirs:
@@ -128,7 +175,7 @@ def load_decisions(log_dirs):
                     continue
                 if rec.get("event") != "decision" or rec.get("schema") != "gov2":
                     continue
-                if not rec.get("escalated"):
+                if escalated_only and not rec.get("escalated"):
                     continue  # Stage-1 calibration runs on escalations only
                 scenario = scenario_of(rec.get("test_id", ""))
                 if scenario in DEAD_SCENARIOS:
@@ -302,25 +349,70 @@ def auc(y, p):
     return float((ranks[pos].sum() - n_pos * (n_pos + 1) / 2.0) / (n_pos * n_neg))
 
 
+def pr_auc(y, p):
+    """Average precision (step-wise area under the precision-recall curve).
+
+    With few positives ROC-AUC flatters a model that only orders the abundant
+    negatives well; PR-AUC does not, so it is the honest headline in the NOOP
+    region. Compare against the no-skill line = the positive base rate.
+    """
+    y = np.asarray(y, dtype=np.float64)
+    p = np.asarray(p, dtype=np.float64)
+    n_pos = float((y == 1).sum())
+    if n_pos == 0 or n_pos == len(y):
+        return None
+    order = np.argsort(-p, kind="stable")
+    ys = y[order]
+    tp = np.cumsum(ys)
+    fp = np.cumsum(1.0 - ys)
+    precision = tp / np.maximum(tp + fp, 1e-12)
+    recall = tp / n_pos
+    prev_recall = 0.0
+    total = 0.0
+    for prec, rec in zip(precision, recall):
+        total += prec * (rec - prev_recall)
+        prev_recall = rec
+    return float(total)
+
+
 # ---------------------------------------------------------------------------
 # Gate G1: nested models with chain-grouped bootstrap
 # ---------------------------------------------------------------------------
 
 
-def nested_auc_report(rows, seed=12345, n_boot=2000):
-    nests = {
-        "geometry": list(GEOMETRY_FEATURES),
-        "geometry+margin": list(GEOMETRY_FEATURES + MARGIN_FEATURES),
-        "geometry+entropy": list(GEOMETRY_FEATURES + ENTROPY_FEATURES),
-        "geometry+margin+entropy": list(
-            GEOMETRY_FEATURES + MARGIN_FEATURES + ENTROPY_FEATURES
-        ),
-    }
-    has_v2 = any(r["features"].get("dHz_self") is not None for r in rows)
-    if has_v2:
-        nests["geometry+margin+entropy_v2"] = list(
-            GEOMETRY_FEATURES + MARGIN_FEATURES + ENTROPY_V2_FEATURES
-        )
+def nested_auc_report(rows, seed=12345, n_boot=2000, nests=None,
+                      delta_specs=None, delta_ref="geometry+margin"):
+    """Out-of-fold nested-model AUCs + grouped-bootstrap dAUC against a
+    reference nest.
+
+    ``nests`` / ``delta_specs`` / ``delta_ref`` default to the frozen
+    margin-entropy configuration, so existing callers and the frozen
+    calibration are bit-unchanged; H-Nav Stage 1 passes its own nests.
+    """
+    if nests is None:
+        nests = {
+            "geometry": list(GEOMETRY_FEATURES),
+            "geometry+margin": list(GEOMETRY_FEATURES + MARGIN_FEATURES),
+            "geometry+entropy": list(GEOMETRY_FEATURES + ENTROPY_FEATURES),
+            "geometry+margin+entropy": list(
+                GEOMETRY_FEATURES + MARGIN_FEATURES + ENTROPY_FEATURES
+            ),
+        }
+        has_v2 = any(r["features"].get("dHz_self") is not None for r in rows)
+        if has_v2:
+            nests["geometry+margin+entropy_v2"] = list(
+                GEOMETRY_FEATURES + MARGIN_FEATURES + ENTROPY_V2_FEATURES
+            )
+        if delta_specs is None:
+            delta_specs = {
+                "dAUC_entropy_given_geometry_margin": "geometry+margin+entropy"
+            }
+            if has_v2:
+                delta_specs["dAUC_entropy_v2_given_geometry_margin"] = (
+                    "geometry+margin+entropy_v2"
+                )
+    if delta_specs is None:
+        delta_specs = {}
     # Out-of-fold predictions per nest (leave-one-scenario-out).
     preds = {name: np.zeros(len(rows)) for name in nests}
     index_of = {id(r): i for i, r in enumerate(rows)}
@@ -337,18 +429,19 @@ def nested_auc_report(rows, seed=12345, n_boot=2000):
             for r, pi in zip(test, p):
                 preds[name][index_of[id(r)]] = pi
     y = np.array([r["label"] for r in rows], dtype=np.float64)
-    report = {name: {"auc": auc(y, preds[name])} for name in nests}
+    report = {
+        name: {"auc": auc(y, preds[name]), "pr_auc": pr_auc(y, preds[name])}
+        for name in nests
+    }
+    report["base_rate"] = float(np.mean(y)) if len(y) else None
 
-    # Grouped bootstrap over chains for dAUC(full vs geometry+margin) -- the
-    # pre-registered entropy claim (SS19).
+    # Grouped bootstrap over chains for dAUC(full vs the reference nest) -- the
+    # pre-registered entropy claim (SS19) / the H-Nav diff claim (Stage 1.4).
     chains = sorted({r["chain"] for r in rows}, key=str)
     by_chain = defaultdict(list)
     for i, r in enumerate(rows):
         by_chain[r["chain"]].append(i)
     rng = np.random.default_rng(seed)
-    delta_specs = {"dAUC_entropy_given_geometry_margin": "geometry+margin+entropy"}
-    if has_v2:
-        delta_specs["dAUC_entropy_v2_given_geometry_margin"] = "geometry+margin+entropy_v2"
     deltas = {name: [] for name in delta_specs}
     for _ in range(n_boot):
         sample_idx = []
@@ -356,7 +449,7 @@ def nested_auc_report(rows, seed=12345, n_boot=2000):
             sample_idx.extend(by_chain[chains[int(c)]])
         idx = np.array(sample_idx)
         yb = y[idx]
-        a_gm = auc(yb, preds["geometry+margin"][idx])
+        a_gm = auc(yb, preds[delta_ref][idx])
         if a_gm is None:
             continue
         for name, nest in delta_specs.items():

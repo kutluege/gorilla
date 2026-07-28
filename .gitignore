@@ -44,3 +44,6 @@ berkeley-function-call-leaderboard/**/*.lock
 
 # Ignore the wandb cache:
 **/wandb/
+
+# Stray nested clone (accidental checkout inside the BFCL dir) - never commit
+berkeley-function-call-leaderboard/gorilla/
