@@ -248,16 +248,23 @@ def attach_outcomes(rows, outcomes_path, label):
 # ---------------------------------------------------------------------------
 
 
-def nc_shuffle_entropy_features(rows, seed, feats=ENTROPY_FEATURES):
+def nc_shuffle_entropy_features(rows, seed, feats=ENTROPY_FEATURES, bin_fn=None):
     """Offline negative control (plan SS18 NC / SS23 Phase 3): permute the
     given entropy features jointly across rows WITHIN (backend, store-size
     bin), fixed seed. Destroys the entropy<->outcome pairing while preserving
-    the marginal distribution and the geometry/margin features."""
+    the marginal distribution and the geometry/margin features.
+
+    ``bin_fn(row) -> hashable`` overrides the shuffle stratification (H-Nav
+    Stage 2 uses e.g. ``lambda r: (r["backend"], r["features"].get("op"))``);
+    the default reproduces the frozen (backend, store-size-bin) binning."""
     rng = np.random.default_rng(seed)
+    if bin_fn is None:
+        def bin_fn(r):
+            n = r["features"].get("n_items") or 0
+            return (r["backend"], min(int(n) // 5, 4))
     bins = defaultdict(list)
     for i, r in enumerate(rows):
-        n = r["features"].get("n_items") or 0
-        bins[(r["backend"], min(int(n) // 5, 4))].append(i)
+        bins[bin_fn(r)].append(i)
     out = [json.loads(json.dumps(r)) for r in rows]
     for o, r in zip(out, rows):
         o["chain"] = r["chain"]  # restore hashable tuple after the deep copy
@@ -375,19 +382,69 @@ def pr_auc(y, p):
     return float(total)
 
 
+def brier(y, p):
+    """Mean squared error of probabilistic predictions. Lower is better;
+    compare against the no-skill Brier = base_rate * (1 - base_rate)."""
+    y = np.asarray(y, dtype=np.float64)
+    p = np.asarray(p, dtype=np.float64)
+    if len(y) == 0:
+        return None
+    return float(np.mean((p - y) ** 2))
+
+
+def reliability_curve(y, p, n_bins=10):
+    """Equal-width reliability bins over [0, 1]. Returns a list of
+    {bin_lo, bin_hi, n, mean_pred, frac_pos} for non-empty bins."""
+    y = np.asarray(y, dtype=np.float64)
+    p = np.asarray(p, dtype=np.float64)
+    edges = np.linspace(0.0, 1.0, n_bins + 1)
+    out = []
+    for i in range(n_bins):
+        lo, hi = edges[i], edges[i + 1]
+        mask = (p >= lo) & (p < hi) if i < n_bins - 1 else (p >= lo) & (p <= hi)
+        n = int(mask.sum())
+        if n == 0:
+            continue
+        out.append({
+            "bin_lo": float(lo), "bin_hi": float(hi), "n": n,
+            "mean_pred": float(p[mask].mean()),
+            "frac_pos": float(y[mask].mean()),
+        })
+    return out
+
+
+def ece(y, p, n_bins=10):
+    """Expected calibration error: bin-count-weighted |mean_pred - frac_pos|."""
+    y = np.asarray(y, dtype=np.float64)
+    if len(y) == 0:
+        return None
+    curve = reliability_curve(y, p, n_bins=n_bins)
+    total = sum(b["n"] for b in curve)
+    if total == 0:
+        return None
+    return float(sum(b["n"] * abs(b["mean_pred"] - b["frac_pos"]) for b in curve) / total)
+
+
 # ---------------------------------------------------------------------------
 # Gate G1: nested models with chain-grouped bootstrap
 # ---------------------------------------------------------------------------
 
 
 def nested_auc_report(rows, seed=12345, n_boot=2000, nests=None,
-                      delta_specs=None, delta_ref="geometry+margin"):
+                      delta_specs=None, delta_ref="geometry+margin",
+                      return_preds=False):
     """Out-of-fold nested-model AUCs + grouped-bootstrap dAUC against a
     reference nest.
 
     ``nests`` / ``delta_specs`` / ``delta_ref`` default to the frozen
     margin-entropy configuration, so existing callers and the frozen
     calibration are bit-unchanged; H-Nav Stage 1 passes its own nests.
+
+    ``delta_specs`` values may be either a nest name (delta vs the single
+    ``delta_ref``, the original behavior) or a ``(nest, ref)`` pair for
+    pairwise ladders (H-Nav Stage 2: M5-M4, M8-M4, ...). ``return_preds=True``
+    additionally attaches ``_oof_preds`` (name -> np.ndarray) and ``_y`` for
+    caller-side metrics (Brier/ECE); the default output shape is unchanged.
     """
     if nests is None:
         nests = {
@@ -441,6 +498,12 @@ def nested_auc_report(rows, seed=12345, n_boot=2000, nests=None,
     by_chain = defaultdict(list)
     for i, r in enumerate(rows):
         by_chain[r["chain"]].append(i)
+    # Normalize specs: plain nest name -> (nest, delta_ref); (nest, ref) pairs
+    # pass through, enabling pairwise delta ladders in one fitting pass.
+    spec_pairs = {
+        name: (tuple(v) if isinstance(v, (tuple, list)) else (v, delta_ref))
+        for name, v in delta_specs.items()
+    }
     rng = np.random.default_rng(seed)
     deltas = {name: [] for name in delta_specs}
     for _ in range(n_boot):
@@ -449,13 +512,16 @@ def nested_auc_report(rows, seed=12345, n_boot=2000, nests=None,
             sample_idx.extend(by_chain[chains[int(c)]])
         idx = np.array(sample_idx)
         yb = y[idx]
-        a_gm = auc(yb, preds[delta_ref][idx])
-        if a_gm is None:
-            continue
-        for name, nest in delta_specs.items():
+        ref_auc_cache = {}
+        for name, (nest, ref) in spec_pairs.items():
+            if ref not in ref_auc_cache:
+                ref_auc_cache[ref] = auc(yb, preds[ref][idx])
+            a_ref = ref_auc_cache[ref]
+            if a_ref is None:
+                continue
             a_full = auc(yb, preds[nest][idx])
             if a_full is not None:
-                deltas[name].append(a_full - a_gm)
+                deltas[name].append(a_full - a_ref)
     for name, vals in deltas.items():
         if vals:
             arr = np.sort(np.array(vals))
@@ -467,6 +533,9 @@ def nested_auc_report(rows, seed=12345, n_boot=2000, nests=None,
                 ],
                 "n_boot_effective": len(arr),
             }
+    if return_preds:
+        report["_oof_preds"] = preds
+        report["_y"] = y
     return report
 
 

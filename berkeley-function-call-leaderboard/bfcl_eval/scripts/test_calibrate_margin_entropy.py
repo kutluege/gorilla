@@ -196,6 +196,58 @@ def main():
     check("NC shuffle deterministic",
           json.dumps(nc_rows) == json.dumps(nc_rows2))
 
+    print("[stage2 generalizations]")
+    from calibrate_margin_entropy import brier, ece, reliability_curve
+    import numpy as np
+
+    # Brier / ECE known-value fixtures
+    y01 = np.array([0.0, 1.0, 0.0, 1.0])
+    check("brier perfect = 0", brier(y01, y01) == 0.0)
+    check("brier anti-calibrated = 1", brier(y01, 1.0 - y01) == 1.0)
+    check("brier constant 0.5", abs(brier(y01, np.full(4, 0.5)) - 0.25) < 1e-12)
+    check("brier empty -> None", brier(np.array([]), np.array([])) is None)
+    yc = np.array([0.0] * 8 + [1.0] * 2)
+    pc = np.full(10, 0.2)   # perfectly calibrated single bin
+    check("ece calibrated ~0", ece(yc, pc) < 1e-12, ece(yc, pc))
+    check("ece miscalibrated", ece(yc, np.full(10, 0.9)) > 0.6)
+    rc = reliability_curve(yc, pc, n_bins=10)
+    check("reliability single non-empty bin", len(rc) == 1 and rc[0]["n"] == 10)
+    check("reliability frac_pos", abs(rc[0]["frac_pos"] - 0.2) < 1e-12)
+
+    # pairwise delta_specs (nest, ref) tuples == str form vs the same ref
+    rep_str = nested_auc_report(
+        rows, seed=12345, n_boot=200,
+        delta_specs={"d": "geometry+margin+entropy"}, delta_ref="geometry+margin")
+    rep_pair = nested_auc_report(
+        rows, seed=12345, n_boot=200,
+        delta_specs={"d": ("geometry+margin+entropy", "geometry+margin")})
+    check("tuple delta_spec == str delta_spec",
+          json.dumps(rep_str["d"]) == json.dumps(rep_pair["d"]))
+    rep_multi = nested_auc_report(
+        rows, seed=12345, n_boot=200,
+        delta_specs={"a_vs_g": ("geometry+margin+entropy", "geometry"),
+                     "gm_vs_g": ("geometry+margin", "geometry")})
+    check("pairwise ladder computes both deltas",
+          "a_vs_g" in rep_multi and "gm_vs_g" in rep_multi)
+
+    # return_preds opt-in leaves default shape unchanged
+    rep_default = nested_auc_report(rows, seed=12345, n_boot=100)
+    check("no _oof_preds by default", "_oof_preds" not in rep_default)
+    rep_preds = nested_auc_report(rows, seed=12345, n_boot=100, return_preds=True)
+    check("_oof_preds attached on request",
+          "_oof_preds" in rep_preds and "_y" in rep_preds
+          and len(rep_preds["_y"]) == len(rows))
+
+    # bin_fn override changes stratification but stays deterministic
+    nc_default = nc_shuffle_entropy_features(rows, 777)
+    nc_op = nc_shuffle_entropy_features(rows, 777,
+                                        bin_fn=lambda r: r["backend"])
+    check("bin_fn override deterministic",
+          json.dumps(nc_op) == json.dumps(
+              nc_shuffle_entropy_features(rows, 777, bin_fn=lambda r: r["backend"])))
+    check("default bin_fn reproduces original binning",
+          json.dumps(nc_default) == json.dumps(nc_shuffle_entropy_features(rows, 777)))
+
     print("[freeze ceremony]")
     import subprocess
 
