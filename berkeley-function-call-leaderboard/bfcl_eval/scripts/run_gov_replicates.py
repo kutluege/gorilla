@@ -143,7 +143,9 @@ def build_arm_env(cfg, arm, rep, base_env=None):
     middleware log is append-mode; shared files would silently mix replicates
     AND arms -- risk R7)."""
     env = dict(base_env if base_env is not None else os.environ)
-    stale = [k for k in env if k.startswith("GOV_")]
+    # HACT_* scrubbed like GOV_* (H-Nav Stage 2): an operator shell export must
+    # never leak instrumentation into an arm that did not declare it.
+    stale = [k for k in env if k.startswith(("GOV_", "HACT_"))]
     for k in stale:
         del env[k]
     spec = next((a for a in arm_specs(cfg) if a["label"] == arm), None)
@@ -158,11 +160,17 @@ def build_arm_env(cfg, arm, rep, base_env=None):
         env["GOV_LOG_DIR"] = str(
             Path(cfg["gov_log_root"]) / f"rep{rep:02d}_{arm}"
         )
+    # Optional per-arm non-GOV env (e.g. HACT_*): applied after gov_env, and
+    # only from the arm spec -- never inherited from the operator shell.
+    extra_env = (spec or {}).get("extra_env")
+    if extra_env:
+        env.update(extra_env)
     return env
 
 
 def gov_env_of(env):
-    return {k: v for k, v in sorted(env.items()) if k.startswith("GOV_")}
+    return {k: v for k, v in sorted(env.items())
+            if k.startswith(("GOV_", "HACT_"))}
 
 
 def _calibration_sha(calib_path):
@@ -282,7 +290,9 @@ def run_replicates(cfg, run_cmd=default_run_cmd, probe=probe_server,
              if a["gov_env"] is not None else None,
              "calibration_sha": _calibration_sha(
                  (a["gov_env"] or {}).get("GOV_ME_CALIB"))
-             if a["gov_env"] is not None else None}
+             if a["gov_env"] is not None else None,
+             "extra_env": dict(sorted((a.get("extra_env") or {}).items()))
+             if a.get("extra_env") else None}
             for a in arms
         ],
         "gov_env_governed": dict(sorted(cfg.get("gov_env", {}).items())),

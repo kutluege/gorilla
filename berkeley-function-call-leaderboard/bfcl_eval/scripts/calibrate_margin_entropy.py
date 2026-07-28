@@ -189,6 +189,14 @@ def load_decisions(log_dirs, escalated_only=True):
                     "chain": (rec.get("backend"), scenario, replicate),
                     "action": rec.get("action"),
                     "reason_code": rec.get("reason_code"),
+                    # join keys / op metadata for sidecar streams (H-Nav Stage 2
+                    # hact_log join on (test_id, step_idx)); additive, ignored
+                    # by all pre-existing callers.
+                    "test_id": rec.get("test_id"),
+                    "step_idx": rec.get("step_idx"),
+                    "call_idx": rec.get("call_idx"),
+                    "op": rec.get("op"),
+                    "tier": rec.get("tier"),
                     "features": {
                         "sim_max": rec.get("sim_max"),
                         "r": rec.get("r"),
