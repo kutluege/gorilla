@@ -57,9 +57,10 @@ from bfcl_eval.utils import (
 )
 from overrides import override
 
-# Policies implemented so far. Stage 4 intervention policies land separately;
+# Policies implemented so far. Gate policies (vote_margin_gate / hact_gate /
+# factorized / full) land with Stage 4 after the shadow verdict shapes them;
 # failing loudly here prevents silently running an unimplemented arm.
-_IMPLEMENTED_POLICIES = ("shadow",)
+_IMPLEMENTED_POLICIES = ("shadow", "random_select", "majority")
 
 
 class QwenHactHandler(QwenGovHandler):
@@ -235,6 +236,39 @@ class QwenHactHandler(QwenGovHandler):
             in_tok = (in_tok or 0) + (explore_resp.usage.prompt_tokens or 0)
             out_tok = (out_tok or 0) + (explore_resp.usage.completion_tokens or 0)
 
+        # --- policy dispatch: which sample does the agent loop actually see? ---
+        # Index 0 = primary; 1..N-1 = exploration choices. Selection policies
+        # replace choices[0] on the RETURNED response; usage stays primary's
+        # (official accounting unchanged; full cost lives in the hact record).
+        policy_record = None
+        chosen_idx = 0
+        if cfg.policy == "random_select":
+            import random as _random
+            sel_rng = _random.Random(stable_seed(cfg.seed_base, test_id,
+                                                 call_idx, salt=2))
+            chosen_idx = sel_rng.randrange(cfg.num_samples)
+            policy_record = {"policy": "random_select", "selected_index": chosen_idx}
+        elif cfg.policy == "majority":
+            from bfcl_eval.model_handler.middleware.action_space import (
+                sample_signature,
+            )
+            sigs = [sample_signature(a, 3) for a in actions_per_sample]
+            counts = {}
+            for s in sigs:
+                counts[s] = counts.get(s, 0) + 1
+            top = max(counts.values())
+            if counts[sigs[0]] == top:
+                chosen_idx = 0          # primary is (tied-)modal: keep it
+            else:
+                modal = sorted(s for s, c in counts.items() if c == top)[0]
+                chosen_idx = sigs.index(modal)
+            policy_record = {"policy": "majority", "selected_index": chosen_idx,
+                             "modal_count": top, "primary_count": counts[sigs[0]]}
+        if chosen_idx != 0 and explore_resp is not None:
+            choices = list(primary_resp.choices)
+            choices[0] = explore_resp.choices[chosen_idx - 1]
+            primary_resp.choices = choices
+
         record = build_hact_record(
             test_id=test_id,
             is_prereq=is_memory_prereq(test_id),
@@ -251,6 +285,7 @@ class QwenHactHandler(QwenGovHandler):
             input_tokens=in_tok,
             output_tokens=out_tok,
             api_seconds=end_time - start_time,
+            policy_record=policy_record,
         )
         record["call_idx_in_entry"] = call_idx
         record["_log_file"] = cfg.log_file
