@@ -60,6 +60,7 @@ from bfcl_eval.model_handler.local_inference.quick_testing_oss import (
 from bfcl_eval.model_handler.local_inference.qwen import QwenHandler
 from bfcl_eval.model_handler.local_inference.qwen_fc import QwenFCHandler
 from bfcl_eval.model_handler.local_inference.qwen_gov import QwenGovHandler
+from bfcl_eval.model_handler.local_inference.qwen_hact import QwenHactHandler
 from bfcl_eval.model_handler.local_inference.qwen_mig import QwenMIGHandler
 from bfcl_eval.model_handler.local_inference.qwen_se import (
     QwenSemanticEntropyHandler,
@@ -1709,6 +1710,24 @@ local_inference_model_map = {
         org="Qwen",
         license="apache-2.0",
         model_handler=QwenGovHandler,
+        input_price=None,
+        output_price=None,
+        is_fc_model=True,
+        underscore_to_dot=False,
+    ),
+    # Action-side H_act instrumentation variant (H-Nav Stage 2) layered on the
+    # governance handler. Per memory-prereq step it samples N completions plus
+    # primary-token logprobs to measure action-selection uncertainty; in shadow
+    # mode (HACT_POLICY=shadow) behavior is identical to -FC-GOV. Configured via
+    # HACT_* env vars (see bfcl_eval/model_handler/middleware/hact_sampler.py).
+    # Uses its own registry id so the -FC baseline stays byte-identical for A/B.
+    "Qwen/Qwen3-4B-Instruct-2507-FC-HACT": ModelConfig(
+        model_name="Qwen/Qwen3-4B-Instruct-2507",
+        display_name="Qwen3-4B-Instruct-2507 (FC + Action-Uncertainty H_act)",
+        url="https://huggingface.co/Qwen/Qwen3-4B-Instruct-2507",
+        org="Qwen",
+        license="apache-2.0",
+        model_handler=QwenHactHandler,
         input_price=None,
         output_price=None,
         is_fc_model=True,

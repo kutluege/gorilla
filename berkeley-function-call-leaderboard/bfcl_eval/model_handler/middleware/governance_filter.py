@@ -1508,6 +1508,23 @@ class GovernanceSession:
         list may GROW: an atomic move / archive-then-remove expands one call
         into archive-add + original, with ``_pending`` indices remapped."""
         self.step += 1
+        # H-Nav Stage 2: flush a pending action-uncertainty record with the
+        # authoritative step_idx so hact rows join gov2 decision rows on
+        # (test_id, step_idx). Attribute-guarded no-op for every non-HACT arm.
+        pending_hact = getattr(self, "pending_hact", None)
+        if pending_hact is not None:
+            self.pending_hact = None
+            try:
+                from bfcl_eval.model_handler.middleware.hact_sampler import (
+                    log_hact_record,
+                )
+
+                log_file = pending_hact.pop("_log_file", "hact_log.jsonl")
+                pending_hact["step_idx"] = self.step
+                pending_hact["orphan"] = False
+                log_hact_record(pending_hact, self.cfg.log_dir or ".", log_file)
+            except Exception as e:  # noqa: BLE001 -- never fail governance for logging
+                print(f"[HACT] pending record flush failed: {e}")
         self._pending = {}
         self._expansions = {}  # final-list inserts: idx -> [call, ...] BEFORE idx
         governed = list(calls)
