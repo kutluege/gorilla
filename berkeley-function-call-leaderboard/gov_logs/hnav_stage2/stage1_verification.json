@@ -1,0 +1,264 @@
+{
+  "committed_report": "gov_logs\\hnav_stage1_report.json",
+  "reproduction_command": [
+    "C:\\Users\\USER\\miniconda3\\envs\\BFCL\\python.exe",
+    "bfcl_eval/scripts/evaluate_hnav_stage1.py",
+    "--logs",
+    "gov_logs/me_harvest/rep0*_v1_shadow",
+    "gov_logs/me_ablations/rep0*_geometry_only",
+    "gov_logs/me_ablations/rep0*_gm_v1",
+    "gov_logs/me_ablations/rep0*_joint_entropy_diag",
+    "--labels",
+    "gov_logs/me_harvest/outcomes_hnav.jsonl",
+    "gov_logs/me_ablations/outcomes_hnav_*.jsonl",
+    "--diff-features",
+    "gov_logs/me_harvest/features_diff.jsonl",
+    "gov_logs/me_ablations/features_diff_geometry_only.jsonl",
+    "gov_logs/me_ablations/features_diff_gm_v1.jsonl",
+    "gov_logs/me_ablations/features_diff_joint_entropy_diag.jsonl",
+    "--extra-features",
+    "gov_logs/me_harvest/features_v2.jsonl",
+    "--counterfactual",
+    "gov_logs/hnav_counterfactual.json",
+    "--label",
+    "must_write",
+    "--seed",
+    "12345",
+    "--n-boot",
+    "2000",
+    "--n-perm",
+    "10000",
+    "--out",
+    "gov_logs\\hnav_stage2\\stage1_report_regen.json",
+    "--md",
+    "gov_logs\\hnav_stage2\\stage1_report_regen.md"
+  ],
+  "float_tolerance": 0.005,
+  "expected_checks": [
+    {
+      "key": "n_labeled",
+      "expected": 4575,
+      "observed": 4575,
+      "source": "committed_report",
+      "match": true
+    },
+    {
+      "key": "n_positive",
+      "expected": 159,
+      "observed": 159,
+      "source": "committed_report",
+      "match": true
+    },
+    {
+      "key": "p_hat",
+      "expected": 0.408544,
+      "observed": 0.408544,
+      "source": "committed_report",
+      "match": true
+    },
+    {
+      "key": "target_distribution.must_write",
+      "expected": 159,
+      "observed": 159,
+      "source": "committed_report",
+      "match": true
+    },
+    {
+      "key": "target_distribution.inert_superseded",
+      "expected": 3905,
+      "observed": 3905,
+      "source": "committed_report",
+      "match": true
+    },
+    {
+      "key": "mechanical_claim.n_near_duplicate_updates",
+      "expected": 220,
+      "observed": 220,
+      "source": "committed_report",
+      "match": true
+    },
+    {
+      "key": "mechanical_claim.median_sim_max",
+      "expected": 0.9438,
+      "observed": 0.9438,
+      "source": "committed_report",
+      "match": true
+    },
+    {
+      "key": "mechanical_claim.median_diff_sim_max",
+      "expected": 0.196219,
+      "observed": 0.196219,
+      "source": "committed_report",
+      "match": true
+    },
+    {
+      "key": "mechanical_claim.n_must_write_among_them",
+      "expected": 0,
+      "observed": 0,
+      "source": "committed_report",
+      "match": true
+    },
+    {
+      "key": "nested_models.dAUC_diff_given_geometry_margin.mean",
+      "expected": 0.076378,
+      "observed": 0.07637775716646608,
+      "source": "committed_report",
+      "match": true
+    },
+    {
+      "key": "nested_models.dAUC_diff_given_geometry_margin.ci95",
+      "expected": [
+        0.014724,
+        0.138193
+      ],
+      "observed": [
+        0.014723682149395304,
+        0.13819294533780813
+      ],
+      "source": "committed_report",
+      "match": true
+    },
+    {
+      "key": "hypotheses.H1.verdict",
+      "expected": "FAIL",
+      "observed": "FAIL",
+      "source": "committed_report",
+      "match": true
+    },
+    {
+      "key": "hypotheses.H2.verdict",
+      "expected": "PASS",
+      "observed": "PASS",
+      "source": "committed_report",
+      "match": true
+    },
+    {
+      "key": "hypotheses.H3.verdict",
+      "expected": "FAIL",
+      "observed": "FAIL",
+      "source": "committed_report",
+      "match": true
+    },
+    {
+      "key": "verdict.decision",
+      "expected": "PIVOT to action-side H_act",
+      "observed": "PIVOT to action-side H_act",
+      "source": "committed_report",
+      "match": true
+    },
+    {
+      "key": "n_labeled",
+      "expected": 4575,
+      "observed": 4575,
+      "source": "regen_report",
+      "match": true
+    },
+    {
+      "key": "n_positive",
+      "expected": 159,
+      "observed": 159,
+      "source": "regen_report",
+      "match": true
+    },
+    {
+      "key": "p_hat",
+      "expected": 0.408544,
+      "observed": 0.408544,
+      "source": "regen_report",
+      "match": true
+    },
+    {
+      "key": "target_distribution.must_write",
+      "expected": 159,
+      "observed": 159,
+      "source": "regen_report",
+      "match": true
+    },
+    {
+      "key": "target_distribution.inert_superseded",
+      "expected": 3905,
+      "observed": 3905,
+      "source": "regen_report",
+      "match": true
+    },
+    {
+      "key": "mechanical_claim.n_near_duplicate_updates",
+      "expected": 220,
+      "observed": 220,
+      "source": "regen_report",
+      "match": true
+    },
+    {
+      "key": "mechanical_claim.median_sim_max",
+      "expected": 0.9438,
+      "observed": 0.9438,
+      "source": "regen_report",
+      "match": true
+    },
+    {
+      "key": "mechanical_claim.median_diff_sim_max",
+      "expected": 0.196219,
+      "observed": 0.196219,
+      "source": "regen_report",
+      "match": true
+    },
+    {
+      "key": "mechanical_claim.n_must_write_among_them",
+      "expected": 0,
+      "observed": 0,
+      "source": "regen_report",
+      "match": true
+    },
+    {
+      "key": "nested_models.dAUC_diff_given_geometry_margin.mean",
+      "expected": 0.076378,
+      "observed": 0.07637775716646608,
+      "source": "regen_report",
+      "match": true
+    },
+    {
+      "key": "nested_models.dAUC_diff_given_geometry_margin.ci95",
+      "expected": [
+        0.014724,
+        0.138193
+      ],
+      "observed": [
+        0.014723682149395304,
+        0.13819294533780813
+      ],
+      "source": "regen_report",
+      "match": true
+    },
+    {
+      "key": "hypotheses.H1.verdict",
+      "expected": "FAIL",
+      "observed": "FAIL",
+      "source": "regen_report",
+      "match": true
+    },
+    {
+      "key": "hypotheses.H2.verdict",
+      "expected": "PASS",
+      "observed": "PASS",
+      "source": "regen_report",
+      "match": true
+    },
+    {
+      "key": "hypotheses.H3.verdict",
+      "expected": "FAIL",
+      "observed": "FAIL",
+      "source": "regen_report",
+      "match": true
+    },
+    {
+      "key": "verdict.decision",
+      "expected": "PIVOT to action-side H_act",
+      "observed": "PIVOT to action-side H_act",
+      "source": "regen_report",
+      "match": true
+    }
+  ],
+  "regen_ran": true,
+  "regen_vs_committed_diffs": [],
+  "match": true
+}
