@@ -1,0 +1,537 @@
+{
+  "arms": {
+    "ablations/rep01/geometry_only": {
+      "backends": {
+        "kv": {
+          "p_hat": 0.367424,
+          "strata": {
+            "carried_not_retrievable": {
+              "correct": 2,
+              "n": 13,
+              "p_correct": 0.153846
+            },
+            "carried_retrievable": {
+              "correct": 9,
+              "n": 22,
+              "p_correct": 0.409091
+            },
+            "not_carried": {
+              "correct": 5,
+              "n": 120,
+              "p_correct": 0.041667
+            }
+          }
+        },
+        "vector": {
+          "p_hat": 0.375833,
+          "strata": {
+            "carried_not_retrievable": {
+              "correct": 0,
+              "n": 2,
+              "p_correct": 0.0
+            },
+            "carried_retrievable": {
+              "correct": 11,
+              "n": 26,
+              "p_correct": 0.423077
+            },
+            "not_carried": {
+              "correct": 6,
+              "n": 127,
+              "p_correct": 0.047244
+            }
+          }
+        }
+      }
+    },
+    "ablations/rep01/gm_v1": {
+      "backends": {
+        "kv": {
+          "p_hat": 0.45082,
+          "strata": {
+            "carried_not_retrievable": {
+              "correct": 2,
+              "n": 7,
+              "p_correct": 0.285714
+            },
+            "carried_retrievable": {
+              "correct": 13,
+              "n": 26,
+              "p_correct": 0.5
+            },
+            "not_carried": {
+              "correct": 6,
+              "n": 122,
+              "p_correct": 0.04918
+            }
+          }
+        },
+        "vector": {
+          "p_hat": 0.447368,
+          "strata": {
+            "carried_not_retrievable": {
+              "correct": 1,
+              "n": 5,
+              "p_correct": 0.2
+            },
+            "carried_retrievable": {
+              "correct": 18,
+              "n": 36,
+              "p_correct": 0.5
+            },
+            "not_carried": {
+              "correct": 6,
+              "n": 114,
+              "p_correct": 0.052632
+            }
+          }
+        }
+      }
+    },
+    "ablations/rep01/joint_entropy_diag": {
+      "backends": {
+        "kv": {
+          "p_hat": 0.485714,
+          "strata": {
+            "carried_not_retrievable": {
+              "correct": 6,
+              "n": 14,
+              "p_correct": 0.428571
+            },
+            "carried_retrievable": {
+              "correct": 8,
+              "n": 15,
+              "p_correct": 0.533333
+            },
+            "not_carried": {
+              "correct": 6,
+              "n": 126,
+              "p_correct": 0.047619
+            }
+          }
+        },
+        "vector": {
+          "p_hat": 0.458986,
+          "strata": {
+            "carried_not_retrievable": {
+              "correct": 0,
+              "n": 6,
+              "p_correct": 0.0
+            },
+            "carried_retrievable": {
+              "correct": 16,
+              "n": 33,
+              "p_correct": 0.484848
+            },
+            "not_carried": {
+              "correct": 3,
+              "n": 116,
+              "p_correct": 0.025862
+            }
+          }
+        }
+      }
+    },
+    "ablations/rep02/geometry_only": {
+      "backends": {
+        "kv": {
+          "p_hat": 0.364309,
+          "strata": {
+            "carried_not_retrievable": {
+              "correct": 6,
+              "n": 15,
+              "p_correct": 0.4
+            },
+            "carried_retrievable": {
+              "correct": 13,
+              "n": 31,
+              "p_correct": 0.419355
+            },
+            "not_carried": {
+              "correct": 6,
+              "n": 109,
+              "p_correct": 0.055046
+            }
+          }
+        },
+        "vector": {
+          "p_hat": 0.542277,
+          "strata": {
+            "carried_not_retrievable": {
+              "correct": 0,
+              "n": 2,
+              "p_correct": 0.0
+            },
+            "carried_retrievable": {
+              "correct": 17,
+              "n": 30,
+              "p_correct": 0.566667
+            },
+            "not_carried": {
+              "correct": 3,
+              "n": 123,
+              "p_correct": 0.02439
+            }
+          }
+        }
+      }
+    },
+    "ablations/rep02/gm_v1": {
+      "backends": {
+        "kv": {
+          "p_hat": 0.382497,
+          "strata": {
+            "carried_not_retrievable": {
+              "correct": 5,
+              "n": 15,
+              "p_correct": 0.333333
+            },
+            "carried_retrievable": {
+              "correct": 12,
+              "n": 27,
+              "p_correct": 0.444444
+            },
+            "not_carried": {
+              "correct": 7,
+              "n": 113,
+              "p_correct": 0.061947
+            }
+          }
+        },
+        "vector": {
+          "p_hat": 0.412963,
+          "strata": {
+            "carried_not_retrievable": {
+              "correct": 1,
+              "n": 7,
+              "p_correct": 0.142857
+            },
+            "carried_retrievable": {
+              "correct": 18,
+              "n": 40,
+              "p_correct": 0.45
+            },
+            "not_carried": {
+              "correct": 4,
+              "n": 108,
+              "p_correct": 0.037037
+            }
+          }
+        }
+      }
+    },
+    "ablations/rep02/joint_entropy_diag": {
+      "backends": {
+        "kv": {
+          "p_hat": 0.357407,
+          "strata": {
+            "carried_not_retrievable": {
+              "correct": 2,
+              "n": 8,
+              "p_correct": 0.25
+            },
+            "carried_retrievable": {
+              "correct": 11,
+              "n": 27,
+              "p_correct": 0.407407
+            },
+            "not_carried": {
+              "correct": 6,
+              "n": 120,
+              "p_correct": 0.05
+            }
+          }
+        },
+        "vector": {
+          "p_hat": 0.32402,
+          "strata": {
+            "carried_not_retrievable": {
+              "correct": 0,
+              "n": 1,
+              "p_correct": 0.0
+            },
+            "carried_retrievable": {
+              "correct": 13,
+              "n": 34,
+              "p_correct": 0.382353
+            },
+            "not_carried": {
+              "correct": 7,
+              "n": 120,
+              "p_correct": 0.058333
+            }
+          }
+        }
+      }
+    },
+    "ablations/rep03/geometry_only": {
+      "backends": {
+        "kv": {
+          "p_hat": 0.300546,
+          "strata": {
+            "carried_not_retrievable": {
+              "correct": 1,
+              "n": 6,
+              "p_correct": 0.166667
+            },
+            "carried_retrievable": {
+              "correct": 9,
+              "n": 27,
+              "p_correct": 0.333333
+            },
+            "not_carried": {
+              "correct": 4,
+              "n": 122,
+              "p_correct": 0.032787
+            }
+          }
+        },
+        "vector": {
+          "p_hat": 0.347756,
+          "strata": {
+            "carried_not_retrievable": {
+              "correct": 1,
+              "n": 4,
+              "p_correct": 0.25
+            },
+            "carried_retrievable": {
+              "correct": 16,
+              "n": 39,
+              "p_correct": 0.410256
+            },
+            "not_carried": {
+              "correct": 7,
+              "n": 112,
+              "p_correct": 0.0625
+            }
+          }
+        }
+      }
+    },
+    "ablations/rep03/gm_v1": {
+      "backends": {
+        "kv": {
+          "p_hat": 0.740938,
+          "strata": {
+            "carried_not_retrievable": {
+              "correct": 3,
+              "n": 7,
+              "p_correct": 0.428571
+            },
+            "carried_retrievable": {
+              "correct": 11,
+              "n": 14,
+              "p_correct": 0.785714
+            },
+            "not_carried": {
+              "correct": 6,
+              "n": 134,
+              "p_correct": 0.044776
+            }
+          }
+        },
+        "vector": {
+          "p_hat": 0.333333,
+          "strata": {
+            "carried_not_retrievable": {
+              "correct": 1,
+              "n": 3,
+              "p_correct": 0.333333
+            },
+            "carried_retrievable": {
+              "correct": 14,
+              "n": 38,
+              "p_correct": 0.368421
+            },
+            "not_carried": {
+              "correct": 4,
+              "n": 114,
+              "p_correct": 0.035088
+            }
+          }
+        }
+      }
+    },
+    "ablations/rep03/joint_entropy_diag": {
+      "backends": {
+        "kv": {
+          "p_hat": 0.50888,
+          "strata": {
+            "carried_not_retrievable": {
+              "correct": 3,
+              "n": 9,
+              "p_correct": 0.333333
+            },
+            "carried_retrievable": {
+              "correct": 13,
+              "n": 24,
+              "p_correct": 0.541667
+            },
+            "not_carried": {
+              "correct": 4,
+              "n": 122,
+              "p_correct": 0.032787
+            }
+          }
+        },
+        "vector": {
+          "p_hat": 0.425082,
+          "strata": {
+            "carried_not_retrievable": {
+              "correct": 1,
+              "n": 4,
+              "p_correct": 0.25
+            },
+            "carried_retrievable": {
+              "correct": 18,
+              "n": 37,
+              "p_correct": 0.486486
+            },
+            "not_carried": {
+              "correct": 7,
+              "n": 114,
+              "p_correct": 0.061404
+            }
+          }
+        }
+      }
+    },
+    "harvest/rep01/v1_shadow": {
+      "backends": {
+        "kv": {
+          "p_hat": 0.43082,
+          "strata": {
+            "carried_not_retrievable": {
+              "correct": 3,
+              "n": 8,
+              "p_correct": 0.375
+            },
+            "carried_retrievable": {
+              "correct": 12,
+              "n": 25,
+              "p_correct": 0.48
+            },
+            "not_carried": {
+              "correct": 6,
+              "n": 122,
+              "p_correct": 0.04918
+            }
+          }
+        },
+        "vector": {
+          "p_hat": 0.412172,
+          "strata": {
+            "carried_not_retrievable": {
+              "correct": 0,
+              "n": 4,
+              "p_correct": 0.0
+            },
+            "carried_retrievable": {
+              "correct": 15,
+              "n": 33,
+              "p_correct": 0.454545
+            },
+            "not_carried": {
+              "correct": 5,
+              "n": 118,
+              "p_correct": 0.042373
+            }
+          }
+        }
+      }
+    },
+    "harvest/rep02/v1_shadow": {
+      "backends": {
+        "kv": {
+          "p_hat": 0.629546,
+          "strata": {
+            "carried_not_retrievable": {
+              "correct": 3,
+              "n": 7,
+              "p_correct": 0.428571
+            },
+            "carried_retrievable": {
+              "correct": 12,
+              "n": 17,
+              "p_correct": 0.705882
+            },
+            "not_carried": {
+              "correct": 10,
+              "n": 131,
+              "p_correct": 0.076336
+            }
+          }
+        },
+        "vector": {
+          "p_hat": 0.330357,
+          "strata": {
+            "carried_not_retrievable": {
+              "correct": 1,
+              "n": 1,
+              "p_correct": 1.0
+            },
+            "carried_retrievable": {
+              "correct": 15,
+              "n": 42,
+              "p_correct": 0.357143
+            },
+            "not_carried": {
+              "correct": 3,
+              "n": 112,
+              "p_correct": 0.026786
+            }
+          }
+        }
+      }
+    },
+    "harvest/rep03/v1_shadow": {
+      "backends": {
+        "kv": {
+          "p_hat": 0.667411,
+          "strata": {
+            "carried_not_retrievable": {
+              "correct": 7,
+              "n": 13,
+              "p_correct": 0.538462
+            },
+            "carried_retrievable": {
+              "correct": 10,
+              "n": 14,
+              "p_correct": 0.714286
+            },
+            "not_carried": {
+              "correct": 6,
+              "n": 128,
+              "p_correct": 0.046875
+            }
+          }
+        },
+        "vector": {
+          "p_hat": 0.264495,
+          "strata": {
+            "carried_not_retrievable": {
+              "correct": 0,
+              "n": 1,
+              "p_correct": 0.0
+            },
+            "carried_retrievable": {
+              "correct": 12,
+              "n": 37,
+              "p_correct": 0.324324
+            },
+            "not_carried": {
+              "correct": 7,
+              "n": 117,
+              "p_correct": 0.059829
+            }
+          }
+        }
+      }
+    }
+  },
+  "p_hat": {
+    "kv": 0.445411,
+    "pooled": 0.408544,
+    "vector": 0.386144
+  }
+}
