@@ -143,9 +143,10 @@ def build_arm_env(cfg, arm, rep, base_env=None):
     middleware log is append-mode; shared files would silently mix replicates
     AND arms -- risk R7)."""
     env = dict(base_env if base_env is not None else os.environ)
-    # HACT_* scrubbed like GOV_* (H-Nav Stage 2): an operator shell export must
-    # never leak instrumentation into an arm that did not declare it.
-    stale = [k for k in env if k.startswith(("GOV_", "HACT_"))]
+    # HACT_*/SCAF_* scrubbed like GOV_*: an operator shell export must never
+    # leak instrumentation into an arm that did not declare it (a stray
+    # SCAF_ENABLED would silently turn the BASELINE arm into a scaffold arm).
+    stale = [k for k in env if k.startswith(("GOV_", "HACT_", "SCAF_"))]
     for k in stale:
         del env[k]
     spec = next((a for a in arm_specs(cfg) if a["label"] == arm), None)
@@ -165,6 +166,13 @@ def build_arm_env(cfg, arm, rep, base_env=None):
     extra_env = (spec or {}).get("extra_env")
     if extra_env:
         env.update(extra_env)
+        # An instrumented-but-ungoverned arm (gov_env None + extra_env, e.g.
+        # the SCAF_* write scaffold) still needs a per-(replicate, arm) log
+        # dir for its own append-mode audit log -- same risk R7 isolation.
+        if gov_env is None:
+            env["GOV_LOG_DIR"] = str(
+                Path(cfg["gov_log_root"]) / f"rep{rep:02d}_{arm}"
+            )
         # Replicate-distinct sampling seeds: a replicate-invariant HACT_SEED
         # makes per-request seeds byte-identical across replicates
         # (pseudo-replication; dev/val twin contamination). The arm spec's
@@ -177,7 +185,7 @@ def build_arm_env(cfg, arm, rep, base_env=None):
 
 def gov_env_of(env):
     return {k: v for k, v in sorted(env.items())
-            if k.startswith(("GOV_", "HACT_"))}
+            if k.startswith(("GOV_", "HACT_", "SCAF_"))}
 
 
 def _calibration_sha(calib_path):

@@ -1,0 +1,33 @@
+[
+  {
+    "label": "baseline",
+    "model": "Qwen/Qwen3-4B-Instruct-2507-FC",
+    "gov_env": null
+  },
+  {
+    "label": "scaffold",
+    "model": "Qwen/Qwen3-4B-Instruct-2507-FC-SCAF",
+    "gov_env": null,
+    "extra_env": {
+      "SCAF_ENABLED": "1",
+      "SCAF_MODE": "user_turn",
+      "SCAF_MAX_ENTRIES": "50",
+      "SCAF_MAX_LEN": "2000",
+      "SCAF_GATE_RECALL": "0",
+      "SCAF_LOG_FILE": "scaffold_log.jsonl"
+    }
+  },
+  {
+    "label": "scaffold_shuffled",
+    "model": "Qwen/Qwen3-4B-Instruct-2507-FC-SCAF",
+    "gov_env": null,
+    "extra_env": {
+      "SCAF_ENABLED": "1",
+      "SCAF_MODE": "shuffled_control",
+      "SCAF_MAX_ENTRIES": "50",
+      "SCAF_MAX_LEN": "2000",
+      "SCAF_GATE_RECALL": "0",
+      "SCAF_LOG_FILE": "scaffold_log.jsonl"
+    }
+  }
+]
