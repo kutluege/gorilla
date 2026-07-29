@@ -180,7 +180,8 @@ def test_replicate_holdout():
 
 
 def test_gate_decisions():
-    def fake_report(head_ci, part_ci, p_holm, holdout, n_pos, nc_mean=0.0):
+    def fake_report(head_ci, part_ci, p_holm, holdout, n_pos, nc_mean=0.0,
+                    nc2b_mean=0.0):
         return {"t1": {
             "n_positive": n_pos,
             "ladder": {ehs.HEADLINE: {"mean": (head_ci[0] + head_ci[1]) / 2,
@@ -190,8 +191,11 @@ def test_gate_decisions():
             "permutation": {"h_act_target": {"p_value": p_holm}},
             "holm_adjusted": {"h_act_target": p_holm},
             "nc": {"nc2_shuffle_entropy": {
-                ehs.HEADLINE: {"mean": nc_mean, "ci95": [-0.02, 0.02]},
-                ehs.PARTIAL_KEY: {"mean": nc_mean, "ci95": [-0.02, 0.02]}},
+                ehs.HEADLINE: {"mean": nc_mean,
+                               "ci95": [nc_mean - 0.02, nc_mean + 0.02]}},
+                "nc2b_shuffle_votes": {
+                ehs.PARTIAL_KEY: {"mean": nc2b_mean,
+                                  "ci95": [nc2b_mean - 0.02, nc2b_mean + 0.02]}},
                 "nc12_replicate_holdout": holdout},
         }}
 
@@ -213,6 +217,79 @@ def test_gate_decisions():
     g = ehs.decide_gate(fake_report((0.02, 0.10), (0.01, 0.05), 0.001,
                                     {"r1": 0.03, "r2": 0.02, "r3": 0.04}, 10))
     check("too few positives -> not GO", g["verdict"] != "GO", g)
+    # PARTIAL uses NC2b (vote shuffle), NOT NC2: a strong vote signal with a
+    # non-collapsed VOTE shuffle must not reach PARTIAL...
+    g = ehs.decide_gate(fake_report((-0.01, 0.10), (0.03, 0.07), 0.001,
+                                    {"r1": 0.03, "r2": 0.02, "r3": 0.04}, 60,
+                                    nc2b_mean=0.05))
+    check("vote-NC not collapsed -> not PARTIAL", g["verdict"] == "NO_GO", g)
+    # ...and an entropy-NC that reproduces the vote delta must NOT block
+    # PARTIAL (the original incoherence the review caught).
+    g = ehs.decide_gate(fake_report((-0.01, 0.10), (0.03, 0.07), 0.001,
+                                    {"r1": 0.03, "r2": 0.02, "r3": 0.04}, 60,
+                                    nc_mean=0.05, nc2b_mean=0.0))
+    check("entropy-NC irrelevant to PARTIAL", g["verdict"] == "PARTIAL", g)
+
+
+def test_replicate_aware_label_attach():
+    import tempfile
+    d = Path(tempfile.mkdtemp(prefix="attach_"))
+    # same candidate_id in two replicates with DIFFERENT labels (the real
+    # cross-replicate divergence the review measured: 9/34 colliding ids)
+    rows_out = [
+        {"candidate_id": "aaaa", "replicate": "rep01_hact_shadow",
+         "must_suppress": 1},
+        {"candidate_id": "aaaa", "replicate": "rep02_hact_shadow",
+         "must_suppress": 0},
+        {"candidate_id": "bbbb", "replicate": "rep01_hact_shadow",
+         "must_suppress": 0},
+    ]
+    p = d / "outcomes.jsonl"
+    p.write_text("\n".join(json.dumps(r) for r in rows_out) + "\n",
+                 encoding="utf-8")
+    rows = [
+        {"candidate_id": "aaaa", "replicate": "rep01_hact_shadow",
+         "chain": ("kv", "customer", "rep01_hact_shadow"), "features": {}},
+        {"candidate_id": "aaaa", "replicate": "rep02_hact_shadow",
+         "chain": ("kv", "customer", "rep02_hact_shadow"), "features": {}},
+        {"candidate_id": "bbbb", "replicate": "rep03_hact_shadow",
+         "chain": ("kv", "customer", "rep03_hact_shadow"), "features": {}},
+    ]
+    kept = ehs.attach_labels_by_replicate(rows, [str(p)], "must_suppress")
+    check("cross-rep twin keeps BOTH rows", len(kept) == 2, len(kept))
+    by_rep = {r["replicate"]: r["label"] for r in kept}
+    check("each replicate gets ITS OWN label",
+          by_rep["rep01_hact_shadow"] == 1 and by_rep["rep02_hact_shadow"] == 0,
+          by_rep)
+    check("unmatched replicate dropped, not mislabeled",
+          all(r["replicate"] != "rep03_hact_shadow" for r in kept))
+    # NC14 dedup key: (replicate, candidate_id) unique even with twin ids
+    seen = set()
+    dup = False
+    for r in kept:
+        key = (r["replicate"], r["candidate_id"])
+        dup = dup or key in seen
+        seen.add(key)
+    check("(replicate, candidate_id) unique across twins", not dup)
+
+
+def test_holdout_twin_exclusion():
+    rows = make_rows(seed=7, planted=True)
+    # plant twins: copy 30 rep01 rows into rep02 with identical ids/features
+    twins = []
+    for r in rows:
+        if r["replicate"] == "rep01_hact_shadow" and len(twins) < 30:
+            t = json.loads(json.dumps(r))
+            t["chain"] = (r["chain"][0], r["chain"][1], "rep02_hact_shadow")
+            t["replicate"] = "rep02_hact_shadow"
+            twins.append(t)
+    # remove 30 originals from rep02 to keep sizes stable, then add twins
+    rep02 = [r for r in rows if r["replicate"] == "rep02_hact_shadow"][30:]
+    others = [r for r in rows if r["replicate"] != "rep02_hact_shadow"]
+    planted = others + rep02 + twins
+    out = ehs.replicate_holdout_delta(planted, "M8", "M4", seed=12345)
+    check("holdout still computes with twins present",
+          len(out) == 3 and any(v is not None for v in out.values()), out)
 
 
 def test_t2_rows_and_join():

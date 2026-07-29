@@ -170,6 +170,7 @@ class QwenHactHandler(QwenGovHandler):
 
         # --- 1. PRIMARY: baseline params + logprobs + pinned seed ---
         want_logprobs = cfg.logprobs_k > 0 and self._hact_logprob_supported is not False
+        requested_logprobs = want_logprobs   # whether the FINAL request had them
         try:
             primary_resp = self.client.completions.create(
                 temperature=self.temperature,
@@ -178,13 +179,34 @@ class QwenHactHandler(QwenGovHandler):
                 **common,
             )
         except Exception as e:  # noqa: BLE001
-            if want_logprobs:
-                # Degrade once, loudly, and never fail the run for logprobs.
-                print(f"[HACT] primary with logprobs failed ({e}); retrying without")
+            if want_logprobs and "logprob" in str(e).lower():
+                # The server rejected the logprobs parameter itself: degrade
+                # permanently, loudly.
+                print(f"[HACT] logprobs rejected by server ({e}); degrading")
                 self._hact_logprob_supported = False
+                requested_logprobs = False
                 primary_resp = self.client.completions.create(
                     temperature=self.temperature, seed=seed_primary, **common
                 )
+            elif want_logprobs:
+                # Transient failure (timeout/overload): one retry WITH
+                # logprobs; if that also fails, fall back without logprobs
+                # for THIS request only -- a single 500 at minute 30 must not
+                # strip lp_* features from the remaining hours of a campaign.
+                print(f"[HACT] primary failed ({e}); retrying with logprobs")
+                try:
+                    primary_resp = self.client.completions.create(
+                        temperature=self.temperature,
+                        seed=seed_primary,
+                        logprobs=cfg.logprobs_k,
+                        **common,
+                    )
+                except Exception as e2:  # noqa: BLE001
+                    print(f"[HACT] retry failed ({e2}); this request w/o logprobs")
+                    requested_logprobs = False
+                    primary_resp = self.client.completions.create(
+                        temperature=self.temperature, seed=seed_primary, **common
+                    )
             else:
                 raise
 
@@ -221,7 +243,7 @@ class QwenHactHandler(QwenGovHandler):
         # --- logprob features + support flag (only meaningful if requested) ---
         lp_obj = getattr(primary_choice, "logprobs", None)
         lp_feats = logprob_features(lp_obj, primary_text)
-        if want_logprobs:
+        if requested_logprobs:
             got = any(v is not None for v in lp_feats.values())
             if self._hact_logprob_supported is None:
                 self._hact_logprob_supported = got
@@ -256,14 +278,24 @@ class QwenHactHandler(QwenGovHandler):
             counts = {}
             for s in sigs:
                 counts[s] = counts.get(s, 0) + 1
-            top = max(counts.values())
-            if counts[sigs[0]] == top:
-                chosen_idx = 0          # primary is (tied-)modal: keep it
+            # Degenerate signatures never form a winning bloc: mutually
+            # unrelated malformed samples all collapse to "parse_fail" and
+            # would otherwise outvote a valid primary with garbage.
+            valid = {s: c for s, c in counts.items()
+                     if s != "no_call" and "parse_fail" not in s}
+            if not valid:
+                chosen_idx = 0          # nothing valid anywhere: keep primary
+                top = counts.get(sigs[0], 0)
             else:
-                modal = sorted(s for s, c in counts.items() if c == top)[0]
-                chosen_idx = sigs.index(modal)
+                top = max(valid.values())
+                if valid.get(sigs[0], -1) == top:
+                    chosen_idx = 0      # primary is (tied-)modal: keep it
+                else:
+                    modal = sorted(s for s, c in valid.items() if c == top)[0]
+                    chosen_idx = sigs.index(modal)
             policy_record = {"policy": "majority", "selected_index": chosen_idx,
-                             "modal_count": top, "primary_count": counts[sigs[0]]}
+                             "modal_count": top,
+                             "primary_count": counts.get(sigs[0], 0)}
         if chosen_idx != 0 and explore_resp is not None:
             choices = list(primary_resp.choices)
             choices[0] = explore_resp.choices[chosen_idx - 1]
@@ -316,17 +348,34 @@ class QwenHactHandler(QwenGovHandler):
 
     # ------------------------------------------------------------- orphan flush
 
+    def _flush_orphan(self, parse_crash=False):
+        """Flush a still-pending hact record as an orphan. Reached when the
+        primary decoded to no calls (govern_calls skipped) OR the decode
+        RAISED (malformed tool_call JSON) -- both are T2 positives and must
+        never be silently dropped."""
+        session = getattr(self._gov_tls, "session", None)
+        if session is None:
+            return
+        pending = getattr(session, "pending_hact", None)
+        if pending is None:
+            return
+        session.pending_hact = None
+        log_file = pending.pop("_log_file", "hact_log.jsonl")
+        pending["step_idx"] = None
+        pending["orphan"] = True
+        pending["parse_crash"] = bool(parse_crash)
+        log_hact_record(pending, session.cfg.log_dir or ".", log_file)
+
     @override
     def decode_execute(self, result, has_tool_call_tag):
-        calls = super().decode_execute(result, has_tool_call_tag)
-        session = getattr(self._gov_tls, "session", None)
-        if session is not None:
-            pending = getattr(session, "pending_hact", None)
-            if pending is not None:
-                # govern_calls was not reached (no calls decoded) -> orphan.
-                session.pending_hact = None
-                log_file = pending.pop("_log_file", "hact_log.jsonl")
-                pending["step_idx"] = None
-                pending["orphan"] = True
-                log_hact_record(pending, session.cfg.log_dir or ".", log_file)
+        try:
+            calls = super().decode_execute(result, has_tool_call_tag)
+        except Exception:
+            # QwenFCHandler.decode_execute raises on malformed-but-matching
+            # <tool_call> JSON; the harness catches it upstream and moves on.
+            # The pending record is exactly the parse-crash subclass of the
+            # T2 target -- flush it before propagating.
+            self._flush_orphan(parse_crash=True)
+            raise
+        self._flush_orphan(parse_crash=False)
         return calls

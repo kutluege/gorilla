@@ -110,6 +110,28 @@ def test_random_select_covers_range():
     check("random_select varies across steps", len(seen) >= 2, seen)
 
 
+def test_majority_ignores_parse_fail_bloc():
+    # 3 mutually-distinct malformed explorations all collapse to the
+    # "parse_fail" signature (3 votes) vs a valid primary (1 vote): the
+    # degenerate bloc must NOT outvote the primary.
+    bad1 = "<tool_call>\n{\"name\": bad json"
+    bad2 = "<tool_call>\n{{{{"
+    bad3 = "<tool_call>\n[1, 2, 3"
+    h, resp, rec = run_policy("majority", primary_text=TOOL_CALL,
+                              explore_texts=[bad1, bad2, bad3])
+    check("parse-fail bloc ignored, primary kept",
+          resp.choices[0].text == TOOL_CALL)
+    check("selected index 0 despite 3-vote bloc",
+          rec["policy_record"]["selected_index"] == 0, rec["policy_record"])
+
+
+def test_majority_no_call_bloc():
+    # all-free-text explorations (no_call sig) never outvote a valid primary
+    h, resp, rec = run_policy("majority", primary_text=TOOL_CALL,
+                              explore_texts=[FREE_TEXT, FREE_TEXT, FREE_TEXT])
+    check("no_call bloc ignored", rec["policy_record"]["selected_index"] == 0)
+
+
 def test_policy_guard():
     from bfcl_eval.model_handler.local_inference.qwen_hact import (
         _IMPLEMENTED_POLICIES,

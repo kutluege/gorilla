@@ -33,8 +33,11 @@ sys.path.insert(0, str(Path(__file__).parent))
 
 from calibrate_margin_entropy import git_head, load_decisions, sha_file  # noqa: E402
 from counterfactual_noop import wilson  # noqa: E402
-from evaluate_hact_shadow import join_hact, load_hact_rows  # noqa: E402
-from evaluate_hnav_stage1 import attach_hnav_labels  # noqa: E402
+from evaluate_hact_shadow import (  # noqa: E402
+    attach_labels_by_replicate,
+    join_hact,
+    load_hact_rows,
+)
 
 # Pre-justified grids (PREREGISTRATION.md discipline: small, fixed, recorded).
 GRIDS = {
@@ -52,9 +55,9 @@ GRIDS = {
 
 def load_labeled(log_dirs, outcomes):
     rows, _ = load_decisions(log_dirs, escalated_only=False)
-    hact, _, _ = load_hact_rows(log_dirs)
+    hact, _, _, _ = load_hact_rows(log_dirs)
     joined, _ = join_hact(rows, hact)
-    return attach_hnav_labels(joined, outcomes, "must_suppress"), joined
+    return attach_labels_by_replicate(joined, outcomes, "must_suppress"), joined
 
 
 def intervention_stats(rows, feature, direction, tau):
@@ -119,10 +122,19 @@ def main():
 
     dev_rows, _ = load_labeled(dev_dirs, args.outcomes)
     val_rows, _ = load_labeled(val_dirs, args.outcomes)
-    print(f"[thresholds] dev rows={len(dev_rows)} val rows={len(val_rows)}")
+    # Twin exclusion: the campaign's replicate-invariant HACT_SEED makes some
+    # candidates byte-identical across replicates (same candidate_id). A val
+    # row whose id also appears in dev would validate the threshold on the
+    # data that selected it; drop them and report the count.
+    dev_ids = {r["candidate_id"] for r in dev_rows}
+    n_val_twins = sum(1 for r in val_rows if r["candidate_id"] in dev_ids)
+    val_rows = [r for r in val_rows if r["candidate_id"] not in dev_ids]
+    print(f"[thresholds] dev rows={len(dev_rows)} val rows={len(val_rows)} "
+          f"(val twins excluded={n_val_twins})")
 
     result = {"git_head": git_head(), "max_fir": args.max_fir,
               "min_recall": args.min_recall,
+              "n_val_twins_excluded": n_val_twins,
               "dev_dirs": dev_dirs, "val_dirs": val_dirs,
               "outcomes_sha": [sha_file(p) for pat in args.outcomes
                                for p in sorted(globmod.glob(pat))],

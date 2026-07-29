@@ -83,6 +83,39 @@ fold-straddle assertion inside `cv_splits`; NC11 permutation control on T2.
 - **NO_GO** ⟺ neither → the autonomous alternative loop starts; the negative
   finding is reported as a finding.
 
+## Protocol corrections (2026-07-29, pre-unblinding)
+
+An adversarial multi-agent code review of the evaluator ran while the campaign
+generated; the following corrections were applied AFTER the campaign completed
+but BEFORE `evaluate_hact_shadow.py` was executed on any campaign data (the
+evaluator had produced no numbers when these landed — this is a pre-unblinding
+protocol fix, not a post-hoc adjustment):
+
+1. **Replicate-aware joins.** `candidate_id` carries no replicate component,
+   so identical decisions recur across replicates with potentially different
+   counterfactual labels. All label joins and the NC14 dedup now key on
+   `(replicate, candidate_id)`; the labeler is invoked with
+   `--replicate <gov-log dir name>`.
+2. **PARTIAL gate control corrected.** The original PARTIAL clause required
+   "NC2 collapsed", but NC2 permutes only entropy features, which appear in
+   neither M4 nor M0 — it cannot collapse an entropy-free delta, making
+   PARTIAL structurally unreachable. The corrected clause uses **NC2b**: a
+   joint within-(backend, op_add) shuffle of the VOTE_CONTROL_FEATURES block,
+   the exact analogue of NC2 for the vote signal. GO is unchanged.
+3. **Twin handling.** `HACT_SEED` was replicate-invariant in this campaign,
+   so a fraction of candidates recur byte-identically across replicates.
+   NC12 replicate-holdout now excludes training rows whose `candidate_id`
+   appears in the held-out replicate; threshold validation (Stage 4) excludes
+   val rows whose id appears in dev; twin counts and twin-label conflicts are
+   reported. Future campaigns use per-replicate seeds (runner offsets
+   HACT_SEED by the replicate index).
+4. **Known T2 limitation (this campaign's data).** The orphan flush was
+   skipped when the governed decode RAISED (malformed-but-matching tool_call
+   JSON), so the parse-crash subclass of T2 positives is undercounted in this
+   campaign's logs. Fixed for future runs (exception-safe flush with a
+   `parse_crash` flag); for this campaign T2 covers the no-call subclass and
+   the surviving parse-fail records only, and is interpreted accordingly.
+
 ## Stage 4 preview (bound by this gate)
 
 On GO/PARTIAL: staged intervention campaign, first wave A0 (baseline), A1

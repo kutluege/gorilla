@@ -165,6 +165,13 @@ def build_arm_env(cfg, arm, rep, base_env=None):
     extra_env = (spec or {}).get("extra_env")
     if extra_env:
         env.update(extra_env)
+        # Replicate-distinct sampling seeds: a replicate-invariant HACT_SEED
+        # makes per-request seeds byte-identical across replicates
+        # (pseudo-replication; dev/val twin contamination). The arm spec's
+        # value is the base; the effective per-replicate seed is base + rep
+        # and is recorded in the manifest via gov_env_of.
+        if "HACT_SEED" in extra_env:
+            env["HACT_SEED"] = str(int(extra_env["HACT_SEED"]) + rep)
     return env
 
 

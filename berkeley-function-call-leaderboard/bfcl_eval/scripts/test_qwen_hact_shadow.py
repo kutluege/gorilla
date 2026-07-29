@@ -226,8 +226,35 @@ def test_orphan_flush():
     check("orphan flushed", len(rows) == 1)
     check("orphan step_idx None", rows[0]["step_idx"] is None)
     check("orphan flag true", rows[0]["orphan"] is True)
+    check("no-call orphan not a parse crash", rows[0]["parse_crash"] is False)
     check("orphan votes still computed", "h_act_target" in rows[0]["votes"])
     check("stash cleared", getattr(session, "pending_hact", None) is None)
+
+
+def test_orphan_flush_on_raising_decode():
+    # Malformed-but-matching tool_call JSON makes QwenFCHandler.decode_execute
+    # RAISE (not return empty); the pending record must still be flushed as a
+    # parse-crash orphan before the exception propagates (T2 positive class).
+    bad = "<tool_call>\n{\"name\": \"core_memory_add\"}\n</tool_call>"
+    tmp = tempfile.mkdtemp(prefix="hact_")
+    h = make_handler(tmp, client=FakeClient(primary_text=bad))
+    session = make_session(tmp)
+    h._gov_tls.session = session
+
+    h._query_prompting(make_inference_data("memory_kv_prereq_1-test-1"))
+    check("record stashed", getattr(session, "pending_hact", None) is not None)
+    raised = False
+    try:
+        h.decode_execute(bad, False)
+    except Exception:
+        raised = True
+    check("decode raised as the harness expects", raised)
+    rows = read_hact_log(tmp)
+    check("parse-crash orphan flushed", len(rows) == 1, len(rows))
+    check("parse_crash flag set", rows[0].get("parse_crash") is True)
+    check("orphan step_idx None", rows[0]["step_idx"] is None)
+    check("stash cleared after crash flush",
+          getattr(session, "pending_hact", None) is None)
 
 
 def test_exploration_never_governed():

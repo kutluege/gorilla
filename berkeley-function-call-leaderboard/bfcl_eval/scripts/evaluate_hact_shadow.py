@@ -79,7 +79,9 @@ from calibrate_margin_entropy import (  # noqa: E402
     sha_file,
 )
 from analyze_gov_replicates import holm  # noqa: E402
-from evaluate_hnav_stage1 import attach_hnav_labels  # noqa: E402
+# NOTE: evaluate_hnav_stage1.attach_hnav_labels is deliberately NOT used here:
+# it joins on bare candidate_id, which is only safe within one replicate.
+# This script uses attach_labels_by_replicate (below) instead.
 
 # ---------------------------------------------------------------- features
 
@@ -155,8 +157,14 @@ def leakage_guard(rows):
 # ---------------------------------------------------------------- loading
 
 def load_hact_rows(log_dirs, log_name="hact_log.jsonl"):
-    """All hact1 records per arm dir. Returns (joinable, orphans, manifest)."""
+    """All hact1 records per arm dir.
+
+    Returns (joinable, orphans, manifest, n_dup_replaced). Duplicate
+    (replicate, test_id, step_idx) keys keep the LAST record: the logs are
+    append-only and an interrupted-then-resumed entry legitimately re-appends
+    its steps; the count is surfaced instead of asserted."""
     joinable, orphans, manifest = {}, [], []
+    n_dup = 0
     for d in log_dirs:
         d = Path(d)
         p = d / log_name
@@ -178,9 +186,38 @@ def load_hact_rows(log_dirs, log_name="hact_log.jsonl"):
                 else:
                     key = (replicate, rec["test_id"], rec["step_idx"])
                     if key in joinable:
-                        raise AssertionError(f"duplicate hact row for {key} (NC14)")
+                        n_dup += 1
                     joinable[key] = rec
-    return joinable, orphans, manifest
+    return joinable, orphans, manifest, n_dup
+
+
+def attach_labels_by_replicate(rows, patterns, label):
+    """Replicate-aware label join. candidate_id = sha(test_id|step|idx|call)
+    carries NO replicate component, so identical decisions recur across
+    replicates with potentially DIFFERENT counterfactual labels (each
+    replicate's own final store). Keying on (replicate, candidate_id) is
+    therefore mandatory; the bare-id join in evaluate_hnav_stage1 is only
+    safe within a single replicate. Outcomes rows must carry the same
+    replicate string as the gov-log dir name (pass --replicate <dir_name>
+    to label_outcomes_hnav.py)."""
+    outcomes = {}
+    for pat in patterns:
+        for path in sorted(globmod.glob(pat)):
+            with open(path, "r", encoding="utf-8") as f:
+                for line in f:
+                    line = line.strip()
+                    if line:
+                        rec = json.loads(line)
+                        outcomes[(rec.get("replicate"), rec["candidate_id"])] = rec
+    kept = []
+    for row in rows:
+        out = outcomes.get((row["replicate"], row["candidate_id"]))
+        if out is None or label not in out:
+            continue
+        row["label"] = int(bool(out[label]))
+        row["outcomes"] = out
+        kept.append(row)
+    return kept
 
 
 def hact_features_from_record(rec):
@@ -353,12 +390,20 @@ def global_label_shuffle(rows, seed):
 
 def replicate_holdout_delta(rows, nest_a, nest_b, seed):
     """NC12: fit on all replicates but one, test on the held-out replicate;
-    report the OOF AUC delta per held-out replicate (sign consistency)."""
+    report the OOF AUC delta per held-out replicate (sign consistency).
+
+    Twin exclusion: with the campaign's replicate-invariant HACT_SEED, a
+    fraction of candidates recur byte-identically across replicates (same
+    candidate_id). Training rows whose candidate_id appears in the held-out
+    replicate are dropped, so the holdout cannot be answered from memorized
+    twins."""
     from calibrate_margin_entropy import _design, fit_logistic, predict
     reps = sorted({r["replicate"] for r in rows})
     out = {}
     for held in reps:
-        train = [r for r in rows if r["replicate"] != held]
+        held_ids = {r["candidate_id"] for r in rows if r["replicate"] == held}
+        train = [r for r in rows if r["replicate"] != held
+                 and r["candidate_id"] not in held_ids]
         test = [r for r in rows if r["replicate"] == held]
         if not train or not test:
             continue
@@ -424,10 +469,15 @@ def decide_gate(report):
           and nc_collapsed(nc2) and sign_consistent
           and all(v > 0 for v in signs) and enough)
 
+    # PARTIAL is a claim about the VOTE-CONTROL delta (M4-M0), which contains
+    # no entropy feature -- an entropy shuffle (NC2) cannot collapse it by
+    # construction. The analogous control is NC2b: shuffle the vote-control
+    # block itself (protocol correction recorded in PREREGISTRATION.md,
+    # applied before the evaluator ever saw campaign data).
     part_block = t1["ladder"].get(PARTIAL_KEY)
-    nc2_part = t1["nc"]["nc2_shuffle_entropy"].get(PARTIAL_KEY)
+    nc2b_part = t1["nc"].get("nc2b_shuffle_votes", {}).get(PARTIAL_KEY)
     partial = (not go and ci_excludes_zero(part_block)
-               and enough and nc_collapsed(nc2_part))
+               and enough and nc_collapsed(nc2b_part))
 
     verdict = "GO" if go else ("PARTIAL" if partial else "NO_GO")
     return {
@@ -437,6 +487,7 @@ def decide_gate(report):
             "holm_p_h_act_target": p_holm,
             "perm_p_raw": perm.get("p_value"),
             "nc2_collapsed": nc_collapsed(nc2),
+            "nc2b_votes_collapsed_for_partial": nc_collapsed(nc2b_part),
             "replicate_holdout_signs": holdout,
             "sign_consistent_positive": sign_consistent and bool(signs)
             and all(v > 0 for v in signs),
@@ -470,18 +521,36 @@ def main():
             sys.exit(f"[hact_shadow] oracle path refused (NC13): {d}")
 
     decision_rows, gov_manifest = load_decisions(dirs, escalated_only=False)
-    hact_joinable, orphans, hact_manifest = load_hact_rows(dirs)
+    hact_joinable, orphans, hact_manifest, n_dup_hact = load_hact_rows(dirs)
     joined, n_unjoined = join_hact(decision_rows, hact_joinable)
     print(f"[hact_shadow] decisions={len(decision_rows)} "
           f"hact={len(hact_joinable)} orphans={len(orphans)} "
-          f"joined={len(joined)} unjoined={n_unjoined}")
+          f"joined={len(joined)} unjoined={n_unjoined} dup_hact={n_dup_hact}")
 
-    labeled = attach_hnav_labels(joined, args.outcomes, args.label)
+    labeled = attach_labels_by_replicate(joined, args.outcomes, args.label)
+    # NC14: uniqueness holds per (replicate, candidate_id); the bare id
+    # legitimately recurs across replicates (no replicate term in the sha).
     seen = set()
     for r in labeled:
-        if r["candidate_id"] in seen:
-            raise AssertionError(f"duplicate candidate_id (NC14): {r['candidate_id']}")
-        seen.add(r["candidate_id"])
+        key = (r["replicate"], r["candidate_id"])
+        if key in seen:
+            raise AssertionError(f"duplicate (replicate, candidate_id) (NC14): {key}")
+        seen.add(key)
+    # Cross-replicate twin accounting (replicate-invariant HACT_SEED): ids
+    # appearing in >1 replicate are byte-identical decision twins.
+    by_id = defaultdict(set)
+    for r in labeled:
+        by_id[r["candidate_id"]].add(r["replicate"])
+    n_twin_ids = sum(1 for reps_ in by_id.values() if len(reps_) > 1)
+    twin_label_conflicts = 0
+    lab_by_id = defaultdict(set)
+    for r in labeled:
+        lab_by_id[r["candidate_id"]].add(r["label"])
+    twin_label_conflicts = sum(
+        1 for cid, labs in lab_by_id.items()
+        if len(by_id[cid]) > 1 and len(labs) > 1)
+    print(f"[hact_shadow] cross-replicate twin ids={n_twin_ids} "
+          f"(label conflicts among twins={twin_label_conflicts})")
     leakage_guard(labeled)
     y = np.array([r["label"] for r in labeled])
     n_pos = int(y.sum())
@@ -500,12 +569,16 @@ def main():
     nc2_rows = nc_shuffle_entropy_features(
         labeled, args.seed, feats=entropy_feats,
         bin_fn=lambda r: (r["backend"], r["features"].get("op_add")))
+    nc2b_rows = nc_shuffle_entropy_features(
+        labeled, args.seed, feats=list(VOTE_CONTROL_FEATURES),
+        bin_fn=lambda r: (r["backend"], r["features"].get("op_add")))
     nc3_rows = gaussian_noise_features(labeled, entropy_feats, args.seed)
     nc4_rows = global_label_shuffle(labeled, args.seed)
     nc5_rows = shift_labels_within_chain(labeled)
     small = {"n_boot": max(200, args.n_boot // 4)}
     nc = {
         "nc2_shuffle_entropy": ladder_report(nc2_rows, args.seed, small["n_boot"]),
+        "nc2b_shuffle_votes": ladder_report(nc2b_rows, args.seed, small["n_boot"]),
         "nc3_gaussian_noise": ladder_report(nc3_rows, args.seed, small["n_boot"]),
         "nc4_global_label_shuffle": ladder_report(nc4_rows, args.seed, small["n_boot"]),
         "nc5_step_shift": ladder_report(nc5_rows, args.seed, small["n_boot"]),
@@ -547,7 +620,9 @@ def main():
         "gov_manifest": gov_manifest, "hact_manifest": hact_manifest,
         "n_decisions": len(decision_rows), "n_hact": len(hact_joinable),
         "n_orphans": len(orphans), "n_joined": len(joined),
-        "n_unjoined": n_unjoined,
+        "n_unjoined": n_unjoined, "n_dup_hact_replaced": n_dup_hact,
+        "n_cross_replicate_twin_ids": n_twin_ids,
+        "n_twin_label_conflicts": twin_label_conflicts,
         "nests": {k: v for k, v in NESTS.items()},
         "t1": t1, "t2": t2, "t3": t3,
     }
