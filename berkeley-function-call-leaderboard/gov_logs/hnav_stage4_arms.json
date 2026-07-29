@@ -1,0 +1,33 @@
+[
+  {
+    "label": "baseline",
+    "model": "Qwen/Qwen3-4B-Instruct-2507-FC",
+    "gov_env": null
+  },
+  {
+    "label": "a1_random",
+    "model": "Qwen/Qwen3-4B-Instruct-2507-FC-HACT",
+    "gov_env": {
+      "GOV_ENABLED": "1", "GOV_DRY_RUN": "1", "GOV_POLICY": "geometry_only",
+      "GOV_ME_SHADOW": "1", "GOV_SIM_HIGH": "0.95", "GOV_DELTA": "0.32"
+    },
+    "extra_env": {
+      "HACT_ENABLED": "1", "HACT_POLICY": "random_select", "HACT_N": "8",
+      "HACT_TEMP": "0.7", "HACT_LOGPROBS": "5", "HACT_GATE_RECALL": "0",
+      "HACT_SEED": "20260728"
+    }
+  },
+  {
+    "label": "a2_majority",
+    "model": "Qwen/Qwen3-4B-Instruct-2507-FC-HACT",
+    "gov_env": {
+      "GOV_ENABLED": "1", "GOV_DRY_RUN": "1", "GOV_POLICY": "geometry_only",
+      "GOV_ME_SHADOW": "1", "GOV_SIM_HIGH": "0.95", "GOV_DELTA": "0.32"
+    },
+    "extra_env": {
+      "HACT_ENABLED": "1", "HACT_POLICY": "majority", "HACT_N": "8",
+      "HACT_TEMP": "0.7", "HACT_LOGPROBS": "5", "HACT_GATE_RECALL": "0",
+      "HACT_SEED": "20260728"
+    }
+  }
+]

@@ -1,0 +1,117 @@
+{
+  "git_head": "26dd172e8a53027466314e67c599025bce5876bb",
+  "p_hat": 0.408544,
+  "per_arm": [
+    {
+      "replicate": "rep01",
+      "backend": "kv",
+      "n_questions": 105,
+      "n_gold_uncarried_by_store": 85,
+      "n_rescued_any_sample": 3,
+      "n_rescued_modal_sample": 2,
+      "expected_dacc_modal": 0.0078,
+      "example_rescued_qids": [
+        "memory_12-customer-12",
+        "memory_4-customer-4"
+      ]
+    },
+    {
+      "replicate": "rep01",
+      "backend": "vector",
+      "n_questions": 105,
+      "n_gold_uncarried_by_store": 74,
+      "n_rescued_any_sample": 9,
+      "n_rescued_modal_sample": 9,
+      "expected_dacc_modal": 0.035,
+      "example_rescued_qids": [
+        "memory_11-customer-11",
+        "memory_12-customer-12",
+        "memory_15-customer-15",
+        "memory_4-customer-4",
+        "memory_5-customer-5"
+      ]
+    },
+    {
+      "replicate": "rep02",
+      "backend": "kv",
+      "n_questions": 105,
+      "n_gold_uncarried_by_store": 78,
+      "n_rescued_any_sample": 5,
+      "n_rescued_modal_sample": 4,
+      "expected_dacc_modal": 0.0156,
+      "example_rescued_qids": [
+        "memory_30-healthcare-0",
+        "memory_31-healthcare-1",
+        "memory_32-healthcare-2",
+        "memory_53-healthcare-23"
+      ]
+    },
+    {
+      "replicate": "rep02",
+      "backend": "vector",
+      "n_questions": 105,
+      "n_gold_uncarried_by_store": 74,
+      "n_rescued_any_sample": 9,
+      "n_rescued_modal_sample": 9,
+      "expected_dacc_modal": 0.035,
+      "example_rescued_qids": [
+        "memory_11-customer-11",
+        "memory_12-customer-12",
+        "memory_15-customer-15",
+        "memory_4-customer-4",
+        "memory_5-customer-5"
+      ]
+    },
+    {
+      "replicate": "rep03",
+      "backend": "kv",
+      "n_questions": 105,
+      "n_gold_uncarried_by_store": 75,
+      "n_rescued_any_sample": 5,
+      "n_rescued_modal_sample": 4,
+      "expected_dacc_modal": 0.0156,
+      "example_rescued_qids": [
+        "memory_30-healthcare-0",
+        "memory_31-healthcare-1",
+        "memory_32-healthcare-2",
+        "memory_53-healthcare-23"
+      ]
+    },
+    {
+      "replicate": "rep03",
+      "backend": "vector",
+      "n_questions": 105,
+      "n_gold_uncarried_by_store": 74,
+      "n_rescued_any_sample": 9,
+      "n_rescued_modal_sample": 9,
+      "expected_dacc_modal": 0.035,
+      "example_rescued_qids": [
+        "memory_11-customer-11",
+        "memory_12-customer-12",
+        "memory_15-customer-15",
+        "memory_4-customer-4",
+        "memory_5-customer-5"
+      ]
+    }
+  ],
+  "logs": [
+    {
+      "dir": "gov_logs/hnav_shadow\\rep01_hact_shadow",
+      "sha": "9b438ea5c350718c"
+    },
+    {
+      "dir": "gov_logs/hnav_shadow\\rep02_hact_shadow",
+      "sha": "3f712aab3d6040ff"
+    },
+    {
+      "dir": "gov_logs/hnav_shadow\\rep03_hact_shadow",
+      "sha": "1de3513fbbd8ff53"
+    }
+  ],
+  "mean_expected_dacc": {
+    "kv": 0.013,
+    "vector": 0.035
+  },
+  "go_criterion": "mean expected_dacc_modal >= 0.02 on >= 1 backend",
+  "go": true
+}
