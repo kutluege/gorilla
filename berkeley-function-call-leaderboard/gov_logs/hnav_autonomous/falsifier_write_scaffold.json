@@ -1,0 +1,68 @@
+{
+  "git_head": "176ca16be226fe177a9d00cf4e4e970c292ca427",
+  "p_hat": 0.408544,
+  "capacity": {
+    "max_archival_size": 50,
+    "max_archival_entry_length": 2000
+  },
+  "arms": [
+    "gov_logs/hnav_shadow\\rep01_hact_shadow",
+    "gov_logs/hnav_shadow\\rep02_hact_shadow",
+    "gov_logs/hnav_shadow\\rep03_hact_shadow"
+  ],
+  "replicates": [
+    "rep01",
+    "rep02",
+    "rep03"
+  ],
+  "per_backend": {
+    "kv": {
+      "n_questions": 465,
+      "n_prereq_turns": 33960,
+      "n_no_write_turns": 24480,
+      "answerable_base": 55,
+      "answerable_base_rate": 0.1183,
+      "observed_correct": 44,
+      "observed_accuracy": 0.0946,
+      "variants": {
+        "all_turns": {
+          "answerable": 175,
+          "answerable_rate": 0.3763,
+          "delta_answerable_rate": 0.2581,
+          "expected_dacc": 0.1054
+        },
+        "no_write": {
+          "answerable": 143,
+          "answerable_rate": 0.3075,
+          "delta_answerable_rate": 0.1892,
+          "expected_dacc": 0.0773
+        }
+      }
+    },
+    "vector": {
+      "n_questions": 465,
+      "n_prereq_turns": 33960,
+      "n_no_write_turns": 26730,
+      "answerable_base": 87,
+      "answerable_base_rate": 0.1871,
+      "observed_correct": 61,
+      "observed_accuracy": 0.1312,
+      "variants": {
+        "all_turns": {
+          "answerable": 315,
+          "answerable_rate": 0.6774,
+          "delta_answerable_rate": 0.4903,
+          "expected_dacc": 0.2003
+        },
+        "no_write": {
+          "answerable": 282,
+          "answerable_rate": 0.6065,
+          "delta_answerable_rate": 0.4194,
+          "expected_dacc": 0.1713
+        }
+      }
+    }
+  },
+  "go_criterion": "expected_dacc(no_write) >= 0.02 on >= 1 backend",
+  "go": true
+}

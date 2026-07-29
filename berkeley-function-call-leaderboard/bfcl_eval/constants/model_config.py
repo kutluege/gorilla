@@ -62,6 +62,7 @@ from bfcl_eval.model_handler.local_inference.qwen_fc import QwenFCHandler
 from bfcl_eval.model_handler.local_inference.qwen_gov import QwenGovHandler
 from bfcl_eval.model_handler.local_inference.qwen_hact import QwenHactHandler
 from bfcl_eval.model_handler.local_inference.qwen_mig import QwenMIGHandler
+from bfcl_eval.model_handler.local_inference.qwen_scaffold import QwenScaffoldHandler
 from bfcl_eval.model_handler.local_inference.qwen_se import (
     QwenSemanticEntropyHandler,
 )
@@ -1728,6 +1729,23 @@ local_inference_model_map = {
         org="Qwen",
         license="apache-2.0",
         model_handler=QwenHactHandler,
+        input_price=None,
+        output_price=None,
+        is_fc_model=True,
+        underscore_to_dot=False,
+    ),
+    # Deterministic write-scaffold variant (autonomous-loop alt5R). Archives the
+    # user turn text when a prereq turn ends with no resolved memory write --
+    # a runtime agent memory policy (MemGPT-style auto-archiving), configured
+    # via SCAF_* env vars (see model_handler/local_inference/qwen_scaffold.py).
+    # Own registry id so the -FC baseline stays byte-identical for A/B.
+    "Qwen/Qwen3-4B-Instruct-2507-FC-SCAF": ModelConfig(
+        model_name="Qwen/Qwen3-4B-Instruct-2507",
+        display_name="Qwen3-4B-Instruct-2507 (FC + Deterministic Write Scaffold)",
+        url="https://huggingface.co/Qwen/Qwen3-4B-Instruct-2507",
+        org="Qwen",
+        license="apache-2.0",
+        model_handler=QwenScaffoldHandler,
         input_price=None,
         output_price=None,
         is_fc_model=True,
