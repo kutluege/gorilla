@@ -1,0 +1,10 @@
+{"method": "M1", "name": "read scaffold", "slot": "directive #4", "falsifier": "GO (stratum n=74 p=0.000, recall 22/22)", "campaign": "C1 (running)", "ts": "2026-08-08T15:17:32Z", "status": "falsifier_done"}
+{"method": "M2", "name": "packed capture", "slot": "directive #3", "falsifier": "GO (+13.6pp carried vs per-turn)", "campaign": "C2 (gated on C1)", "ts": "2026-08-08T15:17:32Z", "status": "falsifier_done"}
+{"method": "M3", "name": "read budget top_k", "slot": "stage5", "falsifier": "GO recall half only (+5.8pp r@20-r@5); accuracy half unfalsifiable offline", "campaign": "C3", "ts": "2026-08-08T15:17:32Z", "status": "falsifier_done"}
+{"method": "M4", "name": "probe formulation", "slot": "stage5", "falsifier": "pending offline core_augmented check; model_authored unfalsifiable offline", "campaign": "C3 piggyback", "ts": "2026-08-08T15:17:32Z", "status": "falsifier_done"}
+{"method": "M5", "name": "quote-grounded answers", "slot": "stage5", "falsifier": "GO (baseline lenient-strict gap 0.024 <= 0.25x lenient)", "campaign": "C4", "ts": "2026-08-08T15:17:32Z", "status": "falsifier_done"}
+{"method": "M6", "name": "abstractive write (designed negative)", "slot": "directive #6", "falsifier": "GO (4x compression 0.632 vs 0.884)", "campaign": "C5", "ts": "2026-08-08T15:17:32Z", "status": "falsifier_done"}
+{"method": "M7", "name": "capacity management", "slot": "directive #8", "falsifier": "GO (+6pp over FIFO on student)", "campaign": "C5", "ts": "2026-08-08T15:17:32Z", "status": "falsifier_done"}
+{"method": "M8", "name": "kv key/read asymmetry", "slot": "stage5", "falsifier": "GO (24-token keys +5.8pp r@5 at fixed index)", "campaign": "C6", "ts": "2026-08-08T15:17:32Z", "status": "falsifier_done"}
+{"method": "M9", "name": "rerank 20->5", "slot": "directive #2", "falsifier": "GO (0.971 vs 0.90x0.993 bar)", "campaign": "C3", "ts": "2026-08-08T15:17:32Z", "status": "falsifier_done"}
+{"method": "M10", "name": "evidence nudge", "slot": "stage5", "falsifier": "GO (12.3% abstain-while-carried)", "campaign": "C4", "ts": "2026-08-08T15:17:32Z", "status": "falsifier_done"}

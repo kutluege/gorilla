@@ -50,6 +50,8 @@ def make_handler(tmp, **over):
     h.rag_enabled = True
     h.rag_mode = "read_verbatim"
     h.rag_write = "none"
+    h.rag_answer = "none"
+    h.rag_nudge = "none"
     h.rag_top_k = 5
     h.rag_pack_len = 2000
     h.rag_max_entries = 50
@@ -302,6 +304,54 @@ def test_write_and_read_coexist():
     calls = h.decode_execute("ok", False)
     check("combined arm: prereq turn gets the WRITE path",
           calls and calls[0].startswith("archival_memory_add("), calls)
+
+
+def test_nudge_appends_to_injected_result_only():
+    from bfcl_eval.model_handler.local_inference.qwen_rag import (
+        NUDGE_NULL_TEXT, NUDGE_TEXT)
+    check("nudge and null control are length-matched (+/- 15 chars)",
+          abs(len(NUDGE_TEXT) - len(NUDGE_NULL_TEXT)) <= 15,
+          (len(NUDGE_TEXT), len(NUDGE_NULL_TEXT)))
+    tmp = tempfile.mkdtemp(prefix="rag_")
+    h = make_handler(tmp, rag_nudge="nudge")
+    st = prime(h, "memory_vector_3-customer-3")
+
+    captured = {}
+
+    def fake_super(inference_data, execution_results, model_response_data):
+        captured["results"] = execution_results
+        return inference_data
+
+    # inject -> nudge_pending set
+    h.decode_execute("I do not know.", False)
+    check("nudge_pending set by injection", st.get("nudge_pending") is True)
+    import unittest.mock as mock
+    with mock.patch(
+        "bfcl_eval.model_handler.local_inference.qwen_gov."
+        "QwenGovHandler._add_execution_results_prompting",
+        side_effect=fake_super,
+    ):
+        h._add_execution_results_prompting({}, ["{'result': []}"], {})
+        check("nudge appended to the injected read's result",
+              captured["results"][0].endswith(NUDGE_TEXT))
+        # a later model-issued call's results must NOT be nudged
+        h._add_execution_results_prompting({}, ["plain result"], {})
+        check("subsequent results untouched",
+              captured["results"] == ["plain result"], captured["results"])
+
+
+def test_answer_modes_frozen_constants():
+    from bfcl_eval.model_handler.local_inference.qwen_rag import (
+        EVIDENCE_INSTRUCTION, EVIDENCE_IRRELEVANT_INSTRUCTION)
+    for name, text in (("evidence", EVIDENCE_INSTRUCTION),
+                       ("evidence_irrelevant",
+                        EVIDENCE_IRRELEVANT_INSTRUCTION)):
+        check(f"{name} instruction is answer-agnostic",
+              all(w not in text.lower() for w in
+                  ("customer", "student", "michael", "seattle", "finance")))
+    check("both demand the same three-field format",
+          "'evidence'" in EVIDENCE_INSTRUCTION
+          and "'evidence'" in EVIDENCE_IRRELEVANT_INSTRUCTION)
 
 
 def test_no_leakage_in_module():

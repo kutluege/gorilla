@@ -83,6 +83,34 @@ from overrides import override
 
 MODES = ("none", "read_verbatim", "read_irrelevant", "instruction_only")
 WRITE_MODES = ("none", "pack", "pack_shuffled", "per_turn")
+ANSWER_MODES = ("none", "evidence", "evidence_irrelevant")
+NUDGE_MODES = ("none", "nudge", "nudge_null")
+
+# M5 quote-grounded answer formulation (frozen constants, answer-agnostic,
+# identical across entries and backends). The strict answer-field regrade is
+# the pre-registered guard against grader-artifact gains.
+EVIDENCE_INSTRUCTION = (
+    "When you answer, respond in the format {'answer': ..., 'evidence': ..., "
+    "'context': ...} where 'evidence' is the exact verbatim snippet from your "
+    "memory that your answer came from."
+)
+EVIDENCE_IRRELEVANT_INSTRUCTION = (
+    "When you answer, respond in the format {'answer': ..., 'evidence': ..., "
+    "'context': ...} where 'evidence' is an exact verbatim snippet from your "
+    "memory that is NOT related to the question."
+)
+
+# M10 evidence-conditioned nudge, appended to the INJECTED read's tool-result
+# payload (precedent: mig_reranker rewrites result payloads agent-side).
+# Treatment and control are length-matched; only the instruction differs.
+NUDGE_TEXT = (
+    "\n[Note: if any entry above contains the answer to the user's question, "
+    "state that answer explicitly; only say you do not know if none does.]"
+)
+NUDGE_NULL_TEXT = (
+    "\n[Note: the entries above were retrieved from the archival memory "
+    "store as part of the current conversation session's record keeping.]"
+)
 
 # Frozen control probe: same call, same extra step, same context growth, but
 # carries no information about the specific question. (Note, recorded at
@@ -124,6 +152,12 @@ class QwenRagHandler(QwenGovHandler):
         self.rag_write = os.getenv("RAG_WRITE", "none").strip().lower()
         if self.rag_write not in WRITE_MODES:
             raise ValueError(f"RAG_WRITE must be one of {WRITE_MODES}")
+        self.rag_answer = os.getenv("RAG_ANSWER", "none").strip().lower()
+        if self.rag_answer not in ANSWER_MODES:
+            raise ValueError(f"RAG_ANSWER must be one of {ANSWER_MODES}")
+        self.rag_nudge = os.getenv("RAG_NUDGE", "none").strip().lower()
+        if self.rag_nudge not in NUDGE_MODES:
+            raise ValueError(f"RAG_NUDGE must be one of {NUDGE_MODES}")
         self.rag_top_k = int(os.getenv("RAG_TOP_K", "5"))
         self.rag_pack_len = int(os.getenv("RAG_PACK_LEN", "2000"))
         self.rag_max_entries = int(os.getenv("RAG_MAX_ENTRIES", "50"))
@@ -172,18 +206,26 @@ class QwenRagHandler(QwenGovHandler):
             st["buffer"] = ""
             st["n_written"] = 0
             st["used_keys"] = set()
-        if (self.rag_mode == "instruction_only"
-                and self._rag_entry_gated(test_id)):
-            # Append the frozen nudge to the system message that
+        appends = []
+        if self.rag_mode == "instruction_only":
+            appends.append(READ_INSTRUCTION)
+        if self.rag_answer == "evidence":
+            appends.append(EVIDENCE_INSTRUCTION)
+        elif self.rag_answer == "evidence_irrelevant":
+            appends.append(EVIDENCE_IRRELEVANT_INSTRUCTION)
+        if appends and self._rag_entry_gated(test_id):
+            # Append the frozen instruction(s) to the system message that
             # system_prompt_pre_processing_chat_model just built. Constant,
             # answer-agnostic, identical across entries and backends.
             try:
                 first = test_entry["question"][0][0]
-                if first.get("role") == "system" \
-                        and READ_INSTRUCTION not in str(first.get("content")):
-                    first["content"] = f"{first['content']}\n\n{READ_INSTRUCTION}"
+                if first.get("role") == "system":
+                    for text in appends:
+                        if text not in str(first.get("content")):
+                            first["content"] = f"{first['content']}\n\n{text}"
                     self._log({"ts": time.time(), "event": "instruction_added",
-                               "test_id": test_id, "backend": st["backend"]})
+                               "test_id": test_id, "backend": st["backend"],
+                               "n_appends": len(appends)})
             except (KeyError, IndexError, TypeError):
                 self._log({"ts": time.time(), "event": "instruction_skip",
                            "test_id": test_id, "reason": "no system message"})
@@ -337,6 +379,8 @@ class QwenRagHandler(QwenGovHandler):
             return calls
         call = self._build_read_call(st["backend"], probe)
         st["read_turn"] = st["turn"]
+        if self.rag_nudge != "none":
+            st["nudge_pending"] = True
         self._log({
             "ts": time.time(), "event": "read_inject", "test_id": test_id,
             "turn": st["turn"], "backend": st["backend"], "mode": self.rag_mode,
@@ -345,3 +389,23 @@ class QwenRagHandler(QwenGovHandler):
         if self.rag_verbose:
             print(f"[RAG] {test_id} turn={st['turn']} -> {call[:90]}")
         return [call]
+
+    @override
+    def _add_execution_results_prompting(
+        self, inference_data: dict, execution_results: list[str],
+        model_response_data: dict
+    ) -> dict:
+        st = self._state()
+        if st.pop("nudge_pending", False) and execution_results:
+            # M10: append the frozen nudge (or its length-matched null
+            # control) to the INJECTED read's tool-result payload before it
+            # enters context. Agent-side result presentation only; precedent:
+            # mig_reranker rewrites result payloads the same way.
+            text = NUDGE_TEXT if self.rag_nudge == "nudge" else NUDGE_NULL_TEXT
+            execution_results = list(execution_results)
+            execution_results[0] = f"{execution_results[0]}{text}"
+            self._log({"ts": time.time(), "event": "result_nudge",
+                       "test_id": st.get("test_id", ""), "turn": st["turn"],
+                       "nudge_mode": self.rag_nudge})
+        return super()._add_execution_results_prompting(
+            inference_data, execution_results, model_response_data)
