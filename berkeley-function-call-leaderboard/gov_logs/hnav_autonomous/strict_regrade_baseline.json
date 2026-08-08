@@ -1,0 +1,96 @@
+{
+  "dirs": {
+    "result_hnav_stage4\\rep01\\baseline\\Qwen_Qwen3-4B-Instruct-2507-FC": {
+      "kv": {
+        "n": 155,
+        "lenient": 13,
+        "strict": 11,
+        "answer_field_missing": 24,
+        "context_only_passes": [
+          "memory_kv_84-student-4",
+          "memory_kv_143-notetaker-13"
+        ]
+      },
+      "vector": {
+        "n": 155,
+        "lenient": 18,
+        "strict": 15,
+        "answer_field_missing": 7,
+        "context_only_passes": [
+          "memory_vector_1-customer-1",
+          "memory_vector_84-student-4",
+          "memory_vector_138-notetaker-8"
+        ]
+      }
+    },
+    "result_hnav_stage4\\rep02\\baseline\\Qwen_Qwen3-4B-Instruct-2507-FC": {
+      "kv": {
+        "n": 155,
+        "lenient": 27,
+        "strict": 23,
+        "answer_field_missing": 16,
+        "context_only_passes": [
+          "memory_kv_30-healthcare-0",
+          "memory_kv_38-healthcare-8",
+          "memory_kv_44-healthcare-14",
+          "memory_kv_84-student-4"
+        ]
+      },
+      "vector": {
+        "n": 155,
+        "lenient": 17,
+        "strict": 12,
+        "answer_field_missing": 7,
+        "context_only_passes": [
+          "memory_vector_0-customer-0",
+          "memory_vector_1-customer-1",
+          "memory_vector_44-healthcare-14",
+          "memory_vector_84-student-4",
+          "memory_vector_143-notetaker-13"
+        ]
+      }
+    },
+    "result_hnav_stage4\\rep03\\baseline\\Qwen_Qwen3-4B-Instruct-2507-FC": {
+      "kv": {
+        "n": 155,
+        "lenient": 12,
+        "strict": 9,
+        "answer_field_missing": 26,
+        "context_only_passes": [
+          "memory_kv_77-finance-22",
+          "memory_kv_84-student-4",
+          "memory_kv_143-notetaker-13"
+        ]
+      },
+      "vector": {
+        "n": 155,
+        "lenient": 22,
+        "strict": 19,
+        "answer_field_missing": 6,
+        "context_only_passes": [
+          "memory_vector_0-customer-0",
+          "memory_vector_84-student-4",
+          "memory_vector_138-notetaker-8"
+        ]
+      }
+    }
+  },
+  "pooled": {
+    "kv": {
+      "n": 465,
+      "lenient": 52,
+      "strict": 43,
+      "lenient_rate": 0.1118,
+      "strict_rate": 0.0925,
+      "gap": 0.0194
+    },
+    "vector": {
+      "n": 465,
+      "lenient": 57,
+      "strict": 46,
+      "lenient_rate": 0.1226,
+      "strict_rate": 0.0989,
+      "gap": 0.0237
+    }
+  }
+}
