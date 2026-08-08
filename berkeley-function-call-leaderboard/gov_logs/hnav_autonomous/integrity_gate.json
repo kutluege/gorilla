@@ -1,0 +1,19 @@
+{
+  "protected": [
+    "berkeley-function-call-leaderboard/bfcl_eval/data",
+    "berkeley-function-call-leaderboard/bfcl_eval/eval_checker"
+  ],
+  "clean": true,
+  "checks": {
+    "working_tree": "clean",
+    "diff_b0b7d12..HEAD": "clean"
+  },
+  "head": "a988401e4e41433d96761af2a4236cfd4a72e6de",
+  "hashes_sha256_16": {
+    "berkeley-function-call-leaderboard/bfcl_eval/data/BFCL_v4_memory.json": "67867501782b23ca",
+    "berkeley-function-call-leaderboard/bfcl_eval/data/possible_answer/BFCL_v4_memory.json": "a89d40924c82fac4",
+    "berkeley-function-call-leaderboard/bfcl_eval/eval_checker/agentic_eval/agentic_checker.py": "c6a08f360763cbbf",
+    "berkeley-function-call-leaderboard/bfcl_eval/eval_checker/eval_runner.py": "b662f2bec5b5c12c",
+    "berkeley-function-call-leaderboard/bfcl_eval/eval_checker/eval_runner_helper.py": "af881de88004f41a"
+  }
+}

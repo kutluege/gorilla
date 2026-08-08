@@ -182,6 +182,12 @@ def run():
     check("baseline: GOV_ENABLED=0 and stale GOV_* scrubbed",
           env_b["GOV_ENABLED"] == "0"
           and "GOV_STALE" not in env_b and env_b["PATH"] == "p")
+    dirty = {"PATH": "p", "HACT_ENABLED": "1", "SCAF_ENABLED": "1",
+             "RAG_ENABLED": "1", "RAG_MODE": "read_verbatim"}
+    env_d = build_arm_env(cfg, BASELINE_ARM, 1, dirty)
+    check("baseline: stale HACT_/SCAF_/RAG_ operator exports scrubbed",
+          not any(k.startswith(("HACT_", "SCAF_", "RAG_")) for k in env_d),
+          sorted(k for k in env_d if k.startswith(("HACT_", "SCAF_", "RAG_"))))
     check("baseline: calibrated values NOT applied",
           "GOV_SIM_HIGH" not in env_b)
     env_g1 = build_arm_env(cfg, GOVERNED_ARM, 1, base_env)

@@ -146,7 +146,7 @@ def build_arm_env(cfg, arm, rep, base_env=None):
     # HACT_*/SCAF_* scrubbed like GOV_*: an operator shell export must never
     # leak instrumentation into an arm that did not declare it (a stray
     # SCAF_ENABLED would silently turn the BASELINE arm into a scaffold arm).
-    stale = [k for k in env if k.startswith(("GOV_", "HACT_", "SCAF_"))]
+    stale = [k for k in env if k.startswith(("GOV_", "HACT_", "SCAF_", "RAG_"))]
     for k in stale:
         del env[k]
     spec = next((a for a in arm_specs(cfg) if a["label"] == arm), None)
@@ -185,7 +185,7 @@ def build_arm_env(cfg, arm, rep, base_env=None):
 
 def gov_env_of(env):
     return {k: v for k, v in sorted(env.items())
-            if k.startswith(("GOV_", "HACT_", "SCAF_"))}
+            if k.startswith(("GOV_", "HACT_", "SCAF_", "RAG_"))}
 
 
 def _calibration_sha(calib_path):
