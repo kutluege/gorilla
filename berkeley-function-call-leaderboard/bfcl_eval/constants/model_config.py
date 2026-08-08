@@ -62,6 +62,7 @@ from bfcl_eval.model_handler.local_inference.qwen_fc import QwenFCHandler
 from bfcl_eval.model_handler.local_inference.qwen_gov import QwenGovHandler
 from bfcl_eval.model_handler.local_inference.qwen_hact import QwenHactHandler
 from bfcl_eval.model_handler.local_inference.qwen_mig import QwenMIGHandler
+from bfcl_eval.model_handler.local_inference.qwen_rag import QwenRagHandler
 from bfcl_eval.model_handler.local_inference.qwen_scaffold import QwenScaffoldHandler
 from bfcl_eval.model_handler.local_inference.qwen_se import (
     QwenSemanticEntropyHandler,
@@ -1746,6 +1747,24 @@ local_inference_model_map = {
         org="Qwen",
         license="apache-2.0",
         model_handler=QwenScaffoldHandler,
+        input_price=None,
+        output_price=None,
+        is_fc_model=True,
+        underscore_to_dot=False,
+    ),
+    # Retrieve-then-generate READ scaffold (RAG program, method M1). Injects
+    # one archival read on no-call question turns -- the read-side mirror of
+    # -FC-SCAF, motivated by the tier-conditional finding that archival-only
+    # gold converts at ~0 because the agent never reads archival at question
+    # time. Configured via RAG_* env vars (qwen_rag.py). Own registry id so
+    # the -FC baseline stays byte-identical for A/B.
+    "Qwen/Qwen3-4B-Instruct-2507-FC-RAG": ModelConfig(
+        model_name="Qwen/Qwen3-4B-Instruct-2507",
+        display_name="Qwen3-4B-Instruct-2507 (FC + Read Scaffold)",
+        url="https://huggingface.co/Qwen/Qwen3-4B-Instruct-2507",
+        org="Qwen",
+        license="apache-2.0",
+        model_handler=QwenRagHandler,
         input_price=None,
         output_price=None,
         is_fc_model=True,

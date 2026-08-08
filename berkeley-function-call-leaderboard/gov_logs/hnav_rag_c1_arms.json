@@ -1,0 +1,39 @@
+[
+  {
+    "label": "baseline",
+    "model": "Qwen/Qwen3-4B-Instruct-2507-FC",
+    "gov_env": null
+  },
+  {
+    "label": "read_verbatim",
+    "model": "Qwen/Qwen3-4B-Instruct-2507-FC-RAG",
+    "gov_env": null,
+    "extra_env": {
+      "RAG_ENABLED": "1",
+      "RAG_MODE": "read_verbatim",
+      "RAG_TOP_K": "5",
+      "RAG_LOG_FILE": "rag_log.jsonl"
+    }
+  },
+  {
+    "label": "read_irrelevant",
+    "model": "Qwen/Qwen3-4B-Instruct-2507-FC-RAG",
+    "gov_env": null,
+    "extra_env": {
+      "RAG_ENABLED": "1",
+      "RAG_MODE": "read_irrelevant",
+      "RAG_TOP_K": "5",
+      "RAG_LOG_FILE": "rag_log.jsonl"
+    }
+  },
+  {
+    "label": "read_instruction",
+    "model": "Qwen/Qwen3-4B-Instruct-2507-FC-RAG",
+    "gov_env": null,
+    "extra_env": {
+      "RAG_ENABLED": "1",
+      "RAG_MODE": "instruction_only",
+      "RAG_LOG_FILE": "rag_log.jsonl"
+    }
+  }
+]

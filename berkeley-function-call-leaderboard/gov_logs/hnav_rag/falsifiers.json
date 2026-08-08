@@ -1,0 +1,179 @@
+{
+  "git_head": "11e5d16112e39a9de070bc41760dee5bb5553770",
+  "caps": {
+    "max_entries": 50,
+    "max_len": 2000
+  },
+  "m2_packed_capture": {
+    "tables": {
+      "vector": {
+        "per_turn": {
+          "n_questions": 155,
+          "carried": 116,
+          "carried_rate": 0.7484,
+          "r_at_5": 0.7032,
+          "r_at_10": 0.7097,
+          "r_at_20": 0.729,
+          "r_at_50": 0.7484
+        },
+        "packed": {
+          "n_questions": 155,
+          "carried": 137,
+          "carried_rate": 0.8839,
+          "r_at_5": 0.8194,
+          "r_at_10": 0.8452,
+          "r_at_20": 0.8774,
+          "r_at_50": 0.8839
+        },
+        "sentences": {
+          "n_questions": 155,
+          "carried": 53,
+          "carried_rate": 0.3419,
+          "r_at_5": 0.2774,
+          "r_at_10": 0.2903,
+          "r_at_20": 0.3161,
+          "r_at_50": 0.3419
+        }
+      },
+      "kv": {
+        "per_turn": {
+          "n_questions": 155,
+          "carried": 116,
+          "carried_rate": 0.7484,
+          "r_at_5": 0.4,
+          "r_at_10": 0.4839,
+          "r_at_20": 0.6258,
+          "r_at_50": 0.7484
+        },
+        "packed": {
+          "n_questions": 155,
+          "carried": 137,
+          "carried_rate": 0.8839,
+          "r_at_5": 0.5032,
+          "r_at_10": 0.6516,
+          "r_at_20": 0.7548,
+          "r_at_50": 0.8839
+        },
+        "sentences": {
+          "n_questions": 155,
+          "carried": 53,
+          "carried_rate": 0.3419,
+          "r_at_5": 0.1935,
+          "r_at_10": 0.2065,
+          "r_at_20": 0.2516,
+          "r_at_50": 0.3419
+        }
+      }
+    },
+    "go": {
+      "criterion": "vector: packed carried-rate - per_turn carried-rate >= +0.10 AND packed r@5 >= per_turn r@5",
+      "frozen_before_compute": true,
+      "value_carried_delta": 0.1355,
+      "go": true
+    }
+  },
+  "m3_read_budget": {
+    "note": "accuracy half of the tradeoff is unfalsifiable offline by construction; this GO covers only the recall half",
+    "go": {
+      "criterion": "vector packed r@20 - r@5 >= +0.05",
+      "frozen_before_compute": true,
+      "value_r20_minus_r5": 0.058,
+      "go": true
+    }
+  },
+  "m6_abstractive_bound": {
+    "table": {
+      "n_questions": 155,
+      "packed_verbatim_carried": 137,
+      "carried_after_compression": {
+        "2x": {
+          "n": 115,
+          "rate": 0.7419
+        },
+        "4x": {
+          "n": 98,
+          "rate": 0.6323
+        },
+        "8x": {
+          "n": 74,
+          "rate": 0.4774
+        }
+      }
+    },
+    "go": {
+      "criterion": "carried-rate at 4x compression <= 0.75 x packed-verbatim carried-rate -> abstractive-loses hypothesis testable, run the live contrast",
+      "frozen_before_compute": true,
+      "value_4x_rate": 0.6323,
+      "value_packed_rate": 0.8839,
+      "go": true
+    }
+  },
+  "m7_capacity": {
+    "per_scenario": {
+      "student": {
+        "fifo_drop_new": {
+          "carried_rate": 0.9,
+          "r_at_5": 0.88
+        },
+        "drop_oldest": {
+          "carried_rate": 0.94,
+          "r_at_5": 0.88
+        },
+        "drop_longest_dupe": {
+          "carried_rate": 0.96,
+          "r_at_5": 0.86
+        },
+        "uncapped_ceiling": {
+          "carried_rate": 0.96,
+          "r_at_5": 0.88,
+          "entries_needed": 56
+        }
+      }
+    },
+    "go": {
+      "criterion": "best policy carried-rate - fifo_drop_new >= +0.03 on the overflowing scenario",
+      "frozen_before_compute": true,
+      "value_best_minus_fifo": 0.06,
+      "go": true,
+      "overflowing_scenario": "student"
+    }
+  },
+  "m9_rerank": {
+    "table": {
+      "n_carried_questions": 137,
+      "recall_top5": 0.927,
+      "recall_top20": 0.9927,
+      "recall_rerank20to5_bm25": 0.9708,
+      "recall_random5of20": 0.5547
+    },
+    "go": {
+      "criterion": "reranked-top5 recall >= 0.90 x r@20 (recovers the recall gain at k=5 context cost); else reject without GPU",
+      "frozen_before_compute": true,
+      "value": 0.9708,
+      "bar": 0.8934,
+      "go": true
+    }
+  },
+  "m10_abstention": {
+    "table": {
+      "kv": {
+        "n": 155,
+        "abstain": 129,
+        "abstain_and_carried": 9,
+        "abstain_and_core_carried": 6
+      },
+      "vector": {
+        "n": 155,
+        "abstain": 126,
+        "abstain_and_carried": 19,
+        "abstain_and_core_carried": 8
+      }
+    },
+    "go": {
+      "criterion": "abstain-and-carried >= 5% of questions on vector",
+      "frozen_before_compute": true,
+      "value": 0.1226,
+      "go": true
+    }
+  }
+}
