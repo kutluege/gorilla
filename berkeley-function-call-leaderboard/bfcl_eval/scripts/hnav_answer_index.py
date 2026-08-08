@@ -224,6 +224,7 @@ def validate_arm(result_dir: Path, score_dir: Path, backends=("kv", "vector")) -
         stores = load_final_stores(result_dir, backend)
         ok_ids, attempted = correct_ids(result_dir, score_dir, backend)
         strata = defaultdict(lambda: {"n": 0, "correct": 0})
+        tier_strata = defaultdict(lambda: {"n": 0, "correct": 0})
         for qid in sorted(attempted):
             core = core_qid(qid)
             gold = gold_index().get(core)
@@ -239,17 +240,38 @@ def validate_arm(result_dir: Path, score_dir: Path, backends=("kv", "vector")) -
                 stratum = "carried_retrievable" if reachable else "carried_not_retrievable"
             strata[stratum]["n"] += 1
             strata[stratum]["correct"] += int(qid in ok_ids)
-        rows = {}
-        for name, d in strata.items():
-            rows[name] = {
-                "n": d["n"],
-                "correct": d["correct"],
-                "p_correct": round(d["correct"] / d["n"], 6) if d["n"] else None,
+            # tier-conditional stratum: WHERE the gold is carried. Core is
+            # auto-dumped into context by add_memory_instruction_system_prompt;
+            # archival is only reachable through an explicit read call. The two
+            # tiers therefore have radically different conversion factors, and
+            # a tier-blind p_hat mis-prices any write landing in archival.
+            carrier_tiers = {t for t, _ in all_carriers}
+            if not carrier_tiers:
+                tstratum = "not_carried"
+            elif "core" in carrier_tiers:
+                tstratum = "core_carried"
+            else:
+                tstratum = "archival_only"
+            tier_strata[tstratum]["n"] += 1
+            tier_strata[tstratum]["correct"] += int(qid in ok_ids)
+
+        def _rows(d):
+            return {
+                name: {
+                    "n": s["n"],
+                    "correct": s["correct"],
+                    "p_correct": round(s["correct"] / s["n"], 6) if s["n"] else None,
+                }
+                for name, s in d.items()
             }
+
+        rows = _rows(strata)
+        trows = _rows(tier_strata)
         p_hi = rows.get("carried_retrievable", {}).get("p_correct")
         p_lo = rows.get("not_carried", {}).get("p_correct")
         out["backends"][backend] = {
             "strata": rows,
+            "by_tier": trows,
             "p_hat": round(p_hi - p_lo, 6) if (p_hi is not None and p_lo is not None) else None,
         }
     return out

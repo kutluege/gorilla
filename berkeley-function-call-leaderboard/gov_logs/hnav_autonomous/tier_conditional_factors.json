@@ -1,0 +1,472 @@
+{
+  "arms": {
+    "rep01_baseline": {
+      "backends": {
+        "kv": {
+          "by_tier": {
+            "archival_only": {
+              "correct": 1,
+              "n": 17,
+              "p_correct": 0.058824
+            },
+            "core_carried": {
+              "correct": 11,
+              "n": 22,
+              "p_correct": 0.5
+            },
+            "not_carried": {
+              "correct": 6,
+              "n": 116,
+              "p_correct": 0.051724
+            }
+          },
+          "p_hat": 0.29443,
+          "strata": {
+            "carried_not_retrievable": {
+              "correct": 3,
+              "n": 13,
+              "p_correct": 0.230769
+            },
+            "carried_retrievable": {
+              "correct": 9,
+              "n": 26,
+              "p_correct": 0.346154
+            },
+            "not_carried": {
+              "correct": 6,
+              "n": 116,
+              "p_correct": 0.051724
+            }
+          }
+        },
+        "vector": {
+          "by_tier": {
+            "archival_only": {
+              "correct": 0,
+              "n": 17,
+              "p_correct": 0.0
+            },
+            "core_carried": {
+              "correct": 14,
+              "n": 21,
+              "p_correct": 0.666667
+            },
+            "not_carried": {
+              "correct": 6,
+              "n": 117,
+              "p_correct": 0.051282
+            }
+          },
+          "p_hat": 0.348718,
+          "strata": {
+            "carried_not_retrievable": {
+              "correct": 0,
+              "n": 3,
+              "p_correct": 0.0
+            },
+            "carried_retrievable": {
+              "correct": 14,
+              "n": 35,
+              "p_correct": 0.4
+            },
+            "not_carried": {
+              "correct": 6,
+              "n": 117,
+              "p_correct": 0.051282
+            }
+          }
+        }
+      }
+    },
+    "rep01_hact_shadow": {
+      "backends": {
+        "kv": {
+          "by_tier": {
+            "archival_only": {
+              "correct": 0,
+              "n": 4,
+              "p_correct": 0.0
+            },
+            "core_carried": {
+              "correct": 8,
+              "n": 16,
+              "p_correct": 0.5
+            },
+            "not_carried": {
+              "correct": 6,
+              "n": 135,
+              "p_correct": 0.044444
+            }
+          },
+          "p_hat": 0.312699,
+          "strata": {
+            "carried_not_retrievable": {
+              "correct": 3,
+              "n": 6,
+              "p_correct": 0.5
+            },
+            "carried_retrievable": {
+              "correct": 5,
+              "n": 14,
+              "p_correct": 0.357143
+            },
+            "not_carried": {
+              "correct": 6,
+              "n": 135,
+              "p_correct": 0.044444
+            }
+          }
+        },
+        "vector": {
+          "by_tier": {
+            "archival_only": {
+              "correct": 0,
+              "n": 9,
+              "p_correct": 0.0
+            },
+            "core_carried": {
+              "correct": 15,
+              "n": 22,
+              "p_correct": 0.681818
+            },
+            "not_carried": {
+              "correct": 5,
+              "n": 124,
+              "p_correct": 0.040323
+            }
+          },
+          "p_hat": 0.476918,
+          "strata": {
+            "carried_not_retrievable": {
+              "correct": 0,
+              "n": 2,
+              "p_correct": 0.0
+            },
+            "carried_retrievable": {
+              "correct": 15,
+              "n": 29,
+              "p_correct": 0.517241
+            },
+            "not_carried": {
+              "correct": 5,
+              "n": 124,
+              "p_correct": 0.040323
+            }
+          }
+        }
+      }
+    },
+    "rep02_baseline": {
+      "backends": {
+        "kv": {
+          "by_tier": {
+            "archival_only": {
+              "correct": 0,
+              "n": 2,
+              "p_correct": 0.0
+            },
+            "core_carried": {
+              "correct": 14,
+              "n": 24,
+              "p_correct": 0.583333
+            },
+            "not_carried": {
+              "correct": 5,
+              "n": 129,
+              "p_correct": 0.03876
+            }
+          },
+          "p_hat": 0.502907,
+          "strata": {
+            "carried_not_retrievable": {
+              "correct": 1,
+              "n": 2,
+              "p_correct": 0.5
+            },
+            "carried_retrievable": {
+              "correct": 13,
+              "n": 24,
+              "p_correct": 0.541667
+            },
+            "not_carried": {
+              "correct": 5,
+              "n": 129,
+              "p_correct": 0.03876
+            }
+          }
+        },
+        "vector": {
+          "by_tier": {
+            "archival_only": {
+              "correct": 0,
+              "n": 7,
+              "p_correct": 0.0
+            },
+            "core_carried": {
+              "correct": 20,
+              "n": 27,
+              "p_correct": 0.740741
+            },
+            "not_carried": {
+              "correct": 5,
+              "n": 121,
+              "p_correct": 0.041322
+            }
+          },
+          "p_hat": 0.546913,
+          "strata": {
+            "carried_retrievable": {
+              "correct": 20,
+              "n": 34,
+              "p_correct": 0.588235
+            },
+            "not_carried": {
+              "correct": 5,
+              "n": 121,
+              "p_correct": 0.041322
+            }
+          }
+        }
+      }
+    },
+    "rep02_hact_shadow": {
+      "backends": {
+        "kv": {
+          "by_tier": {
+            "archival_only": {
+              "correct": 0,
+              "n": 10,
+              "p_correct": 0.0
+            },
+            "core_carried": {
+              "correct": 9,
+              "n": 17,
+              "p_correct": 0.529412
+            },
+            "not_carried": {
+              "correct": 6,
+              "n": 128,
+              "p_correct": 0.046875
+            }
+          },
+          "p_hat": 0.253125,
+          "strata": {
+            "carried_not_retrievable": {
+              "correct": 3,
+              "n": 7,
+              "p_correct": 0.428571
+            },
+            "carried_retrievable": {
+              "correct": 6,
+              "n": 20,
+              "p_correct": 0.3
+            },
+            "not_carried": {
+              "correct": 6,
+              "n": 128,
+              "p_correct": 0.046875
+            }
+          }
+        },
+        "vector": {
+          "by_tier": {
+            "archival_only": {
+              "correct": 0,
+              "n": 9,
+              "p_correct": 0.0
+            },
+            "core_carried": {
+              "correct": 15,
+              "n": 22,
+              "p_correct": 0.681818
+            },
+            "not_carried": {
+              "correct": 5,
+              "n": 124,
+              "p_correct": 0.040323
+            }
+          },
+          "p_hat": 0.476918,
+          "strata": {
+            "carried_not_retrievable": {
+              "correct": 0,
+              "n": 2,
+              "p_correct": 0.0
+            },
+            "carried_retrievable": {
+              "correct": 15,
+              "n": 29,
+              "p_correct": 0.517241
+            },
+            "not_carried": {
+              "correct": 5,
+              "n": 124,
+              "p_correct": 0.040323
+            }
+          }
+        }
+      }
+    },
+    "rep03_baseline": {
+      "backends": {
+        "kv": {
+          "by_tier": {
+            "archival_only": {
+              "correct": 0,
+              "n": 14,
+              "p_correct": 0.0
+            },
+            "core_carried": {
+              "correct": 14,
+              "n": 21,
+              "p_correct": 0.666667
+            },
+            "not_carried": {
+              "correct": 8,
+              "n": 120,
+              "p_correct": 0.066667
+            }
+          },
+          "p_hat": 0.35,
+          "strata": {
+            "carried_not_retrievable": {
+              "correct": 4,
+              "n": 11,
+              "p_correct": 0.363636
+            },
+            "carried_retrievable": {
+              "correct": 10,
+              "n": 24,
+              "p_correct": 0.416667
+            },
+            "not_carried": {
+              "correct": 8,
+              "n": 120,
+              "p_correct": 0.066667
+            }
+          }
+        },
+        "vector": {
+          "by_tier": {
+            "archival_only": {
+              "correct": 0,
+              "n": 23,
+              "p_correct": 0.0
+            },
+            "core_carried": {
+              "correct": 17,
+              "n": 23,
+              "p_correct": 0.73913
+            },
+            "not_carried": {
+              "correct": 4,
+              "n": 109,
+              "p_correct": 0.036697
+            }
+          },
+          "p_hat": 0.384356,
+          "strata": {
+            "carried_not_retrievable": {
+              "correct": 1,
+              "n": 8,
+              "p_correct": 0.125
+            },
+            "carried_retrievable": {
+              "correct": 16,
+              "n": 38,
+              "p_correct": 0.421053
+            },
+            "not_carried": {
+              "correct": 4,
+              "n": 109,
+              "p_correct": 0.036697
+            }
+          }
+        }
+      }
+    },
+    "rep03_hact_shadow": {
+      "backends": {
+        "kv": {
+          "by_tier": {
+            "archival_only": {
+              "correct": 0,
+              "n": 13,
+              "p_correct": 0.0
+            },
+            "core_carried": {
+              "correct": 9,
+              "n": 17,
+              "p_correct": 0.529412
+            },
+            "not_carried": {
+              "correct": 6,
+              "n": 125,
+              "p_correct": 0.048
+            }
+          },
+          "p_hat": 0.237714,
+          "strata": {
+            "carried_not_retrievable": {
+              "correct": 3,
+              "n": 9,
+              "p_correct": 0.333333
+            },
+            "carried_retrievable": {
+              "correct": 6,
+              "n": 21,
+              "p_correct": 0.285714
+            },
+            "not_carried": {
+              "correct": 6,
+              "n": 125,
+              "p_correct": 0.048
+            }
+          }
+        },
+        "vector": {
+          "by_tier": {
+            "archival_only": {
+              "correct": 0,
+              "n": 9,
+              "p_correct": 0.0
+            },
+            "core_carried": {
+              "correct": 15,
+              "n": 22,
+              "p_correct": 0.681818
+            },
+            "not_carried": {
+              "correct": 6,
+              "n": 124,
+              "p_correct": 0.048387
+            }
+          },
+          "p_hat": 0.468854,
+          "strata": {
+            "carried_not_retrievable": {
+              "correct": 0,
+              "n": 2,
+              "p_correct": 0.0
+            },
+            "carried_retrievable": {
+              "correct": 15,
+              "n": 29,
+              "p_correct": 0.517241
+            },
+            "not_carried": {
+              "correct": 6,
+              "n": 124,
+              "p_correct": 0.048387
+            }
+          }
+        }
+      }
+    }
+  },
+  "p_hat": {
+    "kv": 0.330708,
+    "pooled": 0.399625,
+    "vector": 0.446575
+  }
+}

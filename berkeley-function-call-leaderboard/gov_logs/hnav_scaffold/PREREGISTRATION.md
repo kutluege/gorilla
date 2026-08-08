@@ -71,3 +71,46 @@ test; the offline number assumes constant answerability→accuracy conversion
 and unchanged trajectories, both of which the live run will violate to some
 degree. Any live gain materially below this is itself informative about the
 conversion factor.
+
+---
+
+## AMENDMENT 1 — tier-conditional conversion factor (2026-08-08, BEFORE launch)
+
+The campaign pre-registered above has **not yet run**. Before launching it, a
+tier-conditional re-analysis of the same 6 shadow arm-replicates
+(`gov_logs/hnav_autonomous/tier_conditional_factors.json`, pooled in
+`tier_conditional_pooled.json`) found that the conversion factor
+`P_HAT = 0.408544` used by `falsifier_write_scaffold.py` is **tier-blind and
+mis-priced for this policy**:
+
+| gold carried in | kv n / p(correct) | vector n / p(correct) |
+|---|---|---|
+| core (auto-dumped into context) | 117 / 0.556 | 137 / **0.701** |
+| **archival only** | 60 / **0.017** | 74 / **0.000** |
+| not carried | 753 / 0.049 | 719 / 0.043 |
+
+Independently verified from the result logs: only 6 of 155 vector question
+entries issue any memory call, and exactly **1** ever touches archival. The
+agent answers from the in-context core dump and never reads archival memory.
+
+The scaffold writes to **archival**. Corrected standalone prediction
+(`Δanswerable × (p_archival − p_not_carried)`):
+
+| backend | falsifier Δanswerable | old expected ΔAcc | **corrected standalone ΔAcc** |
+|---|---|---|---|
+| kv | +0.189 | +0.077 | **−0.006 ≈ 0** |
+| vector | +0.419 | +0.171 | **−0.018 ≈ 0** |
+
+Range over a hypothetical read-conversion factor c (vector):
+`ΔAcc = 0.419 × (c − 0.043)` → c=0.25: +0.087; c=0.50: +0.192; c=0.70: +0.276.
+
+**Consequences, frozen now:**
+1. The scaffold campaign as originally specified (capture without read) is
+   predicted ≈ 0 by its own corrected instrument and will **not** be launched
+   standalone. H-S3's predicted answerability movement remains testable and is
+   retained.
+2. The capture policy is folded into the successor RAG program as arm
+   `pack+read` (capture × read interaction), pre-registered separately. The
+   read-conversion factor c is the first quantity that program measures (C1).
+3. Every future Δanswerability→ΔAcc conversion must use tier-conditional
+   factors and report a range over c, never a single pooled scalar.

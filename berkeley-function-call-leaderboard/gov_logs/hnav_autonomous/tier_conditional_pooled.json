@@ -1,0 +1,36 @@
+{
+  "kv": {
+    "archival_only": {
+      "n": 60,
+      "correct": 1,
+      "p_correct": 0.0167
+    },
+    "core_carried": {
+      "n": 117,
+      "correct": 65,
+      "p_correct": 0.5556
+    },
+    "not_carried": {
+      "n": 753,
+      "correct": 37,
+      "p_correct": 0.0491
+    }
+  },
+  "vector": {
+    "archival_only": {
+      "n": 74,
+      "correct": 0,
+      "p_correct": 0.0
+    },
+    "core_carried": {
+      "n": 137,
+      "correct": 96,
+      "p_correct": 0.7007
+    },
+    "not_carried": {
+      "n": 719,
+      "correct": 31,
+      "p_correct": 0.0431
+    }
+  }
+}
