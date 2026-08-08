@@ -1,0 +1,400 @@
+{
+  "arms": {
+    "rep01_a1_random": {
+      "backends": {
+        "kv": {
+          "p_hat": 0.355752,
+          "strata": {
+            "carried_not_retrievable": {
+              "correct": 5,
+              "n": 12,
+              "p_correct": 0.416667
+            },
+            "carried_retrievable": {
+              "correct": 12,
+              "n": 30,
+              "p_correct": 0.4
+            },
+            "not_carried": {
+              "correct": 5,
+              "n": 113,
+              "p_correct": 0.044248
+            }
+          }
+        },
+        "vector": {
+          "p_hat": 0.369589,
+          "strata": {
+            "carried_not_retrievable": {
+              "correct": 1,
+              "n": 3,
+              "p_correct": 0.333333
+            },
+            "carried_retrievable": {
+              "correct": 17,
+              "n": 41,
+              "p_correct": 0.414634
+            },
+            "not_carried": {
+              "correct": 5,
+              "n": 111,
+              "p_correct": 0.045045
+            }
+          }
+        }
+      }
+    },
+    "rep01_a2_majority": {
+      "backends": {
+        "kv": {
+          "p_hat": 0.323211,
+          "strata": {
+            "carried_not_retrievable": {
+              "correct": 3,
+              "n": 15,
+              "p_correct": 0.2
+            },
+            "carried_retrievable": {
+              "correct": 10,
+              "n": 26,
+              "p_correct": 0.384615
+            },
+            "not_carried": {
+              "correct": 7,
+              "n": 114,
+              "p_correct": 0.061404
+            }
+          }
+        },
+        "vector": {
+          "p_hat": 0.472269,
+          "strata": {
+            "carried_not_retrievable": {
+              "correct": 0,
+              "n": 1,
+              "p_correct": 0.0
+            },
+            "carried_retrievable": {
+              "correct": 18,
+              "n": 35,
+              "p_correct": 0.514286
+            },
+            "not_carried": {
+              "correct": 5,
+              "n": 119,
+              "p_correct": 0.042017
+            }
+          }
+        }
+      }
+    },
+    "rep01_baseline": {
+      "backends": {
+        "kv": {
+          "p_hat": 0.356522,
+          "strata": {
+            "carried_not_retrievable": {
+              "correct": 1,
+              "n": 2,
+              "p_correct": 0.5
+            },
+            "carried_retrievable": {
+              "correct": 6,
+              "n": 15,
+              "p_correct": 0.4
+            },
+            "not_carried": {
+              "correct": 6,
+              "n": 138,
+              "p_correct": 0.043478
+            }
+          }
+        },
+        "vector": {
+          "p_hat": 0.44436,
+          "strata": {
+            "carried_retrievable": {
+              "correct": 15,
+              "n": 32,
+              "p_correct": 0.46875
+            },
+            "not_carried": {
+              "correct": 3,
+              "n": 123,
+              "p_correct": 0.02439
+            }
+          }
+        }
+      }
+    },
+    "rep02_a1_random": {
+      "backends": {
+        "kv": {
+          "p_hat": 0.473739,
+          "strata": {
+            "carried_not_retrievable": {
+              "correct": 2,
+              "n": 7,
+              "p_correct": 0.285714
+            },
+            "carried_retrievable": {
+              "correct": 12,
+              "n": 23,
+              "p_correct": 0.521739
+            },
+            "not_carried": {
+              "correct": 6,
+              "n": 125,
+              "p_correct": 0.048
+            }
+          }
+        },
+        "vector": {
+          "p_hat": 0.45211,
+          "strata": {
+            "carried_not_retrievable": {
+              "correct": 1,
+              "n": 4,
+              "p_correct": 0.25
+            },
+            "carried_retrievable": {
+              "correct": 19,
+              "n": 37,
+              "p_correct": 0.513514
+            },
+            "not_carried": {
+              "correct": 7,
+              "n": 114,
+              "p_correct": 0.061404
+            }
+          }
+        }
+      }
+    },
+    "rep02_a2_majority": {
+      "backends": {
+        "kv": {
+          "p_hat": 0.479167,
+          "strata": {
+            "carried_not_retrievable": {
+              "correct": 1,
+              "n": 19,
+              "p_correct": 0.052632
+            },
+            "carried_retrievable": {
+              "correct": 13,
+              "n": 24,
+              "p_correct": 0.541667
+            },
+            "not_carried": {
+              "correct": 7,
+              "n": 112,
+              "p_correct": 0.0625
+            }
+          }
+        },
+        "vector": {
+          "p_hat": 0.290693,
+          "strata": {
+            "carried_not_retrievable": {
+              "correct": 0,
+              "n": 4,
+              "p_correct": 0.0
+            },
+            "carried_retrievable": {
+              "correct": 18,
+              "n": 50,
+              "p_correct": 0.36
+            },
+            "not_carried": {
+              "correct": 7,
+              "n": 101,
+              "p_correct": 0.069307
+            }
+          }
+        }
+      }
+    },
+    "rep02_baseline": {
+      "backends": {
+        "kv": {
+          "p_hat": 0.431034,
+          "strata": {
+            "carried_not_retrievable": {
+              "correct": 5,
+              "n": 11,
+              "p_correct": 0.454545
+            },
+            "carried_retrievable": {
+              "correct": 14,
+              "n": 28,
+              "p_correct": 0.5
+            },
+            "not_carried": {
+              "correct": 8,
+              "n": 116,
+              "p_correct": 0.068966
+            }
+          }
+        },
+        "vector": {
+          "p_hat": 0.316568,
+          "strata": {
+            "carried_not_retrievable": {
+              "correct": 0,
+              "n": 3,
+              "p_correct": 0.0
+            },
+            "carried_retrievable": {
+              "correct": 13,
+              "n": 37,
+              "p_correct": 0.351351
+            },
+            "not_carried": {
+              "correct": 4,
+              "n": 115,
+              "p_correct": 0.034783
+            }
+          }
+        }
+      }
+    },
+    "rep03_a1_random": {
+      "backends": {
+        "kv": {
+          "p_hat": 0.380649,
+          "strata": {
+            "carried_not_retrievable": {
+              "correct": 4,
+              "n": 18,
+              "p_correct": 0.222222
+            },
+            "carried_retrievable": {
+              "correct": 16,
+              "n": 38,
+              "p_correct": 0.421053
+            },
+            "not_carried": {
+              "correct": 4,
+              "n": 99,
+              "p_correct": 0.040404
+            }
+          }
+        },
+        "vector": {
+          "p_hat": 0.279677,
+          "strata": {
+            "carried_not_retrievable": {
+              "correct": 0,
+              "n": 6,
+              "p_correct": 0.0
+            },
+            "carried_retrievable": {
+              "correct": 8,
+              "n": 25,
+              "p_correct": 0.32
+            },
+            "not_carried": {
+              "correct": 5,
+              "n": 124,
+              "p_correct": 0.040323
+            }
+          }
+        }
+      }
+    },
+    "rep03_a2_majority": {
+      "backends": {
+        "kv": {
+          "p_hat": 0.262107,
+          "strata": {
+            "carried_not_retrievable": {
+              "correct": 2,
+              "n": 9,
+              "p_correct": 0.222222
+            },
+            "carried_retrievable": {
+              "correct": 9,
+              "n": 28,
+              "p_correct": 0.321429
+            },
+            "not_carried": {
+              "correct": 7,
+              "n": 118,
+              "p_correct": 0.059322
+            }
+          }
+        },
+        "vector": {
+          "p_hat": 0.41729,
+          "strata": {
+            "carried_not_retrievable": {
+              "correct": 1,
+              "n": 3,
+              "p_correct": 0.333333
+            },
+            "carried_retrievable": {
+              "correct": 18,
+              "n": 39,
+              "p_correct": 0.461538
+            },
+            "not_carried": {
+              "correct": 5,
+              "n": 113,
+              "p_correct": 0.044248
+            }
+          }
+        }
+      }
+    },
+    "rep03_baseline": {
+      "backends": {
+        "kv": {
+          "p_hat": 0.144201,
+          "strata": {
+            "carried_not_retrievable": {
+              "correct": 2,
+              "n": 6,
+              "p_correct": 0.333333
+            },
+            "carried_retrievable": {
+              "correct": 5,
+              "n": 27,
+              "p_correct": 0.185185
+            },
+            "not_carried": {
+              "correct": 5,
+              "n": 122,
+              "p_correct": 0.040984
+            }
+          }
+        },
+        "vector": {
+          "p_hat": 0.317047,
+          "strata": {
+            "carried_not_retrievable": {
+              "correct": 0,
+              "n": 3,
+              "p_correct": 0.0
+            },
+            "carried_retrievable": {
+              "correct": 16,
+              "n": 43,
+              "p_correct": 0.372093
+            },
+            "not_carried": {
+              "correct": 6,
+              "n": 109,
+              "p_correct": 0.055046
+            }
+          }
+        }
+      }
+    }
+  },
+  "p_hat": {
+    "kv": 0.353824,
+    "pooled": 0.364597,
+    "vector": 0.373204
+  }
+}

@@ -19,6 +19,7 @@ write (what A2 would commit), plus expected accuracy via p_hat.
 import argparse
 import glob as globmod
 import json
+import random
 import sys
 from collections import Counter, defaultdict
 from pathlib import Path
@@ -60,10 +61,20 @@ def main():
     ap.add_argument("--logs", nargs="+", required=True)
     ap.add_argument("--result-root", default="result_hnav_shadow")
     ap.add_argument("--out", required=True)
+    ap.add_argument("--shuffle-assignment", action="store_true",
+                    help="NEGATIVE CONTROL (pre-registered in the alt10 ledger "
+                         "entry): permute which scenario each orphan step's "
+                         "sample set is assigned to, within (replicate, "
+                         "backend). A genuine content-specific rescue signal "
+                         "must collapse; surviving counts measure generic/"
+                         "boilerplate carriage.")
+    ap.add_argument("--shuffle-seed", type=int, default=20260808)
     args = ap.parse_args()
 
     dirs = sorted(set(p for g in args.logs for p in globmod.glob(g)))
     report = {"git_head": git_head(), "p_hat": P_HAT, "per_arm": [],
+              "shuffle_assignment": bool(args.shuffle_assignment),
+              "shuffle_seed": args.shuffle_seed if args.shuffle_assignment else None,
               "logs": [{"dir": d, "sha": sha_file(Path(d) / "hact_log.jsonl")}
                        for d in dirs]}
     summary = defaultdict(list)
@@ -71,7 +82,7 @@ def main():
         d = Path(d)
         rep = d.name.split("_")[0]          # rep01
         # orphan sampled writes per (backend, scenario)
-        writes = defaultdict(lambda: {"any": [], "modal": []})
+        per_step = []          # (backend, scen, texts, modal)
         for line in open(d / "hact_log.jsonl", encoding="utf-8"):
             rec = json.loads(line)
             if not rec.get("orphan"):
@@ -81,6 +92,23 @@ def main():
             if scen == "student":
                 continue
             texts, modal = orphan_writes(rec, backend)
+            per_step.append((backend, scen, texts, modal))
+
+        if args.shuffle_assignment:
+            # permute the scenario labels within each backend, deterministic
+            rng = random.Random(f"{args.shuffle_seed}|{d.name}")
+            by_backend = defaultdict(list)
+            for i, (backend, scen, _, _) in enumerate(per_step):
+                by_backend[backend].append(i)
+            for backend, idxs in by_backend.items():
+                scens = [per_step[i][1] for i in idxs]
+                rng.shuffle(scens)
+                for i, s in zip(idxs, scens):
+                    b, _, texts, modal = per_step[i]
+                    per_step[i] = (b, s, texts, modal)
+
+        writes = defaultdict(lambda: {"any": [], "modal": []})
+        for backend, scen, texts, modal in per_step:
             writes[(backend, scen)]["any"].extend(texts)
             if modal is not None:
                 writes[(backend, scen)]["modal"].append(modal)

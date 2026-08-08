@@ -1,0 +1,2092 @@
+{
+  "a2_majority_vs_baseline": {
+    "positive_flips": 63,
+    "negative_flips": 41,
+    "pos_by_backend": {
+      "kv": 30,
+      "vector": 33
+    },
+    "neg_by_backend": {
+      "kv": 23,
+      "vector": 18
+    },
+    "pos_by_scenario": {
+      "healthcare": 19,
+      "notetaker": 12,
+      "finance": 18,
+      "customer": 14
+    },
+    "neg_by_scenario": {
+      "customer": 5,
+      "notetaker": 7,
+      "finance": 25,
+      "healthcare": 4
+    },
+    "pos_with_rescue_in_chain": 62,
+    "neg_with_rescue_in_chain": 38,
+    "flips": [
+      {
+        "rep": "rep01",
+        "backend": "kv",
+        "qid": "memory_kv_12-customer-12",
+        "scenario": "customer",
+        "baseline": false,
+        "a2_majority": true,
+        "rescues_in_chain": 6
+      },
+      {
+        "rep": "rep01",
+        "backend": "kv",
+        "qid": "memory_kv_135-notetaker-5",
+        "scenario": "notetaker",
+        "baseline": false,
+        "a2_majority": true,
+        "rescues_in_chain": 4
+      },
+      {
+        "rep": "rep01",
+        "backend": "kv",
+        "qid": "memory_kv_136-notetaker-6",
+        "scenario": "notetaker",
+        "baseline": false,
+        "a2_majority": true,
+        "rescues_in_chain": 4
+      },
+      {
+        "rep": "rep01",
+        "backend": "kv",
+        "qid": "memory_kv_138-notetaker-8",
+        "scenario": "notetaker",
+        "baseline": false,
+        "a2_majority": true,
+        "rescues_in_chain": 4
+      },
+      {
+        "rep": "rep01",
+        "backend": "kv",
+        "qid": "memory_kv_14-customer-14",
+        "scenario": "customer",
+        "baseline": false,
+        "a2_majority": true,
+        "rescues_in_chain": 6
+      },
+      {
+        "rep": "rep01",
+        "backend": "kv",
+        "qid": "memory_kv_140-notetaker-10",
+        "scenario": "notetaker",
+        "baseline": false,
+        "a2_majority": true,
+        "rescues_in_chain": 4
+      },
+      {
+        "rep": "rep01",
+        "backend": "kv",
+        "qid": "memory_kv_141-notetaker-11",
+        "scenario": "notetaker",
+        "baseline": false,
+        "a2_majority": true,
+        "rescues_in_chain": 4
+      },
+      {
+        "rep": "rep01",
+        "backend": "kv",
+        "qid": "memory_kv_142-notetaker-12",
+        "scenario": "notetaker",
+        "baseline": true,
+        "a2_majority": false,
+        "rescues_in_chain": 4
+      },
+      {
+        "rep": "rep01",
+        "backend": "kv",
+        "qid": "memory_kv_143-notetaker-13",
+        "scenario": "notetaker",
+        "baseline": true,
+        "a2_majority": false,
+        "rescues_in_chain": 4
+      },
+      {
+        "rep": "rep01",
+        "backend": "kv",
+        "qid": "memory_kv_148-notetaker-18",
+        "scenario": "notetaker",
+        "baseline": false,
+        "a2_majority": true,
+        "rescues_in_chain": 4
+      },
+      {
+        "rep": "rep01",
+        "backend": "kv",
+        "qid": "memory_kv_149-notetaker-19",
+        "scenario": "notetaker",
+        "baseline": false,
+        "a2_majority": true,
+        "rescues_in_chain": 4
+      },
+      {
+        "rep": "rep01",
+        "backend": "kv",
+        "qid": "memory_kv_2-customer-2",
+        "scenario": "customer",
+        "baseline": true,
+        "a2_majority": false,
+        "rescues_in_chain": 6
+      },
+      {
+        "rep": "rep01",
+        "backend": "kv",
+        "qid": "memory_kv_26-customer-26",
+        "scenario": "customer",
+        "baseline": false,
+        "a2_majority": true,
+        "rescues_in_chain": 6
+      },
+      {
+        "rep": "rep01",
+        "backend": "kv",
+        "qid": "memory_kv_3-customer-3",
+        "scenario": "customer",
+        "baseline": false,
+        "a2_majority": true,
+        "rescues_in_chain": 6
+      },
+      {
+        "rep": "rep01",
+        "backend": "kv",
+        "qid": "memory_kv_55-finance-0",
+        "scenario": "finance",
+        "baseline": true,
+        "a2_majority": false,
+        "rescues_in_chain": 2
+      },
+      {
+        "rep": "rep01",
+        "backend": "kv",
+        "qid": "memory_kv_56-finance-1",
+        "scenario": "finance",
+        "baseline": true,
+        "a2_majority": false,
+        "rescues_in_chain": 2
+      },
+      {
+        "rep": "rep01",
+        "backend": "kv",
+        "qid": "memory_kv_58-finance-3",
+        "scenario": "finance",
+        "baseline": true,
+        "a2_majority": false,
+        "rescues_in_chain": 2
+      },
+      {
+        "rep": "rep01",
+        "backend": "kv",
+        "qid": "memory_kv_60-finance-5",
+        "scenario": "finance",
+        "baseline": true,
+        "a2_majority": false,
+        "rescues_in_chain": 2
+      },
+      {
+        "rep": "rep01",
+        "backend": "kv",
+        "qid": "memory_kv_61-finance-6",
+        "scenario": "finance",
+        "baseline": true,
+        "a2_majority": false,
+        "rescues_in_chain": 2
+      },
+      {
+        "rep": "rep01",
+        "backend": "kv",
+        "qid": "memory_kv_65-finance-10",
+        "scenario": "finance",
+        "baseline": false,
+        "a2_majority": true,
+        "rescues_in_chain": 2
+      },
+      {
+        "rep": "rep01",
+        "backend": "kv",
+        "qid": "memory_kv_66-finance-11",
+        "scenario": "finance",
+        "baseline": false,
+        "a2_majority": true,
+        "rescues_in_chain": 2
+      },
+      {
+        "rep": "rep01",
+        "backend": "kv",
+        "qid": "memory_kv_76-finance-21",
+        "scenario": "finance",
+        "baseline": false,
+        "a2_majority": true,
+        "rescues_in_chain": 2
+      },
+      {
+        "rep": "rep01",
+        "backend": "kv",
+        "qid": "memory_kv_78-finance-23",
+        "scenario": "finance",
+        "baseline": false,
+        "a2_majority": true,
+        "rescues_in_chain": 2
+      },
+      {
+        "rep": "rep01",
+        "backend": "vector",
+        "qid": "memory_vector_141-notetaker-11",
+        "scenario": "notetaker",
+        "baseline": true,
+        "a2_majority": false,
+        "rescues_in_chain": 2
+      },
+      {
+        "rep": "rep01",
+        "backend": "vector",
+        "qid": "memory_vector_144-notetaker-14",
+        "scenario": "notetaker",
+        "baseline": true,
+        "a2_majority": false,
+        "rescues_in_chain": 2
+      },
+      {
+        "rep": "rep01",
+        "backend": "vector",
+        "qid": "memory_vector_147-notetaker-17",
+        "scenario": "notetaker",
+        "baseline": false,
+        "a2_majority": true,
+        "rescues_in_chain": 2
+      },
+      {
+        "rep": "rep01",
+        "backend": "vector",
+        "qid": "memory_vector_17-customer-17",
+        "scenario": "customer",
+        "baseline": false,
+        "a2_majority": true,
+        "rescues_in_chain": 9
+      },
+      {
+        "rep": "rep01",
+        "backend": "vector",
+        "qid": "memory_vector_36-healthcare-6",
+        "scenario": "healthcare",
+        "baseline": false,
+        "a2_majority": true,
+        "rescues_in_chain": 2
+      },
+      {
+        "rep": "rep01",
+        "backend": "vector",
+        "qid": "memory_vector_44-healthcare-14",
+        "scenario": "healthcare",
+        "baseline": false,
+        "a2_majority": true,
+        "rescues_in_chain": 2
+      },
+      {
+        "rep": "rep01",
+        "backend": "vector",
+        "qid": "memory_vector_45-healthcare-15",
+        "scenario": "healthcare",
+        "baseline": false,
+        "a2_majority": true,
+        "rescues_in_chain": 2
+      },
+      {
+        "rep": "rep01",
+        "backend": "vector",
+        "qid": "memory_vector_47-healthcare-17",
+        "scenario": "healthcare",
+        "baseline": false,
+        "a2_majority": true,
+        "rescues_in_chain": 2
+      },
+      {
+        "rep": "rep01",
+        "backend": "vector",
+        "qid": "memory_vector_53-healthcare-23",
+        "scenario": "healthcare",
+        "baseline": true,
+        "a2_majority": false,
+        "rescues_in_chain": 2
+      },
+      {
+        "rep": "rep01",
+        "backend": "vector",
+        "qid": "memory_vector_64-finance-9",
+        "scenario": "finance",
+        "baseline": false,
+        "a2_majority": true,
+        "rescues_in_chain": 5
+      },
+      {
+        "rep": "rep01",
+        "backend": "vector",
+        "qid": "memory_vector_65-finance-10",
+        "scenario": "finance",
+        "baseline": false,
+        "a2_majority": true,
+        "rescues_in_chain": 5
+      },
+      {
+        "rep": "rep01",
+        "backend": "vector",
+        "qid": "memory_vector_66-finance-11",
+        "scenario": "finance",
+        "baseline": false,
+        "a2_majority": true,
+        "rescues_in_chain": 5
+      },
+      {
+        "rep": "rep01",
+        "backend": "vector",
+        "qid": "memory_vector_72-finance-17",
+        "scenario": "finance",
+        "baseline": true,
+        "a2_majority": false,
+        "rescues_in_chain": 5
+      },
+      {
+        "rep": "rep01",
+        "backend": "vector",
+        "qid": "memory_vector_8-customer-8",
+        "scenario": "customer",
+        "baseline": true,
+        "a2_majority": false,
+        "rescues_in_chain": 9
+      },
+      {
+        "rep": "rep01",
+        "backend": "vector",
+        "qid": "memory_vector_9-customer-9",
+        "scenario": "customer",
+        "baseline": false,
+        "a2_majority": true,
+        "rescues_in_chain": 9
+      },
+      {
+        "rep": "rep02",
+        "backend": "kv",
+        "qid": "memory_kv_0-customer-0",
+        "scenario": "customer",
+        "baseline": false,
+        "a2_majority": true,
+        "rescues_in_chain": 14
+      },
+      {
+        "rep": "rep02",
+        "backend": "kv",
+        "qid": "memory_kv_142-notetaker-12",
+        "scenario": "notetaker",
+        "baseline": true,
+        "a2_majority": false,
+        "rescues_in_chain": 7
+      },
+      {
+        "rep": "rep02",
+        "backend": "kv",
+        "qid": "memory_kv_2-customer-2",
+        "scenario": "customer",
+        "baseline": false,
+        "a2_majority": true,
+        "rescues_in_chain": 14
+      },
+      {
+        "rep": "rep02",
+        "backend": "kv",
+        "qid": "memory_kv_48-healthcare-18",
+        "scenario": "healthcare",
+        "baseline": false,
+        "a2_majority": true,
+        "rescues_in_chain": 0
+      },
+      {
+        "rep": "rep02",
+        "backend": "kv",
+        "qid": "memory_kv_50-healthcare-20",
+        "scenario": "healthcare",
+        "baseline": true,
+        "a2_majority": false,
+        "rescues_in_chain": 0
+      },
+      {
+        "rep": "rep02",
+        "backend": "kv",
+        "qid": "memory_kv_51-healthcare-21",
+        "scenario": "healthcare",
+        "baseline": true,
+        "a2_majority": false,
+        "rescues_in_chain": 0
+      },
+      {
+        "rep": "rep02",
+        "backend": "kv",
+        "qid": "memory_kv_54-healthcare-24",
+        "scenario": "healthcare",
+        "baseline": true,
+        "a2_majority": false,
+        "rescues_in_chain": 0
+      },
+      {
+        "rep": "rep02",
+        "backend": "kv",
+        "qid": "memory_kv_55-finance-0",
+        "scenario": "finance",
+        "baseline": true,
+        "a2_majority": false,
+        "rescues_in_chain": 3
+      },
+      {
+        "rep": "rep02",
+        "backend": "kv",
+        "qid": "memory_kv_56-finance-1",
+        "scenario": "finance",
+        "baseline": true,
+        "a2_majority": false,
+        "rescues_in_chain": 3
+      },
+      {
+        "rep": "rep02",
+        "backend": "kv",
+        "qid": "memory_kv_57-finance-2",
+        "scenario": "finance",
+        "baseline": true,
+        "a2_majority": false,
+        "rescues_in_chain": 3
+      },
+      {
+        "rep": "rep02",
+        "backend": "kv",
+        "qid": "memory_kv_58-finance-3",
+        "scenario": "finance",
+        "baseline": true,
+        "a2_majority": false,
+        "rescues_in_chain": 3
+      },
+      {
+        "rep": "rep02",
+        "backend": "kv",
+        "qid": "memory_kv_60-finance-5",
+        "scenario": "finance",
+        "baseline": true,
+        "a2_majority": false,
+        "rescues_in_chain": 3
+      },
+      {
+        "rep": "rep02",
+        "backend": "kv",
+        "qid": "memory_kv_61-finance-6",
+        "scenario": "finance",
+        "baseline": true,
+        "a2_majority": false,
+        "rescues_in_chain": 3
+      },
+      {
+        "rep": "rep02",
+        "backend": "kv",
+        "qid": "memory_kv_67-finance-12",
+        "scenario": "finance",
+        "baseline": false,
+        "a2_majority": true,
+        "rescues_in_chain": 3
+      },
+      {
+        "rep": "rep02",
+        "backend": "kv",
+        "qid": "memory_kv_72-finance-17",
+        "scenario": "finance",
+        "baseline": true,
+        "a2_majority": false,
+        "rescues_in_chain": 3
+      },
+      {
+        "rep": "rep02",
+        "backend": "kv",
+        "qid": "memory_kv_9-customer-9",
+        "scenario": "customer",
+        "baseline": false,
+        "a2_majority": true,
+        "rescues_in_chain": 14
+      },
+      {
+        "rep": "rep02",
+        "backend": "vector",
+        "qid": "memory_vector_138-notetaker-8",
+        "scenario": "notetaker",
+        "baseline": false,
+        "a2_majority": true,
+        "rescues_in_chain": 1
+      },
+      {
+        "rep": "rep02",
+        "backend": "vector",
+        "qid": "memory_vector_140-notetaker-10",
+        "scenario": "notetaker",
+        "baseline": false,
+        "a2_majority": true,
+        "rescues_in_chain": 1
+      },
+      {
+        "rep": "rep02",
+        "backend": "vector",
+        "qid": "memory_vector_149-notetaker-19",
+        "scenario": "notetaker",
+        "baseline": false,
+        "a2_majority": true,
+        "rescues_in_chain": 1
+      },
+      {
+        "rep": "rep02",
+        "backend": "vector",
+        "qid": "memory_vector_30-healthcare-0",
+        "scenario": "healthcare",
+        "baseline": false,
+        "a2_majority": true,
+        "rescues_in_chain": 4
+      },
+      {
+        "rep": "rep02",
+        "backend": "vector",
+        "qid": "memory_vector_38-healthcare-8",
+        "scenario": "healthcare",
+        "baseline": false,
+        "a2_majority": true,
+        "rescues_in_chain": 4
+      },
+      {
+        "rep": "rep02",
+        "backend": "vector",
+        "qid": "memory_vector_48-healthcare-18",
+        "scenario": "healthcare",
+        "baseline": false,
+        "a2_majority": true,
+        "rescues_in_chain": 4
+      },
+      {
+        "rep": "rep02",
+        "backend": "vector",
+        "qid": "memory_vector_54-healthcare-24",
+        "scenario": "healthcare",
+        "baseline": false,
+        "a2_majority": true,
+        "rescues_in_chain": 4
+      },
+      {
+        "rep": "rep02",
+        "backend": "vector",
+        "qid": "memory_vector_55-finance-0",
+        "scenario": "finance",
+        "baseline": false,
+        "a2_majority": true,
+        "rescues_in_chain": 6
+      },
+      {
+        "rep": "rep02",
+        "backend": "vector",
+        "qid": "memory_vector_64-finance-9",
+        "scenario": "finance",
+        "baseline": false,
+        "a2_majority": true,
+        "rescues_in_chain": 6
+      },
+      {
+        "rep": "rep02",
+        "backend": "vector",
+        "qid": "memory_vector_65-finance-10",
+        "scenario": "finance",
+        "baseline": false,
+        "a2_majority": true,
+        "rescues_in_chain": 6
+      },
+      {
+        "rep": "rep02",
+        "backend": "vector",
+        "qid": "memory_vector_66-finance-11",
+        "scenario": "finance",
+        "baseline": false,
+        "a2_majority": true,
+        "rescues_in_chain": 6
+      },
+      {
+        "rep": "rep02",
+        "backend": "vector",
+        "qid": "memory_vector_72-finance-17",
+        "scenario": "finance",
+        "baseline": true,
+        "a2_majority": false,
+        "rescues_in_chain": 6
+      },
+      {
+        "rep": "rep02",
+        "backend": "vector",
+        "qid": "memory_vector_73-finance-18",
+        "scenario": "finance",
+        "baseline": true,
+        "a2_majority": false,
+        "rescues_in_chain": 6
+      },
+      {
+        "rep": "rep02",
+        "backend": "vector",
+        "qid": "memory_vector_74-finance-19",
+        "scenario": "finance",
+        "baseline": true,
+        "a2_majority": false,
+        "rescues_in_chain": 6
+      },
+      {
+        "rep": "rep02",
+        "backend": "vector",
+        "qid": "memory_vector_75-finance-20",
+        "scenario": "finance",
+        "baseline": true,
+        "a2_majority": false,
+        "rescues_in_chain": 6
+      },
+      {
+        "rep": "rep02",
+        "backend": "vector",
+        "qid": "memory_vector_9-customer-9",
+        "scenario": "customer",
+        "baseline": false,
+        "a2_majority": true,
+        "rescues_in_chain": 10
+      },
+      {
+        "rep": "rep03",
+        "backend": "kv",
+        "qid": "memory_kv_14-customer-14",
+        "scenario": "customer",
+        "baseline": false,
+        "a2_majority": true,
+        "rescues_in_chain": 6
+      },
+      {
+        "rep": "rep03",
+        "backend": "kv",
+        "qid": "memory_kv_20-customer-20",
+        "scenario": "customer",
+        "baseline": true,
+        "a2_majority": false,
+        "rescues_in_chain": 6
+      },
+      {
+        "rep": "rep03",
+        "backend": "kv",
+        "qid": "memory_kv_26-customer-26",
+        "scenario": "customer",
+        "baseline": false,
+        "a2_majority": true,
+        "rescues_in_chain": 6
+      },
+      {
+        "rep": "rep03",
+        "backend": "kv",
+        "qid": "memory_kv_30-healthcare-0",
+        "scenario": "healthcare",
+        "baseline": false,
+        "a2_majority": true,
+        "rescues_in_chain": 1
+      },
+      {
+        "rep": "rep03",
+        "backend": "kv",
+        "qid": "memory_kv_38-healthcare-8",
+        "scenario": "healthcare",
+        "baseline": false,
+        "a2_majority": true,
+        "rescues_in_chain": 1
+      },
+      {
+        "rep": "rep03",
+        "backend": "kv",
+        "qid": "memory_kv_45-healthcare-15",
+        "scenario": "healthcare",
+        "baseline": false,
+        "a2_majority": true,
+        "rescues_in_chain": 1
+      },
+      {
+        "rep": "rep03",
+        "backend": "kv",
+        "qid": "memory_kv_46-healthcare-16",
+        "scenario": "healthcare",
+        "baseline": false,
+        "a2_majority": true,
+        "rescues_in_chain": 1
+      },
+      {
+        "rep": "rep03",
+        "backend": "kv",
+        "qid": "memory_kv_48-healthcare-18",
+        "scenario": "healthcare",
+        "baseline": false,
+        "a2_majority": true,
+        "rescues_in_chain": 1
+      },
+      {
+        "rep": "rep03",
+        "backend": "kv",
+        "qid": "memory_kv_68-finance-13",
+        "scenario": "finance",
+        "baseline": false,
+        "a2_majority": true,
+        "rescues_in_chain": 4
+      },
+      {
+        "rep": "rep03",
+        "backend": "kv",
+        "qid": "memory_kv_7-customer-7",
+        "scenario": "customer",
+        "baseline": true,
+        "a2_majority": false,
+        "rescues_in_chain": 6
+      },
+      {
+        "rep": "rep03",
+        "backend": "kv",
+        "qid": "memory_kv_76-finance-21",
+        "scenario": "finance",
+        "baseline": false,
+        "a2_majority": true,
+        "rescues_in_chain": 4
+      },
+      {
+        "rep": "rep03",
+        "backend": "kv",
+        "qid": "memory_kv_77-finance-22",
+        "scenario": "finance",
+        "baseline": true,
+        "a2_majority": false,
+        "rescues_in_chain": 4
+      },
+      {
+        "rep": "rep03",
+        "backend": "kv",
+        "qid": "memory_kv_78-finance-23",
+        "scenario": "finance",
+        "baseline": false,
+        "a2_majority": true,
+        "rescues_in_chain": 4
+      },
+      {
+        "rep": "rep03",
+        "backend": "kv",
+        "qid": "memory_kv_79-finance-24",
+        "scenario": "finance",
+        "baseline": true,
+        "a2_majority": false,
+        "rescues_in_chain": 4
+      },
+      {
+        "rep": "rep03",
+        "backend": "vector",
+        "qid": "memory_vector_1-customer-1",
+        "scenario": "customer",
+        "baseline": false,
+        "a2_majority": true,
+        "rescues_in_chain": 13
+      },
+      {
+        "rep": "rep03",
+        "backend": "vector",
+        "qid": "memory_vector_14-customer-14",
+        "scenario": "customer",
+        "baseline": false,
+        "a2_majority": true,
+        "rescues_in_chain": 13
+      },
+      {
+        "rep": "rep03",
+        "backend": "vector",
+        "qid": "memory_vector_141-notetaker-11",
+        "scenario": "notetaker",
+        "baseline": true,
+        "a2_majority": false,
+        "rescues_in_chain": 2
+      },
+      {
+        "rep": "rep03",
+        "backend": "vector",
+        "qid": "memory_vector_144-notetaker-14",
+        "scenario": "notetaker",
+        "baseline": true,
+        "a2_majority": false,
+        "rescues_in_chain": 2
+      },
+      {
+        "rep": "rep03",
+        "backend": "vector",
+        "qid": "memory_vector_147-notetaker-17",
+        "scenario": "notetaker",
+        "baseline": false,
+        "a2_majority": true,
+        "rescues_in_chain": 2
+      },
+      {
+        "rep": "rep03",
+        "backend": "vector",
+        "qid": "memory_vector_19-customer-19",
+        "scenario": "customer",
+        "baseline": true,
+        "a2_majority": false,
+        "rescues_in_chain": 13
+      },
+      {
+        "rep": "rep03",
+        "backend": "vector",
+        "qid": "memory_vector_34-healthcare-4",
+        "scenario": "healthcare",
+        "baseline": false,
+        "a2_majority": true,
+        "rescues_in_chain": 1
+      },
+      {
+        "rep": "rep03",
+        "backend": "vector",
+        "qid": "memory_vector_44-healthcare-14",
+        "scenario": "healthcare",
+        "baseline": false,
+        "a2_majority": true,
+        "rescues_in_chain": 1
+      },
+      {
+        "rep": "rep03",
+        "backend": "vector",
+        "qid": "memory_vector_48-healthcare-18",
+        "scenario": "healthcare",
+        "baseline": false,
+        "a2_majority": true,
+        "rescues_in_chain": 1
+      },
+      {
+        "rep": "rep03",
+        "backend": "vector",
+        "qid": "memory_vector_50-healthcare-20",
+        "scenario": "healthcare",
+        "baseline": false,
+        "a2_majority": true,
+        "rescues_in_chain": 1
+      },
+      {
+        "rep": "rep03",
+        "backend": "vector",
+        "qid": "memory_vector_54-healthcare-24",
+        "scenario": "healthcare",
+        "baseline": false,
+        "a2_majority": true,
+        "rescues_in_chain": 1
+      },
+      {
+        "rep": "rep03",
+        "backend": "vector",
+        "qid": "memory_vector_55-finance-0",
+        "scenario": "finance",
+        "baseline": false,
+        "a2_majority": true,
+        "rescues_in_chain": 5
+      },
+      {
+        "rep": "rep03",
+        "backend": "vector",
+        "qid": "memory_vector_58-finance-3",
+        "scenario": "finance",
+        "baseline": true,
+        "a2_majority": false,
+        "rescues_in_chain": 5
+      },
+      {
+        "rep": "rep03",
+        "backend": "vector",
+        "qid": "memory_vector_61-finance-6",
+        "scenario": "finance",
+        "baseline": false,
+        "a2_majority": true,
+        "rescues_in_chain": 5
+      },
+      {
+        "rep": "rep03",
+        "backend": "vector",
+        "qid": "memory_vector_65-finance-10",
+        "scenario": "finance",
+        "baseline": false,
+        "a2_majority": true,
+        "rescues_in_chain": 5
+      },
+      {
+        "rep": "rep03",
+        "backend": "vector",
+        "qid": "memory_vector_66-finance-11",
+        "scenario": "finance",
+        "baseline": true,
+        "a2_majority": false,
+        "rescues_in_chain": 5
+      },
+      {
+        "rep": "rep03",
+        "backend": "vector",
+        "qid": "memory_vector_72-finance-17",
+        "scenario": "finance",
+        "baseline": true,
+        "a2_majority": false,
+        "rescues_in_chain": 5
+      },
+      {
+        "rep": "rep03",
+        "backend": "vector",
+        "qid": "memory_vector_73-finance-18",
+        "scenario": "finance",
+        "baseline": true,
+        "a2_majority": false,
+        "rescues_in_chain": 5
+      },
+      {
+        "rep": "rep03",
+        "backend": "vector",
+        "qid": "memory_vector_74-finance-19",
+        "scenario": "finance",
+        "baseline": true,
+        "a2_majority": false,
+        "rescues_in_chain": 5
+      },
+      {
+        "rep": "rep03",
+        "backend": "vector",
+        "qid": "memory_vector_75-finance-20",
+        "scenario": "finance",
+        "baseline": true,
+        "a2_majority": false,
+        "rescues_in_chain": 5
+      }
+    ]
+  },
+  "a2_majority_vs_a1_random": {
+    "positive_flips": 62,
+    "negative_flips": 60,
+    "pos_by_backend": {
+      "kv": 25,
+      "vector": 37
+    },
+    "neg_by_backend": {
+      "kv": 32,
+      "vector": 28
+    },
+    "pos_by_scenario": {
+      "healthcare": 17,
+      "finance": 19,
+      "customer": 15,
+      "notetaker": 11
+    },
+    "neg_by_scenario": {
+      "finance": 17,
+      "healthcare": 15,
+      "notetaker": 18,
+      "customer": 10
+    },
+    "pos_with_rescue_in_chain": 60,
+    "neg_with_rescue_in_chain": 60,
+    "flips": [
+      {
+        "rep": "rep01",
+        "backend": "kv",
+        "qid": "memory_kv_12-customer-12",
+        "scenario": "customer",
+        "a1_random": false,
+        "a2_majority": true,
+        "rescues_in_chain": 6
+      },
+      {
+        "rep": "rep01",
+        "backend": "kv",
+        "qid": "memory_kv_14-customer-14",
+        "scenario": "customer",
+        "a1_random": false,
+        "a2_majority": true,
+        "rescues_in_chain": 6
+      },
+      {
+        "rep": "rep01",
+        "backend": "kv",
+        "qid": "memory_kv_142-notetaker-12",
+        "scenario": "notetaker",
+        "a1_random": true,
+        "a2_majority": false,
+        "rescues_in_chain": 4
+      },
+      {
+        "rep": "rep01",
+        "backend": "kv",
+        "qid": "memory_kv_26-customer-26",
+        "scenario": "customer",
+        "a1_random": false,
+        "a2_majority": true,
+        "rescues_in_chain": 6
+      },
+      {
+        "rep": "rep01",
+        "backend": "kv",
+        "qid": "memory_kv_3-customer-3",
+        "scenario": "customer",
+        "a1_random": false,
+        "a2_majority": true,
+        "rescues_in_chain": 6
+      },
+      {
+        "rep": "rep01",
+        "backend": "kv",
+        "qid": "memory_kv_30-healthcare-0",
+        "scenario": "healthcare",
+        "a1_random": true,
+        "a2_majority": false,
+        "rescues_in_chain": 2
+      },
+      {
+        "rep": "rep01",
+        "backend": "kv",
+        "qid": "memory_kv_36-healthcare-6",
+        "scenario": "healthcare",
+        "a1_random": true,
+        "a2_majority": false,
+        "rescues_in_chain": 2
+      },
+      {
+        "rep": "rep01",
+        "backend": "kv",
+        "qid": "memory_kv_38-healthcare-8",
+        "scenario": "healthcare",
+        "a1_random": true,
+        "a2_majority": false,
+        "rescues_in_chain": 2
+      },
+      {
+        "rep": "rep01",
+        "backend": "kv",
+        "qid": "memory_kv_45-healthcare-15",
+        "scenario": "healthcare",
+        "a1_random": true,
+        "a2_majority": false,
+        "rescues_in_chain": 2
+      },
+      {
+        "rep": "rep01",
+        "backend": "kv",
+        "qid": "memory_kv_46-healthcare-16",
+        "scenario": "healthcare",
+        "a1_random": true,
+        "a2_majority": false,
+        "rescues_in_chain": 2
+      },
+      {
+        "rep": "rep01",
+        "backend": "kv",
+        "qid": "memory_kv_53-healthcare-23",
+        "scenario": "healthcare",
+        "a1_random": true,
+        "a2_majority": false,
+        "rescues_in_chain": 2
+      },
+      {
+        "rep": "rep01",
+        "backend": "kv",
+        "qid": "memory_kv_54-healthcare-24",
+        "scenario": "healthcare",
+        "a1_random": true,
+        "a2_majority": false,
+        "rescues_in_chain": 2
+      },
+      {
+        "rep": "rep01",
+        "backend": "kv",
+        "qid": "memory_kv_57-finance-2",
+        "scenario": "finance",
+        "a1_random": true,
+        "a2_majority": false,
+        "rescues_in_chain": 2
+      },
+      {
+        "rep": "rep01",
+        "backend": "kv",
+        "qid": "memory_kv_65-finance-10",
+        "scenario": "finance",
+        "a1_random": false,
+        "a2_majority": true,
+        "rescues_in_chain": 2
+      },
+      {
+        "rep": "rep01",
+        "backend": "kv",
+        "qid": "memory_kv_66-finance-11",
+        "scenario": "finance",
+        "a1_random": false,
+        "a2_majority": true,
+        "rescues_in_chain": 2
+      },
+      {
+        "rep": "rep01",
+        "backend": "kv",
+        "qid": "memory_kv_76-finance-21",
+        "scenario": "finance",
+        "a1_random": false,
+        "a2_majority": true,
+        "rescues_in_chain": 2
+      },
+      {
+        "rep": "rep01",
+        "backend": "kv",
+        "qid": "memory_kv_77-finance-22",
+        "scenario": "finance",
+        "a1_random": true,
+        "a2_majority": false,
+        "rescues_in_chain": 2
+      },
+      {
+        "rep": "rep01",
+        "backend": "kv",
+        "qid": "memory_kv_78-finance-23",
+        "scenario": "finance",
+        "a1_random": false,
+        "a2_majority": true,
+        "rescues_in_chain": 2
+      },
+      {
+        "rep": "rep01",
+        "backend": "vector",
+        "qid": "memory_vector_1-customer-1",
+        "scenario": "customer",
+        "a1_random": false,
+        "a2_majority": true,
+        "rescues_in_chain": 9
+      },
+      {
+        "rep": "rep01",
+        "backend": "vector",
+        "qid": "memory_vector_135-notetaker-5",
+        "scenario": "notetaker",
+        "a1_random": true,
+        "a2_majority": false,
+        "rescues_in_chain": 2
+      },
+      {
+        "rep": "rep01",
+        "backend": "vector",
+        "qid": "memory_vector_136-notetaker-6",
+        "scenario": "notetaker",
+        "a1_random": true,
+        "a2_majority": false,
+        "rescues_in_chain": 2
+      },
+      {
+        "rep": "rep01",
+        "backend": "vector",
+        "qid": "memory_vector_14-customer-14",
+        "scenario": "customer",
+        "a1_random": false,
+        "a2_majority": true,
+        "rescues_in_chain": 9
+      },
+      {
+        "rep": "rep01",
+        "backend": "vector",
+        "qid": "memory_vector_141-notetaker-11",
+        "scenario": "notetaker",
+        "a1_random": true,
+        "a2_majority": false,
+        "rescues_in_chain": 2
+      },
+      {
+        "rep": "rep01",
+        "backend": "vector",
+        "qid": "memory_vector_142-notetaker-12",
+        "scenario": "notetaker",
+        "a1_random": true,
+        "a2_majority": false,
+        "rescues_in_chain": 2
+      },
+      {
+        "rep": "rep01",
+        "backend": "vector",
+        "qid": "memory_vector_143-notetaker-13",
+        "scenario": "notetaker",
+        "a1_random": true,
+        "a2_majority": false,
+        "rescues_in_chain": 2
+      },
+      {
+        "rep": "rep01",
+        "backend": "vector",
+        "qid": "memory_vector_147-notetaker-17",
+        "scenario": "notetaker",
+        "a1_random": false,
+        "a2_majority": true,
+        "rescues_in_chain": 2
+      },
+      {
+        "rep": "rep01",
+        "backend": "vector",
+        "qid": "memory_vector_148-notetaker-18",
+        "scenario": "notetaker",
+        "a1_random": true,
+        "a2_majority": false,
+        "rescues_in_chain": 2
+      },
+      {
+        "rep": "rep01",
+        "backend": "vector",
+        "qid": "memory_vector_151-notetaker-21",
+        "scenario": "notetaker",
+        "a1_random": true,
+        "a2_majority": false,
+        "rescues_in_chain": 2
+      },
+      {
+        "rep": "rep01",
+        "backend": "vector",
+        "qid": "memory_vector_154-notetaker-24",
+        "scenario": "notetaker",
+        "a1_random": false,
+        "a2_majority": true,
+        "rescues_in_chain": 2
+      },
+      {
+        "rep": "rep01",
+        "backend": "vector",
+        "qid": "memory_vector_17-customer-17",
+        "scenario": "customer",
+        "a1_random": false,
+        "a2_majority": true,
+        "rescues_in_chain": 9
+      },
+      {
+        "rep": "rep01",
+        "backend": "vector",
+        "qid": "memory_vector_30-healthcare-0",
+        "scenario": "healthcare",
+        "a1_random": false,
+        "a2_majority": true,
+        "rescues_in_chain": 2
+      },
+      {
+        "rep": "rep01",
+        "backend": "vector",
+        "qid": "memory_vector_36-healthcare-6",
+        "scenario": "healthcare",
+        "a1_random": false,
+        "a2_majority": true,
+        "rescues_in_chain": 2
+      },
+      {
+        "rep": "rep01",
+        "backend": "vector",
+        "qid": "memory_vector_38-healthcare-8",
+        "scenario": "healthcare",
+        "a1_random": true,
+        "a2_majority": false,
+        "rescues_in_chain": 2
+      },
+      {
+        "rep": "rep01",
+        "backend": "vector",
+        "qid": "memory_vector_44-healthcare-14",
+        "scenario": "healthcare",
+        "a1_random": false,
+        "a2_majority": true,
+        "rescues_in_chain": 2
+      },
+      {
+        "rep": "rep01",
+        "backend": "vector",
+        "qid": "memory_vector_55-finance-0",
+        "scenario": "finance",
+        "a1_random": true,
+        "a2_majority": false,
+        "rescues_in_chain": 5
+      },
+      {
+        "rep": "rep01",
+        "backend": "vector",
+        "qid": "memory_vector_56-finance-1",
+        "scenario": "finance",
+        "a1_random": true,
+        "a2_majority": false,
+        "rescues_in_chain": 5
+      },
+      {
+        "rep": "rep01",
+        "backend": "vector",
+        "qid": "memory_vector_64-finance-9",
+        "scenario": "finance",
+        "a1_random": false,
+        "a2_majority": true,
+        "rescues_in_chain": 5
+      },
+      {
+        "rep": "rep01",
+        "backend": "vector",
+        "qid": "memory_vector_65-finance-10",
+        "scenario": "finance",
+        "a1_random": false,
+        "a2_majority": true,
+        "rescues_in_chain": 5
+      },
+      {
+        "rep": "rep01",
+        "backend": "vector",
+        "qid": "memory_vector_66-finance-11",
+        "scenario": "finance",
+        "a1_random": false,
+        "a2_majority": true,
+        "rescues_in_chain": 5
+      },
+      {
+        "rep": "rep01",
+        "backend": "vector",
+        "qid": "memory_vector_76-finance-21",
+        "scenario": "finance",
+        "a1_random": true,
+        "a2_majority": false,
+        "rescues_in_chain": 5
+      },
+      {
+        "rep": "rep01",
+        "backend": "vector",
+        "qid": "memory_vector_77-finance-22",
+        "scenario": "finance",
+        "a1_random": true,
+        "a2_majority": false,
+        "rescues_in_chain": 5
+      },
+      {
+        "rep": "rep01",
+        "backend": "vector",
+        "qid": "memory_vector_9-customer-9",
+        "scenario": "customer",
+        "a1_random": false,
+        "a2_majority": true,
+        "rescues_in_chain": 9
+      },
+      {
+        "rep": "rep02",
+        "backend": "kv",
+        "qid": "memory_kv_1-customer-1",
+        "scenario": "customer",
+        "a1_random": true,
+        "a2_majority": false,
+        "rescues_in_chain": 14
+      },
+      {
+        "rep": "rep02",
+        "backend": "kv",
+        "qid": "memory_kv_138-notetaker-8",
+        "scenario": "notetaker",
+        "a1_random": false,
+        "a2_majority": true,
+        "rescues_in_chain": 7
+      },
+      {
+        "rep": "rep02",
+        "backend": "kv",
+        "qid": "memory_kv_14-customer-14",
+        "scenario": "customer",
+        "a1_random": false,
+        "a2_majority": true,
+        "rescues_in_chain": 14
+      },
+      {
+        "rep": "rep02",
+        "backend": "kv",
+        "qid": "memory_kv_149-notetaker-19",
+        "scenario": "notetaker",
+        "a1_random": false,
+        "a2_majority": true,
+        "rescues_in_chain": 7
+      },
+      {
+        "rep": "rep02",
+        "backend": "kv",
+        "qid": "memory_kv_151-notetaker-21",
+        "scenario": "notetaker",
+        "a1_random": true,
+        "a2_majority": false,
+        "rescues_in_chain": 7
+      },
+      {
+        "rep": "rep02",
+        "backend": "kv",
+        "qid": "memory_kv_20-customer-20",
+        "scenario": "customer",
+        "a1_random": true,
+        "a2_majority": false,
+        "rescues_in_chain": 14
+      },
+      {
+        "rep": "rep02",
+        "backend": "kv",
+        "qid": "memory_kv_26-customer-26",
+        "scenario": "customer",
+        "a1_random": false,
+        "a2_majority": true,
+        "rescues_in_chain": 14
+      },
+      {
+        "rep": "rep02",
+        "backend": "kv",
+        "qid": "memory_kv_30-healthcare-0",
+        "scenario": "healthcare",
+        "a1_random": false,
+        "a2_majority": true,
+        "rescues_in_chain": 0
+      },
+      {
+        "rep": "rep02",
+        "backend": "kv",
+        "qid": "memory_kv_46-healthcare-16",
+        "scenario": "healthcare",
+        "a1_random": false,
+        "a2_majority": true,
+        "rescues_in_chain": 0
+      },
+      {
+        "rep": "rep02",
+        "backend": "kv",
+        "qid": "memory_kv_55-finance-0",
+        "scenario": "finance",
+        "a1_random": true,
+        "a2_majority": false,
+        "rescues_in_chain": 3
+      },
+      {
+        "rep": "rep02",
+        "backend": "kv",
+        "qid": "memory_kv_60-finance-5",
+        "scenario": "finance",
+        "a1_random": true,
+        "a2_majority": false,
+        "rescues_in_chain": 3
+      },
+      {
+        "rep": "rep02",
+        "backend": "kv",
+        "qid": "memory_kv_61-finance-6",
+        "scenario": "finance",
+        "a1_random": true,
+        "a2_majority": false,
+        "rescues_in_chain": 3
+      },
+      {
+        "rep": "rep02",
+        "backend": "kv",
+        "qid": "memory_kv_66-finance-11",
+        "scenario": "finance",
+        "a1_random": true,
+        "a2_majority": false,
+        "rescues_in_chain": 3
+      },
+      {
+        "rep": "rep02",
+        "backend": "kv",
+        "qid": "memory_kv_67-finance-12",
+        "scenario": "finance",
+        "a1_random": false,
+        "a2_majority": true,
+        "rescues_in_chain": 3
+      },
+      {
+        "rep": "rep02",
+        "backend": "kv",
+        "qid": "memory_kv_75-finance-20",
+        "scenario": "finance",
+        "a1_random": false,
+        "a2_majority": true,
+        "rescues_in_chain": 3
+      },
+      {
+        "rep": "rep02",
+        "backend": "kv",
+        "qid": "memory_kv_8-customer-8",
+        "scenario": "customer",
+        "a1_random": true,
+        "a2_majority": false,
+        "rescues_in_chain": 14
+      },
+      {
+        "rep": "rep02",
+        "backend": "kv",
+        "qid": "memory_kv_9-customer-9",
+        "scenario": "customer",
+        "a1_random": false,
+        "a2_majority": true,
+        "rescues_in_chain": 14
+      },
+      {
+        "rep": "rep02",
+        "backend": "vector",
+        "qid": "memory_vector_1-customer-1",
+        "scenario": "customer",
+        "a1_random": false,
+        "a2_majority": true,
+        "rescues_in_chain": 10
+      },
+      {
+        "rep": "rep02",
+        "backend": "vector",
+        "qid": "memory_vector_140-notetaker-10",
+        "scenario": "notetaker",
+        "a1_random": false,
+        "a2_majority": true,
+        "rescues_in_chain": 1
+      },
+      {
+        "rep": "rep02",
+        "backend": "vector",
+        "qid": "memory_vector_143-notetaker-13",
+        "scenario": "notetaker",
+        "a1_random": false,
+        "a2_majority": true,
+        "rescues_in_chain": 1
+      },
+      {
+        "rep": "rep02",
+        "backend": "vector",
+        "qid": "memory_vector_144-notetaker-14",
+        "scenario": "notetaker",
+        "a1_random": true,
+        "a2_majority": false,
+        "rescues_in_chain": 1
+      },
+      {
+        "rep": "rep02",
+        "backend": "vector",
+        "qid": "memory_vector_147-notetaker-17",
+        "scenario": "notetaker",
+        "a1_random": true,
+        "a2_majority": false,
+        "rescues_in_chain": 1
+      },
+      {
+        "rep": "rep02",
+        "backend": "vector",
+        "qid": "memory_vector_154-notetaker-24",
+        "scenario": "notetaker",
+        "a1_random": true,
+        "a2_majority": false,
+        "rescues_in_chain": 1
+      },
+      {
+        "rep": "rep02",
+        "backend": "vector",
+        "qid": "memory_vector_16-customer-16",
+        "scenario": "customer",
+        "a1_random": true,
+        "a2_majority": false,
+        "rescues_in_chain": 10
+      },
+      {
+        "rep": "rep02",
+        "backend": "vector",
+        "qid": "memory_vector_34-healthcare-4",
+        "scenario": "healthcare",
+        "a1_random": true,
+        "a2_majority": false,
+        "rescues_in_chain": 4
+      },
+      {
+        "rep": "rep02",
+        "backend": "vector",
+        "qid": "memory_vector_38-healthcare-8",
+        "scenario": "healthcare",
+        "a1_random": false,
+        "a2_majority": true,
+        "rescues_in_chain": 4
+      },
+      {
+        "rep": "rep02",
+        "backend": "vector",
+        "qid": "memory_vector_47-healthcare-17",
+        "scenario": "healthcare",
+        "a1_random": false,
+        "a2_majority": true,
+        "rescues_in_chain": 4
+      },
+      {
+        "rep": "rep02",
+        "backend": "vector",
+        "qid": "memory_vector_5-customer-5",
+        "scenario": "customer",
+        "a1_random": true,
+        "a2_majority": false,
+        "rescues_in_chain": 10
+      },
+      {
+        "rep": "rep02",
+        "backend": "vector",
+        "qid": "memory_vector_50-healthcare-20",
+        "scenario": "healthcare",
+        "a1_random": true,
+        "a2_majority": false,
+        "rescues_in_chain": 4
+      },
+      {
+        "rep": "rep02",
+        "backend": "vector",
+        "qid": "memory_vector_55-finance-0",
+        "scenario": "finance",
+        "a1_random": false,
+        "a2_majority": true,
+        "rescues_in_chain": 6
+      },
+      {
+        "rep": "rep02",
+        "backend": "vector",
+        "qid": "memory_vector_56-finance-1",
+        "scenario": "finance",
+        "a1_random": true,
+        "a2_majority": false,
+        "rescues_in_chain": 6
+      },
+      {
+        "rep": "rep02",
+        "backend": "vector",
+        "qid": "memory_vector_64-finance-9",
+        "scenario": "finance",
+        "a1_random": false,
+        "a2_majority": true,
+        "rescues_in_chain": 6
+      },
+      {
+        "rep": "rep02",
+        "backend": "vector",
+        "qid": "memory_vector_65-finance-10",
+        "scenario": "finance",
+        "a1_random": false,
+        "a2_majority": true,
+        "rescues_in_chain": 6
+      },
+      {
+        "rep": "rep02",
+        "backend": "vector",
+        "qid": "memory_vector_66-finance-11",
+        "scenario": "finance",
+        "a1_random": false,
+        "a2_majority": true,
+        "rescues_in_chain": 6
+      },
+      {
+        "rep": "rep02",
+        "backend": "vector",
+        "qid": "memory_vector_73-finance-18",
+        "scenario": "finance",
+        "a1_random": true,
+        "a2_majority": false,
+        "rescues_in_chain": 6
+      },
+      {
+        "rep": "rep02",
+        "backend": "vector",
+        "qid": "memory_vector_74-finance-19",
+        "scenario": "finance",
+        "a1_random": true,
+        "a2_majority": false,
+        "rescues_in_chain": 6
+      },
+      {
+        "rep": "rep02",
+        "backend": "vector",
+        "qid": "memory_vector_75-finance-20",
+        "scenario": "finance",
+        "a1_random": true,
+        "a2_majority": false,
+        "rescues_in_chain": 6
+      },
+      {
+        "rep": "rep03",
+        "backend": "kv",
+        "qid": "memory_kv_0-customer-0",
+        "scenario": "customer",
+        "a1_random": true,
+        "a2_majority": false,
+        "rescues_in_chain": 6
+      },
+      {
+        "rep": "rep03",
+        "backend": "kv",
+        "qid": "memory_kv_14-customer-14",
+        "scenario": "customer",
+        "a1_random": false,
+        "a2_majority": true,
+        "rescues_in_chain": 6
+      },
+      {
+        "rep": "rep03",
+        "backend": "kv",
+        "qid": "memory_kv_144-notetaker-14",
+        "scenario": "notetaker",
+        "a1_random": true,
+        "a2_majority": false,
+        "rescues_in_chain": 2
+      },
+      {
+        "rep": "rep03",
+        "backend": "kv",
+        "qid": "memory_kv_145-notetaker-15",
+        "scenario": "notetaker",
+        "a1_random": true,
+        "a2_majority": false,
+        "rescues_in_chain": 2
+      },
+      {
+        "rep": "rep03",
+        "backend": "kv",
+        "qid": "memory_kv_15-customer-15",
+        "scenario": "customer",
+        "a1_random": true,
+        "a2_majority": false,
+        "rescues_in_chain": 6
+      },
+      {
+        "rep": "rep03",
+        "backend": "kv",
+        "qid": "memory_kv_150-notetaker-20",
+        "scenario": "notetaker",
+        "a1_random": true,
+        "a2_majority": false,
+        "rescues_in_chain": 2
+      },
+      {
+        "rep": "rep03",
+        "backend": "kv",
+        "qid": "memory_kv_21-customer-21",
+        "scenario": "customer",
+        "a1_random": true,
+        "a2_majority": false,
+        "rescues_in_chain": 6
+      },
+      {
+        "rep": "rep03",
+        "backend": "kv",
+        "qid": "memory_kv_22-customer-22",
+        "scenario": "customer",
+        "a1_random": true,
+        "a2_majority": false,
+        "rescues_in_chain": 6
+      },
+      {
+        "rep": "rep03",
+        "backend": "kv",
+        "qid": "memory_kv_26-customer-26",
+        "scenario": "customer",
+        "a1_random": false,
+        "a2_majority": true,
+        "rescues_in_chain": 6
+      },
+      {
+        "rep": "rep03",
+        "backend": "kv",
+        "qid": "memory_kv_36-healthcare-6",
+        "scenario": "healthcare",
+        "a1_random": true,
+        "a2_majority": false,
+        "rescues_in_chain": 1
+      },
+      {
+        "rep": "rep03",
+        "backend": "kv",
+        "qid": "memory_kv_38-healthcare-8",
+        "scenario": "healthcare",
+        "a1_random": false,
+        "a2_majority": true,
+        "rescues_in_chain": 1
+      },
+      {
+        "rep": "rep03",
+        "backend": "kv",
+        "qid": "memory_kv_45-healthcare-15",
+        "scenario": "healthcare",
+        "a1_random": false,
+        "a2_majority": true,
+        "rescues_in_chain": 1
+      },
+      {
+        "rep": "rep03",
+        "backend": "kv",
+        "qid": "memory_kv_48-healthcare-18",
+        "scenario": "healthcare",
+        "a1_random": false,
+        "a2_majority": true,
+        "rescues_in_chain": 1
+      },
+      {
+        "rep": "rep03",
+        "backend": "kv",
+        "qid": "memory_kv_53-healthcare-23",
+        "scenario": "healthcare",
+        "a1_random": true,
+        "a2_majority": false,
+        "rescues_in_chain": 1
+      },
+      {
+        "rep": "rep03",
+        "backend": "kv",
+        "qid": "memory_kv_54-healthcare-24",
+        "scenario": "healthcare",
+        "a1_random": true,
+        "a2_majority": false,
+        "rescues_in_chain": 1
+      },
+      {
+        "rep": "rep03",
+        "backend": "kv",
+        "qid": "memory_kv_58-finance-3",
+        "scenario": "finance",
+        "a1_random": true,
+        "a2_majority": false,
+        "rescues_in_chain": 4
+      },
+      {
+        "rep": "rep03",
+        "backend": "kv",
+        "qid": "memory_kv_6-customer-6",
+        "scenario": "customer",
+        "a1_random": true,
+        "a2_majority": false,
+        "rescues_in_chain": 6
+      },
+      {
+        "rep": "rep03",
+        "backend": "kv",
+        "qid": "memory_kv_68-finance-13",
+        "scenario": "finance",
+        "a1_random": false,
+        "a2_majority": true,
+        "rescues_in_chain": 4
+      },
+      {
+        "rep": "rep03",
+        "backend": "kv",
+        "qid": "memory_kv_72-finance-17",
+        "scenario": "finance",
+        "a1_random": true,
+        "a2_majority": false,
+        "rescues_in_chain": 4
+      },
+      {
+        "rep": "rep03",
+        "backend": "kv",
+        "qid": "memory_kv_74-finance-19",
+        "scenario": "finance",
+        "a1_random": true,
+        "a2_majority": false,
+        "rescues_in_chain": 4
+      },
+      {
+        "rep": "rep03",
+        "backend": "kv",
+        "qid": "memory_kv_76-finance-21",
+        "scenario": "finance",
+        "a1_random": false,
+        "a2_majority": true,
+        "rescues_in_chain": 4
+      },
+      {
+        "rep": "rep03",
+        "backend": "kv",
+        "qid": "memory_kv_78-finance-23",
+        "scenario": "finance",
+        "a1_random": false,
+        "a2_majority": true,
+        "rescues_in_chain": 4
+      },
+      {
+        "rep": "rep03",
+        "backend": "vector",
+        "qid": "memory_vector_138-notetaker-8",
+        "scenario": "notetaker",
+        "a1_random": false,
+        "a2_majority": true,
+        "rescues_in_chain": 2
+      },
+      {
+        "rep": "rep03",
+        "backend": "vector",
+        "qid": "memory_vector_14-customer-14",
+        "scenario": "customer",
+        "a1_random": false,
+        "a2_majority": true,
+        "rescues_in_chain": 13
+      },
+      {
+        "rep": "rep03",
+        "backend": "vector",
+        "qid": "memory_vector_140-notetaker-10",
+        "scenario": "notetaker",
+        "a1_random": false,
+        "a2_majority": true,
+        "rescues_in_chain": 2
+      },
+      {
+        "rep": "rep03",
+        "backend": "vector",
+        "qid": "memory_vector_142-notetaker-12",
+        "scenario": "notetaker",
+        "a1_random": true,
+        "a2_majority": false,
+        "rescues_in_chain": 2
+      },
+      {
+        "rep": "rep03",
+        "backend": "vector",
+        "qid": "memory_vector_144-notetaker-14",
+        "scenario": "notetaker",
+        "a1_random": true,
+        "a2_majority": false,
+        "rescues_in_chain": 2
+      },
+      {
+        "rep": "rep03",
+        "backend": "vector",
+        "qid": "memory_vector_147-notetaker-17",
+        "scenario": "notetaker",
+        "a1_random": false,
+        "a2_majority": true,
+        "rescues_in_chain": 2
+      },
+      {
+        "rep": "rep03",
+        "backend": "vector",
+        "qid": "memory_vector_149-notetaker-19",
+        "scenario": "notetaker",
+        "a1_random": false,
+        "a2_majority": true,
+        "rescues_in_chain": 2
+      },
+      {
+        "rep": "rep03",
+        "backend": "vector",
+        "qid": "memory_vector_151-notetaker-21",
+        "scenario": "notetaker",
+        "a1_random": true,
+        "a2_majority": false,
+        "rescues_in_chain": 2
+      },
+      {
+        "rep": "rep03",
+        "backend": "vector",
+        "qid": "memory_vector_154-notetaker-24",
+        "scenario": "notetaker",
+        "a1_random": false,
+        "a2_majority": true,
+        "rescues_in_chain": 2
+      },
+      {
+        "rep": "rep03",
+        "backend": "vector",
+        "qid": "memory_vector_30-healthcare-0",
+        "scenario": "healthcare",
+        "a1_random": false,
+        "a2_majority": true,
+        "rescues_in_chain": 1
+      },
+      {
+        "rep": "rep03",
+        "backend": "vector",
+        "qid": "memory_vector_34-healthcare-4",
+        "scenario": "healthcare",
+        "a1_random": false,
+        "a2_majority": true,
+        "rescues_in_chain": 1
+      },
+      {
+        "rep": "rep03",
+        "backend": "vector",
+        "qid": "memory_vector_38-healthcare-8",
+        "scenario": "healthcare",
+        "a1_random": true,
+        "a2_majority": false,
+        "rescues_in_chain": 1
+      },
+      {
+        "rep": "rep03",
+        "backend": "vector",
+        "qid": "memory_vector_46-healthcare-16",
+        "scenario": "healthcare",
+        "a1_random": false,
+        "a2_majority": true,
+        "rescues_in_chain": 1
+      },
+      {
+        "rep": "rep03",
+        "backend": "vector",
+        "qid": "memory_vector_47-healthcare-17",
+        "scenario": "healthcare",
+        "a1_random": true,
+        "a2_majority": false,
+        "rescues_in_chain": 1
+      },
+      {
+        "rep": "rep03",
+        "backend": "vector",
+        "qid": "memory_vector_48-healthcare-18",
+        "scenario": "healthcare",
+        "a1_random": false,
+        "a2_majority": true,
+        "rescues_in_chain": 1
+      },
+      {
+        "rep": "rep03",
+        "backend": "vector",
+        "qid": "memory_vector_50-healthcare-20",
+        "scenario": "healthcare",
+        "a1_random": false,
+        "a2_majority": true,
+        "rescues_in_chain": 1
+      },
+      {
+        "rep": "rep03",
+        "backend": "vector",
+        "qid": "memory_vector_53-healthcare-23",
+        "scenario": "healthcare",
+        "a1_random": false,
+        "a2_majority": true,
+        "rescues_in_chain": 1
+      },
+      {
+        "rep": "rep03",
+        "backend": "vector",
+        "qid": "memory_vector_54-healthcare-24",
+        "scenario": "healthcare",
+        "a1_random": false,
+        "a2_majority": true,
+        "rescues_in_chain": 1
+      },
+      {
+        "rep": "rep03",
+        "backend": "vector",
+        "qid": "memory_vector_55-finance-0",
+        "scenario": "finance",
+        "a1_random": false,
+        "a2_majority": true,
+        "rescues_in_chain": 5
+      },
+      {
+        "rep": "rep03",
+        "backend": "vector",
+        "qid": "memory_vector_61-finance-6",
+        "scenario": "finance",
+        "a1_random": false,
+        "a2_majority": true,
+        "rescues_in_chain": 5
+      },
+      {
+        "rep": "rep03",
+        "backend": "vector",
+        "qid": "memory_vector_64-finance-9",
+        "scenario": "finance",
+        "a1_random": false,
+        "a2_majority": true,
+        "rescues_in_chain": 5
+      }
+    ]
+  }
+}

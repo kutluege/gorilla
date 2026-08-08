@@ -1,0 +1,113 @@
+{
+  "git_head": "2a3e0cc4817af277cdc408bf5450f639677517c6",
+  "p_hat": 0.408544,
+  "per_arm": [
+    {
+      "replicate": "rep01",
+      "backend": "kv",
+      "n_questions": 105,
+      "n_gold_uncarried_by_store": 85,
+      "n_rescued_any_sample": 2,
+      "n_rescued_modal_sample": 2,
+      "expected_dacc_modal": 0.0078,
+      "example_rescued_qids": [
+        "memory_12-customer-12",
+        "memory_4-customer-4"
+      ]
+    },
+    {
+      "replicate": "rep01",
+      "backend": "vector",
+      "n_questions": 105,
+      "n_gold_uncarried_by_store": 74,
+      "n_rescued_any_sample": 7,
+      "n_rescued_modal_sample": 7,
+      "expected_dacc_modal": 0.0272,
+      "example_rescued_qids": [
+        "memory_11-customer-11",
+        "memory_12-customer-12",
+        "memory_15-customer-15",
+        "memory_23-customer-23",
+        "memory_4-customer-4"
+      ]
+    },
+    {
+      "replicate": "rep02",
+      "backend": "kv",
+      "n_questions": 105,
+      "n_gold_uncarried_by_store": 78,
+      "n_rescued_any_sample": 3,
+      "n_rescued_modal_sample": 3,
+      "expected_dacc_modal": 0.0117,
+      "example_rescued_qids": [
+        "memory_30-healthcare-0",
+        "memory_31-healthcare-1",
+        "memory_32-healthcare-2"
+      ]
+    },
+    {
+      "replicate": "rep02",
+      "backend": "vector",
+      "n_questions": 105,
+      "n_gold_uncarried_by_store": 74,
+      "n_rescued_any_sample": 6,
+      "n_rescued_modal_sample": 6,
+      "expected_dacc_modal": 0.0233,
+      "example_rescued_qids": [
+        "memory_12-customer-12",
+        "memory_4-customer-4",
+        "memory_30-healthcare-0",
+        "memory_42-healthcare-12",
+        "memory_46-healthcare-16"
+      ]
+    },
+    {
+      "replicate": "rep03",
+      "backend": "kv",
+      "n_questions": 105,
+      "n_gold_uncarried_by_store": 75,
+      "n_rescued_any_sample": 0,
+      "n_rescued_modal_sample": 0,
+      "expected_dacc_modal": 0.0,
+      "example_rescued_qids": []
+    },
+    {
+      "replicate": "rep03",
+      "backend": "vector",
+      "n_questions": 105,
+      "n_gold_uncarried_by_store": 74,
+      "n_rescued_any_sample": 6,
+      "n_rescued_modal_sample": 6,
+      "expected_dacc_modal": 0.0233,
+      "example_rescued_qids": [
+        "memory_11-customer-11",
+        "memory_12-customer-12",
+        "memory_15-customer-15",
+        "memory_4-customer-4",
+        "memory_5-customer-5"
+      ]
+    }
+  ],
+  "shuffle_assignment": true,
+  "shuffle_seed": 20260808,
+  "logs": [
+    {
+      "dir": "gov_logs/hnav_shadow\\rep01_hact_shadow",
+      "sha": "9b438ea5c350718c"
+    },
+    {
+      "dir": "gov_logs/hnav_shadow\\rep02_hact_shadow",
+      "sha": "3f712aab3d6040ff"
+    },
+    {
+      "dir": "gov_logs/hnav_shadow\\rep03_hact_shadow",
+      "sha": "1de3513fbbd8ff53"
+    }
+  ],
+  "mean_expected_dacc": {
+    "kv": 0.0065,
+    "vector": 0.0246
+  },
+  "go_criterion": "mean expected_dacc_modal >= 0.02 on >= 1 backend",
+  "go": true
+}

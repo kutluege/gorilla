@@ -1,0 +1,159 @@
+{
+  "include_student": false,
+  "primary_result": true,
+  "n_replicates": 3,
+  "arms": [
+    "baseline",
+    "a1_random",
+    "a2_majority"
+  ],
+  "reference_arm": "a1_random",
+  "seed": 12345,
+  "n_boot": 10000,
+  "total_units_dropped": 2,
+  "excluded": {
+    "student_units": 6,
+    "unmatched_questions": 0,
+    "unscored_questions": 0
+  },
+  "comparisons": {
+    "kv|baseline_vs_a1_random": {
+      "n_pairs": 290,
+      "n_units": 11,
+      "acc_baseline": 0.18275862068965518,
+      "acc_governed": 0.15862068965517243,
+      "discordant_baseline_only": 33,
+      "discordant_governed_only": 26,
+      "mcnemar_p": 0.4349928051221534,
+      "bootstrap_delta": -0.02413793103448276,
+      "bootstrap_ci95": [
+        -0.10175438596491228,
+        0.05357142857142857
+      ],
+      "backend": "kv",
+      "arm": "baseline",
+      "reference": "a1_random",
+      "n_units_dropped": 1,
+      "dropped_units": [
+        {
+          "replicate": 1,
+          "backend": "kv",
+          "scenario": "healthcare",
+          "reason": "chain_dead",
+          "dead_in": [
+            "baseline"
+          ],
+          "n_questions": 25
+        }
+      ],
+      "mcnemar_p_holm": 1.0
+    },
+    "vector|baseline_vs_a1_random": {
+      "n_pairs": 290,
+      "n_units": 11,
+      "acc_baseline": 0.19310344827586207,
+      "acc_governed": 0.1724137931034483,
+      "discordant_baseline_only": 31,
+      "discordant_governed_only": 25,
+      "mcnemar_p": 0.5044037600228256,
+      "bootstrap_delta": -0.020689655172413793,
+      "bootstrap_ci95": [
+        -0.0912280701754386,
+        0.05517241379310345
+      ],
+      "backend": "vector",
+      "arm": "baseline",
+      "reference": "a1_random",
+      "n_units_dropped": 1,
+      "dropped_units": [
+        {
+          "replicate": 3,
+          "backend": "vector",
+          "scenario": "healthcare",
+          "reason": "chain_dead",
+          "dead_in": [
+            "a1_random"
+          ],
+          "n_questions": 25
+        }
+      ],
+      "mcnemar_p_holm": 1.0
+    },
+    "kv|a2_majority_vs_a1_random": {
+      "n_pairs": 290,
+      "n_units": 11,
+      "acc_baseline": 0.18275862068965518,
+      "acc_governed": 0.18275862068965518,
+      "discordant_baseline_only": 25,
+      "discordant_governed_only": 25,
+      "mcnemar_p": 1.0,
+      "bootstrap_delta": 0.0,
+      "bootstrap_ci95": [
+        -0.0456140350877193,
+        0.04745762711864407
+      ],
+      "backend": "kv",
+      "arm": "a2_majority",
+      "reference": "a1_random",
+      "n_units_dropped": 1,
+      "dropped_units": [
+        {
+          "replicate": 1,
+          "backend": "kv",
+          "scenario": "healthcare",
+          "reason": "chain_dead",
+          "dead_in": [
+            "baseline"
+          ],
+          "n_questions": 25
+        }
+      ],
+      "mcnemar_p_holm": 1.0
+    },
+    "vector|a2_majority_vs_a1_random": {
+      "n_pairs": 290,
+      "n_units": 11,
+      "acc_baseline": 0.19310344827586207,
+      "acc_governed": 0.20689655172413793,
+      "discordant_baseline_only": 26,
+      "discordant_governed_only": 30,
+      "mcnemar_p": 0.6888797607233396,
+      "bootstrap_delta": 0.013793103448275862,
+      "bootstrap_ci95": [
+        -0.042105263157894736,
+        0.06440677966101695
+      ],
+      "backend": "vector",
+      "arm": "a2_majority",
+      "reference": "a1_random",
+      "n_units_dropped": 1,
+      "dropped_units": [
+        {
+          "replicate": 3,
+          "backend": "vector",
+          "scenario": "healthcare",
+          "reason": "chain_dead",
+          "dead_in": [
+            "a1_random"
+          ],
+          "n_questions": 25
+        }
+      ],
+      "mcnemar_p_holm": 1.0
+    }
+  },
+  "holm_m": 4,
+  "manifest": "C:\\Users\\USER\\Desktop\\Tezim\\BFCL\\gorilla\\berkeley-function-call-leaderboard\\result_hnav_stage4\\manifest.jsonl",
+  "run_id": "govrep_20260729T004515Z",
+  "git_head": "cc5dca79baf9ed46542a6e25f77a5f3cb3ccec7e",
+  "served_models": [
+    "Qwen/Qwen3-4B-Instruct-2507"
+  ],
+  "replicates_analyzed": [
+    1,
+    2,
+    3
+  ],
+  "allow_unscored": false,
+  "unscored": []
+}
