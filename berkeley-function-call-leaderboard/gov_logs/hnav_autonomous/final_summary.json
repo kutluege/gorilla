@@ -1,0 +1,72 @@
+{
+  "status": "LIVING -- C1 in flight; PENDING cells filled per campaign",
+  "updated": "2026-08-08",
+  "branch": "claude/nihai-plan-v2-cascade-thresholds-k34u67",
+  "report": "HNAV_ACTION_SIDE_AUTONOMOUS_RESEARCH_REPORT.md",
+  "stage1": {
+    "verdict": "falsified (write-side coupling)",
+    "H1": {"pass": false, "coverage": 0.026, "bar": 0.05, "harmful_wilson_ub": 0.093, "ceiling": 0.05},
+    "H2": {"pass": true, "dAUC": 0.076, "ci95": [0.015, 0.138], "shuffle": -0.006},
+    "H3": {"pass": false, "false_override": 0.66, "bar": 0.20},
+    "near_duplicates": {"n": 220, "must_write": 0, "sim_whole": 0.944, "sim_diff": 0.196},
+    "answer_critical": "159/4575 (3.5%), predominantly fresh ADDs",
+    "artifact": "gov_logs/hnav_stage2/stage1_verification.json"
+  },
+  "stage3": {
+    "verdict": "NO_GO (action-side H_act gate)",
+    "t1_positives": "9/1253 (0.0072)",
+    "headline_dAUC_M8_vs_M4": {"value": -0.013, "ci95": [-0.037, 0.001], "holm_p": 1.0},
+    "incidental": "no-call prediction AUC 0.998 from vote features",
+    "artifact": "gov_logs/hnav_shadow/stage3_gate.json"
+  },
+  "alternatives": {
+    "alt7_parser": {"verdict": "rejected", "evidence": "0/3276 misparses"},
+    "alt1_factorized": {"verdict": "rejected", "evidence": "dAUC <= 0 at every resolution, Holm 1.0"},
+    "alt9_backend_specific": {"verdict": "rejected", "evidence": "2-7 positives per backend"},
+    "alt10_write_rescue": {
+      "verdict": "promising-but-inconclusive / underpowered (frozen)",
+      "primary_a2_vs_a1": {"kv": 0.0, "vector": 0.0138, "holm_p": 1.0},
+      "secondary_a2_vs_baseline_vector": {"dAcc": 0.0345, "ci95": [-0.0107, 0.0786], "mcnemar_p": 0.184, "holm_p": 0.736, "direction": "3/3 replicates"},
+      "negative_control": "shuffled assignment did NOT collapse (~70% survives)",
+      "cost": {"extra_calls_per_recovered_answer": 234.2, "extra_tokens_per_recovered_answer": 557543, "wall_ratio": 2.48},
+      "artifact": "gov_logs/hnav_stage4/VERDICT.md"
+    },
+    "alt5R_write_scaffold": {
+      "verdict": "superseded before launch",
+      "reason": "tier-blind P_HAT=0.409; archival-only conversion is 0.000 (vector) / 0.017 (kv); corrected standalone prediction ~0",
+      "artifact": "gov_logs/hnav_scaffold/PREREGISTRATION.md AMENDMENT 1"
+    },
+    "alt4R_M1_read_scaffold": {"verdict": "PENDING C1", "falsifier": "GO (n=74 @ 0.000, recall 22/22)"},
+    "alt3R_M2_packed_capture": {"verdict": "PENDING C2", "falsifier": "GO (carried 0.884 vs 0.748 vs 0.342 sentence)"},
+    "alt2R_M9_rerank": {"verdict": "PENDING C3", "falsifier": "GO (0.971 recall at k=5 cost)"},
+    "alt6R_M6_abstractive": {"verdict": "PENDING C5 (designed negative)", "falsifier": "GO (0.632 vs 0.884 at 4x)"},
+    "alt8R_M7_capacity": {"verdict": "PENDING C5", "falsifier": "GO (+6pp over FIFO)"}
+  },
+  "stage5_extension": {
+    "ledger": "gov_logs/hnav_rag/ledger.jsonl",
+    "methods": ["M3 read budget", "M4 probe formulation", "M5 quote-grounded", "M8 kv asymmetry", "M10 evidence nudge"]
+  },
+  "pivotal_finding": {
+    "claim": "capture->read pipeline is the binding constraint",
+    "tier_conditional_conversion": {
+      "kv": {"core": 0.556, "archival_only": 0.017, "not_carried": 0.049},
+      "vector": {"core": 0.701, "archival_only": 0.0, "not_carried": 0.043}
+    },
+    "archival_reads_at_question_time": "1/155 entries",
+    "artifact": "gov_logs/hnav_autonomous/tier_conditional_pooled.json"
+  },
+  "corrected_baseline": {
+    "vector_all": 0.1226, "vector_official": 0.1226,
+    "kv_all": 0.1118, "kv_official": 0.1613,
+    "kv_gap_cause": "behavioural student zero-write chain (0 writes in 30/30 cells)",
+    "strict_regrade": {"kv": 0.0925, "vector": 0.0989},
+    "artifact": "gov_logs/hnav_autonomous/CORRECTED_BASELINE.md"
+  },
+  "campaigns": {
+    "shadow": {"run_id": "govrep_20260728T*", "status": "complete, analyzed (Stage 3)"},
+    "stage4": {"run_id": "govrep_20260729T004515Z", "status": "complete, analyzed (alt10)"},
+    "rag_c1": {"status": "RUNNING since 2026-08-08T18:12+03:00, server_created 1786201925, 4 arms x 5 reps, baseline arm-rep 79.3 min"},
+    "rag_c2..c6": {"status": "pre-registered (C2) / planned, gated sequentially"}
+  },
+  "q27_answers": "report section 27; q3: logprob vs resampling NOT same phenomenon (r~0 at op resolution, length confound at full)"
+}
