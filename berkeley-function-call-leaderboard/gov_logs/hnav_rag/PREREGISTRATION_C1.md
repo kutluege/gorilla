@@ -106,3 +106,12 @@ The runner detected the dead tunnel only at the next arm boundary.
 baseline sibling cannot be paired across instances → the whole rep01 tree
 is deleted; the campaign relaunches from `--start-replicate 1` on the next
 available instance. GPU lost: ~2.7 h.
+
+**Correction to AMENDMENT 1 (2026-08-09, at relaunch):** vLLM 0.9.1's
+`/v1/models` `created` field is a request timestamp, not a server-instance
+identity (verified: consecutive probes advance with wall clock). The
+`server_created` values in the launcher log are therefore launch
+timestamps only. Instance-continuity evidence for a replicate remains what
+it was for stage4: one continuous launcher window + the runner's
+per-generate tunnel probes + the inference-error gate. Attempt 2 launched
+2026-08-09T00:35:55+03:00, pid 27256.
