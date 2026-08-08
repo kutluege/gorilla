@@ -58,6 +58,9 @@ def make_handler(tmp, **over):
     h.rag_pad = False
     h.rag_key_tokens = 6
     h.rag_kv_two_stage = False
+    h.rag_evict = "none"
+    h.rag_pack_trunc_ratio = 0.0
+    h.rag_summary_max_tokens = 512
     h.rag_top_k = 5
     h.rag_pack_len = 2000
     h.rag_max_entries = 50
@@ -448,6 +451,125 @@ def test_key_tokens_configurable():
     key = calls[0].split("key=", 1)[1].split(",", 1)[0]
     check("24-token-style long key honours RAG_KEY_TOKENS",
           key.count("_") >= 8, key)
+
+
+def test_evict_on_cap_rejection():
+    import unittest.mock as mock
+    tmp = tempfile.mkdtemp(prefix="rag_")
+    h = make_handler(tmp, rag_write="pack", rag_mode="none",
+                     rag_evict="redundancy")
+    st = prime(h, "memory_vector_prereq_5-customer-5", user_text=TURN_B)
+    st["written"] = [
+        {"ref": 3, "text": "Michael lives in Seattle and works downtown"},
+        {"ref": 7, "text": "Michael lives in Seattle and works remotely"},
+        {"ref": 9, "text": "completely different topic about billing dates"},
+    ]
+    st["buffer"] = "x" * 1999
+    calls = h.decode_execute("ok", False)
+    check("flush emitted", len(calls) == 1
+          and calls[0].startswith("archival_memory_add("))
+    # simulate the backend rejecting the add at capacity
+    with mock.patch(
+        "bfcl_eval.model_handler.local_inference.qwen_gov."
+        "QwenGovHandler._add_execution_results_prompting",
+        side_effect=lambda i, e, m: i,
+    ):
+        h._add_execution_results_prompting(
+            {}, ['{"error": "Memory size exceeds maximum size of 50 '
+                 'entries."}'], {})
+    check("cap rejection stashes evict_pending",
+          st["evict_pending"] is not None)
+    st["turn"] = 2
+    st["user_text"] = TURN_A
+    calls = h.decode_execute("ok", False)
+    check("evict step emits remove + add pair",
+          len(calls) == 2
+          and calls[0].startswith("archival_memory_remove(vec_id=")
+          and calls[1].startswith("archival_memory_add("), calls)
+    check("redundancy policy picks one of the two near-duplicates",
+          "vec_id=3" in calls[0] or "vec_id=7" in calls[0], calls[0])
+    check("victim removed from tracker", len(st["written"]) == 2)
+
+
+def test_write_result_tracking():
+    import unittest.mock as mock
+    tmp = tempfile.mkdtemp(prefix="rag_")
+    h = make_handler(tmp, rag_write="per_turn", rag_mode="none")
+    st = prime(h, "memory_vector_prereq_0-customer-0", user_text=TURN_A)
+    h.decode_execute("ok", False)
+    with mock.patch(
+        "bfcl_eval.model_handler.local_inference.qwen_gov."
+        "QwenGovHandler._add_execution_results_prompting",
+        side_effect=lambda i, e, m: i,
+    ):
+        h._add_execution_results_prompting({}, ['{"id": 4}'], {})
+    check("successful vector add tracked with its vec_id",
+          st["written"] == [{"ref": 4, "text": TURN_A}], st["written"])
+
+
+def test_abstractive_uses_model_and_falls_back():
+    tmp = tempfile.mkdtemp(prefix="rag_")
+    h = make_handler(tmp, rag_write="abstractive", rag_mode="none",
+                     rag_pack_len=60)
+    h.model_path_or_id = "served-model"
+    h.temperature = 0.001
+
+    class FakeResp:
+        class C:
+            text = "Michael, 35, Seattle."
+        choices = [C()]
+        usage = None
+
+    class FakeCompletions:
+        def create(self, **kw):
+            FakeCompletions.last = kw
+            return FakeResp()
+
+    class FakeClient:
+        completions = FakeCompletions()
+
+    h.client = FakeClient()
+    st = prime(h, "memory_vector_prereq_0-customer-0", user_text=TURN_A)
+    h.decode_execute("ok", False)                     # buffers turn A
+    st["turn"] = 2
+    st["user_text"] = TURN_B                          # overflow -> flush
+    calls = h.decode_execute("ok", False)
+    check("abstractive flush archives the SUMMARY, not the raw blob",
+          calls and "Michael, 35, Seattle." in calls[0], calls)
+    check("summarize called with the frozen prompt",
+          "Keep every concrete fact" in FakeCompletions.last["prompt"])
+
+    class BoomCompletions:
+        def create(self, **kw):
+            raise RuntimeError("server gone")
+
+    h2 = make_handler(tmp, rag_write="abstractive", rag_mode="none",
+                      rag_pack_len=60)
+    h2.model_path_or_id = "served-model"
+    h2.temperature = 0.001
+    h2.client = type("C", (), {"completions": BoomCompletions()})()
+    st2 = prime(h2, "memory_vector_prereq_0-customer-0", user_text=TURN_A)
+    h2.decode_execute("ok", False)
+    st2["turn"] = 2
+    st2["user_text"] = TURN_B
+    calls2 = h2.decode_execute("ok", False)
+    check("summarize failure falls back to verbatim (chain survives)",
+          calls2 and TURN_A[:20] in calls2[0], calls2)
+
+
+def test_trunc_ratio_control():
+    tmp = tempfile.mkdtemp(prefix="rag_")
+    h = make_handler(tmp, rag_write="pack", rag_mode="none", rag_pack_len=60,
+                     rag_pack_trunc_ratio=0.5)
+    st = prime(h, "memory_vector_prereq_0-customer-0", user_text=TURN_A)
+    h.decode_execute("ok", False)
+    st["turn"] = 2
+    st["user_text"] = TURN_B
+    calls = h.decode_execute("ok", False)
+    import ast as _ast
+    text = _ast.literal_eval(calls[0].split("text=", 1)[1][:-1])
+    check("char-matched control truncates the blob to the frozen ratio",
+          len(text) == len(TURN_A) // 2, (len(text), len(TURN_A)))
 
 
 def test_answer_modes_frozen_constants():

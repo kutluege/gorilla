@@ -82,7 +82,18 @@ from bfcl_eval.utils import (
 from overrides import override
 
 MODES = ("none", "read_verbatim", "read_irrelevant", "instruction_only")
-WRITE_MODES = ("none", "pack", "pack_shuffled", "per_turn")
+WRITE_MODES = ("none", "pack", "pack_shuffled", "per_turn", "abstractive")
+EVICT_MODES = ("none", "redundancy", "random")   # M7, vector archival
+
+# M6 abstractive write: frozen summarization instruction. Answer-agnostic;
+# the entity-preservation clause is the mainstream consolidation design
+# under test (predicted to LOSE to packed verbatim: gold answers are
+# median-7-char entities under an exact substring grader).
+SUMMARIZE_PROMPT = (
+    "Condense the following user messages into a compact summary. Keep "
+    "every concrete fact exactly as stated (names, numbers, dates, places, "
+    "preferences). Output only the summary.\n\nMessages:\n{body}\n\nSummary:"
+)
 ANSWER_MODES = ("none", "evidence", "evidence_irrelevant")
 NUDGE_MODES = ("none", "nudge", "nudge_null")
 RERANK_MODES = ("none", "bm25", "random")   # M9 (vector); kv passes through
@@ -181,6 +192,16 @@ class QwenRagHandler(QwenGovHandler):
         self.rag_kv_two_stage = _flag("RAG_KV_TWO_STAGE")
         if (self.rag_rerank != "none" or self.rag_pad) and not self.rag_fetch_k:
             raise ValueError("RAG_RERANK/RAG_PAD require RAG_FETCH_K > TOP_K")
+        self.rag_evict = os.getenv("RAG_EVICT", "none").strip().lower()
+        if self.rag_evict not in EVICT_MODES:
+            raise ValueError(f"RAG_EVICT must be one of {EVICT_MODES}")
+        # M6 char-matched verbatim control: truncate each flushed blob to
+        # this ratio of its length (frozen from the abstractive arm's
+        # realized mean compression before the control arm runs; 0 = off).
+        self.rag_pack_trunc_ratio = float(os.getenv("RAG_PACK_TRUNC_RATIO",
+                                                    "0"))
+        self.rag_summary_max_tokens = int(os.getenv("RAG_SUMMARY_MAX_TOKENS",
+                                                    "512"))
         self.rag_top_k = int(os.getenv("RAG_TOP_K", "5"))
         self.rag_pack_len = int(os.getenv("RAG_PACK_LEN", "2000"))
         self.rag_max_entries = int(os.getenv("RAG_MAX_ENTRIES", "50"))
@@ -197,10 +218,11 @@ class QwenRagHandler(QwenGovHandler):
         st = getattr(self._rag_tls, "state", None)
         if st is None:
             st = {"turn": 0, "read_turn": -1, "write_turn": -1,
-                  "retrieve_turn": -1, "test_id": "", "backend": "",
-                  "user_text": "", "core_words": "", "injected_probe": "",
-                  "pending_retrieves": None, "buffer": "", "n_written": 0,
-                  "used_keys": set()}
+                  "retrieve_turn": -1, "evict_turn": -1, "test_id": "",
+                  "backend": "", "user_text": "", "core_words": "",
+                  "injected_probe": "", "pending_retrieves": None,
+                  "evict_pending": None, "buffer": "", "n_written": 0,
+                  "used_keys": set(), "written": []}
             self._rag_tls.state = st
         return st
 
@@ -223,18 +245,22 @@ class QwenRagHandler(QwenGovHandler):
         test_id = test_entry.get("id", "")
         st = self._state()
         st.update({"turn": 0, "read_turn": -1, "write_turn": -1,
-                   "retrieve_turn": -1, "test_id": test_id,
+                   "retrieve_turn": -1, "evict_turn": -1, "test_id": test_id,
                    "backend": self._rag_backend(test_id), "user_text": "",
                    "core_words": "", "injected_probe": "",
                    "pending_retrieves": None})
         st.pop("read_result_pending", None)
         st.pop("nudge_pending", None)
-        # pack buffer, entry counter and key set persist across the prereq
-        # chain within a scenario; reset only when the chain restarts.
+        st.pop("write_result_pending", None)
+        # pack buffer, entry counter, key set and incumbent tracker persist
+        # across the prereq chain within a scenario; reset only when the
+        # chain restarts.
         if is_first_memory_prereq_entry(test_id):
             st["buffer"] = ""
             st["n_written"] = 0
             st["used_keys"] = set()
+            st["written"] = []
+            st["evict_pending"] = None
         if self.rag_probe == "core_augmented":
             # capture the core-memory dump the harness already injected into
             # the system message (runtime-visible information only)
@@ -361,6 +387,35 @@ class QwenRagHandler(QwenGovHandler):
             return f"archival_memory_add(key={_py_str(key)}, value={_py_str(text)})"
         return f"archival_memory_add(text={_py_str(text)})"
 
+    def _summarize(self, body, test_id):
+        """M6: one synchronous model call condensing the buffered turns.
+        Cost (tokens) is logged; the call goes to the same served model at
+        the harness temperature."""
+        prompt = SUMMARIZE_PROMPT.format(body=body)
+        try:
+            resp = self.client.completions.create(
+                model=self.model_path_or_id,
+                temperature=self.temperature,
+                prompt=prompt,
+                max_tokens=self.rag_summary_max_tokens,
+                timeout=600,
+            )
+            text = (resp.choices[0].text or "").strip()
+            usage = getattr(resp, "usage", None)
+            self._log({"ts": time.time(), "event": "summarize",
+                       "test_id": test_id, "in_len": len(body),
+                       "out_len": len(text),
+                       "prompt_tokens": getattr(usage, "prompt_tokens", None),
+                       "completion_tokens": getattr(usage,
+                                                    "completion_tokens", None)})
+            return text[: self.rag_pack_len] or body[: self.rag_pack_len]
+        except Exception as exc:
+            # Summarization failure must not kill the chain: fall back to
+            # the verbatim blob and log the degradation.
+            self._log({"ts": time.time(), "event": "summarize_error",
+                       "test_id": test_id, "error": str(exc)[:200]})
+            return body[: self.rag_pack_len]
+
     def _write_policy(self, st, test_id):
         """Called on an empty decode of a gated prereq turn. Returns the
         packed/per-turn write call to inject, or None."""
@@ -375,7 +430,7 @@ class QwenRagHandler(QwenGovHandler):
         emit = None
         if self.rag_write == "per_turn":
             emit = turn_text[: self.rag_pack_len]
-        else:                     # pack / pack_shuffled
+        else:                     # pack / pack_shuffled / abstractive
             buf = st["buffer"]
             if buf and len(buf) + 1 + len(turn_text) > self.rag_pack_len:
                 emit = buf
@@ -387,8 +442,14 @@ class QwenRagHandler(QwenGovHandler):
             return None
         if self.rag_write == "pack_shuffled":
             emit = self._shuffle_words(emit, f"{test_id}|{st['n_written']}")
+        elif self.rag_write == "abstractive":
+            emit = self._summarize(emit, test_id)
+        if self.rag_pack_trunc_ratio:
+            # M6 char-matched verbatim control
+            emit = emit[: max(1, int(len(emit) * self.rag_pack_trunc_ratio))]
         call = self._build_write_call(st["backend"], emit)
         st["n_written"] += 1
+        st["write_result_pending"] = {"text": emit, "add_index": 0}
         self._log({
             "ts": time.time(), "event": "pack_write", "test_id": test_id,
             "turn": st["turn"], "backend": st["backend"],
@@ -399,6 +460,28 @@ class QwenRagHandler(QwenGovHandler):
         if self.rag_verbose:
             print(f"[RAG:write] {test_id} turn={st['turn']} -> {call[:90]}")
         return call
+
+    def _pick_victim(self, st):
+        """M7: choose the incumbent to evict. redundancy = highest Jaccard
+        token overlap with any other incumbent (the offline falsifier's
+        drop_longest_dupe); random = seeded control at matched count."""
+        import re as _re
+        written = st.get("written") or []
+        if not written:
+            return None
+        if self.rag_evict == "random":
+            import random as _random
+            rng = _random.Random(f"{st.get('test_id', '')}|evict")
+            return rng.randrange(len(written))
+        toks = [set(_re.findall(r"[a-z0-9]+", w["text"].lower()))
+                for w in written]
+        worst, worst_i = -1.0, 0
+        for i, ti in enumerate(toks):
+            best = max((len(ti & tj) / max(1, len(ti | tj))
+                        for j, tj in enumerate(toks) if j != i), default=0.0)
+            if best > worst:
+                worst, worst_i = best, i
+        return worst_i
 
     def _log(self, rec):
         log_dir = getattr(self.gov_config, "log_dir", "") or "."
@@ -417,6 +500,28 @@ class QwenRagHandler(QwenGovHandler):
             return calls
         # write side: packed capture on no-call prereq turns
         if self._rag_write_active(test_id):
+            # M7: a cap-rejected blob retries as evict+add (vector only)
+            if (st.get("evict_pending") is not None
+                    and self.rag_evict != "none"
+                    and st.get("backend") == "vector"
+                    and st.get("evict_turn") != st["turn"]):
+                victim_i = self._pick_victim(st)
+                text = st.pop("evict_pending")
+                st["evict_turn"] = st["turn"]
+                if victim_i is not None:
+                    v = st["written"].pop(victim_i)
+                    remove = (f"archival_memory_remove"
+                              f"(vec_id={int(v['ref'])})")
+                    add = self._build_write_call("vector", text)
+                    st["write_result_pending"] = {"text": text,
+                                                  "add_index": 1}
+                    self._log({"ts": time.time(), "event": "evict_write",
+                               "test_id": test_id, "turn": st["turn"],
+                               "evict_mode": self.rag_evict,
+                               "victim_ref": v["ref"],
+                               "victim_len": len(v["text"]),
+                               "text_len": len(text)})
+                    return [remove, add]
             call = self._write_policy(st, test_id)
             return [call] if call else calls
         # read side: retrieve-then-generate on no-call question turns
@@ -507,6 +612,28 @@ class QwenRagHandler(QwenGovHandler):
         model_response_data: dict
     ) -> dict:
         st = self._state()
+        wrp = st.pop("write_result_pending", None)
+        if wrp and execution_results:
+            idx = wrp.get("add_index", 0)
+            payload = (execution_results[idx]
+                       if idx < len(execution_results) else "")
+            if "exceeds maximum size" in payload:
+                # backend cap hit: the write did not land
+                st["n_written"] = max(0, st["n_written"] - 1)
+                if self.rag_evict != "none" and st.get("backend") == "vector":
+                    st["evict_pending"] = wrp["text"]
+                self._log({"ts": time.time(), "event": "write_capped",
+                           "test_id": st.get("test_id", ""),
+                           "turn": st["turn"],
+                           "will_evict": self.rag_evict != "none"})
+            elif st.get("backend") == "vector":
+                try:
+                    ref = json.loads(payload).get("id")
+                    if ref is not None:
+                        st.setdefault("written", []).append(
+                            {"ref": ref, "text": wrp["text"]})
+                except (json.JSONDecodeError, AttributeError, ValueError):
+                    pass
         if st.pop("read_result_pending", False) and execution_results:
             execution_results = list(execution_results)
             payload = execution_results[0]
