@@ -188,6 +188,28 @@ def run():
     check("baseline: stale HACT_/SCAF_/RAG_ operator exports scrubbed",
           not any(k.startswith(("HACT_", "SCAF_", "RAG_")) for k in env_d),
           sorted(k for k in env_d if k.startswith(("HACT_", "SCAF_", "RAG_"))))
+
+    print("[runner: inference-error gate]")
+    import tempfile as _tf
+    from pathlib import Path as _P
+    from run_gov_replicates import count_inference_errors
+    tmp = _P(_tf.mkdtemp(prefix="govrep_"))
+    good = tmp / "good_result.json"
+    good.write_text('{"id": "a", "result": [["fine"]]}\n'
+                    '{"id": "b", "result": [["also fine"]]}\n',
+                    encoding="utf-8")
+    bad = tmp / "bad_result.json"
+    bad.write_text('{"id": "c", "result": [["ok"]]}\n'
+                   '{"id": "d", "result": "Error during inference: '
+                   'Connection error."}\n', encoding="utf-8")
+    n, e = count_inference_errors(["good_result.json"], root=tmp)
+    check("clean file counts 0 errors", (n, e) == (2, 0), (n, e))
+    n, e = count_inference_errors(["good_result.json", "bad_result.json"],
+                                  root=tmp)
+    check("contaminated entry detected", (n, e) == (4, 1), (n, e))
+    n, e = count_inference_errors(["missing_result.json"], root=tmp)
+    check("missing file is not an error here (G15 covers absence)",
+          (n, e) == (0, 0), (n, e))
     check("baseline: calibrated values NOT applied",
           "GOV_SIM_HIGH" not in env_b)
     env_g1 = build_arm_env(cfg, GOVERNED_ARM, 1, base_env)

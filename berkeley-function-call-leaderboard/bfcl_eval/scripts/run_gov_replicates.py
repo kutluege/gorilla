@@ -134,6 +134,55 @@ def expected_score_files(cfg, model, rep, arm):
     return out
 
 
+def expected_result_files(cfg, model, rep, arm):
+    """Repo-root-relative result paths bfcl generate should have produced
+    (question + prereq files per memory category)."""
+    slug = model.replace("/", "_")
+    out = []
+    for cat in (c.strip() for c in cfg["test_category"].split(",")):
+        if not cat.startswith("memory_"):
+            continue
+        backend = cat[len("memory_"):]
+        base = (f"{rep_dir(cfg['result_root'], rep, arm)}/{slug}/agentic/"
+                f"memory/{backend}")
+        out.append(f"{base}/BFCL_v4_{cat}_result.json")
+        out.append(f"{base}/BFCL_v4_{cat}_prereq_result.json")
+    return out
+
+
+INFERENCE_ERROR_MARK = "Error during inference"
+
+
+def count_inference_errors(paths, root=None):
+    """(n_entries, n_errors) across the given result JSONL files.
+
+    The harness swallows per-entry API failures -- a dead tunnel mid-arm
+    yields a 'successful' generate whose entries all read 'Error during
+    inference: ...' and then score as wrong. Added 2026-08-08 after C1
+    rep01/read_verbatim was silently contaminated exactly this way.
+    """
+    root = root or BFCL_ROOT
+    n = errs = 0
+    for p in paths:
+        f = root / p
+        if not f.exists():
+            continue
+        for line in open(f, encoding="utf-8"):
+            line = line.strip()
+            if not line:
+                continue
+            n += 1
+            try:
+                rec = json.loads(line)
+            except json.JSONDecodeError:
+                errs += 1
+                continue
+            res = rec.get("result")
+            if isinstance(res, str) and INFERENCE_ERROR_MARK in res:
+                errs += 1
+    return n, errs
+
+
 def build_arm_env(cfg, arm, rep, base_env=None):
     """Child env: tunnel wiring passes through; GOV_* is set explicitly.
 
@@ -349,6 +398,30 @@ def run_replicates(cfg, run_cmd=default_run_cmd, probe=probe_server,
                 "replicate": rep, "arm": arm, "phase": phase,
                 "exit_code": exit_code, "duration_s": round(clock() - t0, 3),
             }
+            if phase == "generate":
+                # Inference-error gate: the harness swallows per-entry API
+                # failures, so a tunnel death mid-arm produces a clean exit 0
+                # with every remaining entry recorded as 'Error during
+                # inference: ...'. Treat ANY such entry as a failed arm and
+                # stop at this boundary, exactly like a failed tunnel probe.
+                n_entries, n_errs = count_inference_errors(
+                    expected_result_files(cfg, models[arm], rep, arm))
+                end_record["inference_errors"] = n_errs
+                end_record["result_entries"] = n_entries
+                if n_errs > 0:
+                    manifest_writer(manifest, end_record)
+                    manifest_writer(manifest, {
+                        **base_record, "ts": utc_now(), "event": "error",
+                        "stage": "inference_errors", "replicate": rep,
+                        "arm": arm,
+                        "detail": f"{n_errs}/{n_entries} entries are "
+                                  f"inference errors; arm invalid",
+                    })
+                    print(f"[gov-rep] FATAL: rep{rep:02d}/{arm} has "
+                          f"{n_errs}/{n_entries} inference-error entries; "
+                          f"stopping. Delete this replicate's trees and "
+                          f"resume with --start-replicate {rep}.")
+                    raise SystemExit(1)
             if phase == "evaluate":
                 # G15: the score artifact is part of the completion contract --
                 # a replicate without a score is NOT complete. Record path +

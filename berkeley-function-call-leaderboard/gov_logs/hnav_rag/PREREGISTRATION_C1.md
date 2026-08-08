@@ -72,3 +72,37 @@ every arm. Cost accounting per §22.
 
 Stratum exists (n=74 vector, p=0.000), carrier recall@5 = 22/22 → GO.
 The unknown is c, and that is what this campaign measures.
+
+---
+
+## AMENDMENT 1 — tunnel-failure resume policy (2026-08-08, before any arm contrast was computed)
+
+The first launch (2026-08-08T18:12+03:00, server_created 1786201925) lost
+the SSH tunnel during rep01/read_verbatim: kv prereqs completed, vector
+prereqs 27/37 and all 310 question entries were recorded as
+"Error during inference: Connection error" with generate still exiting 0.
+The runner detected the dead tunnel only at the next arm boundary.
+
+**Frozen policy for this and all subsequent RAG campaigns:**
+
+1. **Inference-error gate** (runner change, unit-tested): after every
+   generate, the runner scans the arm's result files; ANY
+   "Error during inference" entry fails the arm and stops the campaign at
+   that boundary, recording `inference_errors` in the manifest.
+2. **Replicate-granularity resume.** The paired unit is
+   (replicate, question); all arms of one replicate must run on ONE server
+   instance. A replicate whose arms are complete and error-free on a single
+   instance is KEPT. A replicate that is partial, contaminated, or spans
+   instances is DELETED in full (result/score/govlog trees) and rerun via
+   `--start-replicate`. Server instance per replicate is recorded
+   (`server_created` at launch + relaunches in the launcher log) and
+   reported; ACROSS replicates the instance may differ — this is a
+   replicate-level covariate, not a validity breach, because all contrasts
+   are within-replicate.
+3. No arm contrast is computed until all 5 replicates are complete
+   (mechanism/health checks on completed arms are permitted and logged).
+
+**Application now:** rep01 is contaminated (read_verbatim) and its
+baseline sibling cannot be paired across instances → the whole rep01 tree
+is deleted; the campaign relaunches from `--start-replicate 1` on the next
+available instance. GPU lost: ~2.7 h.
