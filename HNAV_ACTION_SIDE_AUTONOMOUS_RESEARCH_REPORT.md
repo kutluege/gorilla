@@ -331,9 +331,7 @@ regrade, step budget, integrity gate, ledger),
 3. Why does the model refuse to write on `student` narratives — prompt
    sensitivity or instruction-following failure? (Out of scope; the
    capture scaffold sidesteps rather than explains it.)
-4. Whether logprob and resampling uncertainty measure the same phenomenon
-   (§27.3) — small offline job on shadow logs, still owed.
-5. Generalization beyond a 4B model and beyond BFCL's substring grader —
+4. Generalization beyond a 4B model and beyond BFCL's substring grader —
    the strict-regrade gap suggests grader-robustness work.
 
 ---
@@ -373,7 +371,15 @@ regrade, step budget, integrity gate, ledger),
 2. **Does Shannon entropy add value beyond vote margin/disagreement?** No.
    dAUC(M8−M4) = −0.013 CI [−0.037, +0.001], Holm p = 1.0; +0.0000 on T2.
 3. **Are token-logprob and resampling uncertainty the same phenomenon?**
-   [PENDING — small offline job on `logprob_features` × `votes`.]
+   No. On 3,276 shadow decisions
+   (`gov_logs/hnav_autonomous/q27_3_logprob_vs_resampling.json`): at the
+   decision-relevant **operation** resolution they are essentially
+   uncorrelated (lp_mean~h_act_op r = +0.04, lp_tool_mean~h_act_op
+   r = −0.11); at full resolution they share a moderate common factor
+   (|r| 0.30–0.46), but the **positive** sign of lp_mean~h_act_full
+   (+0.43, where higher confidence should mean lower entropy) marks it as
+   a length/verbosity confound rather than shared uncertainty. Consistent
+   with Stage 3, where neither family predicted any target.
 4. **Is operation uncertainty more important than target uncertainty?**
    Neither matters: M5 (op) −0.009, M6 (target) −0.002 vs M4.
 5. **Does uncertainty-guided intervention improve final BFCL accuracy?**

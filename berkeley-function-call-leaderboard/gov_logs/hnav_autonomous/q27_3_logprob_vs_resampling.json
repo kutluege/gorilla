@@ -1,0 +1,37 @@
+{
+  "lp_mean~h_act_op": {
+    "n": 3276,
+    "pearson": 0.0373,
+    "spearman": -0.0257
+  },
+  "lp_mean~h_act_full": {
+    "n": 3276,
+    "pearson": 0.428,
+    "spearman": 0.2971
+  },
+  "lp_ppl~h_act_full": {
+    "n": 3276,
+    "pearson": -0.4373,
+    "spearman": -0.2965
+  },
+  "lp_topk_margin_mean~h_act_full": {
+    "n": 3276,
+    "pearson": 0.3412,
+    "spearman": 0.3226
+  },
+  "lp_tool_mean~h_act_op": {
+    "n": 1366,
+    "pearson": -0.1058,
+    "spearman": -0.0509
+  },
+  "lp_mean~vote_margin": {
+    "n": 3276,
+    "pearson": -0.4579,
+    "spearman": -0.3405
+  },
+  "lp_topk_margin_mean~modal_share": {
+    "n": 3276,
+    "pearson": -0.3471,
+    "spearman": -0.3571
+  }
+}
