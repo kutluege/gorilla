@@ -1,0 +1,73 @@
+[
+  {
+    "label": "baseline",
+    "model": "Qwen/Qwen3-4B-Instruct-2507-FC",
+    "gov_env": null
+  },
+  {
+    "label": "pack_write",
+    "model": "Qwen/Qwen3-4B-Instruct-2507-FC-RAG",
+    "gov_env": null,
+    "extra_env": {
+      "RAG_ENABLED": "1",
+      "RAG_MODE": "none",
+      "RAG_WRITE": "pack",
+      "RAG_PACK_LEN": "2000",
+      "RAG_MAX_ENTRIES": "50",
+      "RAG_LOG_FILE": "rag_log.jsonl"
+    }
+  },
+  {
+    "label": "read_only",
+    "model": "Qwen/Qwen3-4B-Instruct-2507-FC-RAG",
+    "gov_env": null,
+    "extra_env": {
+      "RAG_ENABLED": "1",
+      "RAG_MODE": "read_verbatim",
+      "RAG_TOP_K": "5",
+      "RAG_LOG_FILE": "rag_log.jsonl"
+    }
+  },
+  {
+    "label": "pack_read",
+    "model": "Qwen/Qwen3-4B-Instruct-2507-FC-RAG",
+    "gov_env": null,
+    "extra_env": {
+      "RAG_ENABLED": "1",
+      "RAG_MODE": "read_verbatim",
+      "RAG_WRITE": "pack",
+      "RAG_TOP_K": "5",
+      "RAG_PACK_LEN": "2000",
+      "RAG_MAX_ENTRIES": "50",
+      "RAG_LOG_FILE": "rag_log.jsonl"
+    }
+  },
+  {
+    "label": "pack_shuf_read",
+    "model": "Qwen/Qwen3-4B-Instruct-2507-FC-RAG",
+    "gov_env": null,
+    "extra_env": {
+      "RAG_ENABLED": "1",
+      "RAG_MODE": "read_verbatim",
+      "RAG_WRITE": "pack_shuffled",
+      "RAG_TOP_K": "5",
+      "RAG_PACK_LEN": "2000",
+      "RAG_MAX_ENTRIES": "50",
+      "RAG_LOG_FILE": "rag_log.jsonl"
+    }
+  },
+  {
+    "label": "per_turn_read",
+    "model": "Qwen/Qwen3-4B-Instruct-2507-FC-RAG",
+    "gov_env": null,
+    "extra_env": {
+      "RAG_ENABLED": "1",
+      "RAG_MODE": "read_verbatim",
+      "RAG_WRITE": "per_turn",
+      "RAG_TOP_K": "5",
+      "RAG_PACK_LEN": "2000",
+      "RAG_MAX_ENTRIES": "50",
+      "RAG_LOG_FILE": "rag_log.jsonl"
+    }
+  }
+]

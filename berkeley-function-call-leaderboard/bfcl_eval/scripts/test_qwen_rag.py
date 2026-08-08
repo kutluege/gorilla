@@ -49,7 +49,10 @@ def make_handler(tmp, **over):
     h = object.__new__(QwenRagHandler)
     h.rag_enabled = True
     h.rag_mode = "read_verbatim"
+    h.rag_write = "none"
     h.rag_top_k = 5
+    h.rag_pack_len = 2000
+    h.rag_max_entries = 50
     h.rag_log_file = "rag_log.jsonl"
     h.rag_verbose = False
     for k, v in over.items():
@@ -63,8 +66,10 @@ def make_handler(tmp, **over):
 
 def prime(h, test_id="memory_kv_3-customer-3", user_text=QUESTION):
     st = h._state()
-    st.update({"turn": 1, "read_turn": -1, "test_id": test_id,
-               "backend": h._rag_backend(test_id), "user_text": user_text})
+    st.update({"turn": 1, "read_turn": -1, "write_turn": -1,
+               "test_id": test_id, "backend": h._rag_backend(test_id),
+               "user_text": user_text, "buffer": "", "n_written": 0,
+               "used_keys": set()})
     return st
 
 
@@ -206,6 +211,97 @@ def test_empty_probe_guard():
     prime(h, "memory_vector_3-customer-3", user_text="   ")
     check("blank user text -> no injection",
           h.decode_execute("no", False) == [])
+
+
+TURN_A = "My name is Michael and I live in Seattle."          # 41 chars
+TURN_B = "I work as a freelance graphic designer downtown."    # 49 chars
+
+
+def test_write_pack_buffers_and_flushes():
+    tmp = tempfile.mkdtemp(prefix="rag_")
+    h = make_handler(tmp, rag_write="pack", rag_mode="none", rag_pack_len=80)
+    st = prime(h, "memory_vector_prereq_0-customer-0", user_text=TURN_A)
+    first = h.decode_execute("noted!", False)
+    check("first turn buffers, no call yet", first == [], first)
+    check("buffer holds turn A", st["buffer"] == TURN_A)
+    st["turn"] = 2
+    st["user_text"] = TURN_B                  # A+B > 80 -> flush A, buffer B
+    second = h.decode_execute("noted again!", False)
+    check("overflow flushes the buffer as ONE packed call",
+          len(second) == 1
+          and second[0].startswith("archival_memory_add("), second)
+    check("flushed content is turn A", repr(TURN_A) in second[0], second)
+    check("buffer now holds turn B", st["buffer"] == TURN_B)
+    check("n_written incremented", st["n_written"] == 1)
+
+
+def test_write_pack_tail_is_lost_causally():
+    tmp = tempfile.mkdtemp(prefix="rag_")
+    h = make_handler(tmp, rag_write="pack", rag_mode="none", rag_pack_len=8000)
+    st = prime(h, "memory_vector_prereq_0-customer-0", user_text=TURN_A)
+    out = h.decode_execute("ok", False)
+    check("under-budget buffer never flushes (fully causal, tail lost)",
+          out == [] and st["buffer"] == TURN_A)
+
+
+def test_write_per_turn_mode():
+    tmp = tempfile.mkdtemp(prefix="rag_")
+    h = make_handler(tmp, rag_write="per_turn", rag_mode="none")
+    prime(h, "memory_kv_prereq_0-customer-0", user_text=TURN_A)
+    calls = h.decode_execute("ok", False)
+    check("per_turn emits immediately (alt5R contrast)",
+          len(calls) == 1 and calls[0].startswith("archival_memory_add(key="),
+          calls)
+
+
+def test_write_shuffled_control():
+    tmp = tempfile.mkdtemp(prefix="rag_")
+    h = make_handler(tmp, rag_write="pack_shuffled", rag_mode="none",
+                     rag_pack_len=44)
+    st = prime(h, "memory_vector_prereq_0-customer-0", user_text=TURN_A)
+    h.decode_execute("ok", False)
+    st["turn"] = 2
+    st["user_text"] = TURN_B
+    calls = h.decode_execute("ok", False)
+    check("shuffled control flushes one call", len(calls) == 1, calls)
+    body = calls[0].split("text=", 1)[1]
+    import ast as _ast
+    text = _ast.literal_eval(body[:-1])
+    check("same word multiset, different order",
+          sorted(text.split()) == sorted(TURN_A.split())
+          and text != TURN_A, text)
+
+
+def test_write_gating_and_capacity():
+    tmp = tempfile.mkdtemp(prefix="rag_")
+    h = make_handler(tmp, rag_write="pack", rag_mode="none")
+    check("write gate ON for prereq",
+          h._rag_write_active("memory_kv_prereq_1-customer-0"))
+    check("write gate OFF for question entries",
+          not h._rag_write_active("memory_kv_3-customer-3"))
+    h2 = make_handler(tmp, rag_write="per_turn", rag_mode="none",
+                      rag_max_entries=2)
+    st = prime(h2, "memory_vector_prereq_0-customer-0", user_text=TURN_A)
+    n = 0
+    for turn in range(1, 6):
+        st["turn"] = turn
+        if h2.decode_execute("ok", False):
+            n += 1
+    check("capacity cap respected", n == 2, n)
+
+
+def test_write_and_read_coexist():
+    tmp = tempfile.mkdtemp(prefix="rag_")
+    h = make_handler(tmp, rag_write="pack", rag_mode="read_verbatim")
+    prime(h, "memory_vector_3-customer-3")     # question entry
+    calls = h.decode_execute("I do not know.", False)
+    check("combined arm: question turn gets the READ, not a write",
+          calls and calls[0].startswith("archival_memory_retrieve("), calls)
+    st = prime(h, "memory_vector_prereq_0-customer-0", user_text=TURN_A)
+    st["buffer"] = "x" * 1999
+    calls = h.decode_execute("ok", False)
+    check("combined arm: prereq turn gets the WRITE path",
+          calls and calls[0].startswith("archival_memory_add("), calls)
 
 
 def test_no_leakage_in_module():
