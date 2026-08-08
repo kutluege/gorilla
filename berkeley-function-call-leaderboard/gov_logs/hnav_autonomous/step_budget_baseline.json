@@ -1,0 +1,100 @@
+{
+  "dirs": {
+    "result_hnav_stage4\\rep01\\baseline\\Qwen_Qwen3-4B-Instruct-2507-FC": {
+      "kv": {
+        "prereq_entries": 37,
+        "question_entries": 155,
+        "force_quit_entries": [],
+        "max_steps_histogram": {
+          "1": 172,
+          "2": 8,
+          "3": 6,
+          "5": 2,
+          "6": 2,
+          "7": 2
+        }
+      },
+      "vector": {
+        "prereq_entries": 37,
+        "question_entries": 155,
+        "force_quit_entries": [],
+        "max_steps_histogram": {
+          "1": 172,
+          "2": 10,
+          "3": 3,
+          "4": 1,
+          "5": 2,
+          "7": 1,
+          "8": 1,
+          "21": 2
+        }
+      }
+    },
+    "result_hnav_stage4\\rep02\\baseline\\Qwen_Qwen3-4B-Instruct-2507-FC": {
+      "kv": {
+        "prereq_entries": 37,
+        "question_entries": 155,
+        "force_quit_entries": [],
+        "max_steps_histogram": {
+          "1": 164,
+          "2": 16,
+          "3": 2,
+          "4": 3,
+          "5": 2,
+          "6": 1,
+          "8": 1,
+          "9": 2,
+          "10": 1
+        }
+      },
+      "vector": {
+        "prereq_entries": 37,
+        "question_entries": 155,
+        "force_quit_entries": [],
+        "max_steps_histogram": {
+          "1": 172,
+          "2": 10,
+          "3": 4,
+          "5": 1,
+          "6": 2,
+          "7": 1,
+          "9": 1,
+          "21": 1
+        }
+      }
+    },
+    "result_hnav_stage4\\rep03\\baseline\\Qwen_Qwen3-4B-Instruct-2507-FC": {
+      "kv": {
+        "prereq_entries": 37,
+        "question_entries": 155,
+        "force_quit_entries": [],
+        "max_steps_histogram": {
+          "1": 169,
+          "2": 11,
+          "3": 4,
+          "4": 5,
+          "5": 1,
+          "6": 1,
+          "7": 1
+        }
+      },
+      "vector": {
+        "prereq_entries": 37,
+        "question_entries": 155,
+        "force_quit_entries": [],
+        "max_steps_histogram": {
+          "1": 166,
+          "2": 11,
+          "3": 3,
+          "4": 1,
+          "5": 2,
+          "6": 3,
+          "7": 2,
+          "8": 2,
+          "21": 2
+        }
+      }
+    }
+  },
+  "rule": "arm force_quit rate > 3x within-campaign baseline rate invalidates the accuracy comparison"
+}
