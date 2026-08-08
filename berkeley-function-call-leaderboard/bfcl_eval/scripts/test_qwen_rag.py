@@ -52,6 +52,12 @@ def make_handler(tmp, **over):
     h.rag_write = "none"
     h.rag_answer = "none"
     h.rag_nudge = "none"
+    h.rag_rerank = "none"
+    h.rag_probe = "verbatim"
+    h.rag_fetch_k = None
+    h.rag_pad = False
+    h.rag_key_tokens = 6
+    h.rag_kv_two_stage = False
     h.rag_top_k = 5
     h.rag_pack_len = 2000
     h.rag_max_entries = 50
@@ -69,9 +75,13 @@ def make_handler(tmp, **over):
 def prime(h, test_id="memory_kv_3-customer-3", user_text=QUESTION):
     st = h._state()
     st.update({"turn": 1, "read_turn": -1, "write_turn": -1,
-               "test_id": test_id, "backend": h._rag_backend(test_id),
-               "user_text": user_text, "buffer": "", "n_written": 0,
+               "retrieve_turn": -1, "test_id": test_id,
+               "backend": h._rag_backend(test_id), "user_text": user_text,
+               "core_words": "", "injected_probe": "",
+               "pending_retrieves": None, "buffer": "", "n_written": 0,
                "used_keys": set()})
+    st.pop("read_result_pending", None)
+    st.pop("nudge_pending", None)
     return st
 
 
@@ -338,6 +348,106 @@ def test_nudge_appends_to_injected_result_only():
         h._add_execution_results_prompting({}, ["plain result"], {})
         check("subsequent results untouched",
               captured["results"] == ["plain result"], captured["results"])
+
+
+def _vector_payload(n=8):
+    return json.dumps({"result": [
+        {"id": str(i), "similarity_score": 0.9 - i * 0.05,
+         "text": (f"Michael lives in Seattle entry {i}" if i == 6
+                  else f"unrelated filler text number {i} about nothing")}
+        for i in range(n)]})
+
+
+def test_rerank_bm25_promotes_relevant_entry():
+    tmp = tempfile.mkdtemp(prefix="rag_")
+    h = make_handler(tmp, rag_rerank="bm25", rag_fetch_k=8)
+    st = prime(h, "memory_vector_3-customer-3")
+    st["injected_probe"] = "Where does Michael live Seattle"
+    out = h._rerank_vector_payload(_vector_payload(), st["injected_probe"])
+    data = json.loads(out)
+    check("rerank keeps top_k entries", len(data["result"]) == 5)
+    check("relevant entry (rank 7 by cosine) promoted into top-5",
+          any("Seattle" in e["text"] for e in data["result"]))
+
+
+def test_rerank_random_is_deterministic():
+    tmp = tempfile.mkdtemp(prefix="rag_")
+    h = make_handler(tmp, rag_rerank="random", rag_fetch_k=8)
+    prime(h, "memory_vector_3-customer-3")
+    a = h._rerank_vector_payload(_vector_payload(), "x")
+    b = h._rerank_vector_payload(_vector_payload(), "y")
+    check("random rerank deterministic per test_id (probe-independent)",
+          a == b)
+    check("random rerank keeps top_k", len(json.loads(a)["result"]) == 5)
+
+
+def test_pad_control_matches_volume_not_information():
+    tmp = tempfile.mkdtemp(prefix="rag_")
+    h = make_handler(tmp, rag_pad=True, rag_fetch_k=8)
+    prime(h, "memory_vector_3-customer-3")
+    out = h._pad_vector_payload(_vector_payload())
+    data = json.loads(out)
+    check("pad keeps ALL fetched entries (volume)", len(data["result"]) == 8)
+    check("top_k real entries untouched",
+          all("filler text number" in data["result"][i]["text"]
+              or "Michael" in data["result"][i]["text"]
+              for i in range(5)))
+    orig = json.loads(_vector_payload())["result"]
+    check("beyond top_k replaced by neutral filler, length-matched",
+          all(e["text"].startswith("This entry intentionally")
+              and len(e["text"]) == len(orig[i + 5]["text"])
+              for i, e in enumerate(data["result"][5:])))
+
+
+def test_kv_two_stage_read():
+    tmp = tempfile.mkdtemp(prefix="rag_")
+    h = make_handler(tmp, rag_kv_two_stage=True)
+    st = prime(h, "memory_kv_3-customer-3")
+    first = h.decode_execute("I do not know.", False)
+    check("stage 1 injects key_search",
+          first and first[0].startswith("archival_memory_key_search("))
+    # simulate the key_search result arriving
+    import unittest.mock as mock
+    payload = json.dumps({"ranked_results": [[5.2, "user_first_name"],
+                                             [2.7, "user_age"]]})
+    with mock.patch(
+        "bfcl_eval.model_handler.local_inference.qwen_gov."
+        "QwenGovHandler._add_execution_results_prompting",
+        side_effect=lambda i, e, m: i,
+    ):
+        h._add_execution_results_prompting({}, [payload], {})
+    check("keys stashed", st["pending_retrieves"] == ["user_first_name",
+                                                      "user_age"])
+    second = h.decode_execute("still nothing", False)
+    check("stage 2 injects the value retrieves",
+          second == ["archival_memory_retrieve(key='user_first_name')",
+                     "archival_memory_retrieve(key='user_age')"], second)
+    third = h.decode_execute("final answer text", False)
+    check("turn then ends normally", third == [])
+
+
+def test_core_augmented_probe():
+    tmp = tempfile.mkdtemp(prefix="rag_")
+    h = make_handler(tmp, rag_probe="core_augmented")
+    st = prime(h, "memory_vector_3-customer-3")
+    st["core_words"] = "Michael Seattle designer"
+    calls = h.decode_execute("no idea", False)
+    check("probe = question + core words",
+          "Michael Seattle designer" in calls[0] and QUESTION[:10] in calls[0],
+          calls)
+
+
+def test_key_tokens_configurable():
+    tmp = tempfile.mkdtemp(prefix="rag_")
+    h = make_handler(tmp, rag_write="per_turn", rag_mode="none",
+                     rag_key_tokens=12)
+    prime(h, "memory_kv_prereq_0-customer-0",
+          user_text="Michael lives Seattle works freelance graphic designer "
+                    "loves espresso machines coffee brewing daily routine")
+    calls = h.decode_execute("ok", False)
+    key = calls[0].split("key=", 1)[1].split(",", 1)[0]
+    check("24-token-style long key honours RAG_KEY_TOKENS",
+          key.count("_") >= 8, key)
 
 
 def test_answer_modes_frozen_constants():

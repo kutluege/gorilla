@@ -85,6 +85,15 @@ MODES = ("none", "read_verbatim", "read_irrelevant", "instruction_only")
 WRITE_MODES = ("none", "pack", "pack_shuffled", "per_turn")
 ANSWER_MODES = ("none", "evidence", "evidence_irrelevant")
 NUDGE_MODES = ("none", "nudge", "nudge_null")
+RERANK_MODES = ("none", "bm25", "random")   # M9 (vector); kv passes through
+PROBE_MODES = ("verbatim", "core_augmented")  # M4
+
+# M3 pad control: frozen neutral filler used to match k=FETCH_K context
+# volume while carrying only the top-TOP_K real entries' information.
+PAD_FILLER_SENTENCE = (
+    "This entry intentionally contains no conversation information and is "
+    "padding for a controlled comparison of retrieval context volume. "
+)
 
 # M5 quote-grounded answer formulation (frozen constants, answer-agnostic,
 # identical across entries and backends). The strict answer-field regrade is
@@ -158,6 +167,20 @@ class QwenRagHandler(QwenGovHandler):
         self.rag_nudge = os.getenv("RAG_NUDGE", "none").strip().lower()
         if self.rag_nudge not in NUDGE_MODES:
             raise ValueError(f"RAG_NUDGE must be one of {NUDGE_MODES}")
+        self.rag_rerank = os.getenv("RAG_RERANK", "none").strip().lower()
+        if self.rag_rerank not in RERANK_MODES:
+            raise ValueError(f"RAG_RERANK must be one of {RERANK_MODES}")
+        self.rag_probe = os.getenv("RAG_PROBE", "verbatim").strip().lower()
+        if self.rag_probe not in PROBE_MODES:
+            raise ValueError(f"RAG_PROBE must be one of {PROBE_MODES}")
+        # FETCH_K: k used by the injected call; 0 = same as TOP_K. Rerank
+        # and pad modes fetch FETCH_K then reduce to TOP_K agent-side.
+        self.rag_fetch_k = int(os.getenv("RAG_FETCH_K", "0")) or None
+        self.rag_pad = _flag("RAG_PAD")
+        self.rag_key_tokens = int(os.getenv("RAG_KEY_TOKENS", "6"))
+        self.rag_kv_two_stage = _flag("RAG_KV_TWO_STAGE")
+        if (self.rag_rerank != "none" or self.rag_pad) and not self.rag_fetch_k:
+            raise ValueError("RAG_RERANK/RAG_PAD require RAG_FETCH_K > TOP_K")
         self.rag_top_k = int(os.getenv("RAG_TOP_K", "5"))
         self.rag_pack_len = int(os.getenv("RAG_PACK_LEN", "2000"))
         self.rag_max_entries = int(os.getenv("RAG_MAX_ENTRIES", "50"))
@@ -174,8 +197,10 @@ class QwenRagHandler(QwenGovHandler):
         st = getattr(self._rag_tls, "state", None)
         if st is None:
             st = {"turn": 0, "read_turn": -1, "write_turn": -1,
-                  "test_id": "", "backend": "", "user_text": "",
-                  "buffer": "", "n_written": 0, "used_keys": set()}
+                  "retrieve_turn": -1, "test_id": "", "backend": "",
+                  "user_text": "", "core_words": "", "injected_probe": "",
+                  "pending_retrieves": None, "buffer": "", "n_written": 0,
+                  "used_keys": set()}
             self._rag_tls.state = st
         return st
 
@@ -198,14 +223,31 @@ class QwenRagHandler(QwenGovHandler):
         test_id = test_entry.get("id", "")
         st = self._state()
         st.update({"turn": 0, "read_turn": -1, "write_turn": -1,
-                   "test_id": test_id,
-                   "backend": self._rag_backend(test_id), "user_text": ""})
+                   "retrieve_turn": -1, "test_id": test_id,
+                   "backend": self._rag_backend(test_id), "user_text": "",
+                   "core_words": "", "injected_probe": "",
+                   "pending_retrieves": None})
+        st.pop("read_result_pending", None)
+        st.pop("nudge_pending", None)
         # pack buffer, entry counter and key set persist across the prereq
         # chain within a scenario; reset only when the chain restarts.
         if is_first_memory_prereq_entry(test_id):
             st["buffer"] = ""
             st["n_written"] = 0
             st["used_keys"] = set()
+        if self.rag_probe == "core_augmented":
+            # capture the core-memory dump the harness already injected into
+            # the system message (runtime-visible information only)
+            try:
+                sys_msg = str(test_entry["question"][0][0].get("content", ""))
+                marker = "Core Memory from previous interactions:"
+                if marker in sys_msg:
+                    import re as _re
+                    dump = sys_msg.split(marker, 1)[1]
+                    words = _re.findall(r"[A-Za-z0-9']+", dump)
+                    st["core_words"] = " ".join(words[:120])
+            except (KeyError, IndexError, TypeError):
+                pass
         appends = []
         if self.rag_mode == "instruction_only":
             appends.append(READ_INSTRUCTION)
@@ -271,11 +313,21 @@ class QwenRagHandler(QwenGovHandler):
         return self._rag_entry_gated(test_id)
 
     def _build_read_call(self, backend, probe):
+        k = self.rag_fetch_k or self.rag_top_k
         if backend == "kv":
             return (f"archival_memory_key_search(query={_py_str(probe)}, "
-                    f"k={self.rag_top_k})")
+                    f"k={k})")
         return (f"archival_memory_retrieve(query={_py_str(probe)}, "
-                f"top_k={self.rag_top_k})")
+                f"top_k={k})")
+
+    def _make_probe(self, st):
+        """M4 probe construction. verbatim = the current user turn;
+        core_augmented = user turn + content words of the in-context core
+        dump (free: the dump is already in the system prompt)."""
+        base = (st.get("user_text") or "").strip()
+        if self.rag_probe == "core_augmented" and st.get("core_words"):
+            return f"{base} {st['core_words']}".strip()
+        return base
 
     # ------------------------------------------------------- write side (M2)
 
@@ -300,11 +352,11 @@ class QwenRagHandler(QwenGovHandler):
     def _build_write_call(self, backend, text):
         st = self._state()
         if backend == "kv":
-            key = slug_key(text)
+            key = slug_key(text, n_tokens=self.rag_key_tokens)
             n = 0
             while key in st["used_keys"]:
                 n += 1
-                key = slug_key(text, salt=n)
+                key = slug_key(text, n_tokens=self.rag_key_tokens, salt=n)
             st["used_keys"].add(key)
             return f"archival_memory_add(key={_py_str(key)}, value={_py_str(text)})"
         return f"archival_memory_add(text={_py_str(text)})"
@@ -370,15 +422,30 @@ class QwenRagHandler(QwenGovHandler):
         # read side: retrieve-then-generate on no-call question turns
         if not self._rag_active(test_id):
             return calls
+        # M8 two-stage kv read: key_search returned keys with no values;
+        # inject the batch of value retrieves before letting the turn end.
+        pending = st.get("pending_retrieves")
+        if pending and st.get("retrieve_turn") != st["turn"] \
+                and st["backend"] == "kv":
+            st["pending_retrieves"] = None
+            st["retrieve_turn"] = st["turn"]
+            batch = [f"archival_memory_retrieve(key={_py_str(k)})"
+                     for k in pending[: self.rag_top_k]]
+            self._log({"ts": time.time(), "event": "two_stage_retrieve",
+                       "test_id": test_id, "turn": st["turn"],
+                       "n_keys": len(batch)})
+            return batch
         if st["read_turn"] == st["turn"]:
             return calls          # already injected this turn: the model's
             #                       post-retrieval no-call answer ends the turn
         probe = (IRRELEVANT_PROBE if self.rag_mode == "read_irrelevant"
-                 else (st.get("user_text") or ""))
+                 else self._make_probe(st))
         if not probe.strip():
             return calls
         call = self._build_read_call(st["backend"], probe)
         st["read_turn"] = st["turn"]
+        st["injected_probe"] = probe
+        st["read_result_pending"] = True
         if self.rag_nudge != "none":
             st["nudge_pending"] = True
         self._log({
@@ -390,22 +457,90 @@ class QwenRagHandler(QwenGovHandler):
             print(f"[RAG] {test_id} turn={st['turn']} -> {call[:90]}")
         return [call]
 
+    # ---------------------------------------- result-payload transforms
+
+    def _rerank_vector_payload(self, payload, probe):
+        """M9: fetch_k entries -> agent-side rerank -> keep top_k. Returns
+        the transformed payload string, or None if not applicable."""
+        try:
+            data = json.loads(payload)
+            entries = data.get("result")
+            if not isinstance(entries, list) or len(entries) <= self.rag_top_k:
+                return None
+        except (json.JSONDecodeError, AttributeError):
+            return None
+        if self.rag_rerank == "bm25":
+            from rank_bm25 import BM25Plus
+            toks = [str(e.get("text", "")).lower().split() for e in entries]
+            bm = BM25Plus(toks)
+            scores = bm.get_scores(str(probe).lower().split())
+            order = sorted(range(len(entries)), key=lambda i: -scores[i])
+        else:                                    # random control
+            import random as _random
+            order = list(range(len(entries)))
+            _random.Random(f"{self._state().get('test_id', '')}").shuffle(order)
+        data["result"] = [entries[i] for i in order[: self.rag_top_k]]
+        return json.dumps(data)
+
+    def _pad_vector_payload(self, payload):
+        """M3 dilution control: keep top_k real entries; replace the rest of
+        the fetched entries' texts with frozen neutral filler of matched
+        length, so context volume equals fetch_k while information equals
+        top_k."""
+        try:
+            data = json.loads(payload)
+            entries = data.get("result")
+            if not isinstance(entries, list) or len(entries) <= self.rag_top_k:
+                return None
+        except (json.JSONDecodeError, AttributeError):
+            return None
+        for e in entries[self.rag_top_k:]:
+            want = max(len(str(e.get("text", ""))), 1)
+            filler = (PAD_FILLER_SENTENCE
+                      * (want // len(PAD_FILLER_SENTENCE) + 1))[:want]
+            e["text"] = filler
+        return json.dumps(data)
+
     @override
     def _add_execution_results_prompting(
         self, inference_data: dict, execution_results: list[str],
         model_response_data: dict
     ) -> dict:
         st = self._state()
-        if st.pop("nudge_pending", False) and execution_results:
-            # M10: append the frozen nudge (or its length-matched null
-            # control) to the INJECTED read's tool-result payload before it
-            # enters context. Agent-side result presentation only; precedent:
-            # mig_reranker rewrites result payloads the same way.
-            text = NUDGE_TEXT if self.rag_nudge == "nudge" else NUDGE_NULL_TEXT
+        if st.pop("read_result_pending", False) and execution_results:
             execution_results = list(execution_results)
-            execution_results[0] = f"{execution_results[0]}{text}"
-            self._log({"ts": time.time(), "event": "result_nudge",
-                       "test_id": st.get("test_id", ""), "turn": st["turn"],
-                       "nudge_mode": self.rag_nudge})
+            payload = execution_results[0]
+            probe = st.get("injected_probe", "")
+            # M8: stash keys from the kv key_search result for the two-stage
+            # value retrieves on the next step.
+            if self.rag_kv_two_stage and st.get("backend") == "kv":
+                try:
+                    ranked = json.loads(payload).get("ranked_results") or []
+                    st["pending_retrieves"] = [k for _, k in ranked]
+                except (json.JSONDecodeError, AttributeError, ValueError):
+                    pass
+            # M9 / M3: transform the vector payload before it enters context.
+            new_payload = None
+            if st.get("backend") == "vector":
+                if self.rag_rerank != "none":
+                    new_payload = self._rerank_vector_payload(payload, probe)
+                elif self.rag_pad:
+                    new_payload = self._pad_vector_payload(payload)
+            if new_payload is not None:
+                execution_results[0] = new_payload
+                self._log({"ts": time.time(), "event": "payload_transform",
+                           "test_id": st.get("test_id", ""),
+                           "turn": st["turn"], "rerank": self.rag_rerank,
+                           "pad": self.rag_pad})
+            if st.pop("nudge_pending", False):
+                # M10: append the frozen nudge (or its length-matched null
+                # control) to the injected read's payload. Precedent:
+                # mig_reranker rewrites result payloads the same way.
+                text = (NUDGE_TEXT if self.rag_nudge == "nudge"
+                        else NUDGE_NULL_TEXT)
+                execution_results[0] = f"{execution_results[0]}{text}"
+                self._log({"ts": time.time(), "event": "result_nudge",
+                           "test_id": st.get("test_id", ""),
+                           "turn": st["turn"], "nudge_mode": self.rag_nudge})
         return super()._add_execution_results_prompting(
             inference_data, execution_results, model_response_data)
