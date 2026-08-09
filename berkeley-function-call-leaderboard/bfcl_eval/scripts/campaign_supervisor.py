@@ -135,8 +135,9 @@ def find_runner_pid(result_root):
         out = subprocess.run(
             ["powershell", "-NoProfile", "-Command",
              "Get-CimInstance Win32_Process | Where-Object { $_.CommandLine "
-             "-match 'run_gov_replicates' } | ForEach-Object { "
-             "\"$($_.ProcessId)|$($_.CommandLine)\" }"],
+             "-match 'run_gov_replicates' -and $_.CommandLine -notmatch "
+             "'Get-CimInstance' -and $_.Name -match 'python' } | "
+             "ForEach-Object { \"$($_.ProcessId)|$($_.CommandLine)\" }"],
             capture_output=True, text=True, timeout=60).stdout
     except Exception:
         return None
@@ -268,6 +269,9 @@ def main():
                 killed_marker.write_text("wedge", encoding="utf-8")
                 kill_tree(pid)
                 child = None
+            elif int(time.time()) % 3600 < POLL_S:
+                log(sup_log, f"heartbeat: runner pid={pid} alive, "
+                             f"last activity {age:.0f}s ago")
             time.sleep(POLL_S)
             continue
 
