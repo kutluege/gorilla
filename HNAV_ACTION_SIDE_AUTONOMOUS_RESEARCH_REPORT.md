@@ -2,7 +2,7 @@
 
 **Status:** LIVING DOCUMENT — sections marked `[PENDING <campaign>]` await
 live results; every other number is final and traceable to a committed
-artifact. Last updated 2026-08-08 (C1 READ campaign in flight).
+artifact. Last updated 2026-08-10 (C1 READ campaign in flight).
 **Branch:** `claude/nihai-plan-v2-cascade-thresholds-k34u67`
 **Governing directive:** `latest/ORIGINAL_DIRECTIVE.md` (recovered verbatim)
 **Machine-readable summary:** `berkeley-function-call-leaderboard/gov_logs/hnav_autonomous/final_summary.json` [PENDING final]
@@ -57,6 +57,73 @@ rooted.
 - **Final recommendation:** [PENDING] — current draft: option 3/5 hybrid —
   *use simple deterministic read/write scaffolds rather than entropy; the
   action-uncertainty program is a defensible negative* (see §15).
+
+## 1a. Scorecard against the +3–4 point target
+
+**Direct answer, as of 2026-08-10: NO. No method tried so far has a
+validated +3–4pp improvement over the reproduced fair baseline (vector
+0.1226, kv 0.1118 — `gov_logs/hnav_autonomous/CORRECTED_BASELINE.md`).**
+Nothing has yet cleared both pre-registered validation bars — CI excluding
+zero AND survival against the equal-compute control — at any effect size.
+
+**Closest measured result:** alt10 A2 majority-vote write-rescue, vector
+**+3.45pp** point estimate vs co-run baseline
+(`gov_logs/hnav_stage4/VERDICT.md`) — numerically inside the target band,
+direction positive in 3/3 replicates. It does **not** count as a validated
+improvement, for three frozen reasons:
+
+- **The CI includes zero.** [−0.011, +0.079] at n=290 matched vector
+  pairs; McNemar p=0.184, Holm p=0.736. Label pre-committed before
+  unblinding: promising-but-inconclusive / underpowered.
+- **It does not beat its equal-compute control.** a2 vs a1
+  (random-selection at equal budget) is +0.014 vector / +0.000 kv, while
+  a1 alone gains +0.021–0.024 over baseline — most of the gain is generic
+  extra sampling, not majority-vote content selection (§8.1 condition 7 FAIL).
+- **The pre-registered negative control failed to collapse.** Shuffling
+  the sample-set→scenario assignment preserves ~70% of the vector
+  rescued-modal signal (6/6/7 vs 9/9/9) — part of the "rescued facts" is
+  non-content-specific carriage of short (median 7-char) gold strings.
+
+Operational cost: ~234 extra model calls / ~558k extra completion tokens
+per net recovered answer, at 2.48× wall clock (§13).
+
+**Completed methods** — every one rejected, inconclusive, or superseded;
+none validated:
+
+| method | verdict | effect |
+|---|---|---|
+| Stage 1 write-side coupling | falsified | 0/220 near-dupes answer-critical; H1/H3 FAIL |
+| Stage 3 `H_act` gate | NO_GO at gate | dAUC −0.013 [−0.037, +0.001] over vote control |
+| alt1 factorized entropy | rejected | ≈0 at every resolution |
+| alt7 parser robustness | rejected | 0/3,276 misparses — no headroom |
+| alt9 backend-specific policies | rejected | nothing to specialize (T1 n=2–7) |
+| alt10 write-rescue | inconclusive | vector +3.45pp, CI incl. 0, control ≈ null |
+| alt5R write scaffold | superseded pre-launch | prediction corrected +0.171 → ≈0 |
+
+**Predicted — not demonstrated — to clear the +3–4pp bar** (in test or queued):
+
+- **M1 read scaffold** (C1, running now): falsifier-based prediction
+  ΔAcc_vector **+2.4pp** (read-conversion c=0.30 floor) with upside to
+  **+5.6pp** (c at the core conditional ≈0.70) on the archival-only
+  stratum (74/930, currently converting at 0.000) —
+  `gov_logs/hnav_rag/PREREGISTRATION_C1.md`. **C1 results remain blind
+  until all 5 replicates complete**, per pre-registration.
+- **M2 packed capture × read** (C2, queued, gated on C1): the largest
+  predicted effect in the portfolio — offline answerability of vector
+  questions rises 0.187 → 0.82 (baseline answerable rate
+  `gov_logs/hnav_autonomous/falsifier_write_scaffold.json`; packed r@5
+  0.819 / carried 0.884, `gov_logs/hnav_rag/falsifiers.json`). Predicted
+  only; the live ΔAcc depends multiplicatively on C1's measured c.
+- **M5 quote-grounded answers** (C4): predicted ≈ +3pp on the strict
+  answer-field regrade; falsifier GO (`gov_logs/hnav_rag/ledger.jsonl`).
+  Predicted only.
+
+All ten portfolio falsifier GOs (`gov_logs/hnav_rag/falsifiers.json`,
+`ledger.jsonl`) are offline predictions from frozen instruments, not live
+gains — alt5R is the standing warning of how far a mis-conditioned offline
+conversion can be from the live number (+0.171 → ≈0).
+
+This section will be updated with live verdicts as each campaign completes.
 
 ## 2. Starting repository state
 
