@@ -139,3 +139,16 @@ Frozen changes:
    non-terminating under a recurrently-wedging server.
 3. Application: resume `--start-replicate 1 --start-arm read_verbatim`;
    rep01/baseline (clean, this window) is kept.
+
+## AMENDMENT 3 — bounded client timeout (2026-08-09, before any arm contrast)
+
+Two consecutive mid-arm wedges killed rep01/read_instruction attempts. The
+harness client's `timeout=72000` turned every wedged request into a dead
+arm (25-min stall kill + rerun). Changed to `timeout=480` with the OpenAI
+SDK's default retry (max_retries=2): a wedged request is abandoned at
+8 min — abandonment observably un-wedges the server — and retried.
+Infrastructure-only: applies identically to every arm; a successful
+request's response does not depend on the client timeout; at temperature
+0.001 a retried request is the same request. Replicates may span the
+timeout change (rep01 ran under 72000); recorded here as an
+infrastructure covariate.

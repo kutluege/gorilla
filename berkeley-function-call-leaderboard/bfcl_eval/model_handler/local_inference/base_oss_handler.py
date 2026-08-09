@@ -365,7 +365,7 @@ class OSSHandler(BaseHandler, EnforceOverrides):
                 prompt=formatted_prompt,
                 max_tokens=leftover_tokens_count,
                 extra_body=extra_body,
-                timeout=72000,  # Avoid timeout errors
+                timeout=480,  # bounded + SDK auto-retry: a wedged request recovers by abandon-and-retry instead of hanging the arm (2026-08-09, C1 AMENDMENT 3)
             )
         else:
             api_response = self.client.completions.create(
@@ -373,7 +373,7 @@ class OSSHandler(BaseHandler, EnforceOverrides):
                 temperature=self.temperature,
                 prompt=formatted_prompt,
                 max_tokens=leftover_tokens_count,
-                timeout=72000,  # Avoid timeout errors
+                timeout=480,  # bounded + SDK auto-retry: a wedged request recovers by abandon-and-retry instead of hanging the arm (2026-08-09, C1 AMENDMENT 3)
             )
         end_time = time.time()
 

@@ -160,7 +160,7 @@ class QwenHactHandler(QwenGovHandler):
             model=self.model_path_or_id,
             prompt=formatted_prompt,
             max_tokens=leftover_tokens_count,
-            timeout=72000,
+            timeout=480,
             **({"extra_body": extra_body} if extra_body else {}),
         )
         seed_primary = stable_seed(cfg.seed_base, test_id, call_idx, salt=0)
