@@ -189,6 +189,27 @@ def run():
           not any(k.startswith(("HACT_", "SCAF_", "RAG_")) for k in env_d),
           sorted(k for k in env_d if k.startswith(("HACT_", "SCAF_", "RAG_"))))
 
+    print("[runner: arm-granularity resume + warmup wiring]")
+    seq_sa = arm_sequence(2, start=1, arms=three, start_arm="stage0")
+    check("--start-arm skips earlier arms in the start replicate ONLY",
+          seq_sa == [(1, "stage0"), (1, "full"),
+                     (2, "baseline"), (2, "stage0"), (2, "full")],
+          str(seq_sa))
+    try:
+        arm_sequence(2, start=1, arms=three, start_arm="nope")
+        check("--start-arm rejects unknown labels", False)
+    except SystemExit:
+        check("--start-arm rejects unknown labels", True)
+    warm_calls = []
+    h2 = Harness()
+    cfg_w = make_cfg(n=1)
+    cfg_w["warmup"] = lambda base_url, model: warm_calls.append(model) or 1
+    h2.go(cfg_w)
+    check("warmup called before every generate (per arm)",
+          len(warm_calls) == 2, warm_calls)
+    check("fast warmup (1 try) adds no manifest event",
+          not any(r["event"] == "warmup_recovered" for r in h2.manifest))
+
     print("[runner: inference-error gate]")
     import tempfile as _tf
     from pathlib import Path as _P

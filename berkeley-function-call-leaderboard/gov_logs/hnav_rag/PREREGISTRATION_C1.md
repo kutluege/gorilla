@@ -115,3 +115,27 @@ timestamps only. Instance-continuity evidence for a replicate remains what
 it was for stage4: one continuous launcher window + the runner's
 per-generate tunnel probes + the inference-error gate. Attempt 2 launched
 2026-08-09T00:35:55+03:00, pid 27256.
+
+## AMENDMENT 2 — mid-campaign wedge + arm-granularity resume (2026-08-09, before any arm contrast)
+
+The wedge recurs MID-campaign: after rep01/baseline completed cleanly
+(82 min, 0 inference errors), rep01/read_verbatim's first template-shaped
+request hung (console silent 23 min, 0 entries; plain probes fine).
+Signature: the server wedges the first chat-template completion of a fresh
+process after idle.
+
+Frozen changes:
+1. **Runner warm-up gate** before EVERY generate (not just at launch): 3
+   consecutive fast template completions required; recovery attempts are
+   recorded as `warmup_recovered` manifest events; failure stops the run.
+2. **Arm-granularity resume** (`--start-arm`, unit-tested): permitted ONLY
+   when (a) the interrupted arm produced zero scored entries, and (b) the
+   server window is continuous by the available evidence (tunnel probes and
+   plain-request service never failed). Completed arms of the same
+   replicate are kept. Rationale: the strict replicate-rerun rule
+   (AMENDMENT 1) exists for cross-instance pairing validity; a wedge is a
+   transient per-request failure on a continuously-serving instance, and
+   rerunning 82-min clean arms on every wedge makes the campaign
+   non-terminating under a recurrently-wedging server.
+3. Application: resume `--start-replicate 1 --start-arm read_verbatim`;
+   rep01/baseline (clean, this window) is kept.

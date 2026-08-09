@@ -76,15 +76,27 @@ def arm_specs(cfg):
     ]
 
 
-def arm_sequence(n_replicates, start=1, arms=None):
+def arm_sequence(n_replicates, start=1, arms=None, start_arm=None):
     """[(1, arm_a), (1, arm_b), ..., (2, arm_a), ...] -- the binding order:
-    strictly sequential, every arm alternated WITHIN a replicate."""
+    strictly sequential, every arm alternated WITHIN a replicate.
+
+    start_arm: arm-granularity resume WITHIN the start replicate only --
+    arms before it in replicate `start` are skipped (they completed in the
+    interrupted window); later replicates run all arms. Added 2026-08-09
+    for wedged-server recovery (C1 AMENDMENT 2)."""
     labels = [a["label"] for a in arms] if arms else [BASELINE_ARM, GOVERNED_ARM]
-    return [
+    if start_arm is not None and start_arm not in labels:
+        raise SystemExit(f"--start-arm {start_arm!r} not in arms {labels}")
+    seq = [
         (rep, label)
         for rep in range(start, n_replicates + 1)
         for label in labels
     ]
+    if start_arm is not None:
+        cut = labels.index(start_arm)
+        seq = [(rep, label) for rep, label in seq
+               if rep != start or labels.index(label) >= cut]
+    return seq
 
 
 def rep_dir(root, rep, arm):
@@ -254,6 +266,46 @@ def _calibration_sha(calib_path):
     return h.hexdigest()[:16]
 
 
+def warmup_completions(base_url, served_model, need=3, tries=40,
+                       fast_s=10.0, sleep_s=15.0):
+    """Require `need` consecutive fast TEMPLATE-shaped completions.
+
+    The remote vLLM instance recurrently wedges the first chat-template
+    request after idle (plain prompts keep working, which is why the
+    /v1/models probe passes while generation freezes; observed on C1
+    attempts 2-4). The harness client's 72000-s timeout turns one wedged
+    request into a dead arm, so the runner refuses to hand it a request
+    until the server demonstrably serves template completions. Returns the
+    number of tries used; raises RuntimeError on failure."""
+    import time as _time
+
+    root = base_url.rstrip("/")
+    payload = json.dumps({
+        "model": served_model,
+        "prompt": "<|im_start|>user\nReply with OK.<|im_end|>\n"
+                  "<|im_start|>assistant\n",
+        "max_tokens": 8, "temperature": 0.0,
+    }).encode("utf-8")
+    ok = 0
+    for attempt in range(1, tries + 1):
+        t0 = _time.time()
+        try:
+            req = urllib.request.Request(
+                f"{root}/completions", data=payload,
+                headers={"Content-Type": "application/json"})
+            with urllib.request.urlopen(req, timeout=15) as r:
+                r.read()
+            ok = ok + 1 if _time.time() - t0 < fast_s else 0
+        except Exception:
+            ok = 0
+            _time.sleep(sleep_s)
+        if ok >= need:
+            return attempt
+    raise RuntimeError(
+        f"warmup failed: no {need} consecutive fast template completions "
+        f"in {tries} tries")
+
+
 def probe_server(base_url):
     """Probe the tunneled endpoint: served model id + vLLM version.
 
@@ -340,6 +392,7 @@ def run_replicates(cfg, run_cmd=default_run_cmd, probe=probe_server,
         "test_category": cfg["test_category"],
         "replicates": cfg["replicates"],
         "start_replicate": cfg.get("start_replicate", 1),
+        "start_arm": cfg.get("start_arm"),
         "arm_order_per_replicate": [a["label"] for a in arms],
         "num_threads": 1,
         "skip_server_setup": True,
@@ -365,8 +418,10 @@ def run_replicates(cfg, run_cmd=default_run_cmd, probe=probe_server,
         "gov_log_root": cfg["gov_log_root"],
     })
 
+    warmup = cfg.get("warmup", None)     # injectable for tests
     for rep, arm in arm_sequence(cfg["replicates"],
-                                 cfg.get("start_replicate", 1), arms=arms):
+                                 cfg.get("start_replicate", 1), arms=arms,
+                                 start_arm=cfg.get("start_arm")):
         env = build_arm_env(cfg, arm, rep)
         for phase, cmd in (
             ("generate", build_generate_cmd(cfg, models[arm], rep, arm)),
@@ -374,9 +429,26 @@ def run_replicates(cfg, run_cmd=default_run_cmd, probe=probe_server,
         ):
             # Generation needs the tunnel; re-probe so a dropped SSH session
             # stops the run at a clean boundary instead of mid-scenario.
+            # Then warm the server: it recurrently wedges the first
+            # template-shaped request after idle, and the harness's 72000-s
+            # client timeout would turn that into a dead arm.
             if phase == "generate":
                 try:
-                    probe(cfg["base_url"])
+                    served = probe(cfg["base_url"])
+                    if warmup:      # cfg["warmup"]: True = real, callable =
+                        #             injected fake, absent/False = off
+                        fn = (warmup if callable(warmup)
+                              else warmup_completions)
+                        n_tries = fn(cfg["base_url"],
+                                     (served or {}).get("served_models",
+                                                        [""])[0])
+                        if n_tries > 1:
+                            manifest_writer(manifest, {
+                                **base_record, "ts": utc_now(),
+                                "event": "warmup_recovered",
+                                "replicate": rep, "arm": arm,
+                                "tries": n_tries,
+                            })
                 except Exception as exc:
                     manifest_writer(manifest, {
                         **base_record, "ts": utc_now(), "event": "error",
@@ -476,6 +548,12 @@ def main():
     ap.add_argument("--replicates", type=int, default=5)
     ap.add_argument("--start-replicate", type=int, default=1,
                     help="Explicit resume point after a stopped run")
+    ap.add_argument("--start-arm", default=None,
+                    help="Arm-granularity resume WITHIN --start-replicate "
+                         "(skips arms before it in that replicate only; "
+                         "C1 AMENDMENT 2 wedged-server recovery)")
+    ap.add_argument("--no-warmup", action="store_true",
+                    help="Skip the pre-generate template warmup gate")
     ap.add_argument("--baseline-model", default=DEFAULT_BASELINE_MODEL)
     ap.add_argument("--governed-model", default=DEFAULT_GOVERNED_MODEL)
     ap.add_argument("--test-category", default=DEFAULT_TEST_CATEGORY)
@@ -507,6 +585,8 @@ def main():
         "python": sys.executable,
         "replicates": args.replicates,
         "start_replicate": args.start_replicate,
+        "start_arm": args.start_arm,
+        "warmup": not args.no_warmup,
         "baseline_model": args.baseline_model,
         "governed_model": args.governed_model,
         "test_category": args.test_category,
