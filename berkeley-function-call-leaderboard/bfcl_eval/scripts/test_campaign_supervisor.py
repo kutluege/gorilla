@@ -68,11 +68,15 @@ def test_completed_cells():
 
 def test_resume_point_arm_mode():
     done = {(1, "baseline"), (1, "read_verbatim")}
-    check("arm mode resumes at first incomplete arm, keeping siblings",
-          resume_point(5, LABELS, done, "arm") == (1, "read_irrelevant"))
-    check("arm mode at a replicate boundary needs no start-arm",
+    check("arm mode runs only the missing arms, keeping siblings",
+          resume_point(5, LABELS, done, "arm")
+          == (1, ["read_irrelevant", "read_instruction"]))
+    check("HOLES are filled, not skipped (the 2026-08-09 bug)",
+          resume_point(5, LABELS, {(1, "read_irrelevant")}, "arm")
+          == (1, ["baseline", "read_verbatim", "read_instruction"]))
+    check("complete replicate advances to the next",
           resume_point(5, LABELS, {(1, a) for a in LABELS}, "arm")
-          == (2, None))
+          == (2, LABELS))
     all_done = {(r, a) for r in range(1, 6) for a in LABELS}
     check("complete campaign -> None",
           resume_point(5, LABELS, all_done, "arm") is None)
@@ -80,11 +84,11 @@ def test_resume_point_arm_mode():
 
 def test_resume_point_replicate_mode():
     done = {(1, "baseline"), (1, "read_verbatim")}
-    check("replicate mode restarts the whole interrupted replicate",
-          resume_point(5, LABELS, done, "replicate") == (1, None))
+    check("replicate mode reruns ALL arms of the interrupted replicate",
+          resume_point(5, LABELS, done, "replicate") == (1, LABELS))
     done2 = {(1, a) for a in LABELS} | {(2, "baseline")}
-    check("later replicate restarts from its own start",
-          resume_point(5, LABELS, done2, "replicate") == (2, None))
+    check("later replicate reruns from its own start",
+          resume_point(5, LABELS, done2, "replicate") == (2, LABELS))
 
 
 def test_last_stop_reason():
@@ -115,17 +119,45 @@ def test_clean_for_resume():
             d = cfg[root] / sub
             d.mkdir(parents=True)
             (d / "x.json").write_text("{}", encoding="utf-8")
-    removed = clean_for_resume(cfg, 1, "read_irrelevant", LABELS)
-    check("arm resume removes the interrupted arm onward (3 dirs x 2 arms)",
+    removed = clean_for_resume(cfg, 1, ["read_irrelevant",
+                                        "read_instruction"])
+    check("cleans exactly the arms to run (3 dirs x 2 arms)",
           len(removed) == 6, removed)
-    check("completed sibling arms kept",
+    check("kept arms untouched",
           (cfg["result_root"] / "rep01/baseline/x.json").exists()
           and (cfg["result_root"] / "rep01/read_verbatim/x.json").exists())
-    check("interrupted arm gone",
+    check("cleaned arm gone",
           not (cfg["result_root"] / "rep01/read_irrelevant").exists())
-    removed2 = clean_for_resume(cfg, 1, None, LABELS)
-    check("replicate restart removes every remaining arm tree",
+    removed2 = clean_for_resume(cfg, 1, LABELS)
+    check("full-replicate clean removes every remaining arm tree",
           not (cfg["result_root"] / "rep01/baseline").exists(), removed2)
+
+
+def test_completed_cells_disk_verification():
+    tmp = Path(tempfile.mkdtemp(prefix="sup_"))
+    score = tmp / "score/rep01/baseline/slug/agentic/memory/kv"
+    score.mkdir(parents=True)
+    sf = "score/rep01/baseline/slug/agentic/memory/kv/s.json"
+    (tmp / sf).write_text("{}", encoding="utf-8")
+    rows = [
+        {"event": "cmd_end", "replicate": 1, "arm": "baseline",
+         "phase": "generate", "exit_code": 0, "inference_errors": 0},
+        {"event": "cmd_end", "replicate": 1, "arm": "baseline",
+         "phase": "evaluate", "exit_code": 0,
+         "score_files": [{"path": sf, "exists": True}]},
+        {"event": "cmd_end", "replicate": 1, "arm": "read_verbatim",
+         "phase": "generate", "exit_code": 0, "inference_errors": 0},
+        {"event": "cmd_end", "replicate": 1, "arm": "read_verbatim",
+         "phase": "evaluate", "exit_code": 0,
+         "score_files": [{"path": "score/rep01/read_verbatim/gone.json",
+                          "exists": True}]},
+    ]
+    m = tmp / "manifest.jsonl"
+    m.write_text("\n".join(json.dumps(r) for r in rows), encoding="utf-8")
+    check("manifest-only view counts both",
+          completed_cells(m) == {(1, "baseline"), (1, "read_verbatim")})
+    check("disk verification drops deleted trees (the 2026-08-09 bug)",
+          completed_cells(m, disk_root=tmp) == {(1, "baseline")})
 
 
 def main():

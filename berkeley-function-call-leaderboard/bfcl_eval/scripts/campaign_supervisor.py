@@ -69,10 +69,15 @@ def load_arm_labels(arms_json_path):
     return [a["label"] for a in arms]
 
 
-def completed_cells(manifest_path):
+def completed_cells(manifest_path, disk_root=None):
     """(rep, arm) cells with BOTH a clean generate (exit 0, zero inference
-    errors when recorded) and a clean evaluate whose score files exist."""
-    gen_ok, eval_ok = set(), set()
+    errors when recorded) and a clean evaluate whose score files exist.
+
+    disk_root: when given, score files recorded in the manifest are
+    RE-VERIFIED on disk NOW -- manifest history alone lies after a recovery
+    deletes a replicate's trees (the exact bug hit on 2026-08-09: the
+    supervisor resumed past arms whose trees it had itself deleted)."""
+    gen_ok, eval_ok = set(), {}
     if not Path(manifest_path).exists():
         return set()
     for line in open(manifest_path, encoding="utf-8"):
@@ -89,23 +94,31 @@ def completed_cells(manifest_path):
         elif r.get("phase") == "evaluate":
             files = r.get("score_files") or []
             if all(f.get("exists") for f in files):
-                eval_ok.add(cell)
-    return gen_ok & eval_ok
+                eval_ok[cell] = [f["path"] for f in files]
+    done = set()
+    for cell, paths in eval_ok.items():
+        if cell not in gen_ok:
+            continue
+        if disk_root is not None and not all(
+                (Path(disk_root) / p).exists() for p in paths):
+            continue                      # trees deleted since -- not done
+        done.add(cell)
+    return done
 
 
 def resume_point(replicates, labels, done_cells, mode):
-    """(start_replicate, start_arm_or_None) for the next launch.
+    """(replicate, [arms to run]) for the next launch -- ONE replicate at a
+    time, so holes anywhere in the sequence are filled surgically.
 
-    mode 'arm': first incomplete cell in sequence order (keep completed
-    siblings). mode 'replicate': restart the whole replicate containing the
-    first incomplete cell. Returns None when the campaign is complete."""
+    mode 'arm' (wedge, window continuous): only the replicate's missing
+    arms run; completed siblings are kept. mode 'replicate' (outage /
+    unknown): every arm of the replicate reruns for instance consistency.
+    Returns None when the campaign is complete."""
     for rep in range(1, replicates + 1):
-        for i, arm in enumerate(labels):
-            if (rep, arm) in done_cells:
-                continue
-            if mode == "replicate" or i == 0:
-                return rep, None
-            return rep, arm
+        missing = [a for a in labels if (rep, a) not in done_cells]
+        if not missing:
+            continue
+        return rep, (labels if mode == "replicate" else missing)
     return None
 
 
@@ -177,11 +190,10 @@ def newest_activity(result_root, manifest_path):
 
 # ------------------------------------------------------------- tree hygiene
 
-def clean_for_resume(cfg, rep, arm, labels):
-    """Delete the trees the relaunch must not resume into."""
+def clean_for_resume(cfg, rep, arms_to_clean):
+    """Delete the given arms' trees for the replicate -- the relaunch must
+    never resume into a partial tree."""
     doomed = []
-    arms_to_clean = labels if arm is None else \
-        labels[labels.index(arm):]          # interrupted arm onward
     for a in arms_to_clean:
         doomed += [
             Path(cfg["result_root"]) / f"rep{rep:02d}" / a,
@@ -198,17 +210,20 @@ def clean_for_resume(cfg, rep, arm, labels):
 
 # ------------------------------------------------------------------- main
 
-def launch_runner(cfg, rep, arm):
+def launch_runner(cfg, rep, only_arms):
+    """One replicate per launch: --replicates caps at `rep`, --only-arm
+    restricts to the missing arms. The supervisor loop advances replicate
+    by replicate, so holes anywhere heal."""
     args = [PY, str(Path(__file__).parent / "run_gov_replicates.py"),
-            "--replicates", str(cfg["replicates"]),
+            "--replicates", str(rep),
             "--start-replicate", str(rep),
             "--arms-json", f"@{cfg['arms_json']}",
             "--result-root", cfg["result_root"],
             "--score-root", cfg["score_root"],
             "--gov-log-root", cfg["gov_log_root"],
             "--manifest", cfg["manifest"]]
-    if arm:
-        args += ["--start-arm", arm]
+    for a in only_arms:
+        args += ["--only-arm", a]
     logfile = open(cfg["runner_log"], "ab")
     import os
     env = dict(os.environ)
@@ -219,7 +234,7 @@ def launch_runner(cfg, rep, arm):
 
 
 def campaign_complete(cfg, labels):
-    done = completed_cells(REPO_ROOT / cfg["manifest"])
+    done = completed_cells(REPO_ROOT / cfg["manifest"], disk_root=REPO_ROOT)
     want = {(rep, a) for rep in range(1, cfg["replicates"] + 1)
             for a in labels}
     return want <= done
@@ -285,18 +300,19 @@ def main():
             log(sup_log, "tunnel DOWN; waiting 120s")
             time.sleep(120)
         mode = "arm" if reason == "wedge" else "replicate"
-        done = completed_cells(REPO_ROOT / cfg["manifest"])
+        done = completed_cells(REPO_ROOT / cfg["manifest"],
+                               disk_root=REPO_ROOT)
         point = resume_point(cfg["replicates"], labels, done, mode)
         if point is None:
             continue                      # loop will see complete
-        rep, arm = point
+        rep, run_arms = point
         removed = clean_for_resume(
             {k: REPO_ROOT / v if k.endswith("root") else v
-             for k, v in cfg.items()}, rep, arm, labels)
+             for k, v in cfg.items()}, rep, run_arms)
         log(sup_log, f"resume reason={reason} mode={mode} -> "
-                     f"rep{rep:02d}/{arm or labels[0]} "
+                     f"rep{rep:02d} arms={run_arms} "
                      f"(cleaned {len(removed)} trees)")
-        child = launch_runner(cfg, rep, arm)
+        child = launch_runner(cfg, rep, run_arms)
         relaunches += 1
         log(sup_log, f"runner launched pid={child.pid} "
                      f"(relaunch {relaunches}/{args.max_relaunches})")

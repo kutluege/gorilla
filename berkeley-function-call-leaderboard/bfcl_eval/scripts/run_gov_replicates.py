@@ -99,6 +99,14 @@ def arm_sequence(n_replicates, start=1, arms=None, start_arm=None):
     return seq
 
 
+def filter_only_arms(seq, only_arms):
+    """Surgical hole-filling (supervisor recovery): restrict the sequence to
+    the given arm labels. None/empty = no filtering."""
+    if not only_arms:
+        return seq
+    return [(rep, label) for rep, label in seq if label in only_arms]
+
+
 def rep_dir(root, rep, arm):
     """Per-(replicate, arm) tree: ablation arms may share ONE registry model id
     (differing only in GOV_* env), so the model-slug subdir alone cannot keep
@@ -419,9 +427,11 @@ def run_replicates(cfg, run_cmd=default_run_cmd, probe=probe_server,
     })
 
     warmup = cfg.get("warmup", None)     # injectable for tests
-    for rep, arm in arm_sequence(cfg["replicates"],
-                                 cfg.get("start_replicate", 1), arms=arms,
-                                 start_arm=cfg.get("start_arm")):
+    for rep, arm in filter_only_arms(
+            arm_sequence(cfg["replicates"],
+                         cfg.get("start_replicate", 1), arms=arms,
+                         start_arm=cfg.get("start_arm")),
+            cfg.get("only_arms")):
         env = build_arm_env(cfg, arm, rep)
         for phase, cmd in (
             ("generate", build_generate_cmd(cfg, models[arm], rep, arm)),
@@ -552,6 +562,9 @@ def main():
                     help="Arm-granularity resume WITHIN --start-replicate "
                          "(skips arms before it in that replicate only; "
                          "C1 AMENDMENT 2 wedged-server recovery)")
+    ap.add_argument("--only-arm", action="append", default=None,
+                    help="Run only these arm labels (repeatable) -- "
+                         "supervisor hole-filling")
     ap.add_argument("--no-warmup", action="store_true",
                     help="Skip the pre-generate template warmup gate")
     ap.add_argument("--baseline-model", default=DEFAULT_BASELINE_MODEL)
@@ -586,6 +599,7 @@ def main():
         "replicates": args.replicates,
         "start_replicate": args.start_replicate,
         "start_arm": args.start_arm,
+        "only_arms": args.only_arm,
         "warmup": not args.no_warmup,
         "baseline_model": args.baseline_model,
         "governed_model": args.governed_model,
